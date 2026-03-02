@@ -14,3 +14,4 @@ Auto-deployed to **seo-strategy.dotcomdesign.com** via Vercel.
 | Client | URL |
 | :--- | :--- |
 | Durham's Tree Service | seo-strategy.dotcomdesign.com/durhamstreeservice.com |
+| MEK Interiors & Floors | seo-strategy.dotcomdesign.com/mekfloors.com |
