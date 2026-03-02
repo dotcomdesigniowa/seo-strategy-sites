@@ -6,15 +6,20 @@ const MANUS_API_KEY = 'sk-5LabL9v0IM42Fj-IzF_raL9d2wB1xfVsDK0idoqjIWPy1XX8X4AiHs
 const MANUS_API_URL = 'https://api.manus.ai/v1/tasks';
 
 export default async function handler(req, res) {
-  // Only allow POST requests
+  // Set CORS headers on ALL responses (including preflight OPTIONS)
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+  // Handle CORS preflight request
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+  }
+
+  // Only allow POST requests beyond preflight
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
   }
-
-  // Allow requests from our own domain
-  res.setHeader('Access-Control-Allow-Origin', 'https://seo-strategy.dotcomdesign.com');
-  res.setHeader('Access-Control-Allow-Methods', 'POST');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
   const { prompt } = req.body;
 
