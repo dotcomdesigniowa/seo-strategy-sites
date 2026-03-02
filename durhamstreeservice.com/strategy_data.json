@@ -1,0 +1,2720 @@
+{
+  "client_name": "Durham's Tree Service",
+  "industry": "Tree Service",
+  "hq_city": "Winter Haven",
+  "state": "FL",
+  "service_area": "Polk County, FL",
+  "plan_level": "Level C",
+  "plan_price": 1200,
+  "total_combinations": 40,
+  "total_keywords_researched": 189,
+  "selected_keywords": [
+    "stump grinder",
+    "tree service",
+    "tree removal",
+    "tree trimming",
+    "tree pruning",
+    "stump removal",
+    "stump grinding",
+    "tree stump removal"
+  ],
+  "num_selected_keywords": 8,
+  "num_target_markets": 5,
+  "matrix": [
+    {
+      "city": "Lakeland",
+      "tier": "Tier 1",
+      "population": 112142,
+      "is_hq": false,
+      "keywords": [
+        "stump grinder",
+        "tree service",
+        "tree removal",
+        "tree trimming",
+        "tree pruning",
+        "stump removal",
+        "stump grinding",
+        "tree stump removal"
+      ],
+      "total": 8
+    },
+    {
+      "city": "Poinciana",
+      "tier": "Tier 1",
+      "population": 72545,
+      "is_hq": false,
+      "keywords": [
+        "stump grinder",
+        "tree service",
+        "tree removal",
+        "tree trimming",
+        "tree pruning",
+        "stump removal",
+        "stump grinding",
+        "tree stump removal"
+      ],
+      "total": 8
+    },
+    {
+      "city": "Fuller Heights",
+      "tier": "Tier 1",
+      "population": 60443,
+      "is_hq": false,
+      "keywords": [
+        "stump grinder",
+        "tree service",
+        "tree removal",
+        "tree trimming",
+        "tree pruning",
+        "stump removal",
+        "stump grinding",
+        "tree stump removal"
+      ],
+      "total": 8
+    },
+    {
+      "city": "Winter Haven",
+      "tier": "Tier 1",
+      "population": 52846,
+      "is_hq": true,
+      "keywords": [
+        "stump grinder",
+        "tree service",
+        "tree removal",
+        "tree trimming",
+        "tree pruning",
+        "stump removal",
+        "stump grinding",
+        "tree stump removal"
+      ],
+      "total": 8
+    },
+    {
+      "city": "Haines City",
+      "tier": "Tier 2",
+      "population": 31156,
+      "is_hq": false,
+      "keywords": [
+        "stump grinder",
+        "tree service",
+        "tree removal",
+        "tree trimming",
+        "tree pruning",
+        "stump removal",
+        "stump grinding",
+        "tree stump removal"
+      ],
+      "total": 8
+    }
+  ],
+  "keyword_tiers": [
+    {
+      "tier_num": 1,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "description": "Broad, high-intent keywords that reflect the primary services customers search for. These are the bread-and-butter terms \u2014 high volume, high conversion, and versatile across all markets.",
+      "keywords": [
+        {
+          "Keyword": "tree removal",
+          "monthly_searches": 33100
+        },
+        {
+          "Keyword": "tree service",
+          "monthly_searches": 33100
+        },
+        {
+          "Keyword": "tree trimming",
+          "monthly_searches": 22200
+        },
+        {
+          "Keyword": "tree pruning",
+          "monthly_searches": 14800
+        },
+        {
+          "Keyword": "tree removal service",
+          "monthly_searches": 14800
+        },
+        {
+          "Keyword": "tree cutting service",
+          "monthly_searches": 12100
+        },
+        {
+          "Keyword": "tree trimmer",
+          "monthly_searches": 12100
+        },
+        {
+          "Keyword": "tree care",
+          "monthly_searches": 12100
+        },
+        {
+          "Keyword": "tree care services",
+          "monthly_searches": 9900
+        },
+        {
+          "Keyword": "tree trimming service",
+          "monthly_searches": 9900
+        },
+        {
+          "Keyword": "tree removal cost",
+          "monthly_searches": 8100
+        },
+        {
+          "Keyword": "tree removal companies",
+          "monthly_searches": 6600
+        },
+        {
+          "Keyword": "tree removal services",
+          "monthly_searches": 5400
+        },
+        {
+          "Keyword": "tree trimming services",
+          "monthly_searches": 5400
+        },
+        {
+          "Keyword": "tree cutter",
+          "monthly_searches": 4400
+        },
+        {
+          "Keyword": "tree cutting",
+          "monthly_searches": 4400
+        },
+        {
+          "Keyword": "tree pruning service",
+          "monthly_searches": 3600
+        },
+        {
+          "Keyword": "tree service services",
+          "monthly_searches": 3600
+        },
+        {
+          "Keyword": "tree trimming cost",
+          "monthly_searches": 2900
+        },
+        {
+          "Keyword": "tree trimmers",
+          "monthly_searches": 2900
+        },
+        {
+          "Keyword": "tree care service",
+          "monthly_searches": 2900
+        },
+        {
+          "Keyword": "tree service company",
+          "monthly_searches": 2900
+        },
+        {
+          "Keyword": "tree removal company",
+          "monthly_searches": 2900
+        },
+        {
+          "Keyword": "tree pruning services",
+          "monthly_searches": 2900
+        },
+        {
+          "Keyword": "tree removal estimate",
+          "monthly_searches": 2400
+        },
+        {
+          "Keyword": "tree trimming companies",
+          "monthly_searches": 1900
+        },
+        {
+          "Keyword": "tree service companies",
+          "monthly_searches": 1900
+        },
+        {
+          "Keyword": "tree trimming company",
+          "monthly_searches": 1900
+        },
+        {
+          "Keyword": "tree debris removal",
+          "monthly_searches": 1900
+        },
+        {
+          "Keyword": "tree cutting services",
+          "monthly_searches": 1900
+        },
+        {
+          "Keyword": "tree cutters",
+          "monthly_searches": 1900
+        },
+        {
+          "Keyword": "tree companies",
+          "monthly_searches": 1900
+        },
+        {
+          "Keyword": "tree care company",
+          "monthly_searches": 1600
+        },
+        {
+          "Keyword": "tree pruning company",
+          "monthly_searches": 1300
+        },
+        {
+          "Keyword": "tree cutting cost",
+          "monthly_searches": 1300
+        },
+        {
+          "Keyword": "tree pruning cost",
+          "monthly_searches": 1000
+        },
+        {
+          "Keyword": "tree care companies",
+          "monthly_searches": 1000
+        },
+        {
+          "Keyword": "tree branch removal",
+          "monthly_searches": 1000
+        },
+        {
+          "Keyword": "tree removal quote",
+          "monthly_searches": 1000
+        },
+        {
+          "Keyword": "tree removal contractors",
+          "monthly_searches": 880
+        },
+        {
+          "Keyword": "tree removal contractor",
+          "monthly_searches": 880
+        },
+        {
+          "Keyword": "tree removers",
+          "monthly_searches": 880
+        },
+        {
+          "Keyword": "tree pruning companies",
+          "monthly_searches": 880
+        },
+        {
+          "Keyword": "tree cutting company",
+          "monthly_searches": 720
+        },
+        {
+          "Keyword": "tree removal price",
+          "monthly_searches": 720
+        },
+        {
+          "Keyword": "tree removal pricing",
+          "monthly_searches": 720
+        },
+        {
+          "Keyword": "tree cutting companies",
+          "monthly_searches": 720
+        },
+        {
+          "Keyword": "tree service cost",
+          "monthly_searches": 590
+        },
+        {
+          "Keyword": "tree trimming contractors",
+          "monthly_searches": 590
+        },
+        {
+          "Keyword": "tree cutting estimate",
+          "monthly_searches": 480
+        },
+        {
+          "Keyword": "tree cutting contractors",
+          "monthly_searches": 390
+        },
+        {
+          "Keyword": "tree remover",
+          "monthly_searches": 320
+        },
+        {
+          "Keyword": "tree branch removal service",
+          "monthly_searches": 260
+        },
+        {
+          "Keyword": "tree pruning contractors",
+          "monthly_searches": 260
+        },
+        {
+          "Keyword": "tree service local",
+          "monthly_searches": 210
+        },
+        {
+          "Keyword": "limb removal",
+          "monthly_searches": 140
+        },
+        {
+          "Keyword": "tree trimming price",
+          "monthly_searches": 140
+        },
+        {
+          "Keyword": "tree pruning quote",
+          "monthly_searches": 110
+        },
+        {
+          "Keyword": "bucket truck tree service",
+          "monthly_searches": 110
+        },
+        {
+          "Keyword": "tree trimming estimate",
+          "monthly_searches": 110
+        },
+        {
+          "Keyword": "tree service estimate",
+          "monthly_searches": 90
+        },
+        {
+          "Keyword": "tree trimming pricing",
+          "monthly_searches": 70
+        },
+        {
+          "Keyword": "tree cutting contractor",
+          "monthly_searches": 70
+        },
+        {
+          "Keyword": "tree cutting price",
+          "monthly_searches": 70
+        },
+        {
+          "Keyword": "tree trimming contractor",
+          "monthly_searches": 70
+        },
+        {
+          "Keyword": "tree service contractor",
+          "monthly_searches": 70
+        },
+        {
+          "Keyword": "limb removal service",
+          "monthly_searches": 50
+        },
+        {
+          "Keyword": "tree trimming quote",
+          "monthly_searches": 50
+        },
+        {
+          "Keyword": "tree service price",
+          "monthly_searches": 50
+        },
+        {
+          "Keyword": "tree pruning pricing",
+          "monthly_searches": 40
+        },
+        {
+          "Keyword": "tree service quote",
+          "monthly_searches": 40
+        },
+        {
+          "Keyword": "tree pruning estimate",
+          "monthly_searches": 40
+        },
+        {
+          "Keyword": "tree care quote",
+          "monthly_searches": 40
+        },
+        {
+          "Keyword": "tree service contractors",
+          "monthly_searches": 30
+        },
+        {
+          "Keyword": "limb removal cost",
+          "monthly_searches": 20
+        },
+        {
+          "Keyword": "tree service pricing",
+          "monthly_searches": 20
+        },
+        {
+          "Keyword": "tree pruning contractor",
+          "monthly_searches": 20
+        },
+        {
+          "Keyword": "tree removal local",
+          "monthly_searches": 20
+        },
+        {
+          "Keyword": "tree cutting quote",
+          "monthly_searches": 20
+        },
+        {
+          "Keyword": "tree care contractor",
+          "monthly_searches": 10
+        },
+        {
+          "Keyword": "tree care cost",
+          "monthly_searches": 10
+        },
+        {
+          "Keyword": "tree pruning price",
+          "monthly_searches": 10
+        },
+        {
+          "Keyword": "tree trimming local",
+          "monthly_searches": 10
+        }
+      ]
+    },
+    {
+      "tier_num": 2,
+      "tier_label": "Tier 2",
+      "tier_name": "Stump Removal & Grinding",
+      "description": "Service-specific keywords for stump removal and grinding. Customers searching these terms have a very specific, immediate need \u2014 high conversion potential.",
+      "keywords": [
+        {
+          "Keyword": "stump grinder",
+          "monthly_searches": 40500
+        },
+        {
+          "Keyword": "stump grinding",
+          "monthly_searches": 14800
+        },
+        {
+          "Keyword": "tree stump removal",
+          "monthly_searches": 14800
+        },
+        {
+          "Keyword": "stump removal",
+          "monthly_searches": 14800
+        },
+        {
+          "Keyword": "stump removal cost",
+          "monthly_searches": 3600
+        },
+        {
+          "Keyword": "stump grinders",
+          "monthly_searches": 2900
+        },
+        {
+          "Keyword": "stump grinding cost",
+          "monthly_searches": 2400
+        },
+        {
+          "Keyword": "stump grinding service",
+          "monthly_searches": 2400
+        },
+        {
+          "Keyword": "stump removal service",
+          "monthly_searches": 1900
+        },
+        {
+          "Keyword": "stump grinding services",
+          "monthly_searches": 1900
+        },
+        {
+          "Keyword": "tree stump grinding",
+          "monthly_searches": 1900
+        },
+        {
+          "Keyword": "stump removal services",
+          "monthly_searches": 1600
+        },
+        {
+          "Keyword": "stump removal price",
+          "monthly_searches": 590
+        },
+        {
+          "Keyword": "stump removal company",
+          "monthly_searches": 480
+        },
+        {
+          "Keyword": "stump grinding company",
+          "monthly_searches": 390
+        },
+        {
+          "Keyword": "stump removal companies",
+          "monthly_searches": 390
+        },
+        {
+          "Keyword": "stump grinding contractors",
+          "monthly_searches": 320
+        },
+        {
+          "Keyword": "stump removers",
+          "monthly_searches": 210
+        },
+        {
+          "Keyword": "stump grinding companies",
+          "monthly_searches": 140
+        },
+        {
+          "Keyword": "stump grinding price",
+          "monthly_searches": 110
+        },
+        {
+          "Keyword": "stump removal contractor",
+          "monthly_searches": 70
+        },
+        {
+          "Keyword": "stump removal contractors",
+          "monthly_searches": 50
+        },
+        {
+          "Keyword": "stump removal pricing",
+          "monthly_searches": 40
+        },
+        {
+          "Keyword": "stump grinding pricing",
+          "monthly_searches": 40
+        },
+        {
+          "Keyword": "stump grinding quote",
+          "monthly_searches": 40
+        },
+        {
+          "Keyword": "stump removal quote",
+          "monthly_searches": 30
+        },
+        {
+          "Keyword": "stump grinding estimate",
+          "monthly_searches": 20
+        },
+        {
+          "Keyword": "stump grinding contractor",
+          "monthly_searches": 20
+        },
+        {
+          "Keyword": "stump removal estimate",
+          "monthly_searches": 20
+        }
+      ]
+    },
+    {
+      "tier_num": 3,
+      "tier_label": "Tier 3",
+      "tier_name": "Demolition Services",
+      "description": "Keywords targeting Durham's structural demolition services. These represent a distinct service vertical with strong commercial intent.",
+      "keywords": [
+        {
+          "Keyword": "demolition contractors",
+          "monthly_searches": 6600
+        },
+        {
+          "Keyword": "demolition services",
+          "monthly_searches": 2900
+        },
+        {
+          "Keyword": "demolition contractor",
+          "monthly_searches": 2400
+        },
+        {
+          "Keyword": "demolition company",
+          "monthly_searches": 2400
+        },
+        {
+          "Keyword": "demolition companies",
+          "monthly_searches": 1000
+        },
+        {
+          "Keyword": "demolition service",
+          "monthly_searches": 880
+        },
+        {
+          "Keyword": "residential demolition",
+          "monthly_searches": 590
+        },
+        {
+          "Keyword": "demolition cost",
+          "monthly_searches": 390
+        },
+        {
+          "Keyword": "structure demolition",
+          "monthly_searches": 70
+        },
+        {
+          "Keyword": "demolition estimate",
+          "monthly_searches": 50
+        },
+        {
+          "Keyword": "demolition quote",
+          "monthly_searches": 50
+        },
+        {
+          "Keyword": "demolition contractor services",
+          "monthly_searches": 40
+        },
+        {
+          "Keyword": "demolition pricing",
+          "monthly_searches": 30
+        },
+        {
+          "Keyword": "demolition services pricing",
+          "monthly_searches": 20
+        },
+        {
+          "Keyword": "demolition services cost",
+          "monthly_searches": 20
+        },
+        {
+          "Keyword": "demolition services contractor",
+          "monthly_searches": 10
+        },
+        {
+          "Keyword": "demolition services company",
+          "monthly_searches": 10
+        },
+        {
+          "Keyword": "demolition price",
+          "monthly_searches": 10
+        }
+      ]
+    },
+    {
+      "tier_num": 4,
+      "tier_label": "Tier 4",
+      "tier_name": "Emergency & Storm Services",
+      "description": "High-urgency, high-intent keywords for emergency tree removal and storm damage cleanup. These terms target customers with immediate needs and a strong propensity to call.",
+      "keywords": [
+        {
+          "Keyword": "emergency tree removal",
+          "monthly_searches": 8100
+        },
+        {
+          "Keyword": "emergency tree service",
+          "monthly_searches": 4400
+        },
+        {
+          "Keyword": "storm damage cleanup",
+          "monthly_searches": 2900
+        },
+        {
+          "Keyword": "emergency tree removal service",
+          "monthly_searches": 1300
+        },
+        {
+          "Keyword": "fallen tree removal",
+          "monthly_searches": 880
+        },
+        {
+          "Keyword": "storm damage tree removal",
+          "monthly_searches": 590
+        },
+        {
+          "Keyword": "storm damage tree service",
+          "monthly_searches": 170
+        },
+        {
+          "Keyword": "storm damage tree removal cost",
+          "monthly_searches": 170
+        },
+        {
+          "Keyword": "fallen tree removal service",
+          "monthly_searches": 140
+        },
+        {
+          "Keyword": "emergency tree service cost",
+          "monthly_searches": 20
+        },
+        {
+          "Keyword": "emergency tree service contractors",
+          "monthly_searches": 10
+        }
+      ]
+    }
+  ],
+  "full_keyword_list": [
+    {
+      "keyword": "tree service near me",
+      "monthly_searches": 49500,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "near_me",
+      "base_keyword": "tree service"
+    },
+    {
+      "keyword": "stump grinder",
+      "monthly_searches": 40500,
+      "tier_label": "Tier 2",
+      "tier_name": "Stump Removal & Grinding",
+      "status": "selected",
+      "base_keyword": "stump grinder"
+    },
+    {
+      "keyword": "tree removal",
+      "monthly_searches": 33100,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "selected",
+      "base_keyword": "tree removal"
+    },
+    {
+      "keyword": "tree removal near me",
+      "monthly_searches": 33100,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "near_me",
+      "base_keyword": "tree removal"
+    },
+    {
+      "keyword": "tree service",
+      "monthly_searches": 33100,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "selected",
+      "base_keyword": "tree service"
+    },
+    {
+      "keyword": "tree trimming near me",
+      "monthly_searches": 22200,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "near_me",
+      "base_keyword": "tree trimming"
+    },
+    {
+      "keyword": "tree trimming",
+      "monthly_searches": 22200,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "selected",
+      "base_keyword": "tree trimming"
+    },
+    {
+      "keyword": "tree removal service",
+      "monthly_searches": 14800,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree removal service"
+    },
+    {
+      "keyword": "tree pruning",
+      "monthly_searches": 14800,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "selected",
+      "base_keyword": "tree pruning"
+    },
+    {
+      "keyword": "stump grinding",
+      "monthly_searches": 14800,
+      "tier_label": "Tier 2",
+      "tier_name": "Stump Removal & Grinding",
+      "status": "selected",
+      "base_keyword": "stump grinding"
+    },
+    {
+      "keyword": "stump removal",
+      "monthly_searches": 14800,
+      "tier_label": "Tier 2",
+      "tier_name": "Stump Removal & Grinding",
+      "status": "selected",
+      "base_keyword": "stump removal"
+    },
+    {
+      "keyword": "tree stump removal",
+      "monthly_searches": 14800,
+      "tier_label": "Tier 2",
+      "tier_name": "Stump Removal & Grinding",
+      "status": "selected",
+      "base_keyword": "tree stump removal"
+    },
+    {
+      "keyword": "tree cutting service",
+      "monthly_searches": 12100,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree cutting service"
+    },
+    {
+      "keyword": "tree trimmer",
+      "monthly_searches": 12100,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree trimmer"
+    },
+    {
+      "keyword": "tree care",
+      "monthly_searches": 12100,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree care"
+    },
+    {
+      "keyword": "stump grinding near me",
+      "monthly_searches": 12100,
+      "tier_label": "Tier 2",
+      "tier_name": "Stump Removal & Grinding",
+      "status": "near_me",
+      "base_keyword": "stump grinding"
+    },
+    {
+      "keyword": "tree care services",
+      "monthly_searches": 9900,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree care services"
+    },
+    {
+      "keyword": "tree trimming service",
+      "monthly_searches": 9900,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree trimming service"
+    },
+    {
+      "keyword": "tree removal cost",
+      "monthly_searches": 8100,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree removal cost"
+    },
+    {
+      "keyword": "emergency tree removal",
+      "monthly_searches": 8100,
+      "tier_label": "Tier 4",
+      "tier_name": "Emergency & Storm Services",
+      "status": "not_used",
+      "base_keyword": "emergency tree removal"
+    },
+    {
+      "keyword": "tree removers near me",
+      "monthly_searches": 8100,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "near_me",
+      "base_keyword": "tree removers"
+    },
+    {
+      "keyword": "stump removal near me",
+      "monthly_searches": 6600,
+      "tier_label": "Tier 2",
+      "tier_name": "Stump Removal & Grinding",
+      "status": "near_me",
+      "base_keyword": "stump removal"
+    },
+    {
+      "keyword": "stump grinder near me",
+      "monthly_searches": 6600,
+      "tier_label": "Tier 2",
+      "tier_name": "Stump Removal & Grinding",
+      "status": "near_me",
+      "base_keyword": "stump grinder"
+    },
+    {
+      "keyword": "tree trimmers near me",
+      "monthly_searches": 6600,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "near_me",
+      "base_keyword": "tree trimmers"
+    },
+    {
+      "keyword": "tree removal companies",
+      "monthly_searches": 6600,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree removal companies"
+    },
+    {
+      "keyword": "tree companies near me",
+      "monthly_searches": 6600,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "near_me",
+      "base_keyword": "tree companies"
+    },
+    {
+      "keyword": "demolition contractors",
+      "monthly_searches": 6600,
+      "tier_label": "Tier 3",
+      "tier_name": "Demolition Services",
+      "status": "not_used",
+      "base_keyword": "demolition contractors"
+    },
+    {
+      "keyword": "tree pruning near me",
+      "monthly_searches": 5400,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "near_me",
+      "base_keyword": "tree pruning"
+    },
+    {
+      "keyword": "tree removal services",
+      "monthly_searches": 5400,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree removal services"
+    },
+    {
+      "keyword": "tree trimming services",
+      "monthly_searches": 5400,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree trimming services"
+    },
+    {
+      "keyword": "tree care near me",
+      "monthly_searches": 4400,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "near_me",
+      "base_keyword": "tree care"
+    },
+    {
+      "keyword": "tree cutting",
+      "monthly_searches": 4400,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree cutting"
+    },
+    {
+      "keyword": "tree cutter",
+      "monthly_searches": 4400,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree cutter"
+    },
+    {
+      "keyword": "emergency tree service",
+      "monthly_searches": 4400,
+      "tier_label": "Tier 4",
+      "tier_name": "Emergency & Storm Services",
+      "status": "not_used",
+      "base_keyword": "emergency tree service"
+    },
+    {
+      "keyword": "demolition companies near me",
+      "monthly_searches": 4400,
+      "tier_label": "Tier 3",
+      "tier_name": "Demolition Services",
+      "status": "near_me",
+      "base_keyword": "demolition companies"
+    },
+    {
+      "keyword": "emergency tree removal near me",
+      "monthly_searches": 4400,
+      "tier_label": "Tier 4",
+      "tier_name": "Emergency & Storm Services",
+      "status": "near_me",
+      "base_keyword": "emergency tree removal"
+    },
+    {
+      "keyword": "stump grinders near me",
+      "monthly_searches": 3600,
+      "tier_label": "Tier 2",
+      "tier_name": "Stump Removal & Grinding",
+      "status": "near_me",
+      "base_keyword": "stump grinders"
+    },
+    {
+      "keyword": "tree pruning service",
+      "monthly_searches": 3600,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree pruning service"
+    },
+    {
+      "keyword": "tree service services",
+      "monthly_searches": 3600,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree service services"
+    },
+    {
+      "keyword": "stump removal cost",
+      "monthly_searches": 3600,
+      "tier_label": "Tier 2",
+      "tier_name": "Stump Removal & Grinding",
+      "status": "not_used",
+      "base_keyword": "stump removal cost"
+    },
+    {
+      "keyword": "tree cutters near me",
+      "monthly_searches": 3600,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "near_me",
+      "base_keyword": "tree cutters"
+    },
+    {
+      "keyword": "tree care service",
+      "monthly_searches": 2900,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree care service"
+    },
+    {
+      "keyword": "tree service company",
+      "monthly_searches": 2900,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree service company"
+    },
+    {
+      "keyword": "demolition services",
+      "monthly_searches": 2900,
+      "tier_label": "Tier 3",
+      "tier_name": "Demolition Services",
+      "status": "not_used",
+      "base_keyword": "demolition services"
+    },
+    {
+      "keyword": "demolition contractor near me",
+      "monthly_searches": 2900,
+      "tier_label": "Tier 3",
+      "tier_name": "Demolition Services",
+      "status": "near_me",
+      "base_keyword": "demolition contractor"
+    },
+    {
+      "keyword": "stump grinders",
+      "monthly_searches": 2900,
+      "tier_label": "Tier 2",
+      "tier_name": "Stump Removal & Grinding",
+      "status": "not_used",
+      "base_keyword": "stump grinders"
+    },
+    {
+      "keyword": "demolition contractors near me",
+      "monthly_searches": 2900,
+      "tier_label": "Tier 3",
+      "tier_name": "Demolition Services",
+      "status": "near_me",
+      "base_keyword": "demolition contractors"
+    },
+    {
+      "keyword": "tree removal company",
+      "monthly_searches": 2900,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree removal company"
+    },
+    {
+      "keyword": "tree pruning services",
+      "monthly_searches": 2900,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree pruning services"
+    },
+    {
+      "keyword": "tree trimming cost",
+      "monthly_searches": 2900,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree trimming cost"
+    },
+    {
+      "keyword": "storm damage cleanup",
+      "monthly_searches": 2900,
+      "tier_label": "Tier 4",
+      "tier_name": "Emergency & Storm Services",
+      "status": "not_used",
+      "base_keyword": "storm damage cleanup"
+    },
+    {
+      "keyword": "tree trimmers",
+      "monthly_searches": 2900,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree trimmers"
+    },
+    {
+      "keyword": "tree removal estimate",
+      "monthly_searches": 2400,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree removal estimate"
+    },
+    {
+      "keyword": "stump grinding cost",
+      "monthly_searches": 2400,
+      "tier_label": "Tier 2",
+      "tier_name": "Stump Removal & Grinding",
+      "status": "not_used",
+      "base_keyword": "stump grinding cost"
+    },
+    {
+      "keyword": "stump grinding service",
+      "monthly_searches": 2400,
+      "tier_label": "Tier 2",
+      "tier_name": "Stump Removal & Grinding",
+      "status": "not_used",
+      "base_keyword": "stump grinding service"
+    },
+    {
+      "keyword": "demolition company",
+      "monthly_searches": 2400,
+      "tier_label": "Tier 3",
+      "tier_name": "Demolition Services",
+      "status": "not_used",
+      "base_keyword": "demolition company"
+    },
+    {
+      "keyword": "demolition contractor",
+      "monthly_searches": 2400,
+      "tier_label": "Tier 3",
+      "tier_name": "Demolition Services",
+      "status": "not_used",
+      "base_keyword": "demolition contractor"
+    },
+    {
+      "keyword": "tree trimming company",
+      "monthly_searches": 1900,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree trimming company"
+    },
+    {
+      "keyword": "local tree service",
+      "monthly_searches": 1900,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "local",
+      "base_keyword": "tree service"
+    },
+    {
+      "keyword": "tree trimming companies",
+      "monthly_searches": 1900,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree trimming companies"
+    },
+    {
+      "keyword": "tree service companies",
+      "monthly_searches": 1900,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree service companies"
+    },
+    {
+      "keyword": "tree stump grinding",
+      "monthly_searches": 1900,
+      "tier_label": "Tier 2",
+      "tier_name": "Stump Removal & Grinding",
+      "status": "not_used",
+      "base_keyword": "tree stump grinding"
+    },
+    {
+      "keyword": "stump removal service",
+      "monthly_searches": 1900,
+      "tier_label": "Tier 2",
+      "tier_name": "Stump Removal & Grinding",
+      "status": "not_used",
+      "base_keyword": "stump removal service"
+    },
+    {
+      "keyword": "tree cutting near me",
+      "monthly_searches": 1900,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "near_me",
+      "base_keyword": "tree cutting"
+    },
+    {
+      "keyword": "tree companies",
+      "monthly_searches": 1900,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree companies"
+    },
+    {
+      "keyword": "tree cutters",
+      "monthly_searches": 1900,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree cutters"
+    },
+    {
+      "keyword": "tree cutting services",
+      "monthly_searches": 1900,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree cutting services"
+    },
+    {
+      "keyword": "tree debris removal",
+      "monthly_searches": 1900,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree debris removal"
+    },
+    {
+      "keyword": "demolition services near me",
+      "monthly_searches": 1900,
+      "tier_label": "Tier 3",
+      "tier_name": "Demolition Services",
+      "status": "near_me",
+      "base_keyword": "demolition services"
+    },
+    {
+      "keyword": "stump grinding services",
+      "monthly_searches": 1900,
+      "tier_label": "Tier 2",
+      "tier_name": "Stump Removal & Grinding",
+      "status": "not_used",
+      "base_keyword": "stump grinding services"
+    },
+    {
+      "keyword": "demolition near me",
+      "monthly_searches": 1900,
+      "tier_label": "Tier 3",
+      "tier_name": "Demolition Services",
+      "status": "near_me",
+      "base_keyword": "demolition"
+    },
+    {
+      "keyword": "tree care company",
+      "monthly_searches": 1600,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree care company"
+    },
+    {
+      "keyword": "tree trimmer near me",
+      "monthly_searches": 1600,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "near_me",
+      "base_keyword": "tree trimmer"
+    },
+    {
+      "keyword": "emergency tree service near me",
+      "monthly_searches": 1600,
+      "tier_label": "Tier 4",
+      "tier_name": "Emergency & Storm Services",
+      "status": "near_me",
+      "base_keyword": "emergency tree service"
+    },
+    {
+      "keyword": "stump removal services",
+      "monthly_searches": 1600,
+      "tier_label": "Tier 2",
+      "tier_name": "Stump Removal & Grinding",
+      "status": "not_used",
+      "base_keyword": "stump removal services"
+    },
+    {
+      "keyword": "tree cutting cost",
+      "monthly_searches": 1300,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree cutting cost"
+    },
+    {
+      "keyword": "tree pruning company",
+      "monthly_searches": 1300,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree pruning company"
+    },
+    {
+      "keyword": "emergency tree removal service",
+      "monthly_searches": 1300,
+      "tier_label": "Tier 4",
+      "tier_name": "Emergency & Storm Services",
+      "status": "not_used",
+      "base_keyword": "emergency tree removal service"
+    },
+    {
+      "keyword": "tree pruning cost",
+      "monthly_searches": 1000,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree pruning cost"
+    },
+    {
+      "keyword": "tree care companies",
+      "monthly_searches": 1000,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree care companies"
+    },
+    {
+      "keyword": "tree branch removal",
+      "monthly_searches": 1000,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree branch removal"
+    },
+    {
+      "keyword": "tree removal quote",
+      "monthly_searches": 1000,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree removal quote"
+    },
+    {
+      "keyword": "demolition companies",
+      "monthly_searches": 1000,
+      "tier_label": "Tier 3",
+      "tier_name": "Demolition Services",
+      "status": "not_used",
+      "base_keyword": "demolition companies"
+    },
+    {
+      "keyword": "demolition service",
+      "monthly_searches": 880,
+      "tier_label": "Tier 3",
+      "tier_name": "Demolition Services",
+      "status": "not_used",
+      "base_keyword": "demolition service"
+    },
+    {
+      "keyword": "fallen tree removal",
+      "monthly_searches": 880,
+      "tier_label": "Tier 4",
+      "tier_name": "Emergency & Storm Services",
+      "status": "not_used",
+      "base_keyword": "fallen tree removal"
+    },
+    {
+      "keyword": "tree removal contractor",
+      "monthly_searches": 880,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree removal contractor"
+    },
+    {
+      "keyword": "tree removal contractors",
+      "monthly_searches": 880,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree removal contractors"
+    },
+    {
+      "keyword": "local tree cutters",
+      "monthly_searches": 880,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "local",
+      "base_keyword": "tree cutters"
+    },
+    {
+      "keyword": "tree removers",
+      "monthly_searches": 880,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree removers"
+    },
+    {
+      "keyword": "tree pruning companies",
+      "monthly_searches": 880,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree pruning companies"
+    },
+    {
+      "keyword": "tree cutting company",
+      "monthly_searches": 720,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree cutting company"
+    },
+    {
+      "keyword": "tree removal pricing",
+      "monthly_searches": 720,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree removal pricing"
+    },
+    {
+      "keyword": "tree removal price",
+      "monthly_searches": 720,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree removal price"
+    },
+    {
+      "keyword": "tree cutting companies",
+      "monthly_searches": 720,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree cutting companies"
+    },
+    {
+      "keyword": "local tree removal",
+      "monthly_searches": 590,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "local",
+      "base_keyword": "tree removal"
+    },
+    {
+      "keyword": "tree service cost",
+      "monthly_searches": 590,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree service cost"
+    },
+    {
+      "keyword": "tree trimming contractors",
+      "monthly_searches": 590,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree trimming contractors"
+    },
+    {
+      "keyword": "storm damage tree removal",
+      "monthly_searches": 590,
+      "tier_label": "Tier 4",
+      "tier_name": "Emergency & Storm Services",
+      "status": "not_used",
+      "base_keyword": "storm damage tree removal"
+    },
+    {
+      "keyword": "stump removal price",
+      "monthly_searches": 590,
+      "tier_label": "Tier 2",
+      "tier_name": "Stump Removal & Grinding",
+      "status": "not_used",
+      "base_keyword": "stump removal price"
+    },
+    {
+      "keyword": "residential demolition",
+      "monthly_searches": 590,
+      "tier_label": "Tier 3",
+      "tier_name": "Demolition Services",
+      "status": "not_used",
+      "base_keyword": "residential demolition"
+    },
+    {
+      "keyword": "local tree trimming",
+      "monthly_searches": 480,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "local",
+      "base_keyword": "tree trimming"
+    },
+    {
+      "keyword": "stump removal company",
+      "monthly_searches": 480,
+      "tier_label": "Tier 2",
+      "tier_name": "Stump Removal & Grinding",
+      "status": "not_used",
+      "base_keyword": "stump removal company"
+    },
+    {
+      "keyword": "tree cutting estimate",
+      "monthly_searches": 480,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree cutting estimate"
+    },
+    {
+      "keyword": "demolition cost",
+      "monthly_searches": 390,
+      "tier_label": "Tier 3",
+      "tier_name": "Demolition Services",
+      "status": "not_used",
+      "base_keyword": "demolition cost"
+    },
+    {
+      "keyword": "stump grinding company",
+      "monthly_searches": 390,
+      "tier_label": "Tier 2",
+      "tier_name": "Stump Removal & Grinding",
+      "status": "not_used",
+      "base_keyword": "stump grinding company"
+    },
+    {
+      "keyword": "tree cutting contractors",
+      "monthly_searches": 390,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree cutting contractors"
+    },
+    {
+      "keyword": "stump removal companies",
+      "monthly_searches": 390,
+      "tier_label": "Tier 2",
+      "tier_name": "Stump Removal & Grinding",
+      "status": "not_used",
+      "base_keyword": "stump removal companies"
+    },
+    {
+      "keyword": "storm damage tree removal near me",
+      "monthly_searches": 320,
+      "tier_label": "Tier 4",
+      "tier_name": "Emergency & Storm Services",
+      "status": "near_me",
+      "base_keyword": "storm damage tree removal"
+    },
+    {
+      "keyword": "stump grinding contractors",
+      "monthly_searches": 320,
+      "tier_label": "Tier 2",
+      "tier_name": "Stump Removal & Grinding",
+      "status": "not_used",
+      "base_keyword": "stump grinding contractors"
+    },
+    {
+      "keyword": "tree cutter near me",
+      "monthly_searches": 320,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "near_me",
+      "base_keyword": "tree cutter"
+    },
+    {
+      "keyword": "local tree companies",
+      "monthly_searches": 320,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "local",
+      "base_keyword": "tree companies"
+    },
+    {
+      "keyword": "tree remover",
+      "monthly_searches": 320,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree remover"
+    },
+    {
+      "keyword": "tree branch removal service",
+      "monthly_searches": 260,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree branch removal service"
+    },
+    {
+      "keyword": "tree pruning contractors",
+      "monthly_searches": 260,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree pruning contractors"
+    },
+    {
+      "keyword": "local demolition contractors",
+      "monthly_searches": 210,
+      "tier_label": "Tier 3",
+      "tier_name": "Demolition Services",
+      "status": "local",
+      "base_keyword": "demolition contractors"
+    },
+    {
+      "keyword": "stump removers near me",
+      "monthly_searches": 210,
+      "tier_label": "Tier 2",
+      "tier_name": "Stump Removal & Grinding",
+      "status": "near_me",
+      "base_keyword": "stump removers"
+    },
+    {
+      "keyword": "stump removers",
+      "monthly_searches": 210,
+      "tier_label": "Tier 2",
+      "tier_name": "Stump Removal & Grinding",
+      "status": "not_used",
+      "base_keyword": "stump removers"
+    },
+    {
+      "keyword": "local tree trimmers",
+      "monthly_searches": 210,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "local",
+      "base_keyword": "tree trimmers"
+    },
+    {
+      "keyword": "tree service local",
+      "monthly_searches": 210,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree service local"
+    },
+    {
+      "keyword": "local stump removal",
+      "monthly_searches": 170,
+      "tier_label": "Tier 2",
+      "tier_name": "Stump Removal & Grinding",
+      "status": "local",
+      "base_keyword": "stump removal"
+    },
+    {
+      "keyword": "storm damage tree service",
+      "monthly_searches": 170,
+      "tier_label": "Tier 4",
+      "tier_name": "Emergency & Storm Services",
+      "status": "not_used",
+      "base_keyword": "storm damage tree service"
+    },
+    {
+      "keyword": "local tree care",
+      "monthly_searches": 170,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "local",
+      "base_keyword": "tree care"
+    },
+    {
+      "keyword": "storm damage tree removal cost",
+      "monthly_searches": 170,
+      "tier_label": "Tier 4",
+      "tier_name": "Emergency & Storm Services",
+      "status": "not_used",
+      "base_keyword": "storm damage tree removal cost"
+    },
+    {
+      "keyword": "tree trimming price",
+      "monthly_searches": 140,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree trimming price"
+    },
+    {
+      "keyword": "limb removal",
+      "monthly_searches": 140,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "limb removal"
+    },
+    {
+      "keyword": "local stump grinding",
+      "monthly_searches": 140,
+      "tier_label": "Tier 2",
+      "tier_name": "Stump Removal & Grinding",
+      "status": "local",
+      "base_keyword": "stump grinding"
+    },
+    {
+      "keyword": "stump grinding companies",
+      "monthly_searches": 140,
+      "tier_label": "Tier 2",
+      "tier_name": "Stump Removal & Grinding",
+      "status": "not_used",
+      "base_keyword": "stump grinding companies"
+    },
+    {
+      "keyword": "fallen tree removal service",
+      "monthly_searches": 140,
+      "tier_label": "Tier 4",
+      "tier_name": "Emergency & Storm Services",
+      "status": "not_used",
+      "base_keyword": "fallen tree removal service"
+    },
+    {
+      "keyword": "local demolition companies",
+      "monthly_searches": 140,
+      "tier_label": "Tier 3",
+      "tier_name": "Demolition Services",
+      "status": "local",
+      "base_keyword": "demolition companies"
+    },
+    {
+      "keyword": "limb removal near me",
+      "monthly_searches": 110,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "near_me",
+      "base_keyword": "limb removal"
+    },
+    {
+      "keyword": "stump grinding price",
+      "monthly_searches": 110,
+      "tier_label": "Tier 2",
+      "tier_name": "Stump Removal & Grinding",
+      "status": "not_used",
+      "base_keyword": "stump grinding price"
+    },
+    {
+      "keyword": "tree trimming estimate",
+      "monthly_searches": 110,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree trimming estimate"
+    },
+    {
+      "keyword": "bucket truck tree service",
+      "monthly_searches": 110,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "bucket truck tree service"
+    },
+    {
+      "keyword": "tree pruning quote",
+      "monthly_searches": 110,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree pruning quote"
+    },
+    {
+      "keyword": "tree service estimate",
+      "monthly_searches": 90,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree service estimate"
+    },
+    {
+      "keyword": "local stump grinder",
+      "monthly_searches": 90,
+      "tier_label": "Tier 2",
+      "tier_name": "Stump Removal & Grinding",
+      "status": "local",
+      "base_keyword": "stump grinder"
+    },
+    {
+      "keyword": "tree trimming contractor",
+      "monthly_searches": 70,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree trimming contractor"
+    },
+    {
+      "keyword": "stump removal contractor",
+      "monthly_searches": 70,
+      "tier_label": "Tier 2",
+      "tier_name": "Stump Removal & Grinding",
+      "status": "not_used",
+      "base_keyword": "stump removal contractor"
+    },
+    {
+      "keyword": "tree cutting contractor",
+      "monthly_searches": 70,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree cutting contractor"
+    },
+    {
+      "keyword": "tree cutting price",
+      "monthly_searches": 70,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree cutting price"
+    },
+    {
+      "keyword": "structure demolition",
+      "monthly_searches": 70,
+      "tier_label": "Tier 3",
+      "tier_name": "Demolition Services",
+      "status": "not_used",
+      "base_keyword": "structure demolition"
+    },
+    {
+      "keyword": "tree trimming pricing",
+      "monthly_searches": 70,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree trimming pricing"
+    },
+    {
+      "keyword": "tree service contractor",
+      "monthly_searches": 70,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree service contractor"
+    },
+    {
+      "keyword": "demolition estimate",
+      "monthly_searches": 50,
+      "tier_label": "Tier 3",
+      "tier_name": "Demolition Services",
+      "status": "not_used",
+      "base_keyword": "demolition estimate"
+    },
+    {
+      "keyword": "local stump grinders",
+      "monthly_searches": 50,
+      "tier_label": "Tier 2",
+      "tier_name": "Stump Removal & Grinding",
+      "status": "local",
+      "base_keyword": "stump grinders"
+    },
+    {
+      "keyword": "local tree trimmer",
+      "monthly_searches": 50,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "local",
+      "base_keyword": "tree trimmer"
+    },
+    {
+      "keyword": "limb removal service",
+      "monthly_searches": 50,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "limb removal service"
+    },
+    {
+      "keyword": "tree trimming quote",
+      "monthly_searches": 50,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree trimming quote"
+    },
+    {
+      "keyword": "tree service price",
+      "monthly_searches": 50,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree service price"
+    },
+    {
+      "keyword": "demolition quote",
+      "monthly_searches": 50,
+      "tier_label": "Tier 3",
+      "tier_name": "Demolition Services",
+      "status": "not_used",
+      "base_keyword": "demolition quote"
+    },
+    {
+      "keyword": "stump removal contractors",
+      "monthly_searches": 50,
+      "tier_label": "Tier 2",
+      "tier_name": "Stump Removal & Grinding",
+      "status": "not_used",
+      "base_keyword": "stump removal contractors"
+    },
+    {
+      "keyword": "local demolition",
+      "monthly_searches": 50,
+      "tier_label": "Tier 3",
+      "tier_name": "Demolition Services",
+      "status": "local",
+      "base_keyword": "demolition"
+    },
+    {
+      "keyword": "tree pruning estimate",
+      "monthly_searches": 40,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree pruning estimate"
+    },
+    {
+      "keyword": "tree service quote",
+      "monthly_searches": 40,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree service quote"
+    },
+    {
+      "keyword": "tree pruning pricing",
+      "monthly_searches": 40,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree pruning pricing"
+    },
+    {
+      "keyword": "stump removal pricing",
+      "monthly_searches": 40,
+      "tier_label": "Tier 2",
+      "tier_name": "Stump Removal & Grinding",
+      "status": "not_used",
+      "base_keyword": "stump removal pricing"
+    },
+    {
+      "keyword": "tree care quote",
+      "monthly_searches": 40,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree care quote"
+    },
+    {
+      "keyword": "stump grinding pricing",
+      "monthly_searches": 40,
+      "tier_label": "Tier 2",
+      "tier_name": "Stump Removal & Grinding",
+      "status": "not_used",
+      "base_keyword": "stump grinding pricing"
+    },
+    {
+      "keyword": "demolition contractor services",
+      "monthly_searches": 40,
+      "tier_label": "Tier 3",
+      "tier_name": "Demolition Services",
+      "status": "not_used",
+      "base_keyword": "demolition contractor services"
+    },
+    {
+      "keyword": "stump grinding quote",
+      "monthly_searches": 40,
+      "tier_label": "Tier 2",
+      "tier_name": "Stump Removal & Grinding",
+      "status": "not_used",
+      "base_keyword": "stump grinding quote"
+    },
+    {
+      "keyword": "demolition pricing",
+      "monthly_searches": 30,
+      "tier_label": "Tier 3",
+      "tier_name": "Demolition Services",
+      "status": "not_used",
+      "base_keyword": "demolition pricing"
+    },
+    {
+      "keyword": "tree service contractors",
+      "monthly_searches": 30,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree service contractors"
+    },
+    {
+      "keyword": "stump removal quote",
+      "monthly_searches": 30,
+      "tier_label": "Tier 2",
+      "tier_name": "Stump Removal & Grinding",
+      "status": "not_used",
+      "base_keyword": "stump removal quote"
+    },
+    {
+      "keyword": "tree remover near me",
+      "monthly_searches": 20,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "near_me",
+      "base_keyword": "tree remover"
+    },
+    {
+      "keyword": "tree pruning contractor",
+      "monthly_searches": 20,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree pruning contractor"
+    },
+    {
+      "keyword": "limb removal cost",
+      "monthly_searches": 20,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "limb removal cost"
+    },
+    {
+      "keyword": "local tree cutting",
+      "monthly_searches": 20,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "local",
+      "base_keyword": "tree cutting"
+    },
+    {
+      "keyword": "tree removal local",
+      "monthly_searches": 20,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree removal local"
+    },
+    {
+      "keyword": "tree cutting quote",
+      "monthly_searches": 20,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree cutting quote"
+    },
+    {
+      "keyword": "local tree pruning",
+      "monthly_searches": 20,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "local",
+      "base_keyword": "tree pruning"
+    },
+    {
+      "keyword": "tree service pricing",
+      "monthly_searches": 20,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree service pricing"
+    },
+    {
+      "keyword": "near me tree service",
+      "monthly_searches": 20,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "near_me",
+      "base_keyword": "near me tree service"
+    },
+    {
+      "keyword": "bucket truck tree service near me",
+      "monthly_searches": 20,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "near_me",
+      "base_keyword": "bucket truck tree service"
+    },
+    {
+      "keyword": "emergency tree service cost",
+      "monthly_searches": 20,
+      "tier_label": "Tier 4",
+      "tier_name": "Emergency & Storm Services",
+      "status": "not_used",
+      "base_keyword": "emergency tree service cost"
+    },
+    {
+      "keyword": "demolition services cost",
+      "monthly_searches": 20,
+      "tier_label": "Tier 3",
+      "tier_name": "Demolition Services",
+      "status": "not_used",
+      "base_keyword": "demolition services cost"
+    },
+    {
+      "keyword": "local demolition services",
+      "monthly_searches": 20,
+      "tier_label": "Tier 3",
+      "tier_name": "Demolition Services",
+      "status": "local",
+      "base_keyword": "demolition services"
+    },
+    {
+      "keyword": "demolition services pricing",
+      "monthly_searches": 20,
+      "tier_label": "Tier 3",
+      "tier_name": "Demolition Services",
+      "status": "not_used",
+      "base_keyword": "demolition services pricing"
+    },
+    {
+      "keyword": "stump removal estimate",
+      "monthly_searches": 20,
+      "tier_label": "Tier 2",
+      "tier_name": "Stump Removal & Grinding",
+      "status": "not_used",
+      "base_keyword": "stump removal estimate"
+    },
+    {
+      "keyword": "stump grinding estimate",
+      "monthly_searches": 20,
+      "tier_label": "Tier 2",
+      "tier_name": "Stump Removal & Grinding",
+      "status": "not_used",
+      "base_keyword": "stump grinding estimate"
+    },
+    {
+      "keyword": "stump grinding contractor",
+      "monthly_searches": 20,
+      "tier_label": "Tier 2",
+      "tier_name": "Stump Removal & Grinding",
+      "status": "not_used",
+      "base_keyword": "stump grinding contractor"
+    },
+    {
+      "keyword": "tree trimming local",
+      "monthly_searches": 10,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree trimming local"
+    },
+    {
+      "keyword": "tree care contractor",
+      "monthly_searches": 10,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree care contractor"
+    },
+    {
+      "keyword": "tree care cost",
+      "monthly_searches": 10,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree care cost"
+    },
+    {
+      "keyword": "tree pruning price",
+      "monthly_searches": 10,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree & Pruning Services",
+      "status": "not_used",
+      "base_keyword": "tree pruning price"
+    },
+    {
+      "keyword": "demolition services contractor",
+      "monthly_searches": 10,
+      "tier_label": "Tier 3",
+      "tier_name": "Demolition Services",
+      "status": "not_used",
+      "base_keyword": "demolition services contractor"
+    },
+    {
+      "keyword": "local demolition contractor",
+      "monthly_searches": 10,
+      "tier_label": "Tier 3",
+      "tier_name": "Demolition Services",
+      "status": "local",
+      "base_keyword": "demolition contractor"
+    },
+    {
+      "keyword": "demolition services company",
+      "monthly_searches": 10,
+      "tier_label": "Tier 3",
+      "tier_name": "Demolition Services",
+      "status": "not_used",
+      "base_keyword": "demolition services company"
+    },
+    {
+      "keyword": "demolition price",
+      "monthly_searches": 10,
+      "tier_label": "Tier 3",
+      "tier_name": "Demolition Services",
+      "status": "not_used",
+      "base_keyword": "demolition price"
+    },
+    {
+      "keyword": "emergency tree service contractors",
+      "monthly_searches": 10,
+      "tier_label": "Tier 4",
+      "tier_name": "Emergency & Storm Services",
+      "status": "not_used",
+      "base_keyword": "emergency tree service contractors"
+    }
+  ],
+  "full_market_list": [
+    {
+      "city": "Lakeland",
+      "population": 112142,
+      "tier": "Tier 1",
+      "selected": true,
+      "is_hq": false,
+      "rationale": "Largest city in Polk County by population; dominant regional search hub and highest-opportunity market"
+    },
+    {
+      "city": "Poinciana",
+      "population": 72545,
+      "tier": "Tier 1",
+      "selected": true,
+      "is_hq": false,
+      "rationale": "Second-largest market; rapidly growing residential community with high homeowner density and strong tree service demand"
+    },
+    {
+      "city": "Fuller Heights",
+      "population": 60443,
+      "tier": "Tier 1",
+      "selected": true,
+      "is_hq": false,
+      "rationale": "Major suburban community with a strong residential base; high demand for tree and yard services"
+    },
+    {
+      "city": "Winter Haven",
+      "population": 52846,
+      "tier": "Tier 1",
+      "selected": true,
+      "is_hq": true,
+      "rationale": "Durham's headquarters city; highest local relevance, proximity advantage, and brand recognition"
+    },
+    {
+      "city": "Haines City",
+      "population": 31156,
+      "tier": "Tier 2",
+      "selected": true,
+      "is_hq": false,
+      "rationale": "Largest Tier 2 market; strong growth corridor between Winter Haven and Kissimmee along the US-27 corridor"
+    },
+    {
+      "city": "Bartow",
+      "population": 19801,
+      "tier": "Tier 2",
+      "selected": false,
+      "is_hq": false,
+      "rationale": "Polk County seat; established community with strong commercial and residential base; viable Level D expansion market"
+    },
+    {
+      "city": "Auburndale",
+      "population": 17438,
+      "tier": "Tier 2",
+      "selected": false,
+      "is_hq": false,
+      "rationale": "Solid mid-size market between Lakeland and Winter Haven; recommended for next upgrade tier"
+    },
+    {
+      "city": "Lake Wales",
+      "population": 16365,
+      "tier": "Tier 2",
+      "selected": false,
+      "is_hq": false,
+      "rationale": "Established community in southern Polk County; good long-term geographic coverage target"
+    },
+    {
+      "city": "Highland City",
+      "population": 12732,
+      "tier": "Tier 2",
+      "selected": false,
+      "is_hq": false,
+      "rationale": "Suburban community adjacent to Lakeland; partially covered by Lakeland targeting; expansion candidate"
+    },
+    {
+      "city": "Medulla",
+      "population": 11712,
+      "tier": "Tier 2",
+      "selected": false,
+      "is_hq": false,
+      "rationale": "Residential suburb south of Lakeland; lower priority given proximity to existing Lakeland coverage"
+    },
+    {
+      "city": "Lakeland Highlands",
+      "population": 11669,
+      "tier": "Tier 2",
+      "selected": false,
+      "is_hq": false,
+      "rationale": "Affluent suburb with strong tree service demand; largely covered by Lakeland targeting"
+    },
+    {
+      "city": "Davenport",
+      "population": 11660,
+      "tier": "Tier 2",
+      "selected": false,
+      "is_hq": false,
+      "rationale": "Growing community near the I-4 corridor; future expansion target as domain authority grows"
+    },
+    {
+      "city": "Cypress Gardens",
+      "population": 10013,
+      "tier": "Tier 2",
+      "selected": false,
+      "is_hq": false,
+      "rationale": "Near Winter Haven headquarters; partially covered by HQ city targeting"
+    },
+    {
+      "city": "Winston",
+      "population": 9024,
+      "tier": "Tier 3",
+      "selected": false,
+      "is_hq": false,
+      "rationale": "Smaller community; long-term expansion target as domain authority grows"
+    },
+    {
+      "city": "Loughman",
+      "population": 7535,
+      "tier": "Tier 3",
+      "selected": false,
+      "is_hq": false,
+      "rationale": "Smaller community; long-term expansion target as domain authority grows"
+    },
+    {
+      "city": "Willow Oak",
+      "population": 7299,
+      "tier": "Tier 3",
+      "selected": false,
+      "is_hq": false,
+      "rationale": "Smaller community; long-term expansion target as domain authority grows"
+    },
+    {
+      "city": "Inwood",
+      "population": 7098,
+      "tier": "Tier 3",
+      "selected": false,
+      "is_hq": false,
+      "rationale": "Smaller community; long-term expansion target as domain authority grows"
+    },
+    {
+      "city": "Lake Alfred",
+      "population": 6803,
+      "tier": "Tier 3",
+      "selected": false,
+      "is_hq": false,
+      "rationale": "Smaller community; long-term expansion target as domain authority grows"
+    },
+    {
+      "city": "Kathleen",
+      "population": 6527,
+      "tier": "Tier 3",
+      "selected": false,
+      "is_hq": false,
+      "rationale": "Smaller community; long-term expansion target as domain authority grows"
+    },
+    {
+      "city": "Jan Phyl Village",
+      "population": 5798,
+      "tier": "Tier 3",
+      "selected": false,
+      "is_hq": false,
+      "rationale": "Smaller community; long-term expansion target as domain authority grows"
+    },
+    {
+      "city": "Dundee",
+      "population": 5604,
+      "tier": "Tier 3",
+      "selected": false,
+      "is_hq": false,
+      "rationale": "Smaller community; long-term expansion target as domain authority grows"
+    },
+    {
+      "city": "Crystal Lake",
+      "population": 5203,
+      "tier": "Tier 3",
+      "selected": false,
+      "is_hq": false,
+      "rationale": "Smaller community; long-term expansion target as domain authority grows"
+    },
+    {
+      "city": "Fort Meade",
+      "population": 5172,
+      "tier": "Tier 3",
+      "selected": false,
+      "is_hq": false,
+      "rationale": "Smaller community; long-term expansion target as domain authority grows"
+    },
+    {
+      "city": "Fussels Corner",
+      "population": 5113,
+      "tier": "Tier 3",
+      "selected": false,
+      "is_hq": false,
+      "rationale": "Smaller community; long-term expansion target as domain authority grows"
+    },
+    {
+      "city": "Combee Settlement",
+      "population": 4756,
+      "tier": "Tier 3",
+      "selected": false,
+      "is_hq": false,
+      "rationale": "Smaller community; long-term expansion target as domain authority grows"
+    },
+    {
+      "city": "Wahneta",
+      "population": 4464,
+      "tier": "Tier 3",
+      "selected": false,
+      "is_hq": false,
+      "rationale": "Smaller community; long-term expansion target as domain authority grows"
+    },
+    {
+      "city": "Mulberry",
+      "population": 4070,
+      "tier": "Tier 3",
+      "selected": false,
+      "is_hq": false,
+      "rationale": "Smaller community; long-term expansion target as domain authority grows"
+    },
+    {
+      "city": "Alturas",
+      "population": 3866,
+      "tier": "Tier 3",
+      "selected": false,
+      "is_hq": false,
+      "rationale": "Smaller community; long-term expansion target as domain authority grows"
+    },
+    {
+      "city": "Eagle Lake",
+      "population": 3382,
+      "tier": "Tier 3",
+      "selected": false,
+      "is_hq": false,
+      "rationale": "Smaller community; long-term expansion target as domain authority grows"
+    },
+    {
+      "city": "Frostproof",
+      "population": 3289,
+      "tier": "Tier 3",
+      "selected": false,
+      "is_hq": false,
+      "rationale": "Smaller community; long-term expansion target as domain authority grows"
+    },
+    {
+      "city": "Polk City",
+      "population": 2884,
+      "tier": "Tier 3",
+      "selected": false,
+      "is_hq": false,
+      "rationale": "Smaller community; long-term expansion target as domain authority grows"
+    },
+    {
+      "city": "Grenelefe",
+      "population": 2341,
+      "tier": "Tier 3",
+      "selected": false,
+      "is_hq": false,
+      "rationale": "Smaller community; long-term expansion target as domain authority grows"
+    },
+    {
+      "city": "Crooked Lake Park",
+      "population": 2151,
+      "tier": "Tier 3",
+      "selected": false,
+      "is_hq": false,
+      "rationale": "Smaller community; long-term expansion target as domain authority grows"
+    },
+    {
+      "city": "Lake Hamilton",
+      "population": 1767,
+      "tier": "Tier 3",
+      "selected": false,
+      "is_hq": false,
+      "rationale": "Smaller community; long-term expansion target as domain authority grows"
+    },
+    {
+      "city": "Babson Park",
+      "population": 1156,
+      "tier": "Tier 3",
+      "selected": false,
+      "is_hq": false,
+      "rationale": "Smaller community; long-term expansion target as domain authority grows"
+    }
+  ],
+  "not_used_groups": [
+    {
+      "reason": "Exceeds current plan capacity",
+      "description": "These high-value keywords were identified and validated but could not be included within the 40-combination limit of the Level C plan. They are the first candidates for inclusion upon upgrading.",
+      "keywords": [
+        {
+          "Keyword": "tree removal service",
+          "monthly_searches": 14800
+        },
+        {
+          "Keyword": "tree cutting service",
+          "monthly_searches": 12100
+        },
+        {
+          "Keyword": "tree trimmer",
+          "monthly_searches": 12100
+        },
+        {
+          "Keyword": "tree care",
+          "monthly_searches": 12100
+        },
+        {
+          "Keyword": "tree care services",
+          "monthly_searches": 9900
+        },
+        {
+          "Keyword": "tree trimming service",
+          "monthly_searches": 9900
+        },
+        {
+          "Keyword": "tree removal cost",
+          "monthly_searches": 8100
+        },
+        {
+          "Keyword": "tree removal companies",
+          "monthly_searches": 6600
+        },
+        {
+          "Keyword": "tree removal services",
+          "monthly_searches": 5400
+        },
+        {
+          "Keyword": "tree trimming services",
+          "monthly_searches": 5400
+        },
+        {
+          "Keyword": "tree cutter",
+          "monthly_searches": 4400
+        },
+        {
+          "Keyword": "tree cutting",
+          "monthly_searches": 4400
+        }
+      ]
+    },
+    {
+      "reason": "Demolition service \u2014 reserved for targeted expansion",
+      "description": "These demolition-related keywords represent a distinct service vertical. Due to the 40-combination limit, they are reserved for a dedicated expansion tier where they can receive proper coverage.",
+      "keywords": [
+        {
+          "Keyword": "demolition contractors",
+          "monthly_searches": 6600
+        },
+        {
+          "Keyword": "demolition services",
+          "monthly_searches": 2900
+        },
+        {
+          "Keyword": "demolition contractor",
+          "monthly_searches": 2400
+        },
+        {
+          "Keyword": "demolition company",
+          "monthly_searches": 2400
+        },
+        {
+          "Keyword": "demolition companies",
+          "monthly_searches": 1000
+        },
+        {
+          "Keyword": "demolition service",
+          "monthly_searches": 880
+        },
+        {
+          "Keyword": "residential demolition",
+          "monthly_searches": 590
+        },
+        {
+          "Keyword": "demolition cost",
+          "monthly_searches": 390
+        }
+      ]
+    },
+    {
+      "reason": "Emergency & storm services \u2014 reserved for targeted expansion",
+      "description": "Emergency and storm-related keywords carry high urgency and conversion potential. These are best served with dedicated content and are prioritized for the next plan upgrade.",
+      "keywords": [
+        {
+          "Keyword": "emergency tree removal",
+          "monthly_searches": 8100
+        },
+        {
+          "Keyword": "emergency tree service",
+          "monthly_searches": 4400
+        },
+        {
+          "Keyword": "storm damage cleanup",
+          "monthly_searches": 2900
+        },
+        {
+          "Keyword": "emergency tree removal service",
+          "monthly_searches": 1300
+        },
+        {
+          "Keyword": "fallen tree removal",
+          "monthly_searches": 880
+        },
+        {
+          "Keyword": "storm damage tree removal",
+          "monthly_searches": 590
+        }
+      ]
+    }
+  ],
+  "additional_opportunities": [
+    {
+      "plan": "Level D",
+      "combinations": 50,
+      "price": 1600,
+      "additional_combinations": 10,
+      "headline": "Expand Into Demolition & Emergency Services",
+      "description": "Upgrading to Level D adds 10 additional keyword-city combinations, allowing us to introduce dedicated coverage for Durham's demolition services and emergency tree removal \u2014 two high-intent service categories currently outside the plan's capacity.",
+      "keywords": [
+        {
+          "keyword": "demolition contractors",
+          "monthly_searches": 6600
+        },
+        {
+          "keyword": "demolition services",
+          "monthly_searches": 2900
+        },
+        {
+          "keyword": "emergency tree removal",
+          "monthly_searches": 8100
+        },
+        {
+          "keyword": "emergency tree service",
+          "monthly_searches": 4400
+        }
+      ]
+    },
+    {
+      "plan": "Level E",
+      "combinations": 60,
+      "price": 2000,
+      "additional_combinations": 20,
+      "headline": "Add a Sixth Market & Deeper Keyword Coverage",
+      "description": "Level E opens the door to a sixth target market \u2014 Bartow (pop. 19,801), the Polk County seat \u2014 while also adding deeper coverage for stump grinding and tree cutting service keywords across all existing markets.",
+      "keywords": [
+        {
+          "keyword": "stump grinder",
+          "monthly_searches": 40500
+        },
+        {
+          "keyword": "tree cutting service",
+          "monthly_searches": 12100
+        },
+        {
+          "keyword": "tree stump removal",
+          "monthly_searches": 14800
+        },
+        {
+          "keyword": "Bartow, FL",
+          "monthly_searches": null,
+          "new_market": true
+        }
+      ]
+    },
+    {
+      "plan": "Level F",
+      "combinations": 90,
+      "price": 3000,
+      "additional_combinations": 50,
+      "headline": "Full Polk County Domination",
+      "description": "Level F provides the coverage needed to dominate all major Polk County markets. With 90 total combinations, we can target up to 9 cities with a full suite of keywords \u2014 achieving comprehensive visibility across the entire county for every core service Durham's offers.",
+      "keywords": [
+        {
+          "keyword": "Auburndale, FL",
+          "monthly_searches": null,
+          "new_market": true
+        },
+        {
+          "keyword": "Lake Wales, FL",
+          "monthly_searches": null,
+          "new_market": true
+        },
+        {
+          "keyword": "Highland City, FL",
+          "monthly_searches": null,
+          "new_market": true
+        },
+        {
+          "keyword": "tree removal companies",
+          "monthly_searches": 6600
+        },
+        {
+          "keyword": "tree trimmers",
+          "monthly_searches": 12100
+        },
+        {
+          "keyword": "tree removers",
+          "monthly_searches": 880
+        }
+      ]
+    }
+  ]
+}
