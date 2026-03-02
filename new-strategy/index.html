@@ -196,48 +196,15 @@
     /* ---- PLAN SELECTOR ---- */
     .plan-booster { position: relative; margin-bottom: 12px; }
     .plan-booster input[type="radio"] { position: absolute; opacity: 0; width: 0; height: 0; }
-    .plan-booster-tile {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 16px 24px;
-      border: 1.5px solid #E6E6E6;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: border-color 0.15s, background 0.15s, box-shadow 0.15s;
-      background: #fafbfd;
-    }
-    .plan-booster input:checked + .plan-booster-tile {
+    .plan-booster input:checked + .plan-tile {
       border-color: #3F80EA;
       background: rgba(63,128,234,0.06);
       box-shadow: 0 0 0 3px rgba(63,128,234,0.1);
     }
-    .plan-booster-tile:hover { border-color: #3F80EA; }
-    .plan-booster-left { display: flex; align-items: center; gap: 16px; }
-    .plan-booster-star { font-size: 1.4rem; font-weight: 900; color: #334168; line-height: 1; }
-    .plan-booster input:checked + .plan-booster-tile .plan-booster-star { color: #3F80EA; }
-    .plan-booster-name {
-      font-size: 0.875rem;
-      font-weight: 800;
-      color: #334168;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-    .plan-booster input:checked + .plan-booster-tile .plan-booster-name { color: #3F80EA; }
-    .plan-booster-combos {
-      font-size: 9px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      color: #3F80EA;
-      margin-top: 2px;
-    }
-    .plan-booster-price {
-      font-size: 1rem;
-      font-weight: 700;
-      color: #334168;
-    }
-    .plan-booster input:checked + .plan-booster-tile .plan-booster-price { color: #3F80EA; }
+    .plan-booster input:checked + .plan-tile .plan-level { color: #3F80EA; }
+    .plan-booster input:checked + .plan-tile .plan-combos { color: #3F80EA; }
+    .plan-booster input:checked + .plan-tile .plan-price { color: #3F80EA; }
+    .plan-booster .plan-tile { width: 100%; box-sizing: border-box; padding: 16px 24px; }
     .plan-divider {
       display: flex;
       align-items: center;
@@ -561,15 +528,10 @@
       <!-- SEO Booster & Reputation -->
       <div class="plan-booster">
         <input type="radio" name="plan" id="planBooster" value="Booster" />
-        <label class="plan-booster-tile" for="planBooster">
-          <div class="plan-booster-left">
-            <div class="plan-booster-star">&#9733;</div>
-            <div>
-              <div class="plan-booster-name">SEO Booster &amp; Reputation</div>
-              <div class="plan-booster-combos">10 Keywords</div>
-            </div>
-          </div>
-          <div class="plan-booster-price">$399/mo</div>
+        <label class="plan-tile" for="planBooster">
+          <span class="plan-level" style="font-size:0.85rem; letter-spacing:0.3px;">SEO Booster &amp; Reputation</span>
+          <span class="plan-combos">10 keywords</span>
+          <span class="plan-price">$399/mo</span>
         </label>
       </div>
 
