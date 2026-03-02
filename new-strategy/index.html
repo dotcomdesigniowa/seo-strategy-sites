@@ -3,399 +3,402 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SEO Strategy Intake | Dotcom Design</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <title>New SEO Strategy | Dotcom Design</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <style>
+    /* ============================================
+       DOTCOM DESIGN — SEO STRATEGY INTAKE FORM
+       Matches strategy report design system exactly
+       Brand: #3F80EA (Blue), #334168 (Dark), #EB0052 (Red)
+       ============================================ */
+
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; line-height: 1.7; }
 
-    body {
-      font-family: 'Montserrat', sans-serif;
-      background: #f0f2f5;
-      color: #1a2035;
-      min-height: 100vh;
-    }
-
-    /* Header */
+    /* ---- HEADER ---- */
     .site-header {
-      background: #1a2035;
-      padding: 0 2rem;
-      height: 64px;
+      background: #334168;
+      padding: 16px 40px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+    }
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
-    .header-logo {
+    .logo-lockup {
       display: flex;
       align-items: center;
-      gap: 0.75rem;
+      gap: 12px;
     }
     .logo-box {
-      width: 36px;
-      height: 36px;
+      width: 38px;
+      height: 38px;
       background: #fff;
       border-radius: 6px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-weight: 800;
-      font-size: 0.85rem;
-      color: #1a2035;
-      letter-spacing: -0.05em;
     }
+    .logo-box svg { width: 24px; height: 24px; }
     .logo-name {
       color: #fff;
-      font-weight: 700;
-      font-size: 1rem;
-      letter-spacing: 0.08em;
+      font-weight: 800;
+      font-size: 15px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
     }
     .header-tagline {
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 2px;
       color: #3F80EA;
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.15em;
+      text-transform: uppercase;
     }
 
-    /* Hero */
+    /* ---- HERO ---- */
     .hero {
-      background: linear-gradient(135deg, #1a2035 0%, #243050 100%);
-      padding: 3rem 2rem 2.5rem;
+      background: linear-gradient(135deg, #334168 0%, #1a2540 100%);
+      padding: 80px 40px;
       text-align: center;
+      color: #fff;
     }
+    .hero-inner { max-width: 800px; margin: 0 auto; }
     .hero-label {
-      color: #3F80EA;
-      font-size: 0.7rem;
+      font-size: 11px;
       font-weight: 700;
-      letter-spacing: 0.2em;
+      letter-spacing: 3px;
+      color: #3F80EA;
       text-transform: uppercase;
-      margin-bottom: 0.75rem;
+      margin-bottom: 16px;
     }
     .hero-title {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 900;
+      text-transform: uppercase;
       color: #fff;
-      font-size: clamp(1.6rem, 4vw, 2.4rem);
-      font-weight: 800;
-      letter-spacing: 0.02em;
-      margin-bottom: 0.5rem;
+      line-height: 1.1;
+      margin-bottom: 20px;
     }
     .hero-subtitle {
-      color: rgba(255,255,255,0.6);
-      font-size: 0.9rem;
-      font-weight: 500;
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.75);
     }
 
-    /* Main */
-    .main {
-      max-width: 760px;
+    /* ---- MAIN CONTENT ---- */
+    .strategy-section {
+      padding: 72px 0;
+    }
+    .section-inner {
+      max-width: 860px;
       margin: 0 auto;
-      padding: 2.5rem 1.5rem 4rem;
+      padding: 0 40px;
     }
+    .section-header {
+      margin-bottom: 40px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .section-number {
+      font-size: 3rem;
+      font-weight: 900;
+      color: #E6E6E6;
+      line-height: 1;
+      min-width: 60px;
+    }
+    .section-header h2 {
+      font-size: 1.8rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      color: #334168;
+    }
+    .prose {
+      font-size: 1rem;
+      color: #35373C;
+      margin-bottom: 32px;
+      line-height: 1.8;
+    }
+    .alt-bg { background: #f7f8fc; }
 
-    /* Card */
-    .card {
+    /* ---- FORM CARDS ---- */
+    .form-card {
       background: #fff;
       border-radius: 12px;
-      padding: 2rem;
-      margin-bottom: 1.5rem;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      padding: 28px 32px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+      border-top: 4px solid #E6E6E6;
+      margin-bottom: 24px;
     }
-    .card-title {
-      font-size: 0.65rem;
-      font-weight: 700;
-      letter-spacing: 0.18em;
+    .form-card.primary { border-top-color: #3F80EA; }
+    .form-card.secondary { border-top-color: #334168; }
+
+    .card-label {
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 2px;
       text-transform: uppercase;
       color: #3F80EA;
-      margin-bottom: 1.25rem;
-      padding-bottom: 0.75rem;
-      border-bottom: 1px solid #e8ecf4;
+      margin-bottom: 4px;
+    }
+    .card-label.dark { color: #334168; }
+    .card-title {
+      font-size: 1rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      color: #334168;
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #E6E6E6;
     }
 
-    /* API key card */
-    .api-card {
-      background: #1a2035;
-      border-radius: 12px;
-      padding: 1.5rem 2rem;
-      margin-bottom: 1.5rem;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.15);
-    }
-    .api-card .card-title {
-      color: #3F80EA;
-      border-bottom-color: rgba(255,255,255,0.1);
-    }
-    .api-card label {
-      color: rgba(255,255,255,0.8);
-    }
-    .api-card input {
-      background: rgba(255,255,255,0.08);
-      border-color: rgba(255,255,255,0.15);
-      color: #fff;
-    }
-    .api-card input:focus {
-      border-color: #3F80EA;
-      background: rgba(255,255,255,0.12);
-    }
-    .api-card input::placeholder { color: rgba(255,255,255,0.3); }
-    .api-note {
-      font-size: 0.72rem;
-      color: rgba(255,255,255,0.45);
-      font-weight: 500;
-      margin-top: 0.5rem;
-      line-height: 1.5;
-    }
-    .api-note a { color: #3F80EA; text-decoration: none; }
-    .api-note a:hover { text-decoration: underline; }
-
-    /* Form fields */
-    .field {
-      margin-bottom: 1.25rem;
-    }
+    /* ---- FORM FIELDS ---- */
+    .field { margin-bottom: 20px; }
     .field:last-child { margin-bottom: 0; }
 
-    label {
+    .field-label {
       display: block;
-      font-size: 0.75rem;
+      font-size: 10px;
       font-weight: 700;
-      letter-spacing: 0.06em;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
-      color: #1a2035;
-      margin-bottom: 0.4rem;
+      color: #334168;
+      margin-bottom: 6px;
     }
-    label .required {
-      color: #3F80EA;
-      margin-left: 2px;
-    }
-    label .hint {
+    .field-label .req { color: #3F80EA; margin-left: 2px; }
+    .field-hint {
+      font-size: 10px;
       font-weight: 500;
-      font-size: 0.7rem;
       letter-spacing: 0;
       text-transform: none;
-      color: #7a8aaa;
-      margin-left: 6px;
+      color: #999;
+      margin-left: 8px;
     }
 
     input[type="text"],
     input[type="url"],
-    input[type="password"],
     select,
     textarea {
       width: 100%;
-      padding: 0.65rem 0.85rem;
-      border: 1.5px solid #dde3ef;
+      padding: 10px 14px;
+      border: 1.5px solid #E6E6E6;
       border-radius: 8px;
       font-family: 'Montserrat', sans-serif;
       font-size: 0.875rem;
-      color: #1a2035;
+      font-weight: 500;
+      color: #35373C;
       background: #fafbfd;
       transition: border-color 0.15s, box-shadow 0.15s;
       outline: none;
     }
     input:focus, select:focus, textarea:focus {
       border-color: #3F80EA;
-      box-shadow: 0 0 0 3px rgba(63,128,234,0.12);
+      box-shadow: 0 0 0 3px rgba(63,128,234,0.1);
       background: #fff;
     }
-    textarea { resize: vertical; min-height: 80px; }
-    select { cursor: pointer; }
+    input::placeholder, textarea::placeholder { color: #bbb; font-weight: 400; }
+    textarea { resize: vertical; min-height: 88px; line-height: 1.6; }
+    select { cursor: pointer; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23334168' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px; }
 
-    /* Plan selector */
+    /* ---- TWO COLUMN GRID ---- */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    /* ---- PLAN SELECTOR ---- */
     .plan-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 0.75rem;
+      gap: 12px;
+      margin-top: 4px;
     }
-    @media (max-width: 600px) {
-      .plan-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-    .plan-option {
-      position: relative;
-    }
+    .plan-option { position: relative; }
     .plan-option input[type="radio"] {
       position: absolute;
       opacity: 0;
       width: 0;
       height: 0;
     }
-    .plan-label {
+    .plan-tile {
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 0.85rem 0.5rem;
-      border: 1.5px solid #dde3ef;
-      border-radius: 8px;
+      padding: 16px 8px 14px;
+      border: 1.5px solid #E6E6E6;
+      border-radius: 10px;
       cursor: pointer;
-      transition: border-color 0.15s, background 0.15s;
+      transition: border-color 0.15s, background 0.15s, box-shadow 0.15s;
       background: #fafbfd;
+      text-align: center;
     }
-    .plan-option input:checked + .plan-label {
+    .plan-option input:checked + .plan-tile {
       border-color: #3F80EA;
-      background: #eef4fd;
+      background: rgba(63,128,234,0.06);
+      box-shadow: 0 0 0 3px rgba(63,128,234,0.1);
     }
+    .plan-tile:hover { border-color: #3F80EA; }
     .plan-level {
-      font-size: 1.1rem;
-      font-weight: 800;
-      color: #1a2035;
-      letter-spacing: 0.05em;
+      font-size: 1.4rem;
+      font-weight: 900;
+      color: #334168;
+      line-height: 1;
     }
+    .plan-option input:checked + .plan-tile .plan-level { color: #3F80EA; }
     .plan-combos {
-      font-size: 0.65rem;
+      font-size: 9px;
       font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
       color: #3F80EA;
-      letter-spacing: 0.05em;
-      margin-top: 2px;
+      margin-top: 4px;
     }
     .plan-price {
-      font-size: 0.7rem;
+      font-size: 10px;
       font-weight: 600;
-      color: #7a8aaa;
+      color: #999;
       margin-top: 3px;
     }
 
-    /* Two-col layout */
-    .two-col {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
+    /* ---- SUBMIT BUTTON ---- */
+    .submit-wrap {
+      padding: 40px 0 0;
+      text-align: center;
     }
-    @media (max-width: 560px) {
-      .two-col { grid-template-columns: 1fr; }
-    }
-
-    /* Launch button */
-    .launch-btn {
-      width: 100%;
-      padding: 1.1rem;
+    .build-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 18px 48px;
       background: #3F80EA;
       color: #fff;
       border: none;
       border-radius: 10px;
       font-family: 'Montserrat', sans-serif;
-      font-size: 0.95rem;
-      font-weight: 800;
-      letter-spacing: 0.1em;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 2px;
       text-transform: uppercase;
       cursor: pointer;
-      transition: background 0.15s, transform 0.1s;
-      margin-top: 0.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.6rem;
+      transition: background 0.15s, transform 0.1s, box-shadow 0.15s;
+      box-shadow: 0 4px 20px rgba(63,128,234,0.35);
+      min-width: 320px;
     }
-    .launch-btn:hover { background: #2d6fd4; }
-    .launch-btn:active { transform: scale(0.99); }
-    .launch-btn:disabled {
-      background: #9ab5e0;
+    .build-btn:hover {
+      background: #2d6fd4;
+      box-shadow: 0 6px 24px rgba(63,128,234,0.45);
+    }
+    .build-btn:active { transform: scale(0.99); }
+    .build-btn:disabled {
+      background: #a0b8e8;
+      box-shadow: none;
       cursor: not-allowed;
       transform: none;
     }
-    .launch-btn .btn-icon { font-size: 1.1rem; }
+    .btn-arrow { font-size: 1rem; }
 
-    /* Also keep copy option */
-    .copy-option {
-      text-align: center;
-      margin-top: 1rem;
+    .manual-link-wrap {
+      margin-top: 14px;
     }
-    .copy-link {
-      font-size: 0.75rem;
+    .manual-link {
+      font-size: 11px;
       font-weight: 600;
-      color: #7a8aaa;
+      letter-spacing: 0.5px;
+      color: #999;
       cursor: pointer;
-      text-decoration: underline;
       background: none;
       border: none;
       font-family: 'Montserrat', sans-serif;
-      letter-spacing: 0.04em;
+      text-decoration: underline;
+      text-underline-offset: 2px;
     }
-    .copy-link:hover { color: #3F80EA; }
+    .manual-link:hover { color: #3F80EA; }
 
-    /* Status message */
+    /* ---- STATUS MESSAGES ---- */
     .status-msg {
       display: none;
-      margin-top: 1rem;
-      padding: 1rem 1.25rem;
+      margin-top: 20px;
+      padding: 16px 20px;
       border-radius: 8px;
-      font-size: 0.82rem;
+      font-size: 0.85rem;
       font-weight: 600;
-      line-height: 1.5;
+      line-height: 1.6;
     }
     .status-msg.loading {
       display: block;
-      background: #eef4fd;
-      color: #1a2035;
+      background: rgba(63,128,234,0.08);
+      color: #334168;
       border-left: 3px solid #3F80EA;
     }
     .status-msg.success {
       display: block;
-      background: #e8f8f0;
-      color: #1a5c3a;
-      border-left: 3px solid #2ecc71;
+      background: rgba(34,197,94,0.08);
+      color: #166534;
+      border-left: 3px solid #22c55e;
     }
     .status-msg.error {
       display: block;
-      background: #fdf0f0;
+      background: rgba(235,0,82,0.06);
       color: #7a1a1a;
-      border-left: 3px solid #e74c3c;
+      border-left: 3px solid #EB0052;
     }
-    .status-msg a {
-      color: #3F80EA;
-      font-weight: 700;
-    }
+    .status-msg a { color: #3F80EA; font-weight: 700; }
 
-    /* Prompt preview */
-    .prompt-preview {
-      display: none;
-      margin-top: 1.5rem;
-    }
+    /* ---- PROMPT PREVIEW (manual fallback) ---- */
+    .prompt-preview { display: none; margin-top: 24px; }
     .prompt-preview.visible { display: block; }
-    .preview-card {
-      background: #1a2035;
-      border-radius: 10px;
-      padding: 1.25rem 1.5rem;
+    .preview-inner {
+      background: #334168;
+      border-radius: 12px;
+      padding: 24px 28px;
       position: relative;
     }
     .preview-label {
-      font-size: 0.65rem;
+      font-size: 10px;
       font-weight: 700;
-      letter-spacing: 0.15em;
+      letter-spacing: 2px;
       color: #3F80EA;
       text-transform: uppercase;
-      margin-bottom: 0.75rem;
+      margin-bottom: 12px;
     }
     .preview-text {
       font-family: 'Courier New', monospace;
       font-size: 0.82rem;
-      color: #e8ecf4;
-      line-height: 1.6;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.7;
       white-space: pre-wrap;
       word-break: break-word;
     }
     .copy-btn {
       position: absolute;
-      top: 1rem;
-      right: 1rem;
+      top: 20px;
+      right: 20px;
       background: #3F80EA;
       color: #fff;
       border: none;
       border-radius: 6px;
-      padding: 0.4rem 0.85rem;
+      padding: 6px 14px;
       font-family: 'Montserrat', sans-serif;
-      font-size: 0.7rem;
+      font-size: 10px;
       font-weight: 700;
-      letter-spacing: 0.08em;
+      letter-spacing: 1px;
+      text-transform: uppercase;
       cursor: pointer;
       transition: background 0.15s;
     }
     .copy-btn:hover { background: #2d6fd4; }
-    .copy-btn.copied { background: #2ecc71; }
+    .copy-btn.copied { background: #22c55e; }
 
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.72rem;
-      color: #9aa3b8;
-      font-weight: 500;
-    }
-
-    /* Spinner */
+    /* ---- SPINNER ---- */
     @keyframes spin { to { transform: rotate(360deg); } }
     .spinner {
       width: 16px;
@@ -404,179 +407,265 @@
       border-top-color: #fff;
       border-radius: 50%;
       animation: spin 0.7s linear infinite;
-      display: inline-block;
+      flex-shrink: 0;
+    }
+
+    /* ---- FOOTER ---- */
+    footer {
+      background: #334168;
+      text-align: center;
+      padding: 24px 40px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+    }
+
+    /* ---- RESPONSIVE ---- */
+    @media (max-width: 720px) {
+      .site-header { padding: 14px 20px; }
+      .hero { padding: 60px 24px; }
+      .strategy-section { padding: 48px 0; }
+      .section-inner { padding: 0 20px; }
+      .form-card { padding: 20px 20px; }
+      .two-col { grid-template-columns: 1fr; gap: 16px; }
+      .plan-grid { grid-template-columns: repeat(4, 1fr); gap: 8px; }
+      .plan-tile { padding: 12px 4px 10px; }
+      .plan-level { font-size: 1.1rem; }
+      .plan-combos { font-size: 8px; }
+      .plan-price { font-size: 9px; }
+      .build-btn { min-width: 0; width: 100%; padding: 16px 24px; }
+      .header-tagline { display: none; }
+    }
+    @media (max-width: 480px) {
+      .plan-grid { grid-template-columns: repeat(4, 1fr); }
     }
   </style>
 </head>
 <body>
 
+<!-- HEADER -->
 <header class="site-header">
-  <div class="header-logo">
-    <div class="logo-box">DD</div>
-    <span class="logo-name">DOTCOM DESIGN</span>
+  <div class="header-inner">
+    <div class="logo-lockup">
+      <div class="logo-box">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="9" height="9" rx="1.5" fill="#334168"/>
+          <rect x="13" y="2" width="9" height="9" rx="1.5" fill="#334168"/>
+          <rect x="2" y="13" width="9" height="9" rx="1.5" fill="#334168"/>
+          <rect x="13" y="13" width="9" height="9" rx="1.5" fill="#3F80EA"/>
+        </svg>
+      </div>
+      <span class="logo-name">Dotcom Design</span>
+    </div>
+    <span class="header-tagline">We Grow Your Business</span>
   </div>
-  <span class="header-tagline">WE GROW YOUR BUSINESS</span>
 </header>
 
+<!-- HERO -->
 <div class="hero">
-  <p class="hero-label">Internal Tool</p>
-  <h1 class="hero-title">SEO Strategy Intake</h1>
-  <p class="hero-subtitle">Fill out the form below to automatically launch the strategy workflow</p>
+  <div class="hero-inner">
+    <p class="hero-label">Internal Tool</p>
+    <h1 class="hero-title">New SEO Strategy</h1>
+    <p class="hero-subtitle">Fill out the client details below to build and launch a strategy</p>
+  </div>
 </div>
 
-<div class="main">
+<!-- SECTION 01: CLIENT INFORMATION -->
+<section class="strategy-section">
+  <div class="section-inner">
 
-  <!-- API key is pre-configured and hidden -->
-
-  <!-- Client Info -->
-  <div class="card">
-    <div class="card-title">Client Information</div>
-
-    <div class="field">
-      <label>Client Website URL <span class="required">*</span></label>
-      <input type="url" id="clientUrl" placeholder="https://durhamstreeservice.com" />
+    <div class="section-header">
+      <span class="section-number">01</span>
+      <h2>Client Information</h2>
     </div>
 
-    <div class="two-col">
+    <p class="prose">Enter the client's website and business details. This information will be used to research the market, pull keyword data, and build the full strategy report.</p>
+
+    <div class="form-card primary">
+      <div class="card-label">Required</div>
+      <div class="card-title">Business Details</div>
+
       <div class="field">
-        <label>Client Business Name <span class="required">*</span><span class="hint">As it should appear in the report</span></label>
-        <input type="text" id="clientName" placeholder="Durham's Tree Service" />
+        <label class="field-label" for="clientUrl">Client Website URL <span class="req">*</span></label>
+        <input type="url" id="clientUrl" placeholder="https://durhamstreeservice.com" autocomplete="off" />
       </div>
+
+      <div class="two-col">
+        <div class="field">
+          <label class="field-label" for="clientName">Business Name <span class="req">*</span><span class="field-hint">As it appears in the report</span></label>
+          <input type="text" id="clientName" placeholder="Durham's Tree Service" />
+        </div>
+        <div class="field">
+          <label class="field-label" for="industry">Industry / Service Type <span class="req">*</span></label>
+          <input type="text" id="industry" placeholder="Tree Service" />
+        </div>
+      </div>
+
+      <div class="two-col">
+        <div class="field">
+          <label class="field-label" for="hqCity">HQ City &amp; State <span class="req">*</span></label>
+          <input type="text" id="hqCity" placeholder="Winter Haven, FL" />
+        </div>
+        <div class="field">
+          <label class="field-label" for="serviceRegion">Service Region <span class="req">*</span><span class="field-hint">County or metro area</span></label>
+          <input type="text" id="serviceRegion" placeholder="Polk County, FL" />
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 02: PLAN LEVEL -->
+<section class="strategy-section alt-bg">
+  <div class="section-inner">
+
+    <div class="section-header">
+      <span class="section-number">02</span>
+      <h2>Plan Level</h2>
+    </div>
+
+    <p class="prose">Select the client's current plan level. This determines the number of keyword-city combinations included in the strategy.</p>
+
+    <div class="form-card secondary">
+      <div class="card-label dark">Select One</div>
+      <div class="card-title">Keyword Combinations</div>
+
+      <div class="plan-grid">
+        <div class="plan-option">
+          <input type="radio" name="plan" id="planA" value="A" />
+          <label class="plan-tile" for="planA">
+            <span class="plan-level">A</span>
+            <span class="plan-combos">20 combos</span>
+            <span class="plan-price">$600/mo</span>
+          </label>
+        </div>
+        <div class="plan-option">
+          <input type="radio" name="plan" id="planB" value="B" />
+          <label class="plan-tile" for="planB">
+            <span class="plan-level">B</span>
+            <span class="plan-combos">30 combos</span>
+            <span class="plan-price">$900/mo</span>
+          </label>
+        </div>
+        <div class="plan-option">
+          <input type="radio" name="plan" id="planC" value="C" checked />
+          <label class="plan-tile" for="planC">
+            <span class="plan-level">C</span>
+            <span class="plan-combos">40 combos</span>
+            <span class="plan-price">$1,200/mo</span>
+          </label>
+        </div>
+        <div class="plan-option">
+          <input type="radio" name="plan" id="planD" value="D" />
+          <label class="plan-tile" for="planD">
+            <span class="plan-level">D</span>
+            <span class="plan-combos">50 combos</span>
+            <span class="plan-price">$1,600/mo</span>
+          </label>
+        </div>
+        <div class="plan-option">
+          <input type="radio" name="plan" id="planE" value="E" />
+          <label class="plan-tile" for="planE">
+            <span class="plan-level">E</span>
+            <span class="plan-combos">60 combos</span>
+            <span class="plan-price">$2,000/mo</span>
+          </label>
+        </div>
+        <div class="plan-option">
+          <input type="radio" name="plan" id="planF" value="F" />
+          <label class="plan-tile" for="planF">
+            <span class="plan-level">F</span>
+            <span class="plan-combos">90 combos</span>
+            <span class="plan-price">$3,000/mo</span>
+          </label>
+        </div>
+        <div class="plan-option">
+          <input type="radio" name="plan" id="planG" value="G" />
+          <label class="plan-tile" for="planG">
+            <span class="plan-level">G</span>
+            <span class="plan-combos">120 combos</span>
+            <span class="plan-price">$4,000/mo</span>
+          </label>
+        </div>
+        <div class="plan-option">
+          <input type="radio" name="plan" id="planH" value="H" />
+          <label class="plan-tile" for="planH">
+            <span class="plan-level">H</span>
+            <span class="plan-combos">150 combos</span>
+            <span class="plan-price">$5,000/mo</span>
+          </label>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 03: OPTIONAL NOTES -->
+<section class="strategy-section">
+  <div class="section-inner">
+
+    <div class="section-header">
+      <span class="section-number">03</span>
+      <h2>Notes &amp; Exclusions</h2>
+    </div>
+
+    <p class="prose">Optionally specify any keywords or markets to exclude, or add special instructions for this client. Leave blank if none apply.</p>
+
+    <div class="form-card">
+      <div class="card-label">Optional</div>
+      <div class="card-title">Special Instructions</div>
+
+      <div class="two-col">
+        <div class="field">
+          <label class="field-label" for="excludeKeywords">Keywords to Exclude<span class="field-hint">Comma-separated</span></label>
+          <input type="text" id="excludeKeywords" placeholder="e.g. stump grinding, land clearing" />
+        </div>
+        <div class="field">
+          <label class="field-label" for="excludeCities">Cities to Exclude<span class="field-hint">Comma-separated</span></label>
+          <input type="text" id="excludeCities" placeholder="e.g. Tampa, Orlando" />
+        </div>
+      </div>
+
       <div class="field">
-        <label>Industry / Service Type <span class="required">*</span></label>
-        <input type="text" id="industry" placeholder="Tree Service" />
+        <label class="field-label" for="focusNotes">Focus Notes</label>
+        <textarea id="focusNotes" placeholder="e.g. Focus only on residential, not commercial. Client does not offer stump grinding."></textarea>
+      </div>
+
+    </div>
+
+    <!-- SUBMIT -->
+    <div class="submit-wrap">
+      <button class="build-btn" id="buildBtn" onclick="buildStrategy()">
+        <span class="btn-arrow">&#9654;</span>
+        Build SEO Strategy
+      </button>
+      <div class="manual-link-wrap">
+        <button class="manual-link" onclick="showPromptOnly()">Just show me the prompt to copy manually</button>
       </div>
     </div>
 
-    <div class="two-col">
-      <div class="field">
-        <label>HQ City &amp; State <span class="required">*</span></label>
-        <input type="text" id="hqCity" placeholder="Winter Haven, FL" />
-      </div>
-      <div class="field">
-        <label>Service Region / County <span class="required">*</span><span class="hint">County or metro area</span></label>
-        <input type="text" id="serviceRegion" placeholder="Polk County, FL" />
+    <!-- Status -->
+    <div class="status-msg" id="statusMsg"></div>
+
+    <!-- Prompt preview (manual fallback) -->
+    <div class="prompt-preview" id="promptPreview">
+      <div class="preview-inner">
+        <div class="preview-label">Prompt — Paste into a new Manus task</div>
+        <pre class="preview-text" id="previewText"></pre>
+        <button class="copy-btn" id="copyBtn" onclick="copyPrompt()">Copy</button>
       </div>
     </div>
+
   </div>
+</section>
 
-  <!-- Plan Level -->
-  <div class="card">
-    <div class="card-title">Plan Level <span style="color:#e74c3c">*</span></div>
-    <div class="plan-grid">
-      <div class="plan-option">
-        <input type="radio" name="plan" id="planA" value="A" />
-        <label class="plan-label" for="planA">
-          <span class="plan-level">A</span>
-          <span class="plan-combos">20 combos</span>
-          <span class="plan-price">$600/mo</span>
-        </label>
-      </div>
-      <div class="plan-option">
-        <input type="radio" name="plan" id="planB" value="B" />
-        <label class="plan-label" for="planB">
-          <span class="plan-level">B</span>
-          <span class="plan-combos">30 combos</span>
-          <span class="plan-price">$900/mo</span>
-        </label>
-      </div>
-      <div class="plan-option">
-        <input type="radio" name="plan" id="planC" value="C" checked />
-        <label class="plan-label" for="planC">
-          <span class="plan-level">C</span>
-          <span class="plan-combos">40 combos</span>
-          <span class="plan-price">$1,200/mo</span>
-        </label>
-      </div>
-      <div class="plan-option">
-        <input type="radio" name="plan" id="planD" value="D" />
-        <label class="plan-label" for="planD">
-          <span class="plan-level">D</span>
-          <span class="plan-combos">50 combos</span>
-          <span class="plan-price">$1,600/mo</span>
-        </label>
-      </div>
-      <div class="plan-option">
-        <input type="radio" name="plan" id="planE" value="E" />
-        <label class="plan-label" for="planE">
-          <span class="plan-level">E</span>
-          <span class="plan-combos">60 combos</span>
-          <span class="plan-price">$2,000/mo</span>
-        </label>
-      </div>
-      <div class="plan-option">
-        <input type="radio" name="plan" id="planF" value="F" />
-        <label class="plan-label" for="planF">
-          <span class="plan-level">F</span>
-          <span class="plan-combos">90 combos</span>
-          <span class="plan-price">$3,000/mo</span>
-        </label>
-      </div>
-      <div class="plan-option">
-        <input type="radio" name="plan" id="planG" value="G" />
-        <label class="plan-label" for="planG">
-          <span class="plan-level">G</span>
-          <span class="plan-combos">120 combos</span>
-          <span class="plan-price">$4,000/mo</span>
-        </label>
-      </div>
-      <div class="plan-option">
-        <input type="radio" name="plan" id="planH" value="H" />
-        <label class="plan-label" for="planH">
-          <span class="plan-level">H</span>
-          <span class="plan-combos">150 combos</span>
-          <span class="plan-price">$5,000/mo</span>
-        </label>
-      </div>
-    </div>
-  </div>
-
-  <!-- Optional Notes -->
-  <div class="card">
-    <div class="card-title">Optional Notes &amp; Exclusions</div>
-
-    <div class="field">
-      <label>Keywords to Exclude <span class="hint">Comma-separated, e.g. "tree stump, land clearing"</span></label>
-      <input type="text" id="excludeKeywords" placeholder="Leave blank if none" />
-    </div>
-
-    <div class="field">
-      <label>Cities / Markets to Exclude <span class="hint">Comma-separated</span></label>
-      <input type="text" id="excludeCities" placeholder="Leave blank if none" />
-    </div>
-
-    <div class="field">
-      <label>Focus Notes <span class="hint">Any special instructions for this client</span></label>
-      <textarea id="focusNotes" placeholder="e.g. Focus only on residential, not commercial. Client does not offer stump grinding."></textarea>
-    </div>
-  </div>
-
-  <!-- Launch Button -->
-  <button class="launch-btn" id="launchBtn" onclick="launchStrategy()">
-    <span class="btn-icon">&#9654;</span>
-    Launch SEO Strategy in Manus
-  </button>
-
-  <div class="copy-option">
-    <button class="copy-link" onclick="showPromptOnly()">Just show me the prompt to copy manually</button>
-  </div>
-
-  <!-- Status message -->
-  <div class="status-msg" id="statusMsg"></div>
-
-  <!-- Prompt preview (manual copy fallback) -->
-  <div class="prompt-preview" id="promptPreview">
-    <div class="preview-card">
-      <div class="preview-label">Prompt — Copy and paste into a new Manus task</div>
-      <pre class="preview-text" id="previewText"></pre>
-      <button class="copy-btn" id="copyBtn" onclick="copyPrompt()">COPY</button>
-    </div>
-  </div>
-
-</div>
-
+<!-- FOOTER -->
 <footer>
-  Dotcom Design Internal Tool &mdash; SEO Strategy Workflow v2.0
+  Dotcom Design &mdash; SEO Strategy Workflow v2.0 &mdash; Internal Use Only
 </footer>
 
 <script>
@@ -592,8 +681,6 @@
     G: { combos: 120, price: '$4,000/mo' },
     H: { combos: 150, price: '$5,000/mo' }
   };
-
-  // API key is pre-configured
 
   function buildPrompt() {
     const url = document.getElementById('clientUrl').value.trim();
@@ -622,32 +709,34 @@
   }
 
   function validateForm() {
-    const url = document.getElementById('clientUrl').value.trim();
-    const name = document.getElementById('clientName').value.trim();
-    const industry = document.getElementById('industry').value.trim();
-    const hqCity = document.getElementById('hqCity').value.trim();
-    const region = document.getElementById('serviceRegion').value.trim();
-    if (!url || !name || !industry || !hqCity || !region) {
-      alert('Please fill in all required fields (marked with a blue dot).');
-      return false;
+    const fields = [
+      { id: 'clientUrl', label: 'Client Website URL' },
+      { id: 'clientName', label: 'Business Name' },
+      { id: 'industry', label: 'Industry / Service Type' },
+      { id: 'hqCity', label: 'HQ City & State' },
+      { id: 'serviceRegion', label: 'Service Region' },
+    ];
+    for (const f of fields) {
+      if (!document.getElementById(f.id).value.trim()) {
+        alert(`Please fill in: ${f.label}`);
+        document.getElementById(f.id).focus();
+        return false;
+      }
     }
     return true;
   }
 
-  async function launchStrategy() {
+  async function buildStrategy() {
     if (!validateForm()) return;
 
-    const apiKey = MANUS_API_KEY;
-
     const prompt = buildPrompt();
-    const btn = document.getElementById('launchBtn');
+    const btn = document.getElementById('buildBtn');
     const statusMsg = document.getElementById('statusMsg');
 
-    // Show loading state
     btn.disabled = true;
     btn.innerHTML = '<span class="spinner"></span> Launching in Manus...';
     statusMsg.className = 'status-msg loading';
-    statusMsg.textContent = 'Creating task in Manus... This may take a few seconds.';
+    statusMsg.textContent = 'Creating task in Manus — this may take a few seconds...';
 
     try {
       const response = await fetch('https://api.manus.ai/v1/tasks', {
@@ -670,29 +759,28 @@
       const data = await response.json();
       const taskUrl = data.task_url || 'https://manus.im';
 
-      // Success
       btn.disabled = false;
-      btn.innerHTML = '<span class="btn-icon">&#10003;</span> Task Launched!';
-      btn.style.background = '#2ecc71';
+      btn.innerHTML = '&#10003; Strategy Launched!';
+      btn.style.background = '#22c55e';
+      btn.style.boxShadow = '0 4px 20px rgba(34,197,94,0.35)';
 
       statusMsg.className = 'status-msg success';
-      statusMsg.innerHTML = `Task created successfully! <a href="${taskUrl}" target="_blank">Open in Manus &rarr;</a><br><span style="font-weight:500;color:#2a7a50">Manus is now running the full SEO strategy workflow. The finished site will be live at seo-strategy.dotcomdesign.com when complete.</span>`;
+      statusMsg.innerHTML = `Task created successfully! <a href="${taskUrl}" target="_blank">Open in Manus &rarr;</a><br><span style="font-weight:500">Manus is now running the full SEO strategy workflow. The finished site will be live at seo-strategy.dotcomdesign.com when complete.</span>`;
 
-      // Reset button after 5 seconds
       setTimeout(() => {
-        btn.innerHTML = '<span class="btn-icon">&#9654;</span> Launch SEO Strategy in Manus';
+        btn.innerHTML = '<span class="btn-arrow">&#9654;</span> Build SEO Strategy';
         btn.style.background = '';
+        btn.style.boxShadow = '';
         btn.disabled = false;
-      }, 5000);
+      }, 6000);
 
     } catch (err) {
       btn.disabled = false;
-      btn.innerHTML = '<span class="btn-icon">&#9654;</span> Launch SEO Strategy in Manus';
+      btn.innerHTML = '<span class="btn-arrow">&#9654;</span> Build SEO Strategy';
 
       statusMsg.className = 'status-msg error';
-      statusMsg.innerHTML = `Could not connect to Manus: <strong>${err.message}</strong><br>Check your API key or use the manual copy option below.`;
+      statusMsg.innerHTML = `Could not connect to Manus: <strong>${err.message}</strong><br>Use the manual option below to copy the prompt.`;
 
-      // Show prompt as fallback
       showPromptOnly();
     }
   }
@@ -710,10 +798,10 @@
     const text = document.getElementById('previewText').textContent;
     navigator.clipboard.writeText(text).then(() => {
       const btn = document.getElementById('copyBtn');
-      btn.textContent = 'COPIED!';
+      btn.textContent = 'Copied!';
       btn.classList.add('copied');
       setTimeout(() => {
-        btn.textContent = 'COPY';
+        btn.textContent = 'Copy';
         btn.classList.remove('copied');
       }, 2000);
     });
