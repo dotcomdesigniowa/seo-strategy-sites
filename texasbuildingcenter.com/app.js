@@ -1,8 +1,14 @@
 // ============================================================
 // SEO Strategy Website — App.js
 // Texas Building Center | Dotcom Design
-// Permanent rules: no em-dashes, full client name always,
-// keyword quality gate, service-line coverage enforced
+// Strategy: Go Wide — 5 keywords across 10 confirmed service
+// area cities = 40 combinations
+// Keyword selection rules applied:
+//   - One slot per variant family
+//   - Always highest-volume family member
+//   - No near me variants in matrix
+//   - 500/mo minimum volume floor
+//   - Dominant keyword (barndominium 246K) anchors Go Wide
 // ============================================================
 
 const STRATEGY = {
@@ -15,134 +21,132 @@ const STRATEGY = {
   plan_price: 499,
   total_combinations: 40,
   total_keywords_researched: 149,
+  strategy_type: "Go Wide",
+  strategy_note: "barndominium (246,000/mo) has 30x the volume of the next keyword family — Go Wide trigger confirmed. The dominant keyword is spread across 10 confirmed service area cities. Secondary keywords are distributed across the top 7-8 cities.",
   selected_keywords: [
+    "barndominium",
+    "barndominium plans",
     "barndominium builders",
-    "barndominium contractor",
-    "barndominium construction",
-    "barndo",
-    "barndo builders",
-    "barndo floor plans",
-    "custom home builder",
-    "custom home builders near me",
-    "metal buildings",
-    "pole barn builder"
+    "custom home builders",
+    "metal buildings"
   ],
-  num_selected_keywords: 10,
-  num_target_markets: 4,
+  num_selected_keywords: 5,
+  num_target_markets: 10,
 
   // ---- KEYWORD TABLE DATA ----
+  // All 149 researched keywords with variant family grouping applied
   keyword_table: [
-    { keyword: "barndominium",                      monthly_searches: 246000, tier: "Tier 1", status: "not_used",  note: "" },
-    { keyword: "barndominium plans",                monthly_searches:  60500, tier: "Tier 1", status: "not_used",  note: "" },
-    { keyword: "barndominium kits",                 monthly_searches:  40500, tier: "Tier 1", status: "not_used",  note: "" },
-    { keyword: "barndominium floor plans",          monthly_searches:  33100, tier: "Tier 1", status: "not_used",  note: "" },
-    { keyword: "pole barn",                         monthly_searches:  33100, tier: "Tier 4", status: "not_used",  note: "" },
-    { keyword: "metal buildings",                   monthly_searches:  33100, tier: "Tier 4", status: "selected",  note: "" },
-    { keyword: "barndo",                            monthly_searches:  14800, tier: "Tier 2", status: "selected",  note: "" },
-    { keyword: "custom home builder",               monthly_searches:  14800, tier: "Tier 3", status: "selected",  note: "" },
-    { keyword: "barndominium homes",                monthly_searches:  12100, tier: "Tier 1", status: "not_used",  note: "" },
-    { keyword: "metal building",                    monthly_searches:  12100, tier: "Tier 4", status: "not_used",  note: "" },
-    { keyword: "custom home builders",              monthly_searches:  12100, tier: "Tier 3", status: "not_used",  note: "" },
+    // FAMILY A: Barndominium (general) — SELECT: barndominium (246K)
+    { keyword: "barndominium",                      monthly_searches: 246000, tier: "Tier 1", status: "selected",  note: "" },
+    { keyword: "barndominium homes",                monthly_searches:  12100, tier: "Tier 1", status: "not_used",  note: "Same family as 'barndominium'; lower volume variant." },
+    { keyword: "barndominium kits",                 monthly_searches:  40500, tier: "Tier 1", status: "not_used",  note: "Product/kit term; informational intent, not hire-intent." },
+    { keyword: "barndominium with shop",            monthly_searches:   1000, tier: "Tier 1", status: "not_used",  note: "Informational/design research term, not hire-intent." },
+    { keyword: "building a barndominium",           monthly_searches:   1900, tier: "Tier 1", status: "not_used",  note: "Informational/DIY research intent." },
+    { keyword: "build a barndominium",              monthly_searches:   1000, tier: "Tier 1", status: "not_used",  note: "Informational/DIY research intent." },
+    { keyword: "barndominium shell",                monthly_searches:    720, tier: "Tier 1", status: "not_used",  note: "Product/kit term; not hire-intent." },
+    { keyword: "turnkey barndominium",              monthly_searches:    390, tier: "Tier 1", status: "not_used",  note: "Low volume; informational intent." },
+    { keyword: "barndominium packages",             monthly_searches:    390, tier: "Tier 1", status: "not_used",  note: "Product/kit term; not hire-intent." },
+    { keyword: "barndominium kit",                  monthly_searches:   4400, tier: "Tier 1", status: "not_used",  note: "Product/kit term; not hire-intent." },
+    { keyword: "barndominium price",                monthly_searches:    590, tier: "Tier 1", status: "not_used",  note: "Informational/cost research intent." },
+    { keyword: "barndominium cost",                 monthly_searches:   5400, tier: "Tier 1", status: "not_used",  note: "Informational/cost research intent." },
+    { keyword: "barndominium construction cost",    monthly_searches:    260, tier: "Tier 1", status: "not_used",  note: "Informational/cost research intent." },
+
+    // FAMILY B: Barndominium Plans — SELECT: barndominium plans (60.5K)
+    { keyword: "barndominium plans",                monthly_searches:  60500, tier: "Tier 1", status: "selected",  note: "" },
+    { keyword: "barndominium floor plans",          monthly_searches:  33100, tier: "Tier 1", status: "not_used",  note: "Same family as 'barndominium plans'; lower volume variant." },
+    { keyword: "barndo plans",                      monthly_searches:   4400, tier: "Tier 2", status: "not_used",  note: "Same family as 'barndominium plans'; lower volume short-form variant." },
+    { keyword: "barndo floor plans",                monthly_searches:   2400, tier: "Tier 2", status: "not_used",  note: "Same family as 'barndominium plans'; lower volume short-form variant." },
+
+    // FAMILY C: Barndominium Builders — SELECT: barndominium builders (8.1K)
     { keyword: "barndominium builders",             monthly_searches:   8100, tier: "Tier 1", status: "selected",  note: "" },
-    { keyword: "barndominium builders near me",     monthly_searches:   8100, tier: "Tier 1", status: "near_me",   note: "Equivalent to 'barndominium builders'" },
-    { keyword: "custom homes",                      monthly_searches:   8100, tier: "Tier 3", status: "not_used",  note: "" },
-    { keyword: "pole barns",                        monthly_searches:   8100, tier: "Tier 4", status: "not_used",  note: "" },
-    { keyword: "barndo plans",                      monthly_searches:   4400, tier: "Tier 2", status: "not_used",  note: "" },
-    { keyword: "shop house",                        monthly_searches:   4400, tier: "Tier 4", status: "not_used",  note: "" },
-    { keyword: "barndominium kit",                  monthly_searches:   4400, tier: "Tier 1", status: "not_used",  note: "" },
-    { keyword: "metal shop",                        monthly_searches:   4400, tier: "Tier 4", status: "not_used",  note: "" },
-    { keyword: "custom home builders near me",      monthly_searches:   9900, tier: "Tier 3", status: "selected",  note: "" },
-    { keyword: "custom home builder near me",       monthly_searches:   4400, tier: "Tier 3", status: "near_me",   note: "Equivalent to 'custom home builder'" },
-    { keyword: "barndo floor plans",                monthly_searches:   2400, tier: "Tier 2", status: "selected",  note: "" },
-    { keyword: "post frame construction",           monthly_searches:   3600, tier: "Tier 4", status: "not_used",  note: "" },
-    { keyword: "post frame building",               monthly_searches:   3600, tier: "Tier 4", status: "not_used",  note: "" },
-    { keyword: "pole barn construction",            monthly_searches:   2900, tier: "Tier 4", status: "not_used",  note: "" },
-    { keyword: "pole barn houses",                  monthly_searches:   2900, tier: "Tier 4", status: "not_used",  note: "" },
-    { keyword: "pole barn homes",                   monthly_searches:   2900, tier: "Tier 4", status: "not_used",  note: "" },
-    { keyword: "metal building near me",            monthly_searches:   2900, tier: "Tier 4", status: "near_me",   note: "Equivalent to 'metal building'" },
-    { keyword: "pole barn builders",                monthly_searches:   2400, tier: "Tier 4", status: "not_used",  note: "" },
-    { keyword: "barndo homes",                      monthly_searches:    880, tier: "Tier 2", status: "not_used",  note: "" },
-    { keyword: "barndo builders",                   monthly_searches:    880, tier: "Tier 2", status: "selected",  note: "" },
-    { keyword: "barndominium contractors",          monthly_searches:    880, tier: "Tier 1", status: "not_used",  note: "" },
-    { keyword: "barndominium builder near me",      monthly_searches:    880, tier: "Tier 1", status: "near_me",   note: "Equivalent to 'barndominium builders'" },
-    { keyword: "custom barndominium builders",      monthly_searches:    140, tier: "Tier 1", status: "not_used",  note: "" },
-    { keyword: "residential contractor",            monthly_searches:   1900, tier: "Tier 3", status: "not_used",  note: "" },
-    { keyword: "metal building cost",               monthly_searches:   1900, tier: "Tier 4", status: "not_used",  note: "" },
-    { keyword: "building a barndominium",           monthly_searches:   1900, tier: "Tier 1", status: "not_used",  note: "" },
-    { keyword: "pole barn near me",                 monthly_searches:   1600, tier: "Tier 4", status: "near_me",   note: "Equivalent to 'pole barn builder'" },
-    { keyword: "steel building contractors",        monthly_searches:   1600, tier: "Tier 4", status: "not_used",  note: "" },
-    { keyword: "metal building contractors",        monthly_searches:   1600, tier: "Tier 4", status: "not_used",  note: "" },
-    { keyword: "post frame buildings",              monthly_searches:   1600, tier: "Tier 4", status: "not_used",  note: "" },
-    { keyword: "custom home construction",          monthly_searches:   1600, tier: "Tier 3", status: "not_used",  note: "" },
-    { keyword: "barndominium near me",              monthly_searches:   1600, tier: "Tier 1", status: "near_me",   note: "Equivalent to 'barndominium builders'" },
-    { keyword: "agricultural building",             monthly_searches:   1600, tier: "Tier 4", status: "not_used",  note: "" },
-    { keyword: "barndominium company",              monthly_searches:   1300, tier: "Tier 1", status: "not_used",  note: "" },
-    { keyword: "commercial metal buildings",        monthly_searches:   1300, tier: "Tier 4", status: "not_used",  note: "" },
-    { keyword: "pole barn builder",                 monthly_searches:   1300, tier: "Tier 4", status: "selected",  note: "" },
-    { keyword: "barndominium with shop",            monthly_searches:   1000, tier: "Tier 1", status: "not_used",  note: "" },
-    { keyword: "barndominium builder",              monthly_searches:   1000, tier: "Tier 1", status: "not_used",  note: "" },
-    { keyword: "build a barndominium",              monthly_searches:   1000, tier: "Tier 1", status: "not_used",  note: "" },
-    { keyword: "barndo builders near me",           monthly_searches:   1000, tier: "Tier 2", status: "near_me",   note: "Equivalent to 'barndo builders'" },
-    { keyword: "barndominium contractor",           monthly_searches:    210, tier: "Tier 1", status: "selected",  note: "" },
-    { keyword: "barndominium construction",         monthly_searches:    590, tier: "Tier 1", status: "selected",  note: "" },
-    { keyword: "barndominium contractors",          monthly_searches:    880, tier: "Tier 1", status: "not_used",  note: "" },
-    { keyword: "barndominium contractor near me",   monthly_searches:    210, tier: "Tier 1", status: "near_me",   note: "Equivalent to 'barndominium contractor'" },
-    { keyword: "barndominium construction near me", monthly_searches:     20, tier: "Tier 1", status: "near_me",   note: "Equivalent to 'barndominium construction'" },
-    { keyword: "pole barn house",                   monthly_searches:   5400, tier: "Tier 4", status: "not_used",  note: "" },
-    { keyword: "steel buildings",                   monthly_searches:  14800, tier: "Tier 4", status: "not_used",  note: "" },
-    { keyword: "barndominium cost",                 monthly_searches:   5400, tier: "Tier 1", status: "not_used",  note: "" },
-    { keyword: "barndo cost",                       monthly_searches:    390, tier: "Tier 2", status: "not_used",  note: "" },
-    { keyword: "custom home contractor",            monthly_searches:    880, tier: "Tier 3", status: "not_used",  note: "" },
-    { keyword: "barndominium shell",                monthly_searches:    720, tier: "Tier 1", status: "not_used",  note: "" },
-    { keyword: "barndominium companies",            monthly_searches:    590, tier: "Tier 1", status: "not_used",  note: "" },
-    { keyword: "barndominium price",                monthly_searches:    590, tier: "Tier 1", status: "not_used",  note: "" },
-    { keyword: "barndominium construction cost",    monthly_searches:    260, tier: "Tier 1", status: "not_used",  note: "" },
-    { keyword: "barndominium packages",             monthly_searches:    390, tier: "Tier 1", status: "not_used",  note: "" },
-    { keyword: "turnkey barndominium",              monthly_searches:    390, tier: "Tier 1", status: "not_used",  note: "" },
-    { keyword: "barndominium home builders",        monthly_searches:    170, tier: "Tier 1", status: "not_used",  note: "" },
-    { keyword: "barndominium general contractor",   monthly_searches:     30, tier: "Tier 1", status: "not_used",  note: "" },
+    { keyword: "barndominium builder",              monthly_searches:   1000, tier: "Tier 1", status: "not_used",  note: "Same family as 'barndominium builders'; lower volume singular variant." },
+    { keyword: "barndominium contractors",          monthly_searches:    880, tier: "Tier 1", status: "not_used",  note: "Same family as 'barndominium builders'; lower volume variant." },
+    { keyword: "barndominium contractor",           monthly_searches:    210, tier: "Tier 1", status: "not_used",  note: "Same family as 'barndominium builders'; below 500/mo volume floor." },
+    { keyword: "barndominium construction",         monthly_searches:    590, tier: "Tier 1", status: "not_used",  note: "Same family as 'barndominium builders'; lower volume variant." },
+    { keyword: "barndominium company",              monthly_searches:   1300, tier: "Tier 1", status: "not_used",  note: "Same family as 'barndominium builders'; lower volume variant." },
+    { keyword: "barndominium companies",            monthly_searches:    590, tier: "Tier 1", status: "not_used",  note: "Same family as 'barndominium builders'; lower volume variant." },
+    { keyword: "barndominium home builders",        monthly_searches:    170, tier: "Tier 1", status: "not_used",  note: "Same family as 'barndominium builders'; below 500/mo volume floor." },
+    { keyword: "barndominium general contractor",   monthly_searches:     30, tier: "Tier 1", status: "not_used",  note: "Same family as 'barndominium builders'; below 500/mo volume floor." },
+    { keyword: "custom barndominium builders",      monthly_searches:    140, tier: "Tier 1", status: "not_used",  note: "Same family as 'barndominium builders'; below 500/mo volume floor." },
+    // Barndo short-form builder variants — all same family as 'barndominium builders'
+    { keyword: "barndo",                            monthly_searches:  14800, tier: "Tier 2", status: "not_used",  note: "Short-form variant of 'barndominium'; same searcher intent. 'barndominium' (246K) is the correct family representative." },
+    { keyword: "barndo builders",                   monthly_searches:    880, tier: "Tier 2", status: "not_used",  note: "Same family as 'barndominium builders'; lower volume short-form variant." },
+    { keyword: "barndo homes",                      monthly_searches:    880, tier: "Tier 2", status: "not_used",  note: "Same family as 'barndominium'; lower volume short-form variant." },
+    { keyword: "barndo cost",                       monthly_searches:    390, tier: "Tier 2", status: "not_used",  note: "Same family as 'barndominium cost'; below 500/mo volume floor." },
+
+    // FAMILY D: Custom Home Builders — SELECT: custom home builders (12.1K)
+    { keyword: "custom home builders",              monthly_searches:  12100, tier: "Tier 3", status: "selected",  note: "" },
+    { keyword: "custom home builder",               monthly_searches:  14800, tier: "Tier 3", status: "not_used",  note: "Same family as 'custom home builders'; singular variant. Plural preferred per skill rule." },
+    { keyword: "custom homes",                      monthly_searches:   8100, tier: "Tier 3", status: "not_used",  note: "Same family as 'custom home builders'; broader/lower-intent variant." },
+    { keyword: "custom home construction",          monthly_searches:   1600, tier: "Tier 3", status: "not_used",  note: "Same family as 'custom home builders'; lower volume variant." },
+    { keyword: "custom home contractor",            monthly_searches:    880, tier: "Tier 3", status: "not_used",  note: "Same family as 'custom home builders'; lower volume variant." },
+    { keyword: "residential contractor",            monthly_searches:   1900, tier: "Tier 3", status: "not_used",  note: "Too broad; not specific to custom home building." },
+
+    // FAMILY E: Metal Buildings — SELECT: metal buildings (33.1K)
+    { keyword: "metal buildings",                   monthly_searches:  33100, tier: "Tier 4", status: "selected",  note: "" },
+    { keyword: "metal building",                    monthly_searches:  12100, tier: "Tier 4", status: "not_used",  note: "Same family as 'metal buildings'; lower volume singular variant." },
+    { keyword: "steel buildings",                   monthly_searches:  14800, tier: "Tier 4", status: "not_used",  note: "Same family as 'metal buildings'; lower volume variant." },
+    { keyword: "commercial metal buildings",        monthly_searches:   1300, tier: "Tier 4", status: "not_used",  note: "Same family as 'metal buildings'; lower volume variant." },
+    { keyword: "metal building contractors",        monthly_searches:   1600, tier: "Tier 4", status: "not_used",  note: "Same family as 'metal buildings'; lower volume variant." },
+    { keyword: "steel building contractors",        monthly_searches:   1600, tier: "Tier 4", status: "not_used",  note: "Same family as 'metal buildings'; lower volume variant." },
+    { keyword: "metal building cost",               monthly_searches:   1900, tier: "Tier 4", status: "not_used",  note: "Informational/cost research intent." },
+
+    // OUT OF SCOPE: Pole Barn — not a listed TBC service
+    { keyword: "pole barn",                         monthly_searches:  33100, tier: "Tier 4", status: "not_used",  note: "Out of scope: Texas Building Center does not list pole barn construction as a service." },
+    { keyword: "pole barns",                        monthly_searches:   8100, tier: "Tier 4", status: "not_used",  note: "Out of scope: not a listed TBC service." },
+    { keyword: "pole barn house",                   monthly_searches:   5400, tier: "Tier 4", status: "not_used",  note: "Out of scope: not a listed TBC service." },
+    { keyword: "pole barn builder",                 monthly_searches:   1300, tier: "Tier 4", status: "not_used",  note: "Out of scope: not a listed TBC service." },
+    { keyword: "pole barn builders",                monthly_searches:   2400, tier: "Tier 4", status: "not_used",  note: "Out of scope: not a listed TBC service." },
+    { keyword: "pole barn construction",            monthly_searches:   2900, tier: "Tier 4", status: "not_used",  note: "Out of scope: not a listed TBC service." },
+    { keyword: "pole barn homes",                   monthly_searches:   2900, tier: "Tier 4", status: "not_used",  note: "Out of scope: not a listed TBC service." },
+    { keyword: "pole barn houses",                  monthly_searches:   2900, tier: "Tier 4", status: "not_used",  note: "Out of scope: not a listed TBC service." },
+    { keyword: "post frame construction",           monthly_searches:   3600, tier: "Tier 4", status: "not_used",  note: "Out of scope: not a listed TBC service." },
+    { keyword: "post frame building",               monthly_searches:   3600, tier: "Tier 4", status: "not_used",  note: "Out of scope: not a listed TBC service." },
+    { keyword: "post frame buildings",              monthly_searches:   1600, tier: "Tier 4", status: "not_used",  note: "Out of scope: not a listed TBC service." },
+    { keyword: "agricultural building",             monthly_searches:   1600, tier: "Tier 4", status: "not_used",  note: "Out of scope: not a listed TBC service." },
+    { keyword: "shop house",                        monthly_searches:   4400, tier: "Tier 4", status: "not_used",  note: "Out of scope: not a listed TBC service." },
+    { keyword: "metal shop",                        monthly_searches:   4400, tier: "Tier 4", status: "not_used",  note: "Out of scope: not a listed TBC service." },
+
+    // NEAR ME VARIANTS — never in matrix; city name in URL slug serves same function
+    { keyword: "barndominium builders near me",     monthly_searches:   8100, tier: "Tier 1", status: "near_me",   note: "City-name targeting in the URL slug and page title serves the same geographic function as 'near me'." },
+    { keyword: "barndominium builder near me",      monthly_searches:    880, tier: "Tier 1", status: "near_me",   note: "City-name targeting in the URL slug and page title serves the same geographic function as 'near me'." },
+    { keyword: "barndominium contractor near me",   monthly_searches:    210, tier: "Tier 1", status: "near_me",   note: "City-name targeting in the URL slug and page title serves the same geographic function as 'near me'." },
+    { keyword: "barndominium construction near me", monthly_searches:     20, tier: "Tier 1", status: "near_me",   note: "City-name targeting in the URL slug and page title serves the same geographic function as 'near me'." },
+    { keyword: "barndominium near me",              monthly_searches:   1600, tier: "Tier 1", status: "near_me",   note: "City-name targeting in the URL slug and page title serves the same geographic function as 'near me'." },
+    { keyword: "barndo builders near me",           monthly_searches:   1000, tier: "Tier 2", status: "near_me",   note: "City-name targeting in the URL slug and page title serves the same geographic function as 'near me'." },
+    { keyword: "custom home builders near me",      monthly_searches:   9900, tier: "Tier 3", status: "near_me",   note: "City-name targeting in the URL slug and page title serves the same geographic function as 'near me'." },
+    { keyword: "custom home builder near me",       monthly_searches:   4400, tier: "Tier 3", status: "near_me",   note: "City-name targeting in the URL slug and page title serves the same geographic function as 'near me'." },
+    { keyword: "metal building near me",            monthly_searches:   2900, tier: "Tier 4", status: "near_me",   note: "City-name targeting in the URL slug and page title serves the same geographic function as 'near me'." },
+    { keyword: "pole barn near me",                 monthly_searches:   1600, tier: "Tier 4", status: "near_me",   note: "City-name targeting in the URL slug and page title serves the same geographic function as 'near me'." },
+    { keyword: "barndo builder",                    monthly_searches:     70, tier: "Tier 2", status: "near_me",   note: "Below 500/mo volume floor; same family as 'barndominium builders'." },
   ],
 
   // ---- KEYWORD TIERS ----
   keyword_tiers: [
     {
       tier_label: "Tier 1",
-      tier_name: "Barndominium Builders",
-      description: "The highest-intent keywords in the barndominium space. Customers searching these terms are actively looking to hire a builder. These are the primary terms for Texas Building Center and form the backbone of the strategy. The barndominium category alone represents over 246,000 monthly searches nationally.",
+      tier_name: "Barndominium (Anchor)",
+      description: "The dominant keyword in Texas Building Center's primary service category. 'Barndominium' carries 246,000 monthly searches nationally — 30x the volume of the next keyword family. This is the Go Wide anchor: it is spread across all 10 confirmed service area cities to build maximum geographic presence for the highest-demand term in the Hill Country building market.",
       keywords: [
-        { keyword: "barndominium builders",          monthly_searches: 8100 },
-        { keyword: "barndominium contractor",        monthly_searches:  210 },
-        { keyword: "barndominium construction",      monthly_searches:  590 },
-        { keyword: "barndominium contractors",       monthly_searches:  880 },
-        { keyword: "barndominium construction company", monthly_searches: 140 },
-        { keyword: "custom barndominium builders",   monthly_searches:  140 },
-        { keyword: "barndominium builder",           monthly_searches: 1000 },
-        { keyword: "barndominium company",           monthly_searches: 1300 },
-        { keyword: "barndominium general contractor",monthly_searches:   30 },
+        { keyword: "barndominium",       monthly_searches: 246000 },
+        { keyword: "barndominium plans", monthly_searches:  60500 },
       ]
     },
     {
       tier_label: "Tier 2",
-      tier_name: "Barndo (Short Form)",
-      description: "The shortened 'barndo' form is widely used across Texas and carries strong local intent. Buyers who search 'barndo' are already familiar with the product and are closer to a purchase decision. Targeting both the full and short forms maximizes coverage of the entire barndominium search landscape.",
+      tier_name: "Barndominium Builders (Hire Intent)",
+      description: "High-intent hire-focused keywords for the barndominium service line. Searchers using 'barndominium builders' are actively looking to hire a contractor, not just research. This keyword is distributed across the top 8 service area cities to capture ready-to-hire buyers throughout the Hill Country.",
       keywords: [
-        { keyword: "barndo",             monthly_searches: 14800 },
-        { keyword: "barndo floor plans", monthly_searches:  2400 },
-        { keyword: "barndo plans",       monthly_searches:  4400 },
-        { keyword: "barndo builders",    monthly_searches:   880 },
-        { keyword: "barndo homes",       monthly_searches:   880 },
-        { keyword: "barndo cost",        monthly_searches:   390 },
-        { keyword: "barndo builder",     monthly_searches:    70 },
+        { keyword: "barndominium builders", monthly_searches: 8100 },
       ]
     },
     {
       tier_label: "Tier 3",
       tier_name: "Custom Home Builders",
-      description: "Custom home builder keywords represent a distinct service line with strong commercial intent. These terms capture buyers who may not yet know about barndominiums but are actively searching for a trusted local builder. Coverage of this service line ensures Texas Building Center captures the full spectrum of custom building demand.",
+      description: "Custom home builder keywords represent a distinct service line with strong commercial intent. These terms capture buyers who may not yet know about barndominiums but are actively searching for a trusted local builder. Coverage of this service line ensures Texas Building Center captures the full spectrum of custom building demand across the Hill Country.",
       keywords: [
-        { keyword: "custom home builder",           monthly_searches: 14800 },
         { keyword: "custom home builders",          monthly_searches: 12100 },
-        { keyword: "custom home builders near me",  monthly_searches:  9900 },
+        { keyword: "custom home builder",           monthly_searches: 14800 },
         { keyword: "custom homes",                  monthly_searches:  8100 },
         { keyword: "custom home construction",      monthly_searches:  1600 },
         { keyword: "custom home contractor",        monthly_searches:   880 },
@@ -150,18 +154,12 @@ const STRATEGY = {
     },
     {
       tier_label: "Tier 4",
-      tier_name: "Metal Buildings & Pole Barns",
-      description: "Metal building and pole barn keywords represent a third distinct service vertical, targeting commercial, agricultural, and residential buyers. These terms capture a broad range of building demand in the Hill Country and ensure Texas Building Center is visible across all of its core service offerings.",
+      tier_name: "Metal Buildings",
+      description: "Metal building keywords represent the third distinct service line, targeting commercial, agricultural, and residential buyers. 'Metal buildings' at 33,100 monthly searches is the highest-volume member of this family and is distributed across the top 7 service area cities.",
       keywords: [
         { keyword: "metal buildings",          monthly_searches: 33100 },
-        { keyword: "pole barn",                monthly_searches: 33100 },
         { keyword: "metal building",           monthly_searches: 12100 },
-        { keyword: "pole barns",               monthly_searches:  8100 },
-        { keyword: "pole barn house",          monthly_searches:  5400 },
-        { keyword: "post frame construction",  monthly_searches:  3600 },
-        { keyword: "pole barn construction",   monthly_searches:  2900 },
-        { keyword: "pole barn builders",       monthly_searches:  2400 },
-        { keyword: "pole barn builder",        monthly_searches:  1300 },
+        { keyword: "steel buildings",          monthly_searches: 14800 },
         { keyword: "metal building contractors",monthly_searches: 1600 },
       ]
     }
@@ -170,50 +168,60 @@ const STRATEGY = {
   // ---- NOT USED GROUPS ----
   not_used_groups: [
     {
-      reason: "Exceeds Current Plan Capacity",
-      description: "These high-value keywords were identified and validated but could not be included within the 40-combination limit of the Level C plan. They are the first candidates for inclusion upon upgrading to Level D or higher.",
+      reason: "Lower-Volume Variant Family Members",
+      description: "These keywords belong to the same variant families as the selected keywords but are lower-volume members of those families. Per the strategy rules, only the highest-volume member of each variant family receives a matrix slot. These terms will be captured organically as the selected pages rank for their primary keyword.",
       keywords: [
-        { keyword: "barndominium",             monthly_searches: 246000 },
-        { keyword: "barndominium plans",       monthly_searches:  60500 },
-        { keyword: "barndominium floor plans", monthly_searches:  33100 },
-        { keyword: "pole barn",                monthly_searches:  33100 },
-        { keyword: "barndominium homes",       monthly_searches:  12100 },
-        { keyword: "custom home builders",     monthly_searches:  12100 },
-        { keyword: "barndo plans",             monthly_searches:   4400 },
-        { keyword: "barndominium cost",        monthly_searches:   5400 },
-        { keyword: "custom homes",             monthly_searches:   8100 },
-        { keyword: "metal building",           monthly_searches:  12100 },
-        { keyword: "pole barn builders",       monthly_searches:   2400 },
-        { keyword: "pole barn construction",   monthly_searches:   2900 },
+        { keyword: "barndominium floor plans",   monthly_searches:  33100 },
+        { keyword: "barndominium homes",         monthly_searches:  12100 },
+        { keyword: "barndo",                     monthly_searches:  14800 },
+        { keyword: "barndominium kits",          monthly_searches:  40500 },
+        { keyword: "barndo plans",               monthly_searches:   4400 },
+        { keyword: "barndo floor plans",         monthly_searches:   2400 },
+        { keyword: "barndominium builder",       monthly_searches:   1000 },
+        { keyword: "barndominium company",       monthly_searches:   1300 },
+        { keyword: "barndominium contractors",   monthly_searches:    880 },
+        { keyword: "barndominium construction",  monthly_searches:    590 },
+        { keyword: "custom home builder",        monthly_searches:  14800 },
+        { keyword: "custom homes",               monthly_searches:   8100 },
+        { keyword: "metal building",             monthly_searches:  12100 },
+        { keyword: "steel buildings",            monthly_searches:  14800 },
       ]
     },
     {
       reason: "Near Me Variants: Covered by City Targeting",
-      description: "These 'near me' variants are not included in the matrix because the city name appended to each keyword serves the same geographic function. Including both would create redundant content targeting the same search intent.",
+      description: "These 'near me' variants are not included in the matrix because the city name appended to each keyword in the URL slug and page title serves the exact same geographic function. Including both would create redundant content targeting the same search intent.",
       keywords: [
-        { keyword: "barndominium builders near me",     monthly_searches: 8100 },
-        { keyword: "barndominium builder near me",      monthly_searches:  880 },
-        { keyword: "barndominium contractor near me",   monthly_searches:  210 },
-        { keyword: "barndominium near me",              monthly_searches: 1600 },
-        { keyword: "barndo builders near me",           monthly_searches: 1000 },
-        { keyword: "custom home builders near me",      monthly_searches: 9900 },
-        { keyword: "custom home builder near me",       monthly_searches: 4400 },
-        { keyword: "metal building near me",            monthly_searches: 2900 },
-        { keyword: "pole barn near me",                 monthly_searches: 1600 },
+        { keyword: "barndominium builders near me",  monthly_searches: 8100 },
+        { keyword: "custom home builders near me",   monthly_searches: 9900 },
+        { keyword: "barndominium near me",           monthly_searches: 1600 },
+        { keyword: "custom home builder near me",    monthly_searches: 4400 },
+        { keyword: "metal building near me",         monthly_searches: 2900 },
+        { keyword: "barndo builders near me",        monthly_searches: 1000 },
       ]
     },
     {
-      reason: "Metal Building Sub-Terms: Reserved for Targeted Expansion",
-      description: "These metal building, steel building, and post-frame sub-terms represent strong expansion opportunities. They are best served with dedicated content pages and are prioritized for the next plan upgrade when additional combinations become available.",
+      reason: "Out of Scope: Not a Listed Texas Building Center Service",
+      description: "These keywords relate to pole barns, post-frame construction, and agricultural buildings. Texas Building Center's listed services are barndominiums, custom homes, and metal buildings. Targeting these terms would attract visitors with needs Texas Building Center does not serve.",
       keywords: [
-        { keyword: "steel buildings",          monthly_searches: 14800 },
-        { keyword: "post frame construction",  monthly_searches:  3600 },
-        { keyword: "post frame building",      monthly_searches:  3600 },
-        { keyword: "metal building cost",      monthly_searches:  1900 },
-        { keyword: "metal building contractors",monthly_searches: 1600 },
-        { keyword: "shop house",               monthly_searches:  4400 },
-        { keyword: "commercial metal buildings",monthly_searches: 1300 },
-        { keyword: "agricultural building",    monthly_searches:  1600 },
+        { keyword: "pole barn",             monthly_searches: 33100 },
+        { keyword: "pole barns",            monthly_searches:  8100 },
+        { keyword: "pole barn house",       monthly_searches:  5400 },
+        { keyword: "shop house",            monthly_searches:  4400 },
+        { keyword: "post frame construction",monthly_searches: 3600 },
+        { keyword: "pole barn construction",monthly_searches:  2900 },
+        { keyword: "pole barn builders",    monthly_searches:  2400 },
+        { keyword: "pole barn builder",     monthly_searches:  1300 },
+      ]
+    },
+    {
+      reason: "Informational or Cost-Research Intent",
+      description: "These keywords indicate a searcher who is researching costs, plans, or general information rather than actively looking to hire a builder. They are not suitable for service landing pages, which are designed to convert hire-intent visitors.",
+      keywords: [
+        { keyword: "barndominium cost",          monthly_searches: 5400 },
+        { keyword: "barndominium price",         monthly_searches:  590 },
+        { keyword: "building a barndominium",    monthly_searches: 1900 },
+        { keyword: "barndominium with shop",     monthly_searches: 1000 },
+        { keyword: "metal building cost",        monthly_searches: 1900 },
       ]
     }
   ],
@@ -225,12 +233,13 @@ const STRATEGY = {
       combinations: 50,
       price: 599,
       additional_combinations: 10,
-      headline: "Add Granite Shoals and Deeper Barndominium Coverage",
-      description: "Upgrading to Level D adds 10 additional keyword-city combinations. The most strategic next step is adding Granite Shoals (pop. 5,200), the Lake LBJ corridor community adjacent to Marble Falls, and introducing the high-volume 'barndominium' and 'barndominium plans' keywords into the existing markets.",
+      headline: "Add Barndominium Floor Plans + Buchanan Lake Village",
+      description: "Upgrading to Level D adds 10 additional keyword-city combinations. The most strategic next step is introducing 'barndominium floor plans' (33,100/mo) as a dedicated keyword across the top 8 markets — this is the highest-volume variant family member not yet in the plan. It also extends coverage into Buchanan Lake Village (pop. 1,100), a Lake Buchanan community with strong rural and lakefront building demand.",
       keywords: [
-        { keyword: "barndominium",           monthly_searches: 246000 },
-        { keyword: "barndominium plans",     monthly_searches:  60500 },
-        { keyword: "Granite Shoals, TX",     monthly_searches: null, new_market: true },
+        { keyword: "barndominium floor plans", monthly_searches: 33100 },
+        { keyword: "barndominium",             monthly_searches: 246000 },
+        { keyword: "barndominium plans",       monthly_searches:  60500 },
+        { keyword: "Buchanan Lake Village, TX",monthly_searches: null, new_market: true },
       ]
     },
     {
@@ -238,29 +247,12 @@ const STRATEGY = {
       combinations: 60,
       price: 699,
       additional_combinations: 20,
-      headline: "Add Horseshoe Bay and Llano with Broader Keyword Coverage",
-      description: "Level E opens the door to two additional markets: Horseshoe Bay (pop. 4,700), the upscale Lake LBJ community with high-income custom home buyers, and Llano (pop. 3,232), the Llano County seat at the heart of the Hill Country. This tier also adds dedicated barndominium floor plan and cost keywords across all existing markets.",
+      headline: "Add Barndo + Bertram, Briggs & More Hill Country Towns",
+      description: "Level E introduces 'barndo' (14,800/mo) as a secondary barndominium keyword across the top 8 markets, capturing searchers who use the informal short-form term. It also extends coverage into Bertram (pop. 900), Briggs, and additional Tier 3 service area communities, building a comprehensive Hill Country presence across the full confirmed service area.",
       keywords: [
-        { keyword: "barndominium floor plans", monthly_searches: 33100 },
-        { keyword: "barndominium cost",        monthly_searches:  5400 },
-        { keyword: "Horseshoe Bay, TX",        monthly_searches: null, new_market: true },
-        { keyword: "Llano, TX",                monthly_searches: null, new_market: true },
-      ]
-    },
-    {
-      plan: "Level F",
-      combinations: 90,
-      price: 999,
-      additional_combinations: 50,
-      headline: "Full Hill Country Service Area Domination",
-      description: "Level F provides the coverage needed to dominate every significant market in Texas Building Center's service area. With 90 total combinations, Texas Building Center can target up to 9 cities with a full suite of barndominium, custom home, and metal building keywords, achieving comprehensive visibility across the entire Lake LBJ corridor and Hill Country region.",
-      keywords: [
-        { keyword: "Johnson City, TX",       monthly_searches: null, new_market: true },
-        { keyword: "Cottonwood Shores, TX",  monthly_searches: null, new_market: true },
-        { keyword: "barndominium homes",     monthly_searches: 12100 },
-        { keyword: "barndominium floor plans",monthly_searches: 33100 },
-        { keyword: "custom home builders",   monthly_searches: 12100 },
-        { keyword: "barndominium kits",      monthly_searches: 40500 },
+        { keyword: "barndo",        monthly_searches: 14800 },
+        { keyword: "Bertram, TX",   monthly_searches: null, new_market: true },
+        { keyword: "Briggs, TX",    monthly_searches: null, new_market: true },
       ]
     }
   ]
@@ -291,7 +283,6 @@ function tierPill(label) {
 function buildKeywordTable() {
   const tbody = document.getElementById('kw-table-body');
   if (!tbody) return;
-  // Sort by search volume descending, deduplicate
   const seen = new Set();
   const unique = STRATEGY.keyword_table.filter(kw => {
     if (seen.has(kw.keyword)) return false;
@@ -344,45 +335,75 @@ function buildKeywordTierCards() {
 
 // ============================================================
 // POPULATE MATRIX TABLE
+// Go Wide: barndominium = 10 cities, barndominium plans = 8,
+// barndominium builders = 8, custom home builders = 7,
+// metal buildings = 7. Total = 40.
 // ============================================================
 function buildMatrix() {
   const thead = document.getElementById('matrix-thead');
   const tbody = document.getElementById('matrix-tbody');
   if (!thead || !tbody) return;
 
-  const markets = [
-    { city: "Marble Falls", tier: "Tier 1", population: 10581, is_hq: false },
-    { city: "Lampasas",     tier: "Tier 1", population:  8250, is_hq: false },
-    { city: "Kingsland",    tier: "Tier 1", population:  7527, is_hq: false },
-    { city: "Burnet",       tier: "Tier 1", population:  7065, is_hq: true  },
+  // All 10 confirmed service area cities used in the Go Wide matrix
+  const allCities = [
+    { city: "Marble Falls",      tier: "Tier 1", population: 10581, is_hq: false },
+    { city: "Lampasas",          tier: "Tier 1", population:  8250, is_hq: false },
+    { city: "Kingsland",         tier: "Tier 1", population:  7527, is_hq: false },
+    { city: "Burnet",            tier: "Tier 1", population:  7065, is_hq: true  },
+    { city: "Granite Shoals",    tier: "Tier 2", population:  5200, is_hq: false },
+    { city: "Horseshoe Bay",     tier: "Tier 2", population:  4700, is_hq: false },
+    { city: "Llano",             tier: "Tier 2", population:  3232, is_hq: false },
+    { city: "Cottonwood Shores", tier: "Tier 2", population:  2200, is_hq: false },
+    { city: "Johnson City",      tier: "Tier 2", population:  1800, is_hq: false },
+    { city: "Sunrise Beach",     tier: "Tier 2", population:  1200, is_hq: false },
   ];
-  const keywords = STRATEGY.selected_keywords;
 
-  // Header row 1: tier pills
-  const tierCells = markets.map(m => {
+  // Per-keyword city assignments (Go Wide distribution)
+  const keywordCities = {
+    "barndominium":          allCities.slice(0, 10), // all 10
+    "barndominium plans":    allCities.slice(0, 8),  // top 8
+    "barndominium builders": allCities.slice(0, 8),  // top 8
+    "custom home builders":  allCities.slice(0, 7),  // top 7
+    "metal buildings":       allCities.slice(0, 7),  // top 7
+  };
+
+  // Build a unified city header across all 10 cities
+  const tierCells = allCities.map(m => {
     const cls = m.tier === 'Tier 1' ? 't1' : 't2';
     return `<th><span class="tier-pill ${cls} nowrap">${m.tier.toUpperCase()}</span></th>`;
   }).join('');
 
-  // Header row 2: city names
-  const cityCells = markets.map(m =>
+  const cityCells = allCities.map(m =>
     `<th class="city-header">${m.city}${m.is_hq ? ' <span class="hq-star">&#9733;</span>' : ''}<br><span class="city-pop-small">Pop. ${fmt(m.population)}</span></th>`
   ).join('');
 
   thead.innerHTML = `<tr><th class="kw-col-header">Keyword</th>${tierCells}</tr><tr><th></th>${cityCells}</tr>`;
 
-  // Keyword rows
+  // Keyword rows — checkmark if city is in that keyword's city list, dash if not
+  const keywords = Object.keys(keywordCities);
+  let grandTotal = 0;
   const rows = keywords.map(kw => {
-    const cells = markets.map(() => '<td class="check-cell">&#10003;</td>').join('');
-    return `<tr><td class="kw-cell">${kw}</td>${cells}</tr>`;
+    const cities = keywordCities[kw];
+    const citySet = new Set(cities.map(c => c.city));
+    const combosForKw = cities.length;
+    grandTotal += combosForKw;
+    const cells = allCities.map(m =>
+      citySet.has(m.city)
+        ? '<td class="check-cell">&#10003;</td>'
+        : '<td class="check-cell check-na" style="color:#ccc;font-size:0.85em;">&#8212;</td>'
+    ).join('');
+    return `<tr><td class="kw-cell">${kw} <span style="color:#6b7280;font-size:0.78em;">(${combosForKw} cities)</span></td>${cells}</tr>`;
+  });
+
+  // Per-city totals
+  const cityTotals = allCities.map(m => {
+    const count = keywords.filter(kw => keywordCities[kw].some(c => c.city === m.city)).length;
+    return `<td class="total-cell">${count}</td>`;
   }).join('');
 
-  // Total row
-  const totalCells = markets.map(() => `<td class="total-cell">${keywords.length}</td>`).join('');
-  const grandTotal = keywords.length * markets.length;
-  tbody.innerHTML = rows
-    + `<tr class="total-row"><td class="total-label">Total Combinations</td>${totalCells}</tr>`
-    + `<tr class="grand-total-row"><td colspan="${markets.length + 1}" class="grand-total">Grand Total: <strong>${grandTotal} Combinations</strong></td></tr>`;
+  tbody.innerHTML = rows.join('')
+    + `<tr class="total-row"><td class="total-label">Combinations per City</td>${cityTotals}</tr>`
+    + `<tr class="grand-total-row"><td colspan="${allCities.length + 1}" class="grand-total">Grand Total: <strong>${grandTotal} Combinations</strong></td></tr>`;
 }
 
 // ============================================================
@@ -453,12 +474,12 @@ const MARKET_DATA = [
   { rank: 2,  city: 'Lampasas',             pop:   8250, tier: 'Tier 1', selected: true,  hq: false },
   { rank: 3,  city: 'Kingsland',            pop:   7527, tier: 'Tier 1', selected: true,  hq: false },
   { rank: 4,  city: 'Burnet',               pop:   7065, tier: 'Tier 1', selected: true,  hq: true  },
-  { rank: 5,  city: 'Granite Shoals',       pop:   5200, tier: 'Tier 1', selected: false, hq: false },
-  { rank: 6,  city: 'Horseshoe Bay',        pop:   4700, tier: 'Tier 2', selected: false, hq: false },
-  { rank: 7,  city: 'Llano',               pop:   3232, tier: 'Tier 2', selected: false, hq: false },
-  { rank: 8,  city: 'Cottonwood Shores',    pop:   2200, tier: 'Tier 2', selected: false, hq: false },
-  { rank: 9,  city: 'Johnson City',         pop:   1800, tier: 'Tier 2', selected: false, hq: false },
-  { rank: 10, city: 'Sunrise Beach',        pop:   1200, tier: 'Tier 2', selected: false, hq: false },
+  { rank: 5,  city: 'Granite Shoals',       pop:   5200, tier: 'Tier 2', selected: true,  hq: false },
+  { rank: 6,  city: 'Horseshoe Bay',        pop:   4700, tier: 'Tier 2', selected: true,  hq: false },
+  { rank: 7,  city: 'Llano',               pop:   3232, tier: 'Tier 2', selected: true,  hq: false },
+  { rank: 8,  city: 'Cottonwood Shores',    pop:   2200, tier: 'Tier 2', selected: true,  hq: false },
+  { rank: 9,  city: 'Johnson City',         pop:   1800, tier: 'Tier 2', selected: true,  hq: false },
+  { rank: 10, city: 'Sunrise Beach',        pop:   1200, tier: 'Tier 2', selected: true,  hq: false },
   { rank: '11-29', city: 'Buchanan Lake Village, Bertram, Briggs, Bluffton, Round Mountain, Willow City, Adamsville, Castell, Cherokee, Eckert, Joppa, Lake Victor, Mahomet, Naruna, Oakalla, Oatmeal, Rumley, Smithwick, Tow', pop: null, tier: 'Tier 3', selected: false, hq: false },
 ];
 
@@ -494,29 +515,47 @@ function buildMobileMarketList() {
 function buildMobileMatrix() {
   const el = document.getElementById('mobile-matrix');
   if (!el) return;
-  const markets = [
-    { city: 'Marble Falls', tier: 'Tier 1', pop: 10581, is_hq: false },
-    { city: 'Lampasas',     tier: 'Tier 1', pop:  8250, is_hq: false },
-    { city: 'Kingsland',    tier: 'Tier 1', pop:  7527, is_hq: false },
-    { city: 'Burnet',       tier: 'Tier 1', pop:  7065, is_hq: true  },
+
+  const keywordCities = {
+    "barndominium":          ["Marble Falls","Lampasas","Kingsland","Burnet","Granite Shoals","Horseshoe Bay","Llano","Cottonwood Shores","Johnson City","Sunrise Beach"],
+    "barndominium plans":    ["Marble Falls","Lampasas","Kingsland","Burnet","Granite Shoals","Horseshoe Bay","Llano","Cottonwood Shores"],
+    "barndominium builders": ["Marble Falls","Lampasas","Kingsland","Burnet","Granite Shoals","Horseshoe Bay","Llano","Cottonwood Shores"],
+    "custom home builders":  ["Marble Falls","Lampasas","Kingsland","Burnet","Granite Shoals","Horseshoe Bay","Llano"],
+    "metal buildings":       ["Marble Falls","Lampasas","Kingsland","Burnet","Granite Shoals","Horseshoe Bay","Llano"],
+  };
+
+  const allCities = [
+    { city: "Marble Falls",      tier: "Tier 1", pop: 10581, is_hq: false },
+    { city: "Lampasas",          tier: "Tier 1", pop:  8250, is_hq: false },
+    { city: "Kingsland",         tier: "Tier 1", pop:  7527, is_hq: false },
+    { city: "Burnet",            tier: "Tier 1", pop:  7065, is_hq: true  },
+    { city: "Granite Shoals",    tier: "Tier 2", pop:  5200, is_hq: false },
+    { city: "Horseshoe Bay",     tier: "Tier 2", pop:  4700, is_hq: false },
+    { city: "Llano",             tier: "Tier 2", pop:  3232, is_hq: false },
+    { city: "Cottonwood Shores", tier: "Tier 2", pop:  2200, is_hq: false },
+    { city: "Johnson City",      tier: "Tier 2", pop:  1800, is_hq: false },
+    { city: "Sunrise Beach",     tier: "Tier 2", pop:  1200, is_hq: false },
   ];
-  const keywords = STRATEGY.selected_keywords;
-  const cards = markets.map(m => {
+
+  const cards = allCities.map(m => {
     const tierCls = m.tier === 'Tier 1' ? 't1' : 't2';
     const cityLabel = m.is_hq ? `${m.city} <span class="hq-tag">HQ</span>` : m.city;
-    const kwList = keywords.map(kw =>
-      `<div class="mob-matrix-kw"><span class="mob-matrix-check">&#10003;</span><span>${kw}</span></div>`
-    ).join('');
+    const kwList = Object.entries(keywordCities)
+      .filter(([, cities]) => cities.includes(m.city))
+      .map(([kw]) => `<div class="mob-matrix-kw"><span class="mob-matrix-check">&#10003;</span><span>${kw}</span></div>`)
+      .join('');
+    const count = Object.values(keywordCities).filter(cities => cities.includes(m.city)).length;
     return `<div class="mob-matrix-card">
       <div class="mob-matrix-city">
         <span class="mob-matrix-city-name">${cityLabel}</span>
         <span class="mob-matrix-meta"><span class="tier-pill ${tierCls}">${m.tier.toUpperCase()}</span> &nbsp; Pop. ${fmt(m.pop)}</span>
       </div>
       <div class="mob-matrix-kws">${kwList}</div>
-      <div class="mob-matrix-total">${keywords.length} combinations</div>
+      <div class="mob-matrix-total">${count} combinations</div>
     </div>`;
   }).join('');
-  el.innerHTML = cards + `<div class="mob-matrix-grand-total">Grand Total: <strong>${keywords.length * markets.length} Combinations</strong></div>`;
+
+  el.innerHTML = cards + `<div class="mob-matrix-grand-total">Grand Total: <strong>40 Combinations</strong></div>`;
 }
 
 // ============================================================
