@@ -1,938 +1,319 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <base href="/mekfloors.com/">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SEO Strategy: MEK Interiors & Floors | Dotcom Design</title>
+  <title>SEO Strategy | MEK Interiors &amp; Floors | Dotcom Design</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-  <style>
-    /* =============================================
-       DOTCOM DESIGN — SEO STRATEGY REPORT
-       Client: MEK Interiors & Floors
-       Brand: #3F80EA (Blue), #334168 (Dark), #EB0052 (Red)
-    ============================================= */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; line-height: 1.7; }
-
-    /* ---- HEADER ---- */
-    .site-header { background: #334168; padding: 16px 40px; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 12px rgba(0,0,0,0.25); }
-    .header-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
-    .logo { height: 38px; }
-    .header-tagline { font-size: 11px; font-weight: 900; letter-spacing: 2px; color: #3F80EA; text-transform: uppercase; }
-
-    /* ---- HERO ---- */
-    .hero { background: linear-gradient(135deg, #334168 0%, #1a2540 100%); padding: 80px 40px; text-align: center; color: #fff; overflow-x: hidden; }
-    .hero-inner { max-width: 800px; margin: 0 auto; }
-    .hero-label { font-size: 11px; font-weight: 700; letter-spacing: 3px; color: #3F80EA; text-transform: uppercase; margin-bottom: 16px; }
-    .hero-title { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 900; text-transform: uppercase; color: #fff; line-height: 1.1; margin-bottom: 20px; }
-    .hero-subtitle { font-size: 1.1rem; font-weight: 300; color: rgba(255,255,255,0.75); margin-bottom: 32px; }
-    .hero-meta { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
-    .meta-badge { background: rgba(63,128,234,0.2); border: 1px solid rgba(63,128,234,0.4); color: #fff; padding: 6px 16px; border-radius: 20px; font-size: 13px; font-weight: 500; }
-
-    /* ---- NAV ---- */
-    .section-nav { background: #fff; border-bottom: 2px solid #E6E6E6; display: flex; justify-content: center; flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; position: sticky; top: 70px; z-index: 99; padding: 0 16px; }
-    .section-nav::-webkit-scrollbar { display: none; }
-    .section-nav a { padding: 16px 18px; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; text-decoration: none; color: #35373C; white-space: nowrap; border-bottom: 3px solid transparent; transition: all 0.2s; }
-    .section-nav a:hover, .section-nav a.active { color: #3F80EA; border-bottom-color: #3F80EA; }
-
-    /* ---- SECTIONS ---- */
-    .strategy-section { padding: 72px 0; overflow-x: clip; }
-    .section-inner { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
-    .alt-bg { background: #f7f8fc; }
-    .section-header { margin-bottom: 40px; display: flex; align-items: center; gap: 20px; }
-    .section-number { font-size: 3rem; font-weight: 900; color: #E6E6E6; line-height: 1; min-width: 60px; }
-    .section-header h2 { font-size: 1.8rem; font-weight: 900; text-transform: uppercase; color: #334168; }
-    .prose { font-size: 1rem; color: #35373C; margin-bottom: 24px; line-height: 1.8; }
-    .subsection-title { font-size: 1rem; font-weight: 900; text-transform: uppercase; color: #334168; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid #E6E6E6; }
-
-    /* ---- STAT GRID ---- */
-    .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; margin-top: 40px; }
-    .stat-card { background: #334168; color: #fff; padding: 28px 20px; border-radius: 12px; text-align: center; }
-    .stat-number { font-size: 2.5rem; font-weight: 900; color: #3F80EA; line-height: 1; }
-    .stat-label { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,0.7); margin-top: 8px; }
-
-    /* ---- TABLES ---- */
-    .table-wrapper { overflow-x: auto; margin-bottom: 32px; }
-    .data-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
-    .data-table th { background: #334168; color: #fff; padding: 10px 12px; text-align: left; font-size: 10px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; }
-    .data-table th.num-col { text-align: right; }
-    .data-table td { padding: 10px 12px; border-bottom: 1px solid #eee; vertical-align: middle; }
-    .data-table td.num-col { text-align: right; font-variant-numeric: tabular-nums; }
-    .data-table tr:hover td { background: rgba(63,128,234,0.04); }
-    .row-selected td { background: rgba(63,128,234,0.06); }
-
-    /* ---- TIER PILLS ---- */
-    .tier-pill { font-size: 9px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 3px 8px; border-radius: 10px; white-space: nowrap; display: inline-block; }
-    .tier-pill.t1 { background: rgba(63,128,234,0.15); color: #3F80EA; }
-    .tier-pill.t2 { background: rgba(51,65,104,0.15); color: #334168; }
-    .tier-pill.t3 { background: rgba(235,0,82,0.12); color: #EB0052; }
-    .nowrap { white-space: nowrap; }
-
-    /* ---- MARKET TIER CARDS (subgrid) ---- */
-    .tier-cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: auto auto auto 1fr; column-gap: 24px; row-gap: 0; margin-bottom: 16px; align-items: stretch; }
-    .tier-card { background: #fff; border-radius: 12px; padding: 20px 24px; box-shadow: 0 2px 16px rgba(0,0,0,0.07); border-top: 4px solid #E6E6E6; display: grid; grid-row: span 4; grid-template-rows: subgrid; }
-    .tier-card-1 { border-top-color: #3F80EA; }
-    .tier-card-2 { border-top-color: #334168; }
-    .tier-card-3 { border-top-color: #E6E6E6; }
-    .tier-card-label { font-size: 10px; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 6px; align-self: start; }
-    .tier-card-1 .tier-card-label { color: #3F80EA; }
-    .tier-card-2 .tier-card-label { color: #334168; }
-    .tier-card-3 .tier-card-label { color: #999; }
-    .tier-card-title { font-size: 1rem; font-weight: 900; text-transform: uppercase; color: #334168; margin-bottom: 8px; align-self: start; }
-    .tier-card-desc { font-size: 0.85rem; color: #666; margin-bottom: 10px; align-self: start; }
-    .tier-city-list { list-style: none; padding: 0; align-self: start; width: 100%; }
-    .city-row { height: 32px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #f0f0f0; font-size: 0.88rem; }
-    .city-row:last-child { border-bottom: none; }
-    .city-name { font-weight: 600; }
-    .city-pop { font-size: 0.75rem; font-weight: 700; color: #3F80EA; font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; min-width: 52px; margin-left: 6px; flex-shrink: 0; }
-    .hq-tag { display: inline-block; background: #EB0052; color: #fff; font-size: 8px; font-weight: 900; letter-spacing: 1px; padding: 2px 6px; border-radius: 8px; margin-left: 4px; vertical-align: middle; }
-    .city-header-row { height: auto !important; padding: 8px 0 !important; border-top: 1px solid #e8e8e8 !important; border-bottom: 2px solid #eee !important; margin-top: 8px; margin-bottom: 2px; }
-    .city-col-label { font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #999; }
-    .tier-legend { font-size: 0.8rem; color: #666; font-style: italic; margin-bottom: 32px; margin-top: 4px; }
-
-    /* ---- CHART ---- */
-    .chart-container { background: #fff; border-radius: 12px; box-shadow: 0 2px 16px rgba(0,0,0,0.07); padding: 28px 32px; margin-bottom: 32px; }
-    .chart-title { font-size: 0.9rem; font-weight: 700; text-transform: uppercase; color: #334168; letter-spacing: 1px; margin-bottom: 20px; }
-    .charts-row { display: grid; grid-template-columns: 2fr 1fr; gap: 24px; margin-bottom: 32px; }
-    .doughnut-wrap { display: flex; align-items: center; justify-content: center; max-height: 280px; }
-
-    /* ---- KEYWORD TIER CARDS (subgrid) ---- */
-    .kw-tier-grid { display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: auto auto 1fr auto auto; column-gap: 24px; row-gap: 0; margin-bottom: 32px; align-items: stretch; }
-    .kw-tier-card { background: #fff; border-radius: 12px; box-shadow: 0 2px 16px rgba(0,0,0,0.07); border-top: 4px solid #E6E6E6; display: grid; grid-row: span 5; grid-template-rows: subgrid; overflow: hidden; }
-    .kw-tier-card-1 { border-top-color: #3F80EA; }
-    .kw-tier-card-2 { border-top-color: #334168; }
-    .kw-tier-card-3 { border-top-color: #EB0052; }
-    .kw-tier-label { padding: 16px 20px 0; font-size: 10px; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; align-self: start; }
-    .kw-tier-card-1 .kw-tier-label { color: #3F80EA; }
-    .kw-tier-card-2 .kw-tier-label { color: #334168; }
-    .kw-tier-card-3 .kw-tier-label { color: #EB0052; }
-    .kw-tier-name { padding: 8px 20px 10px; font-size: 1rem; font-weight: 900; text-transform: uppercase; color: #334168; align-self: start; }
-    .kw-tier-desc { padding: 0 20px 16px; font-size: 0.85rem; color: #666; line-height: 1.55; align-self: start; }
-    .kw-tier-divider { border-top: 2px solid #f0f0f0; margin: 0 20px; align-self: end; }
-    .kw-tier-table { padding: 10px 20px 18px; }
-    .kw-header { display: flex; justify-content: space-between; align-items: center; padding: 6px 0 8px; border-bottom: 2px solid #eee; margin-bottom: 4px; }
-    .kw-col-label { font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #999; }
-    .kw-row { display: flex; justify-content: space-between; align-items: center; padding: 5px 0; border-bottom: 1px solid #f5f5f5; font-size: 0.82rem; }
-    .kw-row:last-child { border-bottom: none; }
-    .kw-name { font-weight: 600; color: #35373C; }
-    .kw-vol { font-size: 0.75rem; font-weight: 700; color: #3F80EA; font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; min-width: 52px; margin-left: 6px; flex-shrink: 0; }
-
-    /* ---- MATRIX TABLE ---- */
-    .matrix-wrapper { overflow-x: auto; border-radius: 12px; box-shadow: 0 2px 16px rgba(0,0,0,0.07); margin-bottom: 16px; }
-    .matrix-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; min-width: 600px; }
-    .matrix-table thead tr:first-child th { background: #1a2540; padding: 8px 10px; vertical-align: middle; }
-    .matrix-table th { background: #334168; color: #fff; padding: 10px 12px; text-align: center; font-size: 10px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; }
-    .matrix-table th:first-child, .matrix-table th.kw-col-header { text-align: left; padding-left: 16px; }
-    .city-header { font-size: 11px; font-weight: 700; }
-    .city-pop-small { font-size: 9px; font-weight: 400; opacity: 0.7; }
-    .hq-star { color: #3F80EA; }
-    .matrix-table td { padding: 0 10px; height: 48px; text-align: center; border-bottom: 1px solid #f0f0f0; vertical-align: middle; }
-    .matrix-table td:first-child { text-align: left; padding-left: 16px; font-weight: 600; white-space: nowrap; }
-    .matrix-table tr:hover td { background: rgba(63,128,234,0.04); }
-    .check-cell { color: #22c55e; font-size: 1.1rem; font-weight: 900; }
-    .kw-cell { font-size: 0.85rem; }
-    .total-row td { background: #f7f8fc; font-weight: 900; color: #334168; border-top: 2px solid #E6E6E6; font-size: 0.85rem; }
-    .total-label { text-align: left; padding-left: 16px; }
-    .grand-total-row td { background: #334168; color: #fff; font-weight: 900; font-size: 0.9rem; text-align: center; padding: 14px; }
-
-    /* ---- NOT USED CARDS (subgrid) ---- */
-    .not-used-grid { display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: auto 1fr auto auto; column-gap: 20px; row-gap: 0; align-items: stretch; }
-    .not-used-card { background: #fff; border-radius: 12px; padding: 20px 24px 0; box-shadow: 0 2px 16px rgba(0,0,0,0.07); border-top: 4px solid #EB0052; display: grid; grid-row: span 4; grid-template-rows: subgrid; }
-    .nu-reason { font-size: 13px; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase; color: #EB0052; line-height: 1.3; margin-bottom: 8px; }
-    .nu-desc { font-size: 0.85rem; color: #666; line-height: 1.5; padding-bottom: 14px; align-self: start; }
-    .nu-divider { border-top: 2px solid #f0f0f0; margin: 0; align-self: end; }
-    .nu-kw-table { width: 100%; padding-top: 10px; padding-bottom: 16px; }
-    .nu-kw-row { display: flex; justify-content: space-between; align-items: center; padding: 4px 0; border-bottom: 1px solid #f5f5f5; font-size: 0.82rem; }
-    .nu-kw-row:last-child { border-bottom: none; }
-    .nu-header { border-bottom: 2px solid #eee !important; padding-bottom: 8px !important; margin-bottom: 4px; }
-    .nu-header .nu-kw-name, .nu-header .nu-kw-vol { font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #999; }
-    .nu-header .nu-kw-vol { text-align: right; }
-    .nu-kw-name { color: #35373C; }
-    .nu-kw-vol { font-weight: 600; color: #999; font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; }
-
-    /* ---- OPPORTUNITIES CARDS (subgrid) ---- */
-    .opportunities-grid { display: grid; grid-template-columns: repeat(2, 1fr); grid-template-rows: auto auto auto auto auto 1fr auto; column-gap: 20px; row-gap: 0; align-items: stretch; }
-    .opp-card { background: #fff; border-radius: 12px; padding: 20px 24px; box-shadow: 0 2px 16px rgba(0,0,0,0.07); border-top: 4px solid #E6E6E6; display: grid; grid-row: span 7; grid-template-rows: subgrid; }
-    .opp-card-highlight { border-top-color: #3F80EA; box-shadow: 0 4px 24px rgba(63,128,234,0.15); }
-    .opp-recommended { display: inline-block; background: #3F80EA; color: #fff; font-size: 9px; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; padding: 4px 10px; border-radius: 20px; margin-bottom: 12px; align-self: flex-start; }
-    .opp-recommended-spacer { display: block; height: 26px; margin-bottom: 12px; }
-    .opp-plan-label { font-size: 10px; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; color: #3F80EA; margin-bottom: 4px; }
-    .opp-price { font-size: 2rem; font-weight: 900; color: #334168; line-height: 1; margin-bottom: 6px; }
-    .opp-price-mo { font-size: 0.9rem; font-weight: 500; color: #999; }
-    .opp-combos { font-size: 0.82rem; color: #666; margin-bottom: 14px; padding-bottom: 14px; border-bottom: 1px solid #e8e8e8; }
-    .opp-add { color: #22c55e; font-weight: 700; }
-    .opp-headline { font-size: 1rem; font-weight: 900; color: #334168; margin-bottom: 8px; }
-    .opp-desc { font-size: 0.85rem; color: #666; line-height: 1.55; margin-bottom: 14px; align-self: start; }
-    .opp-kw-list { list-style: none; padding: 0; border-top: 1px solid #e8e8e8; padding-top: 10px; margin-top: 0; }
-    .opp-kw-list li { display: flex; justify-content: space-between; align-items: center; padding: 4px 0; font-size: 0.82rem; border-bottom: 1px solid #f5f5f5; }
-    .opp-kw-list li:last-child { border-bottom: none; }
-    .opp-kw-header { border-bottom: 2px solid #eee !important; padding-bottom: 8px !important; margin-bottom: 4px; }
-    .opp-kw-col-label { font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #999; }
-    .opp-kw { font-weight: 600; color: #35373C; }
-    .opp-vol { font-size: 0.75rem; font-weight: 700; color: #3F80EA; font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; min-width: 42px; margin-left: 6px; flex-shrink: 0; }
-
-    /* ---- MOBILE ---- */
-    .mobile-market-list { display: none; }
-    .mobile-matrix { display: none; }
-    .mob-mkt-header, .mob-mkt-row { display: flex; align-items: center; gap: 8px; padding: 8px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.82rem; }
-    .mob-mkt-header { font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #999; border-bottom: 2px solid #e0e0e0; padding-bottom: 8px; margin-bottom: 2px; }
-    .mob-mkt-row.selected { background: rgba(63,128,234,0.04); border-radius: 6px; padding-left: 4px; padding-right: 4px; }
-    .mob-mkt-row:last-child { border-bottom: none; }
-    .mob-rank { width: 24px; flex-shrink: 0; color: #999; font-size: 0.78rem; text-align: center; }
-    .mob-city { flex: 1; min-width: 0; }
-    .mob-pop { width: 56px; flex-shrink: 0; text-align: right; color: #666; font-size: 0.75rem; }
-    .mob-tier { width: 54px; flex-shrink: 0; text-align: center; }
-    .mob-check { color: #22c55e; font-weight: 900; font-size: 1rem; width: 20px; text-align: center; }
-    .mob-dash { color: #ccc; font-size: 1rem; width: 20px; text-align: center; }
-    .mob-matrix-card { background: #fff; border-radius: 10px; box-shadow: 0 2px 12px rgba(0,0,0,0.07); margin-bottom: 12px; overflow: hidden; }
-    .mob-matrix-city { background: #334168; color: #fff; padding: 12px 16px; display: flex; justify-content: space-between; align-items: center; gap: 8px; }
-    .mob-matrix-city-name { font-weight: 900; font-size: 0.95rem; }
-    .mob-matrix-meta { font-size: 0.75rem; color: rgba(255,255,255,0.75); white-space: nowrap; display: flex; align-items: center; gap: 6px; }
-    .mob-matrix-kws { padding: 8px 16px; }
-    .mob-matrix-kw { display: flex; align-items: center; gap: 10px; padding: 6px 0; border-bottom: 1px solid #f5f5f5; font-size: 0.85rem; }
-    .mob-matrix-kw:last-child { border-bottom: none; }
-    .mob-matrix-check { color: #22c55e; font-weight: 900; font-size: 1rem; flex-shrink: 0; }
-    .mob-matrix-total { background: #f7f8fc; padding: 8px 16px; font-size: 0.78rem; font-weight: 700; color: #334168; text-align: right; border-top: 1px solid #e8e8e8; }
-    .mob-matrix-grand-total { background: #334168; color: #fff; padding: 14px 16px; text-align: center; font-size: 0.9rem; border-radius: 10px; margin-top: 4px; }
-
-    /* ---- FOOTER ---- */
-    .site-footer { background: #334168; color: rgba(255,255,255,0.7); padding: 48px 40px; text-align: center; }
-    .footer-inner { max-width: 700px; margin: 0 auto; }
-    .footer-logo { height: 32px; margin-bottom: 16px; opacity: 0.8; }
-    .footer-tagline { font-size: 0.85rem; font-weight: 700; color: #fff; margin-bottom: 8px; letter-spacing: 1px; text-transform: uppercase; }
-    .footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.5); }
-
-    /* ---- RESPONSIVE ---- */
-    @media (max-width: 1100px) {
-      .kw-tier-grid { grid-template-columns: repeat(2, 1fr); grid-template-rows: auto auto 1fr auto auto auto auto 1fr auto auto; }
-      .kw-tier-card { grid-row: span 5; }
-    }
-    @media (max-width: 900px) {
-      .tier-cards-grid { grid-template-columns: 1fr; grid-template-rows: none; gap: 16px; }
-      .tier-card { grid-row: span 1; grid-template-rows: none; display: flex; flex-direction: column; padding: 24px; }
-      .kw-tier-grid { grid-template-columns: 1fr; grid-template-rows: none; gap: 16px; }
-      .kw-tier-card { grid-row: span 1; grid-template-rows: none; display: flex; flex-direction: column; }
-      .kw-tier-divider { align-self: auto; margin-top: auto; }
-      .not-used-grid { grid-template-columns: 1fr; grid-template-rows: none; gap: 16px; }
-      .not-used-card { grid-row: span 1; grid-template-rows: none; display: flex; flex-direction: column; padding: 20px 24px 0; }
-      .nu-divider { align-self: auto; margin-top: auto; }
-      .opportunities-grid { grid-template-columns: 1fr; grid-template-rows: none; gap: 16px; }
-      .opp-card { grid-row: span 1; grid-template-rows: none; display: flex; flex-direction: column; }
-      .opp-recommended-spacer { display: none; }
-      .opp-kw-list { margin-top: auto; }
-      .charts-row { grid-template-columns: 1fr; }
-    }
-    @media (max-width: 768px) {
-      .site-header { padding: 12px 20px; }
-      .header-tagline { display: none; }
-      .logo { height: 30px; }
-      .hero { padding: 40px 20px; }
-      .hero-title { font-size: 1.5rem; word-break: break-word; }
-      .hero-subtitle { font-size: 0.88rem; }
-      .meta-badge { font-size: 10px; padding: 5px 10px; }
-      .section-nav { top: 54px; padding: 0; justify-content: flex-start; }
-      .section-nav a { padding: 12px 14px; font-size: 10px; letter-spacing: 0.5px; }
-      .section-inner { padding: 0 20px; }
-      .strategy-section { padding: 48px 0; }
-      .section-header { margin-bottom: 28px; gap: 10px 14px; flex-wrap: nowrap; align-items: center; }
-      .section-number { font-size: 1.6rem; min-width: 28px; flex-shrink: 0; line-height: 1; }
-      .section-header h2 { font-size: 1rem; min-width: 0; overflow-wrap: break-word; word-break: break-word; line-height: 1.3; }
-      .prose { font-size: 0.9rem; }
-      .stat-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 28px; }
-      .stat-card { padding: 20px 16px; }
-      .stat-number { font-size: 2rem; }
-      .desktop-only { display: none; }
-      .mobile-market-list { display: block; margin-bottom: 24px; }
-      #matrix-table-wrapper { display: none; }
-      .mobile-matrix { display: block; }
-      .tier-card { padding: 20px; }
-      .city-row { height: auto; min-height: 36px; font-size: 0.82rem; padding: 6px 0; }
-      .matrix-wrapper { margin: 0 -20px; border-radius: 0; overflow-x: auto; }
-      .matrix-table { font-size: 0.78rem; min-width: 520px; }
-      .not-used-card { padding: 20px; }
-      .opp-card { padding: 20px; }
-      .site-footer { padding: 36px 20px; }
-    }
-    @media (max-width: 480px) {
-      .hero { padding: 36px 16px; }
-      .strategy-section { padding: 36px 0; }
-      .section-inner { padding: 0 16px; }
-      .section-number { font-size: 1.6rem; min-width: 30px; }
-      .section-header h2 { font-size: 1.1rem; }
-      .stat-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
-      .stat-number { font-size: 1.75rem; }
-      .matrix-wrapper { margin: 0 -16px; }
-      .matrix-table { font-size: 0.72rem; min-width: 480px; }
-    }
-  </style>
+  <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
 
-<!-- HEADER -->
 <header class="site-header">
   <div class="header-inner">
-    <img src="logo_reversed.png" alt="Dotcom Design" class="logo" />
-    <span class="header-tagline">SEO Strategy Report</span>
+    <img src="./assets/logo_reversed.png" alt="Dotcom Design" class="logo" onerror="this.style.display='none'; document.getElementById('logo-text').style.display='block'" />
+    <span id="logo-text" style="display:none; color:#fff; font-weight:800; font-size:1.1rem; letter-spacing:0.1em;">DOTCOM DESIGN</span>
+    <span class="header-tagline">WE GROW YOUR BUSINESS</span>
   </div>
 </header>
 
-<!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
-    <div class="hero-label">Local SEO Strategy</div>
+    <p class="hero-label">SEO STRATEGY REPORT</p>
     <h1 class="hero-title">MEK Interiors &amp; Floors</h1>
-    <p class="hero-subtitle">A data-driven keyword strategy for the Greater Houston flooring market</p>
+    <p class="hero-subtitle">A comprehensive, data-driven SEO strategy</p>
     <div class="hero-meta">
-      <span class="meta-badge">Houston, TX</span>
-      <span class="meta-badge">Flooring Contractor</span>
-      <span class="meta-badge">Booster Plan</span>
-      <span class="meta-badge">10 Keyword-City Combinations</span>
-      <span class="meta-badge">Since 1974</span>
+      <span class="meta-badge">&#128205; Houston, TX</span>
+      <span class="meta-badge">&#127968; Flooring Industry</span>
+      <span class="meta-badge">&#127919; 10 Keyword Combinations</span>
+      <span class="meta-badge">&#128197; March 2026</span>
     </div>
   </div>
 </section>
 
-<!-- STICKY NAV -->
 <nav class="section-nav" id="section-nav">
-  <a href="#overview">Overview</a>
-  <a href="#market">Market Analysis</a>
-  <a href="#keywords">Keywords</a>
-  <a href="#matrix">Matrix</a>
-  <a href="#not-used">Not Used</a>
-  <a href="#opportunities">Opportunities</a>
+    <a href="#overview">OVERVIEW</a>
+    <a href="#markets">MARKETS</a>
+    <a href="#keywords">KEYWORDS</a>
+    <a href="#matrix">STRATEGY MATRIX</a>
+    <a href="#not-used">NOT USED</a>
+    <a href="#opportunities">OPPORTUNITIES</a>
 </nav>
 
-<!-- SECTION 1: OVERVIEW -->
-<section class="strategy-section" id="overview">
-  <div class="section-inner">
-    <div class="section-header">
-      <div class="section-number">01</div>
-      <h2>Overview &amp; Strategy Approach</h2>
-    </div>
-    <p class="prose">
-      This report outlines a data-driven local SEO strategy for <strong>MEK Interiors &amp; Floors</strong>, a premier flooring contractor headquartered in Houston, Texas, serving the Greater Houston area since 1974. The goal of this strategy is to surgically place MEK Interiors &amp; Floors at the top of search results for high-value, purchase-intent keywords in strategic, high-growth markets. By targeting search terms that signal a customer is ready to hire a contractor, this plan maximizes the value of every dollar invested in SEO.
-    </p>
-    <p class="prose">
-      The competitive landscape for flooring contractors in a major metropolitan area like Houston is intense. This strategy adopts a <strong>"Go Deep"</strong> approach: rather than scattering efforts across dozens of cities with low-impact keywords, we concentrate on a select group of high-volume, high-intent keywords within two primary markets. This ensures MEK Interiors &amp; Floors builds authority and dominates search rankings for the most profitable service lines, including both residential and commercial flooring.
-    </p>
-    <div class="stat-grid">
-      <div class="stat-card">
-        <div class="stat-number">10</div>
-        <div class="stat-label">Keyword-City Combinations</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number">5</div>
-        <div class="stat-label">Target Keywords</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number">2</div>
-        <div class="stat-label">Target Markets</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number">49K+</div>
-        <div class="stat-label">Combined Monthly Searches</div>
-      </div>
-    </div>
-  </div>
-</section>
+<main>
 
-<!-- SECTION 2: MARKET ANALYSIS -->
-<section class="strategy-section alt-bg" id="market">
-  <div class="section-inner">
+  <!-- ===== SECTION 01: OVERVIEW ===== -->
+  <section class="strategy-section" id="overview">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-number">01</span>
+        <h2>Overview &amp; Strategy Approach</h2>
+      </div>
+      <p class="prose">This document outlines a comprehensive, data-driven SEO strategy designed specifically for <strong>MEK Interiors &amp; Floors</strong>. The primary goal is to increase online visibility, drive qualified traffic, and generate consistent leads within the Greater Houston service area. The strategy is built on a foundation of high-intent, commercially relevant keywords mapped to the highest-value geographic market: Houston itself. Rather than spreading a small plan thin across multiple suburbs, this strategy concentrates all 10 keyword-city combinations in Houston, the dominant regional search hub with over 2.3 million residents and the highest local search volume in the region. Every keyword was selected based on national search volume data, commercial intent signals, and strategic service-line coverage, with deliberate inclusion of commercial flooring keywords to support MEK Interiors &amp; Floors' growing commercial contract division.</p>
+      <div class="stat-grid">
+        <div class="stat-card"><div class="stat-number">10</div><div class="stat-label">Total Combinations</div></div>
+        <div class="stat-card"><div class="stat-number">1</div><div class="stat-label">Target Markets</div></div>
+        <div class="stat-card"><div class="stat-number">10</div><div class="stat-label">Core Keywords</div></div>
+        <div class="stat-card"><div class="stat-number">401</div><div class="stat-label">Keywords Researched</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 02: MARKETS ===== -->
+  <section class="strategy-section alt-bg" id="markets">
+    <div class="section-inner">
     <div class="section-header">
-      <div class="section-number">02</div>
+      <span class="section-number">02</span>
       <h2>Market Analysis &amp; Tiering</h2>
     </div>
-    <p class="prose">
-      The Greater Houston area is one of the largest and fastest-growing metropolitan regions in the United States. To focus MEK Interiors &amp; Floors' SEO investment where it will generate the highest return, we analyzed and tiered key cities and communities across Harris, Fort Bend, Montgomery, Brazoria, and Galveston counties based on population size and strategic importance.
-    </p>
+    <p class="prose">We analyzed all major cities and communities within the Greater Houston service area and evaluated each market based on population size, proximity to MEK Interiors &amp; Floors' Houston headquarters, and overall search opportunity. The analysis produced three tiers of market priority. Tier 1 markets represent the highest-population, highest-opportunity targets and form the backbone of the strategy. For the current Booster plan (10 combinations), concentrating all keyword-city combinations in Houston is the strongest possible approach: Houston's 2.3 million residents generate search volume that dwarfs any suburb, and a single well-targeted city outperforms a diluted split across two or more markets at this plan level. Tier 2 and Tier 3 markets are strong candidates for future plan expansion as domain authority grows.</p>
 
-    <!-- Tier Cards -->
+    <h3 class="subsection-title">Full Market Consideration List</h3>
+    <p class="prose-sm">All 30 markets in the Greater Houston area were evaluated. The 1 market selected for the current plan is highlighted.</p>
+    <div class="table-wrapper desktop-only">
+      <table class="data-table">
+        <thead>
+          <tr><th>#</th><th>Market</th><th class="num-col">Population</th><th>Tier</th><th>Selected</th><th>Selection Rationale</th></tr>
+        </thead>
+        <tbody>
+          <tr class="row-selected row-hq"><td>1</td><td><strong>Houston &#9733; HQ</strong></td><td class="num-col">2,304,580</td><td><span class="tier-pill t1">TIER 1</span></td><td class="check">&#10003;</td><td class="rationale-cell">MEK Interiors &amp; Floors headquarters; largest city in Texas and dominant regional search hub with the highest search volume in the area.</td></tr>
+          <tr><td>2</td><td>Cypress</td><td class="num-col">220,000</td><td><span class="tier-pill t1">TIER 1</span></td><td class="dash">&#8212;</td><td class="rationale-cell">Large unincorporated community northwest of Houston; strong residential growth and flooring demand. Top candidate for first plan upgrade.</td></tr>
+          <tr><td>3</td><td>Pasadena</td><td class="num-col">152,000</td><td><span class="tier-pill t1">TIER 1</span></td><td class="dash">&#8212;</td><td class="rationale-cell">Major industrial and residential city southeast of Houston; high flooring demand from residential and commercial sectors.</td></tr>
+          <tr><td>4</td><td>Pearland</td><td class="num-col">130,000</td><td><span class="tier-pill t1">TIER 1</span></td><td class="dash">&#8212;</td><td class="rationale-cell">Fast-growing suburb south of Houston; strong new construction and residential flooring market. High priority for plan expansion.</td></tr>
+          <tr><td>5</td><td>Sugar Land</td><td class="num-col">118,000</td><td><span class="tier-pill t1">TIER 1</span></td><td class="dash">&#8212;</td><td class="rationale-cell">Affluent suburb southwest of Houston; high-income households drive strong demand for premium flooring products and installation.</td></tr>
+          <tr><td>6</td><td>League City</td><td class="num-col">115,000</td><td><span class="tier-pill t1">TIER 1</span></td><td class="dash">&#8212;</td><td class="rationale-cell">Growing suburb southeast of Houston; active residential construction and remodeling market.</td></tr>
+          <tr><td>7</td><td>The Woodlands</td><td class="num-col">115,000</td><td><span class="tier-pill t1">TIER 1</span></td><td class="dash">&#8212;</td><td class="rationale-cell">Affluent master-planned community north of Houston; strong demand for premium residential and commercial flooring.</td></tr>
+          <tr><td>8</td><td>Conroe</td><td class="num-col">99,000</td><td><span class="tier-pill t1">TIER 1</span></td><td class="dash">&#8212;</td><td class="rationale-cell">Growing city north of Houston; active new construction market with strong flooring installation demand.</td></tr>
+          <tr><td>9</td><td>Baytown</td><td class="num-col">78,000</td><td><span class="tier-pill t1">TIER 1</span></td><td class="dash">&#8212;</td><td class="rationale-cell">Industrial and residential city east of Houston; solid flooring market with commercial and residential opportunities.</td></tr>
+          <tr><td>10</td><td>Missouri City</td><td class="num-col">75,000</td><td><span class="tier-pill t1">TIER 1</span></td><td class="dash">&#8212;</td><td class="rationale-cell">Suburban city southwest of Houston; strong residential base with growing flooring demand.</td></tr>
+          <tr><td>11</td><td>Spring</td><td class="num-col">62,000</td><td><span class="tier-pill t1">TIER 1</span></td><td class="dash">&#8212;</td><td class="rationale-cell">Unincorporated community north of Houston; active residential market and good long-term expansion target.</td></tr>
+          <tr><td>12</td><td>Friendswood</td><td class="num-col">40,000</td><td><span class="tier-pill t2">TIER 2</span></td><td class="dash">&#8212;</td><td class="rationale-cell">Affluent suburb between Houston and Pearland; strong residential flooring demand.</td></tr>
+          <tr><td>13</td><td>Rosenberg</td><td class="num-col">38,000</td><td><span class="tier-pill t2">TIER 2</span></td><td class="dash">&#8212;</td><td class="rationale-cell">Growing city southwest of Houston; active residential construction market.</td></tr>
+          <tr><td>14</td><td>La Porte</td><td class="num-col">35,000</td><td><span class="tier-pill t2">TIER 2</span></td><td class="dash">&#8212;</td><td class="rationale-cell">Industrial and residential city southeast of Houston; solid flooring market.</td></tr>
+          <tr><td>15</td><td>Deer Park</td><td class="num-col">34,000</td><td><span class="tier-pill t2">TIER 2</span></td><td class="dash">&#8212;</td><td class="rationale-cell">Residential community southeast of Houston; partially covered by Houston and Pasadena targeting.</td></tr>
+          <tr><td>16</td><td>Lake Jackson</td><td class="num-col">28,000</td><td><span class="tier-pill t2">TIER 2</span></td><td class="dash">&#8212;</td><td class="rationale-cell">City south of Houston near Brazoria County; good long-term expansion target.</td></tr>
+          <tr><td>17</td><td>Alvin</td><td class="num-col">27,000</td><td><span class="tier-pill t2">TIER 2</span></td><td class="dash">&#8212;</td><td class="rationale-cell">Growing community south of Houston; active residential market.</td></tr>
+          <tr><td>18</td><td>Katy</td><td class="num-col">21,000</td><td><span class="tier-pill t2">TIER 2</span></td><td class="dash">&#8212;</td><td class="rationale-cell">Fast-growing suburb west of Houston; strong new construction and premium flooring demand.</td></tr>
+          <tr><td>19</td><td>Bellaire</td><td class="num-col">19,000</td><td><span class="tier-pill t2">TIER 2</span></td><td class="dash">&#8212;</td><td class="rationale-cell">Affluent enclave within Houston; high-income households drive premium flooring demand.</td></tr>
+          <tr><td>20</td><td>Angleton</td><td class="num-col">19,000</td><td><span class="tier-pill t2">TIER 2</span></td><td class="dash">&#8212;</td><td class="rationale-cell">County seat of Brazoria County; solid residential and commercial flooring market.</td></tr>
+          <tr class="row-tier3"><td>21&#8211;30</td><td colspan="2">Stafford, South Houston, Humble, Tomball, Richmond, Manvel, Seabrook, Webster, Clute, Galena Park</td><td><span class="tier-pill t3">TIER 3</span></td><td class="dash">&#8212;</td><td class="rationale-cell">Smaller communities (under 18,000 pop.); long-term expansion as domain authority grows.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mobile-market-list" id="mobile-market-list"></div>
+
+    <h3 class="subsection-title" style="margin-top:3rem;">Selected Markets by Tier</h3>
     <div class="tier-cards-grid">
-      <!-- Tier 1 -->
+
       <div class="tier-card tier-card-1">
-        <div class="tier-card-label">Tier 1</div>
-        <div class="tier-card-title">Primary Markets</div>
-        <div class="tier-card-desc">HQ city and communities with populations exceeding 40,000. These are the highest-priority markets for SEO investment.</div>
+        <div class="tier-card-label">TIER 1 &mdash; PRIMARY MARKETS</div>
+        <h4 class="tier-card-title">Highest Priority Targets</h4>
+        <p class="tier-card-desc">Highest-population markets in Greater Houston; form the backbone of the strategy. Houston is selected for the current plan. The remaining Tier 1 cities are the top candidates for plan upgrades.</p>
         <ul class="tier-city-list">
-          <li class="city-row city-header-row">
-            <span class="city-col-label">City</span>
-            <span class="city-col-label">Population</span>
-          </li>
-          <li class="city-row selected-city"><span class="city-name">Houston <span class="hq-tag">HQ</span></span><span class="city-pop">2,304,580</span></li>
+          <li class="city-row city-header-row"><span class="city-col-label">CITY</span><span class="city-col-label" style="text-align:right">POPULATION</span></li>
+          <li class="city-row selected-city"><span class="city-name"><strong>&#9733; Houston</strong></span><span class="city-pop">2,304,580</span></li>
           <li class="city-row"><span class="city-name">Cypress</span><span class="city-pop">220,000</span></li>
           <li class="city-row"><span class="city-name">Pasadena</span><span class="city-pop">152,000</span></li>
-          <li class="city-row selected-city"><span class="city-name">Pearland</span><span class="city-pop">130,000</span></li>
+          <li class="city-row"><span class="city-name">Pearland</span><span class="city-pop">130,000</span></li>
           <li class="city-row"><span class="city-name">Sugar Land</span><span class="city-pop">118,000</span></li>
           <li class="city-row"><span class="city-name">League City</span><span class="city-pop">115,000</span></li>
-          <li class="city-row"><span class="city-name">The Woodlands</span><span class="city-pop">115,000</span></li>
-          <li class="city-row"><span class="city-name">Conroe</span><span class="city-pop">99,000</span></li>
-          <li class="city-row"><span class="city-name">Baytown</span><span class="city-pop">78,000</span></li>
-          <li class="city-row"><span class="city-name">Missouri City</span><span class="city-pop">75,000</span></li>
-          <li class="city-row"><span class="city-name">Spring</span><span class="city-pop">62,000</span></li>
+          <li class="city-row city-more"><span>+ 5 more Tier 1 markets</span></li>
         </ul>
       </div>
-      <!-- Tier 2 -->
+
       <div class="tier-card tier-card-2">
-        <div class="tier-card-label">Tier 2</div>
-        <div class="tier-card-title">Secondary Markets</div>
-        <div class="tier-card-desc">Communities with populations between 10,000 and 40,000. Valuable for plan expansion as MEK Interiors &amp; Floors grows its digital footprint.</div>
+        <div class="tier-card-label">TIER 2 &mdash; SECONDARY MARKETS</div>
+        <h4 class="tier-card-title">Expansion Targets</h4>
+        <p class="tier-card-desc">Strong mid-size communities in Greater Houston; all are candidates for plan upgrades once Houston coverage is established and domain authority grows.</p>
         <ul class="tier-city-list">
-          <li class="city-row city-header-row">
-            <span class="city-col-label">City</span>
-            <span class="city-col-label">Population</span>
-          </li>
+          <li class="city-row city-header-row"><span class="city-col-label">CITY</span><span class="city-col-label" style="text-align:right">POPULATION</span></li>
           <li class="city-row"><span class="city-name">Friendswood</span><span class="city-pop">40,000</span></li>
           <li class="city-row"><span class="city-name">Rosenberg</span><span class="city-pop">38,000</span></li>
           <li class="city-row"><span class="city-name">La Porte</span><span class="city-pop">35,000</span></li>
           <li class="city-row"><span class="city-name">Deer Park</span><span class="city-pop">34,000</span></li>
           <li class="city-row"><span class="city-name">Lake Jackson</span><span class="city-pop">28,000</span></li>
           <li class="city-row"><span class="city-name">Alvin</span><span class="city-pop">27,000</span></li>
-          <li class="city-row"><span class="city-name">Katy</span><span class="city-pop">21,000</span></li>
-          <li class="city-row"><span class="city-name">Bellaire</span><span class="city-pop">19,000</span></li>
-          <li class="city-row"><span class="city-name">Angleton</span><span class="city-pop">19,000</span></li>
-          <li class="city-row"><span class="city-name">Stafford</span><span class="city-pop">18,000</span></li>
-          <li class="city-row"><span class="city-name">Tomball</span><span class="city-pop">16,000</span></li>
+          <li class="city-row city-more"><span>+ 3 more Tier 2 markets</span></li>
         </ul>
       </div>
-      <!-- Tier 3 -->
+
       <div class="tier-card tier-card-3">
-        <div class="tier-card-label">Tier 3</div>
-        <div class="tier-card-title">Tertiary Markets</div>
-        <div class="tier-card-desc">Smaller communities under 10,000 residents. Not targeted in this plan; search volume at this level does not justify dedicated pages for a flooring contractor.</div>
+        <div class="tier-card-label">TIER 3 &mdash; FUTURE EXPANSION</div>
+        <h4 class="tier-card-title">Long-Term Targets</h4>
+        <p class="tier-card-desc">Smaller communities in Greater Houston; viable targets as MEK Interiors &amp; Floors' domain authority grows and the plan expands to higher levels.</p>
         <ul class="tier-city-list">
-          <li class="city-row city-header-row">
-            <span class="city-col-label">City</span>
-            <span class="city-col-label">Population</span>
-          </li>
-          <li class="city-row"><span class="city-name">Webster</span><span class="city-pop">12,000</span></li>
-          <li class="city-row"><span class="city-name">Seabrook</span><span class="city-pop">13,000</span></li>
-          <li class="city-row"><span class="city-name">Manvel</span><span class="city-pop">15,000</span></li>
-          <li class="city-row"><span class="city-name">Richmond</span><span class="city-pop">15,000</span></li>
-          <li class="city-row"><span class="city-name">Humble</span><span class="city-pop">16,000</span></li>
-          <li class="city-row"><span class="city-name">South Houston</span><span class="city-pop">17,000</span></li>
-          <li class="city-row"><span class="city-name">Clute</span><span class="city-pop">12,000</span></li>
-          <li class="city-row"><span class="city-name">Galena Park</span><span class="city-pop">11,000</span></li>
-          <li class="city-row city-spacer"><span>&nbsp;</span><span>&nbsp;</span></li>
-          <li class="city-row city-spacer"><span>&nbsp;</span><span>&nbsp;</span></li>
-          <li class="city-row city-spacer"><span>&nbsp;</span><span>&nbsp;</span></li>
+          <li class="city-row city-header-row"><span class="city-col-label">CITY</span><span class="city-col-label" style="text-align:right">POPULATION</span></li>
+          <li class="city-row"><span class="city-name">Stafford</span><span class="city-pop">&lt;18,000</span></li>
+          <li class="city-row"><span class="city-name">South Houston</span><span class="city-pop">&lt;18,000</span></li>
+          <li class="city-row"><span class="city-name">Humble</span><span class="city-pop">&lt;18,000</span></li>
+          <li class="city-row"><span class="city-name">Tomball</span><span class="city-pop">&lt;18,000</span></li>
+          <li class="city-row"><span class="city-name">Richmond</span><span class="city-pop">&lt;18,000</span></li>
+          <li class="city-row"><span class="city-name">Manvel</span><span class="city-pop">&lt;18,000</span></li>
+          <li class="city-row city-more"><span>+ 4 additional communities</span></li>
         </ul>
       </div>
-    </div>
-    <p class="tier-legend">Cities highlighted in Tier 1 are the two markets selected for this Booster plan: Houston (HQ) and Pearland.</p>
 
-    <!-- Bar Chart -->
-    <div class="chart-container desktop-only">
-      <div class="chart-title">Top 10 Greater Houston Markets by Population</div>
-      <canvas id="marketChart" height="90"></canvas>
     </div>
+    <p class="tier-legend">&#9733; = Selected Market</p>
 
-    <!-- Mobile market list -->
-    <div class="mobile-market-list">
-      <div class="mob-mkt-header">
-        <span class="mob-rank">#</span>
-        <span class="mob-city">City</span>
-        <span class="mob-pop">Pop.</span>
-        <span class="mob-tier">Tier</span>
-        <span class="mob-check">In Plan</span>
-      </div>
-      <div class="mob-mkt-row selected"><span class="mob-rank">1</span><span class="mob-city"><strong>Houston</strong> <span class="hq-tag">HQ</span></span><span class="mob-pop">2.3M</span><span class="mob-tier"><span class="tier-pill t1">T1</span></span><span class="mob-check">&#10003;</span></div>
-      <div class="mob-mkt-row"><span class="mob-rank">2</span><span class="mob-city">Cypress</span><span class="mob-pop">220K</span><span class="mob-tier"><span class="tier-pill t1">T1</span></span><span class="mob-dash">-</span></div>
-      <div class="mob-mkt-row"><span class="mob-rank">3</span><span class="mob-city">Pasadena</span><span class="mob-pop">152K</span><span class="mob-tier"><span class="tier-pill t1">T1</span></span><span class="mob-dash">-</span></div>
-      <div class="mob-mkt-row selected"><span class="mob-rank">4</span><span class="mob-city"><strong>Pearland</strong></span><span class="mob-pop">130K</span><span class="mob-tier"><span class="tier-pill t1">T1</span></span><span class="mob-check">&#10003;</span></div>
-      <div class="mob-mkt-row"><span class="mob-rank">5</span><span class="mob-city">Sugar Land</span><span class="mob-pop">118K</span><span class="mob-tier"><span class="tier-pill t1">T1</span></span><span class="mob-dash">-</span></div>
-      <div class="mob-mkt-row"><span class="mob-rank">6</span><span class="mob-city">League City</span><span class="mob-pop">115K</span><span class="mob-tier"><span class="tier-pill t1">T1</span></span><span class="mob-dash">-</span></div>
-      <div class="mob-mkt-row"><span class="mob-rank">7</span><span class="mob-city">The Woodlands</span><span class="mob-pop">115K</span><span class="mob-tier"><span class="tier-pill t1">T1</span></span><span class="mob-dash">-</span></div>
-      <div class="mob-mkt-row"><span class="mob-rank">8</span><span class="mob-city">Conroe</span><span class="mob-pop">99K</span><span class="mob-tier"><span class="tier-pill t1">T1</span></span><span class="mob-dash">-</span></div>
-      <div class="mob-mkt-row"><span class="mob-rank">9</span><span class="mob-city">Baytown</span><span class="mob-pop">78K</span><span class="mob-tier"><span class="tier-pill t1">T1</span></span><span class="mob-dash">-</span></div>
-      <div class="mob-mkt-row"><span class="mob-rank">10</span><span class="mob-city">Missouri City</span><span class="mob-pop">75K</span><span class="mob-tier"><span class="tier-pill t1">T1</span></span><span class="mob-dash">-</span></div>
+    <h3 class="subsection-title" style="margin-top:3rem;">Top 10 Markets by Population</h3>
+    <div class="chart-container">
+      <canvas id="marketChart"></canvas>
     </div>
-  </div>
-</section>
+    </div>
+  </section>
 
-<!-- SECTION 3: KEYWORD ANALYSIS -->
-<section class="strategy-section" id="keywords">
-  <div class="section-inner">
+  <!-- ===== SECTION 03: KEYWORDS ===== -->
+  <section class="strategy-section" id="keywords">
+    <div class="section-inner">
     <div class="section-header">
-      <div class="section-number">03</div>
+      <span class="section-number">03</span>
       <h2>Keyword Analysis &amp; Tiering</h2>
     </div>
-    <p class="prose">
-      We analyzed over 950 keyword variations derived from MEK Interiors &amp; Floors' full service lineup, including residential flooring types and commercial contract services. Keywords were filtered for commercial and transactional intent, removing product-research terms, DIY queries, and informational content. The resulting qualified keywords were grouped into three strategic tiers based on search intent and service line.
-    </p>
+    <p class="prose">We researched <strong>401 relevant keywords</strong> for MEK Interiors &amp; Floors and grouped them into four strategic tiers based on service type and search intent. All search volumes listed are <strong>national monthly averages</strong> sourced from SEMrush and are used as a relative indicator of demand to guide prioritization, not as projections of local traffic. Keywords containing "near me" are shown here for reference but are treated as equivalent to their base keyword in the final matrix, since the city name serves the same geographic function when appended.</p>
 
-    <!-- Charts Row -->
-    <div class="charts-row">
-      <div class="chart-container" style="margin-bottom:0;">
-        <div class="chart-title">Top Keywords by Monthly Search Volume</div>
-        <canvas id="keywordChart" height="130"></canvas>
-      </div>
-      <div class="chart-container" style="margin-bottom:0;">
-        <div class="chart-title">Volume by Keyword Tier</div>
-        <div class="doughnut-wrap">
-          <canvas id="tierDonut"></canvas>
-        </div>
-      </div>
+    <h3 class="subsection-title">Full Keyword Consideration List</h3>
+    <p class="prose-sm">All researched keywords are shown below, sorted by monthly searches. Keywords selected for the final matrix are highlighted.</p>
+    <div class="table-wrapper">
+      <table class="data-table kw-table">
+        <thead>
+          <tr><th>Keyword</th><th class="num-col">Monthly Searches</th><th>Tier</th><th>Status</th></tr>
+        </thead>
+        <tbody id="kw-table-body">
+        </tbody>
+      </table>
     </div>
 
-    <div style="height:32px;"></div>
-
-    <!-- Keyword Tier Cards -->
-    <div class="kw-tier-grid">
-      <!-- Tier 1: High-Traffic Residential -->
-      <div class="kw-tier-card kw-tier-card-1">
-        <div class="kw-tier-label">Tier 1</div>
-        <div class="kw-tier-name">High-Traffic Residential</div>
-        <div class="kw-tier-desc">Broad residential flooring terms with the highest monthly search volumes. These keywords capture homeowners actively seeking flooring installation services and drive the highest volume of inbound leads.</div>
-        <div class="kw-tier-divider"></div>
-        <div class="kw-tier-table">
-          <div class="kw-header">
-            <span class="kw-col-label">Keyword</span>
-            <span class="kw-col-label">Mo. Volume</span>
-          </div>
-          <div class="kw-row"><span class="kw-name">carpet installation</span><span class="kw-vol">27,100</span></div>
-          <div class="kw-row"><span class="kw-name">hardwood floor installation</span><span class="kw-vol">9,900</span></div>
-          <div class="kw-row"><span class="kw-name">vinyl plank flooring installation</span><span class="kw-vol">3,600</span></div>
-          <div class="kw-row"><span class="kw-name">laminate flooring installation</span><span class="kw-vol">6,600</span></div>
-          <div class="kw-row"><span class="kw-name">tile installation</span><span class="kw-vol">14,800</span></div>
-        </div>
-      </div>
-      <!-- Tier 2: Contractor & Service Intent -->
-      <div class="kw-tier-card kw-tier-card-2">
-        <div class="kw-tier-label">Tier 2</div>
-        <div class="kw-tier-name">Contractor &amp; Service Intent</div>
-        <div class="kw-tier-desc">Keywords where searchers are explicitly looking for a professional contractor or company. These convert at high rates because the searcher is ready to hire, making them the most efficient keywords for generating qualified leads.</div>
-        <div class="kw-tier-divider"></div>
-        <div class="kw-tier-table">
-          <div class="kw-header">
-            <span class="kw-col-label">Keyword</span>
-            <span class="kw-col-label">Mo. Volume</span>
-          </div>
-          <div class="kw-row"><span class="kw-name">flooring contractor</span><span class="kw-vol">8,100</span></div>
-          <div class="kw-row"><span class="kw-name">flooring contractors near me</span><span class="kw-vol">12,100</span></div>
-          <div class="kw-row"><span class="kw-name">flooring company near me</span><span class="kw-vol">3,600</span></div>
-          <div class="kw-row"><span class="kw-name">floor installer near me</span><span class="kw-vol">3,600</span></div>
-          <div class="kw-row"><span class="kw-name">flooring installation near me</span><span class="kw-vol">9,900</span></div>
-        </div>
-      </div>
-      <!-- Tier 3: Commercial Flooring -->
-      <div class="kw-tier-card kw-tier-card-3">
-        <div class="kw-tier-label">Tier 3</div>
-        <div class="kw-tier-name">Commercial Flooring</div>
-        <div class="kw-tier-desc">Commercial and contract flooring keywords targeting property managers, developers, and facility operators. These represent MEK Interiors &amp; Floors' commercial contract division and a key area for business growth beyond residential work.</div>
-        <div class="kw-tier-divider"></div>
-        <div class="kw-tier-table">
-          <div class="kw-header">
-            <span class="kw-col-label">Keyword</span>
-            <span class="kw-col-label">Mo. Volume</span>
-          </div>
-          <div class="kw-row"><span class="kw-name">commercial flooring</span><span class="kw-vol">5,400</span></div>
-          <div class="kw-row"><span class="kw-name">commercial flooring contractor</span><span class="kw-vol">390</span></div>
-          <div class="kw-row"><span class="kw-name">commercial flooring near me</span><span class="kw-vol">2,900</span></div>
-          <div class="kw-row"><span class="kw-name">commercial carpet installation</span><span class="kw-vol">390</span></div>
-          <div class="kw-row"><span class="kw-name">commercial vinyl flooring</span><span class="kw-vol">1,900</span></div>
-        </div>
-      </div>
+    <h3 class="subsection-title" style="margin-top:3rem;">Keywords by Strategic Tier</h3>
+    <div class="kw-tier-grid" id="kw-tier-grid">
     </div>
-  </div>
-</section>
+    </div>
+  </section>
 
-<!-- SECTION 4: MATRIX -->
-<section class="strategy-section alt-bg" id="matrix">
-  <div class="section-inner">
+  <!-- ===== SECTION 04: MATRIX ===== -->
+  <section class="strategy-section alt-bg" id="matrix">
+    <div class="section-inner">
     <div class="section-header">
-      <div class="section-number">04</div>
-      <h2>Final Keyword-City Matrix</h2>
+      <span class="section-number">04</span>
+      <h2>Final Keyword-City Strategy Matrix</h2>
     </div>
-    <p class="prose">
-      The following 10 keyword-city combinations form the core of this SEO strategy for MEK Interiors &amp; Floors. Each combination represents a specific, high-value search landscape where MEK Interiors &amp; Floors will be positioned as the market leader. The strategy targets <strong>Houston</strong> (HQ) and <strong>Pearland</strong>, a large, affluent, and rapidly growing suburb with a high rate of homeownership and strong demand for flooring upgrades.
-    </p>
-
-    <!-- Desktop Matrix Table -->
-    <div id="matrix-table-wrapper">
-      <div class="matrix-wrapper">
-        <table class="matrix-table">
-          <thead>
-            <tr>
-              <th class="kw-col-header" rowspan="2">Keyword</th>
-              <th colspan="1"><span class="city-header">Houston <span class="hq-star">&#9733;</span></span><br><span class="city-pop-small">2,304,580</span></th>
-              <th colspan="1"><span class="city-header">Pearland</span><br><span class="city-pop-small">130,000</span></th>
-              <th class="num-col" rowspan="2">Mo. Volume</th>
-              <th class="num-col" rowspan="2">Keyword Tier</th>
-            </tr>
-            <tr>
-              <th><span class="tier-pill t1">Tier 1</span></th>
-              <th><span class="tier-pill t1">Tier 1</span></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="kw-cell">flooring contractor</td>
-              <td class="check-cell">&#10003;</td>
-              <td class="check-cell">&#10003;</td>
-              <td class="num-col">8,100</td>
-              <td><span class="tier-pill t2">Contractor &amp; Service</span></td>
-            </tr>
-            <tr>
-              <td class="kw-cell">hardwood floor installation</td>
-              <td class="check-cell">&#10003;</td>
-              <td class="check-cell">&#10003;</td>
-              <td class="num-col">9,900</td>
-              <td><span class="tier-pill t1">High-Traffic Residential</span></td>
-            </tr>
-            <tr>
-              <td class="kw-cell">vinyl plank flooring installation</td>
-              <td class="check-cell">&#10003;</td>
-              <td class="check-cell">&#10003;</td>
-              <td class="num-col">3,600</td>
-              <td><span class="tier-pill t1">High-Traffic Residential</span></td>
-            </tr>
-            <tr>
-              <td class="kw-cell">commercial flooring contractor</td>
-              <td class="check-cell">&#10003;</td>
-              <td class="check-cell">&#10003;</td>
-              <td class="num-col">390</td>
-              <td><span class="tier-pill t3">Commercial Flooring</span></td>
-            </tr>
-            <tr>
-              <td class="kw-cell">carpet installation</td>
-              <td class="check-cell">&#10003;</td>
-              <td class="check-cell">&#10003;</td>
-              <td class="num-col">27,100</td>
-              <td><span class="tier-pill t1">High-Traffic Residential</span></td>
-            </tr>
-            <tr class="total-row">
-              <td class="total-label">Keywords per City</td>
-              <td class="total-cell">5</td>
-              <td class="total-cell">5</td>
-              <td class="num-col total-cell">49,090</td>
-              <td></td>
-            </tr>
-          </tbody>
-          <tfoot>
-            <tr class="grand-total-row">
-              <td colspan="5">Total Combinations: 10 of 10 &nbsp;|&nbsp; Plan: Booster &nbsp;|&nbsp; Cities: 2 &nbsp;|&nbsp; Keywords: 5</td>
-            </tr>
-          </tfoot>
-        </table>
-      </div>
+    <p class="prose">This is the core deliverable of the Booster plan. The matrix below maps 10 high-value keywords across Houston for a total of 10 targeted keyword-city combinations. Each combination represents a unique page or content target designed to rank MEK Interiors &amp; Floors for that specific search in Houston. "Near me" variants have been removed from the matrix, as the city name appended to each keyword serves the same geographic function.</p>
+    <div class="table-wrapper matrix-wrapper" id="matrix-table-wrapper">
+      <table class="data-table matrix-table" id="matrix-table">
+        <thead id="matrix-thead"></thead>
+        <tbody id="matrix-tbody"></tbody>
+      </table>
     </div>
-
-    <!-- Mobile Matrix -->
-    <div class="mobile-matrix">
-      <div class="mob-matrix-card">
-        <div class="mob-matrix-city">
-          <span class="mob-matrix-city-name">Houston <span class="hq-tag">HQ</span></span>
-          <span class="mob-matrix-meta"><span class="tier-pill t1">Tier 1</span> &nbsp; 2,304,580</span>
-        </div>
-        <div class="mob-matrix-kws">
-          <div class="mob-matrix-kw"><span class="mob-matrix-check">&#10003;</span><span>flooring contractor</span></div>
-          <div class="mob-matrix-kw"><span class="mob-matrix-check">&#10003;</span><span>hardwood floor installation</span></div>
-          <div class="mob-matrix-kw"><span class="mob-matrix-check">&#10003;</span><span>vinyl plank flooring installation</span></div>
-          <div class="mob-matrix-kw"><span class="mob-matrix-check">&#10003;</span><span>commercial flooring contractor</span></div>
-          <div class="mob-matrix-kw"><span class="mob-matrix-check">&#10003;</span><span>carpet installation</span></div>
-        </div>
-        <div class="mob-matrix-total">5 keywords</div>
-      </div>
-      <div class="mob-matrix-card">
-        <div class="mob-matrix-city">
-          <span class="mob-matrix-city-name">Pearland</span>
-          <span class="mob-matrix-meta"><span class="tier-pill t1">Tier 1</span> &nbsp; 130,000</span>
-        </div>
-        <div class="mob-matrix-kws">
-          <div class="mob-matrix-kw"><span class="mob-matrix-check">&#10003;</span><span>flooring contractor</span></div>
-          <div class="mob-matrix-kw"><span class="mob-matrix-check">&#10003;</span><span>hardwood floor installation</span></div>
-          <div class="mob-matrix-kw"><span class="mob-matrix-check">&#10003;</span><span>vinyl plank flooring installation</span></div>
-          <div class="mob-matrix-kw"><span class="mob-matrix-check">&#10003;</span><span>commercial flooring contractor</span></div>
-          <div class="mob-matrix-kw"><span class="mob-matrix-check">&#10003;</span><span>carpet installation</span></div>
-        </div>
-        <div class="mob-matrix-total">5 keywords</div>
-      </div>
-      <div class="mob-matrix-grand-total">Total: 10 Combinations &nbsp;|&nbsp; Booster Plan</div>
+    <div class="mobile-matrix" id="mobile-matrix"></div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- SECTION 5: NOT USED -->
-<section class="strategy-section" id="not-used">
-  <div class="section-inner">
+  <!-- ===== SECTION 05: NOT USED ===== -->
+  <section class="strategy-section" id="not-used">
+    <div class="section-inner">
     <div class="section-header">
-      <div class="section-number">05</div>
+      <span class="section-number">05</span>
       <h2>Keywords Not Used &amp; Rationale</h2>
     </div>
-    <p class="prose">
-      A critical part of a successful SEO strategy is knowing what not to target. The following keywords were intentionally excluded from this plan. Each exclusion is a deliberate strategic decision designed to protect MEK Interiors &amp; Floors' budget and focus resources on terms with the highest probability of generating qualified contractor leads.
-    </p>
-
-    <div class="not-used-grid">
-      <!-- Card 1: Overly Broad -->
-      <div class="not-used-card">
-        <div class="nu-reason">Overly Broad / Low Commercial Intent</div>
-        <div class="nu-desc">These terms have extremely high search volume but are dominated by product and retail searches. They indicate a user is in the research phase, not the hiring phase, resulting in low conversion rates for local contractors.</div>
-        <hr class="nu-divider" />
-        <div class="nu-kw-table">
-          <div class="nu-kw-row nu-header"><span class="nu-kw-name">Keyword</span><span class="nu-kw-vol">Mo. Volume</span></div>
-          <div class="nu-kw-row"><span class="nu-kw-name">vinyl flooring</span><span class="nu-kw-vol">110,000</span></div>
-          <div class="nu-kw-row"><span class="nu-kw-name">lvp flooring</span><span class="nu-kw-vol">110,000</span></div>
-          <div class="nu-kw-row"><span class="nu-kw-name">laminate flooring</span><span class="nu-kw-vol">90,500</span></div>
-          <div class="nu-kw-row"><span class="nu-kw-name">hardwood flooring</span><span class="nu-kw-vol">60,500</span></div>
-          <div class="nu-kw-row"><span class="nu-kw-name">tile flooring</span><span class="nu-kw-vol">27,100</span></div>
-          <div class="nu-kw-row"><span class="nu-kw-name">flooring near me</span><span class="nu-kw-vol">33,100</span></div>
-          <div class="nu-kw-row"><span class="nu-kw-name">luxury vinyl flooring</span><span class="nu-kw-vol">22,200</span></div>
-        </div>
-      </div>
-      <!-- Card 2: Redundant -->
-      <div class="not-used-card">
-        <div class="nu-reason">Redundant Coverage</div>
-        <div class="nu-desc">The intent behind these "near me" searches is fully captured by targeting the primary keyword within a specific city. City-level targeting provides more precise geographic control and avoids diluting the strategy.</div>
-        <hr class="nu-divider" />
-        <div class="nu-kw-table">
-          <div class="nu-kw-row nu-header"><span class="nu-kw-name">Keyword</span><span class="nu-kw-vol">Mo. Volume</span></div>
-          <div class="nu-kw-row"><span class="nu-kw-name">flooring installation near me</span><span class="nu-kw-vol">9,900</span></div>
-          <div class="nu-kw-row"><span class="nu-kw-name">flooring contractors near me</span><span class="nu-kw-vol">12,100</span></div>
-          <div class="nu-kw-row"><span class="nu-kw-name">floor installation near me</span><span class="nu-kw-vol">14,800</span></div>
-          <div class="nu-kw-row"><span class="nu-kw-name">carpet installation near me</span><span class="nu-kw-vol">14,800</span></div>
-          <div class="nu-kw-row"><span class="nu-kw-name">hardwood flooring near me</span><span class="nu-kw-vol">8,100</span></div>
-        </div>
-      </div>
-      <!-- Card 3: Plan Capacity -->
-      <div class="not-used-card">
-        <div class="nu-reason">Plan Capacity</div>
-        <div class="nu-desc">These are strong keywords representing core service lines for MEK Interiors &amp; Floors. The Booster plan's 10-combination capacity was allocated to the highest-priority terms first. These are prime candidates for a plan upgrade.</div>
-        <hr class="nu-divider" />
-        <div class="nu-kw-table">
-          <div class="nu-kw-row nu-header"><span class="nu-kw-name">Keyword</span><span class="nu-kw-vol">Mo. Volume</span></div>
-          <div class="nu-kw-row"><span class="nu-kw-name">tile installation</span><span class="nu-kw-vol">14,800</span></div>
-          <div class="nu-kw-row"><span class="nu-kw-name">laminate flooring installation</span><span class="nu-kw-vol">6,600</span></div>
-          <div class="nu-kw-row"><span class="nu-kw-name">commercial flooring near me</span><span class="nu-kw-vol">2,900</span></div>
-          <div class="nu-kw-row"><span class="nu-kw-name">commercial carpet installation</span><span class="nu-kw-vol">390</span></div>
-          <div class="nu-kw-row"><span class="nu-kw-name">floor refinishing near me</span><span class="nu-kw-vol">5,400</span></div>
-        </div>
-      </div>
+    <p class="prose">The following keywords were identified during research but were not included in the current 10-combination plan. These are not discarded; they represent a clear, prioritized roadmap for future plan expansion. They are grouped by the strategic reason for their current exclusion.</p>
+    <div class="not-used-grid" id="not-used-grid"></div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- SECTION 6: OPPORTUNITIES -->
-<section class="strategy-section alt-bg" id="opportunities">
-  <div class="section-inner">
+  <!-- ===== SECTION 06: OPPORTUNITIES ===== -->
+  <section class="strategy-section alt-bg" id="opportunities">
+    <div class="section-inner">
     <div class="section-header">
-      <div class="section-number">06</div>
+      <span class="section-number">06</span>
       <h2>Additional Opportunities</h2>
     </div>
-    <p class="prose">
-      This Booster plan provides a powerful foundation for MEK Interiors &amp; Floors in the Greater Houston market. As rankings are established and leads begin flowing, the following opportunities represent logical next steps for expanding market share and revenue. Each upgrade path is grounded in real search data and directly aligned with MEK Interiors &amp; Floors' existing service lines.
-    </p>
-
-    <div class="opportunities-grid">
-      <!-- Opportunity 1: Tile Installation -->
-      <div class="opp-card opp-card-highlight">
-        <div class="opp-recommended">Recommended</div>
-        <div class="opp-plan-label">Plan Upgrade</div>
-        <div class="opp-price">20+ <span class="opp-price-mo">combinations</span></div>
-        <div class="opp-combos"><span class="opp-add">+10 combinations</span> from current Booster plan</div>
-        <div class="opp-headline">Tile Installation Coverage</div>
-        <div class="opp-desc">Tile installation carries 14,800 monthly searches nationally and represents a distinct, high-value service line for MEK Interiors &amp; Floors. Adding this keyword across Houston and 2-3 additional suburbs would capture significant contractor-intent traffic from homeowners remodeling kitchens, bathrooms, and commercial spaces.</div>
-        <ul class="opp-kw-list">
-          <li class="opp-kw-header"><span class="opp-kw-col-label">Keyword</span><span class="opp-kw-col-label">Mo. Volume</span></li>
-          <li><span class="opp-kw">tile installation</span><span class="opp-vol">14,800</span></li>
-          <li><span class="opp-kw">floor tile installation</span><span class="opp-vol">1,900</span></li>
-          <li><span class="opp-kw">tile installation contractors</span><span class="opp-vol">1,000</span></li>
-        </ul>
-      </div>
-      <!-- Opportunity 2: Expanded Suburbs -->
-      <div class="opp-card">
-        <div class="opp-recommended-spacer"></div>
-        <div class="opp-plan-label">Plan Upgrade</div>
-        <div class="opp-price">20+ <span class="opp-price-mo">combinations</span></div>
-        <div class="opp-combos"><span class="opp-add">+10 combinations</span> from current Booster plan</div>
-        <div class="opp-headline">Expanded Suburban Market Coverage</div>
-        <div class="opp-desc">Sugar Land (118,000), The Woodlands (115,000), and Conroe (99,000) are high-growth, high-income Houston suburbs with strong demand for residential flooring upgrades. Expanding the matrix to include these markets with the existing keyword set would dramatically increase MEK Interiors &amp; Floors' digital footprint across Greater Houston.</div>
-        <ul class="opp-kw-list">
-          <li class="opp-kw-header"><span class="opp-kw-col-label">Keyword</span><span class="opp-kw-col-label">Mo. Volume</span></li>
-          <li><span class="opp-kw">flooring contractor</span><span class="opp-vol">8,100</span></li>
-          <li><span class="opp-kw">carpet installation</span><span class="opp-vol">27,100</span></li>
-          <li><span class="opp-kw">hardwood floor installation</span><span class="opp-vol">9,900</span></li>
-        </ul>
-      </div>
+    <p class="prose">The following upgrade paths represent strategic next steps for MEK Interiors &amp; Floors. Each tier unlocks additional keyword-city combinations, enabling deeper service coverage, new keyword categories, and broader geographic reach across Greater Houston.</p>
+    <div class="opportunities-grid" id="opportunities-grid"></div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- FOOTER -->
+</main>
+
 <footer class="site-footer">
   <div class="footer-inner">
-    <img src="logo_reversed.png" alt="Dotcom Design" class="footer-logo" />
-    <div class="footer-tagline">We Grow Your Business</div>
-    <div class="footer-copy">This SEO strategy was prepared by Dotcom Design for MEK Interiors &amp; Floors. All keyword data sourced from SEMrush. &copy; 2026 Dotcom Design.</div>
+    <img src="./assets/logo_reversed.png" alt="Dotcom Design" class="footer-logo" onerror="this.style.display='none'" />
+    <p class="footer-tagline">Prepared by Dotcom Design: We Grow Your Business</p>
+    <p class="footer-note">All keyword search volumes reflect national monthly averages sourced from SEMrush. Local search volumes will vary based on market size and competition.</p>
   </div>
 </footer>
 
+<script src="./app.js"></script>
+<script src="./charts.js"></script>
 <script>
-// ============================================================
-// CHART.JS — Market Bar Chart
-// ============================================================
-const marketCtx = document.getElementById('marketChart').getContext('2d');
-new Chart(marketCtx, {
-  type: 'bar',
-  data: {
-    labels: ['Houston', 'Cypress', 'Pasadena', 'Pearland', 'Sugar Land', 'League City', 'The Woodlands', 'Conroe', 'Baytown', 'Missouri City'],
-    datasets: [{
-      label: 'Population',
-      data: [2304580, 220000, 152000, 130000, 118000, 115000, 115000, 99000, 78000, 75000],
-      backgroundColor: ['#3F80EA', '#334168', '#334168', '#3F80EA', '#334168', '#334168', '#334168', '#334168', '#334168', '#334168'],
-      borderRadius: 6,
-    }]
-  },
-  options: {
-    responsive: true,
-    plugins: {
-      legend: { display: false },
-      tooltip: {
-        callbacks: {
-          label: ctx => ' ' + ctx.parsed.y.toLocaleString()
-        }
-      }
-    },
-    scales: {
-      y: {
-        beginAtZero: true,
-        ticks: {
-          callback: v => v >= 1000000 ? (v/1000000).toFixed(1)+'M' : v >= 1000 ? (v/1000).toFixed(0)+'K' : v,
-          font: { family: 'Montserrat', size: 11 }
-        },
-        grid: { color: '#f0f0f0' }
-      },
-      x: {
-        ticks: { font: { family: 'Montserrat', size: 11 } },
-        grid: { display: false }
-      }
-    }
-  }
-});
-
-// ============================================================
-// CHART.JS — Keyword Volume Bar Chart
-// ============================================================
-const kwCtx = document.getElementById('keywordChart').getContext('2d');
-new Chart(kwCtx, {
-  type: 'bar',
-  data: {
-    labels: ['carpet installation', 'hardwood floor installation', 'flooring contractor', 'vinyl plank flooring inst.', 'commercial flooring contractor'],
-    datasets: [{
-      label: 'Monthly Searches',
-      data: [27100, 9900, 8100, 3600, 390],
-      backgroundColor: ['#3F80EA', '#3F80EA', '#334168', '#3F80EA', '#EB0052'],
-      borderRadius: 6,
-    }]
-  },
-  options: {
-    indexAxis: 'y',
-    responsive: true,
-    plugins: {
-      legend: { display: false },
-      tooltip: {
-        callbacks: {
-          label: ctx => ' ' + ctx.parsed.x.toLocaleString() + '/mo'
-        }
-      }
-    },
-    scales: {
-      x: {
-        beginAtZero: true,
-        ticks: {
-          callback: v => v >= 1000 ? (v/1000).toFixed(0)+'K' : v,
-          font: { family: 'Montserrat', size: 11 }
-        },
-        grid: { color: '#f0f0f0' }
-      },
-      y: {
-        ticks: { font: { family: 'Montserrat', size: 11 } },
-        grid: { display: false }
-      }
-    }
-  }
-});
-
-// ============================================================
-// CHART.JS — Tier Doughnut Chart
-// ============================================================
-const donutCtx = document.getElementById('tierDonut').getContext('2d');
-new Chart(donutCtx, {
-  type: 'doughnut',
-  data: {
-    labels: ['High-Traffic Residential', 'Contractor & Service Intent', 'Commercial Flooring'],
-    datasets: [{
-      data: [40600, 37300, 11090],
-      backgroundColor: ['#3F80EA', '#334168', '#EB0052'],
-      borderWidth: 2,
-      borderColor: '#fff'
-    }]
-  },
-  options: {
-    responsive: true,
-    maintainAspectRatio: true,
-    cutout: '65%',
-    plugins: {
-      legend: {
-        position: 'bottom',
-        labels: {
-          font: { family: 'Montserrat', size: 10 },
-          padding: 12,
-          boxWidth: 12
-        }
-      },
-      tooltip: {
-        callbacks: {
-          label: ctx => ' ' + ctx.parsed.toLocaleString() + '/mo'
-        }
-      }
-    }
-  }
-});
-
-// ============================================================
-// STICKY NAV: Active section highlighting
-// ============================================================
-const navLinks = document.querySelectorAll('.section-nav a');
-const sections = document.querySelectorAll('section[id]');
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      navLinks.forEach(a => a.classList.remove('active'));
-      const active = document.querySelector(`.section-nav a[href="#${entry.target.id}"]`);
-      if (active) active.classList.add('active');
-    }
+(function() {
+  var navLinks = document.querySelectorAll('.section-nav a');
+  var sections = Array.from(document.querySelectorAll('.strategy-section[id]'));
+  var nav = document.getElementById('section-nav');
+  var navHeight = nav ? nav.offsetHeight : 60;
+  var linkMap = {};
+  navLinks.forEach(function(a) {
+    var id = a.getAttribute('href').replace('#', '');
+    linkMap[id] = a;
   });
-}, { rootMargin: '-30% 0px -60% 0px' });
-sections.forEach(s => observer.observe(s));
-
-// ============================================================
-// HEIGHT EQUALIZER — aligns card elements across grids
-// ============================================================
+  function setActive(id) {
+    navLinks.forEach(function(a) { a.classList.remove('active'); });
+    if (linkMap[id]) {
+      linkMap[id].classList.add('active');
+      var link = linkMap[id];
+      var navRect = nav.getBoundingClientRect();
+      var linkRect = link.getBoundingClientRect();
+      var scrollLeft = nav.scrollLeft + (linkRect.left - navRect.left) - (navRect.width / 2) + (linkRect.width / 2);
+      nav.scrollTo({ left: scrollLeft, behavior: 'smooth' });
+    }
+  }
+  function getActiveSection() {
+    var headerEl = document.querySelector('.site-header');
+    var headerH = headerEl ? headerEl.offsetHeight : 0;
+    var offset = headerH + navHeight + 40;
+    var scrollY = window.scrollY || window.pageYOffset;
+    var active = sections[0];
+    for (var i = 0; i < sections.length; i++) {
+      var top = sections[i].getBoundingClientRect().top + scrollY;
+      if (top - offset <= scrollY) { active = sections[i]; }
+    }
+    return active;
+  }
+  var ticking = false;
+  function onScroll() {
+    if (!ticking) {
+      window.requestAnimationFrame(function() {
+        var s = getActiveSection();
+        if (s) setActive(s.id);
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('load', function() { var s = getActiveSection(); if (s) setActive(s.id); });
+  setTimeout(function() { var s = getActiveSection(); if (s) setActive(s.id); }, 500);
+})();
+</script>
+<script>
 function equalizeHeights(selector) {
-  const elements = document.querySelectorAll(selector);
-  if (!elements.length) return;
-  elements.forEach(el => el.style.height = '');
-  if (window.innerWidth <= 900) return;
-  let max = 0;
-  elements.forEach(el => { if (el.offsetHeight > max) max = el.offsetHeight; });
-  elements.forEach(el => el.style.height = max + 'px');
+  var els = document.querySelectorAll(selector);
+  var maxH = 0;
+  els.forEach(function(el) { el.style.height = ''; });
+  els.forEach(function(el) { if (el.offsetHeight > maxH) maxH = el.offsetHeight; });
+  els.forEach(function(el) { el.style.height = maxH + 'px'; });
 }
-
-function runAllEqualizers() {
-  equalizeHeights('.tier-card-desc');
-  equalizeHeights('.kw-tier-desc');
-  equalizeHeights('.nu-desc');
-  equalizeHeights('.opp-desc');
-}
-
-window.addEventListener('load', runAllEqualizers);
-window.addEventListener('resize', runAllEqualizers);
+function runAllEqualizers() { equalizeHeights('.tier-card-desc'); }
+window.addEventListener('load', function() {
+  runAllEqualizers();
+  var resizeTimer;
+  window.addEventListener('resize', function() {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(runAllEqualizers, 150);
+  });
+});
 </script>
 </body>
 </html>
