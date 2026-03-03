@@ -34,91 +34,91 @@ const STRATEGY = {
   num_target_markets: 10,
 
   // ---- KEYWORD TABLE DATA ----
-  // All 149 researched keywords with variant family grouping applied
+  // All researched keywords structured by variant family for grouped table display.
+  // Each keyword has: family (string), is_base (bool), variant_type (string|null)
+  // variant_type values: null (base), 'Singular Variant', 'Plural Variant', 'Near Me Variant', 'Short-Form Variant', 'Variant'
+  // Families are ordered by the volume of their base/selected keyword (descending).
   keyword_table: [
-    // FAMILY A: Barndominium (general) — SELECT: barndominium (246K)
-    { keyword: "barndominium",                      monthly_searches: 246000, tier: "Tier 1", status: "selected",  note: "" },
-    { keyword: "barndominium homes",                monthly_searches:  12100, tier: "Tier 1", status: "not_used",  note: "Same family as 'barndominium'; lower volume variant." },
-    { keyword: "barndominium kits",                 monthly_searches:  40500, tier: "Tier 1", status: "not_used",  note: "Product/kit term; informational intent, not hire-intent." },
-    { keyword: "barndominium with shop",            monthly_searches:   1000, tier: "Tier 1", status: "not_used",  note: "Informational/design research term, not hire-intent." },
-    { keyword: "building a barndominium",           monthly_searches:   1900, tier: "Tier 1", status: "not_used",  note: "Informational/DIY research intent." },
-    { keyword: "build a barndominium",              monthly_searches:   1000, tier: "Tier 1", status: "not_used",  note: "Informational/DIY research intent." },
-    { keyword: "barndominium shell",                monthly_searches:    720, tier: "Tier 1", status: "not_used",  note: "Product/kit term; not hire-intent." },
-    { keyword: "turnkey barndominium",              monthly_searches:    390, tier: "Tier 1", status: "not_used",  note: "Low volume; informational intent." },
-    { keyword: "barndominium packages",             monthly_searches:    390, tier: "Tier 1", status: "not_used",  note: "Product/kit term; not hire-intent." },
-    { keyword: "barndominium kit",                  monthly_searches:   4400, tier: "Tier 1", status: "not_used",  note: "Product/kit term; not hire-intent." },
-    { keyword: "barndominium price",                monthly_searches:    590, tier: "Tier 1", status: "not_used",  note: "Informational/cost research intent." },
-    { keyword: "barndominium cost",                 monthly_searches:   5400, tier: "Tier 1", status: "not_used",  note: "Informational/cost research intent." },
-    { keyword: "barndominium construction cost",    monthly_searches:    260, tier: "Tier 1", status: "not_used",  note: "Informational/cost research intent." },
 
-    // FAMILY B: Barndominium Plans — SELECT: barndominium plans (60.5K)
-    { keyword: "barndominium plans",                monthly_searches:  60500, tier: "Tier 1", status: "selected",  note: "" },
-    { keyword: "barndominium floor plans",          monthly_searches:  33100, tier: "Tier 1", status: "not_used",  note: "Same family as 'barndominium plans'; lower volume variant." },
-    { keyword: "barndo plans",                      monthly_searches:   4400, tier: "Tier 2", status: "not_used",  note: "Same family as 'barndominium plans'; lower volume short-form variant." },
-    { keyword: "barndo floor plans",                monthly_searches:   2400, tier: "Tier 2", status: "not_used",  note: "Same family as 'barndominium plans'; lower volume short-form variant." },
+    // ── FAMILY A: barndominium (base) — 246,000/mo — SELECTED ──────────────────
+    { keyword: "barndominium",                      monthly_searches: 246000, tier: "Tier 1", status: "selected",  family: "barndominium",         is_base: true,  variant_type: null,                note: "" },
+    { keyword: "barndo",                            monthly_searches:  14800, tier: "Tier 1", status: "not_used",  family: "barndominium",         is_base: false, variant_type: "Short-Form Variant", note: "Short-form of 'barndominium'; same searcher intent. 'barndominium' (246K) is the correct family representative." },
+    { keyword: "barndominium near me",              monthly_searches:   1600, tier: "Tier 1", status: "near_me",   family: "barndominium",         is_base: false, variant_type: "Near Me Variant",    note: "City-name targeting in the URL slug and page title serves the same geographic function as 'near me'." },
+    { keyword: "barndominium homes",                monthly_searches:  12100, tier: "Tier 1", status: "not_used",  family: "barndominium",         is_base: false, variant_type: "Variant",            note: "Broader informational variant; same family as 'barndominium'." },
+    { keyword: "barndominium kits",                 monthly_searches:  40500, tier: "Tier 1", status: "not_used",  family: "barndominium",         is_base: false, variant_type: "Variant",            note: "Product/kit term; informational intent, not hire-intent." },
+    { keyword: "barndominium cost",                 monthly_searches:   5400, tier: "Tier 1", status: "not_used",  family: "barndominium",         is_base: false, variant_type: "Variant",            note: "Informational/cost research intent." },
+    { keyword: "barndominium kit",                  monthly_searches:   4400, tier: "Tier 1", status: "not_used",  family: "barndominium",         is_base: false, variant_type: "Variant",            note: "Product/kit term; not hire-intent." },
+    { keyword: "barndo homes",                      monthly_searches:    880, tier: "Tier 1", status: "not_used",  family: "barndominium",         is_base: false, variant_type: "Short-Form Variant", note: "Short-form variant of 'barndominium homes'; same family." },
+    { keyword: "building a barndominium",           monthly_searches:   1900, tier: "Tier 1", status: "not_used",  family: "barndominium",         is_base: false, variant_type: "Variant",            note: "Informational/DIY research intent." },
+    { keyword: "build a barndominium",              monthly_searches:   1000, tier: "Tier 1", status: "not_used",  family: "barndominium",         is_base: false, variant_type: "Variant",            note: "Informational/DIY research intent." },
+    { keyword: "barndominium with shop",            monthly_searches:   1000, tier: "Tier 1", status: "not_used",  family: "barndominium",         is_base: false, variant_type: "Variant",            note: "Informational/design research term, not hire-intent." },
+    { keyword: "barndominium shell",                monthly_searches:    720, tier: "Tier 1", status: "not_used",  family: "barndominium",         is_base: false, variant_type: "Variant",            note: "Product/kit term; not hire-intent." },
+    { keyword: "barndominium price",                monthly_searches:    590, tier: "Tier 1", status: "not_used",  family: "barndominium",         is_base: false, variant_type: "Variant",            note: "Informational/cost research intent." },
+    { keyword: "barndo cost",                       monthly_searches:    390, tier: "Tier 1", status: "not_used",  family: "barndominium",         is_base: false, variant_type: "Short-Form Variant", note: "Short-form of 'barndominium cost'; informational intent." },
+    { keyword: "barndominium construction cost",    monthly_searches:    260, tier: "Tier 1", status: "not_used",  family: "barndominium",         is_base: false, variant_type: "Variant",            note: "Informational/cost research intent." },
+    { keyword: "turnkey barndominium",              monthly_searches:    390, tier: "Tier 1", status: "not_used",  family: "barndominium",         is_base: false, variant_type: "Variant",            note: "Low volume; informational intent." },
+    { keyword: "barndominium packages",             monthly_searches:    390, tier: "Tier 1", status: "not_used",  family: "barndominium",         is_base: false, variant_type: "Variant",            note: "Product/kit term; not hire-intent." },
 
-    // FAMILY C: Barndominium Builders — SELECT: barndominium builders (8.1K)
-    { keyword: "barndominium builders",             monthly_searches:   8100, tier: "Tier 1", status: "selected",  note: "" },
-    { keyword: "barndominium builder",              monthly_searches:   1000, tier: "Tier 1", status: "not_used",  note: "Same family as 'barndominium builders'; lower volume singular variant." },
-    { keyword: "barndominium contractors",          monthly_searches:    880, tier: "Tier 1", status: "not_used",  note: "Same family as 'barndominium builders'; lower volume variant." },
-    { keyword: "barndominium contractor",           monthly_searches:    210, tier: "Tier 1", status: "not_used",  note: "Same family as 'barndominium builders'; below 500/mo volume floor." },
-    { keyword: "barndominium construction",         monthly_searches:    590, tier: "Tier 1", status: "not_used",  note: "Same family as 'barndominium builders'; lower volume variant." },
-    { keyword: "barndominium company",              monthly_searches:   1300, tier: "Tier 1", status: "not_used",  note: "Same family as 'barndominium builders'; lower volume variant." },
-    { keyword: "barndominium companies",            monthly_searches:    590, tier: "Tier 1", status: "not_used",  note: "Same family as 'barndominium builders'; lower volume variant." },
-    { keyword: "barndominium home builders",        monthly_searches:    170, tier: "Tier 1", status: "not_used",  note: "Same family as 'barndominium builders'; below 500/mo volume floor." },
-    { keyword: "barndominium general contractor",   monthly_searches:     30, tier: "Tier 1", status: "not_used",  note: "Same family as 'barndominium builders'; below 500/mo volume floor." },
-    { keyword: "custom barndominium builders",      monthly_searches:    140, tier: "Tier 1", status: "not_used",  note: "Same family as 'barndominium builders'; below 500/mo volume floor." },
-    // Barndo short-form builder variants — all same family as 'barndominium builders'
-    { keyword: "barndo",                            monthly_searches:  14800, tier: "Tier 2", status: "not_used",  note: "Short-form variant of 'barndominium'; same searcher intent. 'barndominium' (246K) is the correct family representative." },
-    { keyword: "barndo builders",                   monthly_searches:    880, tier: "Tier 2", status: "not_used",  note: "Same family as 'barndominium builders'; lower volume short-form variant." },
-    { keyword: "barndo homes",                      monthly_searches:    880, tier: "Tier 2", status: "not_used",  note: "Same family as 'barndominium'; lower volume short-form variant." },
-    { keyword: "barndo cost",                       monthly_searches:    390, tier: "Tier 2", status: "not_used",  note: "Same family as 'barndominium cost'; below 500/mo volume floor." },
+    // ── FAMILY B: barndominium plans (base) — 60,500/mo — SELECTED ─────────────
+    { keyword: "barndominium plans",                monthly_searches:  60500, tier: "Tier 1", status: "selected",  family: "barndominium-plans",   is_base: true,  variant_type: null,                 note: "" },
+    { keyword: "barndominium floor plans",          monthly_searches:  33100, tier: "Tier 1", status: "not_used",  family: "barndominium-plans",   is_base: false, variant_type: "Variant",            note: "Same family as 'barndominium plans'; lower volume variant." },
+    { keyword: "barndo plans",                      monthly_searches:   4400, tier: "Tier 1", status: "not_used",  family: "barndominium-plans",   is_base: false, variant_type: "Short-Form Variant", note: "Short-form of 'barndominium plans'; lower volume." },
+    { keyword: "barndo floor plans",                monthly_searches:   2400, tier: "Tier 1", status: "not_used",  family: "barndominium-plans",   is_base: false, variant_type: "Short-Form Variant", note: "Short-form of 'barndominium floor plans'; lower volume." },
 
-    // FAMILY D: Custom Home Builders — SELECT: custom home builders (12.1K)
-    { keyword: "custom home builders",              monthly_searches:  12100, tier: "Tier 3", status: "selected",  note: "" },
-    { keyword: "custom home builder",               monthly_searches:  14800, tier: "Tier 3", status: "not_used",  note: "Same family as 'custom home builders'; singular variant. Plural preferred per skill rule." },
-    { keyword: "custom homes",                      monthly_searches:   8100, tier: "Tier 3", status: "not_used",  note: "Same family as 'custom home builders'; broader/lower-intent variant." },
-    { keyword: "custom home construction",          monthly_searches:   1600, tier: "Tier 3", status: "not_used",  note: "Same family as 'custom home builders'; lower volume variant." },
-    { keyword: "custom home contractor",            monthly_searches:    880, tier: "Tier 3", status: "not_used",  note: "Same family as 'custom home builders'; lower volume variant." },
-    { keyword: "residential contractor",            monthly_searches:   1900, tier: "Tier 3", status: "not_used",  note: "Too broad; not specific to custom home building." },
+    // ── FAMILY C: metal buildings (base) — 33,100/mo — SELECTED ────────────────
+    { keyword: "metal buildings",                   monthly_searches:  33100, tier: "Tier 4", status: "selected",  family: "metal-buildings",      is_base: true,  variant_type: null,                 note: "" },
+    { keyword: "metal building",                    monthly_searches:  12100, tier: "Tier 4", status: "not_used",  family: "metal-buildings",      is_base: false, variant_type: "Singular Variant",   note: "Singular form of 'metal buildings'; lower volume." },
+    { keyword: "steel buildings",                   monthly_searches:  14800, tier: "Tier 4", status: "not_used",  family: "metal-buildings",      is_base: false, variant_type: "Variant",            note: "Same family as 'metal buildings'; lower volume variant." },
+    { keyword: "metal building near me",            monthly_searches:   2900, tier: "Tier 4", status: "near_me",   family: "metal-buildings",      is_base: false, variant_type: "Near Me Variant",    note: "City-name targeting in the URL slug and page title serves the same geographic function as 'near me'." },
+    { keyword: "metal building contractors",        monthly_searches:   1600, tier: "Tier 4", status: "not_used",  family: "metal-buildings",      is_base: false, variant_type: "Variant",            note: "Same family as 'metal buildings'; lower volume variant." },
+    { keyword: "steel building contractors",        monthly_searches:   1600, tier: "Tier 4", status: "not_used",  family: "metal-buildings",      is_base: false, variant_type: "Variant",            note: "Same family as 'metal buildings'; lower volume variant." },
+    { keyword: "commercial metal buildings",        monthly_searches:   1300, tier: "Tier 4", status: "not_used",  family: "metal-buildings",      is_base: false, variant_type: "Variant",            note: "Same family as 'metal buildings'; lower volume variant." },
+    { keyword: "metal building cost",               monthly_searches:   1900, tier: "Tier 4", status: "not_used",  family: "metal-buildings",      is_base: false, variant_type: "Variant",            note: "Informational/cost research intent." },
 
-    // FAMILY E: Metal Buildings — SELECT: metal buildings (33.1K)
-    { keyword: "metal buildings",                   monthly_searches:  33100, tier: "Tier 4", status: "selected",  note: "" },
-    { keyword: "metal building",                    monthly_searches:  12100, tier: "Tier 4", status: "not_used",  note: "Same family as 'metal buildings'; lower volume singular variant." },
-    { keyword: "steel buildings",                   monthly_searches:  14800, tier: "Tier 4", status: "not_used",  note: "Same family as 'metal buildings'; lower volume variant." },
-    { keyword: "commercial metal buildings",        monthly_searches:   1300, tier: "Tier 4", status: "not_used",  note: "Same family as 'metal buildings'; lower volume variant." },
-    { keyword: "metal building contractors",        monthly_searches:   1600, tier: "Tier 4", status: "not_used",  note: "Same family as 'metal buildings'; lower volume variant." },
-    { keyword: "steel building contractors",        monthly_searches:   1600, tier: "Tier 4", status: "not_used",  note: "Same family as 'metal buildings'; lower volume variant." },
-    { keyword: "metal building cost",               monthly_searches:   1900, tier: "Tier 4", status: "not_used",  note: "Informational/cost research intent." },
+    // ── FAMILY D: custom home builders (base) — 12,100/mo — SELECTED ───────────
+    { keyword: "custom home builders",              monthly_searches:  12100, tier: "Tier 3", status: "selected",  family: "custom-home-builders", is_base: true,  variant_type: null,                 note: "" },
+    { keyword: "custom home builder",               monthly_searches:  14800, tier: "Tier 3", status: "not_used",  family: "custom-home-builders", is_base: false, variant_type: "Singular Variant",   note: "Singular form; plural 'custom home builders' is preferred per skill rules." },
+    { keyword: "custom home builders near me",      monthly_searches:   9900, tier: "Tier 3", status: "near_me",   family: "custom-home-builders", is_base: false, variant_type: "Near Me Variant",    note: "City-name targeting in the URL slug and page title serves the same geographic function as 'near me'." },
+    { keyword: "custom home builder near me",       monthly_searches:   4400, tier: "Tier 3", status: "near_me",   family: "custom-home-builders", is_base: false, variant_type: "Near Me Variant",    note: "City-name targeting in the URL slug and page title serves the same geographic function as 'near me'." },
+    { keyword: "custom homes",                      monthly_searches:   8100, tier: "Tier 3", status: "not_used",  family: "custom-home-builders", is_base: false, variant_type: "Variant",            note: "Broader variant; same family as 'custom home builders'." },
+    { keyword: "custom home construction",          monthly_searches:   1600, tier: "Tier 3", status: "not_used",  family: "custom-home-builders", is_base: false, variant_type: "Variant",            note: "Same family as 'custom home builders'; lower volume variant." },
+    { keyword: "custom home contractor",            monthly_searches:    880, tier: "Tier 3", status: "not_used",  family: "custom-home-builders", is_base: false, variant_type: "Variant",            note: "Same family as 'custom home builders'; lower volume variant." },
+    { keyword: "residential contractor",            monthly_searches:   1900, tier: "Tier 3", status: "not_used",  family: "custom-home-builders", is_base: false, variant_type: "Variant",            note: "Too broad; not specific to custom home building." },
 
-    // OUT OF SCOPE: Pole Barn — not a listed TBC service
-    { keyword: "pole barn",                         monthly_searches:  33100, tier: "Tier 4", status: "not_used",  note: "Out of scope: Texas Building Center does not list pole barn construction as a service." },
-    { keyword: "pole barns",                        monthly_searches:   8100, tier: "Tier 4", status: "not_used",  note: "Out of scope: not a listed TBC service." },
-    { keyword: "pole barn house",                   monthly_searches:   5400, tier: "Tier 4", status: "not_used",  note: "Out of scope: not a listed TBC service." },
-    { keyword: "pole barn builder",                 monthly_searches:   1300, tier: "Tier 4", status: "not_used",  note: "Out of scope: not a listed TBC service." },
-    { keyword: "pole barn builders",                monthly_searches:   2400, tier: "Tier 4", status: "not_used",  note: "Out of scope: not a listed TBC service." },
-    { keyword: "pole barn construction",            monthly_searches:   2900, tier: "Tier 4", status: "not_used",  note: "Out of scope: not a listed TBC service." },
-    { keyword: "pole barn homes",                   monthly_searches:   2900, tier: "Tier 4", status: "not_used",  note: "Out of scope: not a listed TBC service." },
-    { keyword: "pole barn houses",                  monthly_searches:   2900, tier: "Tier 4", status: "not_used",  note: "Out of scope: not a listed TBC service." },
-    { keyword: "post frame construction",           monthly_searches:   3600, tier: "Tier 4", status: "not_used",  note: "Out of scope: not a listed TBC service." },
-    { keyword: "post frame building",               monthly_searches:   3600, tier: "Tier 4", status: "not_used",  note: "Out of scope: not a listed TBC service." },
-    { keyword: "post frame buildings",              monthly_searches:   1600, tier: "Tier 4", status: "not_used",  note: "Out of scope: not a listed TBC service." },
-    { keyword: "agricultural building",             monthly_searches:   1600, tier: "Tier 4", status: "not_used",  note: "Out of scope: not a listed TBC service." },
-    { keyword: "shop house",                        monthly_searches:   4400, tier: "Tier 4", status: "not_used",  note: "Out of scope: not a listed TBC service." },
-    { keyword: "metal shop",                        monthly_searches:   4400, tier: "Tier 4", status: "not_used",  note: "Out of scope: not a listed TBC service." },
+    // ── FAMILY E: barndominium builders (base) — 8,100/mo — SELECTED ───────────
+    { keyword: "barndominium builders",             monthly_searches:   8100, tier: "Tier 1", status: "selected",  family: "barndominium-builders", is_base: true,  variant_type: null,                 note: "" },
+    { keyword: "barndominium builder",              monthly_searches:   1000, tier: "Tier 1", status: "not_used",  family: "barndominium-builders", is_base: false, variant_type: "Singular Variant",   note: "Singular form of 'barndominium builders'; lower volume." },
+    { keyword: "barndominium builders near me",     monthly_searches:   8100, tier: "Tier 1", status: "near_me",   family: "barndominium-builders", is_base: false, variant_type: "Near Me Variant",    note: "City-name targeting in the URL slug and page title serves the same geographic function as 'near me'." },
+    { keyword: "barndominium builder near me",      monthly_searches:    880, tier: "Tier 1", status: "near_me",   family: "barndominium-builders", is_base: false, variant_type: "Near Me Variant",    note: "City-name targeting in the URL slug and page title serves the same geographic function as 'near me'." },
+    { keyword: "barndo builders",                   monthly_searches:    880, tier: "Tier 1", status: "not_used",  family: "barndominium-builders", is_base: false, variant_type: "Short-Form Variant", note: "Short-form of 'barndominium builders'; lower volume." },
+    { keyword: "barndo builders near me",           monthly_searches:   1000, tier: "Tier 1", status: "near_me",   family: "barndominium-builders", is_base: false, variant_type: "Near Me Variant",    note: "City-name targeting in the URL slug and page title serves the same geographic function as 'near me'." },
+    { keyword: "barndominium contractors",          monthly_searches:    880, tier: "Tier 1", status: "not_used",  family: "barndominium-builders", is_base: false, variant_type: "Variant",            note: "Same family as 'barndominium builders'; lower volume variant." },
+    { keyword: "barndominium contractor",           monthly_searches:    210, tier: "Tier 1", status: "not_used",  family: "barndominium-builders", is_base: false, variant_type: "Variant",            note: "Same family as 'barndominium builders'; below 500/mo volume floor." },
+    { keyword: "barndominium contractor near me",   monthly_searches:    210, tier: "Tier 1", status: "near_me",   family: "barndominium-builders", is_base: false, variant_type: "Near Me Variant",    note: "City-name targeting in the URL slug and page title serves the same geographic function as 'near me'." },
+    { keyword: "barndominium construction",         monthly_searches:    590, tier: "Tier 1", status: "not_used",  family: "barndominium-builders", is_base: false, variant_type: "Variant",            note: "Same family as 'barndominium builders'; lower volume variant." },
+    { keyword: "barndominium company",              monthly_searches:   1300, tier: "Tier 1", status: "not_used",  family: "barndominium-builders", is_base: false, variant_type: "Variant",            note: "Same family as 'barndominium builders'; lower volume variant." },
+    { keyword: "barndominium companies",            monthly_searches:    590, tier: "Tier 1", status: "not_used",  family: "barndominium-builders", is_base: false, variant_type: "Variant",            note: "Same family as 'barndominium builders'; lower volume variant." },
+    { keyword: "barndominium home builders",        monthly_searches:    170, tier: "Tier 1", status: "not_used",  family: "barndominium-builders", is_base: false, variant_type: "Variant",            note: "Same family as 'barndominium builders'; below 500/mo volume floor." },
+    { keyword: "barndominium general contractor",   monthly_searches:     30, tier: "Tier 1", status: "not_used",  family: "barndominium-builders", is_base: false, variant_type: "Variant",            note: "Same family as 'barndominium builders'; below 500/mo volume floor." },
+    { keyword: "custom barndominium builders",      monthly_searches:    140, tier: "Tier 1", status: "not_used",  family: "barndominium-builders", is_base: false, variant_type: "Variant",            note: "Same family as 'barndominium builders'; below 500/mo volume floor." },
+    { keyword: "barndominium construction near me", monthly_searches:     20, tier: "Tier 1", status: "near_me",   family: "barndominium-builders", is_base: false, variant_type: "Near Me Variant",    note: "City-name targeting in the URL slug and page title serves the same geographic function as 'near me'." },
 
-    // NEAR ME VARIANTS — never in matrix; city name in URL slug serves same function
-    { keyword: "barndominium builders near me",     monthly_searches:   8100, tier: "Tier 1", status: "near_me",   note: "City-name targeting in the URL slug and page title serves the same geographic function as 'near me'." },
-    { keyword: "barndominium builder near me",      monthly_searches:    880, tier: "Tier 1", status: "near_me",   note: "City-name targeting in the URL slug and page title serves the same geographic function as 'near me'." },
-    { keyword: "barndominium contractor near me",   monthly_searches:    210, tier: "Tier 1", status: "near_me",   note: "City-name targeting in the URL slug and page title serves the same geographic function as 'near me'." },
-    { keyword: "barndominium construction near me", monthly_searches:     20, tier: "Tier 1", status: "near_me",   note: "City-name targeting in the URL slug and page title serves the same geographic function as 'near me'." },
-    { keyword: "barndominium near me",              monthly_searches:   1600, tier: "Tier 1", status: "near_me",   note: "City-name targeting in the URL slug and page title serves the same geographic function as 'near me'." },
-    { keyword: "barndo builders near me",           monthly_searches:   1000, tier: "Tier 2", status: "near_me",   note: "City-name targeting in the URL slug and page title serves the same geographic function as 'near me'." },
-    { keyword: "custom home builders near me",      monthly_searches:   9900, tier: "Tier 3", status: "near_me",   note: "City-name targeting in the URL slug and page title serves the same geographic function as 'near me'." },
-    { keyword: "custom home builder near me",       monthly_searches:   4400, tier: "Tier 3", status: "near_me",   note: "City-name targeting in the URL slug and page title serves the same geographic function as 'near me'." },
-    { keyword: "metal building near me",            monthly_searches:   2900, tier: "Tier 4", status: "near_me",   note: "City-name targeting in the URL slug and page title serves the same geographic function as 'near me'." },
-    { keyword: "pole barn near me",                 monthly_searches:   1600, tier: "Tier 4", status: "near_me",   note: "City-name targeting in the URL slug and page title serves the same geographic function as 'near me'." },
-    { keyword: "barndo builder",                    monthly_searches:     70, tier: "Tier 2", status: "near_me",   note: "Below 500/mo volume floor; same family as 'barndominium builders'." },
+    // ── FAMILY F: pole barn (out of scope) — not a listed TBC service ───────────
+    { keyword: "pole barn",                         monthly_searches:  33100, tier: "Tier 4", status: "not_used",  family: "pole-barn",             is_base: true,  variant_type: null,                 note: "Out of scope: Texas Building Center does not list pole barn construction as a service." },
+    { keyword: "pole barn construction",            monthly_searches:   2900, tier: "Tier 4", status: "not_used",  family: "pole-barn",             is_base: false, variant_type: "Variant",            note: "Out of scope: not a listed TBC service." },
+    { keyword: "pole barn homes",                   monthly_searches:   2900, tier: "Tier 4", status: "not_used",  family: "pole-barn",             is_base: false, variant_type: "Variant",            note: "Out of scope: not a listed TBC service." },
+    { keyword: "pole barn houses",                  monthly_searches:   2900, tier: "Tier 4", status: "not_used",  family: "pole-barn",             is_base: false, variant_type: "Variant",            note: "Out of scope: not a listed TBC service." },
+    { keyword: "post frame construction",           monthly_searches:   3600, tier: "Tier 4", status: "not_used",  family: "pole-barn",             is_base: false, variant_type: "Variant",            note: "Out of scope: not a listed TBC service." },
+    { keyword: "post frame building",               monthly_searches:   3600, tier: "Tier 4", status: "not_used",  family: "pole-barn",             is_base: false, variant_type: "Variant",            note: "Out of scope: not a listed TBC service." },
+    { keyword: "pole barn house",                   monthly_searches:   5400, tier: "Tier 4", status: "not_used",  family: "pole-barn",             is_base: false, variant_type: "Variant",            note: "Out of scope: not a listed TBC service." },
+    { keyword: "pole barns",                        monthly_searches:   8100, tier: "Tier 4", status: "not_used",  family: "pole-barn",             is_base: false, variant_type: "Plural Variant",     note: "Out of scope: not a listed TBC service." },
+    { keyword: "pole barn builders",                monthly_searches:   2400, tier: "Tier 4", status: "not_used",  family: "pole-barn",             is_base: false, variant_type: "Variant",            note: "Out of scope: not a listed TBC service." },
+    { keyword: "pole barn builder",                 monthly_searches:   1300, tier: "Tier 4", status: "not_used",  family: "pole-barn",             is_base: false, variant_type: "Variant",            note: "Out of scope: not a listed TBC service." },
+    { keyword: "pole barn near me",                 monthly_searches:   1600, tier: "Tier 4", status: "near_me",   family: "pole-barn",             is_base: false, variant_type: "Near Me Variant",    note: "Out of scope: not a listed TBC service." },
+    { keyword: "post frame buildings",              monthly_searches:   1600, tier: "Tier 4", status: "not_used",  family: "pole-barn",             is_base: false, variant_type: "Variant",            note: "Out of scope: not a listed TBC service." },
+    { keyword: "agricultural building",             monthly_searches:   1600, tier: "Tier 4", status: "not_used",  family: "pole-barn",             is_base: false, variant_type: "Variant",            note: "Out of scope: not a listed TBC service." },
+    { keyword: "shop house",                        monthly_searches:   4400, tier: "Tier 4", status: "not_used",  family: "pole-barn",             is_base: false, variant_type: "Variant",            note: "Out of scope: not a listed TBC service." },
+    { keyword: "metal shop",                        monthly_searches:   4400, tier: "Tier 4", status: "not_used",  family: "pole-barn",             is_base: false, variant_type: "Variant",            note: "Out of scope: not a listed TBC service." },
   ],
 
   // ---- KEYWORD TIERS ----
@@ -279,25 +279,49 @@ function tierPill(label) {
 
 // ============================================================
 // POPULATE KEYWORD TABLE
+// Renders keywords grouped by variant family. Base keyword first, then variants
+// (singular, plural, near me, short-form) as visually indented sub-rows.
 // ============================================================
 function buildKeywordTable() {
   const tbody = document.getElementById('kw-table-body');
   if (!tbody) return;
-  const seen = new Set();
-  const unique = STRATEGY.keyword_table.filter(kw => {
-    if (seen.has(kw.keyword)) return false;
-    seen.add(kw.keyword);
-    return true;
+
+  // Group by family, preserving insertion order (families already ordered by base volume)
+  const families = [];
+  const familyMap = {};
+  STRATEGY.keyword_table.forEach(kw => {
+    if (!familyMap[kw.family]) {
+      familyMap[kw.family] = [];
+      families.push(kw.family);
+    }
+    familyMap[kw.family].push(kw);
   });
-  unique.sort((a, b) => b.monthly_searches - a.monthly_searches);
-  const rows = unique.map(kw => {
-    const rowClass = kw.status === 'selected' ? 'row-selected' : kw.status === 'near_me' ? 'row-near-me' : '';
-    return `<tr class="${rowClass}">
-      <td>${kw.keyword}</td>
-      <td class="num-col">${fmt(kw.monthly_searches)}</td>
-      <td>${tierPill(kw.tier)}</td>
-      <td>${statusBadge(kw.status, kw.note)}</td>
-    </tr>`;
+
+  const rows = families.map(familyKey => {
+    const members = familyMap[familyKey];
+    // Sort: base first, then by monthly_searches desc
+    members.sort((a, b) => {
+      if (a.is_base && !b.is_base) return -1;
+      if (!a.is_base && b.is_base) return 1;
+      return b.monthly_searches - a.monthly_searches;
+    });
+    return members.map((kw, idx) => {
+      const isVariant = !kw.is_base;
+      const rowClass = [
+        kw.status === 'selected' ? 'row-selected' : '',
+        kw.status === 'near_me' ? 'row-near-me' : '',
+        isVariant ? 'row-variant' : 'row-base'
+      ].filter(Boolean).join(' ');
+      const keywordCell = isVariant
+        ? `<td class="kw-variant-cell"><span class="kw-variant-indent">&#8627;</span> ${kw.keyword} <span class="kw-variant-badge">${kw.variant_type}</span></td>`
+        : `<td><strong>${kw.keyword}</strong></td>`;
+      return `<tr class="${rowClass}">
+        ${keywordCell}
+        <td class="num-col">${fmt(kw.monthly_searches)}</td>
+        <td>${tierPill(kw.tier)}</td>
+        <td>${statusBadge(kw.status, kw.note)}</td>
+      </tr>`;
+    }).join('');
   }).join('');
   tbody.innerHTML = rows;
 }

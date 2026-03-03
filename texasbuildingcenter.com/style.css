@@ -198,6 +198,27 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
 .data-table tr:hover td { background: rgba(63,128,234,0.04); }
 .row-selected td { background: rgba(63,128,234,0.06); }
 .row-tier3 td { color: #999; font-size: 0.8rem; }
+/* Variant family grouping rows */
+.row-base td { border-top: 2px solid #e8ecf5; }
+.row-base:first-child td { border-top: none; }
+.row-variant td { background: #fafbfd; color: #666; font-size: 0.82rem; }
+.row-variant.row-near-me td { background: rgba(249,115,22,0.04); }
+.kw-variant-cell { padding-left: 28px !important; }
+.kw-variant-indent { color: #aab; margin-right: 4px; font-size: 0.9em; }
+.kw-variant-badge {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 1px 6px;
+  border-radius: 8px;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  background: #eef0f7;
+  color: #778;
+  vertical-align: middle;
+}
+.row-near-me .kw-variant-badge { background: rgba(249,115,22,0.12); color: #c2410c; }
 .check { color: #22c55e; font-weight: 900; text-align: center; }
 .dash { color: #ccc; text-align: center; }
 
