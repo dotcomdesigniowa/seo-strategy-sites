@@ -359,7 +359,9 @@ function buildKeywordTierCards() {
 
 // ============================================================
 // POPULATE MATRIX TABLE
-// Go Wide: barndominium = 10 cities, barndominium plans = 8,
+// Go Wide: city-as-rows layout (keywords = columns, cities = rows)
+// This orientation works cleanly for any number of cities.
+// barndominium = 10 cities, barndominium plans = 8,
 // barndominium builders = 8, custom home builders = 7,
 // metal buildings = 7. Total = 40.
 // ============================================================
@@ -384,50 +386,42 @@ function buildMatrix() {
 
   // Per-keyword city assignments (Go Wide distribution)
   const keywordCities = {
-    "barndominium":          allCities.slice(0, 10), // all 10
-    "barndominium plans":    allCities.slice(0, 8),  // top 8
-    "barndominium builders": allCities.slice(0, 8),  // top 8
-    "custom home builders":  allCities.slice(0, 7),  // top 7
-    "metal buildings":       allCities.slice(0, 7),  // top 7
+    "barndominium":          allCities.slice(0, 10),
+    "barndominium plans":    allCities.slice(0, 8),
+    "barndominium builders": allCities.slice(0, 8),
+    "custom home builders":  allCities.slice(0, 7),
+    "metal buildings":       allCities.slice(0, 7),
   };
-
-  // Build a unified city header across all 10 cities
-  const tierCells = allCities.map(m => {
-    const cls = m.tier === 'Tier 1' ? 't1' : 't2';
-    return `<th><span class="tier-pill ${cls} nowrap">${m.tier.toUpperCase()}</span></th>`;
-  }).join('');
-
-  const cityCells = allCities.map(m =>
-    `<th class="city-header">${m.city}${m.is_hq ? ' <span class="hq-star">&#9733;</span>' : ''}<br><span class="city-pop-small">Pop. ${fmt(m.population)}</span></th>`
-  ).join('');
-
-  thead.innerHTML = `<tr><th class="kw-col-header">Keyword</th>${tierCells}</tr><tr><th></th>${cityCells}</tr>`;
-
-  // Keyword rows — checkmark if city is in that keyword's city list, dash if not
   const keywords = Object.keys(keywordCities);
-  let grandTotal = 0;
-  const rows = keywords.map(kw => {
-    const cities = keywordCities[kw];
-    const citySet = new Set(cities.map(c => c.city));
-    const combosForKw = cities.length;
-    grandTotal += combosForKw;
-    const cells = allCities.map(m =>
-      citySet.has(m.city)
-        ? '<td class="check-cell">&#10003;</td>'
-        : '<td class="check-cell check-na" style="color:#ccc;font-size:0.85em;">&#8212;</td>'
-    ).join('');
-    return `<tr><td class="kw-cell">${kw} <span style="color:#6b7280;font-size:0.78em;">(${combosForKw} cities)</span></td>${cells}</tr>`;
-  });
 
-  // Per-city totals
-  const cityTotals = allCities.map(m => {
-    const count = keywords.filter(kw => keywordCities[kw].some(c => c.city === m.city)).length;
-    return `<td class="total-cell">${count}</td>`;
+  // ---- CITY-AS-ROWS LAYOUT ----
+  // Header: City | Keyword1 | Keyword2 | ... | Total
+  const kwHeaders = keywords.map(kw => {
+    const count = keywordCities[kw].length;
+    return `<th class="kw-col-header-v">${kw}<br><span class="kw-city-count">${count} cities</span></th>`;
+  }).join('');
+  thead.innerHTML = `<tr><th class="city-col-header">City</th>${kwHeaders}<th class="total-col-header">Total</th></tr>`;
+
+  // City rows
+  let grandTotal = 0;
+  const rows = allCities.map(m => {
+    const tierCls = m.tier === 'Tier 1' ? 't1' : 't2';
+    const cityLabel = `${m.city}${m.is_hq ? ' <span class="hq-star">&#9733;</span>' : ''}<br><span class="city-pop-small city-tier-inline"><span class="tier-pill ${tierCls} tier-pill-sm">${m.tier.toUpperCase()}</span> Pop. ${fmt(m.population)}</span>`;
+    const kwCells = keywords.map(kw => {
+      const inPlan = keywordCities[kw].some(c => c.city === m.city);
+      return inPlan
+        ? `<td class="check-cell matrix-check">&#10003;</td>`
+        : `<td class="check-cell check-na">&#8212;</td>`;
+    }).join('');
+    const cityTotal = keywords.filter(kw => keywordCities[kw].some(c => c.city === m.city)).length;
+    grandTotal += cityTotal;
+    return `<tr><td class="city-row-label">${cityLabel}</td>${kwCells}<td class="total-cell city-total-cell">${cityTotal}</td></tr>`;
   }).join('');
 
-  tbody.innerHTML = rows.join('')
-    + `<tr class="total-row"><td class="total-label">Combinations per City</td>${cityTotals}</tr>`
-    + `<tr class="grand-total-row"><td colspan="${allCities.length + 1}" class="grand-total">Grand Total: <strong>${grandTotal} Combinations</strong></td></tr>`;
+  // Keyword totals row
+  const kwTotals = keywords.map(kw => `<td class="total-cell">${keywordCities[kw].length}</td>`).join('');
+  tbody.innerHTML = rows
+    + `<tr class="total-row"><td class="total-label">Combos per Keyword</td>${kwTotals}<td class="total-cell grand-total-cell">${grandTotal}</td></tr>`;
 }
 
 // ============================================================
@@ -457,6 +451,12 @@ function buildNotUsed() {
     </div>`;
   }).join('');
   grid.innerHTML = cards;
+  // If exactly 4 cards, use 2x2 grid so no card sits alone on a row
+  if (STRATEGY.not_used_groups.length === 4) {
+    grid.classList.add('grid-2col');
+  } else {
+    grid.classList.remove('grid-2col');
+  }
 }
 
 // ============================================================
@@ -480,8 +480,8 @@ function buildOpportunities() {
     return `<div class="opp-card ${highlight}">
       ${i === 0 ? '<div class="opp-recommended">RECOMMENDED NEXT STEP</div>' : '<div class="opp-recommended-spacer"></div>'}
       <div class="opp-plan-label">${opp.plan}</div>
-      <div class="opp-price">$${fmt(opp.price)}<span class="opp-price-mo">/mo</span></div>
-      <div class="opp-combos">${opp.combinations} total combinations<br><span class="opp-add">(+${opp.additional_combinations} from current plan)</span></div>
+      <div class="opp-combos-large">${opp.combinations} <span class="opp-combos-label">total combinations</span></div>
+      <div class="opp-combos">${opp.additional_combinations} additional combinations from current plan</div>
       <h4 class="opp-headline">${opp.headline}</h4>
       <p class="opp-desc">${opp.description}</p>
       <ul class="opp-kw-list">${kwList}</ul>

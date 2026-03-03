@@ -520,6 +520,77 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
   text-transform: uppercase;
   white-space: nowrap;
 }
+/* City-as-rows matrix layout (used when city count > 6) */
+.city-col-header {
+  text-align: left;
+  padding-left: 16px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #aaa;
+  min-width: 160px;
+}
+.kw-col-header-v {
+  text-align: center;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #fff;
+  padding: 10px 12px;
+  line-height: 1.4;
+  min-width: 120px;
+}
+.kw-city-count {
+  display: block;
+  font-size: 10px;
+  font-weight: 500;
+  color: #8ab4f8;
+  letter-spacing: 0.3px;
+  margin-top: 3px;
+}
+.total-col-header {
+  text-align: center;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #fff;
+  padding: 10px 12px;
+  min-width: 60px;
+}
+.city-row-label {
+  text-align: left;
+  padding-left: 16px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #334168;
+  white-space: nowrap;
+}
+.city-tier-inline {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 3px;
+}
+.tier-pill-sm {
+  font-size: 8px !important;
+  padding: 1px 5px !important;
+}
+.matrix-check {
+  color: #22c55e;
+  font-size: 1.1rem;
+  font-weight: 900;
+  text-align: center;
+}
+.city-total-cell {
+  font-weight: 900;
+  color: #3F80EA;
+  text-align: center;
+}
+.grand-total-cell {
+  font-weight: 900;
+  color: #334168;
+  text-align: center;
+  background: #f0f4ff;
+}
 .matrix-table th:first-child,
 .matrix-table th.kw-col-header { text-align: left; padding-left: 16px; }
 /* Tier pill row in matrix header: distinct background so pills are always visible */
@@ -556,8 +627,12 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: auto 1fr auto auto;
   column-gap: 20px;
-  row-gap: 0;
+  row-gap: 28px; /* space between card rows when there are 4+ cards */
   align-items: stretch;
+}
+/* When exactly 4 cards exist, use 2x2 grid so no card sits alone */
+.not-used-grid.grid-2col {
+  grid-template-columns: repeat(2, 1fr);
 }
 .not-used-card {
   background: #fff;
@@ -629,8 +704,9 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
 
 /* ============================================================
    OPPORTUNITIES CARDS — subgrid for perfect cross-card alignment
-   7 tracks: [badge] auto [label] auto [price] auto [combos] auto
+   6 tracks: [badge] auto [label] auto [combos-large] auto [combos] auto
              [headline] auto [desc] 1fr [kw-list] auto
+   (pricing removed — never show plan price in client-facing deliverables)
    ============================================================ */
 .opportunities-grid {
   display: grid;
@@ -680,14 +756,18 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
   color: #3F80EA;
   margin-bottom: 4px;
 }
-.opp-price {
+.opp-combos-large {
   font-size: 2rem;
   font-weight: 900;
   color: #334168;
   line-height: 1;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
-.opp-price-mo { font-size: 0.9rem; font-weight: 500; color: #999; }
+.opp-combos-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #6b7280;
+}
 .opp-combos {
   font-size: 0.82rem;
   color: #666;
@@ -695,7 +775,6 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
   padding-bottom: 14px;
   border-bottom: 1px solid #e8e8e8;
 }
-.opp-add { color: #22c55e; font-weight: 700; }
 .opp-headline {
   font-size: 1rem;
   font-weight: 900;
