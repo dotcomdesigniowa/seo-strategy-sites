@@ -32,87 +32,104 @@ const STRATEGY = {
   ],
   num_selected_keywords: 10,
 
-  // ---- KEYWORD TABLE (full consideration list, sorted by volume) ----
+  // ---- KEYWORD TABLE (full consideration list, grouped by variant family) ----
+  // Each keyword has: family (groups variants together), variant_type (base|variant|plural|near_me|short_form)
   keyword_table: [
-    { keyword: "flooring"                                     , monthly_searches: 33100, tier: "Tier 1", status: "not_used",  note: "Implied base keyword (too broad for standalone targeting)" },
-    { keyword: "flooring near me"                             , monthly_searches: 33100, tier: "Tier 1", status: "near_me",  note: "Equivalent to 'flooring contractor'" },
-    { keyword: "carpet installation"                          , monthly_searches: 27100, tier: "Tier 1", status: "selected",  note: "" },
-    { keyword: "carpet installation near me"                  , monthly_searches: 14800, tier: "Tier 1", status: "near_me",  note: "Equivalent to 'carpet installation'" },
-    { keyword: "flooring installation"                        , monthly_searches: 18100, tier: "Tier 1", status: "not_used",  note: "" },
-    { keyword: "flooring installation near me"                , monthly_searches:  9900, tier: "Tier 1", status: "near_me",  note: "Equivalent to 'flooring installation'" },
-    { keyword: "tile installation"                            , monthly_searches: 14800, tier: "Tier 3", status: "selected",  note: "" },
-    { keyword: "tile installation near me"                    , monthly_searches:  9900, tier: "Tier 3", status: "near_me",  note: "Equivalent to 'tile installation'" },
-    { keyword: "hardwood floor installation"                  , monthly_searches:  9900, tier: "Tier 1", status: "selected",  note: "" },
-    { keyword: "hardwood floor installation near me"          , monthly_searches:  2900, tier: "Tier 1", status: "near_me",  note: "Equivalent to 'hardwood floor installation'" },
-    { keyword: "flooring contractor"                          , monthly_searches:  8100, tier: "Tier 2", status: "selected",  note: "" },
-    { keyword: "flooring contractor near me"                  , monthly_searches:  2400, tier: "Tier 2", status: "near_me",  note: "Equivalent to 'flooring contractor'" },
-    { keyword: "laminate flooring installation"               , monthly_searches:  6600, tier: "Tier 1", status: "selected",  note: "" },
-    { keyword: "laminate flooring installation near me"       , monthly_searches:  1600, tier: "Tier 1", status: "near_me",  note: "Equivalent to 'laminate flooring installation'" },
-    { keyword: "floor installation"                           , monthly_searches:  6600, tier: "Tier 1", status: "selected",  note: "" },
-    { keyword: "floor installation near me"                   , monthly_searches: 14800, tier: "Tier 1", status: "near_me",  note: "Equivalent to 'floor installation'" },
-    { keyword: "flooring services"                            , monthly_searches:  6600, tier: "Tier 2", status: "not_used",  note: "" },
-    { keyword: "flooring services near me"                    , monthly_searches:  1300, tier: "Tier 2", status: "near_me",  note: "Equivalent to 'flooring services'" },
-    { keyword: "flooring contractors"                         , monthly_searches:  6600, tier: "Tier 2", status: "not_used",  note: "" },
-    { keyword: "flooring contractors near me"                 , monthly_searches: 12100, tier: "Tier 2", status: "near_me",  note: "Equivalent to 'flooring contractor'" },
-    { keyword: "commercial flooring"                          , monthly_searches:  5400, tier: "Tier 4", status: "selected",  note: "" },
-    { keyword: "commercial flooring near me"                  , monthly_searches:  2900, tier: "Tier 4", status: "near_me",  note: "Equivalent to 'commercial flooring'" },
-    { keyword: "flooring company"                             , monthly_searches:  5400, tier: "Tier 2", status: "selected",  note: "" },
-    { keyword: "flooring company near me"                     , monthly_searches:  3600, tier: "Tier 2", status: "near_me",  note: "Equivalent to 'flooring company'" },
-    { keyword: "hardwood flooring installation"               , monthly_searches:  5400, tier: "Tier 1", status: "not_used",  note: "" },
-    { keyword: "floor refinishing"                            , monthly_searches:  5400, tier: "Tier 1", status: "not_used",  note: "Implied base keyword (too broad for standalone targeting)" },
-    { keyword: "floor refinishing near me"                    , monthly_searches:  5400, tier: "Tier 1", status: "near_me",  note: "Equivalent to 'hardwood floor refinishing'" },
-    { keyword: "vinyl flooring installation"                  , monthly_searches:  4400, tier: "Tier 1", status: "not_used",  note: "" },
-    { keyword: "lvp flooring installation"                    , monthly_searches:  3600, tier: "Tier 1", status: "not_used",  note: "" },
-    { keyword: "carpet replacement"                           , monthly_searches:  3600, tier: "Tier 1", status: "not_used",  note: "" },
-    { keyword: "carpet replacement near me"                   , monthly_searches:  1300, tier: "Tier 1", status: "near_me",  note: "Equivalent to 'carpet replacement'" },
-    { keyword: "flooring companies"                           , monthly_searches:  3600, tier: "Tier 2", status: "not_used",  note: "" },
-    { keyword: "flooring companies near me"                   , monthly_searches: 18100, tier: "Tier 2", status: "near_me",  note: "Equivalent to 'flooring company'" },
-    { keyword: "floor installers"                             , monthly_searches:  3600, tier: "Tier 2", status: "not_used",  note: "Implied base keyword (too broad for standalone targeting)" },
-    { keyword: "floor installers near me"                     , monthly_searches:  3600, tier: "Tier 2", status: "near_me",  note: "Equivalent to 'flooring contractor'" },
-    { keyword: "carpet installation services"                 , monthly_searches:  2400, tier: "Tier 1", status: "not_used",  note: "" },
-    { keyword: "tile flooring installation"                   , monthly_searches:  1900, tier: "Tier 3", status: "not_used",  note: "" },
-    { keyword: "flooring installers"                          , monthly_searches:  1900, tier: "Tier 2", status: "not_used",  note: "" },
-    { keyword: "flooring installation services"               , monthly_searches:  1600, tier: "Tier 2", status: "not_used",  note: "" },
-    { keyword: "flooring installer"                           , monthly_searches:  1600, tier: "Tier 2", status: "not_used",  note: "" },
-    { keyword: "carpet installation companies"                , monthly_searches:  1600, tier: "Tier 1", status: "not_used",  note: "" },
-    { keyword: "tile installation companies"                  , monthly_searches:  1300, tier: "Tier 3", status: "not_used",  note: "" },
-    { keyword: "tile installation contractors"                , monthly_searches:  1000, tier: "Tier 3", status: "not_used",  note: "" },
-    { keyword: "commercial flooring contractors"              , monthly_searches:   880, tier: "Tier 4", status: "not_used",  note: "" },
-    { keyword: "commercial tile flooring"                     , monthly_searches:   880, tier: "Tier 4", status: "not_used",  note: "" },
-    { keyword: "tile installation services"                   , monthly_searches:   720, tier: "Tier 3", status: "not_used",  note: "" },
-    { keyword: "luxury vinyl flooring installation"           , monthly_searches:   720, tier: "Tier 1", status: "not_used",  note: "" },
-    { keyword: "commercial flooring installation"             , monthly_searches:   720, tier: "Tier 4", status: "not_used",  note: "" },
-    { keyword: "commercial flooring installers"               , monthly_searches:   720, tier: "Tier 4", status: "not_used",  note: "" },
-    { keyword: "hardwood flooring contractors"                , monthly_searches:   720, tier: "Tier 1", status: "not_used",  note: "" },
-    { keyword: "vinyl plank flooring installation"            , monthly_searches:   720, tier: "Tier 1", status: "selected",  note: "" },
-    { keyword: "floor installer"                              , monthly_searches:   720, tier: "Tier 2", status: "not_used",  note: "Implied base keyword (too broad for standalone targeting)" },
-    { keyword: "floor installer near me"                      , monthly_searches:   720, tier: "Tier 2", status: "near_me",  note: "Equivalent to 'flooring contractor'" },
-    { keyword: "commercial flooring companies"                , monthly_searches:   480, tier: "Tier 4", status: "not_used",  note: "" },
-    { keyword: "commercial carpet installation"               , monthly_searches:   390, tier: "Tier 4", status: "not_used",  note: "" },
-    { keyword: "commercial flooring contractor"               , monthly_searches:   390, tier: "Tier 4", status: "selected",  note: "" },
-    { keyword: "commercial flooring services"                 , monthly_searches:   390, tier: "Tier 4", status: "not_used",  note: "" },
-    { keyword: "laminate flooring installers"                 , monthly_searches:   390, tier: "Tier 1", status: "not_used",  note: "" },
-    { keyword: "hardwood flooring contractor"                 , monthly_searches:   390, tier: "Tier 1", status: "not_used",  note: "" },
-    { keyword: "carpet installation contractor"               , monthly_searches:   390, tier: "Tier 1", status: "not_used",  note: "" },
-    { keyword: "tile flooring installer"                      , monthly_searches:   320, tier: "Tier 3", status: "not_used",  note: "" },
-    { keyword: "laminate flooring contractors"                , monthly_searches:   320, tier: "Tier 1", status: "not_used",  note: "" },
-    { keyword: "commercial hardwood flooring"                 , monthly_searches:   320, tier: "Tier 4", status: "not_used",  note: "" },
-    { keyword: "tile installation contractor"                 , monthly_searches:   320, tier: "Tier 3", status: "not_used",  note: "" },
-    { keyword: "carpet installation contractors"              , monthly_searches:   260, tier: "Tier 1", status: "not_used",  note: "" },
-    { keyword: "vinyl flooring contractors"                   , monthly_searches:   260, tier: "Tier 1", status: "not_used",  note: "" },
-    { keyword: "commercial floor installation"                , monthly_searches:   260, tier: "Tier 4", status: "not_used",  note: "" },
-    { keyword: "commercial floor installation near me"        , monthly_searches:    10, tier: "Tier 4", status: "near_me",  note: "Equivalent to 'commercial floor installation'" },
-    { keyword: "tile flooring contractors"                    , monthly_searches:   260, tier: "Tier 3", status: "not_used",  note: "" },
-    { keyword: "commercial carpet"                            , monthly_searches:   260, tier: "Tier 4", status: "not_used",  note: "Implied base keyword (too broad for standalone targeting)" },
-    { keyword: "commercial carpet near me"                    , monthly_searches:   260, tier: "Tier 4", status: "near_me",  note: "Equivalent to 'commercial carpet installation'" },
-    { keyword: "commercial flooring company"                  , monthly_searches:   210, tier: "Tier 4", status: "not_used",  note: "" },
-    { keyword: "commercial carpet installers"                 , monthly_searches:   210, tier: "Tier 4", status: "not_used",  note: "" },
-    { keyword: "vinyl flooring installer"                     , monthly_searches:   210, tier: "Tier 1", status: "not_used",  note: "" },
-    { keyword: "flooring installation contractor"             , monthly_searches:   210, tier: "Tier 2", status: "not_used",  note: "" },
-    { keyword: "commercial carpet installation cost"          , monthly_searches:   140, tier: "Tier 4", status: "not_used",  note: "" },
-    { keyword: "commercial flooring installer"                , monthly_searches:   140, tier: "Tier 4", status: "not_used",  note: "" },
-    { keyword: "floor installation contractor"                , monthly_searches:   140, tier: "Tier 2", status: "not_used",  note: "" },
-    ],
+    // Flooring (base/broad) family
+    { keyword: "flooring",                          monthly_searches: 33100, tier: "Tier 1", status: "not_used",  family: "flooring",                      variant_type: "base",     note: "Too broad for standalone targeting" },
+    { keyword: "flooring near me",                  monthly_searches: 33100, tier: "Tier 1", status: "near_me",  family: "flooring",                      variant_type: "near_me",  note: "" },
+    // Carpet Installation family
+    { keyword: "carpet installation",               monthly_searches: 27100, tier: "Tier 1", status: "selected", family: "carpet installation",            variant_type: "base",     note: "" },
+    { keyword: "carpet installation near me",       monthly_searches: 14800, tier: "Tier 1", status: "near_me",  family: "carpet installation",            variant_type: "near_me",  note: "" },
+    { keyword: "carpet installation services",      monthly_searches:  2400, tier: "Tier 1", status: "not_used", family: "carpet installation",            variant_type: "variant",  note: "" },
+    { keyword: "carpet installation companies",     monthly_searches:  1600, tier: "Tier 1", status: "not_used", family: "carpet installation",            variant_type: "variant",  note: "" },
+    { keyword: "carpet installation contractor",    monthly_searches:   390, tier: "Tier 1", status: "not_used", family: "carpet installation",            variant_type: "variant",  note: "" },
+    { keyword: "carpet installation contractors",   monthly_searches:   260, tier: "Tier 1", status: "not_used", family: "carpet installation",            variant_type: "plural",   note: "" },
+    // Carpet Replacement family
+    { keyword: "carpet replacement",                monthly_searches:  3600, tier: "Tier 1", status: "not_used", family: "carpet replacement",             variant_type: "base",     note: "" },
+    { keyword: "carpet replacement near me",        monthly_searches:  1300, tier: "Tier 1", status: "near_me",  family: "carpet replacement",             variant_type: "near_me",  note: "" },
+    // Flooring Installation family
+    { keyword: "flooring installation",             monthly_searches: 18100, tier: "Tier 1", status: "not_used", family: "flooring installation",          variant_type: "base",     note: "" },
+    { keyword: "flooring installation near me",     monthly_searches:  9900, tier: "Tier 1", status: "near_me",  family: "flooring installation",          variant_type: "near_me",  note: "" },
+    { keyword: "flooring installation services",    monthly_searches:  1600, tier: "Tier 2", status: "not_used", family: "flooring installation",          variant_type: "variant",  note: "" },
+    { keyword: "flooring installation contractor",  monthly_searches:   210, tier: "Tier 2", status: "not_used", family: "flooring installation",          variant_type: "variant",  note: "" },
+    // Tile Installation family
+    { keyword: "tile installation",                 monthly_searches: 14800, tier: "Tier 3", status: "selected", family: "tile installation",              variant_type: "base",     note: "" },
+    { keyword: "tile installation near me",         monthly_searches:  9900, tier: "Tier 3", status: "near_me",  family: "tile installation",              variant_type: "near_me",  note: "" },
+    { keyword: "tile flooring installation",        monthly_searches:  1900, tier: "Tier 3", status: "not_used", family: "tile installation",              variant_type: "variant",  note: "" },
+    { keyword: "tile installation companies",       monthly_searches:  1300, tier: "Tier 3", status: "not_used", family: "tile installation",              variant_type: "variant",  note: "" },
+    { keyword: "tile installation contractors",     monthly_searches:  1000, tier: "Tier 3", status: "not_used", family: "tile installation",              variant_type: "plural",   note: "" },
+    { keyword: "tile installation services",        monthly_searches:   720, tier: "Tier 3", status: "not_used", family: "tile installation",              variant_type: "variant",  note: "" },
+    { keyword: "tile installation contractor",      monthly_searches:   320, tier: "Tier 3", status: "not_used", family: "tile installation",              variant_type: "variant",  note: "" },
+    { keyword: "tile flooring installer",           monthly_searches:   320, tier: "Tier 3", status: "not_used", family: "tile installation",              variant_type: "variant",  note: "" },
+    { keyword: "tile flooring contractors",         monthly_searches:   260, tier: "Tier 3", status: "not_used", family: "tile installation",              variant_type: "plural",   note: "" },
+    // Hardwood Floor Installation family
+    { keyword: "hardwood floor installation",       monthly_searches:  9900, tier: "Tier 1", status: "selected", family: "hardwood installation",          variant_type: "base",     note: "" },
+    { keyword: "hardwood floor installation near me",monthly_searches: 2900, tier: "Tier 1", status: "near_me",  family: "hardwood installation",          variant_type: "near_me",  note: "" },
+    { keyword: "hardwood flooring installation",    monthly_searches:  5400, tier: "Tier 1", status: "not_used", family: "hardwood installation",          variant_type: "variant",  note: "" },
+    { keyword: "hardwood flooring contractors",     monthly_searches:   720, tier: "Tier 1", status: "not_used", family: "hardwood installation",          variant_type: "plural",   note: "" },
+    { keyword: "hardwood flooring contractor",      monthly_searches:   390, tier: "Tier 1", status: "not_used", family: "hardwood installation",          variant_type: "variant",  note: "" },
+    // Flooring Contractor family
+    { keyword: "flooring contractor",               monthly_searches:  8100, tier: "Tier 2", status: "selected", family: "flooring contractor",            variant_type: "base",     note: "" },
+    { keyword: "flooring contractor near me",       monthly_searches:  2400, tier: "Tier 2", status: "near_me",  family: "flooring contractor",            variant_type: "near_me",  note: "" },
+    { keyword: "flooring contractors",              monthly_searches:  6600, tier: "Tier 2", status: "not_used", family: "flooring contractor",            variant_type: "plural",   note: "" },
+    { keyword: "flooring contractors near me",      monthly_searches: 12100, tier: "Tier 2", status: "near_me",  family: "flooring contractor",            variant_type: "near_me",  note: "" },
+    { keyword: "flooring installers",               monthly_searches:  1900, tier: "Tier 2", status: "not_used", family: "flooring contractor",            variant_type: "variant",  note: "" },
+    { keyword: "flooring installer",                monthly_searches:  1600, tier: "Tier 2", status: "not_used", family: "flooring contractor",            variant_type: "variant",  note: "" },
+    { keyword: "floor installers",                  monthly_searches:  3600, tier: "Tier 2", status: "not_used", family: "flooring contractor",            variant_type: "variant",  note: "" },
+    { keyword: "floor installers near me",          monthly_searches:  3600, tier: "Tier 2", status: "near_me",  family: "flooring contractor",            variant_type: "near_me",  note: "" },
+    { keyword: "floor installer",                   monthly_searches:   720, tier: "Tier 2", status: "not_used", family: "flooring contractor",            variant_type: "variant",  note: "" },
+    { keyword: "floor installer near me",           monthly_searches:   720, tier: "Tier 2", status: "near_me",  family: "flooring contractor",            variant_type: "near_me",  note: "" },
+    // Laminate Flooring Installation family
+    { keyword: "laminate flooring installation",    monthly_searches:  6600, tier: "Tier 1", status: "selected", family: "laminate installation",          variant_type: "base",     note: "" },
+    { keyword: "laminate flooring installation near me",monthly_searches:1600,tier: "Tier 1", status: "near_me",  family: "laminate installation",          variant_type: "near_me",  note: "" },
+    { keyword: "laminate flooring installers",      monthly_searches:   390, tier: "Tier 1", status: "not_used", family: "laminate installation",          variant_type: "plural",   note: "" },
+    { keyword: "laminate flooring contractors",     monthly_searches:   320, tier: "Tier 1", status: "not_used", family: "laminate installation",          variant_type: "plural",   note: "" },
+    // Floor Installation family
+    { keyword: "floor installation",                monthly_searches:  6600, tier: "Tier 1", status: "selected", family: "floor installation",             variant_type: "base",     note: "" },
+    { keyword: "floor installation near me",        monthly_searches: 14800, tier: "Tier 1", status: "near_me",  family: "floor installation",             variant_type: "near_me",  note: "" },
+    { keyword: "floor installation contractor",     monthly_searches:   140, tier: "Tier 2", status: "not_used", family: "floor installation",             variant_type: "variant",  note: "" },
+    // Flooring Services family
+    { keyword: "flooring services",                 monthly_searches:  6600, tier: "Tier 2", status: "not_used", family: "flooring services",              variant_type: "base",     note: "" },
+    { keyword: "flooring services near me",         monthly_searches:  1300, tier: "Tier 2", status: "near_me",  family: "flooring services",              variant_type: "near_me",  note: "" },
+    // Commercial Flooring family
+    { keyword: "commercial flooring",               monthly_searches:  5400, tier: "Tier 4", status: "selected", family: "commercial flooring",            variant_type: "base",     note: "" },
+    { keyword: "commercial flooring near me",       monthly_searches:  2900, tier: "Tier 4", status: "near_me",  family: "commercial flooring",            variant_type: "near_me",  note: "" },
+    { keyword: "commercial flooring contractor",    monthly_searches:   390, tier: "Tier 4", status: "selected", family: "commercial flooring",            variant_type: "variant",  note: "" },
+    { keyword: "commercial flooring contractors",   monthly_searches:   880, tier: "Tier 4", status: "not_used", family: "commercial flooring",            variant_type: "plural",   note: "" },
+    { keyword: "commercial flooring installation",  monthly_searches:   720, tier: "Tier 4", status: "not_used", family: "commercial flooring",            variant_type: "variant",  note: "" },
+    { keyword: "commercial flooring installers",    monthly_searches:   720, tier: "Tier 4", status: "not_used", family: "commercial flooring",            variant_type: "plural",   note: "" },
+    { keyword: "commercial flooring services",      monthly_searches:   390, tier: "Tier 4", status: "not_used", family: "commercial flooring",            variant_type: "variant",  note: "" },
+    { keyword: "commercial flooring companies",     monthly_searches:   480, tier: "Tier 4", status: "not_used", family: "commercial flooring",            variant_type: "plural",   note: "" },
+    { keyword: "commercial flooring company",       monthly_searches:   210, tier: "Tier 4", status: "not_used", family: "commercial flooring",            variant_type: "variant",  note: "" },
+    { keyword: "commercial flooring installer",     monthly_searches:   140, tier: "Tier 4", status: "not_used", family: "commercial flooring",            variant_type: "variant",  note: "" },
+    { keyword: "commercial tile flooring",          monthly_searches:   880, tier: "Tier 4", status: "not_used", family: "commercial flooring",            variant_type: "variant",  note: "" },
+    { keyword: "commercial hardwood flooring",      monthly_searches:   320, tier: "Tier 4", status: "not_used", family: "commercial flooring",            variant_type: "variant",  note: "" },
+    // Flooring Company family
+    { keyword: "flooring company",                  monthly_searches:  5400, tier: "Tier 2", status: "selected", family: "flooring company",               variant_type: "base",     note: "" },
+    { keyword: "flooring company near me",          monthly_searches:  3600, tier: "Tier 2", status: "near_me",  family: "flooring company",               variant_type: "near_me",  note: "" },
+    { keyword: "flooring companies",                monthly_searches:  3600, tier: "Tier 2", status: "not_used", family: "flooring company",               variant_type: "plural",   note: "" },
+    { keyword: "flooring companies near me",        monthly_searches: 18100, tier: "Tier 2", status: "near_me",  family: "flooring company",               variant_type: "near_me",  note: "" },
+    // Floor Refinishing family
+    { keyword: "floor refinishing",                 monthly_searches:  5400, tier: "Tier 1", status: "not_used", family: "floor refinishing",              variant_type: "base",     note: "" },
+    { keyword: "floor refinishing near me",         monthly_searches:  5400, tier: "Tier 1", status: "near_me",  family: "floor refinishing",              variant_type: "near_me",  note: "" },
+    // Vinyl Flooring Installation family
+    { keyword: "vinyl plank flooring installation", monthly_searches:   720, tier: "Tier 1", status: "selected", family: "vinyl installation",             variant_type: "base",     note: "" },
+    { keyword: "vinyl flooring installation",       monthly_searches:  4400, tier: "Tier 1", status: "not_used", family: "vinyl installation",             variant_type: "variant",  note: "" },
+    { keyword: "lvp flooring installation",         monthly_searches:  3600, tier: "Tier 1", status: "not_used", family: "vinyl installation",             variant_type: "short_form",note: "" },
+    { keyword: "luxury vinyl flooring installation",monthly_searches:   720, tier: "Tier 1", status: "not_used", family: "vinyl installation",             variant_type: "variant",  note: "" },
+    { keyword: "vinyl flooring contractors",        monthly_searches:   260, tier: "Tier 1", status: "not_used", family: "vinyl installation",             variant_type: "plural",   note: "" },
+    { keyword: "vinyl flooring installer",          monthly_searches:   210, tier: "Tier 1", status: "not_used", family: "vinyl installation",             variant_type: "variant",  note: "" },
+    // Commercial Carpet family
+    { keyword: "commercial carpet installation",    monthly_searches:   390, tier: "Tier 4", status: "not_used", family: "commercial carpet",              variant_type: "base",     note: "" },
+    { keyword: "commercial carpet",                 monthly_searches:   260, tier: "Tier 4", status: "not_used", family: "commercial carpet",              variant_type: "variant",  note: "" },
+    { keyword: "commercial carpet near me",         monthly_searches:   260, tier: "Tier 4", status: "near_me",  family: "commercial carpet",              variant_type: "near_me",  note: "" },
+    { keyword: "commercial carpet installers",      monthly_searches:   210, tier: "Tier 4", status: "not_used", family: "commercial carpet",              variant_type: "plural",   note: "" },
+    { keyword: "commercial carpet installation cost",monthly_searches:  140, tier: "Tier 4", status: "not_used", family: "commercial carpet",              variant_type: "variant",  note: "" },
+    // Commercial Floor Installation family
+    { keyword: "commercial floor installation",     monthly_searches:   260, tier: "Tier 4", status: "not_used", family: "commercial floor installation",  variant_type: "base",     note: "" },
+    { keyword: "commercial floor installation near me",monthly_searches:  10,tier: "Tier 4", status: "near_me",  family: "commercial floor installation",  variant_type: "near_me",  note: "" },
+  ],
 
   // ---- KEYWORD TIERS ----
   keyword_tiers: [
@@ -288,16 +305,34 @@ function tierPill(label) {
 function buildKeywordTable() {
   const tbody = document.getElementById('kw-table-body');
   if (!tbody) return;
-  const rows = STRATEGY.keyword_table.map(kw => {
-    const rowClass = kw.status === 'selected' ? 'row-selected' : kw.status === 'near_me' ? 'row-near-me' : '';
-    return `<tr class="${rowClass}">
-      <td>${kw.keyword}</td>
-      <td class="num-col">${fmt(kw.monthly_searches)}</td>
-      <td>${tierPill(kw.tier)}</td>
-      <td>${statusBadge(kw.status, kw.note)}</td>
-    </tr>`;
-  }).join('');
-  tbody.innerHTML = rows;
+  // Group keywords by family, preserving order of first appearance
+  const familyOrder = [];
+  const familyMap = {};
+  STRATEGY.keyword_table.forEach(kw => {
+    const fam = kw.family || kw.keyword;
+    if (!familyMap[fam]) { familyMap[fam] = []; familyOrder.push(fam); }
+    familyMap[fam].push(kw);
+  });
+  const variantLabel = { variant: 'Variant', plural: 'Plural Variant', near_me: 'Near Me Variant', short_form: 'Short-Form Variant' };
+  let html = '';
+  familyOrder.forEach(fam => {
+    const members = familyMap[fam];
+    members.forEach((kw, idx) => {
+      const isBase = kw.variant_type === 'base' || idx === 0;
+      const isNearMe = kw.variant_type === 'near_me';
+      const isVariant = !isBase;
+      let rowClass = '';
+      if (kw.status === 'selected') rowClass = 'row-selected row-base';
+      else if (isBase) rowClass = 'row-base';
+      else if (isNearMe) rowClass = 'row-near-me row-variant';
+      else rowClass = 'row-variant';
+      const kwCell = isVariant
+        ? `<td class="kw-variant-cell"><span class="kw-variant-indent">&#8627;</span>${kw.keyword}<span class="kw-variant-badge">${variantLabel[kw.variant_type] || 'Variant'}</span></td>`
+        : `<td>${kw.keyword}</td>`;
+      html += `<tr class="${rowClass}">${kwCell}<td class="num-col">${fmt(kw.monthly_searches)}</td><td>${tierPill(kw.tier)}</td><td>${statusBadge(kw.status, kw.note)}</td></tr>`;
+    });
+  });
+  tbody.innerHTML = html;
 }
 
 // ============================================================
@@ -390,6 +425,8 @@ function buildNotUsed() {
       </div>
     </div>`;
   }).join('');
+  // Apply 2-col grid when there are exactly 4 cards (2x2 layout)
+  if (STRATEGY.not_used_groups.length === 4) grid.classList.add('grid-2col');
   grid.innerHTML = cards;
 }
 
@@ -414,8 +451,9 @@ function buildOpportunities() {
     return `<div class="opp-card ${highlight}">
       ${i === 0 ? '<div class="opp-recommended">RECOMMENDED NEXT STEP</div>' : '<div class="opp-recommended-spacer"></div>'}
       <div class="opp-plan-label">${opp.plan}</div>
-      <div class="opp-price">$${fmt(opp.price)}<span class="opp-price-mo">/mo</span></div>
-      <div class="opp-combos">${opp.combinations} total combinations<br><span class="opp-add">(+${opp.additional_combinations} from current plan)</span></div>
+      <div class="opp-combos-large">${opp.combinations}</div>
+      <div class="opp-combos-label">total combinations</div>
+      <div class="opp-combos"><span class="opp-add">+${opp.additional_combinations} from current plan</span></div>
       <h4 class="opp-headline">${opp.headline}</h4>
       <p class="opp-desc">${opp.description}</p>
       <ul class="opp-kw-list">${kwList}</ul>

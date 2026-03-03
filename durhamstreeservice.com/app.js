@@ -31,51 +31,61 @@ const STRATEGY = {
   num_target_markets: 5,
 
   // ---- KEYWORD TABLE DATA ----
+  // Each keyword has: family (groups variants together), variant_type (base|variant|plural|near_me|short_form)
   keyword_table: [
-    { keyword: "tree service near me",       monthly_searches: 49500, tier: "Tier 1", status: "near_me",  note: "Equivalent to 'tree service'" },
-    { keyword: "tree removal near me",        monthly_searches: 33100, tier: "Tier 1", status: "near_me",  note: "Equivalent to 'tree removal'" },
-    { keyword: "tree removal",               monthly_searches: 33100, tier: "Tier 1", status: "selected", note: "" },
-    { keyword: "tree service",               monthly_searches: 33100, tier: "Tier 1", status: "selected", note: "" },
-    { keyword: "tree trimming near me",      monthly_searches: 22200, tier: "Tier 1", status: "near_me",  note: "Equivalent to 'tree trimming'" },
-    { keyword: "tree trimming",              monthly_searches: 22200, tier: "Tier 1", status: "selected", note: "" },
-    { keyword: "tree pruning",               monthly_searches: 14800, tier: "Tier 1", status: "selected", note: "" },
-    { keyword: "stump removal",              monthly_searches: 14800, tier: "Tier 2", status: "selected", note: "" },
-    { keyword: "stump grinding",             monthly_searches: 14800, tier: "Tier 2", status: "selected", note: "" },
-    { keyword: "tree stump removal",         monthly_searches: 14800, tier: "Tier 2", status: "not_used", note: "" },
-    { keyword: "tree removal service",       monthly_searches: 14800, tier: "Tier 1", status: "not_used", note: "" },
-    { keyword: "tree care",                  monthly_searches: 12100, tier: "Tier 1", status: "not_used", note: "" },
-    { keyword: "tree cutting service",       monthly_searches: 12100, tier: "Tier 1", status: "not_used", note: "" },
-    { keyword: "stump grinding near me",     monthly_searches: 12100, tier: "Tier 2", status: "near_me",  note: "Equivalent to 'stump grinding'" },
-    { keyword: "tree care services",         monthly_searches:  9900, tier: "Tier 1", status: "not_used", note: "" },
-    { keyword: "tree trimming service",      monthly_searches:  9900, tier: "Tier 1", status: "not_used", note: "" },
-    { keyword: "tree removal cost",          monthly_searches:  8100, tier: "Tier 1", status: "not_used", note: "" },
-    { keyword: "emergency tree removal",     monthly_searches:  8100, tier: "Tier 4", status: "selected", note: "" },
-    { keyword: "tree removers",              monthly_searches:  8100, tier: "Tier 1", status: "not_used", note: "" },
-    { keyword: "stump removal near me",      monthly_searches:  6600, tier: "Tier 2", status: "near_me",  note: "Equivalent to 'stump removal'" },
-    { keyword: "tree removal companies",     monthly_searches:  6600, tier: "Tier 1", status: "not_used", note: "" },
-    { keyword: "demolition contractors",     monthly_searches:  6600, tier: "Tier 3", status: "selected", note: "" },
-    { keyword: "tree trimmers near me",      monthly_searches:  6600, tier: "Tier 1", status: "near_me",  note: "Equivalent to 'tree trimming'" },
-    { keyword: "tree trimming services",     monthly_searches:  5400, tier: "Tier 1", status: "not_used", note: "" },
-    { keyword: "tree removal services",      monthly_searches:  5400, tier: "Tier 1", status: "not_used", note: "" },
-    { keyword: "tree pruning near me",       monthly_searches:  5400, tier: "Tier 1", status: "near_me",  note: "Equivalent to 'tree pruning'" },
-    { keyword: "emergency tree service",     monthly_searches:  4400, tier: "Tier 4", status: "not_used", note: "" },
-    { keyword: "tree care near me",          monthly_searches:  4400, tier: "Tier 1", status: "near_me",  note: "Equivalent to 'tree care'" },
-    { keyword: "tree pruning service",       monthly_searches:  3600, tier: "Tier 1", status: "not_used", note: "" },
-    { keyword: "stump removal cost",         monthly_searches:  3600, tier: "Tier 2", status: "not_used", note: "" },
-    { keyword: "demolition services",        monthly_searches:  2900, tier: "Tier 3", status: "not_used", note: "" },
-    { keyword: "tree care service",          monthly_searches:  2900, tier: "Tier 1", status: "not_used", note: "" },
-    { keyword: "tree removal company",       monthly_searches:  2900, tier: "Tier 1", status: "not_used", note: "" },
-    { keyword: "tree trimmers",              monthly_searches:  2400, tier: "Tier 1", status: "not_used", note: "" },
-    { keyword: "tree companies",             monthly_searches:  1900, tier: "Tier 1", status: "not_used", note: "" },
-    { keyword: "tree service companies",     monthly_searches:  1600, tier: "Tier 1", status: "not_used", note: "" },
-    { keyword: "fallen tree removal",        monthly_searches:  1600, tier: "Tier 4", status: "not_used", note: "" },
-    { keyword: "tree cutters",              monthly_searches:  1300, tier: "Tier 1", status: "not_used", note: "" },
-    { keyword: "storm damage tree removal",  monthly_searches:  1000, tier: "Tier 4", status: "not_used", note: "" },
-    { keyword: "tree removers near me",      monthly_searches:   880, tier: "Tier 1", status: "near_me",  note: "Equivalent to 'tree removers'" },
-    { keyword: "tree service contractors",   monthly_searches:   720, tier: "Tier 1", status: "not_used", note: "" },
-    { keyword: "tree removal contractors",   monthly_searches:   590, tier: "Tier 1", status: "not_used", note: "" },
-    { keyword: "limb removal",               monthly_searches:   140, tier: "Tier 1", status: "not_used", note: "" },
-    { keyword: "bucket truck tree service",  monthly_searches:   110, tier: "Tier 1", status: "not_used", note: "" },
+    // Tree Service family
+    { keyword: "tree service",               monthly_searches: 33100, tier: "Tier 1", status: "selected", family: "tree service",       variant_type: "base" },
+    { keyword: "tree service near me",       monthly_searches: 49500, tier: "Tier 1", status: "near_me",  family: "tree service",       variant_type: "near_me" },
+    { keyword: "tree care",                  monthly_searches: 12100, tier: "Tier 1", status: "not_used", family: "tree service",       variant_type: "variant" },
+    { keyword: "tree care services",         monthly_searches:  9900, tier: "Tier 1", status: "not_used", family: "tree service",       variant_type: "variant" },
+    { keyword: "tree care service",          monthly_searches:  2900, tier: "Tier 1", status: "not_used", family: "tree service",       variant_type: "variant" },
+    { keyword: "tree care near me",          monthly_searches:  4400, tier: "Tier 1", status: "near_me",  family: "tree service",       variant_type: "near_me" },
+    { keyword: "tree service companies",     monthly_searches:  1600, tier: "Tier 1", status: "not_used", family: "tree service",       variant_type: "variant" },
+    { keyword: "tree service contractors",   monthly_searches:   720, tier: "Tier 1", status: "not_used", family: "tree service",       variant_type: "variant" },
+    // Tree Removal family
+    { keyword: "tree removal",               monthly_searches: 33100, tier: "Tier 1", status: "selected", family: "tree removal",       variant_type: "base" },
+    { keyword: "tree removal near me",       monthly_searches: 33100, tier: "Tier 1", status: "near_me",  family: "tree removal",       variant_type: "near_me" },
+    { keyword: "tree removal service",       monthly_searches: 14800, tier: "Tier 1", status: "not_used", family: "tree removal",       variant_type: "variant" },
+    { keyword: "tree removal services",      monthly_searches:  5400, tier: "Tier 1", status: "not_used", family: "tree removal",       variant_type: "plural" },
+    { keyword: "tree removal cost",          monthly_searches:  8100, tier: "Tier 1", status: "not_used", family: "tree removal",       variant_type: "variant" },
+    { keyword: "tree removal companies",     monthly_searches:  6600, tier: "Tier 1", status: "not_used", family: "tree removal",       variant_type: "variant" },
+    { keyword: "tree removal company",       monthly_searches:  2900, tier: "Tier 1", status: "not_used", family: "tree removal",       variant_type: "variant" },
+    { keyword: "tree removal contractors",   monthly_searches:   590, tier: "Tier 1", status: "not_used", family: "tree removal",       variant_type: "variant" },
+    { keyword: "tree removers",              monthly_searches:  8100, tier: "Tier 1", status: "not_used", family: "tree removal",       variant_type: "variant" },
+    { keyword: "tree removers near me",      monthly_searches:   880, tier: "Tier 1", status: "near_me",  family: "tree removal",       variant_type: "near_me" },
+    { keyword: "tree cutters",               monthly_searches:  1300, tier: "Tier 1", status: "not_used", family: "tree removal",       variant_type: "variant" },
+    { keyword: "tree companies",             monthly_searches:  1900, tier: "Tier 1", status: "not_used", family: "tree removal",       variant_type: "variant" },
+    // Tree Trimming family
+    { keyword: "tree trimming",              monthly_searches: 22200, tier: "Tier 1", status: "selected", family: "tree trimming",      variant_type: "base" },
+    { keyword: "tree trimming near me",      monthly_searches: 22200, tier: "Tier 1", status: "near_me",  family: "tree trimming",      variant_type: "near_me" },
+    { keyword: "tree trimming service",      monthly_searches:  9900, tier: "Tier 1", status: "not_used", family: "tree trimming",      variant_type: "variant" },
+    { keyword: "tree trimming services",     monthly_searches:  5400, tier: "Tier 1", status: "not_used", family: "tree trimming",      variant_type: "plural" },
+    { keyword: "tree trimmers",              monthly_searches:  2400, tier: "Tier 1", status: "not_used", family: "tree trimming",      variant_type: "variant" },
+    { keyword: "tree trimmers near me",      monthly_searches:  6600, tier: "Tier 1", status: "near_me",  family: "tree trimming",      variant_type: "near_me" },
+    { keyword: "tree cutting service",       monthly_searches: 12100, tier: "Tier 1", status: "not_used", family: "tree trimming",      variant_type: "variant" },
+    // Tree Pruning family
+    { keyword: "tree pruning",               monthly_searches: 14800, tier: "Tier 1", status: "selected", family: "tree pruning",       variant_type: "base" },
+    { keyword: "tree pruning near me",       monthly_searches:  5400, tier: "Tier 1", status: "near_me",  family: "tree pruning",       variant_type: "near_me" },
+    { keyword: "tree pruning service",       monthly_searches:  3600, tier: "Tier 1", status: "not_used", family: "tree pruning",       variant_type: "variant" },
+    // Stump Removal family
+    { keyword: "stump removal",              monthly_searches: 14800, tier: "Tier 2", status: "selected", family: "stump removal",      variant_type: "base" },
+    { keyword: "stump removal near me",      monthly_searches:  6600, tier: "Tier 2", status: "near_me",  family: "stump removal",      variant_type: "near_me" },
+    { keyword: "tree stump removal",         monthly_searches: 14800, tier: "Tier 2", status: "not_used", family: "stump removal",      variant_type: "variant" },
+    { keyword: "stump removal cost",         monthly_searches:  3600, tier: "Tier 2", status: "not_used", family: "stump removal",      variant_type: "variant" },
+    // Stump Grinding family
+    { keyword: "stump grinding",             monthly_searches: 14800, tier: "Tier 2", status: "selected", family: "stump grinding",     variant_type: "base" },
+    { keyword: "stump grinding near me",     monthly_searches: 12100, tier: "Tier 2", status: "near_me",  family: "stump grinding",     variant_type: "near_me" },
+    // Demolition family
+    { keyword: "demolition contractors",     monthly_searches:  6600, tier: "Tier 3", status: "selected", family: "demolition",         variant_type: "base" },
+    { keyword: "demolition services",        monthly_searches:  2900, tier: "Tier 3", status: "not_used", family: "demolition",         variant_type: "variant" },
+    // Emergency Tree Removal family
+    { keyword: "emergency tree removal",     monthly_searches:  8100, tier: "Tier 4", status: "selected", family: "emergency tree",     variant_type: "base" },
+    { keyword: "emergency tree service",     monthly_searches:  4400, tier: "Tier 4", status: "not_used", family: "emergency tree",     variant_type: "variant" },
+    { keyword: "fallen tree removal",        monthly_searches:  1600, tier: "Tier 4", status: "not_used", family: "emergency tree",     variant_type: "variant" },
+    { keyword: "storm damage tree removal",  monthly_searches:  1000, tier: "Tier 4", status: "not_used", family: "emergency tree",     variant_type: "variant" },
+    // Low-volume misc
+    { keyword: "limb removal",               monthly_searches:   140, tier: "Tier 1", status: "not_used", family: "limb removal",       variant_type: "base" },
+    { keyword: "bucket truck tree service",  monthly_searches:   110, tier: "Tier 1", status: "not_used", family: "bucket truck",       variant_type: "base" },
   ],
 
   // ---- KEYWORD TIERS ----
@@ -245,15 +255,40 @@ function tierPill(label) {
 function buildKeywordTable() {
   const tbody = document.getElementById('kw-table-body');
   if (!tbody) return;
-  const rows = STRATEGY.keyword_table.map(kw => {
-    const rowClass = kw.status === 'selected' ? 'row-selected' : kw.status === 'near_me' ? 'row-near-me' : '';
-    return `<tr class="${rowClass}">
-      <td>${kw.keyword}</td>
-      <td class="num-col">${fmt(kw.monthly_searches)}</td>
-      <td>${tierPill(kw.tier)}</td>
-      <td>${statusBadge(kw.status, kw.note)}</td>
-    </tr>`;
+
+  // Group keywords by family, preserving order of first appearance
+  const familyOrder = [];
+  const familyMap = {};
+  STRATEGY.keyword_table.forEach(kw => {
+    if (!familyMap[kw.family]) {
+      familyMap[kw.family] = [];
+      familyOrder.push(kw.family);
+    }
+    familyMap[kw.family].push(kw);
+  });
+
+  const variantLabel = { variant: 'Variant', plural: 'Plural Variant', near_me: 'Near Me Variant', short_form: 'Short-Form Variant' };
+
+  const rows = familyOrder.map(family => {
+    const members = familyMap[family];
+    return members.map(kw => {
+      const isBase = kw.variant_type === 'base';
+      const isNearMe = kw.variant_type === 'near_me';
+      const rowClass = isBase
+        ? (kw.status === 'selected' ? 'row-base row-selected' : 'row-base')
+        : (isNearMe ? 'row-variant row-near-me' : 'row-variant');
+      const kwCell = isBase
+        ? `<td>${kw.keyword}</td>`
+        : `<td class="kw-variant-cell"><span class="kw-variant-indent">&#8627;</span>${kw.keyword} <span class="kw-variant-badge">${variantLabel[kw.variant_type] || 'Variant'}</span></td>`;
+      return `<tr class="${rowClass}">
+        ${kwCell}
+        <td class="num-col">${fmt(kw.monthly_searches)}</td>
+        <td>${tierPill(kw.tier)}</td>
+        <td>${statusBadge(kw.status, kw.note)}</td>
+      </tr>`;
+    }).join('');
   }).join('');
+
   tbody.innerHTML = rows;
 }
 
@@ -359,6 +394,12 @@ function buildNotUsed() {
     </div>`;
   }).join('');
   grid.innerHTML = cards;
+  // If exactly 4 cards, use 2x2 grid so no card sits alone on a row
+  if (STRATEGY.not_used_groups.length === 4) {
+    grid.classList.add('grid-2col');
+  } else {
+    grid.classList.remove('grid-2col');
+  }
 }
 
 // ============================================================
@@ -369,7 +410,7 @@ function buildOpportunities() {
   if (!grid) return;
   const cards = STRATEGY.additional_opportunities.map((opp, i) => {
     const kwHeader = `<li class="opp-kw-header">
-        <span class="opp-kw-col-label">KEYWORD</span>
+        <span class="opp-kw-col-label">KEYWORD / MARKET</span>
         <span class="opp-kw-col-label" style="text-align:right">MONTHLY SEARCHES</span>
       </li>`;
     const kwList = kwHeader + opp.keywords.map(kw =>
@@ -382,8 +423,8 @@ function buildOpportunities() {
     return `<div class="opp-card ${highlight}">
       ${i === 0 ? '<div class="opp-recommended">RECOMMENDED NEXT STEP</div>' : '<div class="opp-recommended-spacer"></div>'}
       <div class="opp-plan-label">${opp.plan}</div>
-      <div class="opp-price">$${fmt(opp.price)}<span class="opp-price-mo">/mo</span></div>
-      <div class="opp-combos">${opp.combinations} total combinations<br><span class="opp-add">(+${opp.additional_combinations} from current plan)</span></div>
+      <div class="opp-combos-large">${opp.combinations} <span class="opp-combos-label">total combinations</span></div>
+      <div class="opp-combos">${opp.additional_combinations} additional combinations from current plan</div>
       <h4 class="opp-headline">${opp.headline}</h4>
       <p class="opp-desc">${opp.description}</p>
       <ul class="opp-kw-list">${kwList}</ul>

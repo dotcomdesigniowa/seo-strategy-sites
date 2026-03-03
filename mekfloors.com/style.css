@@ -197,6 +197,25 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
 .data-table td.num-col { text-align: right; font-variant-numeric: tabular-nums; }
 .data-table tr:hover td { background: rgba(63,128,234,0.04); }
 .row-selected td { background: rgba(63,128,234,0.06); }
+.row-base td { font-weight: 600; }
+.row-variant td { font-size: 0.82rem; color: #555; background: #fafafa; }
+.row-near-me td { font-size: 0.82rem; color: #555; background: #fff8f0; }
+.kw-variant-cell { padding-left: 20px !important; }
+.kw-variant-indent { color: #aaa; margin-right: 4px; font-size: 0.9rem; }
+.kw-variant-badge {
+  display: inline-block;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  background: #f0f0f0;
+  color: #888;
+  border-radius: 3px;
+  padding: 1px 5px;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+.row-near-me .kw-variant-badge { background: #fff0e0; color: #c07000; }
 .row-tier3 td { color: #999; font-size: 0.8rem; }
 .check { color: #22c55e; font-weight: 900; text-align: center; }
 .dash { color: #ccc; text-align: center; }
@@ -535,8 +554,11 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: auto 1fr auto auto;
   column-gap: 20px;
-  row-gap: 0;
+  row-gap: 24px;
   align-items: stretch;
+}
+.not-used-grid.grid-2col {
+  grid-template-columns: repeat(2, 1fr);
 }
 .not-used-card {
   background: #fff;
@@ -659,14 +681,14 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
   color: #3F80EA;
   margin-bottom: 4px;
 }
-.opp-price {
+.opp-combos-large {
   font-size: 2rem;
   font-weight: 900;
   color: #334168;
   line-height: 1;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
-.opp-price-mo { font-size: 0.9rem; font-weight: 500; color: #999; }
+.opp-combos-label { font-size: 0.9rem; font-weight: 500; color: #999; }
 .opp-combos {
   font-size: 0.82rem;
   color: #666;
