@@ -12,14 +12,14 @@
 
     /* ── EXACT DURHAM'S DESIGN TOKENS ── */
     :root {
-      --navy:        #334168;   /* header, stat cards, section headings */
-      --navy-dark:   #1a2540;   /* hero gradient dark end */
-      --blue:        #3F80EA;   /* accent blue */
+      --navy:        #334168;
+      --navy-dark:   #1a2540;
+      --blue:        #3F80EA;
       --white:       #ffffff;
-      --grey-bg:     #f7f8fc;   /* alt section background */
-      --grey-border: #E6E6E6;   /* borders, dividers */
-      --text-dark:   #334168;   /* headings */
-      --text-body:   #35373C;   /* body text */
+      --grey-bg:     #f7f8fc;
+      --grey-border: #E6E6E6;
+      --text-dark:   #334168;
+      --text-body:   #35373C;
       --text-muted:  #666;
     }
 
@@ -32,7 +32,7 @@
       flex-direction: column;
     }
 
-    /* ── HEADER — exact Durham's header ── */
+    /* ── HEADER ── */
     .site-header {
       background: var(--navy);
       padding: 16px 40px;
@@ -48,10 +48,7 @@
       align-items: center;
       justify-content: space-between;
     }
-    .site-header img {
-      height: 38px;
-      display: block;
-    }
+    .site-header img { height: 38px; display: block; }
     .header-tagline {
       font-size: 11px;
       font-weight: 900;
@@ -60,10 +57,10 @@
       text-transform: uppercase;
     }
 
-    /* ── HERO — exact Durham's hero gradient ── */
+    /* ── HERO ── */
     .hero {
       background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
-      padding: 80px 40px;
+      padding: 80px 40px 60px;
       text-align: center;
       color: var(--white);
       overflow-x: hidden;
@@ -113,40 +110,34 @@
       transform: translateY(-1px);
       box-shadow: 0 6px 28px rgba(63,128,234,0.5);
     }
-    .btn-build svg {
-      width: 16px;
-      height: 16px;
-      flex-shrink: 0;
-    }
+    .btn-build svg { width: 16px; height: 16px; flex-shrink: 0; }
 
-    /* ── STAT GRID — exact Durham's stat-card style ── */
-    .stat-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      max-width: 700px;
-      margin: 40px auto 0;
+    /* ── STATS BAR — horizontal, below hero, dark navy ── */
+    .stats-bar {
+      background: var(--navy-dark);
+      border-top: 1px solid rgba(255,255,255,0.07);
+      display: flex;
+      justify-content: center;
     }
-    .stat-card {
-      background: var(--navy);
-      color: var(--white);
-      padding: 28px 20px;
-      border-radius: 12px;
+    .stat-item {
+      padding: 22px 56px;
       text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.09);
     }
-    .stat-number {
-      font-size: 2.5rem;
+    .stat-item:last-child { border-right: none; }
+    .stat-num {
+      font-size: 2rem;
       font-weight: 900;
       color: var(--blue);
       line-height: 1;
+      margin-bottom: 6px;
     }
     .stat-label {
-      font-size: 11px;
+      font-size: 10px;
       font-weight: 700;
-      letter-spacing: 1px;
+      letter-spacing: 2px;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.7);
-      margin-top: 8px;
+      color: rgba(255,255,255,0.45);
     }
 
     /* ── MAIN CONTENT ── */
@@ -258,27 +249,10 @@
       align-items: center;
       gap: 6px;
     }
-    .view-link svg {
-      width: 14px;
-      height: 14px;
-      transition: transform 0.15s;
-    }
-    .client-card:hover .view-link svg {
-      transform: translateX(3px);
-    }
+    .view-link svg { width: 14px; height: 14px; transition: transform 0.15s; }
+    .client-card:hover .view-link svg { transform: translateX(3px); }
 
-    /* ── EMPTY STATE ── */
-    .empty-state {
-      text-align: center;
-      padding: 60px 24px;
-      color: var(--text-muted);
-    }
-    .empty-state p {
-      font-size: 0.9rem;
-      font-weight: 600;
-    }
-
-    /* ── FOOTER — exact Durham's footer ── */
+    /* ── FOOTER ── */
     footer {
       background: var(--navy);
       padding: 28px 48px;
@@ -296,8 +270,9 @@
     /* ── RESPONSIVE ── */
     @media (max-width: 700px) {
       .site-header { padding: 16px 20px; }
-      .hero { padding: 56px 24px 60px; }
-      .stat-grid { grid-template-columns: 1fr; gap: 12px; max-width: 280px; }
+      .hero { padding: 56px 24px 48px; }
+      .stats-bar { flex-wrap: wrap; }
+      .stat-item { padding: 18px 32px; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.09); flex: 1 1 50%; }
       main { padding: 48px 20px 60px; }
       .client-card { padding: 18px 20px; }
       .client-badge { display: none; }
@@ -323,39 +298,33 @@
       <p class="hero-subtitle">Access client SEO strategy reports or launch a new strategy build below.</p>
       <a href="/new-strategy" class="btn-build">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="12" y1="5" x2="19" y2="12"/><line x1="5" y1="12" x2="19" y2="12"/>
+          <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
         </svg>
         Build New SEO Strategy
       </a>
-
-      <!-- STAT GRID — exact Durham's stat-card style -->
-      <div class="stat-grid">
-        <div class="stat-card">
-          <div class="stat-number" id="statStrategies">0</div>
-          <div class="stat-label">Strategies Built</div>
-        </div>
-        <div class="stat-card">
-          <!-- Keywords Researched: running total across all client builds.
-               Update this number each time a new strategy is built.
-               Durham's Tree Service: 189 keywords
-               MEK Interiors & Floors: add when built
-               Running total starts at 189. -->
-          <div class="stat-number" id="statKeywords">189</div>
-          <div class="stat-label">Keywords Researched</div>
-        </div>
-        <div class="stat-card">
-          <!-- Skill items: count of reference files in the seo-strategist skill.
-               Update manually when skill files are added.
-               Current count: 7 (SKILL.md, SOP.md, style_reference.css,
-               index_template.html, intake_form.html,
-               SEO_Strategy_Durham_Tree_Service.md, final_keyword_list.csv,
-               full_market_list.csv) -->
-          <div class="stat-number">8</div>
-          <div class="stat-label">Skill Assets</div>
-        </div>
-      </div>
     </div>
   </section>
+
+  <!-- STATS BAR — horizontal strip below hero -->
+  <div class="stats-bar">
+    <div class="stat-item">
+      <div class="stat-num" id="statStrategies">0</div>
+      <div class="stat-label">Strategies Built</div>
+    </div>
+    <div class="stat-item">
+      <!-- Running total of keywords researched across all client builds.
+           Durham's Tree Service: 189 | MEK Interiors & Floors: 401 | Texas Building Center: 149
+           Update the keywords field in the clients array below when adding new clients. -->
+      <div class="stat-num" id="statKeywords">0</div>
+      <div class="stat-label">Keywords Researched</div>
+    </div>
+    <div class="stat-item">
+      <!-- Skill file count: 7 references + 3 scripts = 10 total skill assets.
+           Update manually when new files are added to the seo-strategist skill. -->
+      <div class="stat-num">10</div>
+      <div class="stat-label">Skill Assets</div>
+    </div>
+  </div>
 
   <!-- MAIN -->
   <main>
@@ -367,9 +336,7 @@
       <span class="section-count" id="clientCount">Loading...</span>
     </div>
 
-    <div class="client-grid" id="clientGrid">
-      <!-- Cards injected by JS -->
-    </div>
+    <div class="client-grid" id="clientGrid"></div>
   </main>
 
   <!-- FOOTER -->
@@ -381,33 +348,27 @@
     // ─────────────────────────────────────────────────────────────────────────
     // CLIENT LIST
     // Add a new entry here each time a strategy is built and deployed.
-    // Fields:
-    //   name    — Full business name
-    //   domain  — Folder name in the repo (matches the URL path)
-    //   badge   — Plan level label (e.g. "Level C")
-    //   keywords — Number of keywords researched for this client (from their strategy report)
+    //   name     — Full business name
+    //   domain   — Folder name in the repo (matches the URL path)
+    //   badge    — Plan level label (e.g. "Level C")
+    //   keywords — Keywords Researched count from the client's strategy report stat card
     // ─────────────────────────────────────────────────────────────────────────
     const clients = [
       { name: "Durham's Tree Service",  domain: "durhamstreeservice.com",  badge: "Level C", keywords: 189 },
-      { name: "MEK Interiors & Floors", domain: "mekfloors.com",           badge: "Level B", keywords: 0   },
+      { name: "MEK Interiors & Floors", domain: "mekfloors.com",           badge: "Level B", keywords: 401 },
+      { name: "Texas Building Center",  domain: "texasbuildingcenter.com", badge: "Level A", keywords: 149 },
     ];
 
     function renderClients() {
-      const grid        = document.getElementById('clientGrid');
-      const countEl     = document.getElementById('clientCount');
-      const statStrEl   = document.getElementById('statStrategies');
-      const statKwEl    = document.getElementById('statKeywords');
+      const grid      = document.getElementById('clientGrid');
+      const countEl   = document.getElementById('clientCount');
+      const statStrEl = document.getElementById('statStrategies');
+      const statKwEl  = document.getElementById('statKeywords');
 
-      // Update stats
       statStrEl.textContent = clients.length;
       const totalKw = clients.reduce((sum, c) => sum + (c.keywords || 0), 0);
       statKwEl.textContent  = totalKw.toLocaleString();
       countEl.textContent   = clients.length + ' ' + (clients.length === 1 ? 'Client' : 'Clients');
-
-      if (clients.length === 0) {
-        grid.innerHTML = `<div class="empty-state"><p>No strategies yet. Build your first one above.</p></div>`;
-        return;
-      }
 
       grid.innerHTML = clients.map(c => `
         <a href="/${c.domain}" class="client-card">
