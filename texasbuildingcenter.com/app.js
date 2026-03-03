@@ -225,12 +225,12 @@ const STRATEGY = {
       combinations: 50,
       price: 599,
       additional_combinations: 10,
-      headline: "Add Fredericksburg and Deeper Barndominium Coverage",
-      description: "Upgrading to Level D adds 10 additional keyword-city combinations. The most strategic next step is adding Fredericksburg (pop. 12,133), the iconic Hill Country destination with strong barndominium demand, and introducing the high-volume 'barndominium' and 'barndominium plans' keywords into the existing markets.",
+      headline: "Add Granite Shoals and Deeper Barndominium Coverage",
+      description: "Upgrading to Level D adds 10 additional keyword-city combinations. The most strategic next step is adding Granite Shoals (pop. 5,200), the Lake LBJ corridor community adjacent to Marble Falls, and introducing the high-volume 'barndominium' and 'barndominium plans' keywords into the existing markets.",
       keywords: [
         { keyword: "barndominium",           monthly_searches: 246000 },
         { keyword: "barndominium plans",     monthly_searches:  60500 },
-        { keyword: "Fredericksburg, TX",     monthly_searches: null, new_market: true },
+        { keyword: "Granite Shoals, TX",     monthly_searches: null, new_market: true },
       ]
     },
     {
@@ -238,13 +238,13 @@ const STRATEGY = {
       combinations: 60,
       price: 699,
       additional_combinations: 20,
-      headline: "Add Marble Falls and Boerne with Broader Keyword Coverage",
-      description: "Level E opens the door to two additional markets: Marble Falls (pop. 10,581), the Lake LBJ corridor hub just minutes from Burnet, and Boerne (pop. 25,024), the fast-growing Hill Country community south of San Antonio. This tier also adds dedicated barndominium floor plan and cost keywords across all existing markets.",
+      headline: "Add Horseshoe Bay and Llano with Broader Keyword Coverage",
+      description: "Level E opens the door to two additional markets: Horseshoe Bay (pop. 4,700), the upscale Lake LBJ community with high-income custom home buyers, and Llano (pop. 3,232), the Llano County seat at the heart of the Hill Country. This tier also adds dedicated barndominium floor plan and cost keywords across all existing markets.",
       keywords: [
         { keyword: "barndominium floor plans", monthly_searches: 33100 },
         { keyword: "barndominium cost",        monthly_searches:  5400 },
-        { keyword: "Marble Falls, TX",         monthly_searches: null, new_market: true },
-        { keyword: "Boerne, TX",               monthly_searches: null, new_market: true },
+        { keyword: "Horseshoe Bay, TX",        monthly_searches: null, new_market: true },
+        { keyword: "Llano, TX",                monthly_searches: null, new_market: true },
       ]
     },
     {
@@ -252,15 +252,15 @@ const STRATEGY = {
       combinations: 90,
       price: 999,
       additional_combinations: 50,
-      headline: "Full Hill Country Domination",
-      description: "Level F provides the coverage needed to dominate the entire Texas Hill Country building market. With 90 total combinations, Texas Building Center can target up to 9 cities with a full suite of barndominium, custom home, and metal building keywords, achieving comprehensive visibility across every major market in the region.",
+      headline: "Full Hill Country Service Area Domination",
+      description: "Level F provides the coverage needed to dominate every significant market in Texas Building Center's service area. With 90 total combinations, Texas Building Center can target up to 9 cities with a full suite of barndominium, custom home, and metal building keywords, achieving comprehensive visibility across the entire Lake LBJ corridor and Hill Country region.",
       keywords: [
-        { keyword: "Liberty Hill, TX",       monthly_searches: null, new_market: true },
-        { keyword: "Lampasas, TX",           monthly_searches: null, new_market: true },
-        { keyword: "Llano, TX",              monthly_searches: null, new_market: true },
+        { keyword: "Johnson City, TX",       monthly_searches: null, new_market: true },
+        { keyword: "Cottonwood Shores, TX",  monthly_searches: null, new_market: true },
         { keyword: "barndominium homes",     monthly_searches: 12100 },
-        { keyword: "pole barn",              monthly_searches: 33100 },
+        { keyword: "barndominium floor plans",monthly_searches: 33100 },
         { keyword: "custom home builders",   monthly_searches: 12100 },
+        { keyword: "barndominium kits",      monthly_searches: 40500 },
       ]
     }
   ]
@@ -351,10 +351,10 @@ function buildMatrix() {
   if (!thead || !tbody) return;
 
   const markets = [
-    { city: "Georgetown", tier: "Tier 1", population: 117660, is_hq: false },
-    { city: "Cedar Park", tier: "Tier 1", population:  78551, is_hq: false },
-    { city: "Kerrville",  tier: "Tier 2", population:  25540, is_hq: false },
-    { city: "Burnet",     tier: "Tier 1", population:   7065, is_hq: true  },
+    { city: "Marble Falls", tier: "Tier 1", population: 10581, is_hq: false },
+    { city: "Lampasas",     tier: "Tier 1", population:  8250, is_hq: false },
+    { city: "Kingsland",    tier: "Tier 1", population:  7527, is_hq: false },
+    { city: "Burnet",       tier: "Tier 1", population:  7065, is_hq: true  },
   ];
   const keywords = STRATEGY.selected_keywords;
 
@@ -449,17 +449,17 @@ function buildOpportunities() {
 // BUILD MOBILE MARKET LIST
 // ============================================================
 const MARKET_DATA = [
-  { rank: 1,  city: 'Georgetown',   pop: 117660, tier: 'Tier 1', selected: true,  hq: false },
-  { rank: 2,  city: 'Cedar Park',   pop:  78551, tier: 'Tier 1', selected: true,  hq: false },
-  { rank: 3,  city: 'Kerrville',    pop:  25540, tier: 'Tier 2', selected: true,  hq: false },
-  { rank: 4,  city: 'Boerne',       pop:  25024, tier: 'Tier 2', selected: false, hq: false },
-  { rank: 5,  city: 'Liberty Hill', pop:  16120, tier: 'Tier 2', selected: false, hq: false },
-  { rank: 6,  city: 'Fredericksburg',pop: 12133, tier: 'Tier 2', selected: false, hq: false },
-  { rank: 7,  city: 'Marble Falls', pop:  10581, tier: 'Tier 2', selected: false, hq: false },
-  { rank: 8,  city: 'Burnet',       pop:   7065, tier: 'Tier 1', selected: true,  hq: true  },
-  { rank: 9,  city: 'Lampasas',     pop:   8250, tier: 'Tier 3', selected: false, hq: false },
-  { rank: 10, city: 'Kingsland',    pop:   7527, tier: 'Tier 3', selected: false, hq: false },
-  { rank: '11-19', city: 'Horseshoe Bay, Llano, Wimberley, Johnson City, Bertram, Mason, Ingram, Comfort, Bandera', pop: null, tier: 'Tier 3', selected: false, hq: false },
+  { rank: 1,  city: 'Marble Falls',         pop:  10581, tier: 'Tier 1', selected: true,  hq: false },
+  { rank: 2,  city: 'Lampasas',             pop:   8250, tier: 'Tier 1', selected: true,  hq: false },
+  { rank: 3,  city: 'Kingsland',            pop:   7527, tier: 'Tier 1', selected: true,  hq: false },
+  { rank: 4,  city: 'Burnet',               pop:   7065, tier: 'Tier 1', selected: true,  hq: true  },
+  { rank: 5,  city: 'Granite Shoals',       pop:   5200, tier: 'Tier 1', selected: false, hq: false },
+  { rank: 6,  city: 'Horseshoe Bay',        pop:   4700, tier: 'Tier 2', selected: false, hq: false },
+  { rank: 7,  city: 'Llano',               pop:   3232, tier: 'Tier 2', selected: false, hq: false },
+  { rank: 8,  city: 'Cottonwood Shores',    pop:   2200, tier: 'Tier 2', selected: false, hq: false },
+  { rank: 9,  city: 'Johnson City',         pop:   1800, tier: 'Tier 2', selected: false, hq: false },
+  { rank: 10, city: 'Sunrise Beach',        pop:   1200, tier: 'Tier 2', selected: false, hq: false },
+  { rank: '11-29', city: 'Buchanan Lake Village, Bertram, Briggs, Bluffton, Round Mountain, Willow City, Adamsville, Castell, Cherokee, Eckert, Joppa, Lake Victor, Mahomet, Naruna, Oakalla, Oatmeal, Rumley, Smithwick, Tow', pop: null, tier: 'Tier 3', selected: false, hq: false },
 ];
 
 function buildMobileMarketList() {
@@ -495,10 +495,10 @@ function buildMobileMatrix() {
   const el = document.getElementById('mobile-matrix');
   if (!el) return;
   const markets = [
-    { city: 'Georgetown', tier: 'Tier 1', pop: 117660, is_hq: false },
-    { city: 'Cedar Park', tier: 'Tier 1', pop:  78551, is_hq: false },
-    { city: 'Kerrville',  tier: 'Tier 2', pop:  25540, is_hq: false },
-    { city: 'Burnet',     tier: 'Tier 1', pop:   7065, is_hq: true  },
+    { city: 'Marble Falls', tier: 'Tier 1', pop: 10581, is_hq: false },
+    { city: 'Lampasas',     tier: 'Tier 1', pop:  8250, is_hq: false },
+    { city: 'Kingsland',    tier: 'Tier 1', pop:  7527, is_hq: false },
+    { city: 'Burnet',       tier: 'Tier 1', pop:  7065, is_hq: true  },
   ];
   const keywords = STRATEGY.selected_keywords;
   const cards = markets.map(m => {

@@ -2,6 +2,7 @@
 // DOTCOM DESIGN — SEO STRATEGY CHARTS
 // Texas Building Center
 // Full-width bar chart, horizontal labels
+// Markets: confirmed service area cities only
 // =============================================
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -11,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const dotRed   = '#EB0052';
 
   // ---- CHART: Market Population Bar Chart ----
+  // Top 10 markets from the confirmed 29-city service area
   const marketCtx = document.getElementById('marketChart');
   if (marketCtx) {
     marketCtx.style.height = '320px';
@@ -19,24 +21,24 @@ document.addEventListener('DOMContentLoaded', function () {
       type: 'bar',
       data: {
         labels: [
-          'Georgetown', 'Cedar Park', 'Kerrville', 'Boerne',
-          'Liberty Hill', 'Fredericksburg', 'Marble Falls', 'Lampasas',
-          'Kingsland', 'Burnet'
+          'Marble Falls', 'Lampasas', 'Kingsland', 'Burnet',
+          'Granite Shoals', 'Horseshoe Bay', 'Llano',
+          'Cottonwood Shores', 'Johnson City', 'Sunrise Beach'
         ],
         datasets: [{
           label: 'Population',
-          data: [117660, 78551, 25540, 25024, 16120, 12133, 10581, 8250, 7527, 7065],
+          data: [10581, 8250, 7527, 7065, 5200, 4700, 3232, 2200, 1800, 1200],
           backgroundColor: [
-            dotBlue,                    // Georgetown — Tier 1 selected
-            dotBlue,                    // Cedar Park — Tier 1 selected
-            dotDark,                    // Kerrville — Tier 2 selected
-            'rgba(51,65,104,0.35)',     // Boerne — not selected
-            'rgba(51,65,104,0.35)',     // Liberty Hill — not selected
-            'rgba(51,65,104,0.35)',     // Fredericksburg — not selected
-            'rgba(51,65,104,0.35)',     // Marble Falls — not selected
-            'rgba(51,65,104,0.25)',     // Lampasas — not selected
-            'rgba(51,65,104,0.25)',     // Kingsland — not selected
+            dotBlue,                    // Marble Falls — Tier 1 selected
+            dotBlue,                    // Lampasas — Tier 1 selected
+            dotBlue,                    // Kingsland — Tier 1 selected
             dotRed,                     // Burnet — HQ selected
+            'rgba(63,128,234,0.40)',    // Granite Shoals — Tier 1 not selected
+            'rgba(51,65,104,0.40)',     // Horseshoe Bay — Tier 2 not selected
+            'rgba(51,65,104,0.35)',     // Llano — Tier 2 not selected
+            'rgba(51,65,104,0.30)',     // Cottonwood Shores — Tier 2 not selected
+            'rgba(51,65,104,0.25)',     // Johnson City — Tier 2 not selected
+            'rgba(51,65,104,0.20)',     // Sunrise Beach — Tier 2 not selected
           ],
           borderRadius: 6,
           borderSkipped: false,
@@ -52,10 +54,11 @@ document.addEventListener('DOMContentLoaded', function () {
               title: ctx => ctx[0].label,
               label: ctx => {
                 const statuses = [
-                  'Selected (Tier 1)', 'Selected (Tier 1)', 'Selected (Tier 2)',
-                  'Not Selected', 'Not Selected', 'Not Selected',
-                  'Not Selected', 'Not Selected', 'Not Selected',
-                  'HQ — Selected (Tier 1)'
+                  'Selected (Tier 1)', 'Selected (Tier 1)', 'Selected (Tier 1)',
+                  'HQ — Selected (Tier 1)',
+                  'Not Selected (Tier 1)', 'Not Selected (Tier 2)',
+                  'Not Selected (Tier 2)', 'Not Selected (Tier 2)',
+                  'Not Selected (Tier 2)', 'Not Selected (Tier 2)'
                 ];
                 return [
                   ' Population: ' + ctx.raw.toLocaleString(),
