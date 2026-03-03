@@ -13,7 +13,7 @@ const STRATEGY = {
   state: "TX",
   service_area: "Greater Houston, TX",
   plan_level: "Booster",
-  plan_price: 299,
+  plan_price: 399,
   total_combinations: 10,
   total_keywords_researched: 401,
   // Selected keywords: service-line coverage enforced
@@ -209,10 +209,12 @@ const STRATEGY = {
   ],
 
   // ---- ADDITIONAL OPPORTUNITIES ----
+  // Pricing sourced from ClientMarketingMap.xlsx (SEO sheet)
+  // Booster=$399/10 combos, A=$600/20, B=$900/30, C=$1200/40, D=$1600/50, E=$2000/60, F=$3000/90, G=$4000/120, H=$5000/150
   additional_opportunities: [
     {
       plan: "LEVEL A",
-      price: 299,
+      price: 600,
       combinations: 20,
       additional_combinations: 10,
       headline: "Expand Into Suburban Markets",
@@ -227,7 +229,7 @@ const STRATEGY = {
     },
     {
       plan: "LEVEL B",
-      price: 399,
+      price: 900,
       combinations: 30,
       additional_combinations: 20,
       headline: "Add Deeper Service Coverage",
@@ -242,7 +244,7 @@ const STRATEGY = {
     },
     {
       plan: "LEVEL C",
-      price: 499,
+      price: 1200,
       combinations: 40,
       additional_combinations: 30,
       headline: "Full Greater Houston Domination",
