@@ -4,32 +4,460 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SEO Strategy Portal | Dotcom Design</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f5f7fa; color: #334168; }
-    header { background: #334168; padding: 20px 40px; display: flex; align-items: center; gap: 16px; }
-    header img { height: 36px; }
-    header span { color: #fff; font-size: 1rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
-    main { max-width: 800px; margin: 60px auto; padding: 0 24px; }
-    h1 { font-size: 1.5rem; font-weight: 900; color: #334168; margin-bottom: 8px; }
-    p { color: #666; margin-bottom: 32px; font-size: 0.95rem; }
-    .client-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
-    .client-list a { display: flex; justify-content: space-between; align-items: center; background: #fff; border-radius: 10px; padding: 18px 24px; text-decoration: none; color: #334168; font-weight: 700; box-shadow: 0 2px 12px rgba(0,0,0,0.06); border-left: 4px solid #3F80EA; transition: box-shadow 0.15s; }
-    .client-list a:hover { box-shadow: 0 4px 20px rgba(63,128,234,0.15); }
-    .client-list a span { font-size: 0.8rem; color: #3F80EA; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #1e2a45;
+      --navy-dark: #16213a;
+      --navy-darker: #0f1829;
+      --blue: #3F80EA;
+      --blue-light: #5a95f0;
+      --white: #ffffff;
+      --grey-bg: #f4f6fb;
+      --grey-text: #6b7a99;
+      --text-dark: #1e2a45;
+      --border: #e2e8f4;
+      --shadow: 0 2px 16px rgba(30,42,69,0.10);
+    }
+
+    body {
+      font-family: 'Montserrat', 'Segoe UI', system-ui, sans-serif;
+      background: var(--grey-bg);
+      color: var(--text-dark);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── HEADER ── */
+    .site-header {
+      background: var(--navy-darker);
+      padding: 0 48px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+    }
+    .site-header img {
+      height: 38px;
+      display: block;
+    }
+    .site-header .tagline {
+      color: var(--blue);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(160deg, var(--navy) 0%, var(--navy-darker) 100%);
+      padding: 72px 48px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 60% 40%, rgba(63,128,234,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-label {
+      display: inline-block;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--blue-light);
+      margin-bottom: 18px;
+    }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 900;
+      color: var(--white);
+      letter-spacing: -0.5px;
+      line-height: 1.1;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .hero p {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.65);
+      font-weight: 400;
+      max-width: 480px;
+      margin: 0 auto 36px;
+      line-height: 1.6;
+    }
+    .btn-build {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--blue);
+      color: var(--white);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 14px 32px;
+      border-radius: 6px;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px rgba(63,128,234,0.4);
+    }
+    .btn-build:hover {
+      background: var(--blue-light);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 28px rgba(63,128,234,0.5);
+    }
+    .btn-build svg {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+    }
+
+    /* ── STATS BAR ── */
+    .stats-bar {
+      background: var(--navy);
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .stat-item {
+      padding: 20px 48px;
+      text-align: center;
+      border-right: 1px solid rgba(255,255,255,0.08);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-num {
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: var(--blue);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .stat-label {
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+    }
+
+    /* ── MAIN CONTENT ── */
+    main {
+      flex: 1;
+      max-width: 900px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 56px 32px 80px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 28px;
+      gap: 16px;
+    }
+    .section-title-group {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+    }
+    .section-num {
+      font-size: 3.5rem;
+      font-weight: 900;
+      color: rgba(30,42,69,0.07);
+      line-height: 1;
+      letter-spacing: -2px;
+      user-select: none;
+    }
+    .section-title {
+      font-size: 1rem;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--text-dark);
+    }
+    .section-count {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--grey-text);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    /* ── CLIENT CARDS ── */
+    .client-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .client-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--white);
+      border-radius: 12px;
+      padding: 22px 28px;
+      text-decoration: none;
+      color: var(--text-dark);
+      box-shadow: var(--shadow);
+      border-top: 3px solid var(--blue);
+      transition: box-shadow 0.2s, transform 0.15s;
+      gap: 16px;
+    }
+    .client-card:hover {
+      box-shadow: 0 6px 28px rgba(63,128,234,0.15);
+      transform: translateY(-2px);
+    }
+
+    .client-card-left {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      min-width: 0;
+    }
+    .client-icon {
+      width: 44px;
+      height: 44px;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .client-icon svg {
+      width: 22px;
+      height: 22px;
+      fill: var(--blue);
+    }
+    .client-info { min-width: 0; }
+    .client-name {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      letter-spacing: 0.3px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .client-domain {
+      font-size: 0.72rem;
+      color: var(--grey-text);
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      margin-top: 3px;
+    }
+
+    .client-card-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-shrink: 0;
+    }
+    .client-badge {
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(30,42,69,0.35);
+      background: var(--grey-bg);
+      padding: 5px 10px;
+      border-radius: 4px;
+      white-space: nowrap;
+    }
+    .view-link {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--blue);
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .view-link svg {
+      width: 14px;
+      height: 14px;
+      transition: transform 0.15s;
+    }
+    .client-card:hover .view-link svg {
+      transform: translateX(3px);
+    }
+
+    /* ── EMPTY STATE ── */
+    .empty-state {
+      text-align: center;
+      padding: 60px 24px;
+      color: var(--grey-text);
+    }
+    .empty-state svg {
+      width: 48px;
+      height: 48px;
+      fill: var(--border);
+      margin-bottom: 16px;
+    }
+    .empty-state p {
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy-darker);
+      padding: 28px 48px;
+      text-align: center;
+    }
+    footer p {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+    }
+    footer span {
+      color: var(--blue);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      .site-header { padding: 0 20px; }
+      .hero { padding: 52px 24px 60px; }
+      .stats-bar { flex-wrap: wrap; }
+      .stat-item { padding: 16px 28px; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.08); }
+      main { padding: 40px 20px 60px; }
+      .client-card { padding: 18px 20px; }
+      .client-badge { display: none; }
+      footer { padding: 24px 20px; }
+    }
   </style>
 </head>
 <body>
-  <header>
-    <span>Dotcom Design &mdash; SEO Strategy Portal</span>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <img src="/durhamstreeservice.com/assets/logo_reversed.png" alt="Dotcom Design">
+    <span class="tagline">We Grow Your Business</span>
   </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-label">Internal Tool</div>
+    <h1>SEO Strategy Portal</h1>
+    <p>Access client SEO strategy reports or launch a new strategy build below.</p>
+    <a href="/new-strategy" class="btn-build">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+      </svg>
+      Build New SEO Strategy
+    </a>
+  </section>
+
+  <!-- STATS BAR -->
+  <div class="stats-bar" id="statsBar">
+    <div class="stat-item">
+      <div class="stat-num" id="statCount">0</div>
+      <div class="stat-label">Active Strategies</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">∞</div>
+      <div class="stat-label">Automated Builds</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">1</div>
+      <div class="stat-label">Live Domain</div>
+    </div>
+  </div>
+
+  <!-- MAIN -->
   <main>
-    <h1>Client SEO Strategies</h1>
-    <p>Select a client below to view their SEO strategy report.</p>
-    <ul class="client-list">
-      <li><a href="/durhamstreeservice.com">Durham's Tree Service <span>View Strategy &rarr;</span></a></li>
-      <li><a href="/mekfloors.com">MEK Interiors &amp; Floors <span>View Strategy &rarr;</span></a></li>
-    </ul>
+    <div class="section-header">
+      <div class="section-title-group">
+        <span class="section-num">01</span>
+        <span class="section-title">Client Strategies</span>
+      </div>
+      <span class="section-count" id="clientCount">Loading...</span>
+    </div>
+
+    <div class="client-grid" id="clientGrid">
+      <!-- Cards injected by JS -->
+    </div>
   </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>Dotcom Design &mdash; <span>SEO Strategy Portal</span> &mdash; Internal Use Only</p>
+  </footer>
+
+  <script>
+    // Client list — update this array whenever a new client strategy is added
+    const clients = [
+      { name: "Durham's Tree Service",   domain: "durhamstreeservice.com",   badge: "Level C" },
+      { name: "MEK Interiors & Floors",  domain: "mekfloors.com",            badge: "Level B" },
+      { name: "Texas Building Center",   domain: "texasbuildingcenter.com",  badge: "Level A" },
+    ];
+
+    function renderClients() {
+      const grid = document.getElementById('clientGrid');
+      const countEl = document.getElementById('clientCount');
+      const statCountEl = document.getElementById('statCount');
+
+      countEl.textContent = clients.length + ' ' + (clients.length === 1 ? 'Client' : 'Clients');
+      statCountEl.textContent = clients.length;
+
+      if (clients.length === 0) {
+        grid.innerHTML = `
+          <div class="empty-state">
+            <svg viewBox="0 0 24 24"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+            <p>No strategies yet. Build your first one above.</p>
+          </div>`;
+        return;
+      }
+
+      grid.innerHTML = clients.map(c => `
+        <a href="/${c.domain}" class="client-card">
+          <div class="client-card-left">
+            <div class="client-icon">
+              <svg viewBox="0 0 24 24"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+            </div>
+            <div class="client-info">
+              <div class="client-name">${c.name}</div>
+              <div class="client-domain">${c.domain}</div>
+            </div>
+          </div>
+          <div class="client-card-right">
+            ${c.badge ? `<span class="client-badge">${c.badge}</span>` : ''}
+            <span class="view-link">
+              View Strategy
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+              </svg>
+            </span>
+          </div>
+        </a>
+      `).join('');
+    }
+
+    renderClients();
+  </script>
+
 </body>
 </html>
