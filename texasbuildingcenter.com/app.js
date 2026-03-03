@@ -491,8 +491,8 @@ function buildOpportunities() {
     return `<div class="opp-card ${highlight}">
       ${i === 0 ? '<div class="opp-recommended">RECOMMENDED NEXT STEP</div>' : '<div class="opp-recommended-spacer"></div>'}
       <div class="opp-plan-label">${opp.plan}</div>
-      <div class="opp-combos-large">${opp.combinations} <span class="opp-combos-label">total combinations</span></div>
-      <div class="opp-combos">${opp.additional_combinations} additional combinations from current plan</div>
+      <div class="opp-price">$${fmt(opp.price)}<span class="opp-price-label">/mo</span></div>
+      <div class="opp-combos">${opp.combinations} total combinations &middot; ${opp.additional_combinations} additional from current plan</div>
       <h4 class="opp-headline">${opp.headline}</h4>
       <p class="opp-desc">${opp.description}</p>
       <ul class="opp-kw-list">${kwList}</ul>

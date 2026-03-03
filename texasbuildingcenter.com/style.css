@@ -657,7 +657,7 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
   font-size: 0.85rem;
   color: #666;
   line-height: 1.5;
-  padding-bottom: 14px;
+  padding-bottom: 8px;
   align-self: start; /* sits at top of 1fr track; extra space below before divider */
 }
 .nu-divider {
@@ -667,7 +667,7 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
 }
 .nu-kw-table {
   width: 100%;
-  padding-top: 10px;
+  padding-top: 0;
   padding-bottom: 16px;
 }
 .nu-kw-row {
@@ -756,17 +756,18 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
   color: #3F80EA;
   margin-bottom: 4px;
 }
-.opp-combos-large {
-  font-size: 2rem;
+.opp-price {
+  font-size: 2.2rem;
   font-weight: 900;
   color: #334168;
   line-height: 1;
   margin-bottom: 4px;
 }
-.opp-combos-label {
-  font-size: 0.85rem;
+.opp-price-label {
+  font-size: 0.95rem;
   font-weight: 600;
   color: #6b7280;
+  margin-left: 2px;
 }
 .opp-combos {
   font-size: 0.82rem;
