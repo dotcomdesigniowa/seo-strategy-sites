@@ -300,22 +300,26 @@ function buildKeywordTable() {
 function buildKeywordTierCards() {
   const grid = document.getElementById('kw-tier-grid');
   if (!grid) return;
-
-  const tierColors = { 'Tier 1': 't1', 'Tier 2': 't2', 'Tier 3': 't3' };
-
-  const cards = STRATEGY.keyword_tiers.map(tier => {
-    const cls = tierColors[tier.tier_label] || 't1';
-    const kwList = tier.keywords.map(kw =>
-      `<div class="kw-tier-item">
+  const tierColors = ['kw-tier-1', 'kw-tier-2', 'kw-tier-3', 'kw-tier-4'];
+  const cards = STRATEGY.keyword_tiers.map((tier, i) => {
+    const kwRows = tier.keywords.map(kw =>
+      `<div class="kw-row">
         <span class="kw-name">${kw.keyword}</span>
-        <span class="kw-vol">${fmt(kw.monthly_searches)}/mo</span>
+        <span class="kw-vol">${fmt(kw.monthly_searches)}</span>
       </div>`
     ).join('');
-    return `<div class="kw-tier-card kw-tier-${cls}">
-      <div class="kw-tier-label">${tier.tier_label.toUpperCase()}</div>
+    return `<div class="kw-tier-card ${tierColors[i]}">
+      <div class="kw-tier-label">${tier.tier_label}</div>
       <h4 class="kw-tier-name">${tier.tier_name}</h4>
       <p class="kw-tier-desc">${tier.description}</p>
-      <div class="kw-tier-items">${kwList}</div>
+      <div class="kw-tier-divider"></div>
+      <div class="kw-tier-table">
+        <div class="kw-row kw-header">
+          <span class="kw-name">Keyword</span>
+          <span class="kw-vol">Monthly Searches</span>
+        </div>
+        ${kwRows}
+      </div>
     </div>`;
   }).join('');
   grid.innerHTML = cards;
@@ -329,44 +333,34 @@ function buildMatrix() {
   const tbody = document.getElementById('matrix-tbody');
   if (!thead || !tbody) return;
 
+  const markets = STRATEGY.matrix;
   const keywords = STRATEGY.matrix[0].keywords;
 
-  // Header row
-  const headerCells = keywords.map(kw => `<th class="matrix-kw-header">${kw}</th>`).join('');
-  thead.innerHTML = `<tr><th class="matrix-city-header">Market</th>${headerCells}<th class="num-col">Total</th></tr>`;
-
-  // Body rows
-  const rows = STRATEGY.matrix.map(m => {
-    const tierCls = m.tier === 'Tier 1' ? 't1' : m.tier === 'Tier 2' ? 't2' : 't3';
-    const cityLabel = m.is_hq
-      ? `<strong>${m.city}, ${m.state} <span class="hq-tag">HQ</span></strong>`
-      : `${m.city}, ${m.state}`;
-    const cells = keywords.map(kw => {
-      const included = m.keywords.includes(kw);
-      return included
-        ? `<td class="matrix-check">&#10003;</td>`
-        : `<td class="matrix-empty">&mdash;</td>`;
-    }).join('');
-    return `<tr>
-      <td class="matrix-city-cell">
-        ${cityLabel}
-        <span class="matrix-city-meta">${tierPill(m.tier)} &nbsp; Pop. ${fmt(m.population)}</span>
-      </td>
-      ${cells}
-      <td class="num-col matrix-total">${m.total}</td>
-    </tr>`;
+  // Build header row 1: tier pills
+  const tierCells = markets.map(m => {
+    const cls = m.tier === 'Tier 1' ? 't1' : m.tier === 'Tier 2' ? 't2' : 't3';
+    return `<th><span class="tier-pill ${cls} nowrap">${m.tier.toUpperCase()}</span></th>`;
   }).join('');
 
-  // Grand total row
-  const totalCells = keywords.map(() => `<td></td>`).join('');
-  const grandTotal = STRATEGY.matrix.reduce((sum, m) => sum + m.total, 0);
-  const totalRow = `<tr class="matrix-grand-total">
-    <td><strong>TOTAL</strong></td>
-    ${totalCells}
-    <td class="num-col"><strong>${grandTotal}</strong></td>
-  </tr>`;
+  // Build header row 2: city names with population
+  const cityCells = markets.map(m =>
+    `<th class="city-header">${m.city}${m.is_hq ? ' <span class="hq-star">&#9733;</span>' : ''}<br><span class="city-pop-small">Pop. ${fmt(m.population)}</span></th>`
+  ).join('');
 
-  tbody.innerHTML = rows + totalRow;
+  thead.innerHTML = `<tr><th class="kw-col-header">Keyword</th>${tierCells}</tr><tr><th></th>${cityCells}</tr>`;
+
+  // Build keyword rows (keywords as rows, markets as columns)
+  const rows = keywords.map(kw => {
+    const cells = markets.map(() => '<td class="check-cell">&#10003;</td>').join('');
+    return `<tr><td class="kw-cell">${kw}</td>${cells}</tr>`;
+  }).join('');
+
+  // Total row
+  const totalCells = markets.map(() => `<td class="total-cell">${keywords.length}</td>`).join('');
+  const grandTotal = keywords.length * markets.length;
+  tbody.innerHTML = rows
+    + `<tr class="total-row"><td class="total-label">Total Combinations</td>${totalCells}</tr>`
+    + `<tr class="grand-total-row"><td colspan="${markets.length + 1}" class="grand-total">Grand Total: <strong>${grandTotal} Combinations</strong></td></tr>`;
 }
 
 // ============================================================
@@ -375,21 +369,33 @@ function buildMatrix() {
 function buildNotUsed() {
   const grid = document.getElementById('not-used-grid');
   if (!grid) return;
-
   const cards = STRATEGY.not_used_groups.map(group => {
-    const kwList = group.keywords.map(kw =>
-      `<div class="nu-kw-item">
+    const kwRows = group.keywords.map(kw =>
+      `<div class="nu-kw-row">
         <span class="nu-kw-name">${kw.keyword}</span>
-        <span class="nu-kw-vol">${fmt(kw.monthly_searches)}/mo</span>
+        <span class="nu-kw-vol">${fmt(kw.monthly_searches)}</span>
       </div>`
     ).join('');
     return `<div class="not-used-card">
-      <h4 class="nu-reason">${group.reason}</h4>
+      <div class="nu-reason">${group.reason}</div>
       <p class="nu-desc">${group.description}</p>
-      <div class="nu-kw-list">${kwList}</div>
+      <div class="nu-divider"></div>
+      <div class="nu-kw-table">
+        <div class="nu-kw-row nu-header">
+          <span class="nu-kw-name">Keyword</span>
+          <span class="nu-kw-vol">Monthly Searches</span>
+        </div>
+        ${kwRows}
+      </div>
     </div>`;
   }).join('');
   grid.innerHTML = cards;
+  // If exactly 4 cards, use 2x2 grid so no card sits alone on a row
+  if (STRATEGY.not_used_groups.length === 4) {
+    grid.classList.add('grid-2col');
+  } else {
+    grid.classList.remove('grid-2col');
+  }
 }
 
 // ============================================================
@@ -398,23 +404,26 @@ function buildNotUsed() {
 function buildOpportunities() {
   const grid = document.getElementById('opportunities-grid');
   if (!grid) return;
-
-  const cards = STRATEGY.additional_opportunities.map(opp => {
-    const kwList = opp.keywords.map(kw =>
-      `<div class="opp-kw-item">
-        <span class="opp-kw-name">${kw.keyword}</span>
-        ${kw.monthly_searches ? `<span class="opp-kw-vol">${fmt(kw.monthly_searches)}/mo</span>` : ''}
-      </div>`
+  const cards = STRATEGY.additional_opportunities.map((opp, i) => {
+    const kwHeader = `<li class="opp-kw-header">
+        <span class="opp-kw-col-label">KEYWORD / MARKET</span>
+        <span class="opp-kw-col-label" style="text-align:right">MONTHLY SEARCHES</span>
+      </li>`;
+    const kwList = kwHeader + opp.keywords.map(kw =>
+      `<li>
+        <span class="opp-kw">${kw.keyword}</span>
+        ${kw.monthly_searches ? `<span class="opp-vol">${fmt(kw.monthly_searches)}</span>` : kw.new_market ? `<span class="opp-vol opp-new-market">New Market</span>` : ''}
+      </li>`
     ).join('');
-    return `<div class="opp-card">
-      <div class="opp-plan-badge">${opp.plan}</div>
-      <div class="opp-meta">
-        <span class="opp-combos">+${opp.additional_combinations} combinations</span>
-        <span class="opp-price">$${fmt(opp.price)}/mo</span>
-      </div>
+    const highlight = i === 0 ? 'opp-card-highlight' : '';
+    return `<div class="opp-card ${highlight}">
+      ${i === 0 ? '<div class="opp-recommended">RECOMMENDED NEXT STEP</div>' : '<div class="opp-recommended-spacer"></div>'}
+      <div class="opp-plan-label">${opp.plan}</div>
+      <div class="opp-combos-large">${opp.combinations} <span class="opp-combos-label">total combinations</span></div>
+      <div class="opp-combos">${opp.additional_combinations} additional combinations from current plan</div>
       <h4 class="opp-headline">${opp.headline}</h4>
       <p class="opp-desc">${opp.description}</p>
-      <div class="opp-kw-list">${kwList}</div>
+      <ul class="opp-kw-list">${kwList}</ul>
     </div>`;
   }).join('');
   grid.innerHTML = cards;
