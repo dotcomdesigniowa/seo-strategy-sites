@@ -1,0 +1,1151 @@
+{
+  "client_name": "Pinecrest Services",
+  "industry": "Tree Service & Fence Company",
+  "hq_city": "Philadelphia",
+  "state": "PA",
+  "service_area": "Philadelphia County, Montgomery County, Camden County, Chester County, and Bucks County",
+  "plan_level": "Plan G",
+  "plan_price": 4000,
+  "total_combinations": 120,
+  "total_keywords_researched": 412,
+  "num_selected_keywords": 10,
+  "num_target_markets": 12,
+  "selected_keywords": [
+    {
+      "Keyword": "tree service",
+      "Search Volume": 33100
+    },
+    {
+      "Keyword": "tree removal",
+      "Search Volume": 33100
+    },
+    {
+      "Keyword": "tree trimming",
+      "Search Volume": 22200
+    },
+    {
+      "Keyword": "stump grinding",
+      "Search Volume": 14800
+    },
+    {
+      "Keyword": "fence company",
+      "Search Volume": 33100
+    },
+    {
+      "Keyword": "fence installation",
+      "Search Volume": 49500
+    },
+    {
+      "Keyword": "temporary fence",
+      "Search Volume": 12100
+    },
+    {
+      "Keyword": "commercial fencing",
+      "Search Volume": 5400
+    },
+    {
+      "Keyword": "emergency tree removal",
+      "Search Volume": 8100
+    },
+    {
+      "Keyword": "construction fence",
+      "Search Volume": 2400
+    }
+  ],
+  "keyword_tiers": [
+    {
+      "tier_num": 1,
+      "tier_label": "Tier 1",
+      "tier_name": "Core Tree Care",
+      "description": "Broad, high-intent keywords that reflect Pinecrest Services' primary tree care offerings. These are the highest-volume terms customers search when they need immediate tree work. Deploying these across all 12 markets ensures Pinecrest captures the largest share of local search demand for its core service line.",
+      "keywords": [
+        {
+          "Keyword": "tree service",
+          "Search Volume": 33100
+        },
+        {
+          "Keyword": "tree removal",
+          "Search Volume": 33100
+        },
+        {
+          "Keyword": "tree trimming",
+          "Search Volume": 22200
+        },
+        {
+          "Keyword": "stump grinding",
+          "Search Volume": 14800
+        }
+      ]
+    },
+    {
+      "tier_num": 2,
+      "tier_label": "Tier 2",
+      "tier_name": "Fencing Solutions",
+      "description": "Keywords covering Pinecrest Services' full fencing portfolio: residential, commercial, and temporary fencing. This tier captures both homeowners seeking privacy and security fencing and commercial clients needing temporary or construction fencing. The inclusion of 'temporary fence' reflects the user's strategic priority for this high-value service line.",
+      "keywords": [
+        {
+          "Keyword": "fence installation",
+          "Search Volume": 49500
+        },
+        {
+          "Keyword": "fence company",
+          "Search Volume": 33100
+        },
+        {
+          "Keyword": "temporary fence",
+          "Search Volume": 12100
+        },
+        {
+          "Keyword": "commercial fencing",
+          "Search Volume": 5400
+        }
+      ]
+    },
+    {
+      "tier_num": 3,
+      "tier_label": "Tier 3",
+      "tier_name": "Specialty & Emergency",
+      "description": "High-intent specialty keywords targeting urgent and commercial-grade service needs. 'Emergency tree removal' captures customers in immediate distress after storms or hazardous tree situations. 'Construction fence' targets commercial contractors and project managers seeking temporary site security solutions, a niche where Pinecrest Services has a competitive advantage.",
+      "keywords": [
+        {
+          "Keyword": "emergency tree removal",
+          "Search Volume": 8100
+        },
+        {
+          "Keyword": "construction fence",
+          "Search Volume": 2400
+        }
+      ]
+    }
+  ],
+  "matrix": [
+    {
+      "city": "Philadelphia",
+      "state": "PA",
+      "tier": "Tier 1",
+      "population": 1603797,
+      "is_hq": true,
+      "keywords": [
+        "tree service",
+        "tree removal",
+        "tree trimming",
+        "stump grinding",
+        "fence company",
+        "fence installation",
+        "temporary fence",
+        "commercial fencing",
+        "emergency tree removal",
+        "construction fence"
+      ],
+      "total": 10
+    },
+    {
+      "city": "Cherry Hill",
+      "state": "NJ",
+      "tier": "Tier 1",
+      "population": 74566,
+      "is_hq": false,
+      "keywords": [
+        "tree service",
+        "tree removal",
+        "tree trimming",
+        "stump grinding",
+        "fence company",
+        "fence installation",
+        "temporary fence",
+        "commercial fencing",
+        "emergency tree removal",
+        "construction fence"
+      ],
+      "total": 10
+    },
+    {
+      "city": "Camden",
+      "state": "NJ",
+      "tier": "Tier 1",
+      "population": 73562,
+      "is_hq": false,
+      "keywords": [
+        "tree service",
+        "tree removal",
+        "tree trimming",
+        "stump grinding",
+        "fence company",
+        "fence installation",
+        "temporary fence",
+        "commercial fencing",
+        "emergency tree removal",
+        "construction fence"
+      ],
+      "total": 10
+    },
+    {
+      "city": "Abington",
+      "state": "PA",
+      "tier": "Tier 1",
+      "population": 55310,
+      "is_hq": false,
+      "keywords": [
+        "tree service",
+        "tree removal",
+        "tree trimming",
+        "stump grinding",
+        "fence company",
+        "fence installation",
+        "temporary fence",
+        "commercial fencing",
+        "emergency tree removal",
+        "construction fence"
+      ],
+      "total": 10
+    },
+    {
+      "city": "Levittown",
+      "state": "PA",
+      "tier": "Tier 1",
+      "population": 52983,
+      "is_hq": false,
+      "keywords": [
+        "tree service",
+        "tree removal",
+        "tree trimming",
+        "stump grinding",
+        "fence company",
+        "fence installation",
+        "temporary fence",
+        "commercial fencing",
+        "emergency tree removal",
+        "construction fence"
+      ],
+      "total": 10
+    },
+    {
+      "city": "Norristown",
+      "state": "PA",
+      "tier": "Tier 2",
+      "population": 34324,
+      "is_hq": false,
+      "keywords": [
+        "tree service",
+        "tree removal",
+        "tree trimming",
+        "stump grinding",
+        "fence company",
+        "fence installation",
+        "temporary fence",
+        "commercial fencing",
+        "emergency tree removal",
+        "construction fence"
+      ],
+      "total": 10
+    },
+    {
+      "city": "Warminster",
+      "state": "PA",
+      "tier": "Tier 2",
+      "population": 32682,
+      "is_hq": false,
+      "keywords": [
+        "tree service",
+        "tree removal",
+        "tree trimming",
+        "stump grinding",
+        "fence company",
+        "fence installation",
+        "temporary fence",
+        "commercial fencing",
+        "emergency tree removal",
+        "construction fence"
+      ],
+      "total": 10
+    },
+    {
+      "city": "West Chester",
+      "state": "PA",
+      "tier": "Tier 2",
+      "population": 21000,
+      "is_hq": false,
+      "keywords": [
+        "tree service",
+        "tree removal",
+        "tree trimming",
+        "stump grinding",
+        "fence company",
+        "fence installation",
+        "temporary fence",
+        "commercial fencing",
+        "emergency tree removal",
+        "construction fence"
+      ],
+      "total": 10
+    },
+    {
+      "city": "King of Prussia",
+      "state": "PA",
+      "tier": "Tier 2",
+      "population": 19936,
+      "is_hq": false,
+      "keywords": [
+        "tree service",
+        "tree removal",
+        "tree trimming",
+        "stump grinding",
+        "fence company",
+        "fence installation",
+        "temporary fence",
+        "commercial fencing",
+        "emergency tree removal",
+        "construction fence"
+      ],
+      "total": 10
+    },
+    {
+      "city": "Phoenixville",
+      "state": "PA",
+      "tier": "Tier 2",
+      "population": 16440,
+      "is_hq": false,
+      "keywords": [
+        "tree service",
+        "tree removal",
+        "tree trimming",
+        "stump grinding",
+        "fence company",
+        "fence installation",
+        "temporary fence",
+        "commercial fencing",
+        "emergency tree removal",
+        "construction fence"
+      ],
+      "total": 10
+    },
+    {
+      "city": "Lansdale",
+      "state": "PA",
+      "tier": "Tier 2",
+      "population": 16269,
+      "is_hq": false,
+      "keywords": [
+        "tree service",
+        "tree removal",
+        "tree trimming",
+        "stump grinding",
+        "fence company",
+        "fence installation",
+        "temporary fence",
+        "commercial fencing",
+        "emergency tree removal",
+        "construction fence"
+      ],
+      "total": 10
+    },
+    {
+      "city": "Doylestown",
+      "state": "PA",
+      "tier": "Tier 3",
+      "population": 8380,
+      "is_hq": false,
+      "keywords": [
+        "tree service",
+        "tree removal",
+        "tree trimming",
+        "stump grinding",
+        "fence company",
+        "fence installation",
+        "temporary fence",
+        "commercial fencing",
+        "emergency tree removal",
+        "construction fence"
+      ],
+      "total": 10
+    }
+  ],
+  "full_keyword_list": [
+    {
+      "Keyword": "fence company near me",
+      "Search Volume": 60500
+    },
+    {
+      "Keyword": "tree service near me",
+      "Search Volume": 49500
+    },
+    {
+      "Keyword": "chain link fence",
+      "Search Volume": 49500
+    },
+    {
+      "Keyword": "fence installation",
+      "Search Volume": 49500
+    },
+    {
+      "Keyword": "privacy fence",
+      "Search Volume": 49500
+    },
+    {
+      "Keyword": "stump grinder",
+      "Search Volume": 40500
+    },
+    {
+      "Keyword": "fence companies near me",
+      "Search Volume": 40500
+    },
+    {
+      "Keyword": "tree service",
+      "Search Volume": 33100
+    },
+    {
+      "Keyword": "tree removal near me",
+      "Search Volume": 33100
+    },
+    {
+      "Keyword": "arborist",
+      "Search Volume": 33100
+    },
+    {
+      "Keyword": "fence company",
+      "Search Volume": 33100
+    },
+    {
+      "Keyword": "tree removal",
+      "Search Volume": 33100
+    },
+    {
+      "Keyword": "vinyl fence",
+      "Search Volume": 27100
+    },
+    {
+      "Keyword": "fence installation near me",
+      "Search Volume": 27100
+    },
+    {
+      "Keyword": "arborist near me",
+      "Search Volume": 22200
+    },
+    {
+      "Keyword": "tree trimming",
+      "Search Volume": 22200
+    },
+    {
+      "Keyword": "tree trimming near me",
+      "Search Volume": 22200
+    },
+    {
+      "Keyword": "tree services near me",
+      "Search Volume": 22200
+    },
+    {
+      "Keyword": "fencing companies near me",
+      "Search Volume": 22200
+    },
+    {
+      "Keyword": "tree services",
+      "Search Volume": 22200
+    },
+    {
+      "Keyword": "fence contractor",
+      "Search Volume": 18100
+    },
+    {
+      "Keyword": "tree stump removal",
+      "Search Volume": 14800
+    },
+    {
+      "Keyword": "tree removal service",
+      "Search Volume": 14800
+    },
+    {
+      "Keyword": "tree pruning",
+      "Search Volume": 14800
+    },
+    {
+      "Keyword": "stump grinding",
+      "Search Volume": 14800
+    },
+    {
+      "Keyword": "wood fence",
+      "Search Volume": 14800
+    },
+    {
+      "Keyword": "stump removal",
+      "Search Volume": 14800
+    },
+    {
+      "Keyword": "vinyl fencing",
+      "Search Volume": 14800
+    },
+    {
+      "Keyword": "tree removal service near me",
+      "Search Volume": 12100
+    },
+    {
+      "Keyword": "tree trimmer",
+      "Search Volume": 12100
+    },
+    {
+      "Keyword": "fence contractors near me",
+      "Search Volume": 12100
+    },
+    {
+      "Keyword": "temporary fence",
+      "Search Volume": 12100
+    },
+    {
+      "Keyword": "tree care",
+      "Search Volume": 12100
+    },
+    {
+      "Keyword": "fence repair near me",
+      "Search Volume": 12100
+    },
+    {
+      "Keyword": "tree cutting service",
+      "Search Volume": 12100
+    },
+    {
+      "Keyword": "tree trimming service near me",
+      "Search Volume": 12100
+    },
+    {
+      "Keyword": "stump grinding near me",
+      "Search Volume": 12100
+    },
+    {
+      "Keyword": "tree cutting service near me",
+      "Search Volume": 9900
+    },
+    {
+      "Keyword": "tree trimming service",
+      "Search Volume": 9900
+    },
+    {
+      "Keyword": "fence repair",
+      "Search Volume": 9900
+    },
+    {
+      "Keyword": "emergency tree removal",
+      "Search Volume": 8100
+    },
+    {
+      "Keyword": "tree stump removal near me",
+      "Search Volume": 8100
+    },
+    {
+      "Keyword": "chain link fence cost",
+      "Search Volume": 8100
+    },
+    {
+      "Keyword": "fence contractors",
+      "Search Volume": 8100
+    },
+    {
+      "Keyword": "tree trimming services near me",
+      "Search Volume": 8100
+    },
+    {
+      "Keyword": "jersey barrier",
+      "Search Volume": 8100
+    },
+    {
+      "Keyword": "fencing company near me",
+      "Search Volume": 8100
+    },
+    {
+      "Keyword": "tree removers near me",
+      "Search Volume": 8100
+    },
+    {
+      "Keyword": "fence companies",
+      "Search Volume": 8100
+    },
+    {
+      "Keyword": "tree removal cost",
+      "Search Volume": 8100
+    },
+    {
+      "Keyword": "tree trimmers near me",
+      "Search Volume": 6600
+    },
+    {
+      "Keyword": "tree removal companies",
+      "Search Volume": 6600
+    },
+    {
+      "Keyword": "fencing company",
+      "Search Volume": 6600
+    },
+    {
+      "Keyword": "wood fencing",
+      "Search Volume": 6600
+    },
+    {
+      "Keyword": "stump grinder near me",
+      "Search Volume": 6600
+    },
+    {
+      "Keyword": "fence installers near me",
+      "Search Volume": 6600
+    },
+    {
+      "Keyword": "chain link fencing",
+      "Search Volume": 6600
+    },
+    {
+      "Keyword": "stump removal near me",
+      "Search Volume": 6600
+    },
+    {
+      "Keyword": "tree companies near me",
+      "Search Volume": 6600
+    },
+    {
+      "Keyword": "tree removal services",
+      "Search Volume": 5400
+    },
+    {
+      "Keyword": "commercial fencing",
+      "Search Volume": 5400
+    },
+    {
+      "Keyword": "temporary fencing",
+      "Search Volume": 5400
+    },
+    {
+      "Keyword": "residential fencing",
+      "Search Volume": 5400
+    },
+    {
+      "Keyword": "construction fence",
+      "Search Volume": 2400
+    },
+    {
+      "Keyword": "jersey barriers",
+      "Search Volume": 4400
+    },
+    {
+      "Keyword": "concrete barrier",
+      "Search Volume": 2400
+    }
+  ],
+  "full_market_list": [
+    {
+      "city": "Philadelphia",
+      "state": "PA",
+      "county": "Philadelphia",
+      "population": 1603797,
+      "tier": "Tier 1",
+      "selected": true,
+      "is_hq": true,
+      "rationale": "Pinecrest Services headquarters; largest city in the region with the highest search volume and broadest customer base for both tree and fence services."
+    },
+    {
+      "city": "Cherry Hill",
+      "state": "NJ",
+      "county": "Camden",
+      "population": 74566,
+      "tier": "Tier 1",
+      "selected": true,
+      "is_hq": false,
+      "rationale": "Largest market in Camden County; major suburban hub directly across the Delaware River with high residential density and strong demand for both tree and fence services."
+    },
+    {
+      "city": "Camden",
+      "state": "NJ",
+      "county": "Camden",
+      "population": 73562,
+      "tier": "Tier 1",
+      "selected": true,
+      "is_hq": false,
+      "rationale": "Camden County seat; major urban market with significant commercial fencing and temporary fencing demand from construction and development projects."
+    },
+    {
+      "city": "Abington",
+      "state": "PA",
+      "county": "Montgomery",
+      "population": 55310,
+      "tier": "Tier 1",
+      "selected": true,
+      "is_hq": false,
+      "rationale": "Large Montgomery County township with established residential neighborhoods; high homeowner density drives strong demand for tree care and residential fencing."
+    },
+    {
+      "city": "Levittown",
+      "state": "PA",
+      "county": "Bucks",
+      "population": 52983,
+      "tier": "Tier 1",
+      "selected": true,
+      "is_hq": false,
+      "rationale": "Largest community in Bucks County; classic suburban neighborhood with mature trees and aging fences creating consistent service demand."
+    },
+    {
+      "city": "Norristown",
+      "state": "PA",
+      "county": "Montgomery",
+      "population": 34324,
+      "tier": "Tier 2",
+      "selected": true,
+      "is_hq": false,
+      "rationale": "Montgomery County seat; strong commercial and residential market with active development creating demand for temporary and construction fencing."
+    },
+    {
+      "city": "Warminster",
+      "state": "PA",
+      "county": "Bucks",
+      "population": 32682,
+      "tier": "Tier 2",
+      "selected": true,
+      "is_hq": false,
+      "rationale": "Major Bucks County township with a strong mix of residential and commercial properties; high demand for both tree services and fencing solutions."
+    },
+    {
+      "city": "West Chester",
+      "state": "PA",
+      "county": "Chester",
+      "population": 21000,
+      "tier": "Tier 2",
+      "selected": true,
+      "is_hq": false,
+      "rationale": "Chester County seat; affluent community with mature tree canopy and premium residential fencing demand; high conversion potential."
+    },
+    {
+      "city": "King of Prussia",
+      "state": "PA",
+      "county": "Montgomery",
+      "population": 19936,
+      "tier": "Tier 2",
+      "selected": true,
+      "is_hq": false,
+      "rationale": "Major commercial hub in Montgomery County; significant commercial fencing and temporary fencing demand from retail, office, and construction projects."
+    },
+    {
+      "city": "Phoenixville",
+      "state": "PA",
+      "county": "Chester",
+      "population": 16440,
+      "tier": "Tier 2",
+      "selected": true,
+      "is_hq": false,
+      "rationale": "Growing Chester County community with active residential development; strong demand for fence installation and tree services in new and established neighborhoods."
+    },
+    {
+      "city": "Lansdale",
+      "state": "PA",
+      "county": "Montgomery",
+      "population": 16269,
+      "tier": "Tier 2",
+      "selected": true,
+      "is_hq": false,
+      "rationale": "Established Montgomery County borough with a dense residential base; consistent demand for tree trimming and residential fencing services."
+    },
+    {
+      "city": "Doylestown",
+      "state": "PA",
+      "county": "Bucks",
+      "population": 8380,
+      "tier": "Tier 3",
+      "selected": true,
+      "is_hq": false,
+      "rationale": "Bucks County seat; included despite smaller population due to its role as the county commercial center and disproportionate search demand relative to its population size."
+    },
+    {
+      "city": "Cheltenham",
+      "state": "PA",
+      "county": "Montgomery",
+      "population": 37100,
+      "tier": "Tier 2",
+      "selected": false,
+      "is_hq": false,
+      "rationale": "Strong Tier 2 market adjacent to Philadelphia; recommended for next upgrade phase."
+    },
+    {
+      "city": "Pennsauken",
+      "state": "NJ",
+      "county": "Camden",
+      "population": 35885,
+      "tier": "Tier 2",
+      "selected": false,
+      "is_hq": false,
+      "rationale": "Large Camden County township; strong candidate for expansion once core markets are established."
+    },
+    {
+      "city": "Voorhees",
+      "state": "NJ",
+      "county": "Camden",
+      "population": 29131,
+      "tier": "Tier 2",
+      "selected": false,
+      "is_hq": false,
+      "rationale": "Affluent Camden County community; high residential fencing demand; ideal for Plan H expansion."
+    },
+    {
+      "city": "Warrington",
+      "state": "PA",
+      "county": "Bucks",
+      "population": 23000,
+      "tier": "Tier 2",
+      "selected": false,
+      "is_hq": false,
+      "rationale": "Growing Bucks County township; recommended for expansion as domain authority grows."
+    },
+    {
+      "city": "Pottstown",
+      "state": "PA",
+      "county": "Montgomery",
+      "population": 22377,
+      "tier": "Tier 2",
+      "selected": false,
+      "is_hq": false,
+      "rationale": "Established Montgomery County borough; good long-term geographic target."
+    },
+    {
+      "city": "Newtown",
+      "state": "PA",
+      "county": "Bucks",
+      "population": 18206,
+      "tier": "Tier 2",
+      "selected": false,
+      "is_hq": false,
+      "rationale": "Affluent Bucks County community; strong residential fencing demand; future expansion candidate."
+    },
+    {
+      "city": "Lindenwold",
+      "state": "NJ",
+      "county": "Camden",
+      "population": 17613,
+      "tier": "Tier 2",
+      "selected": false,
+      "is_hq": false,
+      "rationale": "Camden County community; recommended for Phase 2 expansion."
+    },
+    {
+      "city": "Collingswood",
+      "state": "NJ",
+      "county": "Camden",
+      "population": 13926,
+      "tier": "Tier 2",
+      "selected": false,
+      "is_hq": false,
+      "rationale": "Dense Camden County borough; strong residential market for fencing and tree services."
+    },
+    {
+      "city": "Coatesville",
+      "state": "PA",
+      "county": "Chester",
+      "population": 13100,
+      "tier": "Tier 2",
+      "selected": false,
+      "is_hq": false,
+      "rationale": "Chester County city; good candidate for expansion as domain authority grows."
+    },
+    {
+      "city": "Montgomeryville",
+      "state": "PA",
+      "county": "Montgomery",
+      "population": 12000,
+      "tier": "Tier 2",
+      "selected": false,
+      "is_hq": false,
+      "rationale": "Montgomery County community; future expansion target."
+    },
+    {
+      "city": "Haddonfield",
+      "state": "NJ",
+      "county": "Camden",
+      "population": 11593,
+      "tier": "Tier 2",
+      "selected": false,
+      "is_hq": false,
+      "rationale": "Affluent Camden County borough; high residential fencing demand; future expansion candidate."
+    },
+    {
+      "city": "Gloucester City",
+      "state": "NJ",
+      "county": "Camden",
+      "population": 11456,
+      "tier": "Tier 2",
+      "selected": false,
+      "is_hq": false,
+      "rationale": "Camden County city; future expansion target."
+    },
+    {
+      "city": "Bristol",
+      "state": "PA",
+      "county": "Bucks",
+      "population": 9726,
+      "tier": "Tier 3",
+      "selected": false,
+      "is_hq": false,
+      "rationale": "Bucks County borough; long-term expansion as domain authority grows."
+    },
+    {
+      "city": "Conshohocken",
+      "state": "PA",
+      "county": "Montgomery",
+      "population": 9000,
+      "tier": "Tier 3",
+      "selected": false,
+      "is_hq": false,
+      "rationale": "Affluent Montgomery County borough with active commercial development; future expansion candidate."
+    },
+    {
+      "city": "Perkasie",
+      "state": "PA",
+      "county": "Bucks",
+      "population": 8800,
+      "tier": "Tier 3",
+      "selected": false,
+      "is_hq": false,
+      "rationale": "Bucks County borough; long-term expansion target."
+    },
+    {
+      "city": "Quakertown",
+      "state": "PA",
+      "county": "Bucks",
+      "population": 8500,
+      "tier": "Tier 3",
+      "selected": false,
+      "is_hq": false,
+      "rationale": "Bucks County borough; long-term expansion target."
+    },
+    {
+      "city": "Downingtown",
+      "state": "PA",
+      "county": "Chester",
+      "population": 7900,
+      "tier": "Tier 3",
+      "selected": false,
+      "is_hq": false,
+      "rationale": "Chester County borough; future expansion as domain authority grows."
+    },
+    {
+      "city": "Hatboro",
+      "state": "PA",
+      "county": "Montgomery",
+      "population": 7600,
+      "tier": "Tier 3",
+      "selected": false,
+      "is_hq": false,
+      "rationale": "Montgomery County borough; long-term expansion target."
+    },
+    {
+      "city": "Kennett Square",
+      "state": "PA",
+      "county": "Chester",
+      "population": 6300,
+      "tier": "Tier 3",
+      "selected": false,
+      "is_hq": false,
+      "rationale": "Chester County borough; long-term expansion target."
+    },
+    {
+      "city": "Ambler",
+      "state": "PA",
+      "county": "Montgomery",
+      "population": 6500,
+      "tier": "Tier 3",
+      "selected": false,
+      "is_hq": false,
+      "rationale": "Montgomery County borough; future expansion target."
+    }
+  ],
+  "not_used_groups": [
+    {
+      "reason": "Near-me and modifier variants captured organically by keyword-city pages",
+      "description": "High-volume 'near me' and modifier variants are excluded from the matrix because keyword-city combination pages naturally rank for these intent-modified queries. Adding them as separate matrix entries would create redundant content without additional strategic value. These terms will be captured organically as the keyword-city pages gain authority.",
+      "keywords": [
+        {
+          "Keyword": "fence company near me",
+          "monthly_searches": 60500
+        },
+        {
+          "Keyword": "tree service near me",
+          "monthly_searches": 49500
+        },
+        {
+          "Keyword": "fence installation near me",
+          "monthly_searches": 27100
+        },
+        {
+          "Keyword": "fence companies near me",
+          "monthly_searches": 40500
+        },
+        {
+          "Keyword": "tree removal near me",
+          "monthly_searches": 33100
+        },
+        {
+          "Keyword": "fencing companies near me",
+          "monthly_searches": 22200
+        },
+        {
+          "Keyword": "tree trimming near me",
+          "monthly_searches": 22200
+        },
+        {
+          "Keyword": "stump grinding near me",
+          "monthly_searches": 12100
+        }
+      ]
+    },
+    {
+      "reason": "Residential fence specialties reserved for targeted expansion",
+      "description": "Residential fencing keywords (privacy fence, chain link fence, vinyl fence, wood fence) represent a strong sub-category with significant search volume. At Plan G capacity, the broader 'fence installation' and 'fence company' keywords capture this intent across all 12 markets. A dedicated residential fencing expansion targeting these specific fence types would be ideal at Plan H.",
+      "keywords": [
+        {
+          "Keyword": "privacy fence",
+          "monthly_searches": 49500
+        },
+        {
+          "Keyword": "chain link fence",
+          "monthly_searches": 49500
+        },
+        {
+          "Keyword": "vinyl fence",
+          "monthly_searches": 27100
+        },
+        {
+          "Keyword": "wood fence",
+          "monthly_searches": 14800
+        },
+        {
+          "Keyword": "vinyl fencing",
+          "monthly_searches": 14800
+        },
+        {
+          "Keyword": "chain link fencing",
+          "monthly_searches": 6600
+        },
+        {
+          "Keyword": "wood fencing",
+          "monthly_searches": 6600
+        },
+        {
+          "Keyword": "residential fencing",
+          "monthly_searches": 5400
+        }
+      ]
+    },
+    {
+      "reason": "Stump removal and arborist keywords reserved for deeper tree service expansion",
+      "description": "Stump removal, arborist, and tree care keywords carry meaningful volume but overlap heavily with the selected 'stump grinding' and 'tree service' matrix keywords. These are best deployed in a dedicated expansion phase targeting the highest-volume markets with additional keyword depth.",
+      "keywords": [
+        {
+          "Keyword": "stump grinder",
+          "monthly_searches": 40500
+        },
+        {
+          "Keyword": "arborist",
+          "monthly_searches": 33100
+        },
+        {
+          "Keyword": "tree stump removal",
+          "monthly_searches": 14800
+        },
+        {
+          "Keyword": "stump removal",
+          "monthly_searches": 14800
+        },
+        {
+          "Keyword": "tree pruning",
+          "monthly_searches": 14800
+        },
+        {
+          "Keyword": "tree removal service",
+          "monthly_searches": 14800
+        },
+        {
+          "Keyword": "tree care",
+          "monthly_searches": 12100
+        },
+        {
+          "Keyword": "tree cutting service",
+          "monthly_searches": 12100
+        }
+      ]
+    },
+    {
+      "reason": "Jersey barrier and specialty barrier keywords reserved for commercial expansion",
+      "description": "Jersey barrier and concrete barrier keywords represent a specialized commercial vertical that Pinecrest Services offers. These are best targeted in a dedicated commercial and construction services expansion rather than mixed into the general fencing matrix. This vertical has strong B2B conversion potential and deserves its own dedicated content strategy.",
+      "keywords": [
+        {
+          "Keyword": "jersey barrier",
+          "monthly_searches": 8100
+        },
+        {
+          "Keyword": "jersey barriers",
+          "monthly_searches": 4400
+        },
+        {
+          "Keyword": "concrete barrier",
+          "monthly_searches": 2400
+        },
+        {
+          "Keyword": "concrete barriers",
+          "monthly_searches": 2400
+        },
+        {
+          "Keyword": "traffic barrier",
+          "monthly_searches": 880
+        },
+        {
+          "Keyword": "water filled barrier",
+          "monthly_searches": 210
+        }
+      ]
+    }
+  ],
+  "additional_opportunities": [
+    {
+      "plan": "Plan H",
+      "combinations": 150,
+      "price": 5000,
+      "additional_combinations": 30,
+      "headline": "Expand Into Residential Fence Specialties and Deeper Tree Coverage",
+      "description": "Upgrading to Plan H adds 30 additional keyword-city combinations, enabling dedicated coverage for high-volume residential fence keywords (privacy fence, chain link fence, vinyl fence) and deeper tree service keywords (arborist, stump removal, tree pruning) across the top markets. This expansion would capture an estimated 150,000+ additional monthly searches.",
+      "keywords": [
+        {
+          "keyword": "privacy fence",
+          "monthly_searches": 49500
+        },
+        {
+          "keyword": "chain link fence",
+          "monthly_searches": 49500
+        },
+        {
+          "keyword": "arborist",
+          "monthly_searches": 33100
+        },
+        {
+          "keyword": "stump removal",
+          "monthly_searches": 14800
+        }
+      ]
+    },
+    {
+      "plan": "Jersey Barrier Expansion",
+      "combinations": 150,
+      "price": 5000,
+      "additional_combinations": 30,
+      "headline": "Capture the Commercial Construction Market with Jersey Barriers",
+      "description": "Pinecrest Services is one of the few companies in the Philadelphia region offering jersey barriers alongside fencing. A dedicated jersey barrier and construction barrier keyword expansion would capture high-value commercial construction contracts that competitors are not targeting with SEO. This B2B vertical commands premium pricing and has minimal online competition.",
+      "keywords": [
+        {
+          "keyword": "jersey barrier",
+          "monthly_searches": 8100
+        },
+        {
+          "keyword": "jersey barriers",
+          "monthly_searches": 4400
+        },
+        {
+          "keyword": "concrete barrier",
+          "monthly_searches": 2400
+        },
+        {
+          "keyword": "construction fence rental",
+          "monthly_searches": 1300
+        }
+      ]
+    }
+  ]
+}
