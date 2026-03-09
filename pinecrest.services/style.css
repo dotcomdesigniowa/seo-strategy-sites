@@ -503,20 +503,21 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
   width: 100%;
   border-collapse: collapse;
   font-size: 0.82rem;
-  min-width: 700px;
+  min-width: 1100px;
   table-layout: fixed;
 }
-.matrix-table colgroup col:first-child { width: 28%; }
+.matrix-table colgroup col:first-child { width: 22%; }
 .matrix-table th {
   background: #334168;
   color: #fff;
-  padding: 12px 10px;
+  padding: 12px 6px;
   text-align: center;
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.5px;
   text-transform: uppercase;
-  white-space: nowrap;
+  white-space: normal;
+  word-break: break-word;
 }
 .matrix-table th:first-child,
 .matrix-table th.kw-col-header { text-align: left; padding-left: 16px; }
@@ -551,11 +552,9 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
    ============================================================ */
 .not-used-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto 1fr auto auto;
+  grid-template-columns: repeat(2, 1fr);
   column-gap: 20px;
   row-gap: 24px;
-  align-items: stretch;
 }
 .not-used-grid.grid-2col {
   grid-template-columns: repeat(2, 1fr);
@@ -566,9 +565,8 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
   padding: 20px 24px 0;
   box-shadow: 0 2px 16px rgba(0,0,0,0.07);
   border-top: 4px solid #EB0052;
-  display: grid;
-  grid-row: span 4;
-  grid-template-rows: subgrid;
+  display: flex;
+  flex-direction: column;
 }
 .nu-reason {
   font-size: 13px;
@@ -584,12 +582,11 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
   color: #666;
   line-height: 1.5;
   padding-bottom: 14px;
-  align-self: start; /* sits at top of 1fr track; extra space below before divider */
+  flex: 1;
 }
 .nu-divider {
   border-top: 2px solid #f0f0f0;
   margin: 0;
-  align-self: end; /* subgrid places this in track 3, always aligned across all cards */
 }
 .nu-kw-table {
   width: 100%;
@@ -923,13 +920,9 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
     gap: 16px;
   }
   .not-used-card {
-    grid-row: span 1;
-    grid-template-rows: none;
-    display: flex;
-    flex-direction: column;
     padding: 20px 24px 0;
   }
-  .nu-divider { align-self: auto; margin-top: auto; }
+  .nu-divider { margin-top: 0; }
 
   /* Opportunities cards — disable subgrid, go single column */
   .opportunities-grid {
