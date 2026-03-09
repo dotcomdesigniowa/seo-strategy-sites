@@ -503,7 +503,7 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
   width: 100%;
   border-collapse: collapse;
   font-size: 0.82rem;
-  min-width: 1100px;
+  min-width: 1200px;
   table-layout: fixed;
 }
 .matrix-table colgroup col:first-child { width: 22%; }
@@ -517,7 +517,8 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
   letter-spacing: 0.5px;
   text-transform: uppercase;
   white-space: normal;
-  word-break: break-word;
+  overflow-wrap: break-word;
+  word-break: normal;
 }
 .matrix-table th:first-child,
 .matrix-table th.kw-col-header { text-align: left; padding-left: 16px; }
