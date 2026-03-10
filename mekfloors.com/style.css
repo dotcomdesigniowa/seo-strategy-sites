@@ -636,9 +636,8 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
 .opportunities-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto auto auto auto auto 1fr auto;
   column-gap: 20px;
-  row-gap: 0;
+  row-gap: 20px;
   align-items: stretch;
 }
 .opp-card {
@@ -647,9 +646,8 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
   padding: 20px 24px;
   box-shadow: 0 2px 16px rgba(0,0,0,0.07);
   border-top: 4px solid #E6E6E6;
-  display: grid;
-  grid-row: span 7;
-  grid-template-rows: subgrid;
+  display: flex;
+  flex-direction: column;
 }
 .opp-card-highlight {
   border-top-color: #3F80EA;
@@ -708,14 +706,14 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
   color: #666;
   line-height: 1.55;
   margin-bottom: 14px;
-  align-self: start; /* sits at top of 1fr track; extra space below before kw-list */
+  flex: 1;
 }
 .opp-kw-list {
   list-style: none;
   padding: 0;
   border-top: 1px solid #e8e8e8;
   padding-top: 10px;
-  margin-top: 0; /* subgrid places this in track 7, always aligned across all cards */
+  margin-top: 0;
 }
 .opp-kw-list li {
   display: flex;
@@ -931,20 +929,12 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
   }
   .nu-divider { align-self: auto; margin-top: auto; }
 
-  /* Opportunities cards — disable subgrid, go single column */
+  /* Opportunities cards — single column on tablet */
   .opportunities-grid {
     grid-template-columns: 1fr;
-    grid-template-rows: none;
     gap: 16px;
   }
-  .opp-card {
-    grid-row: span 1;
-    grid-template-rows: none;
-    display: flex;
-    flex-direction: column;
-  }
   .opp-recommended-spacer { display: none; }
-  .opp-kw-list { margin-top: auto; }
 }
 
 /* --- 768px: Core mobile layout --- */
