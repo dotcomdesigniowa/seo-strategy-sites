@@ -583,7 +583,7 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
   margin-bottom: 8px;
 }
 .nu-desc {
-  align-self: end;
+  align-self: start;
   font-size: 0.85rem;
   color: #666;
   line-height: 1.5;
@@ -1047,7 +1047,7 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
   }
   .nu-reason { font-size: 13px; }
   .nu-desc {
-  align-self: end;
+  align-self: start;
   font-size: 0.85rem;
   color: #666;
   line-height: 1.5;
