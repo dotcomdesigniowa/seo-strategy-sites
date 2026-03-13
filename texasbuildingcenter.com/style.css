@@ -625,7 +625,7 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
 .not-used-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto 1fr auto auto;
+  grid-template-rows: repeat(3, auto 1fr auto auto);
   column-gap: 20px;
   row-gap: 28px; /* space between card rows when there are 4+ cards */
   align-items: stretch;
@@ -640,9 +640,11 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
   padding: 20px 24px 0;
   box-shadow: 0 2px 16px rgba(0,0,0,0.07);
   border-top: 4px solid #EB0052;
-  display: flex;
-  flex-direction: column;
-}
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 4;
+  align-content: start;
+  }
 .nu-reason {
   font-size: 13px;
   font-weight: 900;
@@ -656,8 +658,8 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
   font-size: 0.85rem;
   color: #666;
   line-height: 1.5;
-  padding-bottom: 8px;
-  }
+  padding-bottom: 14px;
+}
 .nu-divider {
   border-top: 2px solid #f0f0f0;
   margin: 0;
@@ -1003,6 +1005,7 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
     display: flex;
     flex-direction: column;
     padding: 20px 24px 0;
+    margin-bottom: 0;
   }
   .nu-divider { align-self: auto; margin-top: auto; }
 
@@ -1097,9 +1100,21 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
   .grand-total-row td { font-size: 0.82rem; padding: 12px; }
 
   /* Not Used cards */
-  .not-used-card { padding: 20px; }
+  .not-used-card {
+    grid-row: span 1;
+    grid-template-rows: none;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 24px 0;
+    margin-bottom: 0;
+  }
   .nu-reason { font-size: 13px; }
-  .nu-desc { font-size: 0.8rem; }
+  .nu-desc {
+  font-size: 0.85rem;
+  color: #666;
+  line-height: 1.5;
+  padding-bottom: 14px;
+}
   .nu-kw-row { font-size: 0.78rem; }
 
   /* Opportunities cards */
