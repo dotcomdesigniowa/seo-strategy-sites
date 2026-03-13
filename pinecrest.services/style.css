@@ -553,50 +553,43 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
    ============================================================ */
 .not-used-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, auto 1fr auto auto);
-  column-gap: 20px;
-  row-gap: 24px;
-  align-items: stretch;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 32px;
 }
 .not-used-grid.grid-2col {
   grid-template-columns: repeat(2, 1fr);
 }
 .not-used-card {
   background: #fff;
-  border-radius: 12px;
-  padding: 20px 24px 0;
-  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
-  border-top: 4px solid #EB0052;
-  display: grid;
-  grid-template-rows: subgrid;
-  grid-row: span 4;
-  align-content: start;
-  }
+  border-radius: 8px;
+  border-top: 4px solid var(--dd-red);
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+}
 .nu-reason {
-  font-size: 13px;
-  font-weight: 900;
-  letter-spacing: 0.5px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--dd-red);
+  letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: #EB0052;
+  margin-bottom: 12px;
   line-height: 1.3;
-  margin-bottom: 8px;
 }
 .nu-desc {
-  align-self: start;
   font-size: 0.85rem;
   color: #666;
   line-height: 1.5;
-  padding-bottom: 14px;
+  margin-bottom: 14px;
 }
 .nu-divider {
   border-top: 2px solid #f0f0f0;
-  margin: 0;
+  margin: 0 0 14px 0;
 }
 .nu-kw-table {
   width: 100%;
-  padding-top: 14px;
-  padding-bottom: 16px;
 }
 .nu-kw-row {
   display: flex;
@@ -932,19 +925,24 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
 
   /* Not Used cards — disable subgrid, go single column */
   .not-used-grid {
-    grid-template-columns: 1fr;
-    grid-template-rows: none;
-    gap: 16px;
-  }
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 32px;
+}
   .not-used-card {
-    grid-row: span 1;
-    grid-template-rows: none;
-    display: flex;
-    flex-direction: column;
-    padding: 20px 24px 0;
-    margin-bottom: 0;
-  }
-  .nu-divider { margin-top: 0; }
+  background: #fff;
+  border-radius: 8px;
+  border-top: 4px solid var(--dd-red);
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+}
+  .nu-divider {
+  border-top: 2px solid #f0f0f0;
+  margin: 0 0 14px 0;
+}
 
   /* Opportunities cards — disable subgrid, go single column */
   .opportunities-grid {
@@ -1038,16 +1036,25 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
 
   /* Not Used cards */
   .not-used-card {
-    grid-row: span 1;
-    grid-template-rows: none;
-    display: flex;
-    flex-direction: column;
-    padding: 20px 24px 0;
-    margin-bottom: 0;
-  }
-  .nu-reason { font-size: 13px; }
+  background: #fff;
+  border-radius: 8px;
+  border-top: 4px solid var(--dd-red);
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+}
+  .nu-reason {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--dd-red);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
   .nu-desc {
-  align-self: start;
+  
   font-size: 0.85rem;
   color: #666;
   line-height: 1.5;
