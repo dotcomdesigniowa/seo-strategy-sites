@@ -640,9 +640,8 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
   padding: 20px 24px 0;
   box-shadow: 0 2px 16px rgba(0,0,0,0.07);
   border-top: 4px solid #EB0052;
-  display: grid;
-  grid-row: span 4;
-  grid-template-rows: subgrid;
+  display: flex;
+  flex-direction: column;
 }
 .nu-reason {
   font-size: 13px;
@@ -658,13 +657,11 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
   color: #666;
   line-height: 1.5;
   padding-bottom: 8px;
-  align-self: start; /* sits at top of 1fr track; extra space below before divider */
-}
+  }
 .nu-divider {
   border-top: 2px solid #f0f0f0;
   margin: 0;
-  align-self: end; /* subgrid places this in track 3, always aligned across all cards */
-}
+  }
 .nu-kw-table {
   width: 100%;
   padding-top: 0;
@@ -722,9 +719,8 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
   padding: 20px 24px;
   box-shadow: 0 2px 16px rgba(0,0,0,0.07);
   border-top: 4px solid #E6E6E6;
-  display: grid;
-  grid-row: span 7;
-  grid-template-rows: subgrid;
+  display: flex;
+  flex-direction: column;
 }
 .opp-card-highlight {
   border-top-color: #3F80EA;
@@ -787,7 +783,7 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
   color: #666;
   line-height: 1.55;
   margin-bottom: 14px;
-  align-self: start; /* sits at top of 1fr track; extra space below before kw-list */
+  flex: 1;
 }
 .opp-kw-list {
   list-style: none;

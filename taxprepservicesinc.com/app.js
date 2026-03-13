@@ -173,20 +173,20 @@ const STRATEGY = {
   ],
 
   // ---- ADDITIONAL OPPORTUNITIES ----
+  // RULE: Only list items that are NEW at this plan level.
+  // Never list keywords already selected in the current plan matrix.
+  // Always include the plan price from the plan levels table in the skill.
   additional_opportunities: [
     {
       plan: "LEVEL B",
+      price: "$900/mo",
       combinations: 30,
       additional_combinations: 10,
       headline: "Expand to 5 New High-Value Markets",
-      description: "Level B adds 10 new combinations, extending the same 4 core keywords into 5 additional high-population markets across both counties. This level targets the next tier of cities including Corona, Ontario, Murrieta, Temecula, and Victorville, each with strong residential and small business populations actively searching for local tax professionals.",
+      description: "Level B adds 10 new combinations by extending the same 4 core keywords into 5 additional high-population markets across both counties. This level targets Ontario, Corona, Murrieta, Temecula, and Victorville — each with strong residential and small business populations actively searching for local tax professionals. No new keywords are needed; the existing strategy simply reaches further.",
       keywords: [
-        { keyword: "tax preparer",    monthly_searches: 22200 },
-        { keyword: "tax preparation", monthly_searches: 22200 },
-        { keyword: "tax services",    monthly_searches: 22200 },
-        { keyword: "tax planning",    monthly_searches:  9900 },
-        { keyword: "Corona, CA",      monthly_searches: null, new_market: true },
         { keyword: "Ontario, CA",     monthly_searches: null, new_market: true },
+        { keyword: "Corona, CA",      monthly_searches: null, new_market: true },
         { keyword: "Murrieta, CA",    monthly_searches: null, new_market: true },
         { keyword: "Temecula, CA",    monthly_searches: null, new_market: true },
         { keyword: "Victorville, CA", monthly_searches: null, new_market: true },
@@ -194,16 +194,16 @@ const STRATEGY = {
     },
     {
       plan: "LEVEL C",
+      price: "$1,200/mo",
       combinations: 40,
       additional_combinations: 20,
-      headline: "Add Business Tax and Income Tax Preparation Keywords",
-      description: "Level C introduces two new high-value keywords, bringing total coverage to 6 keywords across 7 markets. Adding 'business tax preparation' and 'income tax preparation' captures the distinct search intent of small business owners and individuals who use more specific search terms, opening up a second layer of keyword-city pages that complement the core strategy.",
+      headline: "Add Business Tax and Tax Consultant Keywords",
+      description: "Level C introduces two new high-value keywords not in the current plan, bringing total coverage to 6 keywords across 7 markets. Adding 'business tax preparation' and 'tax consultant' captures the distinct search intent of small business owners and individuals seeking advisory-level tax help, opening a second layer of keyword-city pages that complement the core strategy.",
       keywords: [
         { keyword: "business tax preparation", monthly_searches: 1900 },
-        { keyword: "income tax preparation",   monthly_searches: 1300 },
         { keyword: "tax consultant",           monthly_searches: 9900 },
-        { keyword: "Chino, CA",                monthly_searches: null, new_market: true },
-        { keyword: "Rialto, CA",               monthly_searches: null, new_market: true },
+        { keyword: "Chino, CA",               monthly_searches: null, new_market: true },
+        { keyword: "Rialto, CA",              monthly_searches: null, new_market: true },
       ]
     },
   ]
@@ -401,6 +401,7 @@ function buildOpportunities() {
     return `<div class="opp-card ${highlight}">
       ${i === 0 ? '<div class="opp-recommended">RECOMMENDED NEXT STEP</div>' : '<div class="opp-recommended-spacer"></div>'}
       <div class="opp-plan-label">${opp.plan}</div>
+      ${opp.price ? `<div class="opp-price">${opp.price}</div>` : ''}
       <div class="opp-combos-large">${opp.combinations} <span class="opp-combos-label">total combinations</span></div>
       <div class="opp-combos">${opp.additional_combinations} additional combinations from current plan</div>
       <h4 class="opp-headline">${opp.headline}</h4>
