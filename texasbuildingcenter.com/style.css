@@ -6,6 +6,13 @@
           keyword quality gate enforced in app.js
    ============================================= */
 
+:root {
+  --dd-red: #EB0052;
+  --dd-navy: #334168;
+  --dd-blue: #3F80EA;
+}
+
+
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; line-height: 1.7; }
