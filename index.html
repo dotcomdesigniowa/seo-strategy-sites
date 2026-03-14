@@ -57,6 +57,120 @@
       text-transform: uppercase;
     }
 
+    /* ── PASSWORD GATE ── */
+    #gate {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+      padding: 60px 24px;
+    }
+    .gate-box {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 16px;
+      padding: 48px 40px;
+      width: 100%;
+      max-width: 400px;
+      text-align: center;
+    }
+    .gate-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      color: var(--blue);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .gate-title {
+      font-size: 1.6rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 8px;
+    }
+    .gate-subtitle {
+      font-size: 0.82rem;
+      font-weight: 400;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 32px;
+    }
+    .gate-input-wrap {
+      position: relative;
+      margin-bottom: 12px;
+    }
+    .gate-input {
+      width: 100%;
+      padding: 14px 48px 14px 16px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 8px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #fff;
+      letter-spacing: 2px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .gate-input::placeholder { color: rgba(255,255,255,0.3); letter-spacing: 1px; font-weight: 400; }
+    .gate-input:focus { border-color: var(--blue); }
+    .gate-input.error { border-color: #EB0052; animation: shake 0.35s ease; }
+    .gate-toggle {
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: rgba(255,255,255,0.4);
+      padding: 4px;
+      display: flex;
+      align-items: center;
+    }
+    .gate-toggle:hover { color: rgba(255,255,255,0.7); }
+    .gate-toggle svg { width: 18px; height: 18px; }
+    .gate-error {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #EB0052;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+      min-height: 18px;
+    }
+    .gate-btn {
+      width: 100%;
+      padding: 14px;
+      background: var(--blue);
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px rgba(63,128,234,0.4);
+    }
+    .gate-btn:hover { background: #5a95f0; transform: translateY(-1px); box-shadow: 0 6px 28px rgba(63,128,234,0.5); }
+    .gate-btn:active { transform: translateY(0); }
+
+    @keyframes shake {
+      0%,100% { transform: translateX(0); }
+      20%      { transform: translateX(-8px); }
+      40%      { transform: translateX(8px); }
+      60%      { transform: translateX(-5px); }
+      80%      { transform: translateX(5px); }
+    }
+
+    /* ── PORTAL (hidden until authenticated) ── */
+    #portal { display: none; flex-direction: column; flex: 1; }
+
     /* ── HERO ── */
     .hero {
       background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
@@ -112,7 +226,7 @@
     }
     .btn-build svg { width: 16px; height: 16px; flex-shrink: 0; }
 
-    /* ── STATS BAR — horizontal, below hero, dark navy ── */
+    /* ── STATS BAR ── */
     .stats-bar {
       background: var(--navy-dark);
       border-top: 1px solid rgba(255,255,255,0.07);
@@ -149,7 +263,7 @@
       padding: 72px 40px 80px;
     }
 
-    /* ── SECTION HEADER — exact Durham's style ── */
+    /* ── SECTION HEADER ── */
     .section-header {
       margin-bottom: 40px;
       display: flex;
@@ -277,6 +391,7 @@
       .client-card { padding: 18px 20px; }
       .client-badge { display: none; }
       footer { padding: 24px 20px; }
+      .gate-box { padding: 36px 24px; }
     }
   </style>
 </head>
@@ -290,61 +405,148 @@
     </div>
   </header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-label">Internal Tool</div>
-      <h1 class="hero-title">SEO Strategy Portal</h1>
-      <p class="hero-subtitle">Access client SEO strategy reports or launch a new strategy build below.</p>
-      <a href="/new-strategy" class="btn-build">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
-        </svg>
-        Build New SEO Strategy
-      </a>
-    </div>
-  </section>
-
-  <!-- STATS BAR — horizontal strip below hero -->
-  <div class="stats-bar">
-    <div class="stat-item">
-      <div class="stat-num" id="statStrategies">0</div>
-      <div class="stat-label">Strategies Built</div>
-    </div>
-    <div class="stat-item">
-      <!-- Running total of keywords researched across all client builds.
-           Durham's Tree Service: 189 | MEK Interiors & Floors: 401 | Texas Building Center: 149 | Pinecrest Services: 412 | Tax Prep Services Inc.: 135
-           Update the keywords field in the clients array below when adding new clients. -->
-      <div class="stat-num" id="statKeywords">0</div>
-      <div class="stat-label">Keywords Researched</div>
-    </div>
-    <div class="stat-item">
-      <!-- Skill file count: 7 references + 3 scripts = 10 total skill assets.
-           Update manually when new files are added to the seo-strategist skill. -->
-      <div class="stat-num">10</div>
-      <div class="stat-label">Skill Assets</div>
+  <!-- PASSWORD GATE -->
+  <div id="gate">
+    <div class="gate-box">
+      <div class="gate-label">Internal Access</div>
+      <h1 class="gate-title">SEO Strategy Portal</h1>
+      <p class="gate-subtitle">Enter your password to continue.</p>
+      <div class="gate-input-wrap">
+        <input id="pwInput" class="gate-input" type="password" placeholder="Password" autocomplete="current-password">
+        <button class="gate-toggle" id="toggleBtn" type="button" aria-label="Show password">
+          <!-- Eye icon (show) -->
+          <svg id="iconShow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>
+          </svg>
+          <!-- Eye-off icon (hide) — shown when password is visible -->
+          <svg id="iconHide" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none">
+            <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/>
+            <line x1="1" y1="1" x2="23" y2="23"/>
+          </svg>
+        </button>
+      </div>
+      <div class="gate-error" id="gateError"></div>
+      <button class="gate-btn" id="gateBtn">Access Portal</button>
     </div>
   </div>
 
-  <!-- MAIN -->
-  <main>
-    <div class="section-header">
-      <div class="section-header-left">
-        <span class="section-number">01</span>
-        <h2>Client Strategies</h2>
+  <!-- PORTAL (revealed after correct password) -->
+  <div id="portal">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-label">Internal Tool</div>
+        <h1 class="hero-title">SEO Strategy Portal</h1>
+        <p class="hero-subtitle">Access client SEO strategy reports or launch a new strategy build below.</p>
+        <a href="/new-strategy" class="btn-build">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+          </svg>
+          Build New SEO Strategy
+        </a>
       </div>
-      <span class="section-count" id="clientCount">Loading...</span>
+    </section>
+
+    <!-- STATS BAR -->
+    <div class="stats-bar">
+      <div class="stat-item">
+        <div class="stat-num" id="statStrategies">0</div>
+        <div class="stat-label">Strategies Built</div>
+      </div>
+      <div class="stat-item">
+        <!-- Running total of keywords researched across all client builds.
+             Durham's Tree Service: 189 | MEK Interiors & Floors: 401 | Texas Building Center: 149 | Pinecrest Services: 412 | Tax Prep Services Inc.: 135
+             Update the keywords field in the clients array below when adding new clients. -->
+        <div class="stat-num" id="statKeywords">0</div>
+        <div class="stat-label">Keywords Researched</div>
+      </div>
+      <div class="stat-item">
+        <!-- Skill file count: 7 references + 3 scripts = 10 total skill assets.
+             Update manually when new files are added to the seo-strategist skill. -->
+        <div class="stat-num">10</div>
+        <div class="stat-label">Skill Assets</div>
+      </div>
     </div>
 
-    <div class="client-grid" id="clientGrid"></div>
-  </main>
+    <!-- MAIN -->
+    <main>
+      <div class="section-header">
+        <div class="section-header-left">
+          <span class="section-number">01</span>
+          <h2>Client Strategies</h2>
+        </div>
+        <span class="section-count" id="clientCount">Loading...</span>
+      </div>
+      <div class="client-grid" id="clientGrid"></div>
+    </main>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>Dotcom Design &mdash; <span>SEO Strategy Portal</span> &mdash; Internal Use Only</p>
-  </footer>
+    <!-- FOOTER -->
+    <footer>
+      <p>Dotcom Design &mdash; <span>SEO Strategy Portal</span> &mdash; Internal Use Only</p>
+    </footer>
+
+  </div><!-- /portal -->
 
   <script>
+    // ─────────────────────────────────────────────────────────────────────────
+    // PASSWORD GATE
+    // Password is verified client-side using SHA-256. The hash below is the
+    // SHA-256 digest of the actual password — never store the plain text here.
+    // Session is remembered in sessionStorage so refreshing doesn't re-prompt.
+    // ─────────────────────────────────────────────────────────────────────────
+    const PW_HASH = '29f9f6c0535ab3dbe51a2d0160a728babcf9f94ca521e79bcdd9fa052bd0f0c7';
+    const SESSION_KEY = 'dd_portal_auth';
+
+    async function sha256(str) {
+      const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
+      return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
+    }
+
+    function showPortal() {
+      document.getElementById('gate').style.display = 'none';
+      const portal = document.getElementById('portal');
+      portal.style.display = 'flex';
+      renderClients();
+    }
+
+    // If already authenticated this session, skip the gate
+    if (sessionStorage.getItem(SESSION_KEY) === '1') {
+      showPortal();
+    }
+
+    // Toggle show/hide password
+    document.getElementById('toggleBtn').addEventListener('click', () => {
+      const input = document.getElementById('pwInput');
+      const isHidden = input.type === 'password';
+      input.type = isHidden ? 'text' : 'password';
+      document.getElementById('iconShow').style.display = isHidden ? 'none' : '';
+      document.getElementById('iconHide').style.display = isHidden ? '' : 'none';
+    });
+
+    async function attemptLogin() {
+      const input = document.getElementById('pwInput');
+      const errorEl = document.getElementById('gateError');
+      const val = input.value;
+      if (!val) { errorEl.textContent = 'Please enter a password.'; return; }
+      const hash = await sha256(val);
+      if (hash === PW_HASH) {
+        sessionStorage.setItem(SESSION_KEY, '1');
+        showPortal();
+      } else {
+        errorEl.textContent = 'Incorrect password. Please try again.';
+        input.classList.add('error');
+        input.value = '';
+        setTimeout(() => input.classList.remove('error'), 400);
+        input.focus();
+      }
+    }
+
+    document.getElementById('gateBtn').addEventListener('click', attemptLogin);
+    document.getElementById('pwInput').addEventListener('keydown', e => {
+      if (e.key === 'Enter') attemptLogin();
+    });
+
     // ─────────────────────────────────────────────────────────────────────────
     // CLIENT LIST
     // Add a new entry here each time a strategy is built and deployed.
@@ -357,8 +559,8 @@
       { name: "Durham's Tree Service",  domain: "durhamstreeservice.com",  badge: "Level C", keywords: 189 },
       { name: "MEK Interiors & Floors", domain: "mekfloors.com",           badge: "Level B", keywords: 401 },
       { name: "Texas Building Center",  domain: "texasbuildingcenter.com", badge: "Level A", keywords: 149 },
-      { name: "Pinecrest Services",         domain: "pinecrest.services",        badge: "Plan G",  keywords: 412 },
-      { name: "Tax Prep Services Inc.",       domain: "taxprepservicesinc.com",     badge: "Level A", keywords: 135 },
+      { name: "Pinecrest Services",     domain: "pinecrest.services",      badge: "Plan G",  keywords: 412 },
+      { name: "Tax Prep Services Inc.", domain: "taxprepservicesinc.com",  badge: "Level A", keywords: 135 },
     ];
 
     function renderClients() {
@@ -390,8 +592,6 @@
         </a>
       `).join('');
     }
-
-    renderClients();
   </script>
 
 </body>
