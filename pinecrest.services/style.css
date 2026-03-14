@@ -356,9 +356,7 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
   vertical-align: middle;
 }
 
-/* City header row — matches kw-header style: divider above and below, small uppercase gray labels.
-   The border-top acts as the divider line above the header (like kw-tier-divider).
-   The border-bottom acts as the divider line below the header (like kw-header). */
+/* City header row — small uppercase gray labels with borders above and below.
 .city-header-row {
   height: auto !important;
   padding: 8px 0 !important;
@@ -408,14 +406,14 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
 /* ============================================================
    KEYWORD TIER CARDS — subgrid for perfect cross-card alignment
    Row tracks: [label] auto  [name] auto  [desc] 1fr  [table] auto
-   The 1fr on desc stretches it to fill space so the divider+table
+   The 1fr on desc stretches it to fill space so the table
    always aligns at the same vertical position across all 4 cards.
    ============================================================ */
 .kw-tier-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  /* 5 tracks: label | name | desc(stretches) | divider | table */
-  grid-template-rows: auto auto 1fr auto auto;
+  /* 4 tracks: label | name | desc(stretches) | table */
+  grid-template-rows: auto auto 1fr auto;
   column-gap: 20px;
   row-gap: 0;
   margin-bottom: 40px;
@@ -427,7 +425,7 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
   overflow: hidden;
   box-shadow: 0 2px 16px rgba(0,0,0,0.07);
   display: grid;
-  grid-row: span 5;
+  grid-row: span 4;
   grid-template-rows: subgrid;
 }
 .kw-tier-1 { border-top: 4px solid #3F80EA; }
@@ -459,14 +457,8 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
   padding: 0 20px 16px;
   align-self: start; /* sits at top of 1fr track; extra space below before divider */
 }
-/* Divider — subgrid places this in the 4th row track, always aligned across all cards */
-.kw-tier-divider {
-  border-top: 1px solid #e8e8e8;
-  margin: 0 20px;
-  align-self: end;
-}
 .kw-tier-table {
-  padding: 0 20px 16px;
+  padding: 14px 20px 16px;
 }
 .kw-row {
   display: flex;
@@ -477,26 +469,6 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
   font-size: 0.82rem;
 }
 .kw-row:last-child { border-bottom: none; }
-.kw-header {
-  border-bottom: 2px solid #eee !important;
-  padding-bottom: 8px !important;
-  margin-bottom: 4px;
-}
-.kw-header .kw-name {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: #999;
-}
-.kw-header .kw-vol {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: #999;
-  text-align: right;
-}
 .kw-name { color: #35373C; }
 .kw-vol { font-weight: 700; color: #3F80EA; font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; min-width: 42px; margin-left: 6px; flex-shrink: 0; padding-top: 1px; }
 
@@ -556,7 +528,7 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
    ============================================================ */
 /* ============================================================
    NOT USED CARDS — subgrid for perfect cross-card alignment
-   Row tracks: [title] auto  [desc] 1fr  [divider] auto  [table] auto
+   Row tracks: [title] auto  [desc] 1fr  [table] auto
    ============================================================ */
 .not-used-grid {
   display: grid;
@@ -591,12 +563,9 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
   line-height: 1.5;
   margin-bottom: 14px;
 }
-.nu-divider {
-  border-top: 2px solid #f0f0f0;
-  margin: 0 0 14px 0;
-}
 .nu-kw-table {
   width: 100%;
+  padding-top: 14px;
 }
 .nu-kw-row {
   display: flex;
@@ -607,26 +576,6 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
   font-size: 0.82rem;
 }
 .nu-kw-row:last-child { border-bottom: none; }
-.nu-header {
-  border-bottom: 2px solid #eee !important;
-  padding-bottom: 8px !important;
-  margin-bottom: 4px;
-}
-.nu-header .nu-kw-name {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: #999;
-}
-.nu-header .nu-kw-vol {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: #999;
-  text-align: right;
-}
 .nu-kw-name { color: #35373C; }
 .nu-kw-vol { font-weight: 600; color: #999; font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; }
 
@@ -727,9 +676,8 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
 .opp-kw-list {
   list-style: none;
   padding: 0;
-  border-top: 1px solid #e8e8e8;
-  padding-top: 10px;
-  margin-top: 0; /* subgrid places this in track 7, always aligned across all cards */
+  padding-top: 14px;
+  margin-top: 0;
 }
 .opp-kw-list li {
   display: flex;
@@ -740,19 +688,6 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
   border-bottom: 1px solid #f5f5f5;
 }
 .opp-kw-list li:last-child { border-bottom: none; }
-/* Header row inside opp-kw-list — matches nu-header and kw-header style */
-.opp-kw-header {
-  border-bottom: 2px solid #eee !important;
-  padding-bottom: 8px !important;
-  margin-bottom: 4px;
-}
-.opp-kw-col-label {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: #999;
-}
 .opp-kw { font-weight: 600; color: #35373C; }
 .opp-vol {
   font-size: 0.75rem;
@@ -928,8 +863,6 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
     display: flex;
     flex-direction: column;
   }
-  .kw-tier-divider { align-self: auto; margin-top: auto; }
-
   /* Not Used cards — disable subgrid, go single column */
   .not-used-grid {
   display: grid;
@@ -946,11 +879,6 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
   display: flex;
   flex-direction: column;
 }
-  .nu-divider {
-  border-top: 2px solid #f0f0f0;
-  margin: 0 0 14px 0;
-}
-
   /* Opportunities cards — disable subgrid, go single column */
   .opportunities-grid {
     grid-template-columns: 1fr;
@@ -1030,7 +958,6 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
   .kw-tier-label { padding: 12px 16px 0; }
   .kw-tier-name { padding: 6px 16px 8px; font-size: 0.88rem; }
   .kw-tier-desc { padding: 0 16px 12px; font-size: 0.8rem; }
-  .kw-tier-divider { margin: 0 16px; }
   .kw-tier-table { padding: 0 16px 14px; }
 
   /* Matrix: break out of section-inner padding for full-width scroll */

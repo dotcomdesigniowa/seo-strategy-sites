@@ -288,12 +288,7 @@ function buildKeywordTierCards() {
       <div class="kw-tier-label">${tier.tier_label}</div>
       <h4 class="kw-tier-name">${tier.tier_name}</h4>
       <p class="kw-tier-desc">${tier.description}</p>
-      <div class="kw-tier-divider"></div>
       <div class="kw-tier-table">
-        <div class="kw-row kw-header">
-          <span class="kw-name">Keyword</span>
-          <span class="kw-vol">Monthly Searches</span>
-        </div>
         ${kwRows}
       </div>
     </div>`;
@@ -361,12 +356,7 @@ function buildNotUsed() {
     return `<div class="not-used-card">
       <div class="nu-reason">${group.reason}</div>
       <p class="nu-desc">${group.description}</p>
-      <div class="nu-divider"></div>
       <div class="nu-kw-table">
-        <div class="nu-kw-row nu-header">
-          <span class="nu-kw-name">Keyword</span>
-          <span class="nu-kw-vol">Monthly Searches</span>
-        </div>
         ${kwRows}
       </div>
     </div>`;
@@ -387,11 +377,7 @@ function buildOpportunities() {
   const grid = document.getElementById('opportunities-grid');
   if (!grid) return;
   const cards = STRATEGY.additional_opportunities.map((opp, i) => {
-    const kwHeader = `<li class="opp-kw-header">
-        <span class="opp-kw-col-label">KEYWORD / MARKET</span>
-        <span class="opp-kw-col-label" style="text-align:right">MONTHLY SEARCHES</span>
-      </li>`;
-    const kwList = kwHeader + opp.keywords.map(kw =>
+    const kwList = opp.keywords.map(kw =>
       `<li>
         <span class="opp-kw">${kw.keyword}</span>
         ${kw.monthly_searches ? `<span class="opp-vol">${fmt(kw.monthly_searches)}</span>` : kw.new_market ? `<span class="opp-vol opp-new-market">New Market</span>` : ''}
