@@ -438,7 +438,6 @@ function buildOpportunities() {
     ).join('');
     const highlight = i === 0 ? 'opp-card-highlight' : '';
     return `<div class="opp-card ${highlight}">
-      ${i === 0 ? '<div class="opp-recommended">RECOMMENDED NEXT STEP</div>' : '<div class="opp-recommended-spacer"></div>'}
       <div class="opp-plan-label">${opp.plan}</div>
       ${opp.price ? `<div class="opp-price">$${fmt(opp.price)}<span class="opp-price-label">/mo</span></div>` : ''}
       <div class="opp-combos-large">${opp.combinations}</div>

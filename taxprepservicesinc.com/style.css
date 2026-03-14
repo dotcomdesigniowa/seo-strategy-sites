@@ -640,24 +640,6 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
   border-top-color: #3F80EA;
   box-shadow: 0 4px 24px rgba(63,128,234,0.15);
 }
-.opp-recommended {
-  display: inline-block;
-  background: #3F80EA;
-  color: #fff;
-  font-size: 9px;
-  font-weight: 900;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  padding: 4px 10px;
-  border-radius: 20px;
-  margin-bottom: 12px;
-  align-self: flex-start;
-}
-.opp-recommended-spacer {
-  display: block;
-  height: 26px;
-  margin-bottom: 12px;
-}
 .opp-plan-label {
   font-size: 10px;
   font-weight: 900;
@@ -667,18 +649,19 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
   margin-bottom: 4px;
 }
 .opp-combos-large {
-  font-size: 2rem;
-  font-weight: 900;
+  font-size: 1.1rem;
+  font-weight: 700;
   color: #334168;
   line-height: 1;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
 }
-.opp-combos-label { font-size: 0.9rem; font-weight: 500; color: #999; }
+.opp-combos-label { font-size: 0.85rem; font-weight: 500; color: #999; }
 .opp-combos {
+  margin-top: 4px;
   font-size: 0.82rem;
   color: #666;
-  margin-bottom: 14px;
-  padding-bottom: 14px;
+  margin-bottom: 18px;
+  padding-bottom: 18px;
   border-bottom: 1px solid #e8e8e8;
 }
 .opp-add { color: #22c55e; font-weight: 700; }
@@ -696,11 +679,12 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
   flex: 1;
 }
 .opp-price {
-  font-size: 1.6rem;
+  margin-top: 10px;
+  font-size: 2.2rem;
   font-weight: 900;
   color: #334168;
   line-height: 1;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 .opp-price-label {
   font-size: 0.9rem;
@@ -951,8 +935,7 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
     display: flex;
     flex-direction: column;
   }
-  .opp-recommended-spacer { display: none; }
-  .opp-kw-list { margin-top: auto; }
+    .opp-kw-list { margin-top: auto; }
 }
 
 /* --- 768px: Core mobile layout --- */
@@ -1058,7 +1041,8 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
 
   /* Opportunities cards */
   .opp-card { padding: 20px; }
-  .opp-price { font-size: 1.75rem; }
+  .opp-price {
+  margin-top: 10px; font-size: 2.2rem; }
   .opp-headline { font-size: 0.95rem; }
   .opp-desc { font-size: 0.82rem; }
   .opp-kw-list li { font-size: 0.78rem; }
