@@ -491,4 +491,31 @@ document.addEventListener('DOMContentLoaded', () => {
   buildMobileMatrix();
   buildNotUsed();
   buildOpportunities();
+
+// Dynamically set kw-tier-grid column count based on number of cards
+(function() {
+  const grid = document.querySelector('.kw-tier-grid');
+  if (!grid) return;
+  const cards = grid.querySelectorAll('.kw-tier-card');
+  const count = cards.length;
+  if (count === 4) {
+    grid.style.gridTemplateColumns = 'repeat(4, 1fr)';
+  } else if (count === 3) {
+    grid.style.gridTemplateColumns = 'repeat(3, 1fr)';
+  } else if (count === 2) {
+    grid.style.gridTemplateColumns = 'repeat(2, 1fr)';
+  } else if (count === 1) {
+    grid.style.gridTemplateColumns = '1fr';
+  }
+})();
+
+
+  // Dynamic kw-tier-grid column count: set based on actual card count
+  (function() {
+    var grid = document.querySelector('.kw-tier-grid');
+    if (!grid) return;
+    var count = grid.querySelectorAll('.kw-tier-card').length;
+    if (count > 0) grid.style.gridTemplateColumns = 'repeat(' + count + ', 1fr)';
+  })();
+
 });

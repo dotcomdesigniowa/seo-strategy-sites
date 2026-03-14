@@ -538,4 +538,13 @@ document.addEventListener('DOMContentLoaded', () => {
   buildNotUsed();
   buildOpportunities();
   initStickyNav();
+
+  // Dynamic kw-tier-grid column count: set based on actual card count
+  (function() {
+    var grid = document.querySelector('.kw-tier-grid');
+    if (!grid) return;
+    var count = grid.querySelectorAll('.kw-tier-card').length;
+    if (count > 0) grid.style.gridTemplateColumns = 'repeat(' + count + ', 1fr)';
+  })();
+
 });

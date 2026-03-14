@@ -358,19 +358,24 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
 
 /* City header row — small uppercase gray labels with borders above and below. */
 .city-header-row {
-  height: auto !important;
-  padding: 8px 0 !important;
-  border-top: 1px solid #e8e8e8 !important;
-  border-bottom: 2px solid #eee !important;
+  height: 32px !important;
+  padding: 0 !important;
+  border-top: none !important;
+  border-bottom: 1px solid #f0f0f0 !important;
   margin-top: 8px;
-  margin-bottom: 2px;
+  margin-bottom: 0;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  letter-spacing: 1px !important;
+  text-transform: uppercase !important;
+  color: #999 !important;
 }
 .city-col-label {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: #999;
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  color: inherit;
 }
 
 /* Legend below tier cards */
@@ -411,7 +416,7 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
    ============================================================ */
 .kw-tier-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   /* 4 tracks: label | name | desc(stretches) | table */
   grid-template-rows: auto auto 1fr auto;
   column-gap: 20px;
@@ -706,7 +711,7 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
 .opp-kw-list {
   list-style: none;
   padding: 0;
-  padding-top: 14px;
+  padding-top: 0;
   margin-top: 0;
 }
 .opp-kw-header {
@@ -722,6 +727,22 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
   text-transform: uppercase;
   color: #999;
 }
+/* High-specificity override: opp-kw-header is an li but must match kw-header/nu-header style */
+.opp-kw-list li.opp-kw-header {
+  height: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+  padding: 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 10px !important;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #999;
+}
+
 .opp-kw-list li {
   display: flex;
   justify-content: space-between;
@@ -870,7 +891,7 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
 /* --- 1100px: Keyword tier grid collapses to 2 cols --- */
 @media (max-width: 1100px) {
   .kw-tier-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     /* 2x2 layout: each pair of cards shares 5 row tracks */
     grid-template-rows: auto auto 1fr auto auto  auto auto 1fr auto auto;
   }
