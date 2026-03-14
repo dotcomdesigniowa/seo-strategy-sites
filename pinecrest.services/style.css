@@ -460,6 +460,19 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
 .kw-tier-table {
   padding: 14px 20px 16px;
 }
+.kw-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0 6px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid #e8e8e8;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #999;
+}
 .kw-row {
   display: flex;
   justify-content: space-between;
@@ -533,7 +546,12 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
 .not-used-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
+  /* 4 tracks per card row: title | desc(1fr) | header | table
+     The 1fr on desc forces all keyword-table headers to align at
+     the same Y position regardless of description length. */
+  grid-template-rows: auto 1fr auto auto;
+  column-gap: 24px;
+  row-gap: 0;
   margin-top: 32px;
 }
 .not-used-grid.grid-2col {
@@ -545,8 +563,10 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
   border-top: 4px solid var(--dd-red);
   padding: 24px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-  display: flex;
-  flex-direction: column;
+  /* Subgrid: share the 4 row tracks from the parent grid */
+  display: grid;
+  grid-row: span 4;
+  grid-template-rows: subgrid;
 }
 .nu-reason {
   font-size: 0.75rem;
@@ -561,11 +581,23 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
   font-size: 0.85rem;
   color: #666;
   line-height: 1.5;
-  margin-bottom: 14px;
+  align-self: start;
 }
 .nu-kw-table {
   width: 100%;
-  padding-top: 14px;
+}
+.nu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0 6px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid #e8e8e8;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #999;
 }
 .nu-kw-row {
   display: flex;
@@ -678,6 +710,20 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
   padding: 0;
   padding-top: 14px;
   margin-top: 0;
+}
+.opp-kw-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0 6px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid #e8e8e8;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #999;
+  list-style: none;
 }
 .opp-kw-list li {
   display: flex;
@@ -865,20 +911,16 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
   }
   /* Not Used cards — disable subgrid, go single column */
   .not-used-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-  margin-top: 32px;
-}
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    gap: 16px;
+  }
   .not-used-card {
-  background: #fff;
-  border-radius: 8px;
-  border-top: 4px solid var(--dd-red);
-  padding: 24px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-  display: flex;
-  flex-direction: column;
-}
+    grid-row: span 1;
+    grid-template-rows: none;
+    display: flex;
+    flex-direction: column;
+  }
   /* Opportunities cards — disable subgrid, go single column */
   .opportunities-grid {
     grid-template-columns: 1fr;

@@ -354,6 +354,7 @@ function buildKeywordTierCards() {
       <h4 class="kw-tier-name">${tier.tier_name}</h4>
       <p class="kw-tier-desc">${tier.description}</p>
       <div class="kw-tier-table">
+        <div class="kw-header"><span>Keyword</span><span>Mo. Searches</span></div>
         ${kwRows}
       </div>
     </div>`;
@@ -412,6 +413,7 @@ function buildNotUsed() {
       <div class="nu-reason">${group.reason}</div>
       <p class="nu-desc">${group.description}</p>
       <div class="nu-kw-table">
+        <div class="nu-header"><span>Keyword</span><span>Mo. Searches</span></div>
         ${kwRows}
       </div>
     </div>`;
@@ -444,7 +446,7 @@ function buildOpportunities() {
       <div class="opp-combos"><span class="opp-add">+${opp.additional_combinations} from current plan</span></div>
       <h4 class="opp-headline">${opp.headline}</h4>
       <p class="opp-desc">${opp.description}</p>
-      <ul class="opp-kw-list">${kwList}</ul>
+      <ul class="opp-kw-list"><li class="opp-kw-header"><span>Keyword / Market</span><span>Mo. Searches</span></li>${kwList}</ul>
     </div>`;
   }).join('');
   grid.innerHTML = cards;
