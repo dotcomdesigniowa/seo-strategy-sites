@@ -356,7 +356,7 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
   vertical-align: middle;
 }
 
-/* City header row — small uppercase gray labels with borders above and below.
+/* City header row — small uppercase gray labels with borders above and below. */
 .city-header-row {
   height: auto !important;
   padding: 8px 0 !important;
@@ -411,7 +411,7 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
    ============================================================ */
 .kw-tier-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   /* 4 tracks: label | name | desc(stretches) | table */
   grid-template-rows: auto auto 1fr auto;
   column-gap: 20px;
