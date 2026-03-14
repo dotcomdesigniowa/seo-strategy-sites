@@ -478,8 +478,9 @@ function buildOpportunities() {
     const highlight = i === 0 ? 'opp-card-highlight' : '';
     return `<div class="opp-card ${highlight}">
       <div class="opp-plan-label">${opp.plan}</div>
-      <div class="opp-price">$${fmt(opp.price)}<span class="opp-price-label">/mo</span></div>
-      <div class="opp-combos">${opp.combinations} total combinations &middot; ${opp.additional_combinations} additional from current plan</div>
+      ${opp.price ? `<div class="opp-price">$${fmt(opp.price)}<span class="opp-price-label">/mo</span></div>` : ''}
+      <div class="opp-combos-large">${opp.combinations} <span class="opp-combos-label">total combinations</span></div>
+      <div class="opp-combos">${opp.additional_combinations} additional combinations from current plan</div>
       <h4 class="opp-headline">${opp.headline}</h4>
       <p class="opp-desc">${opp.description}</p>
       <ul class="opp-kw-list"><li class="opp-kw-header"><span>Keyword / Market</span><span>Mo. Searches</span></li>${kwList}</ul>

@@ -179,7 +179,7 @@ const STRATEGY = {
   additional_opportunities: [
     {
       plan: "LEVEL B",
-      price: "$900/mo",
+      price: 900,
       combinations: 30,
       additional_combinations: 10,
       headline: "Expand to 5 New High-Value Markets",
@@ -194,7 +194,7 @@ const STRATEGY = {
     },
     {
       plan: "LEVEL C",
-      price: "$1,200/mo",
+      price: 1200,
       combinations: 40,
       additional_combinations: 20,
       headline: "Add Business Tax and Tax Consultant Keywords",
@@ -395,7 +395,7 @@ function buildOpportunities() {
     const highlight = i === 0 ? 'opp-card-highlight' : '';
     return `<div class="opp-card ${highlight}">
       <div class="opp-plan-label">${opp.plan}</div>
-      ${opp.price ? `<div class="opp-price">${opp.price}</div>` : ''}
+      ${opp.price ? `<div class="opp-price">$${fmt(opp.price)}<span class="opp-price-label">/mo</span></div>` : ''}
       <div class="opp-combos-large">${opp.combinations} <span class="opp-combos-label">total combinations</span></div>
       <div class="opp-combos">${opp.additional_combinations} additional combinations from current plan</div>
       <h4 class="opp-headline">${opp.headline}</h4>
