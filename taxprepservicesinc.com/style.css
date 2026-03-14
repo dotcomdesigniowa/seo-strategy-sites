@@ -621,7 +621,7 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
    ============================================================ */
 .opportunities-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   grid-template-rows: auto auto auto auto auto 1fr auto;
   column-gap: 20px;
   row-gap: 0;
