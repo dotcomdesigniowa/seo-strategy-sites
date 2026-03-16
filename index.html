@@ -418,7 +418,7 @@
           <svg id="iconShow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>
           </svg>
-          <!-- Eye-off icon (hide) — shown when password is visible -->
+          <!-- Eye-off icon (hide): shown when password is visible -->
           <svg id="iconHide" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none">
             <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/>
             <line x1="1" y1="1" x2="23" y2="23"/>
@@ -483,7 +483,7 @@
 
     <!-- FOOTER -->
     <footer>
-      <p>Dotcom Design &mdash; <span>SEO Strategy Portal</span> &mdash; Internal Use Only</p>
+      <p>Dotcom Design | SEO Strategy Portal | Internal Use Only</p>
     </footer>
 
   </div><!-- /portal -->
@@ -492,7 +492,7 @@
     // ─────────────────────────────────────────────────────────────────────────
     // PASSWORD GATE
     // Password is verified client-side using SHA-256. The hash below is the
-    // SHA-256 digest of the actual password — never store the plain text here.
+    // SHA-256 digest of the actual password - never store the plain text here.
     // Session is remembered in sessionStorage so refreshing doesn't re-prompt.
     // ─────────────────────────────────────────────────────────────────────────
     const PW_HASH = '29f9f6c0535ab3dbe51a2d0160a728babcf9f94ca521e79bcdd9fa052bd0f0c7';
@@ -501,10 +501,10 @@
     // ─────────────────────────────────────────────────────────────────────────
     // CLIENT LIST
     // Add a new entry here each time a strategy is built and deployed.
-    //   name     — Full business name
-    //   domain   — Folder name in the repo (matches the URL path)
-    //   badge    — Plan level label (e.g. "Level C")
-    //   keywords — Keywords Researched count from the client's strategy report stat card
+    //   name     - Full business name
+    //   domain   - Folder name in the repo (matches the URL path)
+    //   badge    - Plan level label (e.g. "Level C")
+    //   keywords - Keywords Researched count from the client's strategy report stat card
     // ─────────────────────────────────────────────────────────────────────────
     const clients = [
       { name: "Durham's Tree Service",    domain: "durhamstreeservice.com",     badge: "Level C", keywords: 189 },

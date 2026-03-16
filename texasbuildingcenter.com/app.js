@@ -1,7 +1,7 @@
 // ============================================================
-// SEO Strategy Website — App.js
+// SEO Strategy Website. App.js
 // Texas Building Center | Dotcom Design
-// Strategy: Go Wide — 5 keywords across 10 confirmed service
+// Strategy: Go Wide. 5 keywords across 10 confirmed service
 // area cities = 40 combinations
 // Keyword selection rules applied:
 //   - One slot per variant family
@@ -22,7 +22,7 @@ const STRATEGY = {
   total_combinations: 40,
   total_keywords_researched: 149,
   strategy_type: "Go Wide",
-  strategy_note: "barndominium (246,000/mo) has 30x the volume of the next keyword family — Go Wide trigger confirmed. The dominant keyword is spread across 10 confirmed service area cities. Secondary keywords are distributed across the top 7-8 cities.",
+  strategy_note: "barndominium (246,000/mo) has 30x the volume of the next keyword family. Go Wide trigger confirmed. The dominant keyword is spread across 10 confirmed service area cities. Secondary keywords are distributed across the top 7-8 cities.",
   selected_keywords: [
     "barndominium",
     "barndominium plans",
@@ -40,7 +40,7 @@ const STRATEGY = {
   // Families are ordered by the volume of their base/selected keyword (descending).
   keyword_table: [
 
-    // ── FAMILY A: barndominium (base) — 246,000/mo — SELECTED ──────────────────
+    // ── FAMILY A: barndominium (base). 246,000/mo. SELECTED ──────────────────
     { keyword: "barndominium",                      monthly_searches: 246000, tier: "Tier 1", status: "selected",  family: "barndominium",         is_base: true,  variant_type: null,                note: "" },
     { keyword: "barndo",                            monthly_searches:  14800, tier: "Tier 1", status: "not_used",  family: "barndominium",         is_base: false, variant_type: "Short-Form Variant", note: "Short-form of 'barndominium'; same searcher intent. 'barndominium' (246K) is the correct family representative." },
     { keyword: "barndominium near me",              monthly_searches:   1600, tier: "Tier 1", status: "near_me",   family: "barndominium",         is_base: false, variant_type: "Near Me Variant",    note: "City-name targeting in the URL slug and page title serves the same geographic function as 'near me'." },
@@ -59,13 +59,13 @@ const STRATEGY = {
     { keyword: "turnkey barndominium",              monthly_searches:    390, tier: "Tier 1", status: "not_used",  family: "barndominium",         is_base: false, variant_type: "Variant",            note: "Low volume; informational intent." },
     { keyword: "barndominium packages",             monthly_searches:    390, tier: "Tier 1", status: "not_used",  family: "barndominium",         is_base: false, variant_type: "Variant",            note: "Product/kit term; not hire-intent." },
 
-    // ── FAMILY B: barndominium plans (base) — 60,500/mo — SELECTED ─────────────
+    // ── FAMILY B: barndominium plans (base). 60,500/mo. SELECTED ─────────────
     { keyword: "barndominium plans",                monthly_searches:  60500, tier: "Tier 1", status: "selected",  family: "barndominium-plans",   is_base: true,  variant_type: null,                 note: "" },
     { keyword: "barndominium floor plans",          monthly_searches:  33100, tier: "Tier 1", status: "not_used",  family: "barndominium-plans",   is_base: false, variant_type: "Variant",            note: "Same family as 'barndominium plans'; lower volume variant." },
     { keyword: "barndo plans",                      monthly_searches:   4400, tier: "Tier 1", status: "not_used",  family: "barndominium-plans",   is_base: false, variant_type: "Short-Form Variant", note: "Short-form of 'barndominium plans'; lower volume." },
     { keyword: "barndo floor plans",                monthly_searches:   2400, tier: "Tier 1", status: "not_used",  family: "barndominium-plans",   is_base: false, variant_type: "Short-Form Variant", note: "Short-form of 'barndominium floor plans'; lower volume." },
 
-    // ── FAMILY C: metal buildings (base) — 33,100/mo — SELECTED ────────────────
+    // ── FAMILY C: metal buildings (base). 33,100/mo. SELECTED ────────────────
     { keyword: "metal buildings",                   monthly_searches:  33100, tier: "Tier 4", status: "selected",  family: "metal-buildings",      is_base: true,  variant_type: null,                 note: "" },
     { keyword: "metal building",                    monthly_searches:  12100, tier: "Tier 4", status: "not_used",  family: "metal-buildings",      is_base: false, variant_type: "Singular Variant",   note: "Singular form of 'metal buildings'; lower volume." },
     { keyword: "metal building near me",            monthly_searches:   2900, tier: "Tier 4", status: "near_me",   family: "metal-buildings",      is_base: false, variant_type: "Near Me Variant",    note: "City-name targeting in the URL slug and page title serves the same geographic function as 'near me'." },
@@ -73,11 +73,11 @@ const STRATEGY = {
     { keyword: "commercial metal buildings",        monthly_searches:   1300, tier: "Tier 4", status: "not_used",  family: "metal-buildings",      is_base: false, variant_type: "Variant",            note: "Modifier variant of 'metal buildings'; lower volume." },
     { keyword: "metal building cost",               monthly_searches:   1900, tier: "Tier 4", status: "not_used",  family: "metal-buildings",      is_base: false, variant_type: "Variant",            note: "Informational/cost research intent." },
 
-    // ── FAMILY C2: steel buildings (base) — 14,800/mo — separate family from metal buildings ──
-    { keyword: "steel buildings",                   monthly_searches:  14800, tier: "Tier 4", status: "not_used",  family: "steel-buildings",      is_base: true,  variant_type: null,                 note: "Separate family from 'metal buildings' — 'steel' and 'metal' are different root words. Out of scope: not a listed TBC service term; TBC uses 'metal buildings' branding." },
+    // ── FAMILY C2: steel buildings (base). 14,800/mo. separate family from metal buildings ──
+    { keyword: "steel buildings",                   monthly_searches:  14800, tier: "Tier 4", status: "not_used",  family: "steel-buildings",      is_base: true,  variant_type: null,                 note: "Separate family from 'metal buildings'. 'steel' and 'metal' are different root words. Out of scope: not a listed TBC service term; TBC uses 'metal buildings' branding." },
     { keyword: "steel building contractors",        monthly_searches:   1600, tier: "Tier 4", status: "not_used",  family: "steel-buildings",      is_base: false, variant_type: "Variant",            note: "Modifier variant of 'steel buildings'; same separate family." },
 
-    // ── FAMILY D: custom home builders (base) — 12,100/mo — SELECTED ───────────
+    // ── FAMILY D: custom home builders (base). 12,100/mo. SELECTED ───────────
     { keyword: "custom home builders",              monthly_searches:  12100, tier: "Tier 3", status: "selected",  family: "custom-home-builders", is_base: true,  variant_type: null,                 note: "" },
     { keyword: "custom home builder",               monthly_searches:  14800, tier: "Tier 3", status: "not_used",  family: "custom-home-builders", is_base: false, variant_type: "Singular Variant",   note: "Singular form; plural 'custom home builders' is preferred per skill rules." },
     { keyword: "custom home builders near me",      monthly_searches:   9900, tier: "Tier 3", status: "near_me",   family: "custom-home-builders", is_base: false, variant_type: "Near Me Variant",    note: "City-name targeting in the URL slug and page title serves the same geographic function as 'near me'." },
@@ -85,10 +85,10 @@ const STRATEGY = {
     { keyword: "custom homes",                      monthly_searches:   8100, tier: "Tier 3", status: "not_used",  family: "custom-home-builders", is_base: false, variant_type: "Variant",            note: "Broader variant; same family as 'custom home builders'." },
     { keyword: "custom home construction",          monthly_searches:   1600, tier: "Tier 3", status: "not_used",  family: "custom-home-builders", is_base: false, variant_type: "Variant",            note: "Same family as 'custom home builders'; lower volume variant." },
     { keyword: "custom home contractor",            monthly_searches:    880, tier: "Tier 3", status: "not_used",  family: "custom-home-builders", is_base: false, variant_type: "Variant",            note: "Same family as 'custom home builders'; lower volume variant." },
-    // ── FAMILY D2: residential contractor (base) — 1,900/mo — separate family from custom home builders ──
-    { keyword: "residential contractor",            monthly_searches:   1900, tier: "Tier 3", status: "not_used",  family: "residential-contractor", is_base: true,  variant_type: null,                 note: "Separate family from 'custom home builders' — 'residential contractor' shares no root phrase with 'custom home builders'. Broader concept covering many trade types; not selected as TBC's branding focuses on custom home building and barndominiums." },
+    // ── FAMILY D2: residential contractor (base). 1,900/mo. separate family from custom home builders ──
+    { keyword: "residential contractor",            monthly_searches:   1900, tier: "Tier 3", status: "not_used",  family: "residential-contractor", is_base: true,  variant_type: null,                 note: "Separate family from 'custom home builders'. 'residential contractor' shares no root phrase with 'custom home builders'. Broader concept covering many trade types; not selected as TBC's branding focuses on custom home building and barndominiums." },
 
-    // ── FAMILY E: barndominium builders (base) — 8,100/mo — SELECTED ───────────
+    // ── FAMILY E: barndominium builders (base). 8,100/mo. SELECTED ───────────
     { keyword: "barndominium builders",             monthly_searches:   8100, tier: "Tier 1", status: "selected",  family: "barndominium-builders", is_base: true,  variant_type: null,                 note: "" },
     { keyword: "barndominium builder",              monthly_searches:   1000, tier: "Tier 1", status: "not_used",  family: "barndominium-builders", is_base: false, variant_type: "Singular Variant",   note: "Singular form of 'barndominium builders'; lower volume." },
     { keyword: "barndominium builders near me",     monthly_searches:   8100, tier: "Tier 1", status: "near_me",   family: "barndominium-builders", is_base: false, variant_type: "Near Me Variant",    note: "City-name targeting in the URL slug and page title serves the same geographic function as 'near me'." },
@@ -106,7 +106,7 @@ const STRATEGY = {
     { keyword: "custom barndominium builders",      monthly_searches:    140, tier: "Tier 1", status: "not_used",  family: "barndominium-builders", is_base: false, variant_type: "Variant",            note: "Same family as 'barndominium builders'; below 500/mo volume floor." },
     { keyword: "barndominium construction near me", monthly_searches:     20, tier: "Tier 1", status: "near_me",   family: "barndominium-builders", is_base: false, variant_type: "Near Me Variant",    note: "City-name targeting in the URL slug and page title serves the same geographic function as 'near me'." },
 
-    // ── FAMILY F: pole barn (out of scope) — not a listed TBC service ───────────
+    // ── FAMILY F: pole barn (out of scope). not a listed TBC service ───────────
     { keyword: "pole barn",                         monthly_searches:  33100, tier: "Tier 4", status: "not_used",  family: "pole-barn",             is_base: true,  variant_type: null,                 note: "Out of scope: Texas Building Center does not list pole barn construction as a service." },
     { keyword: "pole barn house",                   monthly_searches:   5400, tier: "Tier 4", status: "not_used",  family: "pole-barn",             is_base: false, variant_type: "Variant",            note: "True variant of 'pole barn' (same root phrase); out of scope: not a listed TBC service." },
     { keyword: "pole barns",                        monthly_searches:   8100, tier: "Tier 4", status: "not_used",  family: "pole-barn",             is_base: false, variant_type: "Plural Variant",     note: "True variant of 'pole barn' (same root phrase); out of scope: not a listed TBC service." },
@@ -117,19 +117,19 @@ const STRATEGY = {
     { keyword: "pole barn houses",                  monthly_searches:   2900, tier: "Tier 4", status: "not_used",  family: "pole-barn",             is_base: false, variant_type: "Variant",            note: "True variant of 'pole barn' (same root phrase); out of scope: not a listed TBC service." },
     { keyword: "pole barn near me",                 monthly_searches:   1600, tier: "Tier 4", status: "near_me",   family: "pole-barn",             is_base: false, variant_type: "Near Me Variant",    note: "True variant of 'pole barn' (same root phrase); out of scope: not a listed TBC service." },
 
-    // ── FAMILY F2: post frame (base) — separate family from pole barn ──
-    { keyword: "post frame construction",           monthly_searches:   3600, tier: "Tier 4", status: "not_used",  family: "post-frame",            is_base: true,  variant_type: null,                 note: "Separate family from 'pole barn' — 'post frame' is a different root phrase and construction method term. Out of scope: not a listed TBC service." },
+    // ── FAMILY F2: post frame (base). separate family from pole barn ──
+    { keyword: "post frame construction",           monthly_searches:   3600, tier: "Tier 4", status: "not_used",  family: "post-frame",            is_base: true,  variant_type: null,                 note: "Separate family from 'pole barn'. 'post frame' is a different root phrase and construction method term. Out of scope: not a listed TBC service." },
     { keyword: "post frame building",               monthly_searches:   3600, tier: "Tier 4", status: "not_used",  family: "post-frame",            is_base: false, variant_type: "Variant",            note: "True variant of 'post frame construction' (same root phrase); out of scope: not a listed TBC service." },
     { keyword: "post frame buildings",              monthly_searches:   1600, tier: "Tier 4", status: "not_used",  family: "post-frame",            is_base: false, variant_type: "Plural Variant",     note: "True variant of 'post frame construction' (same root phrase); out of scope: not a listed TBC service." },
 
-    // ── FAMILY F3: shop house (base) — separate family from pole barn ──
-    { keyword: "shop house",                        monthly_searches:   4400, tier: "Tier 4", status: "not_used",  family: "shop-house",            is_base: true,  variant_type: null,                 note: "Separate family from 'pole barn' — 'shop house' is a distinct concept (living space combined with workshop). Out of scope: not a listed TBC service." },
+    // ── FAMILY F3: shop house (base). separate family from pole barn ──
+    { keyword: "shop house",                        monthly_searches:   4400, tier: "Tier 4", status: "not_used",  family: "shop-house",            is_base: true,  variant_type: null,                 note: "Separate family from 'pole barn'. 'shop house' is a distinct concept (living space combined with workshop). Out of scope: not a listed TBC service." },
 
-    // ── FAMILY F4: metal shop (base) — separate family from pole barn ──
-    { keyword: "metal shop",                        monthly_searches:   4400, tier: "Tier 4", status: "not_used",  family: "metal-shop",            is_base: true,  variant_type: null,                 note: "Separate family from 'pole barn' — 'metal shop' shares no root phrase with 'pole barn'. Out of scope: not a listed TBC service." },
+    // ── FAMILY F4: metal shop (base). separate family from pole barn ──
+    { keyword: "metal shop",                        monthly_searches:   4400, tier: "Tier 4", status: "not_used",  family: "metal-shop",            is_base: true,  variant_type: null,                 note: "Separate family from 'pole barn'. 'metal shop' shares no root phrase with 'pole barn'. Out of scope: not a listed TBC service." },
 
-    // ── FAMILY F5: agricultural building (base) — separate family from pole barn ──
-    { keyword: "agricultural building",             monthly_searches:   1600, tier: "Tier 4", status: "not_used",  family: "agricultural-building", is_base: true,  variant_type: null,                 note: "Separate family from 'pole barn' — 'agricultural building' is a broader category term, not a variant of 'pole barn'. Out of scope: not a listed TBC service." },
+    // ── FAMILY F5: agricultural building (base). separate family from pole barn ──
+    { keyword: "agricultural building",             monthly_searches:   1600, tier: "Tier 4", status: "not_used",  family: "agricultural-building", is_base: true,  variant_type: null,                 note: "Separate family from 'pole barn'. 'agricultural building' is a broader category term, not a variant of 'pole barn'. Out of scope: not a listed TBC service." },
   ],
 
   // ---- KEYWORD TIERS ----
@@ -137,7 +137,7 @@ const STRATEGY = {
     {
       tier_label: "Tier 1",
       tier_name: "Barndominium (Anchor)",
-      description: "The dominant keyword in Texas Building Center's primary service category. 'Barndominium' carries 246,000 monthly searches nationally — 30x the volume of the next keyword family. This is the Go Wide anchor: it is spread across all 10 confirmed service area cities to build maximum geographic presence for the highest-demand term in the Hill Country building market.",
+      description: "The dominant keyword in Texas Building Center's primary service category. 'Barndominium' carries 246,000 monthly searches nationally. 30x the volume of the next keyword family. This is the Go Wide anchor: it is spread across all 10 confirmed service area cities to build maximum geographic presence for the highest-demand term in the Hill Country building market.",
       keywords: [
         { keyword: "barndominium",       monthly_searches: 246000 },
         { keyword: "barndominium plans", monthly_searches:  60500 },
@@ -245,7 +245,7 @@ const STRATEGY = {
       price: 599,
       additional_combinations: 10,
       headline: "Add Barndominium Floor Plans + Buchanan Lake Village",
-      description: "Upgrading to Level D adds 10 additional keyword-city combinations. The most strategic next step is introducing 'barndominium floor plans' (33,100/mo) as a dedicated keyword across the top 8 markets — this is the highest-volume variant family member not yet in the plan. It also extends coverage into Buchanan Lake Village (pop. 1,100), a Lake Buchanan community with strong rural and lakefront building demand.",
+      description: "Upgrading to Level D adds 10 additional keyword-city combinations. The most strategic next step is introducing 'barndominium floor plans' (33,100/mo) as a dedicated keyword across the top 8 markets. This is the highest-volume variant family member not yet in the plan. It also extends coverage into Buchanan Lake Village (pop. 1,100), a Lake Buchanan community with strong rural and lakefront building demand.",
       keywords: [
         { keyword: "barndominium floor plans", monthly_searches: 33100 },
         { keyword: "barndominium",             monthly_searches: 246000 },

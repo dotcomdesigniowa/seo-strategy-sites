@@ -1,6 +1,6 @@
 // ─────────────────────────────────────────────────────────────────────────────
-// CATHY SINK INSURANCE AGENCY — Charts
-// Market Population Bar Chart — Southwest Florida
+// CATHY SINK INSURANCE AGENCY - Charts
+// Market Population Bar Chart - Southwest Florida
 // ─────────────────────────────────────────────────────────────────────────────
 
 document.addEventListener('DOMContentLoaded', function () {

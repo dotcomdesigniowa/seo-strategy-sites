@@ -1,8 +1,8 @@
 // ============================================================
-// SEO Strategy Website — Markuson Construction Inc.
+// SEO Strategy Website. Markuson Construction Inc.
 // Industry: Masonry and Concrete
 // HQ: Omaha, NE | Service Area: Omaha Metro + Council Bluffs, IA
-// Plan Level: C — 40 combinations (8 keywords x 5 cities)
+// Plan Level: C. 40 combinations (8 keywords x 5 cities)
 // ============================================================
 
 const STRATEGY = {

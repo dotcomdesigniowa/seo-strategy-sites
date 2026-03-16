@@ -1,5 +1,5 @@
 // ============================================================
-// SEO Strategy Website — App.js
+// SEO Strategy Website. App.js
 // Loads strategy data and populates all dynamic sections
 // Permanent rules: no em-dashes, full client name always,
 // keyword quality gate, service-line coverage enforced

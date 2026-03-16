@@ -1,6 +1,6 @@
 // =============================================
-// DOTCOM DESIGN — SEO STRATEGY CHARTS
-// Insurance Prep Solutions — Inland Empire Markets
+// DOTCOM DESIGN - SEO STRATEGY CHARTS
+// Insurance Prep Solutions - Inland Empire Markets
 // =============================================
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -26,16 +26,16 @@ document.addEventListener('DOMContentLoaded', function () {
           label: 'Population',
           data: [327868, 226103, 223089, 216447, 190066, 177673, 163635, 143721, 113604, 113237],
           backgroundColor: [
-            dotBlue,                    // Riverside — Tier 1 selected
-            'rgba(51,65,104,0.35)',     // San Bernardino — not selected
-            dotDark,                    // Fontana — Tier 2 selected
-            'rgba(51,65,104,0.35)',     // Moreno Valley — not selected
-            dotBlue,                    // Ontario — Tier 1 selected
-            dotRed,                     // Rancho Cucamonga — HQ selected
-            dotDark,                    // Corona — Tier 2 selected
-            'rgba(51,65,104,0.25)',     // Victorville — not selected
-            'rgba(51,65,104,0.25)',     // Temecula — not selected
-            'rgba(51,65,104,0.25)',     // Murrieta — not selected
+            dotBlue,                    // Riverside - Tier 1 selected
+            'rgba(51,65,104,0.35)',     // San Bernardino - not selected
+            dotDark,                    // Fontana - Tier 2 selected
+            'rgba(51,65,104,0.35)',     // Moreno Valley - not selected
+            dotBlue,                    // Ontario - Tier 1 selected
+            dotRed,                     // Rancho Cucamonga - HQ selected
+            dotDark,                    // Corona - Tier 2 selected
+            'rgba(51,65,104,0.25)',     // Victorville - not selected
+            'rgba(51,65,104,0.25)',     // Temecula - not selected
+            'rgba(51,65,104,0.25)',     // Murrieta - not selected
           ],
           borderRadius: 6,
           borderSkipped: false,
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
               label: ctx => {
                 const statuses = [
                   'Selected (Tier 1)', 'Not Selected', 'Selected (Tier 2)',
-                  'Not Selected', 'Selected (Tier 1)', 'HQ — Selected (Tier 1)',
+                  'Not Selected', 'Selected (Tier 1)', 'HQ: Selected (Tier 1)',
                   'Selected (Tier 2)', 'Not Selected', 'Not Selected', 'Not Selected'
                 ];
                 return [

@@ -1,5 +1,5 @@
 // =============================================
-// DOTCOM DESIGN — SEO STRATEGY CHARTS
+// DOTCOM DESIGN - SEO STRATEGY CHARTS
 // Texas Building Center
 // Go Wide strategy: all 10 service area cities selected
 // 5 keywords across 10 cities = 40 combinations
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const dotTeal  = '#2CA58D';
 
   // ---- CHART: Market Population Bar Chart ----
-  // All 10 selected cities — Go Wide plan
+  // All 10 selected cities - Go Wide plan
   const marketCtx = document.getElementById('marketChart');
   if (marketCtx) {
     marketCtx.style.height = '320px';
@@ -30,16 +30,16 @@ document.addEventListener('DOMContentLoaded', function () {
           label: 'Population',
           data: [10581, 8250, 7527, 7065, 5200, 4700, 3232, 2200, 1800, 1200],
           backgroundColor: [
-            dotBlue,   // Marble Falls — Tier 1 selected
-            dotBlue,   // Lampasas — Tier 1 selected
-            dotBlue,   // Kingsland — Tier 1 selected
-            dotRed,    // Burnet — HQ selected
-            dotBlue,   // Granite Shoals — Tier 1 selected
-            dotTeal,   // Horseshoe Bay — Tier 2 selected
-            dotTeal,   // Llano — Tier 2 selected
-            dotTeal,   // Cottonwood Shores — Tier 2 selected
-            dotTeal,   // Johnson City — Tier 2 selected
-            dotTeal,   // Sunrise Beach — Tier 2 selected
+            dotBlue,   // Marble Falls - Tier 1 selected
+            dotBlue,   // Lampasas - Tier 1 selected
+            dotBlue,   // Kingsland - Tier 1 selected
+            dotRed,    // Burnet - HQ selected
+            dotBlue,   // Granite Shoals - Tier 1 selected
+            dotTeal,   // Horseshoe Bay - Tier 2 selected
+            dotTeal,   // Llano - Tier 2 selected
+            dotTeal,   // Cottonwood Shores - Tier 2 selected
+            dotTeal,   // Johnson City - Tier 2 selected
+            dotTeal,   // Sunrise Beach - Tier 2 selected
           ],
           borderRadius: 6,
           borderSkipped: false,
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
               label: ctx => {
                 const statuses = [
                   'Selected (Tier 1)', 'Selected (Tier 1)', 'Selected (Tier 1)',
-                  'HQ — Selected (Tier 1)',
+                  'HQ: Selected (Tier 1)',
                   'Selected (Tier 1)',
                   'Selected (Tier 2)', 'Selected (Tier 2)',
                   'Selected (Tier 2)', 'Selected (Tier 2)', 'Selected (Tier 2)'

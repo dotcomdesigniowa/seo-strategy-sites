@@ -1,5 +1,5 @@
 // ============================================================
-// SEO Strategy Website — App.js
+// SEO Strategy Website. App.js
 // Client: MEK Interiors & Floors
 // Loads strategy data and populates all dynamic sections
 // Permanent rules: no em-dashes, full client name always,
@@ -240,7 +240,7 @@ const STRATEGY = {
       combinations: 20,
       additional_combinations: 10,
       headline: "Unlock the Highest-Volume Untargeted Keywords",
-      description: "Upgrading to Level A adds 10 new combinations, unlocking the most searched flooring keywords that the current plan cannot cover — including \"flooring\" (33,100/mo), the single highest-volume keyword in the research pool. It also introduces a second city alongside Houston, with Pearland or Cypress as the top candidates.",
+      description: "Upgrading to Level A adds 10 new combinations, unlocking the most searched flooring keywords that the current plan cannot cover. including \"flooring\" (33,100/mo), the single highest-volume keyword in the research pool. It also introduces a second city alongside Houston, with Pearland or Cypress as the top candidates.",
       keywords: [
         { keyword: "flooring",                       monthly_searches: 33100 },
         { keyword: "flooring installation",          monthly_searches: 18100 },
