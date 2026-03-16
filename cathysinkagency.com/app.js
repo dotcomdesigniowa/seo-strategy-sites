@@ -335,7 +335,7 @@ function buildOpportunities() {
 
     const newMarketHtml = opp.newMarket
       ? `<div class="opp-new-market">+ New Market: ${opp.newMarket}</div>`
-      : '';
+      : '<div class="opp-new-market" style="visibility:hidden"></div>';
 
     return `
       <div class="opp-card">
