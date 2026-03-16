@@ -1,8 +1,6 @@
-// ─────────────────────────────────────────────────────────────────────────────
-// CATHY SINK INSURANCE AGENCY — SEO Strategy Data
-// Plan Level A | 20 Combinations | $600/mo
-// Fort Myers, FL | Insurance (Personal Lines)
-// ─────────────────────────────────────────────────────────────────────────────
+// DOTCOM DESIGN - SEO Strategy Data
+// Cathy Sink Insurance Agency | Plan Level A | 20 Combinations | $600/mo
+// Fort Myers, FL | Insurance (Personal Lines - Florida Specialty)
 
 const STRATEGY = {
   client: {
@@ -29,361 +27,478 @@ const STRATEGY = {
     marketsCount: 5
   },
 
-  // ─── KEYWORD TIERS ────────────────────────────────────────────────────────
-  keywordTiers: [
+  // ---- KEYWORD TABLE (full research list with tiers and status) ----
+  keyword_table: [
+    // Florida Specialty Lines - base keywords
+    { keyword: "condo insurance",           monthly_searches:  8100, tier: "Tier 1", family: "condo insurance",           variant_type: "base",    status: "selected" },
+    { keyword: "flood insurance agent",     monthly_searches:  1900, tier: "Tier 1", family: "flood insurance agent",     variant_type: "base",    status: "selected" },
+    // Marine & Recreational - base keywords
+    { keyword: "boat insurance",            monthly_searches:  5400, tier: "Tier 1", family: "boat insurance",            variant_type: "base",    status: "selected" },
+    { keyword: "golf cart insurance",       monthly_searches:  2900, tier: "Tier 1", family: "golf cart insurance",       variant_type: "base",    status: "selected" },
+    // Agency Discovery
+    { keyword: "insurance agency near me",  monthly_searches:  8100, tier: "Tier 2", family: "insurance agency near me",  variant_type: "near_me", status: "near_me",  note: "Near Me variant; treated as base keyword in matrix" },
+    { keyword: "independent insurance agent",monthly_searches: 2400, tier: "Tier 2", family: "independent insurance agent",variant_type: "base",   status: "not_used" },
+    // Property Lines
+    { keyword: "renters insurance",         monthly_searches: 40500, tier: "Tier 2", family: "renters insurance",         variant_type: "base",    status: "not_used" },
+    { keyword: "landlord insurance",        monthly_searches:  4400, tier: "Tier 2", family: "landlord insurance",        variant_type: "base",    status: "not_used" },
+    { keyword: "homeowners insurance agent",monthly_searches:  1900, tier: "Tier 2", family: "homeowners insurance agent",variant_type: "base",    status: "not_used" },
+    // Recreational & Specialty
+    { keyword: "motorcycle insurance",      monthly_searches:  5400, tier: "Tier 2", family: "motorcycle insurance",      variant_type: "base",    status: "not_used" },
+    // Flood Variants
+    { keyword: "flood insurance quote",     monthly_searches:  3600, tier: "Tier 3", family: "flood insurance quote",     variant_type: "variant", status: "not_used" },
+    { keyword: "private flood insurance",   monthly_searches:  1300, tier: "Tier 3", family: "private flood insurance",   variant_type: "variant", status: "not_used" },
+    // Marine Variants
+    { keyword: "marine insurance",          monthly_searches:  2900, tier: "Tier 3", family: "marine insurance",          variant_type: "variant", status: "not_used" },
+    { keyword: "boat insurance agent",      monthly_searches:   590, tier: "Tier 3", family: "boat insurance agent",      variant_type: "variant", status: "not_used" },
+    // Liability Lines
+    { keyword: "personal umbrella insurance",monthly_searches: 1600, tier: "Tier 3", family: "personal umbrella insurance",variant_type: "base",   status: "not_used" },
+  ],
+
+  // ---- KEYWORD TIERS (for the colored tier cards) ----
+  keyword_tiers: [
     {
-      name: "Florida Specialty Lines",
-      description: "Florida-specific insurance products with strong local demand and significantly lower competition than national brand-dominated terms. Flood insurance is mandatory for many Lee County properties, and the massive condo market creates consistent search volume for condo coverage.",
+      tier_label: "TIER 1",
+      tier_name: "Florida Specialty Lines",
+      description: "Florida-specific insurance products with strong local demand and significantly lower competition than national brand-dominated terms. Flood insurance is mandatory for many Lee County properties, and the massive condo market creates consistent search volume for condo coverage. These are the ideal entry-point keywords for an independent local agency.",
       keywords: [
-        { keyword: "Flood Insurance Agent", volume: 1900 },
-        { keyword: "Condo Insurance", volume: 8100 },
+        { keyword: "Condo Insurance",       monthly_searches: 8100 },
+        { keyword: "Boat Insurance",        monthly_searches: 5400 },
+        { keyword: "Golf Cart Insurance",   monthly_searches: 2900 },
+        { keyword: "Flood Insurance Agent", monthly_searches: 1900 },
       ]
     },
     {
-      name: "Marine & Recreational",
-      description: "Southwest Florida is one of the top boating markets in the United States, and Cape Coral and Bonita Springs have some of the largest golf cart communities in the country. These niche keywords carry meaningful volume with a fraction of the competition of auto or home insurance terms.",
+      tier_label: "TIER 2",
+      tier_name: "Agency Discovery & Property Lines",
+      description: "High-intent terms used by people actively searching for a local insurance agent. Renters and landlord insurance carry strong volume but face more competition than specialty lines. These are the top candidates for Level B and Level C expansion as Cathy Sink's domain authority grows.",
       keywords: [
-        { keyword: "Boat Insurance", volume: 5400 },
-        { keyword: "Golf Cart Insurance", volume: 2900 },
+        { keyword: "Renters Insurance",          monthly_searches: 40500 },
+        { keyword: "Insurance Agency Near Me",   monthly_searches:  8100 },
+        { keyword: "Motorcycle Insurance",       monthly_searches:  5400 },
+        { keyword: "Landlord Insurance",         monthly_searches:  4400 },
+        { keyword: "Independent Insurance Agent",monthly_searches:  2400 },
+        { keyword: "Homeowners Insurance Agent", monthly_searches:  1900 },
+      ]
+    },
+    {
+      tier_label: "TIER 3",
+      tier_name: "Flood & Marine Variants",
+      description: "Deeper coverage variants for flood and marine insurance. These terms are closely related to the core Tier 1 keywords and represent natural expansion opportunities once the primary keywords are established. Flood Insurance Quote and Private Flood Insurance are particularly strong candidates for Level D targeting.",
+      keywords: [
+        { keyword: "Flood Insurance Quote",       monthly_searches: 3600 },
+        { keyword: "Marine Insurance",            monthly_searches: 2900 },
+        { keyword: "Personal Umbrella Insurance", monthly_searches: 1600 },
+        { keyword: "Private Flood Insurance",     monthly_searches: 1300 },
+        { keyword: "Boat Insurance Agent",        monthly_searches:  590 },
       ]
     }
   ],
 
-  // ─── SELECTED KEYWORDS ────────────────────────────────────────────────────
-  selectedKeywords: [
-    { keyword: "Flood Insurance Agent", volume: 1900, tier: "Florida Specialty Lines" },
-    { keyword: "Condo Insurance", volume: 8100, tier: "Florida Specialty Lines" },
-    { keyword: "Boat Insurance", volume: 5400, tier: "Marine & Recreational" },
-    { keyword: "Golf Cart Insurance", volume: 2900, tier: "Marine & Recreational" },
+  // ---- SELECTED KEYWORDS (for the matrix) ----
+  selected_keywords: [
+    "Condo Insurance",
+    "Boat Insurance",
+    "Golf Cart Insurance",
+    "Flood Insurance Agent",
   ],
 
-  // ─── MARKETS ──────────────────────────────────────────────────────────────
-  markets: [
-    { city: "Fort Myers", state: "FL", population: 106233, tier: 1, hq: true },
-    { city: "Cape Coral", state: "FL", population: 251819, tier: 1, hq: false },
-    { city: "Bonita Springs", state: "FL", population: 58724, tier: 1, hq: false },
-    { city: "Estero", state: "FL", population: 39137, tier: 2, hq: false },
-    { city: "Naples", state: "FL", population: 22000, tier: 2, hq: false },
+  // ---- NOT USED GROUPS ----
+  not_used_groups: [
+    {
+      reason: "Property Lines: Available for Level B and C Expansion",
+      description: "These property insurance terms carry strong volume but face more competition from national brands than the specialty lines in the current plan. They are the top candidates for inclusion as Cathy Sink's domain authority grows, and are prioritized for Level B and Level C upgrades.",
+      keywords: [
+        { keyword: "Renters Insurance",          monthly_searches: 40500 },
+        { keyword: "Landlord Insurance",         monthly_searches:  4400 },
+        { keyword: "Homeowners Insurance Agent", monthly_searches:  1900 },
+      ]
+    },
+    {
+      reason: "Agency Discovery: Reserved for Level B Expansion",
+      description: "High-intent agency-finding terms used by consumers actively searching for a local independent agent. Insurance Agency Near Me is a near-me variant and is treated as equivalent to a base keyword in the matrix. These terms are the first candidates for inclusion upon upgrading to Level B.",
+      keywords: [
+        { keyword: "Insurance Agency Near Me",   monthly_searches: 8100 },
+        { keyword: "Independent Insurance Agent",monthly_searches: 2400 },
+      ]
+    },
+    {
+      reason: "Recreational and Specialty Lines: Reserved for Level C Expansion",
+      description: "Motorcycle insurance carries strong volume and low national brand competition in the SWFL market. This term is a strong fit for Cathy Sink's existing service offerings and is reserved for Level C targeting once the core specialty lines are established.",
+      keywords: [
+        { keyword: "Motorcycle Insurance", monthly_searches: 5400 },
+      ]
+    },
+    {
+      reason: "Flood and Marine Variants: Reserved for Advanced Levels",
+      description: "These deeper variants of the core flood and marine keywords are best served with dedicated content pages. They are prioritized for Level D and beyond, where dedicated coverage can be built around each term.",
+      keywords: [
+        { keyword: "Flood Insurance Quote",       monthly_searches: 3600 },
+        { keyword: "Marine Insurance",            monthly_searches: 2900 },
+        { keyword: "Personal Umbrella Insurance", monthly_searches: 1600 },
+        { keyword: "Private Flood Insurance",     monthly_searches: 1300 },
+        { keyword: "Boat Insurance Agent",        monthly_searches:  590 },
+      ]
+    }
   ],
 
-  // ─── NOT USED KEYWORDS ────────────────────────────────────────────────────
-  notUsedGroups: [
+  // ---- ADDITIONAL OPPORTUNITIES ----
+  additional_opportunities: [
     {
-      group: "Property Lines",
-      note: "Strong volume but higher competition vs. specialty lines. Available for Level B–C expansion.",
-      keywords: [
-        { keyword: "Renters Insurance", volume: 40500 },
-        { keyword: "Landlord Insurance", volume: 4400 },
-        { keyword: "Homeowners Insurance Agent", volume: 1900 },
-      ]
-    },
-    {
-      group: "Recreational & Specialty",
-      note: "Lower competition than auto insurance, strong SWFL demand. Available for Level C expansion.",
-      keywords: [
-        { keyword: "Motorcycle Insurance", volume: 5400 },
-      ]
-    },
-    {
-      group: "Liability Lines",
-      note: "Specialty coverage with very low competition. Available for Level D expansion.",
-      keywords: [
-        { keyword: "Personal Umbrella Insurance", volume: 1600 },
-      ]
-    },
-    {
-      group: "Agency Discovery",
-      note: "High-intent agency-finding terms. Available for Level B expansion.",
-      keywords: [
-        { keyword: "Insurance Agency Near Me", volume: 8100 },
-        { keyword: "Independent Insurance Agent", volume: 2400 },
-      ]
-    },
-    {
-      group: "Flood Insurance Variants",
-      note: "Deeper flood insurance targeting for advanced levels.",
-      keywords: [
-        { keyword: "Flood Insurance Quote", volume: 3600 },
-        { keyword: "Private Flood Insurance", volume: 1300 },
-      ]
-    },
-    {
-      group: "Marine Variants",
-      note: "Expanded marine coverage targeting for advanced levels.",
-      keywords: [
-        { keyword: "Marine Insurance", volume: 2900 },
-        { keyword: "Boat Insurance Agent", volume: 590 },
-      ]
-    },
-  ],
-
-  // ─── ADDITIONAL OPPORTUNITIES ─────────────────────────────────────────────
-  additionalOpportunities: [
-    {
-      level: "B",
-      price: 900,
+      plan: "Level B",
       combinations: 30,
-      newCombos: 10,
-      description: "Level B adds 10 new combinations by layering in two high-intent agency discovery keywords — Insurance Agency Near Me and Renters Insurance — across all 5 markets. These terms attract clients actively searching for a local independent agent and renters who need affordable coverage, both underserved by national brand SEO.",
-      keywords: ["Insurance Agency Near Me", "Renters Insurance"],
-      newMarket: null,
-      kwList: [
-        { keyword: "Insurance Agency Near Me", volume: 8100 },
-        { keyword: "Renters Insurance", volume: 40500 },
+      price: 900,
+      additional_combinations: 10,
+      headline: "Add Agency Discovery and Renters Insurance Across All Markets",
+      description: "Level B adds 10 new combinations by layering in two high-intent keywords across all 5 markets. Insurance Agency Near Me targets clients actively searching for a local independent agent, and Renters Insurance reaches the large renter population across Lee County. Both terms are underserved by national brand SEO.",
+      keywords: [
+        { keyword: "Insurance Agency Near Me", monthly_searches: 8100 },
+        { keyword: "Renters Insurance",        monthly_searches: 40500 },
       ]
     },
     {
-      level: "C",
-      price: 1200,
+      plan: "Level C",
       combinations: 40,
-      newCombos: 10,
-      description: "Level C adds Landlord Insurance and Motorcycle Insurance across all 5 markets. Lee County has a large rental property market and a strong motorcycle riding community — both underserved by national brand SEO and well within Cathy Sink's existing service offerings.",
-      keywords: ["Landlord Insurance", "Motorcycle Insurance"],
-      newMarket: null,
-      kwList: [
-        { keyword: "Landlord Insurance", volume: 4400 },
-        { keyword: "Motorcycle Insurance", volume: 5400 },
+      price: 1200,
+      additional_combinations: 10,
+      headline: "Add Landlord and Motorcycle Insurance Coverage",
+      description: "Level C adds Landlord Insurance and Motorcycle Insurance across all 5 markets. Lee County has a large rental property market and a strong motorcycle riding community. Both terms are well within Cathy Sink's existing service offerings and are underserved by national brand SEO.",
+      keywords: [
+        { keyword: "Landlord Insurance",   monthly_searches: 4400 },
+        { keyword: "Motorcycle Insurance", monthly_searches: 5400 },
       ]
     },
     {
-      level: "D",
-      price: 1600,
+      plan: "Level D",
       combinations: 50,
-      newCombos: 10,
-      description: "Level D expands into two new markets — Marco Island and Lehigh Acres — while adding Personal Umbrella Insurance across all 7 markets. Marco Island is a high-value coastal community with strong flood and umbrella insurance demand, and Lehigh Acres is Lee County's fastest-growing community.",
-      keywords: ["Personal Umbrella Insurance", "Flood Insurance Quote"],
-      newMarket: "Marco Island, FL and Lehigh Acres, FL",
-      kwList: [
-        { keyword: "Personal Umbrella Insurance", volume: 1600 },
-        { keyword: "Flood Insurance Quote", volume: 3600 },
+      price: 1600,
+      additional_combinations: 10,
+      headline: "Expand into Two New Markets and Add Umbrella Coverage",
+      description: "Level D expands into two new markets and adds Personal Umbrella Insurance and Flood Insurance Quote across all 7 markets. Marco Island is a high-value coastal community with strong flood and umbrella insurance demand, and Lehigh Acres is Lee County's fastest-growing community.",
+      keywords: [
+        { keyword: "Personal Umbrella Insurance", monthly_searches: 1600 },
+        { keyword: "Flood Insurance Quote",       monthly_searches: 3600 },
+        { keyword: "Marco Island, FL",  monthly_searches: null, new_market: true },
+        { keyword: "Lehigh Acres, FL",  monthly_searches: null, new_market: true },
       ]
-    },
+    }
   ]
 };
 
-// ─────────────────────────────────────────────────────────────────────────────
-// UTILITY FUNCTIONS
-// ─────────────────────────────────────────────────────────────────────────────
+// ============================================================
+// HELPER FUNCTIONS
+// ============================================================
 function fmt(n) {
+  if (n === null || n === undefined) return '';
   return n.toLocaleString();
 }
 
-function totalVolume() {
-  return STRATEGY.selectedKeywords.reduce((sum, kw) => sum + kw.volume, 0);
+function statusBadge(status, note) {
+  if (status === 'selected') return '<span class="status-badge status-selected">Selected</span>';
+  if (status === 'near_me') return `<span class="status-badge status-near-me" title="${note}">Near Me Variant</span>`;
+  return '<span class="status-badge status-not-used">Not Used</span>';
 }
 
-function totalNotUsedVolume() {
-  let total = 0;
-  STRATEGY.notUsedGroups.forEach(g => g.keywords.forEach(kw => total += kw.volume));
-  return total;
+function tierPill(label) {
+  const cls = label === 'Tier 1' ? 't1' : label === 'Tier 2' ? 't2' : label === 'Tier 3' ? 't3' : 't4';
+  return `<span class="tier-pill ${cls}">${label.toUpperCase()}</span>`;
 }
 
-// ─────────────────────────────────────────────────────────────────────────────
-// RENDER: OVERVIEW STATS
-// ─────────────────────────────────────────────────────────────────────────────
-function renderOverview() {
-  const el = document.getElementById('overview-stats');
-  if (!el) return;
-  el.innerHTML = `
-    <div class="stat-card">
-      <div class="stat-number">${STRATEGY.plan.combinations}</div>
-      <div class="stat-label">Keyword-City Combinations</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-number">${STRATEGY.plan.keywordsCount}</div>
-      <div class="stat-label">Target Keywords</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-number">${STRATEGY.plan.marketsCount}</div>
-      <div class="stat-label">Target Markets</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-number">${fmt(totalVolume())}</div>
-      <div class="stat-label">Monthly Searches (Selected)</div>
-    </div>
-  `;
-}
-
-// ─────────────────────────────────────────────────────────────────────────────
-// RENDER: MARKETS TABLE
-// ─────────────────────────────────────────────────────────────────────────────
-function renderMarkets() {
-  const tbody = document.getElementById('markets-tbody');
+// ============================================================
+// POPULATE KEYWORD TABLE
+// ============================================================
+function buildKeywordTable() {
+  const tbody = document.getElementById('kw-table-body');
   if (!tbody) return;
-  tbody.innerHTML = STRATEGY.markets.map((m, i) => `
-    <tr>
-      <td>${i + 1}</td>
-      <td><strong>${m.city}</strong>${m.hq ? ' <span class="hq-badge">HQ</span>' : ''}</td>
-      <td>${m.state}</td>
-      <td>${fmt(m.population)}</td>
-      <td><span class="tier-badge tier-${m.tier}">Tier ${m.tier}</span></td>
-    </tr>
-  `).join('');
-}
 
-// ─────────────────────────────────────────────────────────────────────────────
-// RENDER: KEYWORD TIERS
-// ─────────────────────────────────────────────────────────────────────────────
-function renderKeywordTiers() {
-  const el = document.getElementById('keyword-tiers');
-  if (!el) return;
-  el.innerHTML = STRATEGY.keywordTiers.map(tier => `
-    <div class="tier-card">
-      <div class="tier-card-header">${tier.name}</div>
-      <p class="tier-card-desc">${tier.description}</p>
-      <table class="tier-kw-table">
-        <thead><tr><th>Keyword</th><th>Mo. Searches</th></tr></thead>
-        <tbody>
-          ${tier.keywords.map(kw => `
-            <tr>
-              <td>${kw.keyword}</td>
-              <td>${fmt(kw.volume)}</td>
-            </tr>
-          `).join('')}
-        </tbody>
-      </table>
-    </div>
-  `).join('');
-}
-
-// ─────────────────────────────────────────────────────────────────────────────
-// RENDER: STRATEGY MATRIX
-// ─────────────────────────────────────────────────────────────────────────────
-function renderMatrix() {
-  const el = document.getElementById('strategy-matrix');
-  if (!el) return;
-
-  const keywords = STRATEGY.selectedKeywords;
-  const markets = STRATEGY.markets;
-
-  let html = `
-    <div class="matrix-scroll">
-      <table class="matrix-table">
-        <thead>
-          <tr>
-            <th class="kw-col">Keyword / Market</th>
-            ${markets.map(m => `<th>${m.city}${m.hq ? '<br><span class="hq-tag">HQ</span>' : ''}</th>`).join('')}
-            <th>Mo. Searches</th>
-          </tr>
-        </thead>
-        <tbody>
-  `;
-
-  keywords.forEach(kw => {
-    html += `<tr>
-      <td class="kw-col"><strong>${kw.keyword}</strong><br><span class="kw-tier">${kw.tier}</span></td>
-      ${markets.map(() => `<td class="check-cell"><span class="check">✓</span></td>`).join('')}
-      <td class="vol-cell">${fmt(kw.volume)}</td>
-    </tr>`;
+  const familyOrder = [];
+  const familyMap = {};
+  STRATEGY.keyword_table.forEach(kw => {
+    if (!familyMap[kw.family]) {
+      familyMap[kw.family] = [];
+      familyOrder.push(kw.family);
+    }
+    familyMap[kw.family].push(kw);
   });
 
-  html += `
-          <tr class="grand-total-row">
-            <td><strong>Grand Total</strong></td>
-            ${markets.map(() => `<td class="check-cell"><strong>${keywords.length}</strong></td>`).join('')}
-            <td class="vol-cell"><strong>${fmt(totalVolume())}</strong></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="matrix-note">Grand Total: ${STRATEGY.plan.combinations} Combinations</p>
-  `;
+  const variantLabel = { variant: 'Variant', plural: 'Plural Variant', near_me: 'Near Me Variant', short_form: 'Short-Form Variant' };
 
-  el.innerHTML = html;
-}
-
-// ─────────────────────────────────────────────────────────────────────────────
-// RENDER: NOT USED KEYWORDS
-// ─────────────────────────────────────────────────────────────────────────────
-function renderNotUsed() {
-  const el = document.getElementById('not-used-container');
-  if (!el) return;
-
-  el.innerHTML = STRATEGY.notUsedGroups.map(group => `
-    <div class="not-used-group">
-      <div class="not-used-group-header">${group.group}</div>
-      <p class="not-used-note">${group.note}</p>
-      <table class="not-used-table">
-        <thead><tr><th>Keyword</th><th>Mo. Searches</th></tr></thead>
-        <tbody>
-          ${group.keywords.map(kw => `
-            <tr>
-              <td>${kw.keyword}</td>
-              <td>${fmt(kw.volume)}</td>
-            </tr>
-          `).join('')}
-        </tbody>
-      </table>
-    </div>
-  `).join('');
-}
-
-// ─────────────────────────────────────────────────────────────────────────────
-// RENDER: ADDITIONAL OPPORTUNITIES
-// ─────────────────────────────────────────────────────────────────────────────
-function buildOpportunities() {
-  const el = document.getElementById('opportunities-grid');
-  if (!el) return;
-
-  el.innerHTML = STRATEGY.additionalOpportunities.map(opp => {
-    const kwRows = opp.kwList.map(kw => `
-      <tr>
-        <td>${kw.keyword}</td>
-        <td>${fmt(kw.volume)}</td>
-      </tr>
-    `).join('');
-
-    const newMarketHtml = opp.newMarket
-      ? `<div class="opp-new-market">+ New Market: ${opp.newMarket}</div>`
-      : '<div class="opp-new-market" style="visibility:hidden"></div>';
-
-    return `
-      <div class="opp-card">
-        <div class="opp-plan-label">Level ${opp.level}</div>
-        <div class="opp-price">$${fmt(opp.price)}/mo</div>
-        <div class="opp-desc">${opp.description}</div>
-        <div class="opp-combos-large">${opp.combinations} <span class="opp-combos-label">Total Combos</span></div>
-        ${newMarketHtml}
-        <div class="opp-kw-header">
-          <span>Keyword / Market</span><span>Mo. Searches</span>
-        </div>
-        <div class="opp-kw-list">
-          <table>
-            <tbody>${kwRows}</tbody>
-          </table>
-        </div>
-      </div>
-    `;
+  const rows = familyOrder.map(family => {
+    const members = familyMap[family].slice().sort((a, b) => {
+      const rankType = t => t === 'base' ? 0 : 1;
+      if (rankType(a.variant_type) !== rankType(b.variant_type)) {
+        return rankType(a.variant_type) - rankType(b.variant_type);
+      }
+      return b.monthly_searches - a.monthly_searches;
+    });
+    return members.map(kw => {
+      const isBase = kw.variant_type === 'base';
+      const isNearMe = kw.variant_type === 'near_me';
+      const rowClass = isBase
+        ? (kw.status === 'selected' ? 'row-base row-selected' : 'row-base')
+        : (isNearMe ? 'row-variant row-near-me' : 'row-variant');
+      const kwCell = isBase
+        ? `<td>${kw.keyword}</td>`
+        : `<td class="kw-variant-cell"><span class="kw-variant-indent">&#8627;</span>${kw.keyword} <span class="kw-variant-badge">${variantLabel[kw.variant_type] || 'Variant'}</span></td>`;
+      return `<tr class="${rowClass}">
+        ${kwCell}
+        <td class="num-col">${fmt(kw.monthly_searches)}</td>
+        <td>${tierPill(kw.tier)}</td>
+        <td>${statusBadge(kw.status, kw.note)}</td>
+      </tr>`;
+    }).join('');
   }).join('');
+
+  tbody.innerHTML = rows;
 }
 
-// ─────────────────────────────────────────────────────────────────────────────
-// INIT
-// ─────────────────────────────────────────────────────────────────────────────
-document.addEventListener('DOMContentLoaded', () => {
-  renderOverview();
-  renderMarkets();
-  renderKeywordTiers();
-  renderMatrix();
-  renderNotUsed();
-  buildOpportunities();
+// ============================================================
+// POPULATE KEYWORD TIER CARDS
+// ============================================================
+function buildKeywordTierCards() {
+  const grid = document.getElementById('kw-tier-grid');
+  if (!grid) return;
+  const tierColors = ['kw-tier-1', 'kw-tier-2', 'kw-tier-3', 'kw-tier-4'];
+  const cards = STRATEGY.keyword_tiers.map((tier, i) => {
+    const kwRows = tier.keywords.map(kw =>
+      `<div class="kw-row">
+        <span class="kw-name">${kw.keyword}</span>
+        <span class="kw-vol">${fmt(kw.monthly_searches)}</span>
+      </div>`
+    ).join('');
+    return `<div class="kw-tier-card ${tierColors[i]}">
+      <div class="kw-tier-label">${tier.tier_label}</div>
+      <h4 class="kw-tier-name">${tier.tier_name}</h4>
+      <p class="kw-tier-desc">${tier.description}</p>
+      <div class="kw-tier-table">
+        <div class="kw-header"><span>Keyword</span><span>Mo. Searches</span></div>
+        ${kwRows}
+      </div>
+    </div>`;
+  }).join('');
+  grid.innerHTML = cards;
+}
 
-  // Populate hero
-  const heroName = document.getElementById('hero-client-name');
-  if (heroName) heroName.textContent = STRATEGY.client.name;
+// ============================================================
+// POPULATE MATRIX TABLE
+// ============================================================
+function buildMatrix() {
+  const thead = document.getElementById('matrix-thead');
+  const tbody = document.getElementById('matrix-tbody');
+  if (!thead || !tbody) return;
 
-  const heroPlan = document.getElementById('hero-plan');
-  if (heroPlan) heroPlan.textContent = `Plan Level ${STRATEGY.plan.level} — ${STRATEGY.plan.combinations} Keyword-City Combinations`;
+  const markets = [
+    { city: "Fort Myers",     tier: "Tier 1", population: 106233, is_hq: true  },
+    { city: "Cape Coral",     tier: "Tier 1", population: 251819, is_hq: false },
+    { city: "Bonita Springs", tier: "Tier 1", population:  58724, is_hq: false },
+    { city: "Estero",         tier: "Tier 2", population:  39137, is_hq: false },
+    { city: "Naples",         tier: "Tier 2", population:  22000, is_hq: false },
+  ];
+  const keywords = STRATEGY.selected_keywords;
 
-  const heroIndustry = document.getElementById('hero-industry');
-  if (heroIndustry) heroIndustry.textContent = `${STRATEGY.client.industry} | ${STRATEGY.client.hq}`;
+  const tierCells = markets.map(m => {
+    const cls = m.tier === 'Tier 1' ? 't1' : 't2';
+    return `<th><span class="tier-pill ${cls} nowrap">${m.tier.toUpperCase()}</span></th>`;
+  }).join('');
 
-  // Smooth scroll nav
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => {
-      e.preventDefault();
-      const target = document.querySelector(a.getAttribute('href'));
-      if (target) target.scrollIntoView({ behavior: 'smooth' });
+  const cityCells = markets.map(m =>
+    `<th class="city-header">${m.city}${m.is_hq ? ' <span class="hq-star">&#9733;</span>' : ''}<br><span class="city-pop-small">Pop. ${fmt(m.population)}</span></th>`
+  ).join('');
+
+  thead.innerHTML = `<tr><th class="kw-col-header">Keyword</th>${tierCells}</tr><tr><th></th>${cityCells}</tr>`;
+
+  const rows = keywords.map(kw => {
+    const cells = markets.map(() => '<td class="check-cell">&#10003;</td>').join('');
+    return `<tr><td class="kw-cell">${kw}</td>${cells}</tr>`;
+  }).join('');
+
+  const totalCells = markets.map(() => `<td class="total-cell">${keywords.length}</td>`).join('');
+  const grandTotal = keywords.length * markets.length;
+  tbody.innerHTML = rows
+    + `<tr class="total-row"><td class="total-label">Total Combinations</td>${totalCells}</tr>`
+    + `<tr class="grand-total-row"><td colspan="${markets.length + 1}" class="grand-total-cell">Grand Total: ${grandTotal} Combinations</td></tr>`;
+}
+
+// ============================================================
+// POPULATE NOT USED SECTION
+// ============================================================
+function buildNotUsed() {
+  const grid = document.getElementById('not-used-grid');
+  if (!grid) return;
+  const cards = STRATEGY.not_used_groups.map(group => {
+    const kwRows = group.keywords.map(kw =>
+      `<div class="nu-kw-row">
+        <span class="nu-kw-name">${kw.keyword}</span>
+        <span class="nu-kw-vol">${fmt(kw.monthly_searches)}</span>
+      </div>`
+    ).join('');
+    return `<div class="not-used-card">
+      <div class="nu-reason">${group.reason}</div>
+      <p class="nu-desc">${group.description}</p>
+      <div class="nu-kw-table">
+        <div class="nu-header"><span>Keyword</span><span>Mo. Searches</span></div>
+        ${kwRows}
+      </div>
+    </div>`;
+  }).join('');
+  grid.innerHTML = cards;
+  if (STRATEGY.not_used_groups.length === 4) {
+    grid.classList.add('grid-2col');
+  } else {
+    grid.classList.remove('grid-2col');
+  }
+}
+
+// ============================================================
+// POPULATE OPPORTUNITIES SECTION
+// ============================================================
+function buildOpportunities() {
+  const grid = document.getElementById('opportunities-grid');
+  if (!grid) return;
+  const cards = STRATEGY.additional_opportunities.map((opp, i) => {
+    const kwList = opp.keywords.map(kw =>
+      `<li>
+        <span class="opp-kw">${kw.keyword}</span>
+        ${kw.monthly_searches ? `<span class="opp-vol">${fmt(kw.monthly_searches)}</span>` : kw.new_market ? `<span class="opp-vol opp-new-market">New Market</span>` : ''}
+      </li>`
+    ).join('');
+    const highlight = i === 0 ? 'opp-card-highlight' : '';
+    // Check if any keyword in this card is a new_market
+    const hasNewMarket = opp.keywords.some(kw => kw.new_market);
+    const newMarketKws = opp.keywords.filter(kw => kw.new_market);
+    const newMarketDiv = hasNewMarket
+      ? `<div class="opp-new-market">+ New Market: ${newMarketKws.map(k => k.keyword.replace(', FL', '')).join(' and ')}, FL</div>`
+      : `<div class="opp-new-market" style="visibility:hidden">placeholder</div>`;
+    return `<div class="opp-card ${highlight}">
+      <div class="opp-plan-label">${opp.plan}</div>
+      ${opp.price ? `<div class="opp-price">$${fmt(opp.price)}<span class="opp-price-label">/mo</span></div>` : ''}
+      <div class="opp-combos-large">${opp.combinations} <span class="opp-combos-label">total combinations</span></div>
+      <div class="opp-combos">${opp.additional_combinations} additional combinations from current plan</div>
+      <h4 class="opp-headline">${opp.headline}</h4>
+      <p class="opp-desc">${opp.description}</p>
+      ${newMarketDiv}
+      <ul class="opp-kw-list"><li class="opp-kw-header"><span>Keyword / Market</span><span>Mo. Searches</span></li>${kwList}</ul>
+    </div>`;
+  }).join('');
+  grid.innerHTML = cards;
+}
+
+// ============================================================
+// BUILD MOBILE MARKET LIST
+// ============================================================
+const MARKET_DATA = [
+  { rank: 1,  city: 'Cape Coral',     pop: 251819, tier: 'Tier 1', selected: true,  hq: false },
+  { rank: 2,  city: 'Fort Myers',     pop: 106233, tier: 'Tier 1', selected: true,  hq: true  },
+  { rank: 3,  city: 'Bonita Springs', pop:  58724, tier: 'Tier 1', selected: true,  hq: false },
+  { rank: 4,  city: 'Estero',         pop:  39137, tier: 'Tier 2', selected: true,  hq: false },
+  { rank: 5,  city: 'Naples',         pop:  22000, tier: 'Tier 2', selected: true,  hq: false },
+  { rank: 6,  city: 'Marco Island',   pop:  17000, tier: 'Tier 2', selected: false, hq: false },
+  { rank: 7,  city: 'Lehigh Acres',   pop:  15000, tier: 'Tier 2', selected: false, hq: false },
+  { rank: 8,  city: 'Fort Myers Beach',pop:  5170, tier: 'Tier 3', selected: false, hq: false },
+  { rank: 9,  city: 'Sanibel',        pop:   6342, tier: 'Tier 3', selected: false, hq: false },
+];
+
+function buildMobileMarketList() {
+  const el = document.getElementById('mobile-market-list');
+  if (!el) return;
+  const rows = MARKET_DATA.map(m => {
+    const tierCls = m.tier === 'Tier 1' ? 't1' : m.tier === 'Tier 2' ? 't2' : 't3';
+    const selIcon = m.selected ? '<span class="mob-check">&#10003;</span>' : '<span class="mob-dash">&#8212;</span>';
+    const cityLabel = m.hq ? `${m.city} <span class="hq-tag">HQ</span>` : m.city;
+    const popStr = m.pop ? fmt(m.pop) : '<10,000';
+    const rowCls = m.selected ? 'mob-mkt-row selected' : 'mob-mkt-row';
+    return `<div class="${rowCls}">
+      <span class="mob-rank">${m.rank}</span>
+      <span class="mob-city">${m.selected ? '<strong>' : ''}${cityLabel}${m.selected ? '</strong>' : ''}</span>
+      <span class="mob-pop">${m.pop !== null ? popStr : ''}</span>
+      <span class="mob-tier"><span class="tier-pill ${tierCls}">${m.tier.toUpperCase()}</span></span>
+      ${selIcon}
+    </div>`;
+  }).join('');
+  el.innerHTML = `<div class="mob-mkt-header">
+    <span class="mob-rank">#</span>
+    <span class="mob-city">Market</span>
+    <span class="mob-pop">Pop.</span>
+    <span class="mob-tier">Tier</span>
+    <span class="mob-sel">&#10003;</span>
+  </div>${rows}`;
+}
+
+// ============================================================
+// BUILD MOBILE MATRIX
+// ============================================================
+function buildMobileMatrix() {
+  const el = document.getElementById('mobile-matrix');
+  if (!el) return;
+  const markets = [
+    { city: 'Fort Myers',     tier: 'Tier 1', pop: 106233, is_hq: true  },
+    { city: 'Cape Coral',     tier: 'Tier 1', pop: 251819, is_hq: false },
+    { city: 'Bonita Springs', tier: 'Tier 1', pop:  58724, is_hq: false },
+    { city: 'Estero',         tier: 'Tier 2', pop:  39137, is_hq: false },
+    { city: 'Naples',         tier: 'Tier 2', pop:  22000, is_hq: false },
+  ];
+  const keywords = STRATEGY.selected_keywords;
+  const cards = markets.map(m => {
+    const tierCls = m.tier === 'Tier 1' ? 't1' : 't2';
+    const cityLabel = m.is_hq ? `${m.city} <span class="hq-tag">HQ</span>` : m.city;
+    const kwList = keywords.map(kw =>
+      `<div class="mob-matrix-kw"><span class="mob-matrix-check">&#10003;</span><span>${kw}</span></div>`
+    ).join('');
+    return `<div class="mob-matrix-card">
+      <div class="mob-matrix-city">
+        <span class="mob-matrix-city-name">${cityLabel}</span>
+        <span class="mob-matrix-meta"><span class="tier-pill ${tierCls}">${m.tier.toUpperCase()}</span> &nbsp; Pop. ${fmt(m.pop)}</span>
+      </div>
+      <div class="mob-matrix-kws">${kwList}</div>
+      <div class="mob-matrix-total">${keywords.length} combinations</div>
+    </div>`;
+  }).join('');
+  el.innerHTML = cards + `<div class="mob-matrix-grand-total">Grand Total: <strong>${keywords.length * markets.length} Combinations</strong></div>`;
+}
+
+// ============================================================
+// STICKY NAV ACTIVE STATE
+// ============================================================
+function initStickyNav() {
+  const nav = document.getElementById('section-nav');
+  if (!nav) return;
+  const links = nav.querySelectorAll('a');
+  const sections = Array.from(links).map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {
+      nav.classList.add('nav-sticky');
+    } else {
+      nav.classList.remove('nav-sticky');
+    }
+    let current = '';
+    sections.forEach(section => {
+      const top = section.offsetTop - 120;
+      if (window.scrollY >= top) current = '#' + section.id;
+    });
+    links.forEach(link => {
+      link.classList.toggle('active', link.getAttribute('href') === current);
     });
   });
+}
+
+// ============================================================
+// INIT
+// ============================================================
+document.addEventListener('DOMContentLoaded', () => {
+  buildKeywordTable();
+  buildKeywordTierCards();
+  buildMatrix();
+  buildMobileMarketList();
+  buildMobileMatrix();
+  buildNotUsed();
+  buildOpportunities();
+  initStickyNav();
+
+  // Dynamic kw-tier-grid column count
+  (function() {
+    var grid = document.querySelector('.kw-tier-grid');
+    if (!grid) return;
+    var count = grid.querySelectorAll('.kw-tier-card').length;
+    if (count > 0) grid.style.gridTemplateColumns = 'repeat(' + count + ', 1fr)';
+  })();
 });
