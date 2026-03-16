@@ -1,5 +1,5 @@
 // ─────────────────────────────────────────────────────────────────────────────
-// CATHY SINK INSURANCE AGENCY - SEO Strategy Data
+// CATHY SINK INSURANCE AGENCY — SEO Strategy Data
 // Plan Level A | 20 Combinations | $600/mo
 // Fort Myers, FL | Insurance (Personal Lines)
 // ─────────────────────────────────────────────────────────────────────────────
@@ -70,7 +70,7 @@ const STRATEGY = {
   notUsedGroups: [
     {
       group: "Property Lines",
-      note: "Strong volume but higher competition vs. specialty lines. Available for Level B-C expansion.",
+      note: "Strong volume but higher competition vs. specialty lines. Available for Level B–C expansion.",
       keywords: [
         { keyword: "Renters Insurance", volume: 40500 },
         { keyword: "Landlord Insurance", volume: 4400 },
@@ -124,7 +124,7 @@ const STRATEGY = {
       price: 900,
       combinations: 30,
       newCombos: 10,
-      description: "Level B adds 10 new combinations by layering in two high-intent agency discovery keywords (Insurance Agency Near Me and Renters Insurance) across all 5 markets. These terms attract clients actively searching for a local independent agent and renters who need affordable coverage, both underserved by national brand SEO.",
+      description: "Level B adds 10 new combinations by layering in two high-intent agency discovery keywords — Insurance Agency Near Me and Renters Insurance — across all 5 markets. These terms attract clients actively searching for a local independent agent and renters who need affordable coverage, both underserved by national brand SEO.",
       keywords: ["Insurance Agency Near Me", "Renters Insurance"],
       newMarket: null,
       kwList: [
@@ -137,7 +137,7 @@ const STRATEGY = {
       price: 1200,
       combinations: 40,
       newCombos: 10,
-      description: "Level C adds Landlord Insurance and Motorcycle Insurance across all 5 markets. Lee County has a large rental property market and a strong motorcycle riding community, both underserved by national brand SEO and well within Cathy Sink's existing service offerings.",
+      description: "Level C adds Landlord Insurance and Motorcycle Insurance across all 5 markets. Lee County has a large rental property market and a strong motorcycle riding community — both underserved by national brand SEO and well within Cathy Sink's existing service offerings.",
       keywords: ["Landlord Insurance", "Motorcycle Insurance"],
       newMarket: null,
       kwList: [
@@ -150,7 +150,7 @@ const STRATEGY = {
       price: 1600,
       combinations: 50,
       newCombos: 10,
-      description: "Level D expands into two new markets (Marco Island and Lehigh Acres) while adding Personal Umbrella Insurance across all 7 markets. Marco Island is a high-value coastal community with strong flood and umbrella insurance demand, and Lehigh Acres is Lee County's fastest-growing community.",
+      description: "Level D expands into two new markets — Marco Island and Lehigh Acres — while adding Personal Umbrella Insurance across all 7 markets. Marco Island is a high-value coastal community with strong flood and umbrella insurance demand, and Lehigh Acres is Lee County's fastest-growing community.",
       keywords: ["Personal Umbrella Insurance", "Flood Insurance Quote"],
       newMarket: "Marco Island, FL and Lehigh Acres, FL",
       kwList: [
@@ -373,7 +373,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (heroName) heroName.textContent = STRATEGY.client.name;
 
   const heroPlan = document.getElementById('hero-plan');
-  if (heroPlan) heroPlan.textContent = `Plan Level ${STRATEGY.plan.level}: ${STRATEGY.plan.combinations} Keyword-City Combinations`;
+  if (heroPlan) heroPlan.textContent = `Plan Level ${STRATEGY.plan.level} — ${STRATEGY.plan.combinations} Keyword-City Combinations`;
 
   const heroIndustry = document.getElementById('hero-industry');
   if (heroIndustry) heroIndustry.textContent = `${STRATEGY.client.industry} | ${STRATEGY.client.hq}`;

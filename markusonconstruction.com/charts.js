@@ -1,6 +1,6 @@
 // =============================================
-// DOTCOM DESIGN - SEO STRATEGY CHARTS
-// Markuson Construction Inc. - Omaha Metro
+// DOTCOM DESIGN — SEO STRATEGY CHARTS
+// Markuson Construction Inc. — Omaha Metro
 // =============================================
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -26,16 +26,16 @@ document.addEventListener('DOMContentLoaded', function () {
           label: 'Population',
           data: [487506, 67000, 62605, 27000, 20000, 16000, 14000, 12000, 8000, 6422],
           backgroundColor: [
-            dotRed,                     // Omaha - HQ selected
-            dotBlue,                    // Bellevue - Tier 1 selected
-            dotBlue,                    // Council Bluffs - Tier 1 selected
-            dotDark,                    // Papillion - Tier 2 selected
-            dotDark,                    // La Vista - Tier 2 selected
-            'rgba(51,65,104,0.35)',     // Gretna - not selected
-            'rgba(51,65,104,0.35)',     // Elkhorn - not selected
-            'rgba(51,65,104,0.35)',     // Millard - not selected
-            'rgba(51,65,104,0.25)',     // Blair - not selected
-            'rgba(51,65,104,0.25)',     // Ralston - not selected
+            dotRed,                     // Omaha — HQ selected
+            dotBlue,                    // Bellevue — Tier 1 selected
+            dotBlue,                    // Council Bluffs — Tier 1 selected
+            dotDark,                    // Papillion — Tier 2 selected
+            dotDark,                    // La Vista — Tier 2 selected
+            'rgba(51,65,104,0.35)',     // Gretna — not selected
+            'rgba(51,65,104,0.35)',     // Elkhorn — not selected
+            'rgba(51,65,104,0.35)',     // Millard — not selected
+            'rgba(51,65,104,0.25)',     // Blair — not selected
+            'rgba(51,65,104,0.25)',     // Ralston — not selected
           ],
           borderRadius: 6,
           borderSkipped: false,
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
               title: ctx => ctx[0].label,
               label: ctx => {
                 const statuses = [
-                  'HQ: Selected (Tier 1)', 'Selected (Tier 1)', 'Selected (Tier 1)',
+                  'HQ — Selected (Tier 1)', 'Selected (Tier 1)', 'Selected (Tier 1)',
                   'Selected (Tier 2)', 'Selected (Tier 2)',
                   'Not Selected', 'Not Selected', 'Not Selected',
                   'Not Selected', 'Not Selected'

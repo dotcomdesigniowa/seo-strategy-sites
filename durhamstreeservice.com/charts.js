@@ -1,5 +1,5 @@
 // =============================================
-// DOTCOM DESIGN - SEO STRATEGY CHARTS
+// DOTCOM DESIGN — SEO STRATEGY CHARTS
 // Full-width bar chart, horizontal labels
 // =============================================
 
@@ -27,16 +27,16 @@ document.addEventListener('DOMContentLoaded', function () {
           label: 'Population',
           data: [112142, 72545, 60443, 52846, 31156, 19801, 17438, 16365, 12732, 11660],
           backgroundColor: [
-            dotBlue,                    // Lakeland - Tier 1 selected
-            dotBlue,                    // Poinciana - Tier 1 selected
-            dotBlue,                    // Fuller Heights - Tier 1 selected
-            dotRed,                     // Winter Haven - HQ selected
-            dotDark,                    // Haines City - Tier 2 selected
-            'rgba(51,65,104,0.35)',     // Bartow - not selected
-            'rgba(51,65,104,0.35)',     // Auburndale - not selected
-            'rgba(51,65,104,0.35)',     // Lake Wales - not selected
-            'rgba(51,65,104,0.25)',     // Highland City - not selected
-            'rgba(51,65,104,0.25)',     // Davenport - not selected
+            dotBlue,                    // Lakeland — Tier 1 selected
+            dotBlue,                    // Poinciana — Tier 1 selected
+            dotBlue,                    // Fuller Heights — Tier 1 selected
+            dotRed,                     // Winter Haven — HQ selected
+            dotDark,                    // Haines City — Tier 2 selected
+            'rgba(51,65,104,0.35)',     // Bartow — not selected
+            'rgba(51,65,104,0.35)',     // Auburndale — not selected
+            'rgba(51,65,104,0.35)',     // Lake Wales — not selected
+            'rgba(51,65,104,0.25)',     // Highland City — not selected
+            'rgba(51,65,104,0.25)',     // Davenport — not selected
           ],
           borderRadius: 6,
           borderSkipped: false,
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
               label: ctx => {
                 const statuses = [
                   'Selected (Tier 1)', 'Selected (Tier 1)', 'Selected (Tier 1)',
-                  'HQ: Selected (Tier 1)', 'Selected (Tier 2)',
+                  'HQ — Selected (Tier 1)', 'Selected (Tier 2)',
                   'Not Selected', 'Not Selected', 'Not Selected',
                   'Not Selected', 'Not Selected'
                 ];

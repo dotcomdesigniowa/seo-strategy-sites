@@ -1,5 +1,5 @@
 // =============================================
-// DOTCOM DESIGN - SEO STRATEGY CHARTS
+// DOTCOM DESIGN — SEO STRATEGY CHARTS
 // Tax Prep Services Inc. | Rancho Cucamonga, CA
 // Full-width bar chart, horizontal labels
 // =============================================
@@ -27,16 +27,16 @@ document.addEventListener('DOMContentLoaded', function () {
           label: 'Population',
           data: [314998, 222101, 214547, 213055, 177542, 175265, 168019, 134810, 119415, 113330],
           backgroundColor: [
-            dotBlue,                    // Riverside - Tier 1 selected
-            dotBlue,                    // San Bernardino - Tier 1 selected
-            dotBlue,                    // Fontana - Tier 1 selected
-            dotBlue,                    // Moreno Valley - Tier 1 selected
-            dotRed,                     // Rancho Cucamonga - HQ selected
-            'rgba(51,65,104,0.35)',     // Ontario - not selected
-            'rgba(51,65,104,0.35)',     // Corona - not selected
-            'rgba(51,65,104,0.35)',     // Victorville - not selected
-            'rgba(51,65,104,0.25)',     // Murrieta - not selected
-            'rgba(51,65,104,0.25)',     // Temecula - not selected
+            dotBlue,                    // Riverside — Tier 1 selected
+            dotBlue,                    // San Bernardino — Tier 1 selected
+            dotBlue,                    // Fontana — Tier 1 selected
+            dotBlue,                    // Moreno Valley — Tier 1 selected
+            dotRed,                     // Rancho Cucamonga — HQ selected
+            'rgba(51,65,104,0.35)',     // Ontario — not selected
+            'rgba(51,65,104,0.35)',     // Corona — not selected
+            'rgba(51,65,104,0.35)',     // Victorville — not selected
+            'rgba(51,65,104,0.25)',     // Murrieta — not selected
+            'rgba(51,65,104,0.25)',     // Temecula — not selected
           ],
           borderRadius: 6,
           borderSkipped: false,
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
               label: ctx => {
                 const statuses = [
                   'Selected (Tier 1)', 'Selected (Tier 1)', 'Selected (Tier 1)',
-                  'Selected (Tier 1)', 'HQ: Selected (Tier 1)',
+                  'Selected (Tier 1)', 'HQ — Selected (Tier 1)',
                   'Not Selected', 'Not Selected', 'Not Selected',
                   'Not Selected', 'Not Selected'
                 ];

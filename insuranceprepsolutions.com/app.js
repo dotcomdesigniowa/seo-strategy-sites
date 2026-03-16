@@ -1,6 +1,6 @@
 // ============================================================
-// SEO Strategy Website. App.js
-// Insurance Prep Solutions. Plan Level C (40 Combinations)
+// SEO Strategy Website — App.js
+// Insurance Prep Solutions — Plan Level C (40 Combinations)
 // Loads strategy data and populates all dynamic sections
 // Permanent rules: no em-dashes, full client name always,
 // keyword quality gate, service-line coverage enforced

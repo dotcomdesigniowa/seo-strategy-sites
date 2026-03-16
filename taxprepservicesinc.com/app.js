@@ -1,5 +1,5 @@
 // ============================================================
-// SEO Strategy Website. App.js
+// SEO Strategy Website — App.js
 // Tax Prep Services Inc. | Plan Level A | 20 Combinations
 // Rancho Cucamonga, CA | Riverside + San Bernardino Counties
 // ============================================================
@@ -160,7 +160,7 @@ const STRATEGY = {
       ]
     },
     {
-      reason: "Brand and Software Terms. Not Actionable for Local SEO",
+      reason: "Brand and Software Terms — Not Actionable for Local SEO",
       description: "These are competitor brand names and tax software product terms. They cannot be targeted by a local tax preparation business and have no value in a local SEO keyword-city strategy. They were filtered from the research pool during data cleaning.",
       keywords: [
         { keyword: "turbotax",        monthly_searches: 823000 },
@@ -183,7 +183,7 @@ const STRATEGY = {
       combinations: 30,
       additional_combinations: 10,
       headline: "Expand to 5 New High-Value Markets",
-      description: "Level B adds 10 new combinations by extending the same 4 core keywords into 5 additional high-population markets across both counties. This level targets Ontario, Corona, Murrieta, Temecula, and Victorville. each with strong residential and small business populations actively searching for local tax professionals. No new keywords are needed; the existing strategy simply reaches further.",
+      description: "Level B adds 10 new combinations by extending the same 4 core keywords into 5 additional high-population markets across both counties. This level targets Ontario, Corona, Murrieta, Temecula, and Victorville — each with strong residential and small business populations actively searching for local tax professionals. No new keywords are needed; the existing strategy simply reaches further.",
       keywords: [
         { keyword: "Ontario, CA",     monthly_searches: null, new_market: true },
         { keyword: "Corona, CA",      monthly_searches: null, new_market: true },
