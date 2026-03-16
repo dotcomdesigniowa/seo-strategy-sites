@@ -498,6 +498,57 @@
     const PW_HASH = '29f9f6c0535ab3dbe51a2d0160a728babcf9f94ca521e79bcdd9fa052bd0f0c7';
     const SESSION_KEY = 'dd_portal_auth';
 
+    // ─────────────────────────────────────────────────────────────────────────
+    // CLIENT LIST
+    // Add a new entry here each time a strategy is built and deployed.
+    //   name     — Full business name
+    //   domain   — Folder name in the repo (matches the URL path)
+    //   badge    — Plan level label (e.g. "Level C")
+    //   keywords — Keywords Researched count from the client's strategy report stat card
+    // ─────────────────────────────────────────────────────────────────────────
+    const clients = [
+      { name: "Durham's Tree Service",    domain: "durhamstreeservice.com",     badge: "Level C", keywords: 189 },
+      { name: "MEK Interiors & Floors",   domain: "mekfloors.com",              badge: "Level B", keywords: 401 },
+      { name: "Texas Building Center",    domain: "texasbuildingcenter.com",    badge: "Level A", keywords: 149 },
+      { name: "Pinecrest Services",       domain: "pinecrest.services",         badge: "Plan G",  keywords: 412 },
+      { name: "Tax Prep Services Inc.",   domain: "taxprepservicesinc.com",     badge: "Level A", keywords: 135 },
+      { name: "Markuson Construction",    domain: "markusonconstruction.com",   badge: "Level C", keywords: 459 },
+      { name: "Insurance Prep Solutions", domain: "insuranceprepsolutions.com", badge: "Level C", keywords: 248 },
+    ];
+
+    function renderClients() {
+      const grid      = document.getElementById('clientGrid');
+      const countEl   = document.getElementById('clientCount');
+      const statStrEl = document.getElementById('statStrategies');
+      const statKwEl  = document.getElementById('statKeywords');
+
+      statStrEl.textContent = clients.length;
+      const totalKw = clients.reduce((sum, c) => sum + (c.keywords || 0), 0);
+      statKwEl.textContent  = totalKw.toLocaleString();
+      countEl.textContent   = clients.length + ' ' + (clients.length === 1 ? 'Client' : 'Clients');
+
+      grid.innerHTML = clients.map(c => `
+        <a href="/${c.domain}" class="client-card">
+          <div class="client-info">
+            <div class="client-name">${c.name}</div>
+            <div class="client-domain">${c.domain}</div>
+          </div>
+          <div class="client-card-right">
+            ${c.badge ? `<span class="client-badge">${c.badge}</span>` : ''}
+            <span class="view-link">
+              View Strategy
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+              </svg>
+            </span>
+          </div>
+        </a>
+      `).join('');
+    }
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // AUTH FUNCTIONS
+    // ─────────────────────────────────────────────────────────────────────────
     async function sha256(str) {
       const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
       return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
@@ -546,54 +597,6 @@
     document.getElementById('pwInput').addEventListener('keydown', e => {
       if (e.key === 'Enter') attemptLogin();
     });
-
-    // ─────────────────────────────────────────────────────────────────────────
-    // CLIENT LIST
-    // Add a new entry here each time a strategy is built and deployed.
-    //   name     — Full business name
-    //   domain   — Folder name in the repo (matches the URL path)
-    //   badge    — Plan level label (e.g. "Level C")
-    //   keywords — Keywords Researched count from the client's strategy report stat card
-    // ─────────────────────────────────────────────────────────────────────────
-    const clients = [
-      { name: "Durham's Tree Service",  domain: "durhamstreeservice.com",  badge: "Level C", keywords: 189 },
-      { name: "MEK Interiors & Floors", domain: "mekfloors.com",           badge: "Level B", keywords: 401 },
-      { name: "Texas Building Center",  domain: "texasbuildingcenter.com", badge: "Level A", keywords: 149 },
-      { name: "Pinecrest Services",     domain: "pinecrest.services",      badge: "Plan G",  keywords: 412 },
-      { name: "Tax Prep Services Inc.",   domain: "taxprepservicesinc.com",      badge: "Level A", keywords: 135 },
-      { name: "Markuson Construction",       domain: "markusonconstruction.com",    badge: "Level C", keywords: 459 },
-      { name: "Insurance Prep Solutions",    domain: "insuranceprepsolutions.com",  badge: "Level C", keywords: 248 },
-    ];
-
-    function renderClients() {
-      const grid      = document.getElementById('clientGrid');
-      const countEl   = document.getElementById('clientCount');
-      const statStrEl = document.getElementById('statStrategies');
-      const statKwEl  = document.getElementById('statKeywords');
-
-      statStrEl.textContent = clients.length;
-      const totalKw = clients.reduce((sum, c) => sum + (c.keywords || 0), 0);
-      statKwEl.textContent  = totalKw.toLocaleString();
-      countEl.textContent   = clients.length + ' ' + (clients.length === 1 ? 'Client' : 'Clients');
-
-      grid.innerHTML = clients.map(c => `
-        <a href="/${c.domain}" class="client-card">
-          <div class="client-info">
-            <div class="client-name">${c.name}</div>
-            <div class="client-domain">${c.domain}</div>
-          </div>
-          <div class="client-card-right">
-            ${c.badge ? `<span class="client-badge">${c.badge}</span>` : ''}
-            <span class="view-link">
-              View Strategy
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
-              </svg>
-            </span>
-          </div>
-        </a>
-      `).join('');
-    }
   </script>
 
 </body>
