@@ -540,6 +540,47 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
 .grand-total-row td { background: #334168; color: #fff; font-weight: 900; font-size: 0.9rem; text-align: center; padding: 14px; }
 .grand-total-row:hover td { background: #334168 !important; }
 
+/* ---- City-as-rows matrix layout (Go Deep orientation) ---- */
+.city-row-label {
+  text-align: left;
+  padding-left: 16px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #334168;
+  white-space: nowrap;
+}
+.city-tier-inline {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 3px;
+}
+.tier-pill-sm {
+  font-size: 8px !important;
+  padding: 1px 5px !important;
+}
+.matrix-check {
+  color: #22c55e;
+  font-size: 1.1rem;
+  font-weight: 900;
+  text-align: center;
+}
+.check-na {
+  color: #ccc;
+  font-size: 1rem;
+  text-align: center;
+}
+.city-total-cell {
+  font-weight: 900;
+  color: #3F80EA;
+  text-align: center;
+}
+.total-header {
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
 /* ============================================================
    NOT USED CARDS — flex column, divider pushed to bottom
    ============================================================ */
@@ -752,6 +793,17 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
 .opp-new-market {
   color: #22a06b;
   font-style: italic;
+}
+.opp-new-market-badge {
+  background: rgba(34,160,107,0.12);
+  color: #22a06b;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border-radius: 3px;
+  padding: 2px 6px;
+  white-space: nowrap;
 }
 
 /* ============================================================
