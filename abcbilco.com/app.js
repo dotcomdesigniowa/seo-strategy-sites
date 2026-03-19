@@ -7,12 +7,12 @@
 //   - Always highest-volume family member
 //   - No near me variants in matrix
 //   - Bilco brand terms anchor the strategy (dominant local authority)
-//   - Remodeling included as 4th tier (bathroom remodeling contractor)
+//   - Egress window contractors added as 4th tier (1,680/mo, medium difficulty)
 // ============================================================
 
 const STRATEGY = {
   client_name: "ABC Bilco / Heathrow Construction Corp.",
-  industry: "Access Products Installation and Remodeling",
+  industry: "Bilco Access Products Installation",
   hq_city: "Ozone Park",
   state: "NY",
   service_area: "NYC Metro, Long Island, Westchester, Northern NJ, Southern CT",
@@ -21,12 +21,12 @@ const STRATEGY = {
   total_combinations: 20,
   total_keywords_researched: 28,
   strategy_type: "Go Deep",
-  strategy_note: "ABC Bilco's strongest competitive advantage is their status as an authorized Bilco installer in the NYC metro area. The Bilco brand name drives nearly 18,000 searches per month nationally and faces almost no local competition (Difficulty 2). The strategy leads with brand-anchored access product terms, adds a cellar door keyword (a Northeast-specific term with strong local intent), a commercial roof hatch keyword, and a remodeling keyword targeting the highest-density markets.",
+  strategy_note: "ABC Bilco's strongest competitive advantage is their status as an authorized Bilco installer in the NYC metro area. The Bilco brand name drives nearly 18,000 searches per month nationally and faces almost no local competition (Difficulty 2). The strategy leads with brand-anchored access product terms, adds a cellar door keyword (a Northeast-specific regional term with strong local intent), a commercial roof hatch keyword, and an egress window keyword that rounds out the full Bilco residential product suite.",
   selected_keywords: [
     "bilco door installer",
     "cellar door installation",
     "roof hatch installation",
-    "bathroom remodeling contractor"
+    "egress window contractors"
   ],
   num_selected_keywords: 4,
   num_target_markets: 8,
@@ -55,13 +55,14 @@ const STRATEGY = {
     { keyword: "commercial roof hatch",         monthly_searches:   70, tier: "Tier 3", status: "not_used",  family: "roof-hatch",            variant_type: "variant", note: "Same family as 'roof hatch installation'. Modifier variant targeting commercial projects; lower volume." },
     { keyword: "roof hatch near me",            monthly_searches:   50, tier: "Tier 3", status: "near_me",   family: "roof-hatch",            variant_type: "near_me", note: "City-name targeting in the URL slug and page title serves the same geographic function as 'near me'." },
 
-    // Bathroom remodeling family
-    { keyword: "bathroom remodeling contractor",     monthly_searches: 49500, tier: "Tier 4", status: "selected",  family: "bathroom-remodeling",  variant_type: "base",    note: "" },
-    { keyword: "bathroom remodel contractors",       monthly_searches: 60500, tier: "Tier 4", status: "not_used",  family: "bathroom-remodeling",  variant_type: "variant", note: "Higher-volume plural variant. The singular 'contractor' form is preferred for local page targeting as it reads more naturally in page titles and URL slugs." },
-    { keyword: "bathroom remodeling contractors near me", monthly_searches: 8100, tier: "Tier 4", status: "near_me",  family: "bathroom-remodeling",  variant_type: "near_me", note: "City-name targeting in the URL slug and page title serves the same geographic function as 'near me'." },
+    // Egress window family
+    { keyword: "egress window contractors",          monthly_searches: 1680, tier: "Tier 4", status: "selected",  family: "egress-window",        variant_type: "base",    note: "" },
+    { keyword: "egress window contractors near me",  monthly_searches:  480, tier: "Tier 4", status: "near_me",   family: "egress-window",        variant_type: "near_me", note: "City-name targeting in the URL slug and page title serves the same geographic function as 'near me'." },
+    { keyword: "egress window company",              monthly_searches:  170, tier: "Tier 4", status: "not_used",  family: "egress-window",        variant_type: "variant", note: "Same family as 'egress window contractors'. Lower volume and less hire-intent than the contractor form." },
 
-    // Kitchen remodeling family
-    { keyword: "kitchen remodeling contractor", monthly_searches: 40500, tier: "Tier 4", status: "not_used",  family: "kitchen-remodeling",   variant_type: "base",    note: "High volume but Difficulty 39. Bathroom remodeling is selected as the remodeling anchor due to lower difficulty. Kitchen remodeling is reserved for plan expansion." },
+    // Remodeling family (not used at this plan level)
+    { keyword: "bathroom remodeling contractor",     monthly_searches: 49500, tier: "Tier 4", status: "not_used",  family: "bathroom-remodeling",  variant_type: "base",    note: "High volume (49,500/mo) but Difficulty 45. Reserved for plan expansion once the access product keyword base is established." },
+    { keyword: "kitchen remodeling contractor",      monthly_searches: 40500, tier: "Tier 4", status: "not_used",  family: "kitchen-remodeling",   variant_type: "base",    note: "High volume (40,500/mo) but Difficulty 39. Reserved for plan expansion alongside bathroom remodeling." },
 
     // Low-volume access product services
     { keyword: "egress window well installation",  monthly_searches: 30, tier: "Tier 2", status: "not_used",  family: "egress-window-well",   variant_type: "base",    note: "Legitimate Bilco product service but very low search volume (30/mo nationally). Not viable as a standalone matrix keyword at this plan level. Will be captured as supporting content on access product pages." },
@@ -107,12 +108,12 @@ const STRATEGY = {
     },
     {
       tier_label: "Tier 4",
-      tier_name: "Remodeling Services",
-      description: "ABC Bilco / Heathrow Construction Corp. has been providing residential and commercial remodeling services since 1962, covering bathrooms, kitchens, roofing, siding, concrete, driveways, windows, and more. 'Bathroom remodeling contractor' is selected as the remodeling anchor keyword because it has a lower difficulty score than kitchen remodeling and targets a high-conversion service. This tier is targeted at the two highest-density markets in the service area, where the client's established reputation carries the most weight.",
+      tier_name: "Egress Window Installation",
+      description: "Bilco's egress window well product line is a core residential offering for ABC Bilco. Egress window wells are required by building code in any basement with a bedroom, making this a high-intent, compliance-driven search. 'Egress window contractors' generates 1,680 monthly searches nationally at medium difficulty, making it the strongest volume keyword in this strategy outside of the Bilco brand terms. It rounds out the full Bilco residential product suite alongside the cellar door and basement access products.",
       keywords: [
-        { keyword: "bathroom remodeling contractor",  monthly_searches: 49500 },
-        { keyword: "bathroom remodel contractors",    monthly_searches: 60500 },
-        { keyword: "kitchen remodeling contractor",   monthly_searches: 40500 },
+        { keyword: "egress window contractors",         monthly_searches: 1680 },
+        { keyword: "egress window contractors near me", monthly_searches:  480 },
+        { keyword: "egress window company",             monthly_searches:  170 },
       ]
     }
   ],
@@ -128,10 +129,11 @@ const STRATEGY = {
       ]
     },
     {
-      reason: "Remodeling Services: Reserved for Targeted Expansion",
-      description: "ABC Bilco offers a full range of remodeling services including kitchens, roofing, siding, concrete, driveways, windows, and more. Kitchen remodeling is the highest-volume remodeling keyword at 40,500 searches per month but carries a Difficulty score of 39. These terms are reserved for a dedicated expansion tier where they can receive proper, focused content coverage across additional markets.",
+      reason: "Remodeling Services: Reserved for Plan Expansion",
+      description: "ABC Bilco / Heathrow Construction Corp. has been providing residential and commercial remodeling services since 1962, covering bathrooms, kitchens, roofing, siding, concrete, driveways, and windows. These keywords carry high volume but also high competition (Difficulty 39-45). They are reserved for a dedicated expansion tier once the access product keyword base is established and the site has built domain authority.",
       keywords: [
-        { keyword: "kitchen remodeling contractor", monthly_searches: 40500 },
+        { keyword: "bathroom remodeling contractor", monthly_searches: 49500 },
+        { keyword: "kitchen remodeling contractor",  monthly_searches: 40500 },
       ]
     },
     {
@@ -150,7 +152,7 @@ const STRATEGY = {
         { keyword: "bilco door installer near me",            monthly_searches: 210 },
         { keyword: "cellar door near me",                     monthly_searches: 90 },
         { keyword: "roof hatch near me",                      monthly_searches: 50 },
-        { keyword: "bathroom remodeling contractors near me", monthly_searches: 8100 },
+        { keyword: "egress window contractors near me",       monthly_searches:  480 },
       ]
     }
   ],
@@ -162,11 +164,12 @@ const STRATEGY = {
       combinations: 30,
       price: 900,
       additional_combinations: 10,
-      headline: "Add Remodeling Coverage Across All Five Boroughs",
-      description: "Upgrading to Level B adds 10 additional keyword-city combinations. The most strategic next step is expanding 'bathroom remodeling contractor' across all five NYC boroughs and introducing 'kitchen remodeling contractor' (40,500/mo) as a dedicated keyword in the two highest-density markets. This gives ABC Bilco a strong remodeling presence across the entire city.",
+      headline: "Expand Egress Coverage and Enter Long Island",
+      description: "Upgrading to Level B adds 10 additional keyword-city combinations. The most strategic next step is expanding 'egress window contractors' across all five NYC boroughs and pushing 'bilco door installer' and 'cellar door installation' into Nassau County on Long Island, where dense residential neighborhoods create strong demand for basement access products.",
       keywords: [
-        { keyword: "bathroom remodeling contractor", monthly_searches: 49500 },
-        { keyword: "kitchen remodeling contractor",  monthly_searches: 40500 },
+        { keyword: "egress window contractors",  monthly_searches: 1680 },
+        { keyword: "Nassau County, NY",          monthly_searches: null, new_market: true },
+        { keyword: "Suffolk County, NY",         monthly_searches: null, new_market: true },
       ]
     },
     {
@@ -174,13 +177,13 @@ const STRATEGY = {
       combinations: 40,
       price: 1200,
       additional_combinations: 20,
-      headline: "Expand into Long Island and Add Commercial Access Keywords",
-      description: "Level C adds 20 combinations, enabling a push into Nassau and Suffolk counties on Long Island while also introducing dedicated commercial access product coverage. Adding 'roof hatch installation' across Long Island markets and introducing 'floor access door installation' targets the commercial property managers and general contractors who are the highest-value customers for Bilco's commercial product line.",
+      headline: "Add Remodeling Keywords and Expand into New Jersey",
+      description: "Level C adds 20 combinations, introducing 'bathroom remodeling contractor' (49,500/mo) and 'kitchen remodeling contractor' (40,500/mo) across the five NYC boroughs. This activates ABC Bilco's full remodeling division in the highest-density markets and extends the access product keywords into Northern New Jersey, where the 2.5-hour service radius includes Newark, Jersey City, and the Asbury Park corridor.",
       keywords: [
-        { keyword: "roof hatch installation",        monthly_searches: 110 },
-        { keyword: "floor access door installation", monthly_searches: 20 },
-        { keyword: "Nassau County, NY",              monthly_searches: null, new_market: true },
-        { keyword: "Suffolk County, NY",             monthly_searches: null, new_market: true },
+        { keyword: "bathroom remodeling contractor", monthly_searches: 49500 },
+        { keyword: "kitchen remodeling contractor",  monthly_searches: 40500 },
+        { keyword: "Newark, NJ",                     monthly_searches: null, new_market: true },
+        { keyword: "Jersey City, NJ",                monthly_searches: null, new_market: true },
       ]
     },
     {
@@ -188,13 +191,12 @@ const STRATEGY = {
       combinations: 50,
       price: 1600,
       additional_combinations: 30,
-      headline: "Dominate the NYC Metro with Full Service Coverage",
-      description: "Level D provides the coverage needed to target every major market in the 2.5-hour service radius with a full suite of keywords. Adding Westchester County and Northern New Jersey markets, combined with deeper keyword coverage for all Bilco product lines and remodeling services, positions ABC Bilco as the dominant access product installer and remodeling contractor across the entire NYC metro area.",
+      headline: "Full Metro Domination: All Products, All Markets",
+      description: "Level D provides complete coverage across the entire 2.5-hour service radius. Adding 'floor access door installation' for the commercial segment, expanding remodeling keywords into Westchester and Southern Connecticut, and pushing all access product keywords into the full Long Island corridor positions ABC Bilco as the dominant Bilco installer and remodeling contractor across the NYC metro area.",
       keywords: [
-        { keyword: "kitchen remodeling contractor",   monthly_searches: 40500 },
-        { keyword: "egress window well installation", monthly_searches: 30 },
+        { keyword: "floor access door installation",  monthly_searches: 20 },
         { keyword: "Westchester County, NY",          monthly_searches: null, new_market: true },
-        { keyword: "Newark, NJ",                      monthly_searches: null, new_market: true },
+        { keyword: "Bridgeport, CT",                  monthly_searches: null, new_market: true },
       ]
     }
   ]
@@ -300,7 +302,7 @@ function buildKeywordTierCards() {
 // bilco door installer = 8 cities
 // cellar door installation = 6 cities
 // roof hatch installation = 4 cities
-// bathroom remodeling contractor = 2 cities
+// egress window contractors = 2 cities
 // Total = 20 combinations
 // ============================================================
 function buildMatrix() {
@@ -325,7 +327,7 @@ function buildMatrix() {
     "bilco door installer":           allCities.slice(0, 8),
     "cellar door installation":       allCities.slice(0, 6),
     "roof hatch installation":        allCities.slice(0, 4),
-    "bathroom remodeling contractor": allCities.slice(0, 2),
+    "egress window contractors": allCities.slice(0, 2),
   };
 
   // Header: keyword names as columns
@@ -472,7 +474,7 @@ function buildMobileMatrix() {
     "bilco door installer":           ["Queens","Brooklyn","Manhattan","The Bronx","Staten Island","Nassau County","Suffolk County","Westchester Co."],
     "cellar door installation":       ["Queens","Brooklyn","Manhattan","The Bronx","Staten Island","Nassau County"],
     "roof hatch installation":        ["Queens","Brooklyn","Manhattan","The Bronx"],
-    "bathroom remodeling contractor": ["Queens","Brooklyn"],
+    "egress window contractors": ["Queens","Brooklyn"],
   };
 
   const allCities = [
