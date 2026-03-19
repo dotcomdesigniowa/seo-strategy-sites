@@ -664,7 +664,7 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
 .opportunities-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  grid-template-rows: auto auto auto auto auto 1fr auto;
+  grid-template-rows: auto auto auto auto minmax(28px, auto) 1fr auto;
   column-gap: 20px;
   row-gap: 0;
   align-items: stretch;
@@ -793,6 +793,10 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
 .opp-new-market {
   color: #22a06b;
   font-style: italic;
+  font-size: 0.78rem;
+  display: block;
+  margin-bottom: 12px;
+  padding-bottom: 4px;
 }
 .opp-new-market-badge {
   background: rgba(34,160,107,0.12);
