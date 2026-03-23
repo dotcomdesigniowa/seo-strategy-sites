@@ -262,7 +262,8 @@ function buildKeywordTierCards() {
 
 // ============================================================
 // POPULATE MATRIX TABLE
-// Keywords as rows, cities as columns (standard layout for 4 keywords x 10 markets)
+// Cities as rows, keywords as columns
+// Used when markets >= 6 to prevent column header overflow
 // ============================================================
 function buildMatrix() {
   const thead = document.getElementById('matrix-thead');
@@ -283,31 +284,41 @@ function buildMatrix() {
   ];
   const keywords = STRATEGY.selected_keywords;
 
-  // Build header row 1: tier pills
-  const tierCells = markets.map(m => {
-    const cls = m.tier === 'Tier 1' ? 't1' : m.tier === 'Tier 2' ? 't2' : 't3';
-    return `<th><span class="tier-pill ${cls} nowrap">${m.tier.toUpperCase()}</span></th>`;
-  }).join('');
-
-  // Build header row 2: city names
-  const cityCells = markets.map(m =>
-    `<th class="city-header">${m.city}${m.is_hq ? ' <span class="hq-star">&#9733;</span>' : ''}<br><span class="city-pop-small">Pop. ${fmt(m.population)}</span></th>`
+  // Header: city label column + one column per keyword + total column
+  const kwHeaders = keywords.map(kw =>
+    `<th class="total-header" style="text-align:center;">${kw}</th>`
   ).join('');
+  thead.innerHTML = `<tr>
+    <th style="text-align:left; padding-left:16px; min-width:180px;">City / Market</th>
+    ${kwHeaders}
+    <th class="total-header">Total</th>
+  </tr>`;
 
-  thead.innerHTML = `<tr><th class="kw-col-header">Keyword</th>${tierCells}</tr><tr><th></th>${cityCells}</tr>`;
-
-  // Build keyword rows (all markets get all keywords)
-  const rows = keywords.map(kw => {
-    const cells = markets.map(() => '<td class="check-cell">&#10003;</td>').join('');
-    return `<tr><td class="kw-cell">${kw}</td>${cells}</tr>`;
+  // One row per city
+  const rows = markets.map(m => {
+    const tierCls = m.tier === 'Tier 1' ? 't1' : m.tier === 'Tier 2' ? 't2' : 't3';
+    const cityLabel = m.is_hq
+      ? `${m.city} <span class="hq-tag">HQ</span>`
+      : m.city;
+    const checkCells = keywords.map(() =>
+      `<td class="matrix-check">&#10003;</td>`
+    ).join('');
+    return `<tr>
+      <td class="city-row-label">
+        ${cityLabel}
+        <div class="city-tier-inline">
+          <span class="tier-pill ${tierCls} tier-pill-sm">${m.tier.toUpperCase()}</span>
+          <span style="font-size:0.75rem; color:#888; font-weight:400;">Pop. ${fmt(m.population)}</span>
+        </div>
+      </td>
+      ${checkCells}
+      <td class="city-total-cell">${keywords.length}</td>
+    </tr>`;
   }).join('');
 
-  // Total row
-  const totalCells = markets.map(() => `<td class="total-cell">${keywords.length}</td>`).join('');
   const grandTotal = keywords.length * markets.length;
   tbody.innerHTML = rows
-    + `<tr class="total-row"><td class="total-label">Total Combinations</td>${totalCells}</tr>`
-    + `<tr class="grand-total-row"><td colspan="${markets.length + 1}" class="grand-total">Grand Total: <strong>${grandTotal} Combinations</strong></td></tr>`;
+    + `<tr class="grand-total-row"><td colspan="${keywords.length + 2}" class="grand-total">Grand Total: <strong>${grandTotal} Combinations</strong></td></tr>`;
 }
 
 // ============================================================
