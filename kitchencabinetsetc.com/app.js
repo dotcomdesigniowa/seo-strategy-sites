@@ -1,194 +1,136 @@
-// ============================================================
-// SEO Strategy Website — App.js
-// Kitchen Cabinets Etc | Bellevue, WA | Plan Level A | 20 Combos
-// Permanent rules: no em-dashes, full client name always,
-// cities-as-rows matrix when markets >= 6
-// ============================================================
-
 const STRATEGY = {
-  client_name: "Kitchen Cabinets Etc",
-  industry: "Cabinets, Countertops & Window Treatments",
+  client_name: "Kitchen Cabinets Etc.",
+  industry: "Cabinet & Countertop Showroom",
   hq_city: "Bellevue",
   state: "WA",
-  service_area: "Eastside King County, WA",
+  service_area: "Bellevue & Eastside Communities",
   plan_level: "Level A",
-  plan_price: 900,
+  plan_price: 600,
   total_combinations: 20,
-  total_keywords_researched: 22,
+  total_keywords_researched: 17,
   selected_keywords: [
-    "cabinet makers near me",
-    "countertop store",
-    "window treatment company near me"
+    "Kitchen Cabinets Near Me",
+    "Kitchen Cabinet Showroom",
+    "Countertop Stores Near Me",
+    "Window Treatments Near Me"
   ],
-  num_selected_keywords: 3,
-  num_target_markets: 8,
+  num_selected_keywords: 4,
+  num_target_markets: 5,
 
-  // ---- KEYWORD TABLE DATA ----
   keyword_table: [
-    // Cabinet family
-    { keyword: "cabinet makers near me",         monthly_searches: 14800, tier: "Tier 1", status: "selected", family: "cabinet makers",    variant_type: "base" },
-    { keyword: "cabinet makers",                 monthly_searches: 12100, tier: "Tier 1", status: "near_me",  family: "cabinet makers",    variant_type: "near_me" },
-    { keyword: "custom cabinet makers near me",  monthly_searches:  4400, tier: "Tier 1", status: "not_used", family: "cabinet makers",    variant_type: "variant" },
-    { keyword: "kitchen cabinet makers",         monthly_searches:  2400, tier: "Tier 1", status: "not_used", family: "cabinet makers",    variant_type: "variant" },
-    { keyword: "cabinet refacing near me",       monthly_searches:  2900, tier: "Tier 1", status: "not_used", family: "cabinet makers",    variant_type: "variant" },
-    { keyword: "custom kitchen cabinets",        monthly_searches:  8100, tier: "Tier 1", status: "not_used", family: "cabinet makers",    variant_type: "variant" },
-    { keyword: "kitchen cabinet installation",   monthly_searches:  5400, tier: "Tier 1", status: "not_used", family: "cabinet makers",    variant_type: "variant" },
-    { keyword: "bathroom cabinet makers",        monthly_searches:   880, tier: "Tier 1", status: "not_used", family: "cabinet makers",    variant_type: "variant" },
-    // Countertop family
-    { keyword: "countertop store",               monthly_searches:  9900, tier: "Tier 2", status: "selected", family: "countertops",       variant_type: "base" },
-    { keyword: "countertop stores near me",      monthly_searches:  4400, tier: "Tier 2", status: "near_me",  family: "countertops",       variant_type: "near_me" },
-    { keyword: "granite countertops near me",    monthly_searches: 22200, tier: "Tier 2", status: "not_used", family: "countertops",       variant_type: "variant" },
-    { keyword: "quartz countertops near me",     monthly_searches: 14800, tier: "Tier 2", status: "not_used", family: "countertops",       variant_type: "variant" },
-    { keyword: "marble countertops near me",     monthly_searches:  6600, tier: "Tier 2", status: "not_used", family: "countertops",       variant_type: "variant" },
-    { keyword: "countertop installation",        monthly_searches:  5400, tier: "Tier 2", status: "not_used", family: "countertops",       variant_type: "variant" },
-    { keyword: "countertop fabricators near me", monthly_searches:  2900, tier: "Tier 2", status: "not_used", family: "countertops",       variant_type: "variant" },
-    // Window treatment family
-    { keyword: "window treatment company near me",monthly_searches: 5400, tier: "Tier 3", status: "selected", family: "window treatments", variant_type: "base" },
-    { keyword: "window treatments near me",      monthly_searches:  9900, tier: "Tier 3", status: "near_me",  family: "window treatments", variant_type: "near_me" },
-    { keyword: "blinds and shutters near me",    monthly_searches:  2400, tier: "Tier 3", status: "not_used", family: "window treatments", variant_type: "variant" },
-    { keyword: "window blinds near me",          monthly_searches:  6600, tier: "Tier 3", status: "not_used", family: "window treatments", variant_type: "variant" },
-    { keyword: "motorized blinds installation",  monthly_searches:  1300, tier: "Tier 3", status: "not_used", family: "window treatments", variant_type: "variant" },
-    { keyword: "roman shades near me",           monthly_searches:  1600, tier: "Tier 3", status: "not_used", family: "window treatments", variant_type: "variant" },
-    { keyword: "cellular shades near me",        monthly_searches:   720, tier: "Tier 3", status: "not_used", family: "window treatments", variant_type: "variant" },
+    { keyword: "kitchen cabinets near me",   monthly_searches: 74000, tier: "Tier 1", status: "selected", family: "cabinets", variant_type: "near_me" },
+    { keyword: "kitchen cabinet store",      monthly_searches: 5400,  tier: "Tier 1", status: "not_used", family: "cabinets", variant_type: "variant" },
+    { keyword: "kitchen cabinet showroom",   monthly_searches: 1900,  tier: "Tier 1", status: "selected", family: "cabinets", variant_type: "base" },
+    { keyword: "cabinet store near me",      monthly_searches: 2900,  tier: "Tier 1", status: "not_used", family: "cabinets", variant_type: "variant" },
+    { keyword: "custom kitchen cabinets",    monthly_searches: 90500, tier: "Tier 1", status: "not_used", family: "cabinets", variant_type: "variant" },
+    { keyword: "bathroom cabinets near me",  monthly_searches: 12100, tier: "Tier 1", status: "not_used", family: "cabinets", variant_type: "variant" },
+    { keyword: "bathroom vanity near me",    monthly_searches: 33100, tier: "Tier 1", status: "not_used", family: "cabinets", variant_type: "variant" },
+    { keyword: "kitchen and bath showroom",  monthly_searches: 1300,  tier: "Tier 1", status: "not_used", family: "cabinets", variant_type: "variant" },
+    { keyword: "cabinet companies near me",  monthly_searches: 2900,  tier: "Tier 1", status: "not_used", family: "cabinets", variant_type: "variant" },
+    { keyword: "cabinet makers near me",     monthly_searches: 74000, tier: "Tier 1", status: "not_used", family: "cabinets", variant_type: "variant" },
+    { keyword: "countertop stores near me",  monthly_searches: 8100,  tier: "Tier 2", status: "selected", family: "countertops", variant_type: "base" },
+    { keyword: "granite countertops near me",monthly_searches: 33100, tier: "Tier 2", status: "not_used", family: "countertops", variant_type: "variant" },
+    { keyword: "quartz countertops near me", monthly_searches: 22200, tier: "Tier 2", status: "not_used", family: "countertops", variant_type: "variant" },
+    { keyword: "countertop companies near me",monthly_searches: 1600, tier: "Tier 2", status: "not_used", family: "countertops", variant_type: "variant" },
+    { keyword: "window treatments near me", monthly_searches: 22200, tier: "Tier 3", status: "selected", family: "window", variant_type: "base" },
+    { keyword: "blinds near me",            monthly_searches: 18100, tier: "Tier 3", status: "not_used", family: "window", variant_type: "variant" },
+    { keyword: "window blinds near me",     monthly_searches: 12100, tier: "Tier 3", status: "not_used", family: "window", variant_type: "variant" }
   ],
 
-  // ---- KEYWORD TIERS ----
   keyword_tiers: [
     {
       tier_label: "Tier 1",
-      tier_name: "Custom Cabinets",
-      description: "The primary service pillar for Kitchen Cabinets Etc. Cabinet-related keywords carry the highest search volume and the strongest commercial intent. Customers searching these terms are actively planning a kitchen or bathroom remodel and are ready to engage with a showroom. This tier anchors the strategy and receives the widest market coverage across all eight Eastside communities.",
+      tier_name: "Cabinet Showroom",
+      description: "Core identity keywords that match exactly what searchers look for when visiting a cabinet showroom. These terms establish the client as a primary local destination for kitchen and bath cabinets.",
       keywords: [
-        { keyword: "cabinet makers near me",        monthly_searches: 14800 },
-        { keyword: "cabinet makers",                monthly_searches: 12100 },
-        { keyword: "custom kitchen cabinets",       monthly_searches:  8100 },
-        { keyword: "kitchen cabinet installation",  monthly_searches:  5400 },
-        { keyword: "custom cabinet makers near me", monthly_searches:  4400 },
-        { keyword: "cabinet refacing near me",      monthly_searches:  2900 },
-        { keyword: "kitchen cabinet makers",        monthly_searches:  2400 },
-        { keyword: "bathroom cabinet makers",       monthly_searches:   880 },
+        { keyword: "Kitchen Cabinets Near Me", monthly_searches: 74000 },
+        { keyword: "Kitchen Cabinet Showroom", monthly_searches: 1900 }
       ]
     },
     {
       tier_label: "Tier 2",
-      tier_name: "Countertops",
-      description: "Countertop keywords represent the second major service pillar. Customers searching for countertop stores are often in the active buying phase of a kitchen remodel, making these terms highly valuable for driving showroom visits. The countertop store keyword is targeted across all eight markets to maximize visibility for this service line.",
+      tier_name: "Countertop Store",
+      description: "High-intent countertop retail searches that capture buyers ready to visit a showroom to see and select countertop materials like granite and quartz.",
       keywords: [
-        { keyword: "granite countertops near me",    monthly_searches: 22200 },
-        { keyword: "quartz countertops near me",     monthly_searches: 14800 },
-        { keyword: "marble countertops near me",     monthly_searches:  6600 },
-        { keyword: "countertop store",               monthly_searches:  9900 },
-        { keyword: "countertop stores near me",      monthly_searches:  4400 },
-        { keyword: "countertop installation",        monthly_searches:  5400 },
-        { keyword: "countertop fabricators near me", monthly_searches:  2900 },
+        { keyword: "Countertop Stores Near Me", monthly_searches: 8100 }
       ]
     },
     {
       tier_label: "Tier 3",
       tier_name: "Window Treatments",
-      description: "Window treatment keywords represent the third service pillar. While lower in volume than cabinet and countertop terms, these keywords target a distinct customer segment with a specific need. The window treatment company keyword is targeted in the four most affluent Eastside markets, where demand for premium motorized and specialty window treatments is highest.",
+      description: "Window covering searches that align with the client\'s third major product line, attracting customers looking for blinds, shades, and shutters.",
       keywords: [
-        { keyword: "window treatments near me",       monthly_searches:  9900 },
-        { keyword: "window blinds near me",           monthly_searches:  6600 },
-        { keyword: "window treatment company near me",monthly_searches:  5400 },
-        { keyword: "roman shades near me",            monthly_searches:  1600 },
-        { keyword: "blinds and shutters near me",     monthly_searches:  2400 },
-        { keyword: "motorized blinds installation",   monthly_searches:  1300 },
-        { keyword: "cellular shades near me",         monthly_searches:   720 },
+        { keyword: "Window Treatments Near Me", monthly_searches: 22200 }
       ]
     }
   ],
 
-  // ---- NOT USED GROUPS ----
   not_used_groups: [
     {
-      reason: "Redundant with Selected Keywords",
-      description: "These keywords capture the same search intent as the selected keywords and would compete with them for the same rankings. Including both would dilute the strategy without adding meaningful incremental reach. The selected keyword in each case captures the broadest, highest-intent version of the search.",
+      reason: "Incorrect Business Model",
+      description: "These keywords imply the client is a manufacturer, fabricator, or general contractor, which is incorrect. The focus is on their retail showroom business model.",
       keywords: [
-        { keyword: "cabinet makers",                monthly_searches: 12100 },
-        { keyword: "countertop stores near me",     monthly_searches:  4400 },
-        { keyword: "window treatments near me",     monthly_searches:  9900 },
+        { keyword: "Cabinet Makers Near Me", monthly_searches: 74000 },
+        { keyword: "Kitchen Remodeling Near Me", monthly_searches: 74000 },
+        { keyword: "Cabinet Companies Near Me", monthly_searches: 2900 }
       ]
     },
     {
-      reason: "High Volume, High Competition: Reserved for Expansion",
-      description: "These keywords have strong search volume but carry medium-to-high competition scores. They are best introduced once the domain has established authority through the current plan. They are the primary drivers for the Level B and Level C upgrade tiers.",
+      reason: "Reserved for Plan Expansion",
+      description: "These high-value keywords are perfect for future plan upgrades. They either target broader categories (custom cabinets) or specific product lines (bathroom vanities, specific countertop materials) that are ideal for dedicated content expansion.",
       keywords: [
-        { keyword: "granite countertops near me",    monthly_searches: 22200 },
-        { keyword: "quartz countertops near me",     monthly_searches: 14800 },
-        { keyword: "custom kitchen cabinets",        monthly_searches:  8100 },
-        { keyword: "window blinds near me",          monthly_searches:  6600 },
-        { keyword: "kitchen cabinet installation",   monthly_searches:  5400 },
-        { keyword: "marble countertops near me",     monthly_searches:  6600 },
-        { keyword: "countertop installation",        monthly_searches:  5400 },
-        { keyword: "custom cabinet makers near me",  monthly_searches:  4400 },
-      ]
-    },
-    {
-      reason: "Below Volume Threshold for Current Plan Level",
-      description: "These keywords are valid service-line terms but fall below the search volume threshold appropriate for a Level A plan. They become viable additions at Level C or higher, where the plan has sufficient combinations to justify targeting lower-volume specialty terms.",
-      keywords: [
-        { keyword: "cabinet refacing near me",       monthly_searches:  2900 },
-        { keyword: "countertop fabricators near me", monthly_searches:  2900 },
-        { keyword: "kitchen cabinet makers",         monthly_searches:  2400 },
-        { keyword: "blinds and shutters near me",    monthly_searches:  2400 },
-        { keyword: "roman shades near me",           monthly_searches:  1600 },
-        { keyword: "motorized blinds installation",  monthly_searches:  1300 },
-        { keyword: "bathroom cabinet makers",        monthly_searches:   880 },
-        { keyword: "cellular shades near me",        monthly_searches:   720 },
+        { keyword: "Custom Kitchen Cabinets", monthly_searches: 90500 },
+        { keyword: "Bathroom Vanity Near Me", monthly_searches: 33100 },
+        { keyword: "Granite Countertops Near Me", monthly_searches: 33100 },
+        { keyword: "Quartz Countertops Near Me", monthly_searches: 22200 }
       ]
     }
   ],
 
-  // ---- ADDITIONAL OPPORTUNITIES ----
   additional_opportunities: [
     {
       plan: "Level B",
       combinations: 30,
       price: 900,
       additional_combinations: 10,
-      headline: "Add Granite and Quartz Countertop Keywords Across Top Markets",
-      description: "Upgrading to Level B adds 10 additional combinations by introducing the two highest-volume countertop keywords. Granite and quartz countertop searches represent customers in the active buying phase of a remodel, making these terms among the highest-conversion additions available.",
+      headline: "Add Bathroom & Granite Keywords",
+      description: "Upgrading to Level B adds two powerful, high-volume keywords: \'Bathroom Vanity Near Me\' and \'Granite Countertops Near Me\'. This expands coverage to the bathroom product line and a primary countertop material across all 5 existing markets.",
       keywords: [
-        { keyword: "granite countertops near me", monthly_searches: 22200 },
-        { keyword: "quartz countertops near me",  monthly_searches: 14800 },
-        { keyword: "Renton, WA",                  monthly_searches: null, new_market: true },
-      ]
+        { keyword: "Bathroom Vanity Near Me", monthly_searches: 33100 },
+        { keyword: "Granite Countertops Near Me", monthly_searches: 33100 }
+      ],
+      new_market: false
     },
     {
       plan: "Level C",
       combinations: 40,
       price: 1200,
       additional_combinations: 20,
-      headline: "Expand Cabinet Coverage and Add Kenmore and Newcastle",
-      description: "Level C adds dedicated coverage for custom kitchen cabinet keywords and introduces two new markets: Kenmore and Newcastle. This tier is designed to deepen the cabinet service line while extending geographic reach into the northern and southern Eastside corridor.",
+      headline: "Expand to New Markets & Add Quartz",
+      description: "Level C introduces two new, high-value markets (Renton and Bothell) and adds the \'Quartz Countertops Near Me\' keyword, significantly increasing the client\'s footprint across the Eastside for their most popular products.",
       keywords: [
-        { keyword: "custom kitchen cabinets",       monthly_searches:  8100 },
-        { keyword: "kitchen cabinet installation",  monthly_searches:  5400 },
-        { keyword: "Kenmore, WA",                   monthly_searches: null, new_market: true },
-        { keyword: "Newcastle, WA",                 monthly_searches: null, new_market: true },
-      ]
+        { keyword: "Quartz Countertops Near Me", monthly_searches: 22200 },
+        { keyword: "Renton, WA", monthly_searches: null, new_market: true },
+        { keyword: "Bothell, WA", monthly_searches: null, new_market: true }
+      ],
+      new_market: true
     },
     {
       plan: "Level D",
       combinations: 50,
       price: 1600,
       additional_combinations: 30,
-      headline: "Full Eastside Domination: All Three Service Lines at Scale",
-      description: "Level D delivers comprehensive coverage for all three service pillars across the full Eastside corridor. Window blind and specialty countertop keywords are added across all markets, and the plan expands into Renton, Kenmore, and Newcastle for full South and North King County reach.",
+      headline: "Full Eastside Dominance",
+      description: "Level D achieves comprehensive coverage by adding the final Eastside market (Mercer Island) and layering in broader retail-focused keywords like \'Cabinet Store Near Me\' to capture maximum local search traffic across all 8 markets.",
       keywords: [
-        { keyword: "window blinds near me",          monthly_searches:  6600 },
-        { keyword: "marble countertops near me",     monthly_searches:  6600 },
-        { keyword: "cabinet refacing near me",       monthly_searches:  2900 },
-        { keyword: "Renton, WA",                     monthly_searches: null, new_market: true },
-      ]
+        { keyword: "Cabinet Store Near Me", monthly_searches: 2900 },
+        { keyword: "Mercer Island, WA", monthly_searches: null, new_market: true }
+      ],
+      new_market: true
     }
   ]
 };
 
-// ============================================================
-// HELPER FUNCTIONS
-// ============================================================
 function fmt(n) {
   if (n === null || n === undefined) return '';
   return n.toLocaleString();
@@ -205,9 +147,6 @@ function tierPill(label) {
   return `<span class="tier-pill ${cls}">${label.toUpperCase()}</span>`;
 }
 
-// ============================================================
-// POPULATE KEYWORD TABLE
-// ============================================================
 function buildKeywordTable() {
   const tbody = document.getElementById('kw-table-body');
   if (!tbody) return;
@@ -253,9 +192,6 @@ function buildKeywordTable() {
   tbody.innerHTML = rows;
 }
 
-// ============================================================
-// POPULATE KEYWORD TIER CARDS
-// ============================================================
 function buildKeywordTierCards() {
   const grid = document.getElementById('kw-tier-grid');
   if (!grid) return;
@@ -280,80 +216,55 @@ function buildKeywordTierCards() {
   grid.innerHTML = cards;
 }
 
-// ============================================================
-// POPULATE MATRIX TABLE (cities as rows, keywords as columns)
-// Rule: always use cities-as-rows when markets >= 6
-// ============================================================
 function buildMatrix() {
   const thead = document.getElementById('matrix-thead');
   const tbody = document.getElementById('matrix-tbody');
   if (!thead || !tbody) return;
 
   const markets = [
-    { city: "Bellevue",      tier: "Tier 1", population: 151854, is_hq: true  },
-    { city: "Kirkland",      tier: "Tier 1", population:  92175, is_hq: false },
-    { city: "Redmond",       tier: "Tier 1", population:  73256, is_hq: false },
-    { city: "Sammamish",     tier: "Tier 1", population:  69942, is_hq: false },
-    { city: "Bothell",       tier: "Tier 1", population:  52767, is_hq: false },
-    { city: "Issaquah",      tier: "Tier 1", population:  40051, is_hq: false },
-    { city: "Mercer Island", tier: "Tier 2", population:  26320, is_hq: false },
-    { city: "Woodinville",   tier: "Tier 2", population:  14107, is_hq: false },
+      { city: "Bellevue", tier: "Tier 1", population: 151854, is_hq: true },
+      { city: "Kirkland", tier: "Tier 1", population: 92175, is_hq: false },
+      { city: "Redmond", tier: "Tier 1", population: 73256, is_hq: false },
+      { city: "Sammamish", tier: "Tier 1", population: 68981, is_hq: false },
+      { city: "Issaquah", tier: "Tier 2", population: 40051, is_hq: false }
   ];
-
-  // cityMatrix: which keywords are assigned to each city
-  // cabinet makers near me: all 8 markets
-  // countertop store: all 8 markets
-  // window treatment company near me: top 4 affluent markets only (Bellevue, Kirkland, Mercer Island, Sammamish)
-  const cityMatrix = {
-    "Bellevue":      ["cabinet makers near me", "countertop store", "window treatment company near me"],
-    "Kirkland":      ["cabinet makers near me", "countertop store", "window treatment company near me"],
-    "Redmond":       ["cabinet makers near me", "countertop store"],
-    "Sammamish":     ["cabinet makers near me", "countertop store", "window treatment company near me"],
-    "Bothell":       ["cabinet makers near me", "countertop store"],
-    "Issaquah":      ["cabinet makers near me", "countertop store"],
-    "Mercer Island": ["cabinet makers near me", "countertop store", "window treatment company near me"],
-    "Woodinville":   ["cabinet makers near me", "countertop store"],
-  };
-
   const keywords = STRATEGY.selected_keywords;
 
-  // Header row: keyword columns
-  const kwHeaders = keywords.map(kw => `<th class="city-header">${kw}</th>`).join('');
-  thead.innerHTML = `<tr><th class="kw-col-header">City / Market</th>${kwHeaders}<th class="city-header">Total</th></tr>`;
+  const kwHeaders = keywords.map(kw =>
+    `<th class="total-header" style="text-align:center;">${kw}</th>`
+  ).join('');
+  thead.innerHTML = `<tr>
+    <th style="text-align:left; padding-left:16px; min-width:180px;">City / Market</th>
+    ${kwHeaders}
+    <th class="total-header">Total</th>
+  </tr>`;
 
-  // City rows
   const rows = markets.map(m => {
-    const tierCls = m.tier === 'Tier 1' ? 't1' : 't2';
-    const cityLabel = m.is_hq ? `${m.city} <span class="hq-star">&#9733;</span>` : m.city;
-    const assigned = cityMatrix[m.city] || [];
-    const cells = keywords.map(kw =>
-      assigned.includes(kw)
-        ? `<td class="check-cell matrix-check">&#10003;</td>`
-        : `<td class="check-cell check-na">&#8212;</td>`
+    const tierCls = m.tier === 'Tier 1' ? 't1' : m.tier === 'Tier 2' ? 't2' : 't3';
+    const cityLabel = m.is_hq
+      ? `${m.city} <span class="hq-tag">HQ</span>`
+      : m.city;
+    const checkCells = keywords.map(() =>
+      `<td class="matrix-check">&#10003;</td>`
     ).join('');
-    const rowTotal = assigned.length;
     return `<tr>
       <td class="city-row-label">
-        <span class="city-name-main">${cityLabel}</span>
-        <span class="city-meta-row"><span class="tier-pill ${tierCls} nowrap">${m.tier.toUpperCase()}</span> <span class="city-pop-sm">Pop. ${fmt(m.population)}</span></span>
+        ${cityLabel}
+        <div class="city-tier-inline">
+          <span class="tier-pill ${tierCls} tier-pill-sm">${m.tier.toUpperCase()}</span>
+          <span style="font-size:0.75rem; color:#888; font-weight:400;">Pop. ${fmt(m.population)}</span>
+        </div>
       </td>
-      ${cells}
-      <td class="city-total-cell">${rowTotal}</td>
+      ${checkCells}
+      <td class="city-total-cell">${keywords.length}</td>
     </tr>`;
   }).join('');
 
-  const grandTotal = markets.reduce((sum, m) => sum + (cityMatrix[m.city] || []).length, 0);
+  const grandTotal = keywords.length * markets.length;
   tbody.innerHTML = rows
-    + `<tr class="total-row"><td class="total-label">Total Combinations</td>${keywords.map(kw => {
-        const count = markets.filter(m => (cityMatrix[m.city] || []).includes(kw)).length;
-        return `<td class="total-cell">${count}</td>`;
-      }).join('')}<td class="total-cell">${grandTotal}</td></tr>`
     + `<tr class="grand-total-row"><td colspan="${keywords.length + 2}" class="grand-total">Grand Total: <strong>${grandTotal} Combinations</strong></td></tr>`;
 }
 
-// ============================================================
-// POPULATE NOT USED SECTION
-// ============================================================
 function buildNotUsed() {
   const grid = document.getElementById('not-used-grid');
   if (!grid) return;
@@ -381,9 +292,6 @@ function buildNotUsed() {
   }
 }
 
-// ============================================================
-// POPULATE OPPORTUNITIES SECTION
-// ============================================================
 function buildOpportunities() {
   const grid = document.getElementById('opportunities-grid');
   if (!grid) return;
@@ -395,6 +303,8 @@ function buildOpportunities() {
       </li>`
     ).join('');
     const highlight = i === 0 ? 'opp-card-highlight' : '';
+    const newMarketDiv = opp.new_market ? '<div class="opp-new-market">Adds New Markets</div>' : '<div class="opp-new-market" style="visibility:hidden"></div>';
+
     return `<div class="opp-card ${highlight}">
       <div class="opp-plan-label">${opp.plan}</div>
       ${opp.price ? `<div class="opp-price">$${fmt(opp.price)}<span class="opp-price-label">/mo</span></div>` : ''}
@@ -402,28 +312,22 @@ function buildOpportunities() {
       <div class="opp-combos">${opp.additional_combinations} additional combinations from current plan</div>
       <h4 class="opp-headline">${opp.headline}</h4>
       <p class="opp-desc">${opp.description}</p>
+      ${newMarketDiv}
       <ul class="opp-kw-list"><li class="opp-kw-header"><span>Keyword / Market</span><span>Mo. Searches</span></li>${kwList}</ul>
     </div>`;
   }).join('');
   grid.innerHTML = cards;
 }
 
-// ============================================================
-// BUILD MOBILE MARKET LIST
-// ============================================================
 const MARKET_DATA = [
-  { rank: 1, city: 'Bellevue',      pop: 151854, tier: 'Tier 1', selected: true,  hq: true  },
-  { rank: 2, city: 'Kirkland',      pop:  92175, tier: 'Tier 1', selected: true,  hq: false },
-  { rank: 3, city: 'Redmond',       pop:  73256, tier: 'Tier 1', selected: true,  hq: false },
-  { rank: 4, city: 'Sammamish',     pop:  69942, tier: 'Tier 1', selected: true,  hq: false },
-  { rank: 5, city: 'Bothell',       pop:  52767, tier: 'Tier 1', selected: true,  hq: false },
-  { rank: 6, city: 'Issaquah',      pop:  40051, tier: 'Tier 1', selected: true,  hq: false },
-  { rank: 7, city: 'Mercer Island', pop:  26320, tier: 'Tier 2', selected: true,  hq: false },
-  { rank: 8, city: 'Woodinville',   pop:  14107, tier: 'Tier 2', selected: true,  hq: false },
-  { rank: 9, city: 'Renton',        pop: 106785, tier: 'Tier 2', selected: false, hq: false },
-  { rank: 10, city: 'Kenmore',      pop:  23000, tier: 'Tier 2', selected: false, hq: false },
-  { rank: 11, city: 'Newcastle',    pop:  12000, tier: 'Tier 2', selected: false, hq: false },
-  { rank: '12+', city: 'Shoreline, Burien, Kent, Auburn, Federal Way + others (Seattle excluded)', pop: null, tier: 'Tier 3', selected: false, hq: false },
+    { rank: 1, city: 'Bellevue', pop: 151854, tier: 'Tier 1', selected: true, hq: true },
+    { rank: 2, city: 'Renton', pop: 108429, tier: 'Tier 1', selected: false, hq: false },
+    { rank: 3, city: 'Kirkland', pop: 92175, tier: 'Tier 1', selected: true, hq: false },
+    { rank: 4, city: 'Redmond', pop: 73256, tier: 'Tier 1', selected: true, hq: false },
+    { rank: 5, city: 'Sammamish', pop: 68981, tier: 'Tier 1', selected: true, hq: false },
+    { rank: 6, city: 'Bothell', pop: 55287, tier: 'Tier 2', selected: false, hq: false },
+    { rank: 7, city: 'Issaquah', pop: 40051, tier: 'Tier 2', selected: true, hq: false },
+    { rank: 8, city: 'Mercer Island', pop: 26320, tier: 'Tier 3', selected: false, hq: false },
 ];
 
 function buildMobileMarketList() {
@@ -433,12 +337,12 @@ function buildMobileMarketList() {
     const tierCls = m.tier === 'Tier 1' ? 't1' : m.tier === 'Tier 2' ? 't2' : 't3';
     const selIcon = m.selected ? '<span class="mob-check">&#10003;</span>' : '<span class="mob-dash">&#8212;</span>';
     const cityLabel = m.hq ? `${m.city} <span class="hq-tag">HQ</span>` : m.city;
-    const popStr = m.pop ? fmt(m.pop) : '';
+    const popStr = m.pop ? fmt(m.pop) : '<10,000';
     const rowCls = m.selected ? 'mob-mkt-row selected' : 'mob-mkt-row';
     return `<div class="${rowCls}">
       <span class="mob-rank">${m.rank}</span>
       <span class="mob-city">${m.selected ? '<strong>' : ''}${cityLabel}${m.selected ? '</strong>' : ''}</span>
-      <span class="mob-pop">${popStr}</span>
+      <span class="mob-pop">${m.pop !== null ? popStr : ''}</span>
       <span class="mob-tier"><span class="tier-pill ${tierCls}">${m.tier.toUpperCase()}</span></span>
       ${selIcon}
     </div>`;
@@ -452,37 +356,21 @@ function buildMobileMarketList() {
   </div>${rows}`;
 }
 
-// ============================================================
-// BUILD MOBILE MATRIX
-// ============================================================
 function buildMobileMatrix() {
   const el = document.getElementById('mobile-matrix');
   if (!el) return;
   const markets = [
-    { city: 'Bellevue',      tier: 'Tier 1', pop: 151854, is_hq: true  },
-    { city: 'Kirkland',      tier: 'Tier 1', pop:  92175, is_hq: false },
-    { city: 'Redmond',       tier: 'Tier 1', pop:  73256, is_hq: false },
-    { city: 'Sammamish',     tier: 'Tier 1', pop:  69942, is_hq: false },
-    { city: 'Bothell',       tier: 'Tier 1', pop:  52767, is_hq: false },
-    { city: 'Issaquah',      tier: 'Tier 1', pop:  40051, is_hq: false },
-    { city: 'Mercer Island', tier: 'Tier 2', pop:  26320, is_hq: false },
-    { city: 'Woodinville',   tier: 'Tier 2', pop:  14107, is_hq: false },
+    { city: 'Bellevue', tier: 'Tier 1', pop: 151854, is_hq: true },
+    { city: 'Kirkland', tier: 'Tier 1', pop: 92175, is_hq: false },
+    { city: 'Redmond', tier: 'Tier 1', pop: 73256, is_hq: false },
+    { city: 'Sammamish', tier: 'Tier 1', pop: 68981, is_hq: false },
+    { city: 'Issaquah', tier: 'Tier 2', pop: 40051, is_hq: false },
   ];
-  const cityMatrix = {
-    "Bellevue":      ["cabinet makers near me", "countertop store", "window treatment company near me"],
-    "Kirkland":      ["cabinet makers near me", "countertop store", "window treatment company near me"],
-    "Redmond":       ["cabinet makers near me", "countertop store"],
-    "Sammamish":     ["cabinet makers near me", "countertop store", "window treatment company near me"],
-    "Bothell":       ["cabinet makers near me", "countertop store"],
-    "Issaquah":      ["cabinet makers near me", "countertop store"],
-    "Mercer Island": ["cabinet makers near me", "countertop store", "window treatment company near me"],
-    "Woodinville":   ["cabinet makers near me", "countertop store"],
-  };
+  const keywords = STRATEGY.selected_keywords;
   const cards = markets.map(m => {
     const tierCls = m.tier === 'Tier 1' ? 't1' : 't2';
     const cityLabel = m.is_hq ? `${m.city} <span class="hq-tag">HQ</span>` : m.city;
-    const assigned = cityMatrix[m.city] || [];
-    const kwList = assigned.map(kw =>
+    const kwList = keywords.map(kw =>
       `<div class="mob-matrix-kw"><span class="mob-matrix-check">&#10003;</span><span>${kw}</span></div>`
     ).join('');
     return `<div class="mob-matrix-card">
@@ -491,42 +379,12 @@ function buildMobileMatrix() {
         <span class="mob-matrix-meta"><span class="tier-pill ${tierCls}">${m.tier.toUpperCase()}</span> &nbsp; Pop. ${fmt(m.pop)}</span>
       </div>
       <div class="mob-matrix-kws">${kwList}</div>
-      <div class="mob-matrix-total">${assigned.length} combinations</div>
+      <div class="mob-matrix-total">${keywords.length} combinations</div>
     </div>`;
   }).join('');
-  const grandTotal = markets.reduce((sum, m) => sum + (cityMatrix[m.city] || []).length, 0);
-  el.innerHTML = cards + `<div class="mob-matrix-grand-total">Grand Total: <strong>${grandTotal} Combinations</strong></div>`;
+  el.innerHTML = cards + `<div class="mob-matrix-grand-total">Grand Total: <strong>${keywords.length * markets.length} Combinations</strong></div>`;
 }
 
-// ============================================================
-// STICKY NAV ACTIVE STATE
-// ============================================================
-function initStickyNav() {
-  const nav = document.getElementById('section-nav');
-  if (!nav) return;
-  const links = nav.querySelectorAll('a');
-  const sections = Array.from(links).map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
-
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 400) {
-      nav.classList.add('nav-sticky');
-    } else {
-      nav.classList.remove('nav-sticky');
-    }
-    let current = '';
-    sections.forEach(section => {
-      const top = section.offsetTop - 120;
-      if (window.scrollY >= top) current = '#' + section.id;
-    });
-    links.forEach(link => {
-      link.classList.toggle('active', link.getAttribute('href') === current);
-    });
-  });
-}
-
-// ============================================================
-// INIT
-// ============================================================
 document.addEventListener('DOMContentLoaded', () => {
   buildKeywordTable();
   buildKeywordTierCards();
@@ -535,13 +393,4 @@ document.addEventListener('DOMContentLoaded', () => {
   buildMobileMatrix();
   buildNotUsed();
   buildOpportunities();
-  initStickyNav();
-
-  // Dynamic kw-tier-grid column count
-  (function() {
-    var grid = document.querySelector('.kw-tier-grid');
-    if (!grid) return;
-    var count = grid.querySelectorAll('.kw-tier-card').length;
-    if (count > 0) grid.style.gridTemplateColumns = 'repeat(' + count + ', 1fr)';
-  })();
 });

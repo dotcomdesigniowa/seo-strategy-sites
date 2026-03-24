@@ -1,14 +1,14 @@
-// charts.js — Kitchen Cabinets Etc | Bellevue, WA
+// charts.js -- Kitchen Cabinets Etc. | Bellevue, WA
 // Market population chart data for the Eastside King County service region
 
 document.addEventListener('DOMContentLoaded', function () {
   const ctx = document.getElementById('marketChart');
   if (!ctx) return;
 
-  const selectedCities   = ['Bellevue', 'Kirkland', 'Redmond', 'Sammamish', 'Bothell', 'Issaquah', 'Mercer Island', 'Woodinville'];
-  const selectedPops     = [151854, 92175, 73256, 69942, 52767, 40051, 26320, 14107];
-  const unselectedCities = ['Renton', 'Kenmore', 'Newcastle'];
-  const unselectedPops   = [106785, 23000, 12000];
+  const selectedCities   = ['Bellevue', 'Kirkland', 'Redmond', 'Sammamish', 'Issaquah'];
+  const selectedPops     = [151854, 92175, 73256, 68981, 40051];
+  const unselectedCities = ['Renton', 'Bothell', 'Mercer Island'];
+  const unselectedPops   = [108429, 55287, 26320];
 
   const labels = [...selectedCities, ...unselectedCities];
   const data   = [...selectedPops,   ...unselectedPops];
