@@ -5,10 +5,11 @@ document.addEventListener('DOMContentLoaded', function () {
   const ctx = document.getElementById('marketChart');
   if (!ctx) return;
 
-  const selectedCities   = ['Bellevue', 'Kirkland', 'Redmond', 'Sammamish', 'Issaquah'];
-  const selectedPops     = [151854, 92175, 73256, 68981, 40051];
-  const unselectedCities = ['Renton', 'Bothell', 'Mercer Island'];
-  const unselectedPops   = [108429, 55287, 26320];
+  // Selected = top 5 by population: Bellevue, Renton, Kirkland, Redmond, Sammamish
+  const selectedCities   = ['Bellevue', 'Renton', 'Kirkland', 'Redmond', 'Sammamish'];
+  const selectedPops     = [151854, 108429, 92175, 73256, 68981];
+  const unselectedCities = ['Bothell', 'Issaquah', 'Mercer Island'];
+  const unselectedPops   = [55287, 40051, 26320];
 
   const labels = [...selectedCities, ...unselectedCities];
   const data   = [...selectedPops,   ...unselectedPops];
