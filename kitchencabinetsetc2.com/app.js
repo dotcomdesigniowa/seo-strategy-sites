@@ -172,7 +172,7 @@ const STRATEGY = {
     {
       plan: "Level B",
       combinations: 30,
-      price: 800,
+      price: 900,
       additional_combinations: 10,
       headline: "Add Countertops and Laundry Room Coverage",
       description: "Upgrading to Level B adds 10 additional keyword-city combinations, allowing Kitchen Cabinets Etc 2 to target two new high-value service lines: countertops and laundry room cabinets. These are distinct product categories the client already offers, and both carry strong local search intent.",
@@ -185,7 +185,7 @@ const STRATEGY = {
     {
       plan: "Level C",
       combinations: 40,
-      price: 1000,
+      price: 1200,
       additional_combinations: 20,
       headline: "Add Bathroom Cabinets and Two New Markets",
       description: "Level C opens coverage for bathroom cabinets as a distinct service line and expands into two additional high-population markets in the Phoenix East Valley. With 40 total combinations, Kitchen Cabinets Etc 2 achieves broad visibility across the region for all major product categories.",
@@ -197,11 +197,11 @@ const STRATEGY = {
     },
     {
       plan: "Level D",
-      combinations: 60,
-      price: 1400,
-      additional_combinations: 40,
+      combinations: 50,
+      price: 1600,
+      additional_combinations: 30,
       headline: "Full East Valley Domination",
-      description: "Level D provides the coverage needed to dominate the entire Phoenix East Valley. With 60 total combinations, Kitchen Cabinets Etc 2 can target up to 8 cities with a full suite of keywords, achieving comprehensive visibility across every major market within the service area for every product category offered.",
+      description: "Level D provides the coverage needed to dominate the entire Phoenix East Valley. With 50 total combinations, Kitchen Cabinets Etc 2 can target up to 8 cities with a full suite of keywords, achieving comprehensive visibility across every major market within the service area for every product category offered.",
       keywords: [
         { keyword: "quartz countertops near me",   monthly_searches: 22200 },
         { keyword: "custom kitchen cabinets",      monthly_searches: 90500 },
