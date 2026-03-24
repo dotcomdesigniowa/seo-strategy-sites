@@ -77,13 +77,16 @@ const STRATEGY = {
     { keyword: "custom laundry room cabinets",    monthly_searches:  1300, tier: "Tier 3", status: "not_used", family: "laundry room cabinets", variant_type: "variant" },
 
     // FAMILY 7: countertops (separate family - distinct core term)
+    { keyword: "countertops",                     monthly_searches: 60500, tier: "Tier 3", status: "not_used", family: "countertops", variant_type: "base" },
     { keyword: "countertops near me",             monthly_searches: 12100, tier: "Tier 3", status: "not_used", family: "countertops", variant_type: "near_me" },
     { keyword: "countertop stores near me",       monthly_searches:  8100, tier: "Tier 3", status: "not_used", family: "countertops", variant_type: "near_me" },
 
     // FAMILY 8: granite countertops (separate family - different core term from countertops)
+    { keyword: "granite countertops",             monthly_searches: 40500, tier: "Tier 3", status: "not_used", family: "granite countertops", variant_type: "base" },
     { keyword: "granite countertops near me",     monthly_searches: 33100, tier: "Tier 3", status: "not_used", family: "granite countertops", variant_type: "near_me" },
 
     // FAMILY 9: quartz countertops (separate family)
+    { keyword: "quartz countertops",              monthly_searches: 49500, tier: "Tier 3", status: "not_used", family: "quartz countertops", variant_type: "base" },
     { keyword: "quartz countertops near me",      monthly_searches: 22200, tier: "Tier 3", status: "not_used", family: "quartz countertops", variant_type: "near_me" },
   ],
 
