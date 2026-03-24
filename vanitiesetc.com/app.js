@@ -16,11 +16,10 @@ const STRATEGY = {
   total_combinations: 10,
   total_keywords_researched: 35,
   selected_keywords: [
-    "bathroom vanity near me",
-    "bathroom cabinets near me"
+    "bathroom vanity near me"
   ],
-  num_selected_keywords: 2,
-  num_target_markets: 5,
+  num_selected_keywords: 1,
+  num_target_markets: 10,
 
   // ---- KEYWORD TABLE DATA ----
   keyword_table: [
@@ -36,7 +35,7 @@ const STRATEGY = {
 
     // Bathroom Cabinets family
     { keyword: "bathroom cabinets",             monthly_searches: 33100, tier: "Tier 1", status: "not_used", family: "bathroom cabinets", variant_type: "base" },
-    { keyword: "bathroom cabinets near me",     monthly_searches: 12100, tier: "Tier 1", status: "selected", family: "bathroom cabinets", variant_type: "near_me" },
+    { keyword: "bathroom cabinets near me",     monthly_searches: 12100, tier: "Tier 1", status: "not_used", family: "bathroom cabinets", variant_type: "near_me" },
     { keyword: "custom bathroom cabinets",      monthly_searches:  2900, tier: "Tier 1", status: "not_used", family: "bathroom cabinets", variant_type: "variant" },
     { keyword: "bathroom cabinet store",        monthly_searches:  1900, tier: "Tier 1", status: "not_used", family: "bathroom cabinets", variant_type: "variant" },
     { keyword: "bathroom cabinet showroom",     monthly_searches:   880, tier: "Tier 1", status: "not_used", family: "bathroom cabinets", variant_type: "variant" },
@@ -75,7 +74,7 @@ const STRATEGY = {
     {
       tier_label: "Tier 1",
       tier_name: "Bathroom Vanities and Cabinets",
-      description: "The two highest-priority service lines for Vanities Etc. Bathroom vanity near me commands 33,100 monthly searches nationally and directly reflects the core product the showroom was built around. Bathroom cabinets near me adds a distinct second service line at 12,100 monthly searches, capturing customers shopping for cabinetry solutions. Both keywords are selected for the SEO Booster plan.",
+      description: "The single highest-priority service line for Vanities Etc. Bathroom vanity near me commands 33,100 monthly searches nationally and directly reflects the core product the showroom was built around. This keyword is selected for the SEO Booster plan and deployed across all 10 markets. Bathroom cabinets near me (12,100/mo) is the top candidate for Plan Level A expansion.",
       keywords: [
         { keyword: "bathroom vanity near me",   monthly_searches: 33100 },
         { keyword: "bathroom vanity",           monthly_searches: 49500 },
@@ -116,33 +115,32 @@ const STRATEGY = {
   // ---- NOT USED GROUPS ----
   not_used_groups: [
     {
-      reason: "Kitchen-Intent Dominated: Not Aligned with Bathroom Showroom",
-      description: "These countertop keywords carry very high national search volume, but the majority of searchers are looking for kitchen countertops, not bathroom. Vanities Etc is a bathroom-focused showroom. Targeting these terms would drive mismatched traffic and dilute the strategy. They are excluded to keep the plan tightly aligned with the client's actual customer.",
+      reason: "Reserved for Plan A: Second Keyword Expansion",
+      description: "These vanity-adjacent keywords represent the strongest candidates for adding a second keyword slot at Plan Level A. Bathroom cabinets near me (12,100/mo) is the top priority, as it covers a distinct product line available in the showroom. Bathroom vanity showroom and bathroom countertops near me are also strong Plan A additions.",
       keywords: [
-        { keyword: "quartz countertops near me",   monthly_searches: 22200 },
-        { keyword: "quartz countertops",           monthly_searches: 49500 },
-        { keyword: "countertops near me",          monthly_searches: 12100 },
-        { keyword: "granite countertops near me",  monthly_searches: 33100 },
-      ]
-    },
-    {
-      reason: "Reserved for Plan A: Countertops and Hardware Expansion",
-      description: "These high-value keywords represent service lines the client offers but that fall outside the 10-combination limit of the SEO Booster plan. Bathroom countertops and cabinet hardware are the highest-priority additions for a Plan A upgrade, adding 2 new keywords and 10 new combinations.",
-      keywords: [
-        { keyword: "bathroom countertops near me", monthly_searches:  4400 },
+        { keyword: "bathroom cabinets near me",    monthly_searches: 12100 },
         { keyword: "bathroom vanity showroom",     monthly_searches:  2400 },
-        { keyword: "cabinet hardware near me",     monthly_searches:  3600 },
-        { keyword: "bathroom hardware near me",    monthly_searches:  1600 },
+        { keyword: "bathroom countertops near me", monthly_searches:  4400 },
       ]
     },
     {
-      reason: "Reserved for Plan B: Specialty Hardware and Deeper Coverage",
-      description: "Drawer pulls and cabinet handles have meaningful search volume but are product-level searches rather than service-line searches. They are best introduced at Plan B when additional combinations allow for dedicated, focused coverage alongside the core vanity and countertop keywords.",
+      reason: "Reserved for Plan B: Hardware and Countertop Expansion",
+      description: "Cabinet hardware and bathroom hardware represent product categories available in the showroom. These keywords are best introduced at Plan B when additional combinations allow dedicated coverage alongside the core vanity keyword.",
       keywords: [
-        { keyword: "drawer pulls near me",     monthly_searches: 1900 },
-        { keyword: "cabinet handles near me",  monthly_searches: 1600 },
-        { keyword: "bathroom hardware store",  monthly_searches: 1300 },
-        { keyword: "cabinet hardware store",   monthly_searches: 2400 },
+        { keyword: "cabinet hardware near me",  monthly_searches: 3600 },
+        { keyword: "bathroom hardware near me", monthly_searches: 1600 },
+        { keyword: "drawer pulls near me",      monthly_searches: 1900 },
+        { keyword: "cabinet handles near me",   monthly_searches: 1600 },
+      ]
+    },
+    {
+      reason: "Kitchen-Intent Dominated: Not Aligned with Bathroom Showroom",
+      description: "These countertop keywords carry very high national search volume, but the majority of searchers are looking for kitchen countertops, not bathroom. Vanities Etc is a bathroom-focused showroom. Targeting these terms would drive mismatched traffic and dilute the strategy.",
+      keywords: [
+        { keyword: "quartz countertops near me",  monthly_searches: 22200 },
+        { keyword: "quartz countertops",          monthly_searches: 49500 },
+        { keyword: "countertops near me",         monthly_searches: 12100 },
+        { keyword: "granite countertops near me", monthly_searches: 33100 },
       ]
     }
   ],
@@ -154,12 +152,11 @@ const STRATEGY = {
       combinations: 20,
       price: 600,
       additional_combinations: 10,
-      headline: "Add Countertops and Hardware Across All 5 Markets",
-      description: "Upgrading to Plan Level A doubles the combination count to 20, allowing Vanities Etc to add bathroom countertops near me and bathroom vanity showroom as dedicated keywords across all 5 existing markets. This directly targets the showroom's stone and quartz countertop service line, which is prominently featured on the website.",
+      headline: "Add a Second Keyword Across All 10 Markets",
+      description: "Upgrading to Plan Level A adds a second keyword slot, allowing Vanities Etc to target bathroom cabinets near me (12,100/mo) across all 10 existing markets. This directly opens a second service line while maintaining full geographic coverage, doubling the total combination count without adding any new markets.",
       new_market: false,
       keywords: [
-        { keyword: "bathroom countertops near me", monthly_searches:  4400 },
-        { keyword: "bathroom vanity showroom",     monthly_searches:  2400 },
+        { keyword: "bathroom cabinets near me", monthly_searches: 12100 },
       ]
     },
     {
@@ -167,13 +164,12 @@ const STRATEGY = {
       combinations: 30,
       price: 900,
       additional_combinations: 20,
-      headline: "Expand to 6 Markets and Add Hardware Coverage",
-      description: "Plan Level B adds a sixth market, Shoreline (pop. 57,027), the next largest Eastside community, while also introducing cabinet hardware near me and bathroom hardware near me to capture customers searching for the decorative hardware products available in the showroom.",
-      new_market: true,
+      headline: "Add a Third Keyword and Deeper Service Coverage",
+      description: "Plan Level B introduces a third keyword, bathroom countertops near me (4,400/mo), targeting the stone and quartz countertop service line prominently featured in the showroom. With 30 total combinations, Vanities Etc covers 3 distinct product lines across 10 markets.",
+      new_market: false,
       keywords: [
-        { keyword: "Shoreline, WA",            monthly_searches: null, new_market: true },
-        { keyword: "cabinet hardware near me", monthly_searches: 3600 },
-        { keyword: "bathroom hardware near me",monthly_searches: 1600 },
+        { keyword: "bathroom countertops near me", monthly_searches: 4400 },
+        { keyword: "bathroom vanity showroom",     monthly_searches: 2400 },
       ]
     },
     {
@@ -181,14 +177,13 @@ const STRATEGY = {
       combinations: 40,
       price: 1200,
       additional_combinations: 30,
-      headline: "Full Eastside Market Domination",
-      description: "Plan Level C provides the combination count needed to cover all major Eastside communities and introduce specialty hardware keywords. With 40 total combinations, Vanities Etc can target up to 8 cities with a comprehensive keyword suite, achieving dominant visibility across the entire Bellevue Eastside corridor for every core product category offered.",
-      new_market: true,
+      headline: "Add Hardware Keywords and Full Product Category Coverage",
+      description: "Plan Level C introduces cabinet hardware near me and bathroom hardware near me, capturing customers searching for the decorative hardware products available in the showroom. With 40 total combinations, Vanities Etc achieves comprehensive visibility across all core product categories for every market in the strategy.",
+      new_market: false,
       keywords: [
-        { keyword: "Issaquah, WA",             monthly_searches: null, new_market: true },
-        { keyword: "Bothell, WA",              monthly_searches: null, new_market: true },
-        { keyword: "drawer pulls near me",     monthly_searches: 1900 },
-        { keyword: "cabinet handles near me",  monthly_searches: 1600 },
+        { keyword: "cabinet hardware near me",  monthly_searches: 3600 },
+        { keyword: "bathroom hardware near me", monthly_searches: 1600 },
+        { keyword: "drawer pulls near me",      monthly_searches: 1900 },
       ]
     }
   ]
@@ -298,38 +293,53 @@ function buildMatrix() {
   if (!thead || !tbody) return;
 
   const markets = [
-    { city: "Bellevue",   tier: "Tier 1", population: 151854, is_hq: true  },
-    { city: "Renton",     tier: "Tier 1", population: 108429, is_hq: false },
-    { city: "Kirkland",   tier: "Tier 1", population:  92175, is_hq: false },
-    { city: "Redmond",    tier: "Tier 1", population:  73256, is_hq: false },
-    { city: "Sammamish",  tier: "Tier 1", population:  69224, is_hq: false },
+    { city: "Bellevue",      tier: "Tier 1", population: 151854, is_hq: true  },
+    { city: "Renton",        tier: "Tier 1", population: 108429, is_hq: false },
+    { city: "Kirkland",      tier: "Tier 1", population:  92175, is_hq: false },
+    { city: "Redmond",       tier: "Tier 1", population:  73256, is_hq: false },
+    { city: "Sammamish",     tier: "Tier 1", population:  69224, is_hq: false },
+    { city: "Shoreline",     tier: "Tier 1", population:  57027, is_hq: false },
+    { city: "Issaquah",      tier: "Tier 1", population:  40051, is_hq: false },
+    { city: "Bothell",       tier: "Tier 2", population:  26920, is_hq: false },
+    { city: "Mercer Island", tier: "Tier 2", population:  26320, is_hq: false },
+    { city: "Kenmore",       tier: "Tier 2", population:  24189, is_hq: false },
   ];
   const keywords = STRATEGY.selected_keywords;
 
-  // KEYWORDS AS ROWS, CITIES AS COLUMNS (markets <= 5)
-  const cityHeaders = markets.map(m =>
-    `<th class="total-header" style="text-align:center;">${m.city}${m.is_hq ? ' <span class="hq-tag">HQ</span>' : ''}</th>`
+  // CITIES AS ROWS, KEYWORDS AS COLUMNS (markets >= 6)
+  const kwHeaders = keywords.map(kw =>
+    `<th class="total-header" style="text-align:center;">${kw}</th>`
   ).join('');
   thead.innerHTML = `<tr>
-    <th style="text-align:left; padding-left:16px; min-width:220px;">Keyword</th>
-    ${cityHeaders}
+    <th style="text-align:left; padding-left:16px; min-width:180px;">City / Market</th>
+    ${kwHeaders}
     <th class="total-header">Total</th>
   </tr>`;
 
-  const rows = keywords.map(kw => {
-    const checkCells = markets.map(() =>
+  const rows = markets.map(m => {
+    const tierCls = m.tier === 'Tier 1' ? 't1' : m.tier === 'Tier 2' ? 't2' : 't3';
+    const cityLabel = m.is_hq
+      ? `${m.city} <span class="hq-tag">HQ</span>`
+      : m.city;
+    const checkCells = keywords.map(() =>
       `<td style="text-align:center; color:#2ecc71; font-size:1.1rem;">&#10003;</td>`
     ).join('');
     return `<tr>
-      <td style="padding-left:16px; font-weight:600;">${kw}</td>
+      <td class="city-row-label">
+        ${cityLabel}
+        <div class="city-tier-inline">
+          <span class="tier-pill ${tierCls} tier-pill-sm">${m.tier.toUpperCase()}</span>
+          <span style="font-size:0.75rem; color:#888; font-weight:400;">Pop. ${fmt(m.population)}</span>
+        </div>
+      </td>
       ${checkCells}
-      <td class="city-total-cell">${markets.length}</td>
+      <td class="city-total-cell">${keywords.length}</td>
     </tr>`;
   }).join('');
 
   const grandTotal = keywords.length * markets.length;
   tbody.innerHTML = rows
-    + `<tr class="grand-total-row"><td colspan="${markets.length + 2}" class="grand-total">Grand Total: <strong>${grandTotal} Combinations</strong></td></tr>`;
+    + `<tr class="grand-total-row"><td colspan="${keywords.length + 2}" class="grand-total">Grand Total: <strong>${grandTotal} Combinations</strong></td></tr>`;
 }
 
 // ============================================================
@@ -402,11 +412,11 @@ const MARKET_DATA = [
   { rank: 3,  city: 'Kirkland',      pop:  92175, tier: 'Tier 1', selected: true,  hq: false },
   { rank: 4,  city: 'Redmond',       pop:  73256, tier: 'Tier 1', selected: true,  hq: false },
   { rank: 5,  city: 'Sammamish',     pop:  69224, tier: 'Tier 1', selected: true,  hq: false },
-  { rank: 6,  city: 'Shoreline',     pop:  57027, tier: 'Tier 1', selected: false, hq: false },
-  { rank: 7,  city: 'Issaquah',      pop:  40051, tier: 'Tier 1', selected: false, hq: false },
-  { rank: 8,  city: 'Bothell',       pop:  26920, tier: 'Tier 2', selected: false, hq: false },
-  { rank: 9,  city: 'Mercer Island', pop:  26320, tier: 'Tier 2', selected: false, hq: false },
-  { rank: 10, city: 'Kenmore',       pop:  24189, tier: 'Tier 2', selected: false, hq: false },
+  { rank: 6,  city: 'Shoreline',     pop:  57027, tier: 'Tier 1', selected: true,  hq: false },
+  { rank: 7,  city: 'Issaquah',      pop:  40051, tier: 'Tier 1', selected: true,  hq: false },
+  { rank: 8,  city: 'Bothell',       pop:  26920, tier: 'Tier 2', selected: true,  hq: false },
+  { rank: 9,  city: 'Mercer Island', pop:  26320, tier: 'Tier 2', selected: true,  hq: false },
+  { rank: 10, city: 'Kenmore',       pop:  24189, tier: 'Tier 2', selected: true,  hq: false },
   { rank: 11, city: 'Woodinville',   pop:  13341, tier: 'Tier 2', selected: false, hq: false },
 ];
 
@@ -443,11 +453,16 @@ function buildMobileMatrix() {
   const el = document.getElementById('mobile-matrix');
   if (!el) return;
   const markets = [
-    { city: 'Bellevue',   tier: 'Tier 1', pop: 151854, is_hq: true  },
-    { city: 'Renton',     tier: 'Tier 1', pop: 108429, is_hq: false },
-    { city: 'Kirkland',   tier: 'Tier 1', pop:  92175, is_hq: false },
-    { city: 'Redmond',    tier: 'Tier 1', pop:  73256, is_hq: false },
-    { city: 'Sammamish',  tier: 'Tier 1', pop:  69224, is_hq: false },
+    { city: 'Bellevue',      tier: 'Tier 1', pop: 151854, is_hq: true  },
+    { city: 'Renton',        tier: 'Tier 1', pop: 108429, is_hq: false },
+    { city: 'Kirkland',      tier: 'Tier 1', pop:  92175, is_hq: false },
+    { city: 'Redmond',       tier: 'Tier 1', pop:  73256, is_hq: false },
+    { city: 'Sammamish',     tier: 'Tier 1', pop:  69224, is_hq: false },
+    { city: 'Shoreline',     tier: 'Tier 1', pop:  57027, is_hq: false },
+    { city: 'Issaquah',      tier: 'Tier 1', pop:  40051, is_hq: false },
+    { city: 'Bothell',       tier: 'Tier 2', pop:  26920, is_hq: false },
+    { city: 'Mercer Island', tier: 'Tier 2', pop:  26320, is_hq: false },
+    { city: 'Kenmore',       tier: 'Tier 2', pop:  24189, is_hq: false },
   ];
   const keywords = STRATEGY.selected_keywords;
   const cards = markets.map(m => {

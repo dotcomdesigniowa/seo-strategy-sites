@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const labels = ['Bellevue', 'Renton', 'Kirkland', 'Redmond', 'Sammamish', 'Shoreline', 'Issaquah', 'Bothell', 'Mercer Island', 'Kenmore', 'Woodinville'];
   const populations = [151854, 108429, 92175, 73256, 69224, 57027, 40051, 26920, 26320, 24189, 13341];
-  const selectedCount = 5;
+  const selectedCount = 10;
 
   const backgroundColors = labels.map((_, i) =>
     i < selectedCount ? 'rgba(26, 82, 118, 0.85)' : 'rgba(180, 180, 180, 0.45)'
