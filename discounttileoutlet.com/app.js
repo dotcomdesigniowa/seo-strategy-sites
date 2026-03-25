@@ -1,14 +1,15 @@
 // ============================================================
 // SEO STRATEGY DATA — Discount Tile Outlet | Bellevue, WA
-// Plan Level A | 20 Keyword-City Combinations
-// 3 Keywords x 8 Markets (7 + 7 + 6)
-// Matrix: Cities as rows (8 markets >= 6 threshold)
+// Plan Level B | 30 Keyword-City Combinations
+// 4 Keywords x 9 Markets (8 + 8 + 7 + 7)
+// Matrix: Cities as rows (9 markets >= 6 threshold)
 // ============================================================
 const STRATEGY = {
   client_name: "Discount Tile Outlet",
-  plan_level: "A",
-  total_combinations: 20,
-  selected_keywords: ["tile store", "tile flooring near me", "tile showroom near me"],
+  plan_level: "B",
+  plan_price: 900,
+  total_combinations: 30,
+  selected_keywords: ["tile store", "tile flooring near me", "tile showroom near me", "hardwood flooring near me"],
 
   // ---- KEYWORD TABLE ----
   keyword_table: [
@@ -28,6 +29,11 @@ const STRATEGY = {
     { keyword: "tile and flooring store near me", monthly_searches:   1900, tier: null,     status: "not_used", family: "tile flooring",  variant_type: "variant" },
     // Tile Showroom family
     { keyword: "tile showroom near me",           monthly_searches:   9900, tier: "Tier 3", status: "selected", family: "tile showroom",  variant_type: "base"    },
+    // Hardwood Flooring family
+    { keyword: "hardwood flooring near me",       monthly_searches:  22200, tier: "Tier 4", status: "selected", family: "hardwood flooring", variant_type: "near_me" },
+    { keyword: "hardwood flooring",               monthly_searches: 135000, tier: "Tier 4", status: "not_used", family: "hardwood flooring", variant_type: "base"    },
+    { keyword: "hardwood flooring store near me", monthly_searches:   5400, tier: "Tier 4", status: "not_used", family: "hardwood flooring", variant_type: "near_me" },
+    { keyword: "wood flooring near me",           monthly_searches:   4400, tier: "Tier 4", status: "not_used", family: "hardwood flooring", variant_type: "near_me" },
     // Specialty Tile family
     { keyword: "porcelain tile store",            monthly_searches:  12100, tier: null,     status: "not_used", family: "specialty tile", variant_type: "base"    },
     { keyword: "ceramic tile store near me",      monthly_searches:   2900, tier: null,     status: "not_used", family: "specialty tile", variant_type: "variant" },
@@ -65,6 +71,16 @@ const STRATEGY = {
       keywords: [
         { keyword: "tile showroom near me", monthly_searches: 9900 }
       ]
+    },
+    {
+      tier_label: "Tier 4",
+      tier_name: "Hardwood Flooring Shoppers",
+      description: "Customers actively searching for a local hardwood flooring retailer. Hardwood flooring is explicitly offered by Discount Tile Outlet and listed on their website. At 22,200 monthly searches nationally, this keyword opens a distinct product category and captures homeowners who may not initially think to search for a tile store when shopping for hardwood.",
+      keywords: [
+        { keyword: "hardwood flooring near me",       monthly_searches: 22200 },
+        { keyword: "hardwood flooring store near me", monthly_searches:  5400 },
+        { keyword: "wood flooring near me",           monthly_searches:  4400 },
+      ]
     }
   ],
 
@@ -99,10 +115,12 @@ const STRATEGY = {
     },
     {
       reason: "Specific Product Terms: Reserved for Plan Expansion",
-      description: "Highly specific product keywords are valuable but best suited for dedicated product landing pages. These are the top candidates for inclusion in a Level B or C plan expansion once the foundation keywords are established.",
+      description: "Highly specific product keywords are valuable but best suited for dedicated product landing pages. These are the top candidates for inclusion in a Level C or D plan expansion once the foundation keywords are established.",
       keywords: [
         { keyword: "porcelain tile store",        monthly_searches: 12100 },
+        { keyword: "hardwood flooring store near me", monthly_searches: 5400 },
         { keyword: "ceramic tile store near me",  monthly_searches:  2900 },
+        { keyword: "wood flooring near me",       monthly_searches:  4400 },
         { keyword: "discount tile store near me", monthly_searches:  1600 },
         { keyword: "natural stone tile store",    monthly_searches:  1300 },
         { keyword: "mosaic tile store near me",   monthly_searches:   720 },
@@ -115,43 +133,28 @@ const STRATEGY = {
   // ---- ADDITIONAL OPPORTUNITIES ----
   additional_opportunities: [
     {
-      plan: "Level B",
-      combinations: 30,
-      price: 900,
-      additional_combinations: 10,
-      headline: "Add Porcelain Tile Keyword and Expand into Renton and Kenmore",
-      description: "Introduces 'porcelain tile store' (12,100/mo) across five core markets and expands the existing tile store and tile flooring keywords into Renton and Kenmore, two growing communities with strong residential renovation demand and easy access to the Bellevue showroom.",
-      keywords: [
-        { keyword: "porcelain tile store", monthly_searches: 12100 },
-        { keyword: "Renton, WA",           monthly_searches: null, new_market: true },
-        { keyword: "Kenmore, WA",          monthly_searches: null, new_market: true }
-      ]
-    },
-    {
       plan: "Level C",
       combinations: 40,
       price: 1200,
-      additional_combinations: 20,
-      headline: "Target Trade Professionals and Add Ceramic Tile Coverage",
-      description: "Adds contractor-adjacent keywords including 'ceramic tile store near me' (2,900/mo) and 'tile supply near me' (3,600/mo) to capture the trade professional audience, while expanding geographic reach into Maple Valley and strengthening coverage across all existing markets.",
+      additional_combinations: 10,
+      headline: "Add Porcelain Tile Coverage and Expand into Kenmore",
+      description: "Introduces 'porcelain tile store' (12,100/mo) as a dedicated product keyword across core markets, and expands geographic reach into Kenmore, a growing community with strong residential renovation demand and easy access to the Bellevue showroom.",
       keywords: [
-        { keyword: "ceramic tile store near me", monthly_searches: 2900 },
-        { keyword: "tile supply near me",        monthly_searches: 3600 },
-        { keyword: "Maple Valley, WA",           monthly_searches: null, new_market: true }
+        { keyword: "porcelain tile store", monthly_searches: 12100 },
+        { keyword: "Kenmore, WA",          monthly_searches: null, new_market: true }
       ]
     },
     {
       plan: "Level D",
       combinations: 50,
       price: 1600,
-      additional_combinations: 30,
-      headline: "Full Eastside Domination: Natural Stone, Mosaic, and South King County",
-      description: "Expands into premium product categories with 'natural stone tile store' (1,300/mo) and 'mosaic tile store near me' (720/mo), while extending geographic reach into Kent and Auburn, establishing Discount Tile Outlet as the dominant tile destination across all of King County.",
+      additional_combinations: 20,
+      headline: "Add Ceramic Tile and Natural Stone Coverage",
+      description: "Adds 'ceramic tile store near me' (2,900/mo) and 'natural stone tile store' (1,300/mo) as dedicated product keywords, capturing customers searching for specific tile materials and establishing Discount Tile Outlet as the dominant specialty tile destination across the Eastside.",
       keywords: [
-        { keyword: "natural stone tile store",  monthly_searches: 1300 },
-        { keyword: "mosaic tile store near me", monthly_searches:  720 },
-        { keyword: "Kent, WA",                  monthly_searches: null, new_market: true },
-        { keyword: "Auburn, WA",                monthly_searches: null, new_market: true }
+        { keyword: "ceramic tile store near me", monthly_searches: 2900 },
+        { keyword: "natural stone tile store",   monthly_searches: 1300 },
+        { keyword: "Maple Valley, WA",           monthly_searches: null, new_market: true }
       ]
     }
   ]
@@ -246,11 +249,12 @@ function buildKeywordTierCards() {
 
 // ============================================================
 // POPULATE MATRIX TABLE
-// Cities as rows layout — 8 markets >= 6 threshold
-// tile store:            7 markets (all except Woodinville)
-// tile flooring near me: 7 markets (all except Mercer Island)
-// tile showroom near me: 6 markets (Bellevue, Kirkland, Redmond, Sammamish, Issaquah, Mercer Island)
-// Total: 7 + 7 + 6 = 20 combinations
+// Cities as rows layout — 9 markets >= 6 threshold
+// tile store:              8 markets (all except Woodinville)
+// tile flooring near me:   8 markets (all except Mercer Island)
+// tile showroom near me:   7 markets (all except Woodinville and Renton)
+// hardwood flooring near me: 7 markets (all except Woodinville and Mercer Island)
+// Total: 8 + 8 + 7 + 7 = 30 combinations
 // ============================================================
 function buildMatrix() {
   const thead = document.getElementById('matrix-thead');
@@ -259,6 +263,7 @@ function buildMatrix() {
 
   const allCities = [
     { city: "Bellevue",      tier: "Tier 1", population: 151854, is_hq: true  },
+    { city: "Renton",        tier: "Tier 1", population: 108429, is_hq: false },
     { city: "Kirkland",      tier: "Tier 1", population:  92175, is_hq: false },
     { city: "Redmond",       tier: "Tier 1", population:  73256, is_hq: false },
     { city: "Sammamish",     tier: "Tier 1", population:  69438, is_hq: false },
@@ -269,14 +274,15 @@ function buildMatrix() {
   ];
 
   const cityMatrix = {
-    "Bellevue":      [true,  true,  true ],
-    "Kirkland":      [true,  true,  true ],
-    "Redmond":       [true,  true,  true ],
-    "Sammamish":     [true,  true,  true ],
-    "Bothell":       [true,  true,  false],
-    "Issaquah":      [true,  true,  true ],
-    "Mercer Island": [true,  false, true ],
-    "Woodinville":   [false, true,  false]
+    "Bellevue":      [true,  true,  true,  true ],
+    "Renton":        [true,  true,  false, true ],
+    "Kirkland":      [true,  true,  true,  true ],
+    "Redmond":       [true,  true,  true,  true ],
+    "Sammamish":     [true,  true,  true,  true ],
+    "Bothell":       [true,  true,  false, true ],
+    "Issaquah":      [true,  true,  true,  true ],
+    "Mercer Island": [true,  false, true,  false],
+    "Woodinville":   [false, true,  false, false]
   };
 
   const keywords = STRATEGY.selected_keywords;

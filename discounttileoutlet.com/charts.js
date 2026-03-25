@@ -1,5 +1,5 @@
 // charts.js — Discount Tile Outlet | Eastside King County, WA
-// Top 8 selected markets by population
+// Top 9 selected markets by population (Level B)
 
 document.addEventListener('DOMContentLoaded', function() {
   const ctx = document.getElementById('marketChart');
@@ -12,12 +12,13 @@ document.addEventListener('DOMContentLoaded', function() {
   new Chart(ctx, {
     type: 'bar',
     data: {
-      labels: ['Bellevue', 'Kirkland', 'Redmond', 'Sammamish', 'Bothell', 'Issaquah', 'Mercer Island', 'Woodinville'],
+      labels: ['Bellevue', 'Renton', 'Kirkland', 'Redmond', 'Sammamish', 'Bothell', 'Issaquah', 'Mercer Island', 'Woodinville'],
       datasets: [{
         label: 'Population',
-        data: [151854, 92175, 73256, 69438, 53200, 40290, 25990, 14000],
+        data: [151854, 108429, 92175, 73256, 69438, 53200, 40290, 25990, 14000],
         backgroundColor: [
           dotRed,   // Bellevue — HQ
+          dotBlue,  // Renton — Tier 1
           dotBlue,  // Kirkland — Tier 1
           dotBlue,  // Redmond — Tier 1
           dotBlue,  // Sammamish — Tier 1

@@ -9,7 +9,7 @@
 
 const STRATEGY = {
   client_name: "Kitchen Cabinets Etc 2",
-  industry: "Cabinets, Countertops, Outdoor Kitchen, Vanities, Closets, Laundry Rooms",
+  industry: "Cabinets, Countertops, Vanities, Closets, Laundry Rooms",
   hq_city: "Gold Canyon",
   state: "AZ",
   service_area: "Gold Canyon, AZ and Surrounding Areas",
@@ -23,8 +23,8 @@ const STRATEGY = {
   // Selected by: highest volume base keyword per service line
   selected_keywords: [
     "kitchen cabinets near me",
-    "outdoor kitchen near me",
     "bathroom vanity near me",
+    "bathroom cabinets near me",
     "custom closets near me"
   ],
   num_selected_keywords: 4,
@@ -43,8 +43,8 @@ const STRATEGY = {
     { keyword: "kitchen cabinet companies near me",monthly_searches: 3600, tier: "Tier 1", status: "not_used", family: "kitchen cabinets", variant_type: "near_me" },
     { keyword: "kitchen cabinet showroom",        monthly_searches:  1900, tier: "Tier 1", status: "not_used", family: "kitchen cabinets", variant_type: "variant" },
 
-    // FAMILY 2: outdoor kitchen
-    { keyword: "outdoor kitchen near me",         monthly_searches: 14800, tier: "Tier 1", status: "selected", family: "outdoor kitchen", variant_type: "near_me" },
+    // FAMILY 2: outdoor kitchen (discontinued by client - all not_used)
+    { keyword: "outdoor kitchen near me",         monthly_searches: 14800, tier: "Tier 1", status: "not_used", family: "outdoor kitchen", variant_type: "near_me" },
     { keyword: "outdoor kitchen",                 monthly_searches:135000, tier: "Tier 1", status: "not_used", family: "outdoor kitchen", variant_type: "base" },
     { keyword: "outdoor kitchen design",          monthly_searches: 22200, tier: "Tier 1", status: "not_used", family: "outdoor kitchen", variant_type: "variant" },
     { keyword: "outdoor kitchen cabinets",        monthly_searches:  9900, tier: "Tier 1", status: "not_used", family: "outdoor kitchen", variant_type: "variant" },
@@ -61,7 +61,7 @@ const STRATEGY = {
     { keyword: "bathroom vanity showroom",        monthly_searches:  1300, tier: "Tier 2", status: "not_used", family: "bathroom vanity", variant_type: "variant" },
 
     // FAMILY 4: bathroom cabinets (separate family - different core term from bathroom vanity)
-    { keyword: "bathroom cabinets near me",       monthly_searches: 12100, tier: "Tier 2", status: "not_used", family: "bathroom cabinets", variant_type: "near_me" },
+    { keyword: "bathroom cabinets near me",       monthly_searches: 12100, tier: "Tier 2", status: "selected", family: "bathroom cabinets", variant_type: "near_me" },
     { keyword: "bathroom cabinets",               monthly_searches: 40500, tier: "Tier 2", status: "not_used", family: "bathroom cabinets", variant_type: "base" },
     { keyword: "custom bathroom cabinets",        monthly_searches:  2900, tier: "Tier 2", status: "not_used", family: "bathroom cabinets", variant_type: "variant" },
 
@@ -94,23 +94,19 @@ const STRATEGY = {
   keyword_tiers: [
     {
       tier_label: "Tier 1",
-      tier_name: "Kitchen Cabinets and Outdoor Kitchen",
-      description: "The two highest-priority service lines for Kitchen Cabinets Etc 2. Kitchen cabinets near me commands 74,000 monthly searches nationally and represents the core product the business was built on. Outdoor kitchen near me is a powerful differentiator - the client's Indoor | Outdoor brand identity is unique in the market, and 14,800 monthly searches confirm strong consumer demand. Both keywords are selected for Plan A.",
+      tier_name: "Kitchen Cabinets",
+      description: "The highest-priority service line for Kitchen Cabinets Etc 2. Kitchen cabinets near me commands 74,000 monthly searches nationally and represents the core product the business was built on. Custom kitchen cabinets (90,500 searches) is a high-volume variant reserved for plan expansion.",
       keywords: [
         { keyword: "kitchen cabinets near me",   monthly_searches: 74000 },
         { keyword: "custom kitchen cabinets",    monthly_searches: 90500 },
-        { keyword: "outdoor kitchen near me",    monthly_searches: 14800 },
-        { keyword: "outdoor kitchen design",     monthly_searches: 22200 },
-        { keyword: "outdoor kitchen cabinets",   monthly_searches:  9900 },
         { keyword: "kitchen cabinet design",     monthly_searches:  8100 },
         { keyword: "kitchen cabinet store",      monthly_searches:  5400 },
-        { keyword: "custom outdoor kitchen",     monthly_searches:  5400 },
       ]
     },
     {
       tier_label: "Tier 2",
-      tier_name: "Bathroom Vanities and Custom Closets",
-      description: "Two additional high-volume service lines that represent distinct product categories on the client's website. Bathroom vanity near me (33,100 searches) and custom closets near me (27,100 searches) are both selected for Plan A. Note that bathroom cabinets is a separate bucket from bathroom vanity - different core term, different product, and reserved for plan expansion.",
+      tier_name: "Bathroom Vanities, Bathroom Cabinets, and Custom Closets",
+      description: "Three high-volume service lines covering the client's bathroom and storage offerings. Bathroom vanity near me (33,100 searches), bathroom cabinets near me (12,100 searches), and custom closets near me (27,100 searches) are all selected for Plan A. Note that bathroom vanity and bathroom cabinets are separate buckets - different core terms, different products.",
       keywords: [
         { keyword: "bathroom vanity near me",    monthly_searches: 33100 },
         { keyword: "bathroom vanities near me",  monthly_searches: 22200 },
@@ -139,6 +135,18 @@ const STRATEGY = {
   // ---- NOT USED GROUPS ----
   not_used_groups: [
     {
+      reason: "Discontinued Service Line",
+      description: "The outdoor kitchen category has been discontinued by the client. These keywords are removed from the strategy entirely and are not candidates for future plan expansion.",
+      keywords: [
+        { keyword: "outdoor kitchen near me",          monthly_searches: 14800 },
+        { keyword: "outdoor kitchen",                  monthly_searches: 135000 },
+        { keyword: "outdoor kitchen design",           monthly_searches: 22200 },
+        { keyword: "outdoor kitchen cabinets",         monthly_searches:  9900 },
+        { keyword: "custom outdoor kitchen",           monthly_searches:  5400 },
+        { keyword: "outdoor kitchen company",          monthly_searches:  2400 },
+      ]
+    },
+    {
       reason: "Incorrect Business Model",
       description: "These keywords imply a general contractor, remodeler, or construction company - not a cabinet design showroom. Kitchen Cabinets Etc 2 offers one-on-one design consultations and sells/installs cabinetry. Customers searching these terms are looking for a different type of business.",
       keywords: [
@@ -159,12 +167,11 @@ const STRATEGY = {
       ]
     },
     {
-      reason: "Reserved for Plan C - Bathroom Cabinets and Expansion",
-      description: "Bathroom cabinets is a distinct service line from bathroom vanity - different core term, different product. It is reserved for Plan C along with additional market expansion. Custom kitchen cabinets is a high-volume variant of the selected kitchen cabinets keyword and is covered by the existing strategy.",
+      reason: "Reserved for Plan C - Custom Variants and Expansion",
+      description: "Custom kitchen cabinets (90,500 searches) and custom closets (74,000 searches) are high-volume variants of already-selected keywords. They are reserved for Plan C when dedicated keyword slots become available.",
       keywords: [
-        { keyword: "bathroom cabinets near me",  monthly_searches: 12100 },
-        { keyword: "custom bathroom cabinets",   monthly_searches:  2900 },
         { keyword: "custom kitchen cabinets",    monthly_searches: 90500 },
+        { keyword: "custom bathroom cabinets",   monthly_searches:  2900 },
         { keyword: "custom closets",             monthly_searches: 74000 },
       ]
     }
@@ -178,7 +185,7 @@ const STRATEGY = {
       price: 900,
       additional_combinations: 10,
       headline: "Add Countertops and Laundry Room Coverage",
-      description: "Upgrading to Level B adds 10 additional keyword-city combinations, allowing Kitchen Cabinets Etc 2 to target two new high-value service lines: countertops and laundry room cabinets. These are distinct product categories the client already offers, and both carry strong local search intent.",
+      description: "Upgrading to Level B adds 10 additional keyword-city combinations, allowing Kitchen Cabinets Etc 2 to target two new high-value service lines: granite countertops and laundry room cabinets. These are distinct product categories the client already offers, and both carry strong local search intent.",
       keywords: [
         { keyword: "granite countertops near me",  monthly_searches: 33100 },
         { keyword: "laundry room cabinets near me",monthly_searches:  4400 },
