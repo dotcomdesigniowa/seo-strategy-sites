@@ -188,7 +188,10 @@ function buildKeywordTierCards() {
       <div class="kw-tier-label">${tier.tier_label}</div>
       <h4 class="kw-tier-name">${tier.tier_name}</h4>
       <p class="kw-tier-desc">${tier.description}</p>
-      <div class="kw-rows">${kwRows}</div>
+      <div class="kw-tier-table">
+        <div class="kw-header"><span>Keyword</span><span>Mo. Searches</span></div>
+        ${kwRows}
+      </div>
     </div>`;
   }).join('');
   grid.innerHTML = cards;
@@ -198,34 +201,77 @@ function buildMatrix() {
   const thead = document.getElementById('matrix-thead');
   const tbody = document.getElementById('matrix-tbody');
   if (!thead || !tbody) return;
-
-  const keywords = STRATEGY.selected_keywords;
   const markets = [
-    'Bellevue', 'Renton', 'Kirkland', 'Redmond', 'Sammamish', 'Mercer Island'
+    { city: "Bellevue",      tier: "Tier 1", population: 151854, is_hq: true  },
+    { city: "Renton",        tier: "Tier 1", population: 108429, is_hq: false },
+    { city: "Kirkland",      tier: "Tier 1", population:  92175, is_hq: false },
+    { city: "Redmond",       tier: "Tier 1", population:  73256, is_hq: false },
+    { city: "Sammamish",     tier: "Tier 1", population:  68981, is_hq: false },
+    { city: "Mercer Island", tier: "Tier 2", population:  26320, is_hq: false },
   ];
-
-  // Keywords as columns (6 markets, 5 keywords — keywords-as-columns layout)
-  thead.innerHTML = `<tr><th>Market</th>${keywords.map(k => `<th>${k}</th>`).join('')}</tr>`;
-  tbody.innerHTML = markets.map(city =>
-    `<tr><td><strong>${city}</strong></td>${keywords.map(k =>
-      `<td class="matrix-cell">&#10003;</td>`
-    ).join('')}</tr>`
+  const keywords = STRATEGY.selected_keywords;
+  // CITIES AS ROWS, KEYWORDS AS COLUMNS (6 markets >= 6)
+  const kwHeaders = keywords.map(kw =>
+    `<th class="total-header" style="text-align:center;">${kw}</th>`
   ).join('');
+  thead.innerHTML = `<tr>
+    <th style="text-align:left; padding-left:16px; min-width:180px;">City / Market</th>
+    ${kwHeaders}
+    <th class="total-header">Total</th>
+  </tr>`;
+  const rows = markets.map(m => {
+    const tierCls = m.tier === 'Tier 1' ? 't1' : m.tier === 'Tier 2' ? 't2' : 't3';
+    const cityLabel = m.is_hq
+      ? `${m.city} <span class="hq-star">&#9733;</span>`
+      : m.city;
+    const checkCells = keywords.map(() =>
+      `<td class="matrix-check">&#10003;</td>`
+    ).join('');
+    return `<tr>
+      <td class="city-row-label">
+        ${cityLabel}
+        <div class="city-tier-inline">
+          <span class="tier-pill ${tierCls} tier-pill-sm">${m.tier.toUpperCase()}</span>
+          <span style="font-size:0.75rem; color:#888; font-weight:400;">Pop. ${fmt(m.population)}</span>
+        </div>
+      </td>
+      ${checkCells}
+      <td class="city-total-cell">${keywords.length}</td>
+    </tr>`;
+  }).join('');
+  const grandTotal = keywords.length * markets.length;
+  tbody.innerHTML = rows
+    + `<tr class="grand-total-row"><td colspan="${keywords.length + 2}" class="grand-total">Grand Total: <strong>${grandTotal} Combinations</strong></td></tr>`;
 }
 
 function buildMobileMatrix() {
-  const container = document.getElementById('mobile-matrix');
-  if (!container) return;
-  const keywords = STRATEGY.selected_keywords;
+  const el = document.getElementById('mobile-matrix');
+  if (!el) return;
   const markets = [
-    'Bellevue', 'Renton', 'Kirkland', 'Redmond', 'Sammamish', 'Mercer Island'
+    { city: "Bellevue",      tier: "Tier 1", pop: 151854, is_hq: true  },
+    { city: "Renton",        tier: "Tier 1", pop: 108429, is_hq: false },
+    { city: "Kirkland",      tier: "Tier 1", pop:  92175, is_hq: false },
+    { city: "Redmond",       tier: "Tier 1", pop:  73256, is_hq: false },
+    { city: "Sammamish",     tier: "Tier 1", pop:  68981, is_hq: false },
+    { city: "Mercer Island", tier: "Tier 2", pop:  26320, is_hq: false },
   ];
-  container.innerHTML = markets.map(city =>
-    `<div class="mobile-matrix-city">
-      <div class="mobile-matrix-city-name">${city}</div>
-      ${keywords.map(k => `<div class="mobile-matrix-kw">&#10003; ${k}</div>`).join('')}
-    </div>`
-  ).join('');
+  const keywords = STRATEGY.selected_keywords;
+  const cards = markets.map(m => {
+    const tierCls = m.tier === 'Tier 1' ? 't1' : 't2';
+    const cityLabel = m.is_hq ? `${m.city} <span class="hq-tag">HQ</span>` : m.city;
+    const kwList = keywords.map(kw =>
+      `<div class="mob-matrix-kw"><span class="mob-matrix-check">&#10003;</span><span>${kw}</span></div>`
+    ).join('');
+    return `<div class="mob-matrix-card">
+      <div class="mob-matrix-city">
+        <span class="mob-matrix-city-name">${cityLabel}</span>
+        <span class="mob-matrix-meta"><span class="tier-pill ${tierCls}">${m.tier.toUpperCase()}</span> &nbsp; Pop. ${fmt(m.pop)}</span>
+      </div>
+      <div class="mob-matrix-kws">${kwList}</div>
+      <div class="mob-matrix-total">${keywords.length} combinations</div>
+    </div>`;
+  }).join('');
+  el.innerHTML = cards + `<div class="mob-matrix-grand-total">Grand Total: <strong>${keywords.length * markets.length} Combinations</strong></div>`;
 }
 
 function buildNotUsed() {
@@ -266,13 +312,17 @@ function buildOpportunities() {
       </li>`
     ).join('');
     const highlight = i === 0 ? 'opp-card-highlight' : '';
+    const newMarketDiv = opp.new_market
+      ? `<div class="opp-new-market">+ New Market Added</div>`
+      : `<div class="opp-new-market" style="visibility:hidden"></div>`;
     return `<div class="opp-card ${highlight}">
       <div class="opp-plan-label">${opp.plan}</div>
-      ${opp.price ? `<div class="opp-price">$${fmt(opp.price)}<span class="opp-price-label">/mo</span></div>` : ''}
+      <div class="opp-price">$${fmt(opp.price)}<span class="opp-price-label">/mo</span></div>
       <div class="opp-combos-large">${opp.combinations} <span class="opp-combos-label">total combinations</span></div>
       <div class="opp-combos">${opp.additional_combinations} additional combinations from current plan</div>
       <h4 class="opp-headline">${opp.headline}</h4>
       <p class="opp-desc">${opp.description}</p>
+      ${newMarketDiv}
       <ul class="opp-kw-list"><li class="opp-kw-header"><span>Keyword / Market</span><span>Mo. Searches</span></li>${kwList}</ul>
     </div>`;
   }).join('');
