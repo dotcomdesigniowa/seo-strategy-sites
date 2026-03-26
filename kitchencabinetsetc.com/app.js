@@ -72,14 +72,14 @@ const STRATEGY = {
       reason: "Incorrect Business Model",
       description: "These keywords imply the client is a manufacturer, craftsman, or general contractor. Kitchen Cabinets Etc. is a retail showroom, not a fabricator. Using these terms would attract the wrong audience and misrepresent the business.",
       keywords: [
-        { keyword: "Cabinet Makers Near Me",      monthly_searches: 74000 },
-        { keyword: "Kitchen and Bath Showroom",   monthly_searches: 1300 }
+        { keyword: "Cabinet Makers Near Me",      monthly_searches: 74000 }
       ]
     },
     {
       reason: "Reserved for Plan Expansion",
       description: "These high-value keywords are ideal for future plan upgrades. Each represents a distinct product sub-category or material type that warrants its own dedicated keyword slot when the plan level allows for more combinations.",
       keywords: [
+        { keyword: "Kitchen and Bath Showroom",   monthly_searches: 1300 },
         { keyword: "Bathroom Vanity Near Me",     monthly_searches: 33100 },
         { keyword: "Quartz Countertops Near Me",  monthly_searches: 22200 }
       ]
@@ -106,7 +106,7 @@ const STRATEGY = {
       price: 1600,
       additional_combinations: 20,
       headline: "Expand into Bothell and Issaquah",
-      description: "Level D adds two additional Eastside markets: Bothell (55,287 residents) and Issaquah (40,051 residents), extending all 8 keywords into two growing communities with strong residential remodeling demand and easy access to the Bellevue showroom.",
+      description: "Level D adds two additional Eastside markets: Bothell (55,287 residents) and Issaquah (40,051 residents), extending all 7 keywords into two growing communities with strong residential remodeling demand and easy access to the Bellevue showroom.",
       keywords: [
         { keyword: "Bothell, WA",   monthly_searches: null, new_market: true },
         { keyword: "Issaquah, WA",  monthly_searches: null, new_market: true }
