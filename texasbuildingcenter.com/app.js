@@ -344,24 +344,28 @@ function buildKeywordTierCards() {
   const grid = document.getElementById('kw-tier-grid');
   if (!grid) return;
   const tierColors = ['kw-tier-1', 'kw-tier-2', 'kw-tier-3', 'kw-tier-4'];
-  const cards = STRATEGY.keyword_tiers.map((tier, i) => {
+  const blocks = STRATEGY.keyword_tiers.map((tier, i) => {
     const kwRows = tier.keywords.map(kw =>
-      `<div class="kw-row">
-        <span class="kw-name">${kw.keyword}</span>
-        <span class="kw-vol">${fmt(kw.monthly_searches)}</span>
-      </div>`
+      `<tr>
+        <td class="flat-kw-name">${kw.keyword}</td>
+        <td class="flat-kw-vol">${fmt(kw.monthly_searches)}</td>
+      </tr>`
     ).join('');
-    return `<div class="kw-tier-card ${tierColors[i]}">
-      <div class="kw-tier-label">${tier.tier_label}</div>
-      <h4 class="kw-tier-name">${tier.tier_name}</h4>
-      <p class="kw-tier-desc">${tier.description}</p>
-      <div class="kw-tier-table">
-        <div class="kw-header"><span>Keyword</span><span>Mo. Searches</span></div>
-        ${kwRows}
+    const colorCls = tierColors[i] || 'kw-tier-1';
+    return `<div class="flat-tier-block ${colorCls}">
+      <div class="flat-tier-heading">
+        <span class="tier-pill ${colorCls.replace('kw-tier-','t')}">${tier.tier_label}</span>
+        <span class="flat-tier-name">${tier.tier_name}</span>
+        <span class="flat-tier-count">${tier.keywords.length} keyword${tier.keywords.length !== 1 ? 's' : ''} selected</span>
       </div>
+      <div class="flat-tier-desc">${tier.description}</div>
+      <table class="flat-kw-table">
+        <thead><tr><th>Keyword</th><th>Monthly Searches</th></tr></thead>
+        <tbody>${kwRows}</tbody>
+      </table>
     </div>`;
   }).join('');
-  grid.innerHTML = cards;
+  grid.innerHTML = blocks;
 }
 
 // ============================================================
@@ -373,62 +377,56 @@ function buildKeywordTierCards() {
 // metal buildings = 7. Total = 40.
 // ============================================================
 function buildMatrix() {
-  const thead = document.getElementById('matrix-thead');
-  const tbody = document.getElementById('matrix-tbody');
-  if (!thead || !tbody) return;
-
-  // All 10 confirmed service area cities used in the Go Wide matrix
-  const allCities = [
-    { city: "Marble Falls",      tier: "Tier 1", population: 10581, is_hq: false },
-    { city: "Lampasas",          tier: "Tier 1", population:  8250, is_hq: false },
-    { city: "Kingsland",         tier: "Tier 1", population:  7527, is_hq: false },
-    { city: "Burnet",            tier: "Tier 1", population:  7065, is_hq: true  },
-    { city: "Granite Shoals",    tier: "Tier 2", population:  5200, is_hq: false },
-    { city: "Horseshoe Bay",     tier: "Tier 2", population:  4700, is_hq: false },
-    { city: "Llano",             tier: "Tier 2", population:  3232, is_hq: false },
-    { city: "Cottonwood Shores", tier: "Tier 2", population:  2200, is_hq: false },
-    { city: "Johnson City",      tier: "Tier 2", population:  1800, is_hq: false },
-    { city: "Sunrise Beach",     tier: "Tier 2", population:  1200, is_hq: false },
-  ];
-
-  // Per-keyword city assignments (Go Wide distribution)
-  const keywordCities = {
-    "barndominium":          allCities.slice(0, 10),
-    "barndominium plans":    allCities.slice(0, 8),
-    "barndominium builders": allCities.slice(0, 8),
-    "custom home builders":  allCities.slice(0, 7),
-    "metal buildings":       allCities.slice(0, 7),
-  };
-  const keywords = Object.keys(keywordCities);
-
-  // ---- CITY-AS-ROWS LAYOUT ----
-  // Header: City | Keyword1 | Keyword2 | ... | Total
-  const kwHeaders = keywords.map(kw => {
-    const count = keywordCities[kw].length;
-    return `<th class="kw-col-header-v">${kw}<br><span class="kw-city-count">${count} cities</span></th>`;
-  }).join('');
-  thead.innerHTML = `<tr><th class="city-col-header">City</th>${kwHeaders}<th class="total-col-header">Total</th></tr>`;
-
-  // City rows
+  const el = document.getElementById('matrix-city-grid');
+  if (!el) return;
+  // Support both data shapes:
+  // Shape A: inline markets[] + STRATEGY.selected_keywords
+  // Shape B: STRATEGY.matrix (per-city keyword arrays)
+  let cards = '';
   let grandTotal = 0;
-  const rows = allCities.map(m => {
-    const tierCls = m.tier === 'Tier 1' ? 't1' : 't2';
-    const cityLabel = `${m.city}${m.is_hq ? ' <span class="hq-star">&#9733;</span>' : ''}<br><span class="city-pop-small city-tier-inline"><span class="tier-pill ${tierCls} tier-pill-sm">${m.tier.toUpperCase()}</span> Pop. ${fmt(m.population)}</span>`;
-    const kwCells = keywords.map(kw => {
-      const inPlan = keywordCities[kw].some(c => c.city === m.city);
-      return inPlan
-        ? `<td class="check-cell matrix-check">&#10003;</td>`
-        : `<td class="check-cell check-na">&#8212;</td>`;
-    }).join('');
-    const cityTotal = keywords.filter(kw => keywordCities[kw].some(c => c.city === m.city)).length;
-    grandTotal += cityTotal;
-    return `<tr><td class="city-row-label">${cityLabel}</td>${kwCells}<td class="total-cell city-total-cell">${cityTotal}</td></tr>`;
-  }).join('');
-
-  // Keyword totals row
-  const kwTotals = keywords.map(kw => `<td class="total-cell">${keywordCities[kw].length}</td>`).join('');
-  tbody.innerHTML = rows
-    + `<tr class="total-row"><td class="total-label">Combos per Keyword</td>${kwTotals}<td class="total-cell grand-total-cell">${grandTotal}</td></tr>`;
+  if (typeof STRATEGY.matrix !== 'undefined' && STRATEGY.matrix.length > 0 && STRATEGY.matrix[0].keywords) {
+    // Shape B (pinecrest-style)
+    STRATEGY.matrix.forEach(m => {
+      const tierCls = m.tier === 'Tier 1' ? 't1' : m.tier === 'Tier 2' ? 't2' : 't3';
+      const cityLabel = m.city + (m.state ? ', ' + m.state : '');
+      const hqStar = m.is_hq ? '<span class="city-card-hq">&#9733;</span>' : '';
+      const kwItems = m.keywords.map(kw =>
+        `<div class="city-kw-item"><span class="city-kw-check">&#10003;</span><span class="city-kw-name">${kw}</span></div>`
+      ).join('');
+      grandTotal += m.keywords.length;
+      cards += `<div class="city-matrix-card">
+        <div class="city-matrix-header">
+          ${hqStar}<span class="city-matrix-name">${cityLabel}</span>
+          <span class="city-matrix-meta"><span class="tier-pill ${tierCls}">${m.tier.toUpperCase()}</span> Pop. ${fmt(m.population)}</span>
+        </div>
+        <div class="city-kw-list">${kwItems}</div>
+        <div class="city-matrix-footer">${m.keywords.length} combination${m.keywords.length !== 1 ? 's' : ''}</div>
+      </div>`;
+    });
+  } else {
+    // Shape A (all other sites) — markets defined inline in buildMatrix
+    markets.forEach(m => {
+      const tierCls = m.tier === 'Tier 1' ? 't1' : m.tier === 'Tier 2' ? 't2' : 't3';
+      const cityLabel = m.city + (m.state ? ', ' + m.state : '');
+      const hqStar = m.is_hq ? '<span class="city-card-hq">&#9733;</span>' : '';
+      const kwItems = keywords.map(kw =>
+        `<div class="city-kw-item"><span class="city-kw-check">&#10003;</span><span class="city-kw-name">${kw}</span></div>`
+      ).join('');
+      grandTotal += keywords.length;
+      cards += `<div class="city-matrix-card">
+        <div class="city-matrix-header">
+          ${hqStar}<span class="city-matrix-name">${cityLabel}</span>
+          <span class="city-matrix-meta"><span class="tier-pill ${tierCls}">${m.tier.toUpperCase()}</span> Pop. ${fmt(m.population)}</span>
+        </div>
+        <div class="city-kw-list">${kwItems}</div>
+        <div class="city-matrix-footer">${keywords.length} combination${keywords.length !== 1 ? 's' : ''}</div>
+      </div>`;
+    });
+  }
+  el.innerHTML = cards;
+  // Grand total bar
+  const gt = document.getElementById('matrix-grand-total');
+  if (gt) gt.textContent = 'Grand Total: ' + grandTotal + ' Combinations';
 }
 
 // ============================================================
