@@ -204,28 +204,26 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
 .data-table td.num-col { text-align: right; font-variant-numeric: tabular-nums; }
 .data-table tr:hover td { background: rgba(63,128,234,0.04); }
 .row-selected td { background: rgba(63,128,234,0.06); }
-.row-tier3 td { color: #999; font-size: 0.8rem; }
-/* Variant family grouping rows */
-.row-base td { border-top: 2px solid #e8ecf5; }
-.row-base:first-child td { border-top: none; }
-.row-variant td { background: #fafbfd; color: #666; font-size: 0.82rem; }
-.row-variant.row-near-me td { background: rgba(249,115,22,0.04); }
-.kw-variant-cell { padding-left: 28px !important; }
-.kw-variant-indent { color: #aab; margin-right: 4px; font-size: 0.9em; }
+.row-base td { font-weight: 600; }
+.row-variant td { font-size: 0.82rem; color: #555; background: #fafafa; }
+.row-near-me td { font-size: 0.82rem; color: #555; background: #fff8f0; }
+.kw-variant-cell { padding-left: 20px !important; }
+.kw-variant-indent { color: #aaa; margin-right: 4px; font-size: 0.9rem; }
 .kw-variant-badge {
   display: inline-block;
-  margin-left: 6px;
-  padding: 1px 6px;
-  border-radius: 8px;
-  font-size: 8px;
+  font-size: 9px;
   font-weight: 700;
   letter-spacing: 0.5px;
   text-transform: uppercase;
-  background: #eef0f7;
-  color: #778;
+  background: #f0f0f0;
+  color: #888;
+  border-radius: 3px;
+  padding: 1px 5px;
+  margin-left: 6px;
   vertical-align: middle;
 }
-.row-near-me .kw-variant-badge { background: rgba(249,115,22,0.12); color: #c2410c; }
+.row-near-me .kw-variant-badge { background: #fff0e0; color: #c07000; }
+.row-tier3 td { color: #999; font-size: 0.8rem; }
 .check { color: #22c55e; font-weight: 900; text-align: center; }
 .dash { color: #ccc; text-align: center; }
 
@@ -360,19 +358,24 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
 
 /* City header row — small uppercase gray labels with borders above and below. */
 .city-header-row {
-  height: auto !important;
-  padding: 8px 0 !important;
-  border-top: 1px solid #e8e8e8 !important;
-  border-bottom: 2px solid #eee !important;
+  height: 32px !important;
+  padding: 0 !important;
+  border-top: none !important;
+  border-bottom: 1px solid #f0f0f0 !important;
   margin-top: 8px;
-  margin-bottom: 2px;
+  margin-bottom: 0;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  letter-spacing: 1px !important;
+  text-transform: uppercase !important;
+  color: #999 !important;
 }
 .city-col-label {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: #999;
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  color: inherit;
 }
 
 /* Legend below tier cards */
@@ -413,7 +416,7 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
    ============================================================ */
 .kw-tier-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   /* 4 tracks: label | name | desc(stretches) | table */
   grid-template-rows: auto auto 1fr auto;
   column-gap: 20px;
@@ -512,77 +515,6 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
   text-transform: uppercase;
   white-space: nowrap;
 }
-/* City-as-rows matrix layout (used when city count > 6) */
-.city-col-header {
-  text-align: left;
-  padding-left: 16px;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  color: #aaa;
-  min-width: 160px;
-}
-.kw-col-header-v {
-  text-align: center;
-  font-size: 0.78rem;
-  font-weight: 700;
-  color: #fff;
-  padding: 10px 12px;
-  line-height: 1.4;
-  min-width: 120px;
-}
-.kw-city-count {
-  display: block;
-  font-size: 10px;
-  font-weight: 500;
-  color: #8ab4f8;
-  letter-spacing: 0.3px;
-  margin-top: 3px;
-}
-.total-col-header {
-  text-align: center;
-  font-size: 0.78rem;
-  font-weight: 700;
-  color: #fff;
-  padding: 10px 12px;
-  min-width: 60px;
-}
-.city-row-label {
-  text-align: left;
-  padding-left: 16px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: #334168;
-  white-space: nowrap;
-}
-.city-tier-inline {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  margin-top: 3px;
-}
-.tier-pill-sm {
-  font-size: 8px !important;
-  padding: 1px 5px !important;
-}
-.matrix-check {
-  color: #22c55e;
-  font-size: 1.1rem;
-  font-weight: 900;
-  text-align: center;
-}
-.city-total-cell {
-  font-weight: 900;
-  color: #3F80EA;
-  text-align: center;
-}
-.grand-total-cell {
-  font-weight: 900;
-  color: #334168;
-  text-align: center;
-  background: #f0f4ff;
-}
 .matrix-table th:first-child,
 .matrix-table th.kw-col-header { text-align: left; padding-left: 16px; }
 /* Tier pill row in matrix header: distinct background so pills are always visible */
@@ -607,7 +539,49 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
 .total-label { text-align: left; padding-left: 16px; }
 .grand-total-row td { background: #334168; color: #fff; font-weight: 900; font-size: 0.9rem; text-align: center; padding: 14px; }
 .grand-total-row:hover td { background: #334168 !important; }
-
+/* ---- City-as-rows matrix layout (cities as rows, keywords as columns) ---- */
+.city-row-label {
+  text-align: left;
+  padding-left: 16px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #334168;
+  white-space: nowrap;
+}
+.city-name-main { display: block; }
+.city-meta-row { display: flex; align-items: center; gap: 6px; margin-top: 3px; }
+.city-pop-sm { font-size: 0.75rem; color: #64748b; font-weight: 400; }
+.city-tier-inline {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 3px;
+}
+.tier-pill-sm {
+  font-size: 8px !important;
+  padding: 1px 5px !important;
+}
+.matrix-check {
+  color: #22c55e;
+  font-size: 1.1rem;
+  font-weight: 900;
+  text-align: center;
+}
+.check-na {
+  color: #ccc;
+  font-size: 1rem;
+  text-align: center;
+}
+.city-total-cell {
+  font-weight: 900;
+  color: #3F80EA;
+  text-align: center;
+}
+.total-header {
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-align: center;
+}
 /* ============================================================
    NOT USED CARDS — flex column, divider pushed to bottom
    ============================================================ */
@@ -618,10 +592,14 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
 .not-used-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
+  /* 4 tracks per card row: title | desc(1fr) | header | table
+     The 1fr on desc forces all keyword-table headers to align at
+     the same Y position regardless of description length. */
+  grid-template-rows: auto 1fr auto auto;
+  column-gap: 24px;
+  row-gap: 0;
   margin-top: 32px;
 }
-/* When exactly 4 cards exist, use 2x2 grid so no card sits alone */
 .not-used-grid.grid-2col {
   grid-template-columns: repeat(2, 1fr);
 }
@@ -631,8 +609,10 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
   border-top: 4px solid var(--dd-red);
   padding: 24px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-  display: flex;
-  flex-direction: column;
+  /* Subgrid: share the 4 row tracks from the parent grid */
+  display: grid;
+  grid-row: span 4;
+  grid-template-rows: subgrid;
 }
 .nu-reason {
   font-size: 0.75rem;
@@ -679,9 +659,8 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
 
 /* ============================================================
    OPPORTUNITIES CARDS — subgrid for perfect cross-card alignment
-   6 tracks: [badge] auto [label] auto [combos-large] auto [combos] auto
+   7 tracks: [badge] auto [label] auto [price] auto [combos] auto
              [headline] auto [desc] 1fr [kw-list] auto
-   (pricing removed — never show plan price in client-facing deliverables)
    ============================================================ */
 .opportunities-grid {
   display: grid;
@@ -713,20 +692,14 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
   color: #3F80EA;
   margin-bottom: 4px;
 }
-.opp-price {
-  margin-top: 10px;
-  font-size: 2.2rem;
-  font-weight: 900;
+.opp-combos-large {
+  font-size: 1.1rem;
+  font-weight: 700;
   color: #334168;
   line-height: 1;
   margin-bottom: 4px;
 }
-.opp-price-label {
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: #6b7280;
-  margin-left: 2px;
-}
+.opp-combos-label { font-size: 0.85rem; font-weight: 500; color: #999; }
 .opp-combos {
   margin-top: 10px;
   font-size: 0.82rem;
@@ -735,6 +708,7 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
   padding-bottom: 18px;
   border-bottom: 1px solid #e8e8e8;
 }
+.opp-add { color: #22c55e; font-weight: 700; }
 .opp-headline {
   font-size: 1rem;
   font-weight: 900;
@@ -747,11 +721,61 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
   line-height: 1.55;
   margin-bottom: 14px;
   }
+.opp-price {
+  margin-top: 10px;
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #334168;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.opp-price-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #999;
+  margin-left: 2px;
+}
 .opp-kw-list {
   list-style: none;
   padding: 0;
-  padding-top: 14px;
+  padding-top: 0;
   margin-top: 0;
+}
+/* Opportunity card keyword rows (div-based, new renderer) */
+.opp-kw-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 0.82rem;
+}
+.opp-kw-row:last-child { border-bottom: none; }
+.opp-kw-name {
+  font-weight: 600;
+  color: #35373C;
+  flex: 1;
+  padding-right: 8px;
+}
+.opp-kw-vol {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #3F80EA;
+  white-space: nowrap;
+  text-align: right;
+}
+.opp-kw-tag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #fff;
+  background: #22C55E;
+  padding: 2px 7px;
+  border-radius: 10px;
+  white-space: nowrap;
+  text-align: right;
+}
+.opp-new-market .opp-kw-name {
+  color: #16803C;
 }
 .opp-kw-header {
   height: 32px;
@@ -934,7 +958,7 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
 /* --- 1100px: Keyword tier grid collapses to 2 cols --- */
 @media (max-width: 1100px) {
   .kw-tier-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     /* 2x2 layout: each pair of cards shares 5 row tracks */
     grid-template-rows: auto auto 1fr auto auto  auto auto 1fr auto auto;
   }

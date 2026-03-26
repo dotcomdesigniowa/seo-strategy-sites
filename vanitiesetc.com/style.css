@@ -741,6 +741,42 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
   padding-top: 0;
   margin-top: 0;
 }
+/* Opportunity card keyword rows (div-based, new renderer) */
+.opp-kw-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 0.82rem;
+}
+.opp-kw-row:last-child { border-bottom: none; }
+.opp-kw-name {
+  font-weight: 600;
+  color: #35373C;
+  flex: 1;
+  padding-right: 8px;
+}
+.opp-kw-vol {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #3F80EA;
+  white-space: nowrap;
+  text-align: right;
+}
+.opp-kw-tag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #fff;
+  background: #22C55E;
+  padding: 2px 7px;
+  border-radius: 10px;
+  white-space: nowrap;
+  text-align: right;
+}
+.opp-new-market .opp-kw-name {
+  color: #16803C;
+}
 .opp-kw-header {
   height: 32px;
   display: flex;
