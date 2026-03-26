@@ -120,14 +120,23 @@ These rules apply to every section of every strategy document and website, witho
 
 ### Step 9 - Finalization & Alignment Verification
 
-Before delivering to the client, perform a final visual review of the generated website. The JavaScript height equalization script should handle most alignment automatically, but it's critical to verify:
+Before delivering to the client, perform a final visual review of the generated website.
 
-- **Market Tier Cards:** All card descriptions and content elements line up horizontally.
-- **Keyword Tier Cards:** All card descriptions and content elements line up horizontally.
-- **Not Used Cards:** All card titles and descriptions line up horizontally.
-- **Additional Opportunity Cards:** All card titles, descriptions, and content elements line up horizontally.
+**Layout Architecture (Approach C — adopted March 2026):**
 
-Use the browser's developer tools to inspect element positions if any misalignment is suspected. The `runAllEqualizers()` function in the browser console can be used to manually trigger the alignment script.
+- **Keywords by Strategic Tier:** Uses `flat-tier-block` layout. One full-width block per tier, stacked vertically. No subgrid, no card alignment dependencies. The `buildKeywordTierCards()` function in `app_template.js` generates these automatically. Zero chance of misalignment regardless of keyword count or description length.
+- **Strategy Matrix:** Uses `city-matrix-card` layout. One card per city in a responsive auto-fill grid. The `buildMatrix()` function generates these. No table overflow, no column count issues. Scales to any number of cities or keywords.
+- **Not Used Cards:** Subgrid layout (3-column). Verify descriptions align across cards.
+- **Additional Opportunity Cards:** Subgrid layout. Verify all content elements align.
+
+**Required HTML elements in every client `index.html`:**
+- `<div id="kw-tier-grid"></div>` — populated by `buildKeywordTierCards()`
+- `<div id="matrix-city-grid"></div>` — populated by `buildMatrix()`
+- `<div id="matrix-grand-total"></div>` — populated by `buildMatrix()`
+
+**DO NOT use the old `matrix-wrapper` / `matrix-table` / `matrix-thead` / `matrix-tbody` HTML structure.** These have been permanently replaced by the city card layout on all sites and in the template.
+
+Use the browser's developer tools to inspect element positions if any misalignment is suspected. The `runAllEqualizers()` function in the browser console can be used to manually trigger alignment on Not Used and Opportunity cards.
 
 ### Step 10 - Deploy to seo-strategy.dotcomdesign.com
 
