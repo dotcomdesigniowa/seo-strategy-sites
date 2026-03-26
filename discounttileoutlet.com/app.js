@@ -368,25 +368,20 @@ function buildOpportunities() {
   if (!grid) return;
   const cards = STRATEGY.additional_opportunities.map((opp, i) => {
     const kwList = opp.keywords.map(kw =>
-      `<li class="opp-kw-row">
-        <span class="opp-kw-name">${kw.keyword}</span>
-        ${kw.monthly_searches ? `<span class="opp-kw-vol">${fmt(kw.monthly_searches)}</span>` : kw.new_market ? `<span class="opp-new-market-badge">NEW MARKET</span>` : ''}
+      `<li>
+        <span class="opp-kw">${kw.keyword}</span>
+        ${kw.monthly_searches ? `<span class="opp-vol">${fmt(kw.monthly_searches)}</span>` : kw.new_market ? `<span class="opp-vol opp-new-market">New Market</span>` : ''}
       </li>`
     ).join('');
-    const hasNewMarkets = opp.keywords.some(k => k.new_market);
-    const newMarketDiv = hasNewMarkets
-      ? `<div class="opp-new-market">Adds new markets to your coverage area.</div>`
-      : `<div class="opp-new-market" style="visibility:hidden;">placeholder</div>`;
     const highlight = i === 0 ? 'opp-card-highlight' : '';
     return `<div class="opp-card ${highlight}">
       <div class="opp-plan-label">${opp.plan}</div>
-      <div class="opp-price">$${fmt(opp.price)}<span class="opp-price-label">/mo</span></div>
+      ${opp.price ? `<div class="opp-price">$${fmt(opp.price)}<span class="opp-price-label">/mo</span></div>` : ''}
       <div class="opp-combos-large">${opp.combinations} <span class="opp-combos-label">total combinations</span></div>
       <div class="opp-combos">${opp.additional_combinations} additional combinations from current plan</div>
       <h4 class="opp-headline">${opp.headline}</h4>
       <p class="opp-desc">${opp.description}</p>
-      ${newMarketDiv}
-      <ul class="opp-kw-list"><li class="opp-kw-header"><span>KEYWORD / MARKET</span><span>MO. SEARCHES</span></li>${kwList}</ul>
+      <ul class="opp-kw-list"><li class="opp-kw-header"><span>Keyword / Market</span><span>Mo. Searches</span></li>${kwList}</ul>
     </div>`;
   }).join('');
   grid.innerHTML = cards;

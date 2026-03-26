@@ -231,37 +231,52 @@ function buildMobileMatrix() {
 function buildNotUsed() {
   const grid = document.getElementById('not-used-grid');
   if (!grid) return;
-  grid.innerHTML = STRATEGY.not_used_groups.map(group =>
-    `<div class="not-used-card">
-      <h4 class="not-used-reason">${group.reason}</h4>
-      <p class="not-used-desc">${group.description}</p>
-      <ul class="not-used-kw-list">
-        ${group.keywords.map(kw =>
-          `<li><span class="not-used-kw">${kw.keyword}</span><span class="not-used-vol">${fmt(kw.monthly_searches)}/mo</span></li>`
-        ).join('')}
-      </ul>
-    </div>`
-  ).join('');
+  const cards = STRATEGY.not_used_groups.map(group => {
+    const kwRows = group.keywords.map(kw =>
+      `<div class="nu-kw-row">
+        <span class="nu-kw-name">${kw.keyword}</span>
+        <span class="nu-kw-vol">${fmt(kw.monthly_searches)}</span>
+      </div>`
+    ).join('');
+    return `<div class="not-used-card">
+      <div class="nu-reason">${group.reason}</div>
+      <p class="nu-desc">${group.description}</p>
+      <div class="nu-kw-table">
+        <div class="nu-header"><span>Keyword</span><span>Mo. Searches</span></div>
+        ${kwRows}
+      </div>
+    </div>`;
+  }).join('');
+  grid.innerHTML = cards;
+  if (STRATEGY.not_used_groups.length === 4) {
+    grid.classList.add('grid-2col');
+  } else {
+    grid.classList.remove('grid-2col');
+  }
 }
 
 function buildOpportunities() {
   const grid = document.getElementById('opportunities-grid');
   if (!grid) return;
-  grid.innerHTML = STRATEGY.additional_opportunities.map(opp => {
-    const kwItems = opp.keywords.map(kw =>
-      kw.new_market
-        ? `<div class="opp-kw-row opp-new-market"><span class="opp-kw-name">&#127968; ${kw.keyword}</span><span class="opp-kw-tag">New Market</span></div>`
-        : `<div class="opp-kw-row"><span class="opp-kw-name">${kw.keyword}</span><span class="opp-kw-vol">${fmt(kw.monthly_searches)}/mo</span></div>`
+  const cards = STRATEGY.additional_opportunities.map((opp, i) => {
+    const kwList = opp.keywords.map(kw =>
+      `<li>
+        <span class="opp-kw">${kw.keyword}</span>
+        ${kw.monthly_searches ? `<span class="opp-vol">${fmt(kw.monthly_searches)}</span>` : kw.new_market ? `<span class="opp-vol opp-new-market">New Market</span>` : ''}
+      </li>`
     ).join('');
-    return `<div class="opp-card">
-      <div class="opp-plan-badge">${opp.plan}</div>
-      <div class="opp-combos">${opp.combinations} Combinations</div>
-      <div class="opp-price">$${opp.price.toLocaleString()}/mo</div>
+    const highlight = i === 0 ? 'opp-card-highlight' : '';
+    return `<div class="opp-card ${highlight}">
+      <div class="opp-plan-label">${opp.plan}</div>
+      ${opp.price ? `<div class="opp-price">$${fmt(opp.price)}<span class="opp-price-label">/mo</span></div>` : ''}
+      <div class="opp-combos-large">${opp.combinations} <span class="opp-combos-label">total combinations</span></div>
+      <div class="opp-combos">${opp.additional_combinations} additional combinations from current plan</div>
       <h4 class="opp-headline">${opp.headline}</h4>
       <p class="opp-desc">${opp.description}</p>
-      <div class="opp-kw-list">${kwItems}</div>
+      <ul class="opp-kw-list"><li class="opp-kw-header"><span>Keyword / Market</span><span>Mo. Searches</span></li>${kwList}</ul>
     </div>`;
   }).join('');
+  grid.innerHTML = cards;
 }
 
 function buildMobileMarketList() {
