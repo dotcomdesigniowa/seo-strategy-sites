@@ -1255,6 +1255,16 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
 .city-matrix-pop {
   font-size: 11px; color: #94a3b8; white-space: nowrap;
 }
+/* Tier pills inside dark card headers need high-contrast overrides */
+.city-matrix-header .tier-pill {
+  background: rgba(255,255,255,0.18);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.35);
+}
+.city-matrix-header .tier-pill.t1 { background: rgba(63,128,234,0.6); color: #fff; border-color: rgba(63,128,234,0.9); }
+.city-matrix-header .tier-pill.t2 { background: rgba(255,255,255,0.22); color: #fff; border-color: rgba(255,255,255,0.45); }
+.city-matrix-header .tier-pill.t3 { background: rgba(235,0,82,0.6); color: #fff; border-color: rgba(235,0,82,0.9); }
+.city-matrix-header .tier-pill.t4 { background: rgba(249,115,22,0.6); color: #fff; border-color: rgba(249,115,22,0.9); }
 .city-kw-list { padding: 10px 16px; }
 .city-kw-item {
   display: flex; align-items: flex-start; gap: 10px;
