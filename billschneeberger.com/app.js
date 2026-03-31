@@ -12,58 +12,61 @@ const STRATEGY = {
   plan_level: "Level A",
   plan_price: 600,
   total_combinations: 20,
-  total_keywords_researched: 68,
+  total_keywords_researched: 72,
 
   selected_keywords: [
     "interior painters",
     "exterior painters",
     "wallpaper installation",
-    "interior decorator"
+    "power washing"
   ],
   num_selected_keywords: 4,
   num_target_markets: 5,
 
   // ---- KEYWORD TABLE DATA ----
+  // VARIANT RULE: a keyword is only a variant of a base keyword if it CONTAINS the core term.
+  // e.g. "interior painters" variants must contain "interior paint" or "interior house paint"
+  // "house painters near me" does NOT contain "interior" so it is NOT a variant of "interior painters"
   keyword_table: [
-    // Interior Painting family
-    { keyword: "interior painters near me",          monthly_searches: 18100, tier: "Tier 1", status: "selected", family: "interior painters",    variant_type: "base" },
-    { keyword: "interior painting near me",          monthly_searches: 22200, tier: "Tier 1", status: "near_me",  family: "interior painters",    variant_type: "near_me" },
-    { keyword: "interior painting contractor",       monthly_searches:  5400, tier: "Tier 1", status: "not_used", family: "interior painters",    variant_type: "variant" },
-    { keyword: "interior painting companies near me",monthly_searches:  4400, tier: "Tier 1", status: "not_used", family: "interior painters",    variant_type: "near_me" },
-    { keyword: "interior painting services",         monthly_searches:  8100, tier: "Tier 1", status: "not_used", family: "interior painters",    variant_type: "variant" },
-    { keyword: "residential painters near me",       monthly_searches:  8100, tier: "Tier 1", status: "not_used", family: "interior painters",    variant_type: "near_me" },
-    { keyword: "house painters near me",             monthly_searches: 33100, tier: "Tier 1", status: "not_used", family: "interior painters",    variant_type: "near_me" },
-    { keyword: "home painters near me",              monthly_searches: 14800, tier: "Tier 1", status: "not_used", family: "interior painters",    variant_type: "near_me" },
-    { keyword: "painting contractors near me",       monthly_searches: 22200, tier: "Tier 1", status: "not_used", family: "interior painters",    variant_type: "near_me" },
-    { keyword: "interior house painters near me",    monthly_searches:  9900, tier: "Tier 1", status: "not_used", family: "interior painters",    variant_type: "near_me" },
-    // Exterior Painting family
-    { keyword: "exterior painters near me",          monthly_searches: 14800, tier: "Tier 2", status: "selected", family: "exterior painters",    variant_type: "base" },
-    { keyword: "exterior painting near me",          monthly_searches: 18100, tier: "Tier 2", status: "near_me",  family: "exterior painters",    variant_type: "near_me" },
-    { keyword: "exterior house painting near me",    monthly_searches:  9900, tier: "Tier 2", status: "not_used", family: "exterior painters",    variant_type: "near_me" },
-    { keyword: "house painting near me",             monthly_searches: 27100, tier: "Tier 2", status: "not_used", family: "exterior painters",    variant_type: "near_me" },
-    { keyword: "exterior painting contractor",       monthly_searches:  4400, tier: "Tier 2", status: "not_used", family: "exterior painters",    variant_type: "variant" },
-    { keyword: "exterior painting companies near me",monthly_searches:  3600, tier: "Tier 2", status: "not_used", family: "exterior painters",    variant_type: "near_me" },
-    { keyword: "exterior house painters",            monthly_searches:  9900, tier: "Tier 2", status: "not_used", family: "exterior painters",    variant_type: "variant" },
-    // Wallpaper Installation family
-    { keyword: "wallpaper installation near me",     monthly_searches: 12100, tier: "Tier 3", status: "selected", family: "wallpaper",            variant_type: "base" },
-    { keyword: "wallpaper installer near me",        monthly_searches:  9900, tier: "Tier 3", status: "not_used", family: "wallpaper",            variant_type: "near_me" },
-    { keyword: "wallpaper hanger near me",           monthly_searches:  6600, tier: "Tier 3", status: "not_used", family: "wallpaper",            variant_type: "near_me" },
-    { keyword: "wallpaper removal near me",          monthly_searches:  8100, tier: "Tier 3", status: "not_used", family: "wallpaper",            variant_type: "near_me" },
-    { keyword: "wallpaper hanging service",          monthly_searches:  4400, tier: "Tier 3", status: "not_used", family: "wallpaper",            variant_type: "variant" },
-    { keyword: "wallpaper contractor near me",       monthly_searches:  2900, tier: "Tier 3", status: "not_used", family: "wallpaper",            variant_type: "near_me" },
-    // Interior Decorator family
-    { keyword: "interior decorator near me",         monthly_searches: 22200, tier: "Tier 4", status: "selected", family: "interior decorator",   variant_type: "base" },
-    { keyword: "interior design near me",            monthly_searches: 33100, tier: "Tier 4", status: "not_used", family: "interior decorator",   variant_type: "near_me" },
-    { keyword: "home decorator near me",             monthly_searches:  5400, tier: "Tier 4", status: "not_used", family: "interior decorator",   variant_type: "near_me" },
-    { keyword: "interior decorating services",       monthly_searches:  8100, tier: "Tier 4", status: "not_used", family: "interior decorator",   variant_type: "variant" },
-    { keyword: "residential interior designer near me",monthly_searches: 4400,tier: "Tier 4", status: "not_used", family: "interior decorator",   variant_type: "near_me" },
-    { keyword: "interior color consultant near me",  monthly_searches:  2900, tier: "Tier 4", status: "not_used", family: "interior decorator",   variant_type: "near_me" },
-    // Out of scope
-    { keyword: "commercial painters near me",        monthly_searches:  9900, tier: "Tier 1", status: "not_used", family: "out of scope",         variant_type: "variant" },
-    { keyword: "cabinet painting near me",           monthly_searches:  8100, tier: "Tier 1", status: "not_used", family: "out of scope",         variant_type: "variant" },
-    { keyword: "deck painting near me",              monthly_searches:  5400, tier: "Tier 1", status: "not_used", family: "out of scope",         variant_type: "variant" },
-    { keyword: "painting classes near me",           monthly_searches: 12100, tier: "Tier 1", status: "not_used", family: "out of scope",         variant_type: "variant" },
-    { keyword: "paint store near me",                monthly_searches: 49500, tier: "Tier 1", status: "not_used", family: "out of scope",         variant_type: "variant" },
+    // ---- Interior Painters family ----
+    { keyword: "interior painters near me",           monthly_searches: 18100, tier: "Tier 1", status: "selected", family: "interior painters",   variant_type: "base" },
+    { keyword: "interior painting near me",           monthly_searches: 22200, tier: "Tier 1", status: "near_me",  family: "interior painters",   variant_type: "near_me" },
+    { keyword: "interior house painters near me",     monthly_searches:  9900, tier: "Tier 1", status: "not_used", family: "interior painters",   variant_type: "near_me" },
+    { keyword: "interior painting contractor",        monthly_searches:  5400, tier: "Tier 1", status: "not_used", family: "interior painters",   variant_type: "variant" },
+    { keyword: "interior painting companies near me", monthly_searches:  4400, tier: "Tier 1", status: "not_used", family: "interior painters",   variant_type: "near_me" },
+    { keyword: "interior painting services",          monthly_searches:  8100, tier: "Tier 1", status: "not_used", family: "interior painters",   variant_type: "variant" },
+    // ---- Exterior Painters family ----
+    { keyword: "exterior painters near me",           monthly_searches: 14800, tier: "Tier 2", status: "selected", family: "exterior painters",   variant_type: "base" },
+    { keyword: "exterior painting near me",           monthly_searches: 18100, tier: "Tier 2", status: "near_me",  family: "exterior painters",   variant_type: "near_me" },
+    { keyword: "exterior house painters near me",     monthly_searches:  9900, tier: "Tier 2", status: "not_used", family: "exterior painters",   variant_type: "near_me" },
+    { keyword: "exterior painting contractor",        monthly_searches:  4400, tier: "Tier 2", status: "not_used", family: "exterior painters",   variant_type: "variant" },
+    { keyword: "exterior painting companies near me", monthly_searches:  3600, tier: "Tier 2", status: "not_used", family: "exterior painters",   variant_type: "near_me" },
+    { keyword: "exterior painting services",          monthly_searches:  5400, tier: "Tier 2", status: "not_used", family: "exterior painters",   variant_type: "variant" },
+    // ---- Wallpaper Installation family ----
+    { keyword: "wallpaper installation near me",      monthly_searches: 12100, tier: "Tier 3", status: "selected", family: "wallpaper installation", variant_type: "base" },
+    { keyword: "wallpaper installation service",      monthly_searches:  4400, tier: "Tier 3", status: "not_used", family: "wallpaper installation", variant_type: "variant" },
+    { keyword: "wallpaper installer near me",         monthly_searches:  9900, tier: "Tier 3", status: "not_used", family: "wallpaper installation", variant_type: "near_me" },
+    { keyword: "wallpaper hanger near me",            monthly_searches:  6600, tier: "Tier 3", status: "not_used", family: "wallpaper installation", variant_type: "near_me" },
+    { keyword: "wallpaper removal near me",           monthly_searches:  8100, tier: "Tier 3", status: "not_used", family: "wallpaper installation", variant_type: "near_me" },
+    { keyword: "wallpaper contractor near me",        monthly_searches:  2900, tier: "Tier 3", status: "not_used", family: "wallpaper installation", variant_type: "near_me" },
+    // ---- Power Washing family ----
+    { keyword: "power washing near me",               monthly_searches: 33100, tier: "Tier 4", status: "selected", family: "power washing",       variant_type: "base" },
+    { keyword: "power washing service near me",       monthly_searches: 12100, tier: "Tier 4", status: "near_me",  family: "power washing",       variant_type: "near_me" },
+    { keyword: "power washing company near me",       monthly_searches:  8100, tier: "Tier 4", status: "not_used", family: "power washing",       variant_type: "near_me" },
+    { keyword: "power washing contractor near me",    monthly_searches:  3600, tier: "Tier 4", status: "not_used", family: "power washing",       variant_type: "near_me" },
+    // ---- Out of scope / not offered ----
+    { keyword: "house painters near me",              monthly_searches: 33100, tier: "Tier 1", status: "not_used", family: "out of scope",        variant_type: "variant" },
+    { keyword: "painting contractors near me",        monthly_searches: 22200, tier: "Tier 1", status: "not_used", family: "out of scope",        variant_type: "variant" },
+    { keyword: "residential painters near me",        monthly_searches:  8100, tier: "Tier 1", status: "not_used", family: "out of scope",        variant_type: "variant" },
+    { keyword: "home painters near me",               monthly_searches: 14800, tier: "Tier 1", status: "not_used", family: "out of scope",        variant_type: "variant" },
+    { keyword: "house painting near me",              monthly_searches: 27100, tier: "Tier 2", status: "not_used", family: "out of scope",        variant_type: "variant" },
+    { keyword: "exterior house painting near me",     monthly_searches:  9900, tier: "Tier 2", status: "not_used", family: "out of scope",        variant_type: "variant" },
+    { keyword: "faux finish painting near me",        monthly_searches:  2900, tier: "Tier 3", status: "not_used", family: "out of scope",        variant_type: "variant" },
+    { keyword: "deck staining near me",               monthly_searches:  8100, tier: "Tier 3", status: "not_used", family: "out of scope",        variant_type: "variant" },
+    { keyword: "wood staining near me",               monthly_searches:  5400, tier: "Tier 3", status: "not_used", family: "out of scope",        variant_type: "variant" },
+    { keyword: "pressure washing near me",            monthly_searches: 40500, tier: "Tier 4", status: "not_used", family: "out of scope",        variant_type: "variant" },
+    { keyword: "commercial painters near me",         monthly_searches:  9900, tier: "Tier 1", status: "not_used", family: "out of scope",        variant_type: "variant" },
+    { keyword: "cabinet painting near me",            monthly_searches:  8100, tier: "Tier 1", status: "not_used", family: "out of scope",        variant_type: "variant" },
   ],
 
   // ---- KEYWORD TIERS ----
@@ -71,16 +74,12 @@ const STRATEGY = {
     {
       tier_label: "Tier 1",
       tier_name: "Interior Painting Services",
-      description: "High-intent keywords targeting homeowners actively searching for interior painting contractors. These are the highest-volume, highest-conversion terms in the painting industry. Customers searching these terms are ready to hire and represent the core revenue driver for Bill Schneeberger Painting & Decorating. These keywords are distributed across all 5 markets to maximize local visibility.",
+      description: "High-intent keywords targeting homeowners actively searching for interior painting contractors. These are the highest-conversion terms in the painting industry and represent the core revenue driver for Bill Schneeberger Painting & Decorating. Only keywords that contain the core term 'interior paint' or 'interior house paint' are included in this tier. These keywords are distributed across all 5 markets to maximize local visibility.",
       keywords: [
         { keyword: "interior painters near me",           monthly_searches: 18100 },
         { keyword: "interior painting near me",           monthly_searches: 22200 },
-        { keyword: "house painters near me",              monthly_searches: 33100 },
-        { keyword: "painting contractors near me",        monthly_searches: 22200 },
-        { keyword: "home painters near me",               monthly_searches: 14800 },
         { keyword: "interior house painters near me",     monthly_searches:  9900 },
         { keyword: "interior painting services",          monthly_searches:  8100 },
-        { keyword: "residential painters near me",        monthly_searches:  8100 },
         { keyword: "interior painting contractor",        monthly_searches:  5400 },
         { keyword: "interior painting companies near me", monthly_searches:  4400 },
       ]
@@ -88,13 +87,12 @@ const STRATEGY = {
     {
       tier_label: "Tier 2",
       tier_name: "Exterior Painting Services",
-      description: "High-intent keywords for exterior and house painting services. Exterior painting is a major revenue category for Bill Schneeberger, particularly during spring and summer seasons. These terms target homeowners ready to refresh their home's curb appeal and represent a distinct service vertical with strong commercial intent across the North Shore.",
+      description: "High-intent keywords for exterior painting services. Exterior painting is a major revenue category for Bill Schneeberger, particularly during spring and summer seasons. Only keywords that contain the core term 'exterior paint' or 'exterior house paint' are included in this tier. These terms target homeowners ready to refresh their home's curb appeal across the North Shore.",
       keywords: [
-        { keyword: "house painting near me",              monthly_searches: 27100 },
-        { keyword: "exterior painting near me",           monthly_searches: 18100 },
         { keyword: "exterior painters near me",           monthly_searches: 14800 },
-        { keyword: "exterior house painters",             monthly_searches:  9900 },
-        { keyword: "exterior house painting near me",     monthly_searches:  9900 },
+        { keyword: "exterior painting near me",           monthly_searches: 18100 },
+        { keyword: "exterior house painters near me",     monthly_searches:  9900 },
+        { keyword: "exterior painting services",          monthly_searches:  5400 },
         { keyword: "exterior painting contractor",        monthly_searches:  4400 },
         { keyword: "exterior painting companies near me", monthly_searches:  3600 },
       ]
@@ -102,27 +100,25 @@ const STRATEGY = {
     {
       tier_label: "Tier 3",
       tier_name: "Wallpaper Installation",
-      description: "Specialty keywords targeting homeowners seeking professional wallpaper installation and removal. This is a distinct service line that sets Bill Schneeberger apart from general painting contractors. The North Shore market has strong demand for wallpaper services given the prevalence of older, high-value homes. One keyword is included in the current plan to establish initial visibility in this niche.",
+      description: "Specialty keywords targeting homeowners seeking professional wallpaper installation and removal. This is a distinct service line that sets Bill Schneeberger apart from general painting contractors. The North Shore market has strong demand for wallpaper services given the prevalence of older, high-value homes. Only keywords containing 'wallpaper installation' are in this tier; related terms like 'wallpaper hanger' and 'wallpaper installer' are reserved for plan expansion.",
       keywords: [
         { keyword: "wallpaper installation near me",  monthly_searches: 12100 },
+        { keyword: "wallpaper installation service",  monthly_searches:  4400 },
         { keyword: "wallpaper installer near me",     monthly_searches:  9900 },
-        { keyword: "wallpaper removal near me",       monthly_searches:  8100 },
         { keyword: "wallpaper hanger near me",        monthly_searches:  6600 },
-        { keyword: "wallpaper hanging service",       monthly_searches:  4400 },
+        { keyword: "wallpaper removal near me",       monthly_searches:  8100 },
         { keyword: "wallpaper contractor near me",    monthly_searches:  2900 },
       ]
     },
     {
       tier_label: "Tier 4",
-      tier_name: "Interior Design & Decorating",
-      description: "High-volume keywords targeting homeowners seeking interior design and decorating consultation. Bill Schneeberger's 50-year history and expertise in color selection and decorating positions the company uniquely in this category. These terms attract customers at an earlier stage of the buying journey who are planning a full interior refresh, representing a strong upsell opportunity for painting and wallpaper services.",
+      tier_name: "Power Washing",
+      description: "High-volume keywords targeting homeowners and property owners seeking professional power washing services. Power washing is an exterior service offered by Bill Schneeberger and represents a strong standalone revenue category with very high search volume. These terms attract customers looking for seasonal exterior cleaning of driveways, siding, decks, and fences across the North Shore.",
       keywords: [
-        { keyword: "interior design near me",              monthly_searches: 33100 },
-        { keyword: "interior decorator near me",           monthly_searches: 22200 },
-        { keyword: "interior decorating services",         monthly_searches:  8100 },
-        { keyword: "home decorator near me",               monthly_searches:  5400 },
-        { keyword: "residential interior designer near me",monthly_searches:  4400 },
-        { keyword: "interior color consultant near me",    monthly_searches:  2900 },
+        { keyword: "power washing near me",            monthly_searches: 33100 },
+        { keyword: "power washing service near me",    monthly_searches: 12100 },
+        { keyword: "power washing company near me",    monthly_searches:  8100 },
+        { keyword: "power washing contractor near me", monthly_searches:  3600 },
       ]
     }
   ],
@@ -130,38 +126,36 @@ const STRATEGY = {
   // ---- NOT USED GROUPS ----
   not_used_groups: [
     {
-      reason: "Consolidated Under Selected Keywords",
-      description: "These keywords share the same core search intent as the selected keywords and would target the same pages. Including them as separate keyword targets would dilute SEO efforts without adding meaningful coverage. The selected base keywords already capture the search demand from these variants.",
+      reason: "Does Not Contain Core Term — Not a True Variant",
+      description: "These keywords were researched and have strong search volume, but they do not contain the core term of any selected keyword. Including them as variants would misrepresent their relationship to the selected keywords and could dilute page relevance. These are generic painting terms that are best captured organically through the selected keyword pages rather than targeted directly.",
       keywords: [
         { keyword: "house painters near me",          monthly_searches: 33100 },
         { keyword: "painting contractors near me",    monthly_searches: 22200 },
-        { keyword: "interior painting near me",       monthly_searches: 22200 },
         { keyword: "house painting near me",          monthly_searches: 27100 },
-        { keyword: "exterior painting near me",       monthly_searches: 18100 },
         { keyword: "home painters near me",           monthly_searches: 14800 },
+        { keyword: "residential painters near me",    monthly_searches:  8100 },
+        { keyword: "exterior house painting near me", monthly_searches:  9900 },
       ]
     },
     {
       reason: "Reserved for Plan Expansion",
-      description: "These are strong keywords representing distinct service lines or higher-specificity variants. They are not included in the current 20-combination plan because the plan's combination budget is fully allocated to the four core service lines. These terms are strong candidates for Level B or Level C expansion.",
+      description: "These keywords represent strong, distinct service lines that are not included in the current 20-combination plan because the combination budget is fully allocated to the four selected service lines. Each of these terms is a strong candidate for Level B or Level C expansion, particularly wallpaper removal, staining, and faux finish.",
       keywords: [
-        { keyword: "wallpaper installer near me",          monthly_searches:  9900 },
-        { keyword: "wallpaper removal near me",            monthly_searches:  8100 },
-        { keyword: "wallpaper hanger near me",             monthly_searches:  6600 },
-        { keyword: "interior design near me",              monthly_searches: 33100 },
-        { keyword: "residential painters near me",         monthly_searches:  8100 },
-        { keyword: "interior decorating services",         monthly_searches:  8100 },
+        { keyword: "wallpaper installer near me",     monthly_searches:  9900 },
+        { keyword: "wallpaper removal near me",       monthly_searches:  8100 },
+        { keyword: "wallpaper hanger near me",        monthly_searches:  6600 },
+        { keyword: "deck staining near me",           monthly_searches:  8100 },
+        { keyword: "wood staining near me",           monthly_searches:  5400 },
+        { keyword: "faux finish painting near me",    monthly_searches:  2900 },
       ]
     },
     {
       reason: "Outside Service Scope",
       description: "These keywords represent services that Bill Schneeberger Painting & Decorating does not offer, or that fall outside the residential painting and decorating focus of the business. Including them would attract unqualified traffic and misrepresent the company's offerings.",
       keywords: [
+        { keyword: "pressure washing near me", monthly_searches: 40500 },
         { keyword: "commercial painters near me", monthly_searches:  9900 },
         { keyword: "cabinet painting near me",    monthly_searches:  8100 },
-        { keyword: "deck painting near me",       monthly_searches:  5400 },
-        { keyword: "painting classes near me",    monthly_searches: 12100 },
-        { keyword: "paint store near me",         monthly_searches: 49500 },
       ]
     }
   ],
@@ -173,13 +167,13 @@ const STRATEGY = {
       combinations: 30,
       price: 900,
       additional_combinations: 10,
-      headline: "Expand to More North Shore Markets",
-      description: "Level B adds 10 more keyword-city combinations, extending coverage into Buffalo Grove, Lake Forest, and Winnetka. These three affluent communities represent high-value residential painting markets with strong demand for premium interior and exterior services. Level B also introduces a fifth keyword targeting the wallpaper removal service line.",
+      headline: "Add Staining & Expand to More North Shore Markets",
+      description: "Level B adds deck and wood staining as a fifth keyword target, capturing homeowners seeking exterior wood refinishing services. Coverage expands into Buffalo Grove and Lake Forest - two affluent communities adjacent to the current service area. This level also deepens wallpaper coverage by adding the wallpaper removal keyword to capture a distinct segment of the market.",
       new_market: true,
       keywords: [
-        { keyword: "Buffalo Grove, IL",    monthly_searches: null, new_market: true },
-        { keyword: "Lake Forest, IL",      monthly_searches: null, new_market: true },
-        { keyword: "Winnetka, IL",         monthly_searches: null, new_market: true },
+        { keyword: "Buffalo Grove, IL",       monthly_searches: null, new_market: true },
+        { keyword: "Lake Forest, IL",         monthly_searches: null, new_market: true },
+        { keyword: "deck staining near me",   monthly_searches: 8100 },
         { keyword: "wallpaper removal near me", monthly_searches: 8100 },
       ]
     },
@@ -188,14 +182,14 @@ const STRATEGY = {
       combinations: 40,
       price: 1200,
       additional_combinations: 20,
-      headline: "Add Specialty Keywords and Expand Coverage",
-      description: "Level C introduces wallpaper installer and interior design as standalone keyword targets, capturing customers searching for these specialty services. Coverage expands into Evanston and Libertyville, two high-population markets adjacent to the current service area. This level establishes Bill Schneeberger as the dominant specialty painting and decorating company across the entire North Shore.",
+      headline: "Add Faux Finish & Wallpaper Installer Keywords",
+      description: "Level C introduces faux finish painting and wallpaper installer as standalone keyword targets, capturing customers searching for these specialty services. Coverage expands into Winnetka and Evanston, two high-value North Shore markets. This level establishes Bill Schneeberger as the dominant specialty painting and decorating company across the entire North Shore corridor.",
       new_market: true,
       keywords: [
-        { keyword: "Evanston, IL",            monthly_searches: null, new_market: true },
-        { keyword: "Libertyville, IL",        monthly_searches: null, new_market: true },
-        { keyword: "wallpaper installer near me", monthly_searches: 9900 },
-        { keyword: "interior design near me",    monthly_searches: 33100 },
+        { keyword: "Winnetka, IL",                  monthly_searches: null, new_market: true },
+        { keyword: "Evanston, IL",                  monthly_searches: null, new_market: true },
+        { keyword: "faux finish painting near me",  monthly_searches: 2900 },
+        { keyword: "wallpaper installer near me",   monthly_searches: 9900 },
       ]
     },
     {
@@ -203,14 +197,14 @@ const STRATEGY = {
       combinations: 50,
       price: 1600,
       additional_combinations: 30,
-      headline: "Dominate Interior Design Search Across the North Shore",
-      description: "Level D adds interior design and home decorator keywords across all markets, capturing homeowners at the planning stage of a full interior refresh. This level also expands into Vernon Hills and Mundelein, extending reach into the western Lake County corridor. At Level D, Bill Schneeberger achieves comprehensive visibility across every major North Shore community.",
+      headline: "Dominate Every Painting & Decorating Service Across the North Shore",
+      description: "Level D adds carpentry services and exterior staining keywords, completing full coverage of every service line Bill Schneeberger offers. Coverage expands into Libertyville and Vernon Hills, extending reach into the western Lake County corridor. At Level D, Bill Schneeberger achieves comprehensive visibility across every major North Shore community for every service offered.",
       new_market: true,
       keywords: [
-        { keyword: "Vernon Hills, IL",        monthly_searches: null, new_market: true },
-        { keyword: "Mundelein, IL",           monthly_searches: null, new_market: true },
-        { keyword: "interior design near me", monthly_searches: 33100 },
-        { keyword: "home decorator near me",  monthly_searches:  5400 },
+        { keyword: "Libertyville, IL",              monthly_searches: null, new_market: true },
+        { keyword: "Vernon Hills, IL",              monthly_searches: null, new_market: true },
+        { keyword: "carpentry services near me",    monthly_searches: 5400 },
+        { keyword: "wood staining near me",         monthly_searches: 5400 },
       ]
     }
   ]
@@ -224,9 +218,9 @@ function fmt(n) {
   return n.toLocaleString();
 }
 
-function statusBadge(status, note) {
+function statusBadge(status) {
   if (status === 'selected') return '<span class="status-badge status-selected">Selected</span>';
-  if (status === 'near_me') return `<span class="status-badge status-near-me" title="${note}">Near Me Variant</span>`;
+  if (status === 'near_me') return '<span class="status-badge status-near-me">Near Me Variant</span>';
   return '<span class="status-badge status-not-used">Not Used</span>';
 }
 
@@ -275,7 +269,7 @@ function buildKeywordTable() {
         ${kwCell}
         <td class="num-col">${fmt(kw.monthly_searches)}</td>
         <td>${tierPill(kw.tier)}</td>
-        <td>${statusBadge(kw.status, kw.note)}</td>
+        <td>${statusBadge(kw.status)}</td>
       </tr>`;
     }).join('');
   }).join('');
@@ -298,9 +292,10 @@ function buildKeywordTierCards() {
       </tr>`
     ).join('');
     const colorCls = tierColors[i] || 'kw-tier-1';
+    const pillCls = colorCls.replace('kw-tier-', 't');
     return `<div class="flat-tier-block ${colorCls}">
       <div class="flat-tier-heading">
-        <span class="tier-pill ${colorCls.replace('kw-tier-','t')}">${tier.tier_label}</span>
+        <span class="tier-pill ${pillCls}">${tier.tier_label}</span>
         <span class="flat-tier-name">${tier.tier_name}</span>
         <span class="flat-tier-count">${tier.keywords.length} keyword${tier.keywords.length !== 1 ? 's' : ''} in tier</span>
       </div>
@@ -319,11 +314,11 @@ function buildKeywordTierCards() {
 // ============================================================
 function buildMatrix() {
   const markets = [
-    { city: "Northbrook", state: "IL", tier: "Tier 1", population: 35222, is_hq: true  },
-    { city: "Glenview",   state: "IL", tier: "Tier 1", population: 47000, is_hq: false },
+    { city: "Northbrook",    state: "IL", tier: "Tier 1", population: 35222, is_hq: true  },
+    { city: "Glenview",      state: "IL", tier: "Tier 1", population: 47000, is_hq: false },
     { city: "Highland Park", state: "IL", tier: "Tier 2", population: 31112, is_hq: false },
-    { city: "Wilmette",   state: "IL", tier: "Tier 2", population: 28000, is_hq: false },
-    { city: "Deerfield",  state: "IL", tier: "Tier 2", population: 19142, is_hq: false },
+    { city: "Wilmette",      state: "IL", tier: "Tier 2", population: 28000, is_hq: false },
+    { city: "Deerfield",     state: "IL", tier: "Tier 2", population: 19142, is_hq: false },
   ];
   const keywords = STRATEGY.selected_keywords;
   const el = document.getElementById('matrix-city-grid');
@@ -333,7 +328,7 @@ function buildMatrix() {
   let grandTotal = 0;
 
   markets.forEach(m => {
-    const tierCls = m.tier === 'Tier 1' ? 't1' : m.tier === 'Tier 2' ? 't2' : 't3';
+    const tierCls = m.tier === 'Tier 1' ? 't1' : 't2';
     const cityLabel = m.city + ', ' + m.state;
     const hqStar = m.is_hq ? '<span class="city-card-hq">&#9733;</span>' : '';
     const kwItems = keywords.map(kw =>
@@ -342,8 +337,8 @@ function buildMatrix() {
     grandTotal += keywords.length;
     cards += `<div class="city-matrix-card">
       <div class="city-matrix-header">
-        ${hqStar}<span class="city-matrix-name">${cityLabel}</span>
-        <span class="city-matrix-meta"><span class="tier-pill ${tierCls}">${m.tier.toUpperCase()}</span> Pop. ${fmt(m.population)}</span>
+        <div class="city-matrix-header-top">${hqStar}<span class="city-matrix-name">${cityLabel}</span></div>
+        <div class="city-matrix-header-meta"><span class="tier-pill ${tierCls}">${m.tier.toUpperCase()}</span><span class="city-matrix-pop">Pop. ${fmt(m.population)}</span></div>
       </div>
       <div class="city-kw-list">${kwItems}</div>
       <div class="city-matrix-footer">${keywords.length} combination${keywords.length !== 1 ? 's' : ''}</div>
@@ -378,11 +373,6 @@ function buildNotUsed() {
     </div>`;
   }).join('');
   grid.innerHTML = cards;
-  if (STRATEGY.not_used_groups.length === 4) {
-    grid.classList.add('grid-2col');
-  } else {
-    grid.classList.remove('grid-2col');
-  }
 }
 
 // ============================================================
@@ -395,7 +385,7 @@ function buildOpportunities() {
     const kwList = opp.keywords.map(kw =>
       `<li>
         <span class="opp-kw">${kw.keyword}</span>
-        ${kw.monthly_searches ? `<span class="opp-vol">${fmt(kw.monthly_searches)}</span>` : kw.new_market ? `<span class="opp-vol opp-new-market">New Market</span>` : ''}
+        ${kw.monthly_searches ? `<span class="opp-vol">${fmt(kw.monthly_searches)}</span>` : kw.new_market ? `<span class="opp-vol opp-new-market-tag">New Market</span>` : ''}
       </li>`
     ).join('');
     const highlight = i === 0 ? 'opp-card-highlight' : '';
@@ -440,12 +430,12 @@ function buildMobileMarketList() {
     const tierCls = m.tier === 'Tier 1' ? 't1' : m.tier === 'Tier 2' ? 't2' : 't3';
     const selIcon = m.selected ? '<span class="mob-check">&#10003;</span>' : '<span class="mob-dash">&#8212;</span>';
     const cityLabel = m.hq ? `${m.city} <span class="hq-tag">HQ</span>` : m.city;
-    const popStr = m.pop ? fmt(m.pop) : '<10,000';
+    const popStr = m.pop ? fmt(m.pop) : '';
     const rowCls = m.selected ? 'mob-mkt-row selected' : 'mob-mkt-row';
     return `<div class="${rowCls}">
       <span class="mob-rank">${m.rank}</span>
       <span class="mob-city">${m.selected ? '<strong>' : ''}${cityLabel}${m.selected ? '</strong>' : ''}</span>
-      <span class="mob-pop">${m.pop !== null ? popStr : ''}</span>
+      <span class="mob-pop">${popStr}</span>
       <span class="mob-tier"><span class="tier-pill ${tierCls}">${m.tier.toUpperCase()}</span></span>
       ${selIcon}
     </div>`;
