@@ -217,11 +217,11 @@ const STRATEGY = {
   additional_opportunities: [
     {
       plan: "Level B",
-      combinations: 40,
+      combinations: 30,
       price: 900,
-      additional_combinations: 20,
+      additional_combinations: 10,
       headline: "Deeper Service Coverage Across All Markets",
-      description: "Upgrading to Level B doubles the keyword-city combinations to 40, allowing Builders Overhead Door to introduce dedicated coverage for high-value keywords currently outside the plan's capacity. Adding garage door repair service, spring repair, and opener repair across all 5 markets is the most strategic next step for expanding reach without adding new cities.",
+      description: "Upgrading to Level B increases the keyword-city combinations to 30, allowing Builders Overhead Door to introduce dedicated coverage for high-value keywords currently outside the plan's capacity. Adding garage door repair service, spring repair, and opener repair across all 5 markets is the most strategic next step for expanding reach without adding new cities.",
       keywords: [
         { keyword: "garage door repair service",    monthly_searches: 22200 },
         { keyword: "garage door spring repair",     monthly_searches: 18100 },
@@ -233,7 +233,7 @@ const STRATEGY = {
       plan: "Level C",
       combinations: 60,
       price: 1200,
-      additional_combinations: 40,
+      additional_combinations: 30,
       headline: "Add Olathe and Lenexa Markets",
       description: "Level C opens the door to two additional high-value Kansas markets: Olathe (pop. 152,772) and Lenexa (pop. 58,536). These are the two largest untapped markets in the service region and represent a significant opportunity to capture Kansas-side search traffic that is currently going to competitors.",
       keywords: [
@@ -247,7 +247,7 @@ const STRATEGY = {
       plan: "Level D",
       combinations: 90,
       price: 1600,
-      additional_combinations: 70,
+      additional_combinations: 30,
       headline: "Full Kansas City Metro Domination",
       description: "Level D provides the coverage needed to dominate the entire Kansas City metro. With 90 total combinations, Builders Overhead Door can target all 9 specified service area cities with a full suite of keywords, achieving comprehensive visibility across both the Missouri and Kansas sides of the metro for every core service offered.",
       keywords: [
