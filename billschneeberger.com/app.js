@@ -249,6 +249,7 @@ function buildKeywordTable() {
   const variantLabel = { variant: 'Variant', plural: 'Plural Variant', near_me: 'Near Me Variant', short_form: 'Short-Form Variant' };
 
   const rows = familyOrder.map(family => {
+    const isOutOfScope = family === 'out of scope';
     const members = familyMap[family].slice().sort((a, b) => {
       const rankType = t => t === 'base' ? 0 : 1;
       if (rankType(a.variant_type) !== rankType(b.variant_type)) {
@@ -259,6 +260,15 @@ function buildKeywordTable() {
     return members.map(kw => {
       const isBase = kw.variant_type === 'base';
       const isNearMe = kw.variant_type === 'near_me';
+      // Out-of-scope keywords always render as plain rows, never indented
+      if (isOutOfScope) {
+        return `<tr class="row-variant">
+          <td>${kw.keyword}</td>
+          <td class="num-col">${fmt(kw.monthly_searches)}</td>
+          <td>${tierPill(kw.tier)}</td>
+          <td>${statusBadge(kw.status)}</td>
+        </tr>`;
+      }
       const rowClass = isBase
         ? (kw.status === 'selected' ? 'row-base row-selected' : 'row-base')
         : (isNearMe ? 'row-variant row-near-me' : 'row-variant');
