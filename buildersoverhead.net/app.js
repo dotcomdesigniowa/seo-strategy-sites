@@ -12,9 +12,9 @@ const STRATEGY = {
   state: "MO",
   service_area: "Kansas City Metro, MO/KS",
   plan_level: "Level A",
-  plan_price: 400,
+  plan_price: 600,
   total_combinations: 20,
-  total_keywords_researched: 58,
+  total_keywords_researched: 66,
   selected_keywords: [
     "garage door repair",
     "garage door installation",
@@ -64,10 +64,18 @@ const STRATEGY = {
     { keyword: "garage door replacement service",       monthly_searches:  6600, tier: "Tier 4", status: "not_used", family: "garage door replacement",  variant_type: "variant" },
     { keyword: "garage door replacement company",       monthly_searches:  4400, tier: "Tier 4", status: "not_used", family: "garage door replacement",  variant_type: "variant" },
     { keyword: "garage door replacement companies near me", monthly_searches: 3600, tier: "Tier 4", status: "near_me", family: "garage door replacement", variant_type: "near_me" },
+    // Overhead Door family
+    { keyword: "overhead door near me",                  monthly_searches: 33100, tier: "Tier 5", status: "not_used", family: "overhead door",             variant_type: "near_me" },
+    { keyword: "overhead door",                          monthly_searches: 27100, tier: "Tier 5", status: "not_used", family: "overhead door",             variant_type: "base" },
+    { keyword: "overhead doors",                         monthly_searches: 18100, tier: "Tier 5", status: "not_used", family: "overhead door",             variant_type: "variant" },
+    { keyword: "overhead door repair",                   monthly_searches:  8100, tier: "Tier 5", status: "not_used", family: "overhead door",             variant_type: "variant" },
+    { keyword: "overhead door installation",             monthly_searches:  6600, tier: "Tier 5", status: "not_used", family: "overhead door",             variant_type: "variant" },
+    { keyword: "overhead door company",                  monthly_searches:  5400, tier: "Tier 5", status: "not_used", family: "overhead door",             variant_type: "variant" },
+    { keyword: "overhead door opener",                   monthly_searches:  4400, tier: "Tier 5", status: "not_used", family: "overhead door",             variant_type: "variant" },
+    { keyword: "overhead door replacement",              monthly_searches:  3600, tier: "Tier 5", status: "not_used", family: "overhead door",             variant_type: "variant" },
     // Out of scope
     { keyword: "residential garage doors near me",      monthly_searches: 12100, tier: "Tier 1", status: "not_used", family: "out of scope",             variant_type: "base" },
     { keyword: "commercial garage doors near me",       monthly_searches:  9900, tier: "Tier 1", status: "not_used", family: "out of scope",             variant_type: "base" },
-    { keyword: "overhead door repair",                  monthly_searches:  8100, tier: "Tier 1", status: "not_used", family: "out of scope",             variant_type: "base" },
     { keyword: "garage door companies near me",         monthly_searches:  6600, tier: "Tier 1", status: "not_used", family: "out of scope",             variant_type: "base" },
     { keyword: "garage door service near me",           monthly_searches:  5400, tier: "Tier 1", status: "not_used", family: "out of scope",             variant_type: "base" },
     { keyword: "garage door cost",                      monthly_searches:  9900, tier: "Tier 1", status: "not_used", family: "out of scope",             variant_type: "base" },
@@ -127,6 +135,20 @@ const STRATEGY = {
         { keyword: "residential garage door replacement",monthly_searches: 5400 },
         { keyword: "garage door replacement company",   monthly_searches:  4400 },
       ]
+    },
+    {
+      tier_label: "Tier 5",
+      tier_name: "Overhead Door",
+      description: "High-volume brand-category keywords that customers use interchangeably with 'garage door.' Overhead door and overhead doors together represent over 45,000 monthly searches nationally and are a significant untapped opportunity for Builders Overhead Door specifically, given the company name directly matches this search term. These keywords are reserved for plan expansion and would provide a strong brand-alignment SEO advantage.",
+      keywords: [
+        { keyword: "overhead door",                    monthly_searches: 27100 },
+        { keyword: "overhead doors",                   monthly_searches: 18100 },
+        { keyword: "overhead door repair",             monthly_searches:  8100 },
+        { keyword: "overhead door installation",       monthly_searches:  6600 },
+        { keyword: "overhead door company",            monthly_searches:  5400 },
+        { keyword: "overhead door opener",             monthly_searches:  4400 },
+        { keyword: "overhead door replacement",        monthly_searches:  3600 },
+      ]
     }
   ],
 
@@ -164,6 +186,19 @@ const STRATEGY = {
       ]
     },
     {
+      reason: "Overhead Door: Reserved for Brand-Alignment Expansion",
+      description: "These keywords directly match the company name and represent a significant brand-alignment SEO opportunity. Customers searching 'overhead door' and 'overhead doors' are looking for exactly what Builders Overhead Door provides. These terms are reserved for a dedicated expansion tier given their high volume and strategic brand value.",
+      keywords: [
+        { keyword: "overhead door",                    monthly_searches: 27100 },
+        { keyword: "overhead doors",                   monthly_searches: 18100 },
+        { keyword: "overhead door repair",             monthly_searches:  8100 },
+        { keyword: "overhead door installation",       monthly_searches:  6600 },
+        { keyword: "overhead door company",            monthly_searches:  5400 },
+        { keyword: "overhead door opener",             monthly_searches:  4400 },
+        { keyword: "overhead door replacement",        monthly_searches:  3600 },
+      ]
+    },
+    {
       reason: "Outside Service Scope or Too Generic",
       description: "These keywords are either too generic to drive qualified local traffic, are informational in nature (DIY intent), or represent service lines not offered by Builders Overhead Door. They are excluded from all current and future plan tiers.",
       keywords: [
@@ -183,7 +218,7 @@ const STRATEGY = {
     {
       plan: "Level B",
       combinations: 40,
-      price: 800,
+      price: 900,
       additional_combinations: 20,
       headline: "Deeper Service Coverage Across All Markets",
       description: "Upgrading to Level B doubles the keyword-city combinations to 40, allowing Builders Overhead Door to introduce dedicated coverage for high-value keywords currently outside the plan's capacity. Adding garage door repair service, spring repair, and opener repair across all 5 markets is the most strategic next step for expanding reach without adding new cities.",
