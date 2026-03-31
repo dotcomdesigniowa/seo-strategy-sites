@@ -305,28 +305,30 @@ function buildKeywordTable() {
 function buildKeywordTierCards() {
   const grid = document.getElementById('kw-tier-grid');
   if (!grid) return;
-  const blocks = STRATEGY.keyword_tiers.map(tier => {
-    const tierCls = tier.color;
+  const tierColors = ['kw-tier-1', 'kw-tier-2', 'kw-tier-3', 'kw-tier-4'];
+  const blocks = STRATEGY.keyword_tiers.map((tier, i) => {
+    // Support both data formats: {color:'t1'} and {tier_label:'Tier 1'}
+    const colorCls = tier.color ? 'kw-tier-' + tier.color.replace('t', '') : (tierColors[i] || 'kw-tier-1');
+    const tierLabel = tier.tier_label || tier.tier || ('Tier ' + (i + 1));
+    const tierName  = tier.tier_name  || tier.name  || '';
+    const kwCount   = tier.keywords.length;
     const kwRows = tier.keywords.map(kw =>
-      `<div class="flat-tier-kw-row">
-        <span class="flat-tier-kw-name">${kw.keyword}</span>
-        <span class="flat-tier-kw-vol">${fmt(kw.monthly_searches)}</span>
-      </div>`
+      `<tr>
+        <td class="flat-kw-name">${kw.keyword}</td>
+        <td class="flat-kw-vol">${fmt(kw.monthly_searches)}</td>
+      </tr>`
     ).join('');
-    return `<div class="flat-tier-block">
-      <div class="flat-tier-header ${tierCls}">
-        <span class="flat-tier-pill">${tier.tier.toUpperCase()}</span>
-        <span class="flat-tier-name">${tier.name}</span>
-        <span class="flat-tier-count">${tier.keyword_count} keywords</span>
+    return `<div class="flat-tier-block ${colorCls}">
+      <div class="flat-tier-heading">
+        <span class="tier-pill ${colorCls.replace('kw-tier-', 't')}">${tierLabel.toUpperCase()}</span>
+        <span class="flat-tier-name">${tierName}</span>
+        <span class="flat-tier-count">${kwCount} keyword${kwCount !== 1 ? 's' : ''} selected</span>
       </div>
       <div class="flat-tier-desc">${tier.description}</div>
-      <div class="flat-tier-table">
-        <div class="flat-tier-col-header">
-          <span>Keyword</span>
-          <span>Mo. Searches</span>
-        </div>
-        ${kwRows}
-      </div>
+      <table class="flat-kw-table">
+        <thead><tr><th>Keyword</th><th>Monthly Searches</th></tr></thead>
+        <tbody>${kwRows}</tbody>
+      </table>
     </div>`;
   }).join('');
   grid.innerHTML = blocks;
@@ -346,33 +348,23 @@ function buildMatrix() {
   const cards = markets.map(m => {
     const tierCls = m.tier === 'Tier 1' ? 't1' : m.tier === 'Tier 2' ? 't2' : 't3';
     const hqBadge = m.is_hq ? ' <span class="hq-tag">HQ</span>' : '';
-    const kwList = keywords.map(kw =>
-      `<div class="city-kw-row">
-        <span class="city-kw-check">&#10003;</span>
-        <span class="city-kw-name">${kw}</span>
-      </div>`
+    const kwItems = keywords.map(kw =>
+      `<div class="city-kw-item"><span class="city-kw-check">&#10003;</span><span class="city-kw-name">${kw}</span></div>`
     ).join('');
     return `<div class="city-matrix-card">
       <div class="city-matrix-header">
-        <div class="city-matrix-header-top">
-          <span class="city-matrix-name">${m.city}, ${m.state}${hqBadge}</span>
-        </div>
-        <div class="city-matrix-header-meta">
-          <span class="tier-pill ${tierCls}">${m.tier.toUpperCase()}</span>
-          <span class="city-matrix-pop">Pop. ${fmt(m.pop)}</span>
-        </div>
+        <div class="city-matrix-header-top">${hqBadge}<span class="city-matrix-name">${m.city}, ${m.state}</span></div>
+        <div class="city-matrix-header-meta"><span class="tier-pill ${tierCls}">${m.tier.toUpperCase()}</span><span class="city-matrix-pop">Pop. ${fmt(m.pop)}</span></div>
       </div>
-      <div class="city-kw-list">${kwList}</div>
-      <div class="city-matrix-footer">${keywords.length} combinations</div>
+      <div class="city-kw-list">${kwItems}</div>
+      <div class="city-matrix-footer">${keywords.length} combination${keywords.length !== 1 ? 's' : ''}</div>
     </div>`;
   }).join('');
 
-  cityGrid.className = 'city-matrix-grid';
   cityGrid.innerHTML = cards;
 
   if (grandTotal) {
-    grandTotal.className = 'matrix-grand-total-bar';
-    grandTotal.innerHTML = `Grand Total: <strong>${keywords.length * markets.length} Combinations</strong>`;
+    grandTotal.textContent = 'Grand Total: ' + (keywords.length * markets.length) + ' Combinations';
   }
 }
 
