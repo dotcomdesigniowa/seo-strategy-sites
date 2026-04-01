@@ -243,8 +243,8 @@ const STRATEGY = {
     {
       plan: "LEVEL B",
       price: 900,
-      combinations: 28,
-      additional_combinations: 8,
+      combinations: 30,
+      additional_combinations: 10,
       new_market: true,
       headline: "Add Lewiston, ID + Moses Lake, WA",
       description: "Level B adds Lewiston, ID and Moses Lake, WA — two strong Tier 2 markets that extend the strategy beyond the Tri-Cities core. Lewiston is the primary Idaho hub 100 miles east, and Moses Lake is a fast-growing community 85 miles north. Both markets have minimal competitor SEO presence, giving Sure Shot Billiards & Darts a clear path to Page 1 visibility in each city.",
@@ -256,8 +256,8 @@ const STRATEGY = {
     {
       plan: "LEVEL C",
       price: 1200,
-      combinations: 36,
-      additional_combinations: 8,
+      combinations: 40,
+      additional_combinations: 10,
       new_market: true,
       headline: "Add Hermiston, OR + Pendleton, OR",
       description: "Level C crosses the Oregon border, adding Hermiston and Pendleton — two growing regional hubs with strong residential demand and no direct competitor presence in organic search. This expansion positions Sure Shot Billiards & Darts as the dominant pool table and billiards service provider across the tri-state region.",
@@ -269,11 +269,11 @@ const STRATEGY = {
     {
       plan: "LEVEL D",
       price: 1600,
-      combinations: 48,
-      additional_combinations: 12,
+      combinations: 50,
+      additional_combinations: 10,
       new_market: true,
       headline: "Full Regional Coverage — All 9 Markets",
-      description: "Level D completes the regional footprint by adding West Richland (the store's home city), Clarkston, WA, and The Dalles, OR. With 48 total keyword-city combinations across 12 markets, Sure Shot Billiards & Darts achieves comprehensive visibility across the entire 120-mile service radius — from the Tri-Cities core to the Oregon and Idaho borders.",
+      description: "Level D completes the regional footprint by adding West Richland (the store's home city), Clarkston, WA, and The Dalles, OR. With 50 total keyword-city combinations across 12 markets, Sure Shot Billiards & Darts achieves comprehensive visibility across the entire 120-mile service radius — from the Tri-Cities core to the Oregon and Idaho borders.",
       markets: [
         { city: "West Richland, WA", pop: 18000, tier: "Tier 2" },
         { city: "Clarkston, WA",     pop: 10000, tier: "Tier 3" },
