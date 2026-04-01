@@ -243,49 +243,41 @@ const STRATEGY = {
     {
       plan: "LEVEL B",
       price: 900,
-      combinations: 30,
-      additional_combinations: 10,
-      new_market: false,
-      headline: "Add Billiards Accessories & Table Games",
-      description: "Level B adds 10 more keyword-city combinations, unlocking the billiards accessories and table games keyword families. This expansion positions Sure Shot Billiards & Darts as the go-to destination for pool cues, billiard balls, foosball tables, and shuffleboard tables across the Tri-Cities — capturing the full breadth of the product catalog online.",
-      keywords: [
-        { keyword: "billiard balls",          monthly_searches: 110000 },
-        { keyword: "pool cues",               monthly_searches:  90500 },
-        { keyword: "foosball table",          monthly_searches:  90500 },
-        { keyword: "shuffleboard table",      monthly_searches:  74000 },
-        { keyword: "billiard accessories",    monthly_searches:  40500 },
+      combinations: 40,
+      additional_combinations: 20,
+      new_market: true,
+      headline: "Add Lewiston, ID + Moses Lake, WA",
+      description: "Level B adds Lewiston, ID and Moses Lake, WA — two strong Tier 2 markets that extend the strategy beyond the Tri-Cities core. Lewiston is the primary Idaho hub 100 miles east, and Moses Lake is a fast-growing community 85 miles north. Both markets have minimal competitor SEO presence, giving Sure Shot Billiards & Darts a clear path to Page 1 visibility in each city.",
+      markets: [
+        { city: "Lewiston, ID",    pop: 34000, tier: "Tier 2" },
+        { city: "Moses Lake, WA",  pop: 26000, tier: "Tier 2" },
       ]
     },
     {
       plan: "LEVEL C",
       price: 1200,
       combinations: 60,
-      additional_combinations: 30,
+      additional_combinations: 20,
       new_market: true,
-      headline: "Expand to 60 Combinations + New Markets",
-      description: "Level C triples the keyword-city combinations to 60, adding Lewiston, ID, Moses Lake, WA, and Hermiston, OR as new markets. This expansion extends the strategy across the full tri-state service region, capturing pool table buyers and service customers in Idaho and Oregon who are currently outside the plan's reach.",
-      keywords: [
-        { keyword: "Lewiston, ID",    new_market: true },
-        { keyword: "Moses Lake, WA",  new_market: true },
-        { keyword: "Hermiston, OR",   new_market: true },
-        { keyword: "game tables",     monthly_searches: 60500 },
-        { keyword: "dart board near me", monthly_searches: 27100 },
+      headline: "Add Hermiston, OR + Pendleton, OR",
+      description: "Level C crosses the Oregon border, adding Hermiston and Pendleton — two growing regional hubs with strong residential demand and no direct competitor presence in organic search. This expansion positions Sure Shot Billiards & Darts as the dominant pool table and billiards service provider across the tri-state region.",
+      markets: [
+        { city: "Hermiston, OR",   pop: 19000, tier: "Tier 2" },
+        { city: "Pendleton, OR",   pop: 17000, tier: "Tier 2" },
       ]
     },
     {
       plan: "LEVEL D",
       price: 1600,
-      combinations: 90,
-      additional_combinations: 30,
+      combinations: 80,
+      additional_combinations: 20,
       new_market: true,
-      headline: "Full Regional Domination — 90 Combinations",
-      description: "Level D achieves full regional coverage with 90 keyword-city combinations across the entire 120-mile service radius. This plan captures every major market in Washington, Oregon, and Idaho within the service area and positions Sure Shot Billiards & Darts as the undisputed online authority for pool tables, billiards accessories, and table game services across the Pacific Northwest.",
-      keywords: [
-        { keyword: "Pendleton, OR",   new_market: true },
-        { keyword: "Walla Walla, WA", monthly_searches: 34000 },
-        { keyword: "pool table accessories", monthly_searches: 22200 },
-        { keyword: "billiard supplies",      monthly_searches: 18100 },
-        { keyword: "air hockey table",       monthly_searches: 74000 },
+      headline: "Full Regional Coverage — All 9 Markets",
+      description: "Level D completes the regional footprint by adding West Richland (the store's home city), Clarkston, WA, and The Dalles, OR. With 80 total keyword-city combinations across 9 markets, Sure Shot Billiards & Darts achieves comprehensive visibility across the entire 120-mile service radius — from the Tri-Cities core to the Oregon and Idaho borders.",
+      markets: [
+        { city: "West Richland, WA", pop: 18000, tier: "Tier 2" },
+        { city: "Clarkston, WA",     pop: 10000, tier: "Tier 3" },
+        { city: "The Dalles, OR",    pop: 16000, tier: "Tier 3" },
       ]
     }
   ]
@@ -512,25 +504,22 @@ function buildOpportunities() {
   const grid = document.getElementById('opportunities-grid');
   if (!grid) return;
   const cards = STRATEGY.additional_opportunities.map((opp, i) => {
-    const kwList = opp.keywords.map(kw =>
-      `<li>
-        <span class="opp-kw">${kw.keyword}</span>
-        ${kw.monthly_searches ? `<span class="opp-vol">${fmt(kw.monthly_searches)}</span>` : kw.new_market ? `<span class="opp-vol opp-new-market">New Market</span>` : ''}
-      </li>`
-    ).join('');
+    const marketRows = (opp.markets || []).map(m => {
+      const tierCls = m.tier === 'Tier 1' ? 't1' : m.tier === 'Tier 2' ? 't2' : 't3';
+      return `<li>
+        <span class="opp-kw">${m.city}</span>
+        <span class="opp-vol"><span class="tier-pill ${tierCls}">${m.tier.toUpperCase()}</span> &nbsp;Pop. ${fmt(m.pop)}</span>
+      </li>`;
+    }).join('');
     const highlight = i === 0 ? 'opp-card-highlight' : '';
-    const newMarketDiv = opp.new_market
-      ? `<div class="opp-new-market">+ New Market Added</div>`
-      : `<div class="opp-new-market" style="visibility:hidden"></div>`;
     return `<div class="opp-card ${highlight}">
       <div class="opp-plan-label">${opp.plan}</div>
       <div class="opp-price">$${fmt(opp.price)}<span class="opp-price-label">/mo</span></div>
       <div class="opp-combos-large">${opp.combinations} <span class="opp-combos-label">total combinations</span></div>
-      <div class="opp-combos">${opp.additional_combinations} additional combinations from current plan</div>
+      <div class="opp-combos">+${opp.additional_combinations} combinations from current plan</div>
       <h4 class="opp-headline">${opp.headline}</h4>
       <p class="opp-desc">${opp.description}</p>
-      ${newMarketDiv}
-      <ul class="opp-kw-list"><li class="opp-kw-header"><span>Keyword / Market</span><span>Mo. Searches</span></li>${kwList}</ul>
+      <ul class="opp-kw-list"><li class="opp-kw-header"><span>Market Added</span><span>Tier &amp; Population</span></li>${marketRows}</ul>
     </div>`;
   }).join('');
   grid.innerHTML = cards;
