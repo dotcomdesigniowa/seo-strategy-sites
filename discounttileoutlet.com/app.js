@@ -84,6 +84,19 @@ const STRATEGY = {
     }
   ],
 
+  // ---- STRATEGY MATRIX (variable per-city keyword assignments, total = 30) ----
+  matrix: [
+    { city: "Bellevue",      state: null, tier: "Tier 1", population: 151854, is_hq: true,  keywords: ["tile store", "tile flooring near me", "tile showroom near me", "hardwood flooring near me"] },
+    { city: "Kirkland",      state: null, tier: "Tier 1", population:  92175, is_hq: false, keywords: ["tile store", "tile flooring near me", "tile showroom near me", "hardwood flooring near me"] },
+    { city: "Redmond",       state: null, tier: "Tier 1", population:  73256, is_hq: false, keywords: ["tile store", "tile flooring near me", "tile showroom near me", "hardwood flooring near me"] },
+    { city: "Sammamish",     state: null, tier: "Tier 1", population:  69438, is_hq: false, keywords: ["tile store", "tile flooring near me", "tile showroom near me", "hardwood flooring near me"] },
+    { city: "Bothell",       state: null, tier: "Tier 1", population:  53200, is_hq: false, keywords: ["tile store", "tile flooring near me", "tile showroom near me", "hardwood flooring near me"] },
+    { city: "Issaquah",      state: null, tier: "Tier 1", population:  40290, is_hq: false, keywords: ["tile store", "tile flooring near me", "tile showroom near me", "hardwood flooring near me"] },
+    { city: "Renton",        state: null, tier: "Tier 1", population: 108429, is_hq: false, keywords: ["tile store", "tile flooring near me", "hardwood flooring near me"] },
+    { city: "Mercer Island", state: null, tier: "Tier 2", population:  25990, is_hq: false, keywords: ["tile store", "tile flooring near me", "tile showroom near me"] },
+    { city: "Woodinville",   state: null, tier: "Tier 2", population:  14000, is_hq: false, keywords: ["tile flooring near me"] },
+  ],
+
   // ---- NOT USED GROUPS ----
   not_used_groups: [
     {
@@ -388,7 +401,7 @@ const MARKET_DATA = [
   { rank: 6,  city: 'Issaquah',      pop:  40290, tier: 'Tier 1', selected: true,  hq: false },
   { rank: 7,  city: 'Mercer Island', pop:  25990, tier: 'Tier 2', selected: true,  hq: false },
   { rank: 8,  city: 'Woodinville',   pop:  14000, tier: 'Tier 2', selected: true,  hq: false },
-  { rank: 9,  city: 'Renton',        pop: 106785, tier: 'Tier 1', selected: false, hq: false },
+  { rank: 9,  city: 'Renton',        pop: 108429, tier: 'Tier 1', selected: true,  hq: false },
   { rank: 10, city: 'Kenmore',       pop:  23590, tier: 'Tier 2', selected: false, hq: false },
   { rank: 11, city: 'Maple Valley',  pop:  30000, tier: 'Tier 2', selected: false, hq: false },
   { rank: 12, city: 'Kent',          pop: 136588, tier: 'Tier 1', selected: false, hq: false },
