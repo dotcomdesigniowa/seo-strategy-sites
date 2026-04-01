@@ -231,9 +231,9 @@ const STRATEGY = {
     },
     {
       plan: "Level C",
-      combinations: 60,
+      combinations: 40,
       price: 1200,
-      additional_combinations: 30,
+      additional_combinations: 10,
       headline: "Add Olathe and Lenexa Markets",
       description: "Level C opens the door to two additional high-value Kansas markets: Olathe (pop. 152,772) and Lenexa (pop. 58,536). These are the two largest untapped markets in the service region and represent a significant opportunity to capture Kansas-side search traffic that is currently going to competitors.",
       keywords: [
@@ -245,11 +245,11 @@ const STRATEGY = {
     },
     {
       plan: "Level D",
-      combinations: 90,
+      combinations: 50,
       price: 1600,
-      additional_combinations: 30,
+      additional_combinations: 10,
       headline: "Full Kansas City Metro Domination",
-      description: "Level D provides the coverage needed to dominate the entire Kansas City metro. With 90 total combinations, Builders Overhead Door can target all 9 specified service area cities with a full suite of keywords, achieving comprehensive visibility across both the Missouri and Kansas sides of the metro for every core service offered.",
+      description: "Level D provides the coverage needed to dominate the entire Kansas City metro. With 50 total combinations, Builders Overhead Door can target all 9 specified service area cities with a full suite of keywords, achieving comprehensive visibility across both the Missouri and Kansas sides of the metro for every core service offered.",
       keywords: [
         { keyword: "Liberty, MO",   monthly_searches: null, new_market: true },
         { keyword: "Kearney, MO",   monthly_searches: null, new_market: true },

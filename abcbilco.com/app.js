@@ -176,7 +176,7 @@ const STRATEGY = {
       plan: "Level C",
       combinations: 40,
       price: 1200,
-      additional_combinations: 20,
+      additional_combinations: 10,
       headline: "Add Remodeling Keywords and Expand into New Jersey",
       description: "Level C adds 20 combinations, introducing 'bathroom remodeling contractor' (49,500/mo) and 'kitchen remodeling contractor' (40,500/mo) across the five NYC boroughs. This activates ABC Bilco's full remodeling division in the highest-density markets and extends the access product keywords into Northern New Jersey, where the 2.5-hour service radius includes Newark, Jersey City, and the Asbury Park corridor.",
       keywords: [
@@ -190,7 +190,7 @@ const STRATEGY = {
       plan: "Level D",
       combinations: 50,
       price: 1600,
-      additional_combinations: 30,
+      additional_combinations: 10,
       headline: "Full Metro Domination: All Products, All Markets",
       description: "Level D provides complete coverage across the entire 2.5-hour service radius. Adding 'floor access door installation' for the commercial segment, expanding remodeling keywords into Westchester and Southern Connecticut, and pushing all access product keywords into the full Long Island corridor positions ABC Bilco as the dominant Bilco installer and remodeling contractor across the NYC metro area.",
       keywords: [

@@ -196,7 +196,7 @@ const STRATEGY = {
       plan: "Level C",
       combinations: 40,
       price: 1200,
-      additional_combinations: 20,
+      additional_combinations: 10,
       headline: "Add Bathroom Cabinets and Two New Markets",
       description: "Level C opens coverage for bathroom cabinets as a distinct service line and expands into two additional high-population markets in the Phoenix East Valley. With 40 total combinations, Kitchen Cabinets Etc 2 achieves broad visibility across the region for all major product categories.",
       keywords: [
@@ -209,7 +209,7 @@ const STRATEGY = {
       plan: "Level D",
       combinations: 50,
       price: 1600,
-      additional_combinations: 30,
+      additional_combinations: 10,
       headline: "Full East Valley Domination",
       description: "Level D provides the coverage needed to dominate the entire Phoenix East Valley. With 50 total combinations, Kitchen Cabinets Etc 2 can target up to 8 cities with a full suite of keywords, achieving comprehensive visibility across every major market within the service area for every product category offered.",
       keywords: [
