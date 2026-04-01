@@ -250,6 +250,7 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
 .tier-pill.t2 { background: rgba(51,65,104,0.15); color: #334168; }
 .tier-pill.t3 { background: rgba(235,0,82,0.12); color: #EB0052; }
 .tier-pill.t4 { background: rgba(249,115,22,0.12); color: #f97316; }
+.tier-pill.t5 { background: rgba(100,116,139,0.12); color: #64748b; }
 .nowrap { white-space: nowrap; }
 
 /* ============================================================

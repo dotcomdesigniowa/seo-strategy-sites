@@ -6,156 +6,130 @@
 
 const STRATEGY = {
   client_name: "Sure Shot Billiards & Darts",
-  plan_level: "A",
+  industry: "Billiards & Pool Table Services",
+  hq_city: "West Richland",
+  hq_state: "WA",
+  service_area: "Tri-Cities & Eastern Washington",
+  plan_level: "Level A",
   plan_price: 600,
   total_combinations: 20,
   total_keywords_researched: 74,
-  hq_city: "West Richland",
-  hq_state: "WA",
+  selected_keywords: [
+    "pool table recovery",
+    "pool table movers",
+    "pool table repair",
+    "used pool tables"
+  ],
+  num_selected_keywords: 4,
+  num_target_markets: 5,
 
   // ---- FULL KEYWORD CONSIDERATION TABLE ----
   keyword_table: [
-    // TIER 1 — Pool Tables (core product)
-    { keyword: "pool tables",                family: "pool tables",         monthly_searches: 246000, tier: "Tier 1", selected: true  },
-    { keyword: "pool tables near me",        family: "pool tables",         monthly_searches: 165000, tier: "Tier 1", selected: false, variant: true },
-    { keyword: "pool table near me",         family: "pool tables",         monthly_searches: 110000, tier: "Tier 1", selected: false, variant: true },
-    { keyword: "pool table store near me",   family: "pool tables",         monthly_searches:  40500, tier: "Tier 1", selected: false, variant: true },
-    { keyword: "pool table shop near me",    family: "pool tables",         monthly_searches:  27100, tier: "Tier 1", selected: false, variant: true },
-    { keyword: "pool table for sale",        family: "pool tables",         monthly_searches:  74000, tier: "Tier 1", selected: false, variant: true },
-    { keyword: "pool table for sale near me",family: "pool tables",         monthly_searches:  49500, tier: "Tier 1", selected: false, variant: true },
-    { keyword: "pool table dealer",          family: "pool tables",         monthly_searches:  22200, tier: "Tier 1", selected: false, variant: true },
-    { keyword: "billiard table",             family: "pool tables",         monthly_searches:  60500, tier: "Tier 1", selected: false, variant: true },
-    { keyword: "billiard table near me",     family: "pool tables",         monthly_searches:  33100, tier: "Tier 1", selected: false, variant: true },
+    // Pool Table Recovery family — TIER 1 (selected)
+    { keyword: "pool table recovery",              monthly_searches: 27100, tier: "Tier 1", status: "selected", family: "pool table recovery",  variant_type: "base" },
+    { keyword: "pool table recovering near me",    monthly_searches: 18100, tier: "Tier 1", status: "near_me",  family: "pool table recovery",  variant_type: "near_me" },
+    { keyword: "pool table repair near me",        monthly_searches: 22200, tier: "Tier 1", status: "near_me",  family: "pool table recovery",  variant_type: "near_me" },
+    { keyword: "pool table service near me",       monthly_searches: 14800, tier: "Tier 1", status: "near_me",  family: "pool table recovery",  variant_type: "near_me" },
+    { keyword: "pool table recover",               monthly_searches: 14800, tier: "Tier 1", status: "not_used", family: "pool table recovery",  variant_type: "variant" },
+    { keyword: "pool table refelting",             monthly_searches: 12100, tier: "Tier 1", status: "not_used", family: "pool table recovery",  variant_type: "variant" },
+    { keyword: "pool table felt replacement",      monthly_searches:  9900, tier: "Tier 1", status: "not_used", family: "pool table recovery",  variant_type: "variant" },
+    { keyword: "pool table cloth replacement",     monthly_searches:  6600, tier: "Tier 1", status: "not_used", family: "pool table recovery",  variant_type: "variant" },
+    { keyword: "pool table leveling",              monthly_searches:  6600, tier: "Tier 1", status: "not_used", family: "pool table recovery",  variant_type: "variant" },
 
-    // TIER 2 — Used Pool Tables
-    { keyword: "used pool tables",           family: "used pool tables",    monthly_searches:  74000, tier: "Tier 2", selected: true  },
-    { keyword: "used pool tables near me",   family: "used pool tables",    monthly_searches:  49500, tier: "Tier 2", selected: false, variant: true },
-    { keyword: "used pool table for sale",   family: "used pool tables",    monthly_searches:  33100, tier: "Tier 2", selected: false, variant: true },
-    { keyword: "used pool table near me",    family: "used pool tables",    monthly_searches:  27100, tier: "Tier 2", selected: false, variant: true },
-    { keyword: "used billiard table",        family: "used pool tables",    monthly_searches:  14800, tier: "Tier 2", selected: false, variant: true },
-    { keyword: "refurbished pool table",     family: "used pool tables",    monthly_searches:  12100, tier: "Tier 2", selected: false, variant: true },
-    { keyword: "second hand pool table",     family: "used pool tables",    monthly_searches:   8100, tier: "Tier 2", selected: false, variant: true },
+    // Pool Table Movers family — TIER 2 (selected)
+    { keyword: "pool table movers",                monthly_searches: 40500, tier: "Tier 2", status: "selected", family: "pool table movers",    variant_type: "base" },
+    { keyword: "pool table movers near me",        monthly_searches: 27100, tier: "Tier 2", status: "near_me",  family: "pool table movers",    variant_type: "near_me" },
+    { keyword: "pool table moving service",        monthly_searches: 18100, tier: "Tier 2", status: "not_used", family: "pool table movers",    variant_type: "variant" },
+    { keyword: "move pool table",                  monthly_searches: 12100, tier: "Tier 2", status: "not_used", family: "pool table movers",    variant_type: "variant" },
+    { keyword: "pool table installation",          monthly_searches: 14800, tier: "Tier 2", status: "not_used", family: "pool table movers",    variant_type: "variant" },
+    { keyword: "pool table disassembly",           monthly_searches:  8100, tier: "Tier 2", status: "not_used", family: "pool table movers",    variant_type: "variant" },
 
-    // TIER 3 — Pool Table Recovery / Service
-    { keyword: "pool table recovery",        family: "pool table recovery", monthly_searches:  27100, tier: "Tier 3", selected: true  },
-    { keyword: "pool table recovering near me", family: "pool table recovery", monthly_searches: 18100, tier: "Tier 3", selected: false, variant: true },
-    { keyword: "pool table recover",         family: "pool table recovery", monthly_searches:  14800, tier: "Tier 3", selected: false, variant: true },
-    { keyword: "pool table refelting",       family: "pool table recovery", monthly_searches:  12100, tier: "Tier 3", selected: false, variant: true },
-    { keyword: "pool table felt replacement",family: "pool table recovery", monthly_searches:   9900, tier: "Tier 3", selected: false, variant: true },
-    { keyword: "pool table cloth replacement",family: "pool table recovery",monthly_searches:   6600, tier: "Tier 3", selected: false, variant: true },
-    { keyword: "pool table service near me", family: "pool table recovery", monthly_searches:  14800, tier: "Tier 3", selected: false, variant: true },
-    { keyword: "pool table repair near me",  family: "pool table recovery", monthly_searches:  22200, tier: "Tier 3", selected: false, variant: true },
-    { keyword: "pool table leveling",        family: "pool table recovery", monthly_searches:   6600, tier: "Tier 3", selected: false, variant: true },
+    // Pool Table Repair family — TIER 3 (selected)
+    { keyword: "pool table repair",                monthly_searches: 27100, tier: "Tier 3", status: "selected", family: "pool table repair",    variant_type: "base" },
+    { keyword: "pool table repair near me",        monthly_searches: 22200, tier: "Tier 3", status: "near_me",  family: "pool table repair",    variant_type: "near_me" },
+    { keyword: "billiard table repair",            monthly_searches:  8100, tier: "Tier 3", status: "not_used", family: "pool table repair",    variant_type: "variant" },
+    { keyword: "pool table restoration",           monthly_searches:  6600, tier: "Tier 3", status: "not_used", family: "pool table repair",    variant_type: "variant" },
+    { keyword: "pool table refurbishment",         monthly_searches:  4400, tier: "Tier 3", status: "not_used", family: "pool table repair",    variant_type: "variant" },
 
-    // TIER 4 — Pool Table Moving (House to House)
-    { keyword: "pool table movers",          family: "pool table movers",   monthly_searches:  40500, tier: "Tier 4", selected: true  },
-    { keyword: "pool table movers near me",  family: "pool table movers",   monthly_searches:  27100, tier: "Tier 4", selected: false, variant: true },
-    { keyword: "pool table moving service",  family: "pool table movers",   monthly_searches:  18100, tier: "Tier 4", selected: false, variant: true },
-    { keyword: "move pool table",            family: "pool table movers",   monthly_searches:  12100, tier: "Tier 4", selected: false, variant: true },
-    { keyword: "pool table disassembly",     family: "pool table movers",   monthly_searches:   8100, tier: "Tier 4", selected: false, variant: true },
-    { keyword: "pool table installation",    family: "pool table movers",   monthly_searches:  14800, tier: "Tier 4", selected: false, variant: true },
+    // Used Pool Tables family — TIER 4 (selected)
+    { keyword: "used pool tables",                 monthly_searches: 74000, tier: "Tier 4", status: "selected", family: "used pool tables",     variant_type: "base" },
+    { keyword: "used pool tables near me",         monthly_searches: 49500, tier: "Tier 4", status: "near_me",  family: "used pool tables",     variant_type: "near_me" },
+    { keyword: "used pool table near me",          monthly_searches: 27100, tier: "Tier 4", status: "near_me",  family: "used pool tables",     variant_type: "near_me" },
+    { keyword: "used pool table for sale",         monthly_searches: 33100, tier: "Tier 4", status: "not_used", family: "used pool tables",     variant_type: "variant" },
+    { keyword: "refurbished pool table",           monthly_searches: 12100, tier: "Tier 4", status: "not_used", family: "used pool tables",     variant_type: "variant" },
+    { keyword: "used billiard table",              monthly_searches: 14800, tier: "Tier 4", status: "not_used", family: "used pool tables",     variant_type: "variant" },
+    { keyword: "second hand pool table",           monthly_searches:  8100, tier: "Tier 4", status: "not_used", family: "used pool tables",     variant_type: "variant" },
 
-    // NOT USED — Billiards Accessories (plan expansion)
-    { keyword: "billiard balls",             family: "billiards accessories", monthly_searches: 110000, tier: "Not Used", selected: false },
-    { keyword: "billiard balls near me",     family: "billiards accessories", monthly_searches:  27100, tier: "Not Used", selected: false, variant: true },
-    { keyword: "pool cues",                  family: "billiards accessories", monthly_searches:  90500, tier: "Not Used", selected: false },
-    { keyword: "pool cues near me",          family: "billiards accessories", monthly_searches:  22200, tier: "Not Used", selected: false, variant: true },
-    { keyword: "pool cue near me",           family: "billiards accessories", monthly_searches:  18100, tier: "Not Used", selected: false, variant: true },
-    { keyword: "billiard accessories",       family: "billiards accessories", monthly_searches:  40500, tier: "Not Used", selected: false },
-    { keyword: "billiard accessories near me",family: "billiards accessories",monthly_searches:  14800, tier: "Not Used", selected: false, variant: true },
-    { keyword: "pool table accessories",     family: "billiards accessories", monthly_searches:  22200, tier: "Not Used", selected: false },
-    { keyword: "billiard supplies",          family: "billiards accessories", monthly_searches:  18100, tier: "Not Used", selected: false },
-    { keyword: "pool table light",           family: "billiards accessories", monthly_searches:  33100, tier: "Not Used", selected: false },
-    { keyword: "pool table felt",            family: "billiards accessories", monthly_searches:  27100, tier: "Not Used", selected: false },
+    // Pool Tables (generic) family — TIER 5 (not used — PLA-dominated)
+    { keyword: "pool tables",                      monthly_searches: 246000, tier: "Tier 5", status: "not_used", family: "pool tables",         variant_type: "base" },
+    { keyword: "pool tables near me",              monthly_searches: 165000, tier: "Tier 5", status: "near_me",  family: "pool tables",         variant_type: "near_me" },
+    { keyword: "pool table near me",               monthly_searches: 110000, tier: "Tier 5", status: "near_me",  family: "pool tables",         variant_type: "near_me" },
+    { keyword: "pool table for sale",              monthly_searches:  74000, tier: "Tier 5", status: "not_used", family: "pool tables",         variant_type: "variant" },
+    { keyword: "billiard table",                   monthly_searches:  60500, tier: "Tier 5", status: "not_used", family: "pool tables",         variant_type: "variant" },
+    { keyword: "pool table for sale near me",      monthly_searches:  49500, tier: "Tier 5", status: "near_me",  family: "pool tables",         variant_type: "near_me" },
+    { keyword: "pool table store near me",         monthly_searches:  40500, tier: "Tier 5", status: "near_me",  family: "pool tables",         variant_type: "near_me" },
+    { keyword: "billiard table near me",           monthly_searches:  33100, tier: "Tier 5", status: "near_me",  family: "pool tables",         variant_type: "near_me" },
+    { keyword: "pool table shop near me",          monthly_searches:  27100, tier: "Tier 5", status: "near_me",  family: "pool tables",         variant_type: "near_me" },
+    { keyword: "pool table dealer",                monthly_searches:  22200, tier: "Tier 5", status: "not_used", family: "pool tables",         variant_type: "variant" },
 
-    // NOT USED — Table Games / Foosball / Shuffleboard
-    { keyword: "foosball table",             family: "table games",         monthly_searches:  90500, tier: "Not Used", selected: false },
-    { keyword: "foosball table near me",     family: "table games",         monthly_searches:  27100, tier: "Not Used", selected: false, variant: true },
-    { keyword: "shuffleboard table",         family: "table games",         monthly_searches:  74000, tier: "Not Used", selected: false },
-    { keyword: "shuffleboard table near me", family: "table games",         monthly_searches:  22200, tier: "Not Used", selected: false, variant: true },
-    { keyword: "game tables",               family: "table games",         monthly_searches:  60500, tier: "Not Used", selected: false },
-    { keyword: "game tables near me",        family: "table games",         monthly_searches:  18100, tier: "Not Used", selected: false, variant: true },
-    { keyword: "air hockey table",           family: "table games",         monthly_searches:  74000, tier: "Not Used", selected: false },
-    { keyword: "ping pong table near me",    family: "table games",         monthly_searches:  40500, tier: "Not Used", selected: false },
-    { keyword: "dart board near me",         family: "table games",         monthly_searches:  27100, tier: "Not Used", selected: false },
-    { keyword: "darts near me",              family: "table games",         monthly_searches:  22200, tier: "Not Used", selected: false },
+    // Billiards Accessories — Not Used (plan expansion)
+    { keyword: "billiard balls",                   monthly_searches: 110000, tier: "Not Used", status: "not_used", family: "billiards accessories", variant_type: "base" },
+    { keyword: "billiard balls near me",           monthly_searches:  27100, tier: "Not Used", status: "near_me",  family: "billiards accessories", variant_type: "near_me" },
+    { keyword: "pool cues",                        monthly_searches:  90500, tier: "Not Used", status: "not_used", family: "billiards accessories", variant_type: "base" },
+    { keyword: "pool cues near me",                monthly_searches:  22200, tier: "Not Used", status: "near_me",  family: "billiards accessories", variant_type: "near_me" },
+    { keyword: "billiard accessories",             monthly_searches:  40500, tier: "Not Used", status: "not_used", family: "billiards accessories", variant_type: "base" },
+    { keyword: "billiard accessories near me",     monthly_searches:  14800, tier: "Not Used", status: "near_me",  family: "billiards accessories", variant_type: "near_me" },
+    { keyword: "pool table accessories",           monthly_searches:  22200, tier: "Not Used", status: "not_used", family: "billiards accessories", variant_type: "variant" },
+    { keyword: "billiard supplies",                monthly_searches:  18100, tier: "Not Used", status: "not_used", family: "billiards accessories", variant_type: "variant" },
+    { keyword: "pool table light",                 monthly_searches:  33100, tier: "Not Used", status: "not_used", family: "billiards accessories", variant_type: "variant" },
+    { keyword: "pool table felt",                  monthly_searches:  27100, tier: "Not Used", status: "not_used", family: "billiards accessories", variant_type: "variant" },
 
-    // NOT USED — Out of scope / generic
-    { keyword: "billiards",                  family: "out of scope",        monthly_searches: 550000, tier: "Not Used", selected: false },
-    { keyword: "billiards near me",          family: "out of scope",        monthly_searches: 135000, tier: "Not Used", selected: false },
-    { keyword: "pool hall near me",          family: "out of scope",        monthly_searches: 110000, tier: "Not Used", selected: false },
-    { keyword: "billiard room",              family: "out of scope",        monthly_searches:  49500, tier: "Not Used", selected: false },
-    { keyword: "pool table rental",          family: "out of scope",        monthly_searches:  27100, tier: "Not Used", selected: false },
-    { keyword: "pool table resale",          family: "out of scope",        monthly_searches:   6600, tier: "Not Used", selected: false },
-    { keyword: "house to house pool table",  family: "out of scope",        monthly_searches:   1300, tier: "Not Used", selected: false },
-  ],
+    // Table Games — Not Used (plan expansion)
+    { keyword: "foosball table",                   monthly_searches:  90500, tier: "Not Used", status: "not_used", family: "table games",         variant_type: "base" },
+    { keyword: "foosball table near me",           monthly_searches:  27100, tier: "Not Used", status: "near_me",  family: "table games",         variant_type: "near_me" },
+    { keyword: "shuffleboard table",               monthly_searches:  74000, tier: "Not Used", status: "not_used", family: "table games",         variant_type: "base" },
+    { keyword: "shuffleboard table near me",       monthly_searches:  22200, tier: "Not Used", status: "near_me",  family: "table games",         variant_type: "near_me" },
+    { keyword: "game tables",                      monthly_searches:  60500, tier: "Not Used", status: "not_used", family: "table games",         variant_type: "base" },
+    { keyword: "game tables near me",              monthly_searches:  18100, tier: "Not Used", status: "near_me",  family: "table games",         variant_type: "near_me" },
+    { keyword: "air hockey table",                 monthly_searches:  74000, tier: "Not Used", status: "not_used", family: "table games",         variant_type: "base" },
+    { keyword: "ping pong table near me",          monthly_searches:  40500, tier: "Not Used", status: "near_me",  family: "table games",         variant_type: "near_me" },
+    { keyword: "dart board near me",               monthly_searches:  27100, tier: "Not Used", status: "near_me",  family: "table games",         variant_type: "near_me" },
+    { keyword: "darts near me",                    monthly_searches:  22200, tier: "Not Used", status: "near_me",  family: "table games",         variant_type: "near_me" },
 
-  // ---- SELECTED KEYWORDS ----
-  selected_keywords: [
-    "Pool Tables",
-    "Used Pool Tables",
-    "Pool Table Recovery",
-    "Pool Table Movers"
+    // Out of Scope — Generic / Venue Terms
+    { keyword: "billiards",                        monthly_searches: 550000, tier: "Not Used", status: "not_used", family: "out of scope",        variant_type: "base" },
+    { keyword: "billiards near me",                monthly_searches: 135000, tier: "Not Used", status: "near_me",  family: "out of scope",        variant_type: "near_me" },
+    { keyword: "pool hall near me",                monthly_searches: 110000, tier: "Not Used", status: "near_me",  family: "out of scope",        variant_type: "near_me" },
+    { keyword: "billiard room",                    monthly_searches:  49500, tier: "Not Used", status: "not_used", family: "out of scope",        variant_type: "variant" },
+    { keyword: "pool table rental",                monthly_searches:  27100, tier: "Not Used", status: "not_used", family: "out of scope",        variant_type: "variant" },
+    { keyword: "pool table resale",                monthly_searches:   6600, tier: "Not Used", status: "not_used", family: "out of scope",        variant_type: "variant" },
+    { keyword: "house to house pool table",        monthly_searches:   1300, tier: "Not Used", status: "not_used", family: "out of scope",        variant_type: "variant" },
   ],
 
   // ---- KEYWORD TIERS (for flat-tier-block rendering) ----
   keyword_tiers: [
     {
-      tier: "Tier 1",
+      tier_label: "Tier 1",
       color: "t1",
-      name: "Pool Tables",
-      keyword_count: 10,
-      description: "The highest-volume, broadest-intent keyword family for this business. Customers searching 'pool tables' are actively looking to buy — this is the core commercial term that drives the most traffic and the most direct revenue for Sure Shot Billiards & Darts. These terms are searched hundreds of thousands of times per month nationally and represent the single largest opportunity in the plan.",
-      keywords: [
-        { keyword: "pool tables",                monthly_searches: 246000 },
-        { keyword: "pool tables near me",         monthly_searches: 165000 },
-        { keyword: "pool table near me",          monthly_searches: 110000 },
-        { keyword: "billiard table",              monthly_searches:  60500 },
-        { keyword: "pool table for sale",         monthly_searches:  74000 },
-        { keyword: "pool table for sale near me", monthly_searches:  49500 },
-        { keyword: "pool table store near me",    monthly_searches:  40500 },
-        { keyword: "pool table dealer",           monthly_searches:  22200 },
-        { keyword: "pool table shop near me",     monthly_searches:  27100 },
-        { keyword: "billiard table near me",      monthly_searches:  33100 },
-      ]
-    },
-    {
-      tier: "Tier 2",
-      color: "t2",
-      name: "Used Pool Tables",
-      keyword_count: 7,
-      description: "Used and pre-owned pool table searches represent a distinct, high-intent buyer segment. Customers searching these terms are price-conscious buyers ready to purchase — and Sure Shot Billiards & Darts' inventory of refurbished and pre-owned tables is a direct match. This tier captures a large secondary audience that is often underserved by competitors who focus only on new inventory.",
-      keywords: [
-        { keyword: "used pool tables",           monthly_searches: 74000 },
-        { keyword: "used pool tables near me",   monthly_searches: 49500 },
-        { keyword: "used pool table for sale",   monthly_searches: 33100 },
-        { keyword: "used pool table near me",    monthly_searches: 27100 },
-        { keyword: "refurbished pool table",     monthly_searches: 12100 },
-        { keyword: "used billiard table",        monthly_searches: 14800 },
-        { keyword: "second hand pool table",     monthly_searches:  8100 },
-      ]
-    },
-    {
-      tier: "Tier 3",
-      color: "t3",
-      name: "Pool Table Recovery",
-      keyword_count: 8,
-      description: "Pool table recovery, refelting, and service searches target existing pool table owners who need maintenance. This is a high-margin, repeat-business service line that competitors often neglect online. Ranking for these terms positions Sure Shot Billiards & Darts as the full-service authority — not just a retailer — and drives service calls, felt replacements, leveling, and re-rubber jobs across the service region.",
+      tier_name: "Pool Table Recovery",
+      keyword_count: 9,
+      description: "Pool table recovery, refelting, and service searches target existing pool table owners who need maintenance. This is a high-margin, repeat-business service line that competitors consistently neglect online. Ranking for these terms positions Sure Shot Billiards & Darts as the full-service authority — not just a retailer — and drives service calls, felt replacements, leveling, and re-rubber jobs across the Tri-Cities region. These terms have strong local intent and very low national competition from big-box retailers.",
       keywords: [
         { keyword: "pool table recovery",           monthly_searches: 27100 },
+        { keyword: "pool table recovering near me", monthly_searches: 18100 },
         { keyword: "pool table repair near me",     monthly_searches: 22200 },
         { keyword: "pool table service near me",    monthly_searches: 14800 },
-        { keyword: "pool table recovering near me", monthly_searches: 18100 },
         { keyword: "pool table recover",            monthly_searches: 14800 },
         { keyword: "pool table refelting",          monthly_searches: 12100 },
         { keyword: "pool table felt replacement",   monthly_searches:  9900 },
+        { keyword: "pool table cloth replacement",  monthly_searches:  6600 },
         { keyword: "pool table leveling",           monthly_searches:  6600 },
       ]
     },
     {
-      tier: "Tier 4",
-      color: "t4",
-      name: "Pool Table Movers",
+      tier_label: "Tier 2",
+      color: "t2",
+      tier_name: "Pool Table Movers",
       keyword_count: 6,
       description: "Pool table moving is a specialized, high-value service that generates strong leads from homeowners relocating, remodeling, or selling a home. Sure Shot Billiards & Darts' 'House to House' white-glove moving service is a direct match for these searches. These terms have strong commercial intent and very low competition locally — a significant opportunity to own this service category across the Tri-Cities region.",
       keywords: [
@@ -165,6 +139,36 @@ const STRATEGY = {
         { keyword: "pool table installation",    monthly_searches: 14800 },
         { keyword: "move pool table",            monthly_searches: 12100 },
         { keyword: "pool table disassembly",     monthly_searches:  8100 },
+      ]
+    },
+    {
+      tier_label: "Tier 3",
+      color: "t3",
+      tier_name: "Pool Table Repair",
+      keyword_count: 5,
+      description: "Pool table repair searches represent customers with an immediate, urgent need — a broken slate, damaged cushions, or a table that won't level. These are high-intent, high-conversion searches with strong local signals. Sure Shot Billiards & Darts' in-house repair expertise is a direct competitive advantage here, and these terms are winnable locally against national retailers who do not offer repair services.",
+      keywords: [
+        { keyword: "pool table repair",          monthly_searches: 27100 },
+        { keyword: "pool table repair near me",  monthly_searches: 22200 },
+        { keyword: "billiard table repair",      monthly_searches:  8100 },
+        { keyword: "pool table restoration",     monthly_searches:  6600 },
+        { keyword: "pool table refurbishment",   monthly_searches:  4400 },
+      ]
+    },
+    {
+      tier_label: "Tier 4",
+      color: "t4",
+      tier_name: "Used Pool Tables",
+      keyword_count: 7,
+      description: "Used and pre-owned pool table searches represent a distinct, high-intent buyer segment that national retailers largely ignore. Shoppers searching for used pool tables are price-conscious, locally focused, and actively ready to purchase. Sure Shot Billiards & Darts' inventory of pre-owned and refurbished tables is a direct competitive advantage here — these searches convert to in-store visits and phone calls from buyers who are ready to act.",
+      keywords: [
+        { keyword: "used pool tables",           monthly_searches: 74000 },
+        { keyword: "used pool tables near me",   monthly_searches: 49500 },
+        { keyword: "used pool table near me",    monthly_searches: 27100 },
+        { keyword: "used pool table for sale",   monthly_searches: 33100 },
+        { keyword: "used billiard table",        monthly_searches: 14800 },
+        { keyword: "refurbished pool table",     monthly_searches: 12100 },
+        { keyword: "second hand pool table",     monthly_searches:  8100 },
       ]
     }
   ],
@@ -180,6 +184,19 @@ const STRATEGY = {
 
   // ---- NOT USED GROUPS ----
   not_used_groups: [
+    {
+      reason: "PLA-Dominated — Generic Pool Tables",
+      description: "Generic 'pool tables' and 'pool table near me' searches are dominated by national retailers — Wayfair, Amazon, Costco, and big-box stores — with heavy Product Listing Ad (PLA) spend. Page 1 for these terms is a wall of paid shopping ads from companies with eight-figure marketing budgets. A local billiards shop cannot compete cost-effectively on these terms, and the traffic they generate skews toward price shoppers rather than local buyers seeking service or expertise.",
+      keywords: [
+        { keyword: "pool tables",               monthly_searches: 246000 },
+        { keyword: "pool tables near me",       monthly_searches: 165000 },
+        { keyword: "pool table near me",        monthly_searches: 110000 },
+        { keyword: "pool table for sale",       monthly_searches:  74000 },
+        { keyword: "billiard table",            monthly_searches:  60500 },
+        { keyword: "pool table for sale near me", monthly_searches: 49500 },
+        { keyword: "pool table store near me",  monthly_searches:  40500 },
+      ]
+    },
     {
       reason: "Plan Capacity — Billiards Accessories",
       description: "Billiards accessories (pool cues, billiard balls, billiard supplies, pool table lights, and felt) represent a massive keyword opportunity with extremely high search volumes. These are direct product lines that Sure Shot Billiards & Darts carries. They are excluded from the current 20-combination plan solely due to capacity constraints and are the top priority for the next plan upgrade.",
@@ -278,8 +295,20 @@ const STRATEGY = {
 // UTILITY
 // ============================================================
 function fmt(n) {
-  if (n == null) return '';
-  return n.toLocaleString('en-US');
+  if (n === null || n === undefined) return '';
+  return n.toLocaleString();
+}
+
+function statusBadge(status, note) {
+  if (status === 'selected') return '<span class="status-badge status-selected">Selected</span>';
+  if (status === 'near_me')  return `<span class="status-badge status-near-me"${note ? ` title="${note}"` : ''}>Near Me Variant</span>`;
+  return '<span class="status-badge status-not-used">Not Used</span>';
+}
+
+function tierPill(label) {
+  const cls = label === 'Tier 1' ? 't1' : label === 'Tier 2' ? 't2' : label === 'Tier 3' ? 't3' : label === 'Tier 4' ? 't4' : label === 'Tier 5' ? 't5' : '';
+  if (!cls) return `<span class="tier-pill" style="background:#f1f5f9;color:#64748b">NOT USED</span>`;
+  return `<span class="tier-pill ${cls}">${label.toUpperCase()}</span>`;
 }
 
 // ============================================================
@@ -288,27 +317,62 @@ function fmt(n) {
 function buildKeywordTable() {
   const tbody = document.getElementById('kw-table-body');
   if (!tbody) return;
-  const rows = STRATEGY.keyword_table.map(kw => {
-    const tierClass = kw.tier === 'Tier 1' ? 't1' : kw.tier === 'Tier 2' ? 't2' : kw.tier === 'Tier 3' ? 't3' : kw.tier === 'Tier 4' ? 't4' : '';
-    const tierLabel = kw.tier === 'Not Used' ? '<span class="tier-pill" style="background:#f1f5f9;color:#64748b">Not Used</span>' : `<span class="tier-pill ${tierClass}">${kw.tier.toUpperCase()}</span>`;
-    const statusLabel = kw.selected ? '<span class="status-selected">&#10003; Selected</span>' : '<span class="status-not-used">Not Used</span>';
-    const rowClass = kw.selected ? 'row-selected' : (kw.family === 'out of scope' ? 'row-out-of-scope' : '');
-    const indent = kw.variant ? '<span class="kw-variant-arrow">&#8627;</span>' : '';
-    return `<tr class="${rowClass}"><td>${indent}${kw.keyword}</td><td class="num-col">${fmt(kw.monthly_searches)}</td><td>${tierLabel}</td><td>${statusLabel}</td></tr>`;
+
+  const familyOrder = [];
+  const familyMap = {};
+  STRATEGY.keyword_table.forEach(kw => {
+    if (!familyMap[kw.family]) {
+      familyMap[kw.family] = [];
+      familyOrder.push(kw.family);
+    }
+    familyMap[kw.family].push(kw);
+  });
+
+  const variantLabel = {
+    variant: 'Variant',
+    plural: 'Plural Variant',
+    near_me: 'Near Me Variant',
+    short_form: 'Short-Form Variant'
+  };
+
+  const rows = familyOrder.map(family => {
+    const members = familyMap[family].slice().sort((a, b) => {
+      const rankType = t => t === 'base' ? 0 : 1;
+      if (rankType(a.variant_type) !== rankType(b.variant_type)) {
+        return rankType(a.variant_type) - rankType(b.variant_type);
+      }
+      return b.monthly_searches - a.monthly_searches;
+    });
+    return members.map(kw => {
+      const isBase = kw.variant_type === 'base';
+      const isNearMe = kw.variant_type === 'near_me';
+      const isOutOfScope = kw.family === 'out of scope';
+      const rowClass = isBase || isOutOfScope
+        ? (kw.status === 'selected' ? 'row-base row-selected' : 'row-base')
+        : (isNearMe ? 'row-variant row-near-me' : 'row-variant');
+      const kwCell = (isBase || isOutOfScope)
+        ? `<td>${kw.keyword}</td>`
+        : `<td class="kw-variant-cell"><span class="kw-variant-indent">&#8627;</span>${kw.keyword} <span class="kw-variant-badge">${variantLabel[kw.variant_type] || 'Variant'}</span></td>`;
+      return `<tr class="${rowClass}">
+        ${kwCell}
+        <td class="num-col">${fmt(kw.monthly_searches)}</td>
+        <td>${tierPill(kw.tier)}</td>
+        <td>${statusBadge(kw.status)}</td>
+      </tr>`;
+    }).join('');
   }).join('');
+
   tbody.innerHTML = rows;
 }
 
 // ============================================================
-// BUILD KEYWORD TIER FLAT BLOCKS (Approach C)
+// BUILD KEYWORD TIER FLAT BLOCKS
 // ============================================================
 function buildKeywordTierCards() {
   const grid = document.getElementById('kw-tier-grid');
   if (!grid) return;
-  const tierColors = ['kw-tier-1', 'kw-tier-2', 'kw-tier-3', 'kw-tier-4'];
   const blocks = STRATEGY.keyword_tiers.map((tier, i) => {
-    // Support both data formats: {color:'t1'} and {tier_label:'Tier 1'}
-    const colorCls = tier.color ? 'kw-tier-' + tier.color.replace('t', '') : (tierColors[i] || 'kw-tier-1');
+    const colorCls = tier.color ? 'kw-tier-' + tier.color.replace('t', '') : ('kw-tier-' + (i + 1));
     const tierLabel = tier.tier_label || tier.tier || ('Tier ' + (i + 1));
     const tierName  = tier.tier_name  || tier.name  || '';
     const kwCount   = tier.keywords.length;
@@ -320,7 +384,7 @@ function buildKeywordTierCards() {
     ).join('');
     return `<div class="flat-tier-block ${colorCls}">
       <div class="flat-tier-heading">
-        <span class="tier-pill ${colorCls.replace('kw-tier-', 't')}">${tierLabel.toUpperCase()}</span>
+        <span class="tier-pill ${tier.color || ('t' + (i + 1))}">${tierLabel.toUpperCase()}</span>
         <span class="flat-tier-name">${tierName}</span>
         <span class="flat-tier-count">${kwCount} keyword${kwCount !== 1 ? 's' : ''} selected</span>
       </div>
@@ -335,7 +399,7 @@ function buildKeywordTierCards() {
 }
 
 // ============================================================
-// BUILD MATRIX — CITY CARDS (Approach C)
+// BUILD MATRIX — CITY CARDS
 // ============================================================
 function buildMatrix() {
   const cityGrid = document.getElementById('matrix-city-grid');
