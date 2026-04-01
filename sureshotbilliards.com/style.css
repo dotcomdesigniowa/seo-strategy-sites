@@ -1273,18 +1273,39 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
 }
 
 /* ============================================================
-   TIER PILL VISIBILITY FIX — inside dark city-matrix-header
+   CITY MATRIX CARD: tier pill visibility on dark header
+   Overrides default tier-pill colors so they are always
+   readable against the dark navy card header background.
    ============================================================ */
 .city-matrix-header .tier-pill {
   background: rgba(255,255,255,0.18) !important;
   color: #fff !important;
-  border: 1px solid rgba(255,255,255,0.25) !important;
+  border: 1px solid rgba(255,255,255,0.35) !important;
+  font-weight: 700;
+}
+/* City matrix header: two-row layout prevents text wrapping on long city names */
+.city-matrix-header {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 14px 16px 12px;
+}
+.city-matrix-header-top {
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 .city-matrix-header-meta {
-  color: rgba(255,255,255,0.65) !important;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: nowrap;
+  color: rgba(255,255,255,0.65);
+  font-size: 11px;
+  font-weight: 600;
 }
 .city-matrix-pop {
-  color: rgba(255,255,255,0.65) !important;
+  color: rgba(255,255,255,0.65);
 }
 /* Reduce opp-new-market vertical spacing */
 .opp-new-market {
