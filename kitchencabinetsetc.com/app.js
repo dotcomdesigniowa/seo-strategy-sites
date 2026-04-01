@@ -104,7 +104,7 @@ const STRATEGY = {
       plan: "Level D",
       combinations: 50,
       price: 1600,
-      additional_combinations: 20,
+      additional_combinations: 10,
       headline: "Expand into Bothell and Issaquah",
       description: "Level D adds two additional Eastside markets: Bothell (55,287 residents) and Issaquah (40,051 residents), extending all 7 keywords into two growing communities with strong residential remodeling demand and easy access to the Bellevue showroom.",
       keywords: [
@@ -230,8 +230,8 @@ function buildMatrix() {
       grandTotal += m.keywords.length;
       cards += `<div class="city-matrix-card">
         <div class="city-matrix-header">
-          ${hqStar}<span class="city-matrix-name">${cityLabel}</span>
-          <span class="city-matrix-meta"><span class="tier-pill ${tierCls}">${m.tier.toUpperCase()}</span> Pop. ${fmt(m.population)}</span>
+          <div class="city-matrix-header-top">${hqStar}<span class="city-matrix-name">${cityLabel}</span></div>
+          <div class="city-matrix-header-meta"><span class="tier-pill ${tierCls}">${m.tier.toUpperCase()}</span><span class="city-matrix-pop">Pop. ${fmt(m.population)}</span></div>
         </div>
         <div class="city-kw-list">${kwItems}</div>
         <div class="city-matrix-footer">${m.keywords.length} combination${m.keywords.length !== 1 ? 's' : ''}</div>
@@ -249,8 +249,8 @@ function buildMatrix() {
       grandTotal += keywords.length;
       cards += `<div class="city-matrix-card">
         <div class="city-matrix-header">
-          ${hqStar}<span class="city-matrix-name">${cityLabel}</span>
-          <span class="city-matrix-meta"><span class="tier-pill ${tierCls}">${m.tier.toUpperCase()}</span> Pop. ${fmt(m.population)}</span>
+          <div class="city-matrix-header-top">${hqStar}<span class="city-matrix-name">${cityLabel}</span></div>
+          <div class="city-matrix-header-meta"><span class="tier-pill ${tierCls}">${m.tier.toUpperCase()}</span><span class="city-matrix-pop">Pop. ${fmt(m.population)}</span></div>
         </div>
         <div class="city-kw-list">${kwItems}</div>
         <div class="city-matrix-footer">${keywords.length} combination${keywords.length !== 1 ? 's' : ''}</div>

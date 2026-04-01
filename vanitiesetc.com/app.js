@@ -163,7 +163,7 @@ const STRATEGY = {
       plan: "Plan Level B",
       combinations: 30,
       price: 900,
-      additional_combinations: 20,
+      additional_combinations: 10,
       headline: "Add a Third Keyword and Deeper Service Coverage",
       description: "Plan Level B introduces a third keyword, bathroom countertops near me (4,400/mo), targeting the stone and quartz countertop service line prominently featured in the showroom. With 30 total combinations, Vanities Etc covers 3 distinct product lines across 10 markets.",
       new_market: false,
@@ -176,7 +176,7 @@ const STRATEGY = {
       plan: "Plan Level C",
       combinations: 40,
       price: 1200,
-      additional_combinations: 30,
+      additional_combinations: 10,
       headline: "Add Hardware Keywords and Full Product Category Coverage",
       description: "Plan Level C introduces cabinet hardware near me and bathroom hardware near me, capturing customers searching for the decorative hardware products available in the showroom. With 40 total combinations, Vanities Etc achieves comprehensive visibility across all core product categories for every market in the strategy.",
       new_market: false,
@@ -275,7 +275,7 @@ function buildKeywordTierCards() {
       <div class="flat-tier-heading">
         <span class="tier-pill ${colorCls.replace('kw-tier-','t')}">${tier.tier_label}</span>
         <span class="flat-tier-name">${tier.tier_name}</span>
-        <span class="flat-tier-count">${tier.keywords.length} keyword${tier.keywords.length !== 1 ? 's' : ''} selected</span>
+        <span class="flat-tier-count">${tier.keywords.length} keyword${tier.keywords.length !== 1 ? 's' : ''} researched</span>
       </div>
       <div class="flat-tier-desc">${tier.description}</div>
       <table class="flat-kw-table">
@@ -324,8 +324,8 @@ function buildMatrix() {
       grandTotal += m.keywords.length;
       cards += `<div class="city-matrix-card">
         <div class="city-matrix-header">
-          ${hqStar}<span class="city-matrix-name">${cityLabel}</span>
-          <span class="city-matrix-meta"><span class="tier-pill ${tierCls}">${m.tier.toUpperCase()}</span> Pop. ${fmt(m.population)}</span>
+          <div class="city-matrix-header-top">${hqStar}<span class="city-matrix-name">${cityLabel}</span></div>
+          <div class="city-matrix-header-meta"><span class="tier-pill ${tierCls}">${m.tier.toUpperCase()}</span><span class="city-matrix-pop">Pop. ${fmt(m.population)}</span></div>
         </div>
         <div class="city-kw-list">${kwItems}</div>
         <div class="city-matrix-footer">${m.keywords.length} combination${m.keywords.length !== 1 ? 's' : ''}</div>
@@ -343,8 +343,8 @@ function buildMatrix() {
       grandTotal += keywords.length;
       cards += `<div class="city-matrix-card">
         <div class="city-matrix-header">
-          ${hqStar}<span class="city-matrix-name">${cityLabel}</span>
-          <span class="city-matrix-meta"><span class="tier-pill ${tierCls}">${m.tier.toUpperCase()}</span> Pop. ${fmt(m.population)}</span>
+          <div class="city-matrix-header-top">${hqStar}<span class="city-matrix-name">${cityLabel}</span></div>
+          <div class="city-matrix-header-meta"><span class="tier-pill ${tierCls}">${m.tier.toUpperCase()}</span><span class="city-matrix-pop">Pop. ${fmt(m.population)}</span></div>
         </div>
         <div class="city-kw-list">${kwItems}</div>
         <div class="city-matrix-footer">${keywords.length} combination${keywords.length !== 1 ? 's' : ''}</div>
@@ -408,7 +408,7 @@ function buildOpportunities() {
       <div class="opp-plan-label">${opp.plan}</div>
       <div class="opp-price">$${fmt(opp.price)}<span class="opp-price-label">/mo</span></div>
       <div class="opp-combos-large">${opp.combinations} <span class="opp-combos-label">total combinations</span></div>
-      <div class="opp-combos">${opp.additional_combinations} additional combinations from current plan</div>
+      <div class="opp-combos">+${opp.additional_combinations} combinations from current plan</div>
       <h4 class="opp-headline">${opp.headline}</h4>
       <p class="opp-desc">${opp.description}</p>
       ${newMarketDiv}

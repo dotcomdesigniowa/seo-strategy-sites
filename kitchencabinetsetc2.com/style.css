@@ -1232,16 +1232,28 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
 .city-matrix-header {
   background: #334168;
   padding: 13px 16px;
-  display: flex; align-items: flex-start; gap: 8px; flex-wrap: wrap;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
-.city-card-hq { color: #3F80EA; font-size: 14px; flex-shrink: 0; margin-top: 1px; }
+.city-matrix-header-top {
+  display: flex; align-items: center; gap: 6px;
+}
+.city-matrix-header-meta {
+  display: flex; align-items: center; gap: 6px;
+  flex-wrap: nowrap;
+}
+.city-card-hq { color: #3F80EA; font-size: 14px; flex-shrink: 0; }
 .city-matrix-name {
   font-size: 13px; font-weight: 800; color: #fff;
-  text-transform: uppercase; letter-spacing: 0.03em; flex: 1;
+  text-transform: uppercase; letter-spacing: 0.03em;
 }
 .city-matrix-meta {
   display: flex; align-items: center; gap: 6px;
-  font-size: 11px; color: #94a3b8; white-space: nowrap; margin-top: 2px;
+  font-size: 11px; color: #94a3b8; white-space: nowrap;
+}
+.city-matrix-pop {
+  font-size: 11px; color: rgba(255,255,255,0.65);
 }
 .city-kw-list { padding: 10px 16px; }
 .city-kw-item {

@@ -184,12 +184,12 @@ const STRATEGY = {
       combinations: 30,
       price: 900,
       additional_combinations: 10,
-      headline: "Add Countertops and Laundry Room Coverage",
-      description: "Upgrading to Level B adds 10 additional keyword-city combinations, allowing Kitchen Cabinets Etc 2 to target two new high-value service lines: granite countertops and laundry room cabinets. These are distinct product categories the client already offers, and both carry strong local search intent.",
-      keywords: [
-        { keyword: "granite countertops near me",  monthly_searches: 33100 },
-        { keyword: "laundry room cabinets near me",monthly_searches:  4400 },
-        { keyword: "Scottsdale, AZ",               monthly_searches: null, new_market: true },
+      new_market: true,
+      headline: "Expand into Scottsdale and Tempe",
+      description: "Level B extends all 4 current keywords into two of the largest and most affluent markets in the Phoenix metro: Scottsdale (Pop. 258,000) and Tempe (Pop. 192,000). Both cities have strong residential remodeling demand and are within easy reach of the Gold Canyon showroom.",
+      markets: [
+        { city: "Scottsdale, AZ", pop: 258000, tier: "Tier 1" },
+        { city: "Tempe, AZ",      pop: 192000, tier: "Tier 1" },
       ]
     },
     {
@@ -197,12 +197,12 @@ const STRATEGY = {
       combinations: 40,
       price: 1200,
       additional_combinations: 10,
-      headline: "Add Bathroom Cabinets and Two New Markets",
-      description: "Level C opens coverage for bathroom cabinets as a distinct service line and expands into two additional high-population markets in the Phoenix East Valley. With 40 total combinations, Kitchen Cabinets Etc 2 achieves broad visibility across the region for all major product categories.",
-      keywords: [
-        { keyword: "bathroom cabinets near me",  monthly_searches: 12100 },
-        { keyword: "Scottsdale, AZ",             monthly_searches: null, new_market: true },
-        { keyword: "Tempe, AZ",                  monthly_searches: null, new_market: true },
+      new_market: true,
+      headline: "Add Chandler and Gilbert",
+      description: "Level C pushes into Chandler (Pop. 275,000) and Gilbert (Pop. 267,000), two of the fastest-growing cities in the East Valley. With 40 total combinations, Kitchen Cabinets Etc 2 achieves broad visibility across the core Phoenix East Valley market for all four service lines.",
+      markets: [
+        { city: "Chandler, AZ", pop: 275000, tier: "Tier 1" },
+        { city: "Gilbert, AZ",  pop: 267000, tier: "Tier 1" },
       ]
     },
     {
@@ -210,14 +210,12 @@ const STRATEGY = {
       combinations: 50,
       price: 1600,
       additional_combinations: 10,
-      headline: "Full East Valley Domination",
-      description: "Level D provides the coverage needed to dominate the entire Phoenix East Valley. With 50 total combinations, Kitchen Cabinets Etc 2 can target up to 8 cities with a full suite of keywords, achieving comprehensive visibility across every major market within the service area for every product category offered.",
-      keywords: [
-        { keyword: "quartz countertops near me",   monthly_searches: 22200 },
-        { keyword: "custom kitchen cabinets",      monthly_searches: 90500 },
-        { keyword: "Scottsdale, AZ",               monthly_searches: null, new_market: true },
-        { keyword: "Tempe, AZ",                    monthly_searches: null, new_market: true },
-        { keyword: "Fountain Hills, AZ",           monthly_searches: null, new_market: true },
+      new_market: true,
+      headline: "Full East Valley Coverage",
+      description: "Level D completes the East Valley footprint by adding Mesa (Pop. 504,000) and Fountain Hills (Pop. 24,000). With 50 total combinations across 9 markets, Kitchen Cabinets Etc 2 achieves comprehensive visibility across every major community in the Phoenix East Valley service area.",
+      markets: [
+        { city: "Mesa, AZ",          pop: 504000, tier: "Tier 1" },
+        { city: "Fountain Hills, AZ", pop:  24000, tier: "Tier 2" },
       ]
     }
   ]
@@ -372,8 +370,8 @@ function buildMatrix() {
       grandTotal += keywords.length;
       cards += `<div class="city-matrix-card">
         <div class="city-matrix-header">
-          ${hqStar}<span class="city-matrix-name">${cityLabel}</span>
-          <span class="city-matrix-meta"><span class="tier-pill ${tierCls}">${m.tier.toUpperCase()}</span> Pop. ${fmt(m.population)}</span>
+          <div class="city-matrix-header-top">${hqStar}<span class="city-matrix-name">${cityLabel}</span></div>
+          <div class="city-matrix-header-meta"><span class="tier-pill ${tierCls}">${m.tier.toUpperCase()}</span><span class="city-matrix-pop">Pop. ${fmt(m.population)}</span></div>
         </div>
         <div class="city-kw-list">${kwItems}</div>
         <div class="city-matrix-footer">${keywords.length} combination${keywords.length !== 1 ? 's' : ''}</div>
@@ -423,25 +421,22 @@ function buildOpportunities() {
   const grid = document.getElementById('opportunities-grid');
   if (!grid) return;
   const cards = STRATEGY.additional_opportunities.map((opp, i) => {
-    const kwList = opp.keywords.map(kw =>
-      `<li>
-        <span class="opp-kw">${kw.keyword}</span>
-        ${kw.monthly_searches ? `<span class="opp-vol">${fmt(kw.monthly_searches)}</span>` : kw.new_market ? `<span class="opp-vol opp-new-market">New Market</span>` : ''}
-      </li>`
-    ).join('');
+    const marketRows = (opp.markets || []).map(m => {
+      const tierCls = m.tier === 'Tier 1' ? 't1' : m.tier === 'Tier 2' ? 't2' : 't3';
+      return `<li>
+        <span class="opp-kw">${m.city}</span>
+        <span class="opp-vol"><span class="tier-pill ${tierCls}">${m.tier.toUpperCase()}</span> &nbsp;Pop. ${fmt(m.pop)}</span>
+      </li>`;
+    }).join('');
     const highlight = i === 0 ? 'opp-card-highlight' : '';
-    const newMarketDiv = opp.new_market
-      ? `<div class="opp-new-market">+ New Market Added</div>`
-      : `<div class="opp-new-market" style="visibility:hidden"></div>`;
     return `<div class="opp-card ${highlight}">
       <div class="opp-plan-label">${opp.plan}</div>
       <div class="opp-price">$${fmt(opp.price)}<span class="opp-price-label">/mo</span></div>
       <div class="opp-combos-large">${opp.combinations} <span class="opp-combos-label">total combinations</span></div>
-      <div class="opp-combos">${opp.additional_combinations} additional combinations from current plan</div>
+      <div class="opp-combos">+${opp.additional_combinations} combinations from current plan</div>
       <h4 class="opp-headline">${opp.headline}</h4>
       <p class="opp-desc">${opp.description}</p>
-      ${newMarketDiv}
-      <ul class="opp-kw-list"><li class="opp-kw-header"><span>Keyword / Market</span><span>Mo. Searches</span></li>${kwList}</ul>
+      <ul class="opp-kw-list"><li class="opp-kw-header"><span>Market Added</span><span>Tier &amp; Population</span></li>${marketRows}</ul>
     </div>`;
   }).join('');
   grid.innerHTML = cards;

@@ -148,7 +148,7 @@ const STRATEGY = {
       plan: "Level D",
       combinations: 50,
       price: 1600,
-      additional_combinations: 20,
+      additional_combinations: 10,
       headline: "Add Ceramic Tile and Natural Stone Coverage",
       description: "Adds 'ceramic tile store near me' (2,900/mo) and 'natural stone tile store' (1,300/mo) as dedicated product keywords, capturing customers searching for specific tile materials and establishing Discount Tile Outlet as the dominant specialty tile destination across the Eastside.",
       keywords: [
@@ -172,6 +172,7 @@ function statusBadge(status, note) {
   if (status === 'near_me') return `<span class="status-badge status-near-me" title="${note || ''}">Near Me Variant</span>`;
   return '<span class="status-badge status-not-used">Not Used</span>';
 }
+
 function tierPill(label) {
   if (!label) return '<span style="color:#999;font-size:0.8rem;">&#8212;</span>';
   const cls = label === 'Tier 1' ? 't1' : label === 'Tier 2' ? 't2' : label === 'Tier 3' ? 't3' : 't4';
@@ -281,8 +282,8 @@ function buildMatrix() {
       grandTotal += m.keywords.length;
       cards += `<div class="city-matrix-card">
         <div class="city-matrix-header">
-          ${hqStar}<span class="city-matrix-name">${cityLabel}</span>
-          <span class="city-matrix-meta"><span class="tier-pill ${tierCls}">${m.tier.toUpperCase()}</span> Pop. ${fmt(m.population)}</span>
+          <div class="city-matrix-header-top">${hqStar}<span class="city-matrix-name">${cityLabel}</span></div>
+          <div class="city-matrix-header-meta"><span class="tier-pill ${tierCls}">${m.tier.toUpperCase()}</span><span class="city-matrix-pop">Pop. ${fmt(m.population)}</span></div>
         </div>
         <div class="city-kw-list">${kwItems}</div>
         <div class="city-matrix-footer">${m.keywords.length} combination${m.keywords.length !== 1 ? 's' : ''}</div>
@@ -300,8 +301,8 @@ function buildMatrix() {
       grandTotal += keywords.length;
       cards += `<div class="city-matrix-card">
         <div class="city-matrix-header">
-          ${hqStar}<span class="city-matrix-name">${cityLabel}</span>
-          <span class="city-matrix-meta"><span class="tier-pill ${tierCls}">${m.tier.toUpperCase()}</span> Pop. ${fmt(m.population)}</span>
+          <div class="city-matrix-header-top">${hqStar}<span class="city-matrix-name">${cityLabel}</span></div>
+          <div class="city-matrix-header-meta"><span class="tier-pill ${tierCls}">${m.tier.toUpperCase()}</span><span class="city-matrix-pop">Pop. ${fmt(m.population)}</span></div>
         </div>
         <div class="city-kw-list">${kwItems}</div>
         <div class="city-matrix-footer">${keywords.length} combination${keywords.length !== 1 ? 's' : ''}</div>
@@ -459,7 +460,7 @@ function buildMobileMatrix() {
       <div class="mob-matrix-total">${count} combination${count !== 1 ? 's' : ''}</div>
     </div>`;
   }).join('');
-  el.innerHTML = cards + `<div class="mob-matrix-grand-total">Grand Total: <strong>20 Combinations</strong></div>`;
+  el.innerHTML = cards + `<div class="mob-matrix-grand-total">Grand Total: <strong>30 Combinations</strong></div>`;
 }
 
 // ============================================================
