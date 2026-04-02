@@ -92,7 +92,7 @@ const STRATEGY = {
     { city: "Sammamish",     state: null, tier: "Tier 1", population:  69438, is_hq: false, keywords: ["tile store", "tile flooring near me", "tile showroom near me", "hardwood flooring near me"] },
     { city: "Bothell",       state: null, tier: "Tier 1", population:  53200, is_hq: false, keywords: ["tile store", "tile flooring near me", "tile showroom near me", "hardwood flooring near me"] },
     { city: "Issaquah",      state: null, tier: "Tier 1", population:  40290, is_hq: false, keywords: ["tile store", "tile flooring near me", "tile showroom near me", "hardwood flooring near me"] },
-    { city: "Renton",        state: null, tier: "Tier 1", population: 108429, is_hq: false, keywords: ["tile store", "tile flooring near me", "hardwood flooring near me"] },
+    { city: "Renton",        state: null, tier: "Tier 1", population: 108429, is_hq: false, keywords: ["tile store", "hardwood flooring near me"] },
     { city: "Mercer Island", state: null, tier: "Tier 2", population:  25990, is_hq: false, keywords: ["tile store", "tile flooring near me", "tile showroom near me"] },
     { city: "Woodinville",   state: null, tier: "Tier 2", population:  14000, is_hq: false, keywords: ["tile flooring near me"] },
   ],
@@ -150,11 +150,11 @@ const STRATEGY = {
       combinations: 40,
       price: 1200,
       additional_combinations: 10,
-      headline: "Add Porcelain Tile Coverage and Expand into Kenmore",
-      description: "Introduces 'porcelain tile store' (12,100/mo) as a dedicated product keyword across core markets, and expands geographic reach into Kenmore, a growing community with strong residential renovation demand and easy access to the Bellevue showroom.",
-      keywords: [
-        { keyword: "porcelain tile store", monthly_searches: 12100 },
-        { keyword: "Kenmore, WA",          monthly_searches: null, new_market: true }
+      headline: "Expand into Kenmore and Maple Valley",
+      description: "Adds two growing South King County communities to the strategy. Kenmore sits on the north shore of Lake Washington with a strong residential market and easy access to the Bellevue showroom. Maple Valley is a fast-growing Southeast King County suburb with significant new home construction and renovation demand.",
+      markets: [
+        { city: "Kenmore, WA",      tier: "Tier 2", population: 23590 },
+        { city: "Maple Valley, WA", tier: "Tier 2", population: 30000 }
       ]
     },
     {
@@ -162,12 +162,11 @@ const STRATEGY = {
       combinations: 50,
       price: 1600,
       additional_combinations: 10,
-      headline: "Add Ceramic Tile and Natural Stone Coverage",
-      description: "Adds 'ceramic tile store near me' (2,900/mo) and 'natural stone tile store' (1,300/mo) as dedicated product keywords, capturing customers searching for specific tile materials and establishing Discount Tile Outlet as the dominant specialty tile destination across the Eastside.",
-      keywords: [
-        { keyword: "ceramic tile store near me", monthly_searches: 2900 },
-        { keyword: "natural stone tile store",   monthly_searches: 1300 },
-        { keyword: "Maple Valley, WA",           monthly_searches: null, new_market: true }
+      headline: "Expand into Kent and Auburn",
+      description: "Adds two of King County's largest cities to the strategy. Kent (136,000+) and Auburn (87,000+) represent a massive combined population with strong residential renovation demand. These markets extend Discount Tile Outlet's reach into the South King County corridor and significantly increase the total addressable market.",
+      markets: [
+        { city: "Kent, WA",   tier: "Tier 1", population: 136588 },
+        { city: "Auburn, WA", tier: "Tier 1", population: 87256  }
       ]
     }
   ]
@@ -365,16 +364,14 @@ function buildOpportunities() {
   const grid = document.getElementById('opportunities-grid');
   if (!grid) return;
   const cards = STRATEGY.additional_opportunities.map((opp, i) => {
-    const kwList = opp.keywords.map(kw =>
-      `<li>
-        <span class="opp-kw">${kw.keyword}</span>
-        ${kw.monthly_searches ? `<span class="opp-vol">${fmt(kw.monthly_searches)}</span>` : kw.new_market ? `<span class="opp-vol opp-new-market">New Market</span>` : ''}
-      </li>`
-    ).join('');
     const highlight = i === 0 ? 'opp-card-highlight' : '';
-    const newMarketDiv = opp.new_market
-      ? `<div class="opp-new-market">+ New Market Added</div>`
-      : `<div class="opp-new-market" style="visibility:hidden"></div>`;
+    const marketRows = opp.markets.map(m => {
+      const tierCls = m.tier === 'Tier 1' ? 't1' : m.tier === 'Tier 2' ? 't2' : 't3';
+      return `<li>
+        <span class="opp-kw">${m.city}</span>
+        <span class="opp-vol opp-new-market"><span class="tier-pill ${tierCls}">${m.tier.toUpperCase()}</span> &nbsp; Pop. ${fmt(m.population)}</span>
+      </li>`;
+    }).join('');
     return `<div class="opp-card ${highlight}">
       <div class="opp-plan-label">${opp.plan}</div>
       <div class="opp-price">$${fmt(opp.price)}<span class="opp-price-label">/mo</span></div>
@@ -382,8 +379,7 @@ function buildOpportunities() {
       <div class="opp-combos">${opp.additional_combinations} additional combinations from current plan</div>
       <h4 class="opp-headline">${opp.headline}</h4>
       <p class="opp-desc">${opp.description}</p>
-      ${newMarketDiv}
-      <ul class="opp-kw-list"><li class="opp-kw-header"><span>Keyword / Market</span><span>Mo. Searches</span></li>${kwList}</ul>
+      <ul class="opp-kw-list"><li class="opp-kw-header"><span>Market Added</span><span>Tier &amp; Population</span></li>${marketRows}</ul>
     </div>`;
   }).join('');
   grid.innerHTML = cards;
