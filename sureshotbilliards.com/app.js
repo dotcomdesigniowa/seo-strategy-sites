@@ -378,7 +378,7 @@ function buildKeywordTierCards() {
       <div class="flat-tier-heading">
         <span class="tier-pill ${tier.color || ('t' + (i + 1))}">${tierLabel.toUpperCase()}</span>
         <span class="flat-tier-name">${tierName}</span>
-        <span class="flat-tier-count">${kwCount} keyword${kwCount !== 1 ? 's' : ''} selected</span>
+        <span class="flat-tier-count">${kwCount} keyword${kwCount !== 1 ? 's' : ''} researched</span>
       </div>
       <div class="flat-tier-desc">${tier.description}</div>
       <table class="flat-kw-table">

@@ -356,7 +356,7 @@ function buildKeywordTierCards() {
       <div class="flat-tier-heading">
         <span class="tier-pill ${colorCls.replace('kw-tier-','t')}">${tier.tier_label}</span>
         <span class="flat-tier-name">${tier.tier_name}</span>
-        <span class="flat-tier-count">${tier.keywords.length} keyword${tier.keywords.length !== 1 ? 's' : ''} selected</span>
+        <span class="flat-tier-count">${tier.keywords.length} keyword${tier.keywords.length !== 1 ? 's' : ''} researched</span>
       </div>
       <div class="flat-tier-desc">${tier.description}</div>
       <table class="flat-kw-table">
