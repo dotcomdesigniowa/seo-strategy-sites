@@ -441,39 +441,26 @@ function buildMobileMarketList() {
 function buildMobileMatrix() {
   const el = document.getElementById('mobile-matrix');
   if (!el) return;
-  const keywordCities = {
-    "tile store":            ["Bellevue","Kirkland","Redmond","Sammamish","Bothell","Issaquah","Mercer Island"],
-    "tile flooring near me": ["Bellevue","Kirkland","Redmond","Sammamish","Bothell","Issaquah","Woodinville"],
-    "tile showroom near me": ["Bellevue","Kirkland","Redmond","Sammamish","Issaquah","Mercer Island"]
-  };
-  const allCities = [
-    { city: "Bellevue",      tier: "Tier 1", pop: 151854, is_hq: true  },
-    { city: "Kirkland",      tier: "Tier 1", pop:  92175, is_hq: false },
-    { city: "Redmond",       tier: "Tier 1", pop:  73256, is_hq: false },
-    { city: "Sammamish",     tier: "Tier 1", pop:  69438, is_hq: false },
-    { city: "Bothell",       tier: "Tier 1", pop:  53200, is_hq: false },
-    { city: "Issaquah",      tier: "Tier 1", pop:  40290, is_hq: false },
-    { city: "Mercer Island", tier: "Tier 2", pop:  25990, is_hq: false },
-    { city: "Woodinville",   tier: "Tier 2", pop:  14000, is_hq: false }
-  ];
-  const cards = allCities.map(m => {
+  // Use STRATEGY.matrix directly so mobile and desktop are always in sync
+  const cities = STRATEGY.matrix;
+  let grandTotal = 0;
+  const cards = cities.map(m => {
     const tierCls = m.tier === 'Tier 1' ? 't1' : m.tier === 'Tier 2' ? 't2' : 't3';
     const cityLabel = m.is_hq ? `${m.city} <span class="hq-tag">HQ</span>` : m.city;
-    const kwList = Object.entries(keywordCities)
-      .filter(([, cities]) => cities.includes(m.city))
-      .map(([kw]) => `<div class="mob-matrix-kw"><span class="mob-matrix-check">&#10003;</span><span>${kw}</span></div>`)
-      .join('');
-    const count = Object.values(keywordCities).filter(cities => cities.includes(m.city)).length;
+    const kwList = m.keywords.map(kw =>
+      `<div class="mob-matrix-kw"><span class="mob-matrix-check">&#10003;</span><span>${kw}</span></div>`
+    ).join('');
+    grandTotal += m.keywords.length;
     return `<div class="mob-matrix-card">
       <div class="mob-matrix-city">
         <span class="mob-matrix-city-name">${cityLabel}</span>
-        <span class="mob-matrix-meta"><span class="tier-pill ${tierCls}">${m.tier.toUpperCase()}</span> &nbsp; Pop. ${fmt(m.pop)}</span>
+        <span class="mob-matrix-meta"><span class="tier-pill ${tierCls}">${m.tier.toUpperCase()}</span> &nbsp; Pop. ${fmt(m.population)}</span>
       </div>
       <div class="mob-matrix-kws">${kwList}</div>
-      <div class="mob-matrix-total">${count} combination${count !== 1 ? 's' : ''}</div>
+      <div class="mob-matrix-total">${m.keywords.length} combination${m.keywords.length !== 1 ? 's' : ''}</div>
     </div>`;
   }).join('');
-  el.innerHTML = cards + `<div class="mob-matrix-grand-total">Grand Total: <strong>30 Combinations</strong></div>`;
+  el.innerHTML = cards + `<div class="mob-matrix-grand-total">Grand Total: <strong>${grandTotal} Combinations</strong></div>`;
 }
 
 // ============================================================
