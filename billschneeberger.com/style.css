@@ -1267,7 +1267,7 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
 .city-matrix-header .tier-pill.t3 { background: rgba(235,0,82,0.6); color: #fff; border-color: rgba(235,0,82,0.9); }
 .city-matrix-header .tier-pill.t4 { background: rgba(249,115,22,0.6); color: #fff; border-color: rgba(249,115,22,0.9); }
 .city-kw-list {
-  flex: 1; padding: 10px 16px; }
+  padding: 10px 16px; }
 .city-kw-item {
   display: flex; align-items: flex-start; gap: 10px;
   padding: 5px 0; border-bottom: 1px solid #f1f5f9;

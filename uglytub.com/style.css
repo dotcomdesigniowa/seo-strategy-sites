@@ -1249,7 +1249,7 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
   font-size: 11px; color: #94a3b8; white-space: nowrap; margin-top: 2px;
 }
 .city-kw-list {
-  flex: 1; padding: 10px 16px; }
+  padding: 10px 16px; }
 .city-kw-item {
   display: flex; align-items: flex-start; gap: 10px;
   padding: 5px 0; border-bottom: 1px solid #f1f5f9;
