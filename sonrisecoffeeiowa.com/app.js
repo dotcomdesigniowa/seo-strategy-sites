@@ -347,24 +347,29 @@ function buildKeywordTiers() {
   if (!grid) return;
 
   let html = '';
-  STRATEGY.keyword_tiers.forEach(tier => {
+  STRATEGY.keyword_tiers.forEach((tier, i) => {
     const tierNum = tier.tier_label.replace('Tier ', '');
     const tierClass = `kw-tier-${tierNum}`;
+    const pillClass = `t${tierNum}`;
 
-    const kwList = tier.keywords.map(k =>
-      `<div class="flat-kw-row">
-        <span class="flat-kw-name">${k.keyword}</span>
-        <span class="flat-kw-vol">${k.monthly_searches.toLocaleString()}/mo</span>
-      </div>`
+    const kwRows = tier.keywords.map(k =>
+      `<tr>
+        <td class="flat-kw-name">${k.keyword}</td>
+        <td class="flat-kw-vol">${k.monthly_searches.toLocaleString()}</td>
+      </tr>`
     ).join('');
 
     html += `<div class="flat-tier-block ${tierClass}">
       <div class="flat-tier-heading">
-        <span class="flat-tier-label">${tier.tier_label}</span>
+        <span class="tier-pill ${pillClass}">${tier.tier_label}</span>
         <span class="flat-tier-name">${tier.tier_name}</span>
+        <span class="flat-tier-count">${tier.keywords.length} keyword${tier.keywords.length !== 1 ? 's' : ''} researched</span>
       </div>
-      <p class="flat-tier-desc">${tier.description}</p>
-      <div class="flat-kw-list">${kwList}</div>
+      <div class="flat-tier-desc">${tier.description}</div>
+      <table class="flat-kw-table">
+        <thead><tr><th>Keyword</th><th>Monthly Searches</th></tr></thead>
+        <tbody>${kwRows}</tbody>
+      </table>
     </div>`;
   });
 
@@ -423,16 +428,21 @@ function buildNotUsed() {
     ).join('');
 
     return `<div class="not-used-card">
-      <div class="not-used-reason">${group.reason}</div>
-      <p class="not-used-desc">${group.description}</p>
-      <div class="nu-kw-list">${kwRows}</div>
+      <div class="nu-reason">${group.reason}</div>
+      <p class="nu-desc">${group.description}</p>
+      <div class="nu-kw-table">
+        <div class="nu-header"><span>Keyword</span><span>Mo. Searches</span></div>
+        ${kwRows}
+      </div>
     </div>`;
   }).join('');
 
   grid.innerHTML = cards;
 
   if (STRATEGY.not_used_groups.length === 4) {
-    grid.style.gridTemplateColumns = 'repeat(2, 1fr)';
+    grid.classList.add('grid-2col');
+  } else {
+    grid.classList.remove('grid-2col');
   }
 }
 
