@@ -287,14 +287,29 @@ function buildKeywordTable() {
   STRATEGY.keyword_table.forEach(kw => {
     if (!seen.has(kw.family)) { familyOrder.push(kw.family); seen.add(kw.family); }
   });
+  const variantLabel = { variant: 'Variant', plural: 'Plural Variant', near_me: 'Near Me Variant', short_form: 'Short-Form Variant' };
   let html = '';
   familyOrder.forEach(fam => {
-    const rows = STRATEGY.keyword_table.filter(kw => kw.family === fam);
-    rows.forEach((kw) => {
-      const cls = kw.status === 'selected' ? 'row-selected' : '';
+    const members = STRATEGY.keyword_table
+      .filter(kw => kw.family === fam)
+      .slice()
+      .sort((a, b) => {
+        const rankType = t => t === 'base' ? 0 : 1;
+        if (rankType(a.variant_type) !== rankType(b.variant_type)) return rankType(a.variant_type) - rankType(b.variant_type);
+        return b.monthly_searches - a.monthly_searches;
+      });
+    members.forEach((kw) => {
+      const isBase = kw.variant_type === 'base';
+      const isNearMe = kw.variant_type === 'near_me';
+      const rowClass = isBase
+        ? (kw.status === 'selected' ? 'row-base row-selected' : 'row-base')
+        : (isNearMe ? 'row-variant row-near-me' : 'row-variant');
+      const kwCell = isBase
+        ? `<td>${kw.keyword}</td>`
+        : `<td class="kw-variant-cell"><span class="kw-variant-indent">&#8627;</span>${kw.keyword} <span class="kw-variant-badge">${variantLabel[kw.variant_type] || 'Variant'}</span></td>`;
       const note = kw.near_me_note || '';
-      html += `<tr class="${cls}">
-        <td>${kw.keyword}</td>
+      html += `<tr class="${rowClass}">
+        ${kwCell}
         <td class="num-col">${fmt(kw.monthly_searches)}</td>
         <td>${tierPill(kw.tier)}</td>
         <td>${statusBadge(kw.status, note)}</td>
