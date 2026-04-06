@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const dotDark  = '#334168';
   const dotRed   = '#EB0052';
   // ---- CHART: Market Population Bar Chart ----
+  // Shows the 12 active markets (Detroit and Rockford retired; replaced by Ann Arbor and Eau Claire)
   const marketCtx = document.getElementById('marketChart');
   if (marketCtx) {
     marketCtx.style.height = '360px';
@@ -15,16 +16,16 @@ document.addEventListener('DOMContentLoaded', function () {
       type: 'bar',
       data: {
         labels: [
-          'Louisville, KY', 'Detroit, MI', 'Cincinnati, OH', 'Madison, WI',
-          'Toledo, OH', 'Rockford, IL', 'Dayton, OH', 'Warren, MI',
-          'Bowling Green, KY', 'Janesville, WI', 'West Chester, OH', 'Findlay, OH'
+          'Louisville, KY', 'Cincinnati, OH', 'Madison, WI',
+          'Toledo, OH', 'Ann Arbor, MI', 'Dayton, OH', 'Warren, MI',
+          'Bowling Green, KY', 'Eau Claire, WI', 'Janesville, WI', 'West Chester, OH', 'Findlay, OH'
         ],
         datasets: [{
           label: 'Population',
-          data: [633045, 620376, 309317, 269840, 268508, 147651, 137644, 134873, 72294, 65615, 61000, 41763],
+          data: [633045, 309317, 269840, 268508, 121890, 137644, 134873, 72294, 69872, 65615, 61000, 41763],
           backgroundColor: [
             dotBlue, dotBlue, dotBlue, dotBlue,
-            dotBlue, dotBlue, dotRed,  dotBlue,
+            dotBlue, dotRed,  dotBlue, dotBlue,
             dotBlue, dotBlue, dotBlue, dotBlue,
           ],
           borderRadius: 6,
@@ -40,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
             callbacks: {
               title: ctx => ctx[0].label,
               label: ctx => {
-                const isHQ = ctx.dataIndex === 6;
+                const isHQ = ctx.dataIndex === 5;
                 return [
                   ' Population: ' + ctx.raw.toLocaleString(),
                   ' Status: ' + (isHQ ? 'HQ — Selected (Tier 1)' : 'Selected (Tier 1)')

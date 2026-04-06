@@ -10,7 +10,7 @@ const STRATEGY = {
   industry: "Bathtub & Surface Refinishing",
   hq_city: "Dayton",
   state: "OH",
-  service_area: "Dayton, Cincinnati, Detroit, Louisville, Toledo, Rockford, and Madison",
+  service_area: "Dayton, Cincinnati, Louisville, Toledo, Madison, and surrounding areas",
   plan_level: "Level E",
   plan_price: 2000,
   total_combinations: 60,
@@ -165,13 +165,13 @@ const STRATEGY = {
   // ---- STRATEGY MATRIX (5 keywords x 12 cities = 60 combinations) ----
   matrix: [
     { city: "Louisville",    state: "KY", tier: "Tier 1", population: 633045, is_hq: false, keywords: ["bathtub refinishing", "bathtub reglazing", "tub resurfacing", "shower refinishing", "tile refinishing"] },
-    { city: "Detroit",       state: "MI", tier: "Tier 1", population: 620376, is_hq: false, keywords: ["bathtub refinishing", "bathtub reglazing", "tub resurfacing", "shower refinishing", "tile refinishing"] },
     { city: "Cincinnati",    state: "OH", tier: "Tier 1", population: 309317, is_hq: false, keywords: ["bathtub refinishing", "bathtub reglazing", "tub resurfacing", "shower refinishing", "tile refinishing"] },
     { city: "Madison",       state: "WI", tier: "Tier 1", population: 269840, is_hq: false, keywords: ["bathtub refinishing", "bathtub reglazing", "tub resurfacing", "shower refinishing", "tile refinishing"] },
     { city: "Toledo",        state: "OH", tier: "Tier 1", population: 268508, is_hq: false, keywords: ["bathtub refinishing", "bathtub reglazing", "tub resurfacing", "shower refinishing", "tile refinishing"] },
-    { city: "Rockford",      state: "IL", tier: "Tier 1", population: 147651, is_hq: false, keywords: ["bathtub refinishing", "bathtub reglazing", "tub resurfacing", "shower refinishing", "tile refinishing"] },
+    { city: "Ann Arbor",     state: "MI", tier: "Tier 1", population: 121890, is_hq: false, keywords: ["bathtub refinishing", "bathtub reglazing", "tub resurfacing", "shower refinishing", "tile refinishing"] },
     { city: "Dayton",        state: "OH", tier: "Tier 1", population: 137644, is_hq: true,  keywords: ["bathtub refinishing", "bathtub reglazing", "tub resurfacing", "shower refinishing", "tile refinishing"] },
     { city: "Warren",        state: "MI", tier: "Tier 1", population: 134873, is_hq: false, keywords: ["bathtub refinishing", "bathtub reglazing", "tub resurfacing", "shower refinishing", "tile refinishing"] },
+    { city: "Eau Claire",    state: "WI", tier: "Tier 1", population:  69872, is_hq: false, keywords: ["bathtub refinishing", "bathtub reglazing", "tub resurfacing", "shower refinishing", "tile refinishing"] },
     { city: "Bowling Green", state: "KY", tier: "Tier 1", population:  72294, is_hq: false, keywords: ["bathtub refinishing", "bathtub reglazing", "tub resurfacing", "shower refinishing", "tile refinishing"] },
     { city: "Janesville",    state: "WI", tier: "Tier 1", population:  65615, is_hq: false, keywords: ["bathtub refinishing", "bathtub reglazing", "tub resurfacing", "shower refinishing", "tile refinishing"] },
     { city: "West Chester",  state: "OH", tier: "Tier 1", population:  61000, is_hq: false, keywords: ["bathtub refinishing", "bathtub reglazing", "tub resurfacing", "shower refinishing", "tile refinishing"] },
@@ -233,7 +233,7 @@ const STRATEGY = {
       description: "Level F adds 30 keyword-city combinations, opening two major strategic opportunities. First, it introduces sink refinishing as a sixth keyword, capturing the 590 monthly searches for 'sink refinishing near me' that are currently outside the plan. Second, it adds 6 new cities across the service region, extending Bath Magic's geographic footprint into high-value suburban markets adjacent to the existing target metros.",
       keywords: [
         { keyword: "sink refinishing",    monthly_searches: 590 },
-        { keyword: "Ann Arbor, MI",       monthly_searches: null, new_market: true },
+        { keyword: "Flint, MI",           monthly_searches: null, new_market: true },
         { keyword: "Lexington, KY",       monthly_searches: null, new_market: true },
         { keyword: "Kettering, OH",       monthly_searches: null, new_market: true },
         { keyword: "Springfield, OH",     monthly_searches: null, new_market: true },
@@ -438,27 +438,31 @@ function buildOpportunities() {
 // ============================================================
 const MARKET_DATA = [
   { rank: 1,  city: 'Louisville',    state: 'KY', pop: 633045, tier: 'Tier 1', selected: true,  hq: false },
-  { rank: 2,  city: 'Detroit',       state: 'MI', pop: 620376, tier: 'Tier 1', selected: true,  hq: false },
+  { rank: 2,  city: 'Detroit',       state: 'MI', pop: 620376, tier: 'Tier 1', selected: false, hq: false, retired: true },
   { rank: 3,  city: 'Cincinnati',    state: 'OH', pop: 309317, tier: 'Tier 1', selected: true,  hq: false },
   { rank: 4,  city: 'Madison',       state: 'WI', pop: 269840, tier: 'Tier 1', selected: true,  hq: false },
   { rank: 5,  city: 'Toledo',        state: 'OH', pop: 268508, tier: 'Tier 1', selected: true,  hq: false },
-  { rank: 6,  city: 'Rockford',      state: 'IL', pop: 147651, tier: 'Tier 1', selected: true,  hq: false },
+  { rank: 6,  city: 'Rockford',      state: 'IL', pop: 147651, tier: 'Tier 1', selected: false, hq: false, retired: true },
   { rank: 7,  city: 'Dayton',        state: 'OH', pop: 137644, tier: 'Tier 1', selected: true,  hq: true  },
   { rank: 8,  city: 'Warren',        state: 'MI', pop: 134873, tier: 'Tier 1', selected: true,  hq: false },
-  { rank: 9,  city: 'Bowling Green', state: 'KY', pop:  72294, tier: 'Tier 1', selected: true,  hq: false },
-  { rank: 10, city: 'Janesville',    state: 'WI', pop:  65615, tier: 'Tier 1', selected: true,  hq: false },
-  { rank: 11, city: 'West Chester',  state: 'OH', pop:  61000, tier: 'Tier 1', selected: true,  hq: false },
-  { rank: 12, city: 'Findlay',       state: 'OH', pop:  41763, tier: 'Tier 1', selected: true,  hq: false },
+  { rank: 9,  city: 'Ann Arbor',     state: 'MI', pop: 121890, tier: 'Tier 1', selected: true,  hq: false },
+  { rank: 10, city: 'Bowling Green', state: 'KY', pop:  72294, tier: 'Tier 1', selected: true,  hq: false },
+  { rank: 11, city: 'Eau Claire',    state: 'WI', pop:  69872, tier: 'Tier 1', selected: true,  hq: false },
+  { rank: 12, city: 'Janesville',    state: 'WI', pop:  65615, tier: 'Tier 1', selected: true,  hq: false },
+  { rank: 13, city: 'West Chester',  state: 'OH', pop:  61000, tier: 'Tier 1', selected: true,  hq: false },
+  { rank: 14, city: 'Findlay',       state: 'OH', pop:  41763, tier: 'Tier 1', selected: true,  hq: false },
 ];
 function buildMobileMarketList() {
   const el = document.getElementById('mobile-market-list');
   if (!el) return;
   const rows = MARKET_DATA.map(m => {
     const tierCls = m.tier === 'Tier 1' ? 't1' : m.tier === 'Tier 2' ? 't2' : 't3';
-    const selIcon = m.selected ? '<span class="mob-check">&#10003;</span>' : '<span class="mob-dash">&#8212;</span>';
+    const selIcon = m.retired
+      ? '<span class="mob-retired">Retired</span>'
+      : m.selected ? '<span class="mob-check">&#10003;</span>' : '<span class="mob-dash">&#8212;</span>';
     const cityLabel = m.hq ? `${m.city}, ${m.state} <span class="hq-tag">HQ</span>` : `${m.city}, ${m.state}`;
     const popStr = m.pop ? fmt(m.pop) : '';
-    const rowCls = m.selected ? 'mob-mkt-row selected' : 'mob-mkt-row';
+    const rowCls = m.retired ? 'mob-mkt-row retired' : m.selected ? 'mob-mkt-row selected' : 'mob-mkt-row';
     return `<div class="${rowCls}">
       <span class="mob-rank">${m.rank}</span>
       <span class="mob-city">${m.selected ? '<strong>' : ''}${cityLabel}${m.selected ? '</strong>' : ''}</span>

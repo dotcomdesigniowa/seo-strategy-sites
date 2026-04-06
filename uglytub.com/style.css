@@ -875,6 +875,9 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
 .mob-check { color: #22c55e; font-weight: 900; font-size: 1rem; width: 20px; text-align: center; }
 .mob-dash { color: #ccc; font-size: 1rem; width: 20px; text-align: center; }
 .mob-sel { width: 20px; text-align: center; color: #999; }
+.mob-mkt-row.retired { opacity: 0.45; }
+.mob-mkt-row.retired .mob-city { text-decoration: line-through; color: #999; }
+.mob-retired { background: rgba(235,0,82,0.12); color: #EB0052; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.04em; padding: 2px 5px; border-radius: 4px; text-transform: uppercase; white-space: nowrap; }
 
 /* Mobile matrix styles */
 .mob-matrix-card {
