@@ -16,3 +16,4 @@ Auto-deployed to **seo-strategy.dotcomdesign.com** via Vercel.
 | Durham's Tree Service | seo-strategy.dotcomdesign.com/durhamstreeservice.com |
 | MEK Interiors & Floors | seo-strategy.dotcomdesign.com/mekfloors.com |
 | Texas Building Center | seo-strategy.dotcomdesign.com/texasbuildingcenter.com |
+| Dotcom Design | seo-strategy.dotcomdesign.com/dotcomdesign.com |
