@@ -1,6 +1,6 @@
 // ============================================================
-// DOTCOM DESIGN — SEO Strategy Charts
-// Vertical coverage bar chart (replaces market population chart)
+// DOTCOM DESIGN — SEO Strategy Charts (REBUILT v2)
+// Vertical coverage bar chart — 22 verticals, 166 keywords
 // ============================================================
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -12,19 +12,22 @@ document.addEventListener('DOMContentLoaded', function () {
   // ---- CHART: Keywords by Trade Vertical ----
   const verticalCtx = document.getElementById('verticalChart');
   if (verticalCtx) {
-    verticalCtx.style.height = '340px';
+    verticalCtx.style.height = '380px';
 
+    // Sorted by keyword count descending
     const labels = [
-      'General Contractor', 'Plumbing', 'Landscaping', 'Home Services',
-      'Roofing', 'Remodeling', 'Painting', 'HVAC',
-      'Cleaning', 'Electrical', 'Pest Control', 'Flooring',
-      'Tree Service', 'Construction', 'Handyman', 'Concrete', 'Fencing'
+      'General Contractor', 'Home Services', 'Plumbing', 'Roofing',
+      'Landscaping', 'Specialty Trades', 'HVAC', 'Remodeling',
+      'Electrical', 'Home Builders', 'Pest Control', 'Painting',
+      'Handyman', 'Solar', 'Pool & Spa', 'Commercial Construction',
+      'Flooring', 'Tree Service', 'Garage Doors', 'Masonry & Concrete',
+      'Foundation', 'Fencing'
     ];
-    const data = [19, 12, 12, 12, 10, 10, 10, 9, 9, 8, 7, 7, 6, 6, 5, 4, 4];
+    const data = [14, 14, 13, 12, 11, 10, 10, 9, 7, 7, 6, 6, 6, 6, 6, 6, 5, 5, 5, 3, 3, 2];
 
     const colors = labels.map(function(l, i) {
       if (i < 4) return dotBlue;
-      if (i < 9) return dotDark;
+      if (i < 10) return dotDark;
       return 'rgba(51,65,104,0.35)';
     });
 
@@ -65,8 +68,8 @@ document.addEventListener('DOMContentLoaded', function () {
             grid: { display: false },
             ticks: {
               font: { family: 'Montserrat', size: 10 },
-              maxRotation: 35,
-              minRotation: 35,
+              maxRotation: 40,
+              minRotation: 40,
               display: function() { return window.innerWidth >= 600; }
             }
           }
