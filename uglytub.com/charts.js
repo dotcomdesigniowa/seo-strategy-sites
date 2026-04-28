@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const dotDark  = '#334168';
   const dotRed   = '#EB0052';
   // ---- CHART: Market Population Bar Chart ----
-  // Shows the 12 active markets (Detroit and Rockford retired; replaced by Ann Arbor and Eau Claire)
+  // Shows the 10 active markets (confirmed client service metros + 2 suburban additions)
   const marketCtx = document.getElementById('marketChart');
   if (marketCtx) {
     marketCtx.style.height = '360px';
@@ -16,17 +16,16 @@ document.addEventListener('DOMContentLoaded', function () {
       type: 'bar',
       data: {
         labels: [
-          'Louisville, KY', 'Cincinnati, OH', 'Madison, WI',
-          'Toledo, OH', 'Ann Arbor, MI', 'Dayton, OH', 'Warren, MI',
-          'Bowling Green, KY', 'Eau Claire, WI', 'Janesville, WI', 'West Chester, OH', 'Findlay, OH'
+          'Columbus, OH', 'Louisville, KY', 'Detroit, MI',
+          'Cincinnati, OH', 'Madison, WI', 'Toledo, OH',
+          'Rockford, IL', 'Dayton, OH', 'Warren, MI', 'West Chester, OH'
         ],
         datasets: [{
           label: 'Population',
-          data: [633045, 309317, 269840, 268508, 121890, 137644, 134873, 72294, 69872, 65615, 61000, 41763],
+          data: [905748, 633045, 620376, 309317, 269840, 268508, 147651, 137644, 134873, 61000],
           backgroundColor: [
-            dotBlue, dotBlue, dotBlue, dotBlue,
-            dotBlue, dotRed,  dotBlue, dotBlue,
-            dotBlue, dotBlue, dotBlue, dotBlue,
+            dotBlue, dotBlue, dotBlue, dotBlue, dotBlue,
+            dotBlue, dotBlue, dotRed,  dotBlue, dotBlue,
           ],
           borderRadius: 6,
           borderSkipped: false,
@@ -41,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
             callbacks: {
               title: ctx => ctx[0].label,
               label: ctx => {
-                const isHQ = ctx.dataIndex === 5;
+                const isHQ = ctx.dataIndex === 7;
                 return [
                   ' Population: ' + ctx.raw.toLocaleString(),
                   ' Status: ' + (isHQ ? 'HQ — Selected (Tier 1)' : 'Selected (Tier 1)')

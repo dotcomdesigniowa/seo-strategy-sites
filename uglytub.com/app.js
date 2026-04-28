@@ -10,7 +10,7 @@ const STRATEGY = {
   industry: "Bathtub & Surface Refinishing",
   hq_city: "Dayton",
   state: "OH",
-  service_area: "Dayton, Cincinnati, Louisville, Toledo, Madison, and surrounding areas",
+  service_area: "Dayton, Cincinnati, Columbus, Toledo, Louisville, Detroit, Rockford, Madison, and surrounding areas",
   plan_level: "Level E",
   plan_price: 2000,
   total_combinations: 60,
@@ -20,7 +20,8 @@ const STRATEGY = {
     "bathtub reglazing",
     "tub resurfacing",
     "shower refinishing",
-    "tile refinishing"
+    "tile refinishing",
+    "sink refinishing"
   ],
   // ---- KEYWORD TABLE ----
   keyword_table: [
@@ -79,12 +80,12 @@ const STRATEGY = {
     { keyword: "tile refinishing companies",       monthly_searches:    90, tier: "Tier 5", status: "not_used",  family: "tile refinishing",     variant_type: "variant" },
     { keyword: "tile refinishing cost",            monthly_searches:    70, tier: "Tier 5", status: "not_used",  family: "tile refinishing",     variant_type: "variant" },
     // Sink Refinishing family
-    { keyword: "sink refinishing near me",         monthly_searches:   590, tier: null,     status: "not_used",  family: "sink refinishing",     variant_type: "near_me" },
-    { keyword: "sink reglazing near me",           monthly_searches:   590, tier: null,     status: "not_used",  family: "sink refinishing",     variant_type: "near_me" },
-    { keyword: "sink refinishing",                 monthly_searches:   590, tier: null,     status: "not_used",  family: "sink refinishing",     variant_type: "base"    },
-    { keyword: "sink reglazing",                   monthly_searches:   260, tier: null,     status: "not_used",  family: "sink refinishing",     variant_type: "variant" },
-    { keyword: "sink resurfacing",                 monthly_searches:   260, tier: null,     status: "not_used",  family: "sink refinishing",     variant_type: "variant" },
-    { keyword: "sink resurfacing near me",         monthly_searches:   140, tier: null,     status: "not_used",  family: "sink refinishing",     variant_type: "near_me" },
+    { keyword: "sink refinishing",                 monthly_searches:   590, tier: "Tier 6", status: "selected",  family: "sink refinishing",     variant_type: "base"    },
+    { keyword: "sink refinishing near me",         monthly_searches:   590, tier: "Tier 6", status: "near_me",   family: "sink refinishing",     variant_type: "near_me", near_me_note: "Treated as equivalent to 'sink refinishing [city]' in the final matrix" },
+    { keyword: "sink reglazing near me",           monthly_searches:   590, tier: "Tier 6", status: "not_used",  family: "sink refinishing",     variant_type: "near_me" },
+    { keyword: "sink reglazing",                   monthly_searches:   260, tier: "Tier 6", status: "not_used",  family: "sink refinishing",     variant_type: "variant" },
+    { keyword: "sink resurfacing",                 monthly_searches:   260, tier: "Tier 6", status: "not_used",  family: "sink refinishing",     variant_type: "variant" },
+    { keyword: "sink resurfacing near me",         monthly_searches:   140, tier: "Tier 6", status: "not_used",  family: "sink refinishing",     variant_type: "near_me" },
     // Bathroom Refinishing family
     { keyword: "bathroom refinishing",             monthly_searches:  1300, tier: null,     status: "not_used",  family: "bathroom refinishing", variant_type: "base"    },
     { keyword: "bathroom refinishing near me",     monthly_searches:   480, tier: null,     status: "not_used",  family: "bathroom refinishing", variant_type: "near_me" },
@@ -160,22 +161,31 @@ const STRATEGY = {
         { keyword: "tile resurfacing",         monthly_searches:  480 },
         { keyword: "tile refinishing near me", monthly_searches:  260 },
       ]
+    },
+    {
+      tier_label: "Tier 6",
+      tier_name: "Sink Refinishing",
+      description: "Sink refinishing is a distinct service offered by Bath Magic and captures a separate customer segment: homeowners looking to restore a worn or discolored sink rather than replace it. With 590 monthly searches nationally for both 'sink refinishing' and 'sink refinishing near me,' this keyword unlocks a service line that was previously outside the plan. Adding sink refinishing as the sixth keyword allows Bath Magic to cover its full service portfolio across all 10 target markets without requiring additional cities.",
+      keywords: [
+        { keyword: "sink refinishing",         monthly_searches: 590 },
+        { keyword: "sink refinishing near me", monthly_searches: 590 },
+        { keyword: "sink reglazing",           monthly_searches: 260 },
+        { keyword: "sink resurfacing",         monthly_searches: 260 },
+      ]
     }
   ],
-  // ---- STRATEGY MATRIX (5 keywords x 12 cities = 60 combinations) ----
+  // ---- STRATEGY MATRIX (6 keywords x 10 cities = 60 combinations) ----
   matrix: [
-    { city: "Louisville",    state: "KY", tier: "Tier 1", population: 633045, is_hq: false, keywords: ["bathtub refinishing", "bathtub reglazing", "tub resurfacing", "shower refinishing", "tile refinishing"] },
-    { city: "Cincinnati",    state: "OH", tier: "Tier 1", population: 309317, is_hq: false, keywords: ["bathtub refinishing", "bathtub reglazing", "tub resurfacing", "shower refinishing", "tile refinishing"] },
-    { city: "Madison",       state: "WI", tier: "Tier 1", population: 269840, is_hq: false, keywords: ["bathtub refinishing", "bathtub reglazing", "tub resurfacing", "shower refinishing", "tile refinishing"] },
-    { city: "Toledo",        state: "OH", tier: "Tier 1", population: 268508, is_hq: false, keywords: ["bathtub refinishing", "bathtub reglazing", "tub resurfacing", "shower refinishing", "tile refinishing"] },
-    { city: "Ann Arbor",     state: "MI", tier: "Tier 1", population: 121890, is_hq: false, keywords: ["bathtub refinishing", "bathtub reglazing", "tub resurfacing", "shower refinishing", "tile refinishing"] },
-    { city: "Dayton",        state: "OH", tier: "Tier 1", population: 137644, is_hq: true,  keywords: ["bathtub refinishing", "bathtub reglazing", "tub resurfacing", "shower refinishing", "tile refinishing"] },
-    { city: "Warren",        state: "MI", tier: "Tier 1", population: 134873, is_hq: false, keywords: ["bathtub refinishing", "bathtub reglazing", "tub resurfacing", "shower refinishing", "tile refinishing"] },
-    { city: "Eau Claire",    state: "WI", tier: "Tier 1", population:  69872, is_hq: false, keywords: ["bathtub refinishing", "bathtub reglazing", "tub resurfacing", "shower refinishing", "tile refinishing"] },
-    { city: "Bowling Green", state: "KY", tier: "Tier 1", population:  72294, is_hq: false, keywords: ["bathtub refinishing", "bathtub reglazing", "tub resurfacing", "shower refinishing", "tile refinishing"] },
-    { city: "Janesville",    state: "WI", tier: "Tier 1", population:  65615, is_hq: false, keywords: ["bathtub refinishing", "bathtub reglazing", "tub resurfacing", "shower refinishing", "tile refinishing"] },
-    { city: "West Chester",  state: "OH", tier: "Tier 1", population:  61000, is_hq: false, keywords: ["bathtub refinishing", "bathtub reglazing", "tub resurfacing", "shower refinishing", "tile refinishing"] },
-    { city: "Findlay",       state: "OH", tier: "Tier 1", population:  41763, is_hq: false, keywords: ["bathtub refinishing", "bathtub reglazing", "tub resurfacing", "shower refinishing", "tile refinishing"] },
+    { city: "Louisville",   state: "KY", tier: "Tier 1", population: 633045, is_hq: false, keywords: ["bathtub refinishing", "bathtub reglazing", "tub resurfacing", "shower refinishing", "tile refinishing", "sink refinishing"] },
+    { city: "Detroit",      state: "MI", tier: "Tier 1", population: 620376, is_hq: false, keywords: ["bathtub refinishing", "bathtub reglazing", "tub resurfacing", "shower refinishing", "tile refinishing", "sink refinishing"] },
+    { city: "Cincinnati",   state: "OH", tier: "Tier 1", population: 309317, is_hq: false, keywords: ["bathtub refinishing", "bathtub reglazing", "tub resurfacing", "shower refinishing", "tile refinishing", "sink refinishing"] },
+    { city: "Columbus",     state: "OH", tier: "Tier 1", population: 905748, is_hq: false, keywords: ["bathtub refinishing", "bathtub reglazing", "tub resurfacing", "shower refinishing", "tile refinishing", "sink refinishing"] },
+    { city: "Madison",      state: "WI", tier: "Tier 1", population: 269840, is_hq: false, keywords: ["bathtub refinishing", "bathtub reglazing", "tub resurfacing", "shower refinishing", "tile refinishing", "sink refinishing"] },
+    { city: "Toledo",       state: "OH", tier: "Tier 1", population: 268508, is_hq: false, keywords: ["bathtub refinishing", "bathtub reglazing", "tub resurfacing", "shower refinishing", "tile refinishing", "sink refinishing"] },
+    { city: "Rockford",     state: "IL", tier: "Tier 1", population: 147651, is_hq: false, keywords: ["bathtub refinishing", "bathtub reglazing", "tub resurfacing", "shower refinishing", "tile refinishing", "sink refinishing"] },
+    { city: "Dayton",       state: "OH", tier: "Tier 1", population: 137644, is_hq: true,  keywords: ["bathtub refinishing", "bathtub reglazing", "tub resurfacing", "shower refinishing", "tile refinishing", "sink refinishing"] },
+    { city: "Warren",       state: "MI", tier: "Tier 1", population: 134873, is_hq: false, keywords: ["bathtub refinishing", "bathtub reglazing", "tub resurfacing", "shower refinishing", "tile refinishing", "sink refinishing"] },
+    { city: "West Chester", state: "OH", tier: "Tier 1", population:  61000, is_hq: false, keywords: ["bathtub refinishing", "bathtub reglazing", "tub resurfacing", "shower refinishing", "tile refinishing", "sink refinishing"] },
   ],
   // ---- NOT USED GROUPS ----
   not_used_groups: [
@@ -190,19 +200,8 @@ const STRATEGY = {
       ]
     },
     {
-      reason: "Sink Refinishing: Reserved for Plan Expansion",
-      description: "Sink refinishing is a real service offered by Bath Magic, and the keyword family has meaningful search volume (590 monthly searches for both 'sink refinishing near me' and 'sink reglazing near me'). It is excluded from the current plan only because the 60-combination budget is fully allocated to the five highest-priority service lines. Sink refinishing is the top candidate for the first plan upgrade.",
-      keywords: [
-        { keyword: "sink refinishing near me", monthly_searches: 590 },
-        { keyword: "sink reglazing near me",   monthly_searches: 590 },
-        { keyword: "sink refinishing",         monthly_searches: 590 },
-        { keyword: "sink reglazing",           monthly_searches: 260 },
-        { keyword: "sink resurfacing",         monthly_searches: 260 },
-      ]
-    },
-    {
       reason: "Bathroom Refinishing: Umbrella Term, Lower Priority",
-      description: "Bathroom refinishing is a broader umbrella term that encompasses all of Bath Magic's services. While it has 1,300 monthly searches, it is a less specific search term than the individual service keywords. Homeowners searching 'bathroom refinishing' may be looking for any combination of tub, shower, sink, or tile work. The five selected keywords collectively capture this audience more precisely and with higher conversion intent.",
+      description: "Bathroom refinishing is a broader umbrella term that encompasses all of Bath Magic's services. While it has 1,300 monthly searches, it is a less specific search term than the individual service keywords. Homeowners searching 'bathroom refinishing' may be looking for any combination of tub, shower, sink, or tile work. The six selected keywords collectively capture this audience more precisely and with higher conversion intent.",
       keywords: [
         { keyword: "bathroom refinishing",         monthly_searches: 1300 },
         { keyword: "bathroom refinishing near me", monthly_searches:  480 },
@@ -229,16 +228,15 @@ const STRATEGY = {
       combinations: 90,
       price: 3000,
       additional_combinations: 30,
-      headline: "Add Sink Refinishing and Expand into 6 New Markets",
-      description: "Level F adds 30 keyword-city combinations, opening two major strategic opportunities. First, it introduces sink refinishing as a sixth keyword, capturing the 590 monthly searches for 'sink refinishing near me' that are currently outside the plan. Second, it adds 6 new cities across the service region, extending Bath Magic's geographic footprint into high-value suburban markets adjacent to the existing target metros.",
+      headline: "Add Bathroom Refinishing and Expand into 5 New Markets",
+      description: "Level F adds 30 keyword-city combinations across two strategic levers. First, it introduces bathroom refinishing as a seventh keyword (1,300 monthly searches), capturing homeowners searching for full bathroom surface restoration rather than a single fixture. Second, it adds 5 new suburban cities within the confirmed service metros, deepening Bath Magic's footprint in the highest-demand markets.",
       keywords: [
-        { keyword: "sink refinishing",    monthly_searches: 590 },
-        { keyword: "Flint, MI",           monthly_searches: null, new_market: true },
-        { keyword: "Lexington, KY",       monthly_searches: null, new_market: true },
-        { keyword: "Kettering, OH",       monthly_searches: null, new_market: true },
-        { keyword: "Springfield, OH",     monthly_searches: null, new_market: true },
-        { keyword: "Hamilton, OH",        monthly_searches: null, new_market: true },
-        { keyword: "Middletown, OH",      monthly_searches: null, new_market: true },
+        { keyword: "bathroom refinishing",   monthly_searches: 1300 },
+        { keyword: "Lexington, KY",          monthly_searches: null, new_market: true },
+        { keyword: "Kettering, OH",          monthly_searches: null, new_market: true },
+        { keyword: "Springfield, OH",        monthly_searches: null, new_market: true },
+        { keyword: "Hamilton, OH",           monthly_searches: null, new_market: true },
+        { keyword: "Livonia, MI",            monthly_searches: null, new_market: true },
       ]
     },
     {
@@ -247,14 +245,14 @@ const STRATEGY = {
       price: 4000,
       additional_combinations: 60,
       headline: "Full Multi-State Market Domination",
-      description: "Level G delivers 120 total combinations, enabling Bath Magic to achieve dominant visibility across its entire 7-metro service region. This tier introduces bathroom refinishing as a seventh keyword, adds the specialty material keywords (cast iron, fiberglass) as dedicated content pages, and extends coverage to the full roster of Tier 2 suburban markets across Ohio, Michigan, Kentucky, Illinois, and Wisconsin.",
+      description: "Level G delivers 120 total combinations, enabling Bath Magic to achieve dominant visibility across its entire 8-metro service region. This tier adds the specialty material keywords (cast iron tub refinishing, fiberglass tub refinishing) as dedicated content pages and extends coverage to the full roster of Tier 2 suburban markets across Ohio, Michigan, Kentucky, Illinois, and Wisconsin.",
       keywords: [
-        { keyword: "bathroom refinishing",       monthly_searches: 1300 },
-        { keyword: "cast iron tub refinishing",  monthly_searches: 1000 },
-        { keyword: "Flint, MI",                  monthly_searches: null, new_market: true },
-        { keyword: "Livonia, MI",                monthly_searches: null, new_market: true },
-        { keyword: "Covington, KY",              monthly_searches: null, new_market: true },
-        { keyword: "Beloit, WI",                 monthly_searches: null, new_market: true },
+        { keyword: "cast iron tub refinishing",    monthly_searches: 1000 },
+        { keyword: "fiberglass tub refinishing",   monthly_searches:  720 },
+        { keyword: "Flint, MI",                    monthly_searches: null, new_market: true },
+        { keyword: "Covington, KY",                monthly_searches: null, new_market: true },
+        { keyword: "Beloit, WI",                   monthly_searches: null, new_market: true },
+        { keyword: "Middletown, OH",               monthly_searches: null, new_market: true },
       ]
     }
   ]
@@ -437,20 +435,21 @@ function buildOpportunities() {
 // POPULATE MOBILE MARKET LIST
 // ============================================================
 const MARKET_DATA = [
-  { rank: 1,  city: 'Louisville',    state: 'KY', pop: 633045, tier: 'Tier 1', selected: true,  hq: false },
-  { rank: 2,  city: 'Detroit',       state: 'MI', pop: 620376, tier: 'Tier 1', selected: false, hq: false, retired: true },
-  { rank: 3,  city: 'Cincinnati',    state: 'OH', pop: 309317, tier: 'Tier 1', selected: true,  hq: false },
-  { rank: 4,  city: 'Madison',       state: 'WI', pop: 269840, tier: 'Tier 1', selected: true,  hq: false },
-  { rank: 5,  city: 'Toledo',        state: 'OH', pop: 268508, tier: 'Tier 1', selected: true,  hq: false },
-  { rank: 6,  city: 'Rockford',      state: 'IL', pop: 147651, tier: 'Tier 1', selected: false, hq: false, retired: true },
-  { rank: 7,  city: 'Dayton',        state: 'OH', pop: 137644, tier: 'Tier 1', selected: true,  hq: true  },
-  { rank: 8,  city: 'Warren',        state: 'MI', pop: 134873, tier: 'Tier 1', selected: true,  hq: false },
-  { rank: 9,  city: 'Ann Arbor',     state: 'MI', pop: 121890, tier: 'Tier 1', selected: true,  hq: false },
-  { rank: 10, city: 'Bowling Green', state: 'KY', pop:  72294, tier: 'Tier 1', selected: true,  hq: false },
-  { rank: 11, city: 'Eau Claire',    state: 'WI', pop:  69872, tier: 'Tier 1', selected: true,  hq: false },
-  { rank: 12, city: 'Janesville',    state: 'WI', pop:  65615, tier: 'Tier 1', selected: true,  hq: false },
-  { rank: 13, city: 'West Chester',  state: 'OH', pop:  61000, tier: 'Tier 1', selected: true,  hq: false },
-  { rank: 14, city: 'Findlay',       state: 'OH', pop:  41763, tier: 'Tier 1', selected: true,  hq: false },
+  { rank: 1,  city: 'Columbus',     state: 'OH', pop: 905748, tier: 'Tier 1', selected: true,  hq: false },
+  { rank: 2,  city: 'Louisville',   state: 'KY', pop: 633045, tier: 'Tier 1', selected: true,  hq: false },
+  { rank: 3,  city: 'Detroit',      state: 'MI', pop: 620376, tier: 'Tier 1', selected: true,  hq: false },
+  { rank: 4,  city: 'Cincinnati',   state: 'OH', pop: 309317, tier: 'Tier 1', selected: true,  hq: false },
+  { rank: 5,  city: 'Madison',      state: 'WI', pop: 269840, tier: 'Tier 1', selected: true,  hq: false },
+  { rank: 6,  city: 'Toledo',       state: 'OH', pop: 268508, tier: 'Tier 1', selected: true,  hq: false },
+  { rank: 7,  city: 'Rockford',     state: 'IL', pop: 147651, tier: 'Tier 1', selected: true,  hq: false },
+  { rank: 8,  city: 'Dayton',       state: 'OH', pop: 137644, tier: 'Tier 1', selected: true,  hq: true  },
+  { rank: 9,  city: 'Warren',       state: 'MI', pop: 134873, tier: 'Tier 1', selected: true,  hq: false },
+  { rank: 10, city: 'West Chester', state: 'OH', pop:  61000, tier: 'Tier 1', selected: true,  hq: false },
+  { rank: 11, city: 'Ann Arbor',    state: 'MI', pop: 121890, tier: 'Tier 1', selected: false, hq: false },
+  { rank: 12, city: 'Bowling Green',state: 'KY', pop:  72294, tier: 'Tier 1', selected: false, hq: false },
+  { rank: 13, city: 'Eau Claire',   state: 'WI', pop:  69872, tier: 'Tier 1', selected: false, hq: false },
+  { rank: 14, city: 'Janesville',   state: 'WI', pop:  65615, tier: 'Tier 1', selected: false, hq: false },
+  { rank: 15, city: 'Findlay',      state: 'OH', pop:  41763, tier: 'Tier 1', selected: false, hq: false },
 ];
 function buildMobileMarketList() {
   const el = document.getElementById('mobile-market-list');
