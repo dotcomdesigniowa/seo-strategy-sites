@@ -201,11 +201,11 @@ const STRATEGY = {
   additional_opportunities: [
     {
       plan: "Level C",
-      combinations: 45,
-      price: 1250,
-      additional_combinations: 15,
+      combinations: 40,
+      price: 1200,
+      additional_combinations: 10,
       headline: "Add Warning Sirens and Expand into 3 New Markets",
-      description: "Level C adds 15 keyword-city combinations across two strategic levers. First, it introduces warning siren installation as a sixth keyword, capturing municipal and commercial buyers searching for outdoor emergency notification systems. Second, it adds 3 new cities in Minnesota to deepen the cross-border coverage and reach the Rochester and Saint Cloud markets.",
+      description: "Level C adds 10 keyword-city combinations across two strategic levers. First, it introduces warning siren installation as a sixth keyword across all 6 current markets (6 new combinations). Second, it adds 4 new cities in Minnesota and North Dakota to deepen cross-border coverage, reaching the Rochester and Saint Cloud markets (4 new combinations).",
       keywords: [
         { keyword: "warning siren installation",  monthly_searches: 1300 },
         { keyword: "Rochester, MN",               monthly_searches: null, new_market: true },
@@ -215,11 +215,11 @@ const STRATEGY = {
     },
     {
       plan: "Level D",
-      combinations: 60,
-      price: 1750,
-      additional_combinations: 30,
+      combinations: 50,
+      price: 1600,
+      additional_combinations: 20,
       headline: "Add Cybersecurity Services and Full ND/MN Market Coverage",
-      description: "Level D delivers 60 total combinations, enabling Mid States Wireless to achieve dominant visibility across its full North Dakota and Minnesota service region. This tier introduces cybersecurity services as a seventh keyword, targeting businesses actively searching for a local managed security partner. It also extends coverage to the full roster of Tier 2 markets across both states, including West Fargo and Mandan.",
+      description: "Level D delivers 50 total combinations, enabling Mid States Wireless to achieve dominant visibility across its full North Dakota and Minnesota service region. This tier introduces cybersecurity services as a seventh keyword, targeting businesses actively searching for a local managed security partner. It also extends coverage to additional Tier 2 markets across both states, including West Fargo and Mandan.",
       keywords: [
         { keyword: "cyber security services",     monthly_searches: 6600 },
         { keyword: "West Fargo, ND",              monthly_searches: null, new_market: true },
