@@ -10,7 +10,7 @@ const STRATEGY = {
   industry: "Bathtub & Surface Refinishing",
   hq_city: "Dayton",
   state: "OH",
-  service_area: "Dayton, Cincinnati, Columbus, Toledo, Louisville, Detroit, Rockford, Madison, and surrounding areas",
+  service_area: "Dayton, Cincinnati, Columbus, Toledo, Louisville, Detroit, Rockford, Madison, Hamilton, Springfield, and surrounding areas",
   plan_level: "Level E",
   plan_price: 2000,
   total_combinations: 60,
@@ -184,8 +184,8 @@ const STRATEGY = {
     { city: "Toledo",       state: "OH", tier: "Tier 1", population: 268508, is_hq: false, keywords: ["bathtub refinishing", "bathtub reglazing", "tub resurfacing", "shower refinishing", "tile refinishing", "sink refinishing"] },
     { city: "Rockford",     state: "IL", tier: "Tier 1", population: 147651, is_hq: false, keywords: ["bathtub refinishing", "bathtub reglazing", "tub resurfacing", "shower refinishing", "tile refinishing", "sink refinishing"] },
     { city: "Dayton",       state: "OH", tier: "Tier 1", population: 137644, is_hq: true,  keywords: ["bathtub refinishing", "bathtub reglazing", "tub resurfacing", "shower refinishing", "tile refinishing", "sink refinishing"] },
-    { city: "Warren",       state: "MI", tier: "Tier 1", population: 134873, is_hq: false, keywords: ["bathtub refinishing", "bathtub reglazing", "tub resurfacing", "shower refinishing", "tile refinishing", "sink refinishing"] },
-    { city: "West Chester", state: "OH", tier: "Tier 1", population:  61000, is_hq: false, keywords: ["bathtub refinishing", "bathtub reglazing", "tub resurfacing", "shower refinishing", "tile refinishing", "sink refinishing"] },
+    { city: "Hamilton",     state: "OH", tier: "Tier 1", population:  64000, is_hq: false, keywords: ["bathtub refinishing", "bathtub reglazing", "tub resurfacing", "shower refinishing", "tile refinishing", "sink refinishing"] },
+    { city: "Springfield",  state: "OH", tier: "Tier 1", population:  58000, is_hq: false, keywords: ["bathtub refinishing", "bathtub reglazing", "tub resurfacing", "shower refinishing", "tile refinishing", "sink refinishing"] },
   ],
   // ---- NOT USED GROUPS ----
   not_used_groups: [
@@ -234,8 +234,8 @@ const STRATEGY = {
         { keyword: "bathroom refinishing",   monthly_searches: 1300 },
         { keyword: "Lexington, KY",          monthly_searches: null, new_market: true },
         { keyword: "Kettering, OH",          monthly_searches: null, new_market: true },
-        { keyword: "Springfield, OH",        monthly_searches: null, new_market: true },
-        { keyword: "Hamilton, OH",           monthly_searches: null, new_market: true },
+        { keyword: "West Chester, OH",      monthly_searches: null, new_market: true },
+        { keyword: "Warren, MI",             monthly_searches: null, new_market: true },
         { keyword: "Livonia, MI",            monthly_searches: null, new_market: true },
       ]
     },
@@ -253,6 +253,7 @@ const STRATEGY = {
         { keyword: "Covington, KY",                monthly_searches: null, new_market: true },
         { keyword: "Beloit, WI",                   monthly_searches: null, new_market: true },
         { keyword: "Middletown, OH",               monthly_searches: null, new_market: true },
+        { keyword: "West Chester, OH",             monthly_searches: null, new_market: true },
       ]
     }
   ]
@@ -443,13 +444,13 @@ const MARKET_DATA = [
   { rank: 6,  city: 'Toledo',       state: 'OH', pop: 268508, tier: 'Tier 1', selected: true,  hq: false },
   { rank: 7,  city: 'Rockford',     state: 'IL', pop: 147651, tier: 'Tier 1', selected: true,  hq: false },
   { rank: 8,  city: 'Dayton',       state: 'OH', pop: 137644, tier: 'Tier 1', selected: true,  hq: true  },
-  { rank: 9,  city: 'Warren',       state: 'MI', pop: 134873, tier: 'Tier 1', selected: true,  hq: false },
-  { rank: 10, city: 'West Chester', state: 'OH', pop:  61000, tier: 'Tier 1', selected: true,  hq: false },
+  { rank: 9,  city: 'Hamilton',     state: 'OH', pop:  64000, tier: 'Tier 1', selected: true,  hq: false },
+  { rank: 10, city: 'Springfield',  state: 'OH', pop:  58000, tier: 'Tier 1', selected: true,  hq: false },
   { rank: 11, city: 'Ann Arbor',    state: 'MI', pop: 121890, tier: 'Tier 1', selected: false, hq: false },
-  { rank: 12, city: 'Bowling Green',state: 'KY', pop:  72294, tier: 'Tier 1', selected: false, hq: false },
-  { rank: 13, city: 'Eau Claire',   state: 'WI', pop:  69872, tier: 'Tier 1', selected: false, hq: false },
-  { rank: 14, city: 'Janesville',   state: 'WI', pop:  65615, tier: 'Tier 1', selected: false, hq: false },
-  { rank: 15, city: 'Findlay',      state: 'OH', pop:  41763, tier: 'Tier 1', selected: false, hq: false },
+  { rank: 12, city: 'Warren',       state: 'MI', pop: 134873, tier: 'Tier 1', selected: false, hq: false },
+  { rank: 13, city: 'West Chester', state: 'OH', pop:  61000, tier: 'Tier 1', selected: false, hq: false },
+  { rank: 14, city: 'Bowling Green',state: 'KY', pop:  72294, tier: 'Tier 1', selected: false, hq: false },
+  { rank: 15, city: 'Middletown',   state: 'OH', pop:  52000, tier: 'Tier 2', selected: false, hq: false },
 ];
 function buildMobileMarketList() {
   const el = document.getElementById('mobile-market-list');
