@@ -1,0 +1,591 @@
+// ============================================================
+// SEO Strategy Website — Bill's Comfort Systems
+// billscomfortsystems.com | Plan Level E | 60 Combinations
+// Dotcom Design | May 2026
+// Rules: no em-dashes, no en-dashes, full client name always
+// ============================================================
+
+const STRATEGY = {
+  client_name: "Bill's Comfort Systems",
+  industry: "HVAC, Fireplaces and Comfort Systems",
+  hq_city: "Layton",
+  hq_city_2: "Murray",
+  state: "UT",
+  service_area: "Layton, Murray, and the greater Wasatch Front",
+  plan_level: "Level E",
+  plan_price: 2000,
+  total_combinations: 60,
+  total_keywords_researched: 141,
+  month: "May 2026",
+
+  selected_keywords: [
+    "hvac company",
+    "air conditioning company",
+    "heating company",
+    "fireplace company"
+  ],
+
+  num_selected_keywords: 4,
+  num_target_markets: 15,
+
+  keyword_table: [
+    // HVAC family
+    { keyword: "hvac company",               monthly_searches: 18100, tier: "Tier 1", status: "selected",  family: "HVAC",              variant_type: "base" },
+    { keyword: "hvac near me",               monthly_searches: 14800, tier: "Tier 1", status: "near_me",   family: "HVAC",              variant_type: "near_me", note: "Near me variant of hvac company; excluded because base keyword is selected" },
+    { keyword: "hvac service",               monthly_searches:  9900, tier: "Tier 1", status: "not_used",  family: "HVAC",              variant_type: "variant" },
+    { keyword: "hvac repair",                monthly_searches: 12100, tier: "Tier 1", status: "not_used",  family: "HVAC",              variant_type: "variant" },
+    { keyword: "hvac companies",             monthly_searches:  8100, tier: "Tier 1", status: "not_used",  family: "HVAC",              variant_type: "variant" },
+    { keyword: "hvac contractor",            monthly_searches:  6600, tier: "Tier 1", status: "not_used",  family: "HVAC",              variant_type: "variant" },
+    { keyword: "hvac contractors",           monthly_searches:  5400, tier: "Tier 1", status: "not_used",  family: "HVAC",              variant_type: "variant" },
+    { keyword: "hvac installation",          monthly_searches:  6600, tier: "Tier 1", status: "not_used",  family: "HVAC",              variant_type: "variant" },
+    { keyword: "hvac services",              monthly_searches:  8100, tier: "Tier 1", status: "not_used",  family: "HVAC",              variant_type: "variant" },
+    { keyword: "local hvac company",         monthly_searches:  2400, tier: "Tier 1", status: "not_used",  family: "HVAC",              variant_type: "variant" },
+    { keyword: "hvac technician",            monthly_searches:  5400, tier: "Tier 1", status: "not_used",  family: "HVAC",              variant_type: "variant" },
+    // Air Conditioning family
+    { keyword: "air conditioning company",   monthly_searches: 12100, tier: "Tier 1", status: "selected",  family: "Air Conditioning",  variant_type: "base" },
+    { keyword: "air conditioning near me",   monthly_searches:  9900, tier: "Tier 1", status: "near_me",   family: "Air Conditioning",  variant_type: "near_me", note: "Near me variant; excluded because base keyword is selected" },
+    { keyword: "air conditioning repair",    monthly_searches:  8100, tier: "Tier 1", status: "not_used",  family: "Air Conditioning",  variant_type: "variant" },
+    { keyword: "air conditioning service",   monthly_searches:  6600, tier: "Tier 1", status: "not_used",  family: "Air Conditioning",  variant_type: "variant" },
+    { keyword: "air conditioning companies", monthly_searches:  4400, tier: "Tier 1", status: "not_used",  family: "Air Conditioning",  variant_type: "variant" },
+    { keyword: "air conditioning installation", monthly_searches: 4400, tier: "Tier 1", status: "not_used", family: "Air Conditioning", variant_type: "variant" },
+    { keyword: "air conditioning contractor",monthly_searches:  3600, tier: "Tier 1", status: "not_used",  family: "Air Conditioning",  variant_type: "variant" },
+    { keyword: "ac company",                 monthly_searches:  9900, tier: "Tier 1", status: "not_used",  family: "Air Conditioning",  variant_type: "variant" },
+    { keyword: "ac repair",                  monthly_searches:  9900, tier: "Tier 1", status: "not_used",  family: "Air Conditioning",  variant_type: "variant" },
+    { keyword: "ac installation",            monthly_searches:  3600, tier: "Tier 1", status: "not_used",  family: "Air Conditioning",  variant_type: "variant" },
+    { keyword: "central air installation",   monthly_searches:  2900, tier: "Tier 1", status: "not_used",  family: "Air Conditioning",  variant_type: "variant" },
+    // Heating family
+    { keyword: "heating company",            monthly_searches:  9900, tier: "Tier 1", status: "selected",  family: "Heating",           variant_type: "base" },
+    { keyword: "heating near me",            monthly_searches:  6600, tier: "Tier 1", status: "near_me",   family: "Heating",           variant_type: "near_me", note: "Near me variant; excluded because base keyword is selected" },
+    { keyword: "heating repair",             monthly_searches:  5400, tier: "Tier 1", status: "not_used",  family: "Heating",           variant_type: "variant" },
+    { keyword: "heating service",            monthly_searches:  4400, tier: "Tier 1", status: "not_used",  family: "Heating",           variant_type: "variant" },
+    { keyword: "heating companies",          monthly_searches:  3600, tier: "Tier 1", status: "not_used",  family: "Heating",           variant_type: "variant" },
+    { keyword: "heating contractor",         monthly_searches:  2900, tier: "Tier 1", status: "not_used",  family: "Heating",           variant_type: "variant" },
+    { keyword: "furnace company",            monthly_searches:  8100, tier: "Tier 1", status: "not_used",  family: "Heating",           variant_type: "variant" },
+    { keyword: "furnace repair",             monthly_searches:  9900, tier: "Tier 1", status: "not_used",  family: "Heating",           variant_type: "variant" },
+    { keyword: "furnace installation",       monthly_searches:  6600, tier: "Tier 1", status: "not_used",  family: "Heating",           variant_type: "variant" },
+    { keyword: "furnace replacement",        monthly_searches:  5400, tier: "Tier 1", status: "not_used",  family: "Heating",           variant_type: "variant" },
+    { keyword: "furnace service",            monthly_searches:  4400, tier: "Tier 1", status: "not_used",  family: "Heating",           variant_type: "variant" },
+    { keyword: "furnace companies",          monthly_searches:  3600, tier: "Tier 1", status: "not_used",  family: "Heating",           variant_type: "variant" },
+    { keyword: "heat pump installation",     monthly_searches:  4400, tier: "Tier 1", status: "not_used",  family: "Heating",           variant_type: "variant" },
+    { keyword: "heat pump company",          monthly_searches:  2400, tier: "Tier 1", status: "not_used",  family: "Heating",           variant_type: "variant" },
+    // Fireplace family
+    { keyword: "fireplace company",          monthly_searches:  4400, tier: "Tier 2", status: "selected",  family: "Fireplace",         variant_type: "base" },
+    { keyword: "fireplace near me",          monthly_searches:  3600, tier: "Tier 2", status: "near_me",   family: "Fireplace",         variant_type: "near_me", note: "Near me variant; excluded because base keyword is selected" },
+    { keyword: "fireplace installation",     monthly_searches:  3600, tier: "Tier 2", status: "not_used",  family: "Fireplace",         variant_type: "variant" },
+    { keyword: "gas fireplace installation", monthly_searches:  3600, tier: "Tier 2", status: "not_used",  family: "Fireplace",         variant_type: "variant" },
+    { keyword: "outdoor fireplace installation", monthly_searches: 2900, tier: "Tier 2", status: "not_used", family: "Fireplace",      variant_type: "variant" },
+    { keyword: "fireplace repair",           monthly_searches:  2900, tier: "Tier 2", status: "not_used",  family: "Fireplace",         variant_type: "variant" },
+    { keyword: "fireplace service",          monthly_searches:  2400, tier: "Tier 2", status: "not_used",  family: "Fireplace",         variant_type: "variant" },
+    { keyword: "fireplace companies",        monthly_searches:  1900, tier: "Tier 2", status: "not_used",  family: "Fireplace",         variant_type: "variant" },
+    { keyword: "fireplace contractor",       monthly_searches:  1600, tier: "Tier 2", status: "not_used",  family: "Fireplace",         variant_type: "variant" },
+    { keyword: "outdoor fireplace company",  monthly_searches:  1600, tier: "Tier 2", status: "not_used",  family: "Fireplace",         variant_type: "variant" },
+    { keyword: "gas fireplace company",      monthly_searches:  1300, tier: "Tier 2", status: "not_used",  family: "Fireplace",         variant_type: "variant" },
+    { keyword: "gas fireplace repair",       monthly_searches:  2400, tier: "Tier 2", status: "not_used",  family: "Fireplace",         variant_type: "variant" },
+    { keyword: "indoor fireplace installation", monthly_searches: 1300, tier: "Tier 2", status: "not_used", family: "Fireplace",       variant_type: "variant" },
+    // Ductless Mini Split family
+    { keyword: "ductless mini split installation", monthly_searches: 5400, tier: "Tier 2", status: "not_used", family: "Ductless Mini Split", variant_type: "base" },
+    { keyword: "ductless mini split near me",      monthly_searches: 3600, tier: "Tier 2", status: "near_me",  family: "Ductless Mini Split", variant_type: "near_me", note: "Near me variant; reserved for Level F expansion" },
+    { keyword: "mini split installation",          monthly_searches: 4400, tier: "Tier 2", status: "not_used", family: "Ductless Mini Split", variant_type: "variant" },
+    { keyword: "ductless mini split company",      monthly_searches: 1900, tier: "Tier 2", status: "not_used", family: "Ductless Mini Split", variant_type: "variant" },
+    { keyword: "ductless mini split contractor",   monthly_searches: 1600, tier: "Tier 2", status: "not_used", family: "Ductless Mini Split", variant_type: "variant" },
+    { keyword: "mini split company",               monthly_searches: 1900, tier: "Tier 2", status: "not_used", family: "Ductless Mini Split", variant_type: "variant" },
+    { keyword: "ductless ac installation",         monthly_searches: 2400, tier: "Tier 2", status: "not_used", family: "Ductless Mini Split", variant_type: "variant" },
+    // HVAC Maintenance family
+    { keyword: "hvac maintenance",                 monthly_searches: 8100, tier: "Tier 2", status: "not_used", family: "HVAC Maintenance", variant_type: "base" },
+    { keyword: "hvac maintenance company",         monthly_searches: 2400, tier: "Tier 2", status: "not_used", family: "HVAC Maintenance", variant_type: "variant" },
+    { keyword: "hvac maintenance plan",            monthly_searches: 1600, tier: "Tier 2", status: "not_used", family: "HVAC Maintenance", variant_type: "variant" },
+    { keyword: "hvac tune up",                     monthly_searches: 2900, tier: "Tier 2", status: "not_used", family: "HVAC Maintenance", variant_type: "variant" },
+    { keyword: "commercial hvac company",          monthly_searches: 3600, tier: "Tier 2", status: "not_used", family: "HVAC Maintenance", variant_type: "variant" },
+    { keyword: "commercial hvac contractor",       monthly_searches: 2900, tier: "Tier 2", status: "not_used", family: "HVAC Maintenance", variant_type: "variant" },
+    { keyword: "commercial hvac maintenance",      monthly_searches: 1900, tier: "Tier 2", status: "not_used", family: "HVAC Maintenance", variant_type: "variant" },
+    { keyword: "residential hvac maintenance",     monthly_searches: 1300, tier: "Tier 2", status: "not_used", family: "HVAC Maintenance", variant_type: "variant" },
+    { keyword: "industrial hvac company",          monthly_searches: 1300, tier: "Tier 2", status: "not_used", family: "HVAC Maintenance", variant_type: "variant" },
+    { keyword: "furnace maintenance",              monthly_searches: 3600, tier: "Tier 2", status: "not_used", family: "HVAC Maintenance", variant_type: "variant" },
+    { keyword: "furnace tune up",                  monthly_searches: 2400, tier: "Tier 2", status: "not_used", family: "HVAC Maintenance", variant_type: "variant" },
+    { keyword: "ac maintenance",                   monthly_searches: 3600, tier: "Tier 2", status: "not_used", family: "HVAC Maintenance", variant_type: "variant" },
+    // New Construction family
+    { keyword: "new construction hvac",            monthly_searches: 2900, tier: "Tier 3", status: "not_used", family: "New Construction", variant_type: "base" },
+    { keyword: "new construction hvac installation", monthly_searches: 1600, tier: "Tier 3", status: "not_used", family: "New Construction", variant_type: "variant" },
+    { keyword: "new home hvac installation",       monthly_searches: 1300, tier: "Tier 3", status: "not_used", family: "New Construction", variant_type: "variant" },
+  ],
+
+  keyword_tiers: [
+    {
+      tier_label: "Tier 1",
+      tier_name: "Core Comfort Services",
+      description: "The highest-volume, highest-intent keywords across Bill's Comfort Systems' primary service lines. These terms represent homeowners and businesses actively searching for a trusted local HVAC and comfort systems provider right now. All four selected keywords for the Level E plan come from this tier.",
+      keywords: [
+        { keyword: "hvac company",             monthly_searches: 18100 },
+        { keyword: "hvac near me",             monthly_searches: 14800 },
+        { keyword: "air conditioning company", monthly_searches: 12100 },
+        { keyword: "hvac repair",              monthly_searches: 12100 },
+        { keyword: "ac repair",                monthly_searches:  9900 },
+        { keyword: "ac company",               monthly_searches:  9900 },
+        { keyword: "heating company",          monthly_searches:  9900 },
+        { keyword: "hvac service",             monthly_searches:  9900 },
+        { keyword: "furnace repair",           monthly_searches:  9900 },
+        { keyword: "air conditioning near me", monthly_searches:  9900 },
+        { keyword: "furnace company",          monthly_searches:  8100 },
+        { keyword: "hvac companies",           monthly_searches:  8100 },
+      ]
+    },
+    {
+      tier_label: "Tier 2",
+      tier_name: "Installation and Specialty Services",
+      description: "Mid-volume keywords targeting homeowners researching specific equipment installations and specialty comfort solutions. These terms capture buyers who are further along in the decision process and ready to hire. Ductless mini split and fireplace keywords are the top candidates for Level F and Level G plan expansions.",
+      keywords: [
+        { keyword: "ductless mini split installation", monthly_searches: 5400 },
+        { keyword: "furnace installation",             monthly_searches: 6600 },
+        { keyword: "mini split installation",          monthly_searches: 4400 },
+        { keyword: "fireplace company",                monthly_searches: 4400 },
+        { keyword: "hvac maintenance",                 monthly_searches: 8100 },
+        { keyword: "gas fireplace installation",       monthly_searches: 3600 },
+        { keyword: "fireplace installation",           monthly_searches: 3600 },
+        { keyword: "commercial hvac company",          monthly_searches: 3600 },
+        { keyword: "furnace replacement",              monthly_searches: 5400 },
+        { keyword: "outdoor fireplace installation",   monthly_searches: 2900 },
+        { keyword: "commercial hvac contractor",       monthly_searches: 2900 },
+        { keyword: "hvac tune up",                     monthly_searches: 2900 },
+      ]
+    },
+    {
+      tier_label: "Tier 3",
+      tier_name: "Maintenance Programs and New Construction",
+      description: "Lower-volume but highly targeted keywords for Bill's Comfort Systems' maintenance programs and new construction services. These terms attract recurring service customers and builders -- two of the highest-lifetime-value customer segments in HVAC. Reserved for Level G and Level H plan expansions.",
+      keywords: [
+        { keyword: "hvac maintenance plan",          monthly_searches: 1600 },
+        { keyword: "residential hvac maintenance",   monthly_searches: 1300 },
+        { keyword: "commercial hvac maintenance",    monthly_searches: 1900 },
+        { keyword: "industrial hvac company",        monthly_searches: 1300 },
+        { keyword: "new construction hvac",          monthly_searches: 2900 },
+        { keyword: "new construction hvac installation", monthly_searches: 1600 },
+        { keyword: "furnace maintenance",            monthly_searches: 3600 },
+        { keyword: "ac maintenance",                 monthly_searches: 3600 },
+        { keyword: "furnace tune up",                monthly_searches: 2400 },
+        { keyword: "new home hvac installation",     monthly_searches: 1300 },
+      ]
+    }
+  ],
+
+  matrix: [
+    { city: "Salt Lake City", state: "UT", tier: "Tier 1", population: 200567, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company", "fireplace company"] },
+    { city: "Ogden",          state: "UT", tier: "Tier 1", population:  87321, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company", "fireplace company"] },
+    { city: "Layton",         state: "UT", tier: "Tier 1", population:  84312, is_hq: true,  keywords: ["hvac company", "air conditioning company", "heating company", "fireplace company"] },
+    { city: "Murray",         state: "UT", tier: "Tier 1", population:  50637, is_hq: true,  keywords: ["hvac company", "air conditioning company", "heating company", "fireplace company"] },
+    { city: "Bountiful",      state: "UT", tier: "Tier 1", population:  46134, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company", "fireplace company"] },
+    { city: "Roy",            state: "UT", tier: "Tier 1", population:  40226, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company", "fireplace company"] },
+    { city: "Syracuse",       state: "UT", tier: "Tier 2", population:  35714, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company", "fireplace company"] },
+    { city: "Kaysville",      state: "UT", tier: "Tier 2", population:  34735, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company", "fireplace company"] },
+    { city: "Clearfield",     state: "UT", tier: "Tier 2", population:  32082, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company", "fireplace company"] },
+    { city: "Farmington",     state: "UT", tier: "Tier 2", population:  25891, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company", "fireplace company"] },
+    { city: "Clinton",        state: "UT", tier: "Tier 2", population:  22070, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company", "fireplace company"] },
+    { city: "West Haven",     state: "UT", tier: "Tier 2", population:  21175, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company", "fireplace company"] },
+    { city: "Centerville",    state: "UT", tier: "Tier 2", population:  17503, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company", "fireplace company"] },
+    { city: "Park City",      state: "UT", tier: "Tier 3", population:   8548, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company", "fireplace company"] },
+    { city: "Plain City",     state: "UT", tier: "Tier 3", population:   7078, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company", "fireplace company"] },
+  ],
+
+  not_used_groups: [
+    {
+      reason: "Covered by Selected Keywords",
+      description: "These high-volume variants share the same search intent as the four selected base keywords. Including them as separate targets would create redundant pages competing against each other. They are captured organically when city-specific pages rank for the base keyword.",
+      keywords: [
+        { keyword: "hvac contractor",          monthly_searches:  6600 },
+        { keyword: "hvac contractors",         monthly_searches:  5400 },
+        { keyword: "hvac near me",             monthly_searches: 14800 },
+        { keyword: "ac company",               monthly_searches:  9900 },
+        { keyword: "ac repair",                monthly_searches:  9900 },
+        { keyword: "furnace company",          monthly_searches:  8100 },
+        { keyword: "furnace repair",           monthly_searches:  9900 },
+        { keyword: "air conditioning near me", monthly_searches:  9900 },
+        { keyword: "heating near me",          monthly_searches:  6600 },
+        { keyword: "fireplace near me",        monthly_searches:  3600 },
+      ]
+    },
+    {
+      reason: "Ductless Mini Splits: Reserved for Level F Expansion",
+      description: "Ductless mini split keywords have strong search volume and are a confirmed service line for Bill's Comfort Systems. These are the top candidates for the Level F plan expansion, which would add mini split installation as a fifth keyword across all 15 markets for an additional 15 combinations.",
+      keywords: [
+        { keyword: "ductless mini split installation", monthly_searches: 5400 },
+        { keyword: "mini split installation",          monthly_searches: 4400 },
+        { keyword: "ductless mini split near me",      monthly_searches: 3600 },
+        { keyword: "ductless ac installation",         monthly_searches: 2400 },
+        { keyword: "ductless mini split company",      monthly_searches: 1900 },
+        { keyword: "mini split company",               monthly_searches: 1900 },
+        { keyword: "ductless mini split contractor",   monthly_searches: 1600 },
+      ]
+    },
+    {
+      reason: "Maintenance Programs and Commercial Services: Reserved for Level G",
+      description: "HVAC maintenance and commercial service keywords represent a significant recurring revenue opportunity. These terms are reserved for the Level G expansion, which would add maintenance-focused pages across all markets and unlock the commercial and industrial customer segment.",
+      keywords: [
+        { keyword: "hvac maintenance",               monthly_searches: 8100 },
+        { keyword: "commercial hvac company",        monthly_searches: 3600 },
+        { keyword: "furnace maintenance",            monthly_searches: 3600 },
+        { keyword: "ac maintenance",                 monthly_searches: 3600 },
+        { keyword: "commercial hvac contractor",     monthly_searches: 2900 },
+        { keyword: "new construction hvac",          monthly_searches: 2900 },
+        { keyword: "commercial hvac maintenance",    monthly_searches: 1900 },
+        { keyword: "hvac maintenance plan",          monthly_searches: 1600 },
+        { keyword: "residential hvac maintenance",   monthly_searches: 1300 },
+        { keyword: "industrial hvac company",        monthly_searches: 1300 },
+      ]
+    }
+  ],
+
+  additional_opportunities: [
+    {
+      plan: "Level F",
+      price: 3000,
+      combinations: 90,
+      additional_combinations: 30,
+      headline: "Add Ductless Mini Splits Across All 15 Markets",
+      description: "Level F adds ductless mini split installation as a fifth keyword across all 15 existing markets, plus expands into 5 additional high-value communities in the Weber and Davis County corridors. Mini splits are the fastest-growing segment in residential HVAC and a confirmed service line for Bill's Comfort Systems. This expansion captures buyers who are specifically researching ductless systems -- a distinct, high-ticket purchase decision.",
+      new_market: true,
+      keywords: [
+        { keyword: "ductless mini split installation", monthly_searches: 5400 },
+        { keyword: "mini split installation",          monthly_searches: 4400 },
+        { keyword: "ductless mini split company",      monthly_searches: 1900 },
+        { keyword: "North Ogden, UT",                  monthly_searches: null, new_market: true },
+        { keyword: "South Ogden, UT",                  monthly_searches: null, new_market: true },
+        { keyword: "Pleasant View, UT",                monthly_searches: null, new_market: true },
+        { keyword: "Riverdale, UT",                    monthly_searches: null, new_market: true },
+        { keyword: "Harrisville, UT",                  monthly_searches: null, new_market: true },
+      ]
+    },
+    {
+      plan: "Level G",
+      price: 4000,
+      combinations: 120,
+      additional_combinations: 30,
+      headline: "Add HVAC Maintenance and Commercial Services",
+      description: "Level G unlocks the maintenance and commercial customer segments -- two of the highest-lifetime-value audiences in HVAC. Adding hvac maintenance company and commercial hvac company as dedicated keywords across all markets positions Bill's Comfort Systems as the go-to provider for service agreements, commercial building managers, and industrial facility operators across Northern Utah.",
+      new_market: true,
+      keywords: [
+        { keyword: "hvac maintenance",               monthly_searches: 8100 },
+        { keyword: "commercial hvac company",        monthly_searches: 3600 },
+        { keyword: "commercial hvac contractor",     monthly_searches: 2900 },
+        { keyword: "new construction hvac",          monthly_searches: 2900 },
+        { keyword: "hvac maintenance plan",          monthly_searches: 1600 },
+        { keyword: "West Valley City, UT",           monthly_searches: null, new_market: true },
+        { keyword: "West Jordan, UT",                monthly_searches: null, new_market: true },
+        { keyword: "Sandy, UT",                      monthly_searches: null, new_market: true },
+      ]
+    }
+  ]
+};
+
+// ============================================================
+// HELPER FUNCTIONS
+// ============================================================
+function fmt(n) {
+  if (n === null || n === undefined) return '';
+  return n.toLocaleString();
+}
+
+function statusBadge(status, note) {
+  if (status === 'selected') return '<span class="status-badge status-selected">Selected</span>';
+  if (status === 'near_me') return `<span class="status-badge status-near-me" title="${note || ''}">Near Me Variant</span>`;
+  return '<span class="status-badge status-not-used">Not Used</span>';
+}
+
+function tierPill(label) {
+  const cls = label === 'Tier 1' ? 't1' : label === 'Tier 2' ? 't2' : label === 'Tier 3' ? 't3' : 't4';
+  return `<span class="tier-pill ${cls}">${label.toUpperCase()}</span>`;
+}
+
+// ============================================================
+// POPULATE KEYWORD TABLE
+// ============================================================
+function buildKeywordTable() {
+  const tbody = document.getElementById('kw-table-body');
+  if (!tbody) return;
+
+  const familyOrder = [];
+  const familyMap = {};
+  STRATEGY.keyword_table.forEach(kw => {
+    if (!familyMap[kw.family]) {
+      familyMap[kw.family] = [];
+      familyOrder.push(kw.family);
+    }
+    familyMap[kw.family].push(kw);
+  });
+
+  const variantLabel = { variant: 'Variant', plural: 'Plural Variant', near_me: 'Near Me Variant', short_form: 'Short-Form Variant' };
+
+  const rows = familyOrder.map(family => {
+    const members = familyMap[family].slice().sort((a, b) => {
+      const rankType = t => t === 'base' ? 0 : 1;
+      if (rankType(a.variant_type) !== rankType(b.variant_type)) {
+        return rankType(a.variant_type) - rankType(b.variant_type);
+      }
+      return b.monthly_searches - a.monthly_searches;
+    });
+    return members.map(kw => {
+      const isBase = kw.variant_type === 'base';
+      const isNearMe = kw.variant_type === 'near_me';
+      const rowClass = isBase
+        ? (kw.status === 'selected' ? 'row-base row-selected' : 'row-base')
+        : (isNearMe ? 'row-variant row-near-me' : 'row-variant');
+      const kwCell = isBase
+        ? `<td>${kw.keyword}</td>`
+        : `<td class="kw-variant-cell"><span class="kw-variant-indent">&#8627;</span>${kw.keyword} <span class="kw-variant-badge">${variantLabel[kw.variant_type] || 'Variant'}</span></td>`;
+      return `<tr class="${rowClass}">
+        ${kwCell}
+        <td class="num-col">${fmt(kw.monthly_searches)}</td>
+        <td>${tierPill(kw.tier)}</td>
+        <td>${statusBadge(kw.status, kw.note)}</td>
+      </tr>`;
+    }).join('');
+  }).join('');
+
+  tbody.innerHTML = rows;
+}
+
+// ============================================================
+// POPULATE KEYWORD TIER CARDS
+// ============================================================
+function buildKeywordTierCards() {
+  const grid = document.getElementById('kw-tier-grid');
+  if (!grid) return;
+  const tierColors = ['kw-tier-1', 'kw-tier-2', 'kw-tier-3', 'kw-tier-4'];
+  const blocks = STRATEGY.keyword_tiers.map((tier, i) => {
+    const kwRows = tier.keywords.map(kw =>
+      `<tr>
+        <td class="flat-kw-name">${kw.keyword}</td>
+        <td class="flat-kw-vol">${fmt(kw.monthly_searches)}</td>
+      </tr>`
+    ).join('');
+    const colorCls = tierColors[i] || 'kw-tier-1';
+    const tierLabel = tier.tier_label || ('Tier ' + (i + 1));
+    const tierName  = tier.tier_name  || '';
+    return `<div class="flat-tier-block ${colorCls}">
+      <div class="flat-tier-heading">
+        <span class="tier-pill ${colorCls.replace('kw-tier-', 't')}">${tierLabel}</span>
+        <span class="flat-tier-name">${tierName}</span>
+        <span class="flat-tier-count">${tier.keywords.length} keyword${tier.keywords.length !== 1 ? 's' : ''} researched</span>
+      </div>
+      <div class="flat-tier-desc">${tier.description}</div>
+      <table class="flat-kw-table">
+        <thead><tr><th>Keyword</th><th>Monthly Searches</th></tr></thead>
+        <tbody>${kwRows}</tbody>
+      </table>
+    </div>`;
+  }).join('');
+  grid.innerHTML = blocks;
+}
+
+// ============================================================
+// POPULATE MATRIX
+// ============================================================
+function buildMatrix() {
+  const el = document.getElementById('matrix-city-grid');
+  if (!el) return;
+
+  let cards = '';
+  let grandTotal = 0;
+
+  STRATEGY.matrix.forEach(m => {
+    const tierCls = m.tier === 'Tier 1' ? 't1' : m.tier === 'Tier 2' ? 't2' : 't3';
+    const cityLabel = m.city + (m.state ? ', ' + m.state : '');
+    const hqStar = m.is_hq ? '<span class="city-card-hq">&#9733;</span>' : '';
+    const kwItems = m.keywords.map(kw =>
+      `<div class="city-kw-item"><span class="city-kw-check">&#10003;</span><span class="city-kw-name">${kw}</span></div>`
+    ).join('');
+    grandTotal += m.keywords.length;
+    cards += `<div class="city-matrix-card">
+      <div class="city-matrix-header">
+        ${hqStar}<span class="city-matrix-name">${cityLabel}</span>
+        <span class="city-matrix-meta"><span class="tier-pill ${tierCls}">${m.tier.toUpperCase()}</span> Pop. ${fmt(m.population)}</span>
+      </div>
+      <div class="city-kw-list">${kwItems}</div>
+      <div class="city-matrix-footer">${m.keywords.length} combination${m.keywords.length !== 1 ? 's' : ''}</div>
+    </div>`;
+  });
+
+  el.innerHTML = cards;
+  const gt = document.getElementById('matrix-grand-total');
+  if (gt) gt.textContent = 'Grand Total: ' + grandTotal + ' Combinations';
+}
+
+// ============================================================
+// POPULATE NOT USED SECTION
+// ============================================================
+function buildNotUsed() {
+  const grid = document.getElementById('not-used-grid');
+  if (!grid) return;
+  const cards = STRATEGY.not_used_groups.map(group => {
+    const kwRows = group.keywords.map(kw =>
+      `<div class="nu-kw-row">
+        <span class="nu-kw-name">${kw.keyword}</span>
+        <span class="nu-kw-vol">${fmt(kw.monthly_searches)}</span>
+      </div>`
+    ).join('');
+    return `<div class="not-used-card">
+      <div class="nu-reason">${group.reason}</div>
+      <p class="nu-desc">${group.description}</p>
+      <div class="nu-kw-table">
+        <div class="nu-header"><span>Keyword</span><span>Mo. Searches</span></div>
+        ${kwRows}
+      </div>
+    </div>`;
+  }).join('');
+  grid.innerHTML = cards;
+  if (STRATEGY.not_used_groups.length === 4) {
+    grid.classList.add('grid-2col');
+  } else {
+    grid.classList.remove('grid-2col');
+  }
+}
+
+// ============================================================
+// POPULATE OPPORTUNITIES SECTION
+// ============================================================
+function buildOpportunities() {
+  const grid = document.getElementById('opportunities-grid');
+  if (!grid) return;
+  const cards = STRATEGY.additional_opportunities.map((opp, i) => {
+    const kwList = opp.keywords.map(kw =>
+      `<li>
+        <span class="opp-kw">${kw.keyword}</span>
+        ${kw.monthly_searches ? `<span class="opp-vol">${fmt(kw.monthly_searches)}</span>` : kw.new_market ? `<span class="opp-vol opp-new-market">New Market</span>` : ''}
+      </li>`
+    ).join('');
+    const highlight = i === 0 ? 'opp-card-highlight' : '';
+    const newMarketDiv = opp.new_market
+      ? `<div class="opp-new-market">+ New Markets Added</div>`
+      : `<div class="opp-new-market" style="visibility:hidden"></div>`;
+    return `<div class="opp-card ${highlight}">
+      <div class="opp-plan-label">${opp.plan}</div>
+      <div class="opp-price">$${fmt(opp.price)}<span class="opp-price-label">/mo</span></div>
+      <div class="opp-combos-large">${opp.combinations} <span class="opp-combos-label">total combinations</span></div>
+      <div class="opp-combos">${opp.additional_combinations} additional combinations from current plan</div>
+      <h4 class="opp-headline">${opp.headline}</h4>
+      <p class="opp-desc">${opp.description}</p>
+      ${newMarketDiv}
+      <ul class="opp-kw-list"><li class="opp-kw-header"><span>Keyword / Market</span><span>Mo. Searches</span></li>${kwList}</ul>
+    </div>`;
+  }).join('');
+  grid.innerHTML = cards;
+}
+
+// ============================================================
+// BUILD MOBILE MARKET LIST
+// ============================================================
+const MARKET_DATA = [
+  { rank: 1,  city: 'Salt Lake City', pop: 200567, tier: 'Tier 1', selected: true,  hq: false },
+  { rank: 2,  city: 'Ogden',          pop:  87321, tier: 'Tier 1', selected: true,  hq: false },
+  { rank: 3,  city: 'Layton',         pop:  84312, tier: 'Tier 1', selected: true,  hq: true  },
+  { rank: 4,  city: 'Murray',         pop:  50637, tier: 'Tier 1', selected: true,  hq: true  },
+  { rank: 5,  city: 'Bountiful',      pop:  46134, tier: 'Tier 1', selected: true,  hq: false },
+  { rank: 6,  city: 'Roy',            pop:  40226, tier: 'Tier 1', selected: true,  hq: false },
+  { rank: 7,  city: 'Syracuse',       pop:  35714, tier: 'Tier 2', selected: true,  hq: false },
+  { rank: 8,  city: 'Kaysville',      pop:  34735, tier: 'Tier 2', selected: true,  hq: false },
+  { rank: 9,  city: 'Clearfield',     pop:  32082, tier: 'Tier 2', selected: true,  hq: false },
+  { rank: 10, city: 'Farmington',     pop:  25891, tier: 'Tier 2', selected: true,  hq: false },
+  { rank: 11, city: 'Clinton',        pop:  22070, tier: 'Tier 2', selected: true,  hq: false },
+  { rank: 12, city: 'West Haven',     pop:  21175, tier: 'Tier 2', selected: true,  hq: false },
+  { rank: 13, city: 'Centerville',    pop:  17503, tier: 'Tier 2', selected: true,  hq: false },
+  { rank: 14, city: 'Park City',      pop:   8548, tier: 'Tier 3', selected: true,  hq: false },
+  { rank: 15, city: 'Plain City',     pop:   7078, tier: 'Tier 3', selected: true,  hq: false },
+  { rank: 16, city: 'North Ogden',    pop:  20801, tier: 'Tier 2', selected: false, hq: false },
+  { rank: 17, city: 'South Ogden',    pop:  17176, tier: 'Tier 2', selected: false, hq: false },
+  { rank: 18, city: 'Pleasant View',  pop:  10875, tier: 'Tier 2', selected: false, hq: false },
+  { rank: 19, city: 'West Valley City', pop: 140230, tier: 'Tier 1', selected: false, hq: false },
+  { rank: 20, city: 'West Jordan',    pop: 116961, tier: 'Tier 1', selected: false, hq: false },
+  { rank: 21, city: 'Sandy',          pop:  98975, tier: 'Tier 1', selected: false, hq: false },
+  { rank: '22+', city: 'Riverdale, Harrisville, Washington Terrace, Sunset, Hooper + more', pop: null, tier: 'Tier 3', selected: false, hq: false },
+];
+
+function buildMobileMarketList() {
+  const el = document.getElementById('mobile-market-list');
+  if (!el) return;
+  const rows = MARKET_DATA.map(m => {
+    const tierCls = m.tier === 'Tier 1' ? 't1' : m.tier === 'Tier 2' ? 't2' : 't3';
+    const selIcon = m.selected ? '<span class="mob-check">&#10003;</span>' : '<span class="mob-dash">-</span>';
+    const hqTag = m.hq ? ' <span class="hq-tag">HQ</span>' : '';
+    const cityLabel = m.city + hqTag;
+    const popStr = m.pop ? fmt(m.pop) : '';
+    const rowCls = m.selected ? 'mob-mkt-row selected' : 'mob-mkt-row';
+    return `<div class="${rowCls}">
+      <span class="mob-rank">${m.rank}</span>
+      <span class="mob-city">${m.selected ? '<strong>' : ''}${cityLabel}${m.selected ? '</strong>' : ''}</span>
+      <span class="mob-pop">${popStr}</span>
+      <span class="mob-tier"><span class="tier-pill ${tierCls}">${m.tier.toUpperCase()}</span></span>
+      ${selIcon}
+    </div>`;
+  }).join('');
+  el.innerHTML = `<div class="mob-mkt-header">
+    <span class="mob-rank">#</span>
+    <span class="mob-city">Market</span>
+    <span class="mob-pop">Pop.</span>
+    <span class="mob-tier">Tier</span>
+    <span class="mob-sel">&#10003;</span>
+  </div>${rows}`;
+}
+
+// ============================================================
+// BUILD MOBILE MATRIX
+// ============================================================
+function buildMobileMatrix() {
+  const el = document.getElementById('mobile-matrix');
+  if (!el) return;
+  const keywords = STRATEGY.selected_keywords;
+  const cards = STRATEGY.matrix.map(m => {
+    const tierCls = m.tier === 'Tier 1' ? 't1' : m.tier === 'Tier 2' ? 't2' : 't3';
+    const hqTag = m.is_hq ? ' <span class="hq-tag">HQ</span>' : '';
+    const cityLabel = m.city + hqTag;
+    const kwList = keywords.map(kw =>
+      `<div class="mob-matrix-kw"><span class="mob-matrix-check">&#10003;</span><span>${kw}</span></div>`
+    ).join('');
+    return `<div class="mob-matrix-card">
+      <div class="mob-matrix-city">
+        <span class="mob-matrix-city-name">${cityLabel}</span>
+        <span class="mob-matrix-meta"><span class="tier-pill ${tierCls}">${m.tier.toUpperCase()}</span> &nbsp; Pop. ${fmt(m.population)}</span>
+      </div>
+      <div class="mob-matrix-kws">${kwList}</div>
+      <div class="mob-matrix-total">${keywords.length} combinations</div>
+    </div>`;
+  }).join('');
+  el.innerHTML = cards + `<div class="mob-matrix-grand-total">Grand Total: <strong>${keywords.length * STRATEGY.matrix.length} Combinations</strong></div>`;
+}
+
+// ============================================================
+// STICKY NAV ACTIVE STATE
+// ============================================================
+function initStickyNav() {
+  const nav = document.getElementById('section-nav');
+  if (!nav) return;
+  const links = nav.querySelectorAll('a');
+  const sections = Array.from(links).map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {
+      nav.classList.add('nav-sticky');
+    } else {
+      nav.classList.remove('nav-sticky');
+    }
+    let current = '';
+    sections.forEach(section => {
+      const top = section.offsetTop - 120;
+      if (window.scrollY >= top) current = '#' + section.id;
+    });
+    links.forEach(link => {
+      link.classList.toggle('active', link.getAttribute('href') === current);
+    });
+  });
+}
+
+// ============================================================
+// INIT
+// ============================================================
+document.addEventListener('DOMContentLoaded', () => {
+  buildKeywordTable();
+  buildKeywordTierCards();
+  buildMatrix();
+  buildMobileMarketList();
+  buildMobileMatrix();
+  buildNotUsed();
+  buildOpportunities();
+  initStickyNav();
+});
