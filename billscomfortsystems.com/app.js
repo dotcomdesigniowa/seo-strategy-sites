@@ -28,7 +28,7 @@ const STRATEGY = {
   ],
 
   num_selected_keywords: 6,
-  num_target_markets: 10,
+  num_target_markets: 13,
 
   keyword_table: [
     // HVAC Company family
@@ -199,16 +199,23 @@ const STRATEGY = {
   ],
 
   matrix: [
-    { city: "Salt Lake City", state: "UT", tier: "Tier 1", population: 200567, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company", "ac repair", "furnace repair", "fireplace company"] },
-    { city: "Ogden",          state: "UT", tier: "Tier 1", population:  87321, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company", "ac repair", "furnace repair", "fireplace company"] },
-    { city: "Layton",         state: "UT", tier: "Tier 1", population:  84312, is_hq: true,  keywords: ["hvac company", "air conditioning company", "heating company", "ac repair", "furnace repair", "fireplace company"] },
-    { city: "Murray",         state: "UT", tier: "Tier 1", population:  50637, is_hq: true,  keywords: ["hvac company", "air conditioning company", "heating company", "ac repair", "furnace repair", "fireplace company"] },
-    { city: "Bountiful",      state: "UT", tier: "Tier 1", population:  46134, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company", "ac repair", "furnace repair", "fireplace company"] },
-    { city: "Roy",            state: "UT", tier: "Tier 1", population:  40226, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company", "ac repair", "furnace repair", "fireplace company"] },
-    { city: "Syracuse",       state: "UT", tier: "Tier 2", population:  35714, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company", "ac repair", "furnace repair", "fireplace company"] },
-    { city: "Kaysville",      state: "UT", tier: "Tier 2", population:  34735, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company", "ac repair", "furnace repair", "fireplace company"] },
-    { city: "Clearfield",     state: "UT", tier: "Tier 2", population:  32082, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company", "ac repair", "furnace repair", "fireplace company"] },
-    { city: "Park City",      state: "UT", tier: "Tier 3", population:   8548, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company", "ac repair", "furnace repair", "fireplace company"] },
+    // Tier 1: Full 6-keyword coverage for highest-population and HQ markets
+    { city: "Salt Lake City",  state: "UT", tier: "Tier 1", population: 200567, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company", "ac repair", "furnace repair", "fireplace company"] },
+    { city: "Ogden",           state: "UT", tier: "Tier 1", population:  87321, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company", "ac repair", "furnace repair", "fireplace company"] },
+    { city: "Layton",          state: "UT", tier: "Tier 1", population:  84312, is_hq: true,  keywords: ["hvac company", "air conditioning company", "heating company", "ac repair", "furnace repair", "fireplace company"] },
+    { city: "Murray",          state: "UT", tier: "Tier 1", population:  50637, is_hq: true,  keywords: ["hvac company", "air conditioning company", "heating company", "ac repair", "furnace repair", "fireplace company"] },
+    { city: "Bountiful",       state: "UT", tier: "Tier 1", population:  46134, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company", "ac repair", "furnace repair", "fireplace company"] },
+    { city: "Roy",             state: "UT", tier: "Tier 1", population:  40226, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company", "ac repair", "furnace repair", "fireplace company"] },
+    // Tier 2: 4-keyword coverage for established mid-size Davis County markets
+    { city: "Syracuse",        state: "UT", tier: "Tier 2", population:  35714, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company", "ac repair"] },
+    { city: "Kaysville",       state: "UT", tier: "Tier 2", population:  34735, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company", "ac repair"] },
+    { city: "Clearfield",      state: "UT", tier: "Tier 2", population:  32082, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company", "ac repair"] },
+    // Salt Lake Valley: 3-keyword footprint in Utah's 3 largest untapped markets
+    { city: "West Valley City", state: "UT", tier: "Tier 1", population: 140230, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company"] },
+    { city: "West Jordan",      state: "UT", tier: "Tier 1", population: 116961, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company"] },
+    { city: "Sandy",            state: "UT", tier: "Tier 1", population:  98975, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company"] },
+    // Client request: Plain City, Weber County
+    { city: "Plain City",       state: "UT", tier: "Tier 2", population:   7078, is_hq: false, keywords: ["hvac company", "heating company", "furnace repair"] },
   ],
 
   not_used_groups: [
@@ -278,18 +285,17 @@ const STRATEGY = {
       price: 3000,
       combinations: 90,
       additional_combinations: 30,
-      headline: "Add HVAC Repair and Installation Across All 10 Markets",
-      description: "Level F adds hvac repair (12,100/mo) and furnace installation (6,600/mo) as dedicated keywords across all 10 existing markets, adding 20 new combinations and expanding into 5 additional Davis and Weber County communities. Repair intent is the highest-urgency, highest-converting click in HVAC -- someone whose system is broken is searching right now and will call the first result they trust. Adding dedicated repair pages across every market dramatically increases emergency call volume.",
+      headline: "Deepen Salt Lake Valley Coverage and Add Repair Keywords",
+      description: "Level F deepens coverage in West Valley City (140,230), West Jordan (116,961), and Sandy (98,975) -- three of Utah's largest cities -- by adding ac repair and furnace repair to each. It also adds hvac repair (12,100/mo) and hvac service (9,900/mo) across the existing Tier 1 markets and expands into Farmington, Clinton, and West Haven. These three additions -- deeper Salt Lake Valley coverage, repair-intent keywords, and Davis County expansion -- address the three highest-value gaps in the current plan.",
       new_market: true,
       keywords: [
         { keyword: "hvac repair",          monthly_searches: 12100 },
-        { keyword: "furnace installation", monthly_searches:  6600 },
         { keyword: "hvac service",         monthly_searches:  9900 },
+        { keyword: "ac repair",            monthly_searches:  9900, note: "Added to West Valley City, West Jordan, Sandy" },
+        { keyword: "furnace repair",       monthly_searches:  9900, note: "Added to West Valley City, West Jordan, Sandy" },
+        { keyword: "Farmington, UT",       monthly_searches: null, new_market: true },
         { keyword: "Clinton, UT",          monthly_searches: null, new_market: true },
         { keyword: "West Haven, UT",       monthly_searches: null, new_market: true },
-        { keyword: "Farmington, UT",       monthly_searches: null, new_market: true },
-        { keyword: "Centerville, UT",      monthly_searches: null, new_market: true },
-        { keyword: "North Ogden, UT",      monthly_searches: null, new_market: true },
       ]
     },
     {
@@ -297,16 +303,16 @@ const STRATEGY = {
       price: 4000,
       combinations: 120,
       additional_combinations: 30,
-      headline: "Add Ductless Mini Splits and HVAC Maintenance",
-      description: "Level G adds ductless mini split installation (5,400/mo) and hvac maintenance (8,100/mo) across all markets, plus expands into the Salt Lake Valley's largest untapped markets: West Valley City (140,230), West Jordan (116,961), and Sandy (98,975). Mini splits are the fastest-growing segment in residential HVAC. Maintenance program keywords attract recurring-revenue customers -- the highest-lifetime-value segment in the industry.",
+      headline: "Add Ductless Mini Splits and HVAC Maintenance Across All Markets",
+      description: "Level G adds ductless mini split installation (5,400/mo) and hvac maintenance (8,100/mo) across all 13 existing markets, plus expands into Centerville, North Ogden, and South Ogden. Mini splits are the fastest-growing segment in residential HVAC and represent a high-ticket, high-margin purchase. Maintenance program keywords attract recurring-revenue customers -- a client on a maintenance plan is worth 3x to 5x a one-time repair customer and represents the highest lifetime value in the industry.",
       new_market: true,
       keywords: [
         { keyword: "ductless mini split installation", monthly_searches: 5400 },
         { keyword: "hvac maintenance",                 monthly_searches: 8100 },
-        { keyword: "ac maintenance",                   monthly_searches: 3600 },
-        { keyword: "West Valley City, UT",             monthly_searches: null, new_market: true },
-        { keyword: "West Jordan, UT",                  monthly_searches: null, new_market: true },
-        { keyword: "Sandy, UT",                        monthly_searches: null, new_market: true },
+        { keyword: "furnace installation",             monthly_searches: 6600 },
+        { keyword: "Centerville, UT",                  monthly_searches: null, new_market: true },
+        { keyword: "North Ogden, UT",                  monthly_searches: null, new_market: true },
+        { keyword: "South Ogden, UT",                  monthly_searches: null, new_market: true },
       ]
     }
   ]

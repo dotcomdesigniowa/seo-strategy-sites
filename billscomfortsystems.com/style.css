@@ -1228,6 +1228,7 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 16px;
   margin-bottom: 20px;
+  align-items: start;
 }
 .city-matrix-card {
   display: flex; flex-direction: column;
