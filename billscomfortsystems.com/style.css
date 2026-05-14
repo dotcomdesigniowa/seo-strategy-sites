@@ -845,6 +845,7 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
    ============================================================ */
 .mobile-market-list { display: none; }
 .mobile-matrix { display: none; }
+.mobile-only { display: none; }
 
 /* Mobile market list styles */
 .mob-mkt-header,
@@ -1074,6 +1075,7 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
 
   /* Show mobile views, hide desktop tables */
   .desktop-only { display: none; }
+  .mobile-only { display: block; }
   .mobile-market-list { display: block; margin-bottom: 24px; }
   #matrix-table-wrapper { display: none; }
   .mobile-matrix { display: block; }
