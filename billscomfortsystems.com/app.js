@@ -22,11 +22,12 @@ const STRATEGY = {
     "hvac company",
     "air conditioning company",
     "heating company",
+    "fireplace company",
     "ac repair",
     "furnace repair"
   ],
 
-  num_selected_keywords: 5,
+  num_selected_keywords: 6,
   num_target_markets: 16,
 
   keyword_table: [
@@ -87,7 +88,7 @@ const STRATEGY = {
     { keyword: "heat pump installation",     monthly_searches:  4400, tier: "Tier 1", status: "not_used",  family: "Heat Pump",         variant_type: "base" },
     { keyword: "heat pump company",          monthly_searches:  2400, tier: "Tier 1", status: "not_used",  family: "Heat Pump",         variant_type: "variant" },
     // Fireplace Company family
-    { keyword: "fireplace company",          monthly_searches:  4400, tier: "Tier 2", status: "selected",  family: "Fireplace Company", variant_type: "base" },
+    { keyword: "fireplace company",          monthly_searches:  4400, tier: "Tier 2", status: "selected",  note: "Selected for mid-tier markets with strong residential fireplace demand",  family: "Fireplace Company", variant_type: "base" },
     { keyword: "fireplace near me",          monthly_searches:  3600, tier: "Tier 2", status: "near_me",   family: "Fireplace Company", variant_type: "near_me", note: "Near me variant; excluded because base keyword is selected" },
     { keyword: "fireplace companies",        monthly_searches:  1900, tier: "Tier 2", status: "not_used",  family: "Fireplace Company", variant_type: "plural" },
     // Fireplace Installation family
@@ -204,22 +205,23 @@ const STRATEGY = {
     // Tier 1: 5-keyword coverage for the two largest population markets
     { city: "Salt Lake City",  state: "UT", tier: "Tier 1", population: 200567, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company", "ac repair", "furnace repair"] },
     { city: "Ogden",           state: "UT", tier: "Tier 1", population:  87321, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company", "ac repair", "furnace repair"] },
-    // Tier 1: 4-keyword coverage for strong mid-size markets
-    { city: "Bountiful",       state: "UT", tier: "Tier 1", population:  46134, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company", "ac repair"] },
-    { city: "Roy",             state: "UT", tier: "Tier 1", population:  40226, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company", "ac repair"] },
-    // Tier 2: 4-keyword coverage for established Davis County markets
-    { city: "Syracuse",        state: "UT", tier: "Tier 2", population:  35714, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company", "ac repair"] },
-    { city: "Kaysville",       state: "UT", tier: "Tier 2", population:  34735, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company", "ac repair"] },
-    { city: "Clearfield",      state: "UT", tier: "Tier 2", population:  32082, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company", "ac repair"] },
-    // Tier 2: 3-keyword coverage for growing mid-size markets
+    // Tier 1: 4-keyword coverage including fireplace for established residential markets
+    { city: "Bountiful",       state: "UT", tier: "Tier 1", population:  46134, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company", "fireplace company"] },
+    { city: "Roy",             state: "UT", tier: "Tier 1", population:  40226, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company", "fireplace company"] },
+    // Tier 2: 4-keyword coverage including fireplace for Davis County residential markets
+    { city: "Syracuse",        state: "UT", tier: "Tier 2", population:  35714, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company", "fireplace company"] },
+    { city: "Kaysville",       state: "UT", tier: "Tier 2", population:  34735, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company", "fireplace company"] },
+    { city: "Clearfield",      state: "UT", tier: "Tier 2", population:  32082, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company", "fireplace company"] },
+    // Tier 2: 3-keyword core coverage for growing mid-size markets
     { city: "Farmington",      state: "UT", tier: "Tier 2", population:  25891, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company"] },
     { city: "Clinton",         state: "UT", tier: "Tier 2", population:  22070, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company"] },
     { city: "West Haven",      state: "UT", tier: "Tier 2", population:  21175, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company"] },
     { city: "Centerville",     state: "UT", tier: "Tier 2", population:  17503, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company"] },
-    // Tier 3: 3-keyword coverage for specialty and client-requested markets
+    // Tier 3: 3-keyword core coverage for client-requested specialty markets
     { city: "Park City",       state: "UT", tier: "Tier 3", population:   8548, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company"] },
-    { city: "Salt Lake Valley", state: "UT", tier: "Tier 1", population:  null, is_hq: false, keywords: ["hvac company", "air conditioning company"] },
-    { city: "Plain City",      state: "UT", tier: "Tier 3", population:   7078, is_hq: false, keywords: ["hvac company", "heating company", "furnace repair"] },
+    { city: "Plain City",      state: "UT", tier: "Tier 3", population:   7078, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company"] },
+    // Regional geo-modifier: 2-keyword footprint for the broader Salt Lake Valley region
+    { city: "Salt Lake Valley", state: "UT", tier: "Tier 1", population: null, is_hq: false, keywords: ["hvac company", "air conditioning company"] },
   ],
 
   not_used_groups: [
@@ -438,10 +440,11 @@ function buildMatrix() {
       `<div class="city-kw-item"><span class="city-kw-check">&#10003;</span><span class="city-kw-name">${kw}</span></div>`
     ).join('');
     grandTotal += m.keywords.length;
+    const popDisplay = m.population ? 'Pop. ' + fmt(m.population) : 'Regional Market';
     cards += `<div class="city-matrix-card">
       <div class="city-matrix-header">
         ${hqStar}<span class="city-matrix-name">${cityLabel}</span>
-        <span class="city-matrix-meta"><span class="tier-pill ${tierCls}">${m.tier.toUpperCase()}</span> Pop. ${fmt(m.population)}</span>
+        <span class="city-matrix-meta"><span class="tier-pill ${tierCls}">${m.tier.toUpperCase()}</span> ${popDisplay}</span>
       </div>
       <div class="city-kw-list">${kwItems}</div>
       <div class="city-matrix-footer">${m.keywords.length} combination${m.keywords.length !== 1 ? 's' : ''}</div>
@@ -450,7 +453,10 @@ function buildMatrix() {
 
   el.innerHTML = cards;
   const gt = document.getElementById('matrix-grand-total');
-  if (gt) gt.textContent = 'Grand Total: ' + grandTotal + ' Combinations';
+  if (gt) {
+    gt.textContent = 'Grand Total: ' + grandTotal + ' Combinations';
+    gt.style.marginTop = '24px';
+  }
 }
 
 // ============================================================

@@ -1227,8 +1227,9 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 16px;
-  margin-bottom: 20px;
+  margin-bottom: 0;
   align-items: start;
+  align-content: start;
 }
 .city-matrix-card {
   display: flex; flex-direction: column;
@@ -1274,7 +1275,7 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
   background: #334168; color: #fff;
   font-size: 0.9rem; font-weight: 900;
   padding: 14px 20px; border-radius: 6px;
-  text-align: center; margin-top: 4px;
+  text-align: center; margin-top: 24px;
 }
 
 /* Mobile: city cards already stack perfectly, no extra rules needed */
