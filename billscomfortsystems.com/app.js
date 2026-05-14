@@ -29,84 +29,113 @@ const STRATEGY = {
   num_target_markets: 15,
 
   keyword_table: [
-    // HVAC family
-    { keyword: "hvac company",               monthly_searches: 18100, tier: "Tier 1", status: "selected",  family: "HVAC",              variant_type: "base" },
-    { keyword: "hvac near me",               monthly_searches: 14800, tier: "Tier 1", status: "near_me",   family: "HVAC",              variant_type: "near_me", note: "Near me variant of hvac company; excluded because base keyword is selected" },
-    { keyword: "hvac service",               monthly_searches:  9900, tier: "Tier 1", status: "not_used",  family: "HVAC",              variant_type: "variant" },
-    { keyword: "hvac repair",                monthly_searches: 12100, tier: "Tier 1", status: "not_used",  family: "HVAC",              variant_type: "variant" },
-    { keyword: "hvac companies",             monthly_searches:  8100, tier: "Tier 1", status: "not_used",  family: "HVAC",              variant_type: "variant" },
-    { keyword: "hvac contractor",            monthly_searches:  6600, tier: "Tier 1", status: "not_used",  family: "HVAC",              variant_type: "variant" },
-    { keyword: "hvac contractors",           monthly_searches:  5400, tier: "Tier 1", status: "not_used",  family: "HVAC",              variant_type: "variant" },
-    { keyword: "hvac installation",          monthly_searches:  6600, tier: "Tier 1", status: "not_used",  family: "HVAC",              variant_type: "variant" },
-    { keyword: "hvac services",              monthly_searches:  8100, tier: "Tier 1", status: "not_used",  family: "HVAC",              variant_type: "variant" },
-    { keyword: "local hvac company",         monthly_searches:  2400, tier: "Tier 1", status: "not_used",  family: "HVAC",              variant_type: "variant" },
-    { keyword: "hvac technician",            monthly_searches:  5400, tier: "Tier 1", status: "not_used",  family: "HVAC",              variant_type: "variant" },
-    // Air Conditioning family
-    { keyword: "air conditioning company",   monthly_searches: 12100, tier: "Tier 1", status: "selected",  family: "Air Conditioning",  variant_type: "base" },
-    { keyword: "air conditioning near me",   monthly_searches:  9900, tier: "Tier 1", status: "near_me",   family: "Air Conditioning",  variant_type: "near_me", note: "Near me variant; excluded because base keyword is selected" },
-    { keyword: "air conditioning repair",    monthly_searches:  8100, tier: "Tier 1", status: "not_used",  family: "Air Conditioning",  variant_type: "variant" },
-    { keyword: "air conditioning service",   monthly_searches:  6600, tier: "Tier 1", status: "not_used",  family: "Air Conditioning",  variant_type: "variant" },
-    { keyword: "air conditioning companies", monthly_searches:  4400, tier: "Tier 1", status: "not_used",  family: "Air Conditioning",  variant_type: "variant" },
-    { keyword: "air conditioning installation", monthly_searches: 4400, tier: "Tier 1", status: "not_used", family: "Air Conditioning", variant_type: "variant" },
-    { keyword: "air conditioning contractor",monthly_searches:  3600, tier: "Tier 1", status: "not_used",  family: "Air Conditioning",  variant_type: "variant" },
-    { keyword: "ac company",                 monthly_searches:  9900, tier: "Tier 1", status: "not_used",  family: "Air Conditioning",  variant_type: "variant" },
-    { keyword: "ac repair",                  monthly_searches:  9900, tier: "Tier 1", status: "not_used",  family: "Air Conditioning",  variant_type: "variant" },
-    { keyword: "ac installation",            monthly_searches:  3600, tier: "Tier 1", status: "not_used",  family: "Air Conditioning",  variant_type: "variant" },
-    { keyword: "central air installation",   monthly_searches:  2900, tier: "Tier 1", status: "not_used",  family: "Air Conditioning",  variant_type: "variant" },
-    // Heating family
-    { keyword: "heating company",            monthly_searches:  9900, tier: "Tier 1", status: "selected",  family: "Heating",           variant_type: "base" },
-    { keyword: "heating near me",            monthly_searches:  6600, tier: "Tier 1", status: "near_me",   family: "Heating",           variant_type: "near_me", note: "Near me variant; excluded because base keyword is selected" },
-    { keyword: "heating repair",             monthly_searches:  5400, tier: "Tier 1", status: "not_used",  family: "Heating",           variant_type: "variant" },
-    { keyword: "heating service",            monthly_searches:  4400, tier: "Tier 1", status: "not_used",  family: "Heating",           variant_type: "variant" },
-    { keyword: "heating companies",          monthly_searches:  3600, tier: "Tier 1", status: "not_used",  family: "Heating",           variant_type: "variant" },
-    { keyword: "heating contractor",         monthly_searches:  2900, tier: "Tier 1", status: "not_used",  family: "Heating",           variant_type: "variant" },
-    { keyword: "furnace company",            monthly_searches:  8100, tier: "Tier 1", status: "not_used",  family: "Heating",           variant_type: "variant" },
-    { keyword: "furnace repair",             monthly_searches:  9900, tier: "Tier 1", status: "not_used",  family: "Heating",           variant_type: "variant" },
-    { keyword: "furnace installation",       monthly_searches:  6600, tier: "Tier 1", status: "not_used",  family: "Heating",           variant_type: "variant" },
-    { keyword: "furnace replacement",        monthly_searches:  5400, tier: "Tier 1", status: "not_used",  family: "Heating",           variant_type: "variant" },
-    { keyword: "furnace service",            monthly_searches:  4400, tier: "Tier 1", status: "not_used",  family: "Heating",           variant_type: "variant" },
-    { keyword: "furnace companies",          monthly_searches:  3600, tier: "Tier 1", status: "not_used",  family: "Heating",           variant_type: "variant" },
-    { keyword: "heat pump installation",     monthly_searches:  4400, tier: "Tier 1", status: "not_used",  family: "Heating",           variant_type: "variant" },
-    { keyword: "heat pump company",          monthly_searches:  2400, tier: "Tier 1", status: "not_used",  family: "Heating",           variant_type: "variant" },
-    // Fireplace family
-    { keyword: "fireplace company",          monthly_searches:  4400, tier: "Tier 2", status: "selected",  family: "Fireplace",         variant_type: "base" },
-    { keyword: "fireplace near me",          monthly_searches:  3600, tier: "Tier 2", status: "near_me",   family: "Fireplace",         variant_type: "near_me", note: "Near me variant; excluded because base keyword is selected" },
-    { keyword: "fireplace installation",     monthly_searches:  3600, tier: "Tier 2", status: "not_used",  family: "Fireplace",         variant_type: "variant" },
-    { keyword: "gas fireplace installation", monthly_searches:  3600, tier: "Tier 2", status: "not_used",  family: "Fireplace",         variant_type: "variant" },
-    { keyword: "outdoor fireplace installation", monthly_searches: 2900, tier: "Tier 2", status: "not_used", family: "Fireplace",      variant_type: "variant" },
-    { keyword: "fireplace repair",           monthly_searches:  2900, tier: "Tier 2", status: "not_used",  family: "Fireplace",         variant_type: "variant" },
-    { keyword: "fireplace service",          monthly_searches:  2400, tier: "Tier 2", status: "not_used",  family: "Fireplace",         variant_type: "variant" },
-    { keyword: "fireplace companies",        monthly_searches:  1900, tier: "Tier 2", status: "not_used",  family: "Fireplace",         variant_type: "variant" },
-    { keyword: "fireplace contractor",       monthly_searches:  1600, tier: "Tier 2", status: "not_used",  family: "Fireplace",         variant_type: "variant" },
-    { keyword: "outdoor fireplace company",  monthly_searches:  1600, tier: "Tier 2", status: "not_used",  family: "Fireplace",         variant_type: "variant" },
-    { keyword: "gas fireplace company",      monthly_searches:  1300, tier: "Tier 2", status: "not_used",  family: "Fireplace",         variant_type: "variant" },
-    { keyword: "gas fireplace repair",       monthly_searches:  2400, tier: "Tier 2", status: "not_used",  family: "Fireplace",         variant_type: "variant" },
-    { keyword: "indoor fireplace installation", monthly_searches: 1300, tier: "Tier 2", status: "not_used", family: "Fireplace",       variant_type: "variant" },
-    // Ductless Mini Split family
-    { keyword: "ductless mini split installation", monthly_searches: 5400, tier: "Tier 2", status: "not_used", family: "Ductless Mini Split", variant_type: "base" },
-    { keyword: "ductless mini split near me",      monthly_searches: 3600, tier: "Tier 2", status: "near_me",  family: "Ductless Mini Split", variant_type: "near_me", note: "Near me variant; reserved for Level F expansion" },
-    { keyword: "mini split installation",          monthly_searches: 4400, tier: "Tier 2", status: "not_used", family: "Ductless Mini Split", variant_type: "variant" },
-    { keyword: "ductless mini split company",      monthly_searches: 1900, tier: "Tier 2", status: "not_used", family: "Ductless Mini Split", variant_type: "variant" },
-    { keyword: "ductless mini split contractor",   monthly_searches: 1600, tier: "Tier 2", status: "not_used", family: "Ductless Mini Split", variant_type: "variant" },
-    { keyword: "mini split company",               monthly_searches: 1900, tier: "Tier 2", status: "not_used", family: "Ductless Mini Split", variant_type: "variant" },
-    { keyword: "ductless ac installation",         monthly_searches: 2400, tier: "Tier 2", status: "not_used", family: "Ductless Mini Split", variant_type: "variant" },
+    // HVAC Company family
+    { keyword: "hvac company",               monthly_searches: 18100, tier: "Tier 1", status: "selected",  family: "HVAC Company",      variant_type: "base" },
+    { keyword: "hvac near me",               monthly_searches: 14800, tier: "Tier 1", status: "near_me",   family: "HVAC Company",      variant_type: "near_me", note: "Near me variant of hvac company; excluded because base keyword is selected" },
+    { keyword: "hvac companies",             monthly_searches:  8100, tier: "Tier 1", status: "not_used",  family: "HVAC Company",      variant_type: "plural" },
+    { keyword: "local hvac company",         monthly_searches:  2400, tier: "Tier 1", status: "not_used",  family: "HVAC Company",      variant_type: "variant" },
+    // HVAC Contractor family
+    { keyword: "hvac contractor",            monthly_searches:  6600, tier: "Tier 1", status: "not_used",  family: "HVAC Contractor",   variant_type: "base" },
+    { keyword: "hvac contractors",           monthly_searches:  5400, tier: "Tier 1", status: "not_used",  family: "HVAC Contractor",   variant_type: "plural" },
+    // HVAC Repair family
+    { keyword: "hvac repair",                monthly_searches: 12100, tier: "Tier 1", status: "not_used",  family: "HVAC Repair",       variant_type: "base" },
+    // HVAC Service family
+    { keyword: "hvac service",               monthly_searches:  9900, tier: "Tier 1", status: "not_used",  family: "HVAC Service",      variant_type: "base" },
+    { keyword: "hvac services",              monthly_searches:  8100, tier: "Tier 1", status: "not_used",  family: "HVAC Service",      variant_type: "plural" },
+    // HVAC Installation family
+    { keyword: "hvac installation",          monthly_searches:  6600, tier: "Tier 1", status: "not_used",  family: "HVAC Installation", variant_type: "base" },
+    // HVAC Technician family
+    { keyword: "hvac technician",            monthly_searches:  5400, tier: "Tier 1", status: "not_used",  family: "HVAC Technician",   variant_type: "base" },
+    // AC Company family
+    { keyword: "air conditioning company",   monthly_searches: 12100, tier: "Tier 1", status: "selected",  family: "AC Company",        variant_type: "base" },
+    { keyword: "air conditioning near me",   monthly_searches:  9900, tier: "Tier 1", status: "near_me",   family: "AC Company",        variant_type: "near_me", note: "Near me variant; excluded because base keyword is selected" },
+    { keyword: "air conditioning companies", monthly_searches:  4400, tier: "Tier 1", status: "not_used",  family: "AC Company",        variant_type: "plural" },
+    { keyword: "ac company",                 monthly_searches:  9900, tier: "Tier 1", status: "not_used",  family: "AC Company",        variant_type: "short_form" },
+    // AC Repair family
+    { keyword: "ac repair",                  monthly_searches:  9900, tier: "Tier 1", status: "not_used",  family: "AC Repair",         variant_type: "base" },
+    { keyword: "air conditioning repair",    monthly_searches:  8100, tier: "Tier 1", status: "not_used",  family: "AC Repair",         variant_type: "variant" },
+    // AC Service family
+    { keyword: "air conditioning service",   monthly_searches:  6600, tier: "Tier 1", status: "not_used",  family: "AC Service",        variant_type: "base" },
+    // AC Installation family
+    { keyword: "air conditioning installation", monthly_searches: 4400, tier: "Tier 1", status: "not_used", family: "AC Installation",  variant_type: "base" },
+    { keyword: "ac installation",            monthly_searches:  3600, tier: "Tier 1", status: "not_used",  family: "AC Installation",   variant_type: "short_form" },
+    { keyword: "central air installation",   monthly_searches:  2900, tier: "Tier 1", status: "not_used",  family: "AC Installation",   variant_type: "variant" },
+    // AC Contractor family
+    { keyword: "air conditioning contractor",monthly_searches:  3600, tier: "Tier 1", status: "not_used",  family: "AC Contractor",     variant_type: "base" },
+    // Heating Company family
+    { keyword: "heating company",            monthly_searches:  9900, tier: "Tier 1", status: "selected",  family: "Heating Company",   variant_type: "base" },
+    { keyword: "heating near me",            monthly_searches:  6600, tier: "Tier 1", status: "near_me",   family: "Heating Company",   variant_type: "near_me", note: "Near me variant; excluded because base keyword is selected" },
+    { keyword: "heating companies",          monthly_searches:  3600, tier: "Tier 1", status: "not_used",  family: "Heating Company",   variant_type: "plural" },
+    // Heating Repair family
+    { keyword: "heating repair",             monthly_searches:  5400, tier: "Tier 1", status: "not_used",  family: "Heating Repair",    variant_type: "base" },
+    // Heating Service family
+    { keyword: "heating service",            monthly_searches:  4400, tier: "Tier 1", status: "not_used",  family: "Heating Service",   variant_type: "base" },
+    // Heating Contractor family
+    { keyword: "heating contractor",         monthly_searches:  2900, tier: "Tier 1", status: "not_used",  family: "Heating Contractor",variant_type: "base" },
+    // Furnace Company family
+    { keyword: "furnace company",            monthly_searches:  8100, tier: "Tier 1", status: "not_used",  family: "Furnace Company",   variant_type: "base" },
+    { keyword: "furnace companies",          monthly_searches:  3600, tier: "Tier 1", status: "not_used",  family: "Furnace Company",   variant_type: "plural" },
+    // Furnace Repair family
+    { keyword: "furnace repair",             monthly_searches:  9900, tier: "Tier 1", status: "not_used",  family: "Furnace Repair",    variant_type: "base" },
+    // Furnace Installation family
+    { keyword: "furnace installation",       monthly_searches:  6600, tier: "Tier 1", status: "not_used",  family: "Furnace Installation", variant_type: "base" },
+    { keyword: "furnace replacement",        monthly_searches:  5400, tier: "Tier 1", status: "not_used",  family: "Furnace Installation", variant_type: "variant" },
+    // Furnace Service family
+    { keyword: "furnace service",            monthly_searches:  4400, tier: "Tier 1", status: "not_used",  family: "Furnace Service",   variant_type: "base" },
+    // Heat Pump family
+    { keyword: "heat pump installation",     monthly_searches:  4400, tier: "Tier 1", status: "not_used",  family: "Heat Pump",         variant_type: "base" },
+    { keyword: "heat pump company",          monthly_searches:  2400, tier: "Tier 1", status: "not_used",  family: "Heat Pump",         variant_type: "variant" },
+    // Fireplace Company family
+    { keyword: "fireplace company",          monthly_searches:  4400, tier: "Tier 2", status: "selected",  family: "Fireplace Company", variant_type: "base" },
+    { keyword: "fireplace near me",          monthly_searches:  3600, tier: "Tier 2", status: "near_me",   family: "Fireplace Company", variant_type: "near_me", note: "Near me variant; excluded because base keyword is selected" },
+    { keyword: "fireplace companies",        monthly_searches:  1900, tier: "Tier 2", status: "not_used",  family: "Fireplace Company", variant_type: "plural" },
+    // Fireplace Installation family
+    { keyword: "fireplace installation",     monthly_searches:  3600, tier: "Tier 2", status: "not_used",  family: "Fireplace Installation", variant_type: "base" },
+    { keyword: "gas fireplace installation", monthly_searches:  3600, tier: "Tier 2", status: "not_used",  family: "Fireplace Installation", variant_type: "variant" },
+    { keyword: "outdoor fireplace installation", monthly_searches: 2900, tier: "Tier 2", status: "not_used", family: "Fireplace Installation", variant_type: "variant" },
+    { keyword: "indoor fireplace installation", monthly_searches: 1300, tier: "Tier 2", status: "not_used", family: "Fireplace Installation", variant_type: "variant" },
+    // Fireplace Repair family
+    { keyword: "fireplace repair",           monthly_searches:  2900, tier: "Tier 2", status: "not_used",  family: "Fireplace Repair",  variant_type: "base" },
+    { keyword: "gas fireplace repair",       monthly_searches:  2400, tier: "Tier 2", status: "not_used",  family: "Fireplace Repair",  variant_type: "variant" },
+    // Fireplace Service family
+    { keyword: "fireplace service",          monthly_searches:  2400, tier: "Tier 2", status: "not_used",  family: "Fireplace Service", variant_type: "base" },
+    // Fireplace Contractor family
+    { keyword: "fireplace contractor",       monthly_searches:  1600, tier: "Tier 2", status: "not_used",  family: "Fireplace Contractor", variant_type: "base" },
+    // Specialty Fireplace Companies
+    { keyword: "outdoor fireplace company",  monthly_searches:  1600, tier: "Tier 2", status: "not_used",  family: "Specialty Fireplace", variant_type: "base" },
+    { keyword: "gas fireplace company",      monthly_searches:  1300, tier: "Tier 2", status: "not_used",  family: "Specialty Fireplace", variant_type: "variant" },
+    // Ductless Mini Split Installation family
+    { keyword: "ductless mini split installation", monthly_searches: 5400, tier: "Tier 2", status: "not_used", family: "Ductless Mini Split Installation", variant_type: "base" },
+    { keyword: "mini split installation",          monthly_searches: 4400, tier: "Tier 2", status: "not_used", family: "Ductless Mini Split Installation", variant_type: "short_form" },
+    { keyword: "ductless ac installation",         monthly_searches: 2400, tier: "Tier 2", status: "not_used", family: "Ductless Mini Split Installation", variant_type: "variant" },
+    // Ductless Mini Split Company family
+    { keyword: "ductless mini split company",      monthly_searches: 1900, tier: "Tier 2", status: "not_used", family: "Ductless Mini Split Company", variant_type: "base" },
+    { keyword: "ductless mini split near me",      monthly_searches: 3600, tier: "Tier 2", status: "near_me",  family: "Ductless Mini Split Company", variant_type: "near_me", note: "Near me variant; reserved for Level F expansion" },
+    { keyword: "mini split company",               monthly_searches: 1900, tier: "Tier 2", status: "not_used", family: "Ductless Mini Split Company", variant_type: "short_form" },
+    // Ductless Mini Split Contractor family
+    { keyword: "ductless mini split contractor",   monthly_searches: 1600, tier: "Tier 2", status: "not_used", family: "Ductless Mini Split Contractor", variant_type: "base" },
     // HVAC Maintenance family
     { keyword: "hvac maintenance",                 monthly_searches: 8100, tier: "Tier 2", status: "not_used", family: "HVAC Maintenance", variant_type: "base" },
     { keyword: "hvac maintenance company",         monthly_searches: 2400, tier: "Tier 2", status: "not_used", family: "HVAC Maintenance", variant_type: "variant" },
     { keyword: "hvac maintenance plan",            monthly_searches: 1600, tier: "Tier 2", status: "not_used", family: "HVAC Maintenance", variant_type: "variant" },
-    { keyword: "hvac tune up",                     monthly_searches: 2900, tier: "Tier 2", status: "not_used", family: "HVAC Maintenance", variant_type: "variant" },
-    { keyword: "commercial hvac company",          monthly_searches: 3600, tier: "Tier 2", status: "not_used", family: "HVAC Maintenance", variant_type: "variant" },
-    { keyword: "commercial hvac contractor",       monthly_searches: 2900, tier: "Tier 2", status: "not_used", family: "HVAC Maintenance", variant_type: "variant" },
     { keyword: "commercial hvac maintenance",      monthly_searches: 1900, tier: "Tier 2", status: "not_used", family: "HVAC Maintenance", variant_type: "variant" },
     { keyword: "residential hvac maintenance",     monthly_searches: 1300, tier: "Tier 2", status: "not_used", family: "HVAC Maintenance", variant_type: "variant" },
-    { keyword: "industrial hvac company",          monthly_searches: 1300, tier: "Tier 2", status: "not_used", family: "HVAC Maintenance", variant_type: "variant" },
-    { keyword: "furnace maintenance",              monthly_searches: 3600, tier: "Tier 2", status: "not_used", family: "HVAC Maintenance", variant_type: "variant" },
-    { keyword: "furnace tune up",                  monthly_searches: 2400, tier: "Tier 2", status: "not_used", family: "HVAC Maintenance", variant_type: "variant" },
-    { keyword: "ac maintenance",                   monthly_searches: 3600, tier: "Tier 2", status: "not_used", family: "HVAC Maintenance", variant_type: "variant" },
+    // Tune Up family
+    { keyword: "hvac tune up",                     monthly_searches: 2900, tier: "Tier 2", status: "not_used", family: "Tune Up",           variant_type: "base" },
+    { keyword: "furnace tune up",                  monthly_searches: 2400, tier: "Tier 2", status: "not_used", family: "Tune Up",           variant_type: "variant" },
+    // Commercial HVAC Company family
+    { keyword: "commercial hvac company",          monthly_searches: 3600, tier: "Tier 2", status: "not_used", family: "Commercial HVAC Company", variant_type: "base" },
+    { keyword: "industrial hvac company",          monthly_searches: 1300, tier: "Tier 2", status: "not_used", family: "Commercial HVAC Company", variant_type: "variant" },
+    // Commercial HVAC Contractor family
+    { keyword: "commercial hvac contractor",       monthly_searches: 2900, tier: "Tier 2", status: "not_used", family: "Commercial HVAC Contractor", variant_type: "base" },
+    // Furnace Maintenance family
+    { keyword: "furnace maintenance",              monthly_searches: 3600, tier: "Tier 2", status: "not_used", family: "Furnace Maintenance", variant_type: "base" },
+    // AC Maintenance family
+    { keyword: "ac maintenance",                   monthly_searches: 3600, tier: "Tier 2", status: "not_used", family: "AC Maintenance",    variant_type: "base" },
     // New Construction family
-    { keyword: "new construction hvac",            monthly_searches: 2900, tier: "Tier 3", status: "not_used", family: "New Construction", variant_type: "base" },
-    { keyword: "new construction hvac installation", monthly_searches: 1600, tier: "Tier 3", status: "not_used", family: "New Construction", variant_type: "variant" },
-    { keyword: "new home hvac installation",       monthly_searches: 1300, tier: "Tier 3", status: "not_used", family: "New Construction", variant_type: "variant" },
+    { keyword: "new construction hvac",            monthly_searches: 2900, tier: "Tier 3", status: "not_used", family: "New Construction",  variant_type: "base" },
+    { keyword: "new construction hvac installation", monthly_searches: 1600, tier: "Tier 3", status: "not_used", family: "New Construction",  variant_type: "variant" },
+    { keyword: "new home hvac installation",       monthly_searches: 1300, tier: "Tier 3", status: "not_used", family: "New Construction",  variant_type: "variant" },
   ],
 
   keyword_tiers: [
