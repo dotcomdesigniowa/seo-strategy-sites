@@ -10,37 +10,41 @@ document.addEventListener('DOMContentLoaded', function () {
   const dotDark  = '#334168';
   const dotRed   = '#EB0052';
   const dotGreen = '#2ECC71';
+  const dotGray  = '#9BA3AF';
 
   // ---- CHART: Market Population Bar Chart ----
   const marketCtx = document.getElementById('marketChart');
   if (marketCtx) {
-    marketCtx.style.height = '380px';
+    marketCtx.style.height = '400px';
 
     new Chart(marketCtx, {
       type: 'bar',
       data: {
         labels: [
-          'Salt Lake City', 'West Valley City', 'West Jordan', 'Sandy',
-          'Ogden', 'Layton', 'Murray', 'Bountiful',
-          'Roy', 'Syracuse', 'Kaysville', 'Clearfield', 'Plain City'
+          'Salt Lake City', 'Ogden', 'Layton (HQ)', 'Murray (HQ)', 'Bountiful',
+          'Roy', 'Syracuse', 'Kaysville', 'Clearfield',
+          'Farmington', 'Clinton', 'West Haven', 'Centerville',
+          'Park City', 'Plain City'
         ],
         datasets: [{
           label: 'Population',
-          data: [200567, 140230, 116961, 98975, 87321, 84312, 50637, 46134, 40226, 35714, 34735, 32082, 7078],
+          data: [200567, 87321, 84312, 50637, 46134, 40226, 35714, 34735, 32082, 25891, 22070, 21175, 17503, 8548, 7078],
           backgroundColor: [
-            dotBlue,   // Salt Lake City - Tier 1 selected (6 kw)
-            dotGreen,  // West Valley City - Tier 1 selected (3 kw footprint)
-            dotGreen,  // West Jordan - Tier 1 selected (3 kw footprint)
-            dotGreen,  // Sandy - Tier 1 selected (3 kw footprint)
-            dotBlue,   // Ogden - Tier 1 selected (6 kw)
-            dotRed,    // Layton - HQ selected (6 kw)
-            dotRed,    // Murray - HQ selected (6 kw)
-            dotBlue,   // Bountiful - Tier 1 selected (6 kw)
-            dotBlue,   // Roy - Tier 1 selected (6 kw)
-            dotDark,   // Syracuse - Tier 2 selected (4 kw)
-            dotDark,   // Kaysville - Tier 2 selected (4 kw)
-            dotDark,   // Clearfield - Tier 2 selected (4 kw)
-            dotDark,   // Plain City - Tier 2 selected (3 kw)
+            dotBlue,   // Salt Lake City — Tier 1, 5 kw
+            dotBlue,   // Ogden — Tier 1, 5 kw
+            dotRed,    // Layton HQ — Tier 1, 5 kw
+            dotRed,    // Murray HQ — Tier 1, 5 kw
+            dotBlue,   // Bountiful — Tier 1, 4 kw
+            dotBlue,   // Roy — Tier 1, 4 kw
+            dotDark,   // Syracuse — Tier 2, 4 kw
+            dotDark,   // Kaysville — Tier 2, 4 kw
+            dotDark,   // Clearfield — Tier 2, 4 kw
+            dotDark,   // Farmington — Tier 2, 3 kw
+            dotDark,   // Clinton — Tier 2, 3 kw
+            dotDark,   // West Haven — Tier 2, 3 kw
+            dotDark,   // Centerville — Tier 2, 3 kw
+            dotGreen,  // Park City — Tier 3, 3 kw
+            dotGray,   // Plain City — Tier 3, 3 kw
           ],
           borderRadius: 6,
           borderSkipped: false,
@@ -56,19 +60,21 @@ document.addEventListener('DOMContentLoaded', function () {
               title: ctx => ctx[0].label,
               label: ctx => {
                 const statuses = [
-                  'Selected (Tier 1) — 6 keywords',
-                  'Selected (Tier 1) — 3-keyword footprint',
-                  'Selected (Tier 1) — 3-keyword footprint',
-                  'Selected (Tier 1) — 3-keyword footprint',
-                  'Selected (Tier 1) — 6 keywords',
-                  'HQ — Selected (Tier 1) — 6 keywords',
-                  'HQ — Selected (Tier 1) — 6 keywords',
-                  'Selected (Tier 1) — 6 keywords',
-                  'Selected (Tier 1) — 6 keywords',
+                  'Selected (Tier 1) — 5 keywords',
+                  'Selected (Tier 1) — 5 keywords',
+                  'HQ — Selected (Tier 1) — 5 keywords',
+                  'HQ — Selected (Tier 1) — 5 keywords',
+                  'Selected (Tier 1) — 4 keywords',
+                  'Selected (Tier 1) — 4 keywords',
                   'Selected (Tier 2) — 4 keywords',
                   'Selected (Tier 2) — 4 keywords',
                   'Selected (Tier 2) — 4 keywords',
-                  'Selected (Tier 2) — 3 keywords (client request)',
+                  'Selected (Tier 2) — 3 keywords',
+                  'Selected (Tier 2) — 3 keywords',
+                  'Selected (Tier 2) — 3 keywords',
+                  'Selected (Tier 2) — 3 keywords',
+                  'Selected (Tier 3) — 3 keywords (client request)',
+                  'Selected (Tier 3) — 3 keywords (client request)',
                 ];
                 return [
                   ' Population: ' + ctx.raw.toLocaleString(),
@@ -91,8 +97,8 @@ document.addEventListener('DOMContentLoaded', function () {
             grid: { display: false },
             ticks: {
               font: { family: 'Montserrat', size: 11 },
-              maxRotation: 30,
-              minRotation: 0,
+              maxRotation: 35,
+              minRotation: 15,
               display: function() { return window.innerWidth >= 600; }
             }
           }

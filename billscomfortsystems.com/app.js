@@ -23,12 +23,11 @@ const STRATEGY = {
     "air conditioning company",
     "heating company",
     "ac repair",
-    "furnace repair",
-    "fireplace company"
+    "furnace repair"
   ],
 
-  num_selected_keywords: 6,
-  num_target_markets: 13,
+  num_selected_keywords: 5,
+  num_target_markets: 16,
 
   keyword_table: [
     // HVAC Company family
@@ -199,23 +198,28 @@ const STRATEGY = {
   ],
 
   matrix: [
-    // Tier 1: Full 6-keyword coverage for highest-population and HQ markets
-    { city: "Salt Lake City",  state: "UT", tier: "Tier 1", population: 200567, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company", "ac repair", "furnace repair", "fireplace company"] },
-    { city: "Ogden",           state: "UT", tier: "Tier 1", population:  87321, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company", "ac repair", "furnace repair", "fireplace company"] },
-    { city: "Layton",          state: "UT", tier: "Tier 1", population:  84312, is_hq: true,  keywords: ["hvac company", "air conditioning company", "heating company", "ac repair", "furnace repair", "fireplace company"] },
-    { city: "Murray",          state: "UT", tier: "Tier 1", population:  50637, is_hq: true,  keywords: ["hvac company", "air conditioning company", "heating company", "ac repair", "furnace repair", "fireplace company"] },
-    { city: "Bountiful",       state: "UT", tier: "Tier 1", population:  46134, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company", "ac repair", "furnace repair", "fireplace company"] },
-    { city: "Roy",             state: "UT", tier: "Tier 1", population:  40226, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company", "ac repair", "furnace repair", "fireplace company"] },
-    // Tier 2: 4-keyword coverage for established mid-size Davis County markets
+    // Tier 1 HQ: 5-keyword deep coverage for both headquarters markets
+    { city: "Layton",          state: "UT", tier: "Tier 1", population:  84312, is_hq: true,  keywords: ["hvac company", "air conditioning company", "heating company", "ac repair", "furnace repair"] },
+    { city: "Murray",          state: "UT", tier: "Tier 1", population:  50637, is_hq: true,  keywords: ["hvac company", "air conditioning company", "heating company", "ac repair", "furnace repair"] },
+    // Tier 1: 5-keyword coverage for the two largest population markets
+    { city: "Salt Lake City",  state: "UT", tier: "Tier 1", population: 200567, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company", "ac repair", "furnace repair"] },
+    { city: "Ogden",           state: "UT", tier: "Tier 1", population:  87321, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company", "ac repair", "furnace repair"] },
+    // Tier 1: 4-keyword coverage for strong mid-size markets
+    { city: "Bountiful",       state: "UT", tier: "Tier 1", population:  46134, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company", "ac repair"] },
+    { city: "Roy",             state: "UT", tier: "Tier 1", population:  40226, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company", "ac repair"] },
+    // Tier 2: 4-keyword coverage for established Davis County markets
     { city: "Syracuse",        state: "UT", tier: "Tier 2", population:  35714, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company", "ac repair"] },
     { city: "Kaysville",       state: "UT", tier: "Tier 2", population:  34735, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company", "ac repair"] },
     { city: "Clearfield",      state: "UT", tier: "Tier 2", population:  32082, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company", "ac repair"] },
-    // Salt Lake Valley: 3-keyword footprint in Utah's 3 largest untapped markets
-    { city: "West Valley City", state: "UT", tier: "Tier 1", population: 140230, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company"] },
-    { city: "West Jordan",      state: "UT", tier: "Tier 1", population: 116961, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company"] },
-    { city: "Sandy",            state: "UT", tier: "Tier 1", population:  98975, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company"] },
-    // Client request: Plain City, Weber County
-    { city: "Plain City",       state: "UT", tier: "Tier 2", population:   7078, is_hq: false, keywords: ["hvac company", "heating company", "furnace repair"] },
+    // Tier 2: 3-keyword coverage for growing mid-size markets
+    { city: "Farmington",      state: "UT", tier: "Tier 2", population:  25891, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company"] },
+    { city: "Clinton",         state: "UT", tier: "Tier 2", population:  22070, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company"] },
+    { city: "West Haven",      state: "UT", tier: "Tier 2", population:  21175, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company"] },
+    { city: "Centerville",     state: "UT", tier: "Tier 2", population:  17503, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company"] },
+    // Tier 3: 3-keyword coverage for specialty and client-requested markets
+    { city: "Park City",       state: "UT", tier: "Tier 3", population:   8548, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company"] },
+    { city: "Salt Lake Valley", state: "UT", tier: "Tier 1", population:  null, is_hq: false, keywords: ["hvac company", "air conditioning company"] },
+    { city: "Plain City",      state: "UT", tier: "Tier 3", population:   7078, is_hq: false, keywords: ["hvac company", "heating company", "furnace repair"] },
   ],
 
   not_used_groups: [
@@ -285,17 +289,15 @@ const STRATEGY = {
       price: 3000,
       combinations: 90,
       additional_combinations: 30,
-      headline: "Deepen Salt Lake Valley Coverage and Add Repair Keywords",
-      description: "Level F deepens coverage in West Valley City (140,230), West Jordan (116,961), and Sandy (98,975) -- three of Utah's largest cities -- by adding ac repair and furnace repair to each. It also adds hvac repair (12,100/mo) and hvac service (9,900/mo) across the existing Tier 1 markets and expands into Farmington, Clinton, and West Haven. These three additions -- deeper Salt Lake Valley coverage, repair-intent keywords, and Davis County expansion -- address the three highest-value gaps in the current plan.",
-      new_market: true,
+      headline: "Add Repair-Intent Keywords Across All 16 Markets",
+      description: "Level F adds hvac repair (12,100/mo) and hvac service (9,900/mo) across the existing 16 markets, plus deepens coverage in Farmington, Clinton, West Haven, and Centerville with ac repair and furnace repair. These repair-intent keywords capture the highest-urgency buyers in HVAC -- someone whose equipment is broken right now is the most valuable click in the industry. Adding repair keywords across the existing market footprint is the highest-ROI upgrade available at this plan level.",
+      new_market: false,
       keywords: [
         { keyword: "hvac repair",          monthly_searches: 12100 },
         { keyword: "hvac service",         monthly_searches:  9900 },
-        { keyword: "ac repair",            monthly_searches:  9900, note: "Added to West Valley City, West Jordan, Sandy" },
-        { keyword: "furnace repair",       monthly_searches:  9900, note: "Added to West Valley City, West Jordan, Sandy" },
-        { keyword: "Farmington, UT",       monthly_searches: null, new_market: true },
-        { keyword: "Clinton, UT",          monthly_searches: null, new_market: true },
-        { keyword: "West Haven, UT",       monthly_searches: null, new_market: true },
+        { keyword: "ac repair",            monthly_searches:  9900, note: "Added to Farmington, Clinton, West Haven, Centerville" },
+        { keyword: "furnace repair",       monthly_searches:  9900, note: "Added to Farmington, Clinton, West Haven, Centerville" },
+        { keyword: "fireplace company",    monthly_searches:  4400, note: "Added to Park City and Salt Lake City" },
       ]
     },
     {
@@ -303,16 +305,16 @@ const STRATEGY = {
       price: 4000,
       combinations: 120,
       additional_combinations: 30,
-      headline: "Add Ductless Mini Splits and HVAC Maintenance Across All Markets",
-      description: "Level G adds ductless mini split installation (5,400/mo) and hvac maintenance (8,100/mo) across all 13 existing markets, plus expands into Centerville, North Ogden, and South Ogden. Mini splits are the fastest-growing segment in residential HVAC and represent a high-ticket, high-margin purchase. Maintenance program keywords attract recurring-revenue customers -- a client on a maintenance plan is worth 3x to 5x a one-time repair customer and represents the highest lifetime value in the industry.",
+      headline: "Add Ductless Mini Splits, HVAC Maintenance, and West Valley City",
+      description: "Level G adds ductless mini split installation (5,400/mo) and hvac maintenance (8,100/mo) across all 16 existing markets, plus expands into West Valley City (140,230), West Jordan (116,961), and Sandy (98,975) -- three of Utah's five largest cities. Mini splits are the fastest-growing segment in residential HVAC. Maintenance program keywords attract recurring-revenue customers worth 3x to 5x a one-time repair customer. The West Valley City, West Jordan, and Sandy expansion also positions Bill's Comfort Systems as the dominant HVAC brand across the entire Wasatch Front.",
       new_market: true,
       keywords: [
         { keyword: "ductless mini split installation", monthly_searches: 5400 },
         { keyword: "hvac maintenance",                 monthly_searches: 8100 },
         { keyword: "furnace installation",             monthly_searches: 6600 },
-        { keyword: "Centerville, UT",                  monthly_searches: null, new_market: true },
-        { keyword: "North Ogden, UT",                  monthly_searches: null, new_market: true },
-        { keyword: "South Ogden, UT",                  monthly_searches: null, new_market: true },
+        { keyword: "West Valley City, UT",             monthly_searches: null, new_market: true },
+        { keyword: "West Jordan, UT",                  monthly_searches: null, new_market: true },
+        { keyword: "Sandy, UT",                        monthly_searches: null, new_market: true },
       ]
     }
   ]
@@ -525,18 +527,18 @@ const MARKET_DATA = [
   { rank: 7,  city: 'Syracuse',         pop:  35714, tier: 'Tier 2', selected: true,  hq: false },
   { rank: 8,  city: 'Kaysville',        pop:  34735, tier: 'Tier 2', selected: true,  hq: false },
   { rank: 9,  city: 'Clearfield',       pop:  32082, tier: 'Tier 2', selected: true,  hq: false },
-  { rank: 10, city: 'West Valley City', pop: 140230, tier: 'Tier 1', selected: true,  hq: false },
-  { rank: 11, city: 'West Jordan',      pop: 116961, tier: 'Tier 1', selected: true,  hq: false },
-  { rank: 12, city: 'Sandy',            pop:  98975, tier: 'Tier 1', selected: true,  hq: false },
-  { rank: 13, city: 'Plain City',       pop:   7078, tier: 'Tier 2', selected: true,  hq: false },
-  { rank: 14, city: 'Farmington',       pop:  25891, tier: 'Tier 2', selected: false, hq: false },
-  { rank: 15, city: 'Clinton',          pop:  22070, tier: 'Tier 2', selected: false, hq: false },
-  { rank: 16, city: 'West Haven',       pop:  21175, tier: 'Tier 2', selected: false, hq: false },
-  { rank: 17, city: 'Centerville',      pop:  17503, tier: 'Tier 2', selected: false, hq: false },
-  { rank: 18, city: 'North Ogden',      pop:  20801, tier: 'Tier 2', selected: false, hq: false },
-  { rank: 19, city: 'South Ogden',      pop:  17176, tier: 'Tier 2', selected: false, hq: false },
-  { rank: 20, city: 'Park City',        pop:   8548, tier: 'Tier 3', selected: false, hq: false },
-  { rank: '21+', city: 'Pleasant View, Riverdale, Harrisville, Sunset, Hooper + more', pop: null, tier: 'Tier 3', selected: false, hq: false },
+  { rank: 10, city: 'Farmington',       pop:  25891, tier: 'Tier 2', selected: true,  hq: false },
+  { rank: 11, city: 'Clinton',          pop:  22070, tier: 'Tier 2', selected: true,  hq: false },
+  { rank: 12, city: 'West Haven',       pop:  21175, tier: 'Tier 2', selected: true,  hq: false },
+  { rank: 13, city: 'Centerville',      pop:  17503, tier: 'Tier 2', selected: true,  hq: false },
+  { rank: 14, city: 'Park City',        pop:   8548, tier: 'Tier 3', selected: true,  hq: false },
+  { rank: 15, city: 'Plain City',       pop:   7078, tier: 'Tier 3', selected: true,  hq: false },
+  { rank: 16, city: 'Salt Lake Valley', pop:   null, tier: 'Tier 1', selected: true,  hq: false },
+  { rank: 17, city: 'West Valley City', pop: 140230, tier: 'Tier 1', selected: false, hq: false },
+  { rank: 18, city: 'West Jordan',      pop: 116961, tier: 'Tier 1', selected: false, hq: false },
+  { rank: 19, city: 'Sandy',            pop:  98975, tier: 'Tier 1', selected: false, hq: false },
+  { rank: 20, city: 'North Ogden',      pop:  20801, tier: 'Tier 2', selected: false, hq: false },
+  { rank: '21+', city: 'South Ogden, Riverdale, Pleasant View, Harrisville, Sunset + more', pop: null, tier: 'Tier 3', selected: false, hq: false },
 ];
 
 function buildMobileMarketList() {
