@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SEO Milestone Plan | Precision Pest Control, LLC | Dotcom Design</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <!-- Reuse the exact same stylesheet as the strategy page -->
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    /* ============================================================
+       MILESTONE PLAN EXTENSIONS
+       All base styles come from ../style.css (Montserrat, header,
+       nav, hero, sections, stat-grid, data-table, footer, mobile).
+       Only milestone-specific components are defined here.
+       ============================================================ */
+
+    /* ---- COMMITMENT BOX ---- */
+    .commitment-box {
+      background: rgba(63,128,234,0.06);
+      border-left: 4px solid #3F80EA;
+      border-radius: 0 8px 8px 0;
+      padding: 20px 24px;
+      margin-top: 8px;
+    }
+    .commitment-box p {
+      color: #334168;
+      font-size: 0.9rem;
+      line-height: 1.75;
+    }
+    .commitment-box strong { font-weight: 700; }
+
+    /* ---- MILESTONE CARDS ---- */
+    .milestone-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+      margin-bottom: 20px;
+      overflow: hidden;
+      border-top: 4px solid #3F80EA;
+    }
+    .milestone-card.phase-2 { border-top-color: #334168; }
+    .milestone-card.phase-3 { border-top-color: #EB0052; }
+    .milestone-card.phase-4 { border-top-color: #f97316; }
+
+    .milestone-header {
+      display: flex;
+      align-items: stretch;
+    }
+    .milestone-num {
+      color: #fff;
+      font-size: 2rem;
+      font-weight: 900;
+      width: 72px;
+      min-width: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      background: #3F80EA;
+    }
+    .milestone-card.phase-2 .milestone-num { background: #334168; }
+    .milestone-card.phase-3 .milestone-num { background: #EB0052; }
+    .milestone-card.phase-4 .milestone-num { background: #f97316; }
+
+    .milestone-header-text {
+      padding: 18px 22px;
+      flex: 1;
+      border-bottom: 1px solid #E6E6E6;
+    }
+    .milestone-phase-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 4px;
+    }
+    .milestone-title {
+      font-size: 1rem;
+      font-weight: 900;
+      color: #334168;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .milestone-timing {
+      font-size: 0.82rem;
+      color: #666;
+      font-weight: 500;
+    }
+    .milestone-timing strong { color: #3F80EA; font-weight: 700; }
+    .milestone-card.phase-3 .milestone-timing strong { color: #EB0052; }
+    .milestone-card.phase-4 .milestone-timing strong { color: #f97316; }
+
+    .milestone-body {
+      padding: 20px 22px 20px 94px;
+    }
+    .deliverable-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 24px;
+      margin-bottom: 16px;
+    }
+    .deliverable-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.85rem;
+      color: #35373C;
+      line-height: 1.5;
+    }
+    .d-check {
+      color: #22c55e;
+      font-size: 1rem;
+      font-weight: 900;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .milestone-note {
+      font-size: 0.82rem;
+      color: #666;
+      font-style: italic;
+      border-top: 1px solid #E6E6E6;
+      padding-top: 12px;
+      margin-top: 4px;
+      line-height: 1.6;
+    }
+    .billing-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(235,0,82,0.08);
+      border: 1px solid rgba(235,0,82,0.25);
+      color: #EB0052;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 20px;
+      margin-top: 10px;
+    }
+
+    /* ---- RANKING CHECKPOINT CARDS ---- */
+    .ranking-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .ranking-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+      overflow: hidden;
+      border-top: 4px solid #E6E6E6;
+    }
+    .ranking-card.cp1 { border-top-color: #3F80EA; }
+    .ranking-card.cp2 { border-top-color: #f97316; }
+    .ranking-card.cp3 { border-top-color: #22c55e; }
+
+    .ranking-card-header {
+      padding: 20px 22px 16px;
+      border-bottom: 1px solid #E6E6E6;
+    }
+    .ranking-card.cp1 .ranking-card-header { background: rgba(63,128,234,0.05); }
+    .ranking-card.cp2 .ranking-card-header { background: rgba(249,115,22,0.05); }
+    .ranking-card.cp3 .ranking-card-header { background: rgba(34,197,94,0.05); }
+
+    .ranking-checkpoint-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .ranking-card.cp1 .ranking-checkpoint-label { color: #3F80EA; }
+    .ranking-card.cp2 .ranking-checkpoint-label { color: #f97316; }
+    .ranking-card.cp3 .ranking-checkpoint-label { color: #22c55e; }
+
+    .ranking-target {
+      font-size: 1.15rem;
+      font-weight: 900;
+      line-height: 1.25;
+      text-transform: uppercase;
+    }
+    .ranking-card.cp1 .ranking-target { color: #3F80EA; }
+    .ranking-card.cp2 .ranking-target { color: #f97316; }
+    .ranking-card.cp3 .ranking-target { color: #166534; }
+
+    .ranking-card-body {
+      padding: 16px 22px 20px;
+      font-size: 0.85rem;
+      color: #666;
+      line-height: 1.65;
+    }
+
+    /* ---- PROTECTION CARDS ---- */
+    .protection-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .protection-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+      border-top: 4px solid #E6E6E6;
+    }
+    .protection-card.highlight {
+      border-top-color: #3F80EA;
+      background: rgba(63,128,234,0.03);
+    }
+    .protection-icon {
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+      display: block;
+    }
+    .protection-card h4 {
+      font-size: 0.9rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      color: #334168;
+      margin-bottom: 8px;
+    }
+    .protection-card p {
+      font-size: 0.85rem;
+      color: #666;
+      line-height: 1.65;
+    }
+
+    /* ---- COMBO PILLS ---- */
+    .combo-pill {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin: 2px 4px 2px 0;
+      white-space: nowrap;
+    }
+    .pill-kw1 { background: rgba(63,128,234,0.12); color: #3F80EA; }
+    .pill-kw2 { background: rgba(51,65,104,0.12); color: #334168; }
+
+    /* ---- MOBILE OVERRIDES ---- */
+    @media (max-width: 768px) {
+      .milestone-body { padding: 16px; }
+      .milestone-num { width: 52px; min-width: 52px; font-size: 1.5rem; }
+      .deliverable-grid { grid-template-columns: 1fr; }
+      .ranking-grid { grid-template-columns: 1fr; }
+      .protection-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER: exact same as strategy page -->
+<header class="site-header">
+  <div class="header-inner">
+    <img src="../assets/logo_reversed.png" alt="Dotcom Design" class="logo"
+         onerror="this.style.display='none'; document.getElementById('logo-text').style.display='block'">
+    <span id="logo-text" style="display:none; color:#fff; font-weight:800; font-size:1.1rem; letter-spacing:0.1em;">DOTCOM DESIGN</span>
+    <span class="header-tagline">WE GROW YOUR BUSINESS</span>
+  </div>
+</header>
+
+<!-- HERO: same structure as strategy page, adapted for milestone plan -->
+<section class="hero">
+  <div class="hero-inner">
+    <p class="hero-label">SEO Milestone Plan &amp; Ranking Commitments</p>
+    <h1 class="hero-title">Precision Pest Control, LLC</h1>
+    <p class="hero-subtitle">A 12-month accountability plan with defined milestones and ranking commitments</p>
+    <div class="hero-meta">
+      <span class="meta-badge">&#128205; Port Deposit, MD</span>
+      <span class="meta-badge">&#128027; Pest Control Industry</span>
+      <span class="meta-badge">&#127919; 20 Keyword Combinations</span>
+      <span class="meta-badge">&#128197; 12-Month Agreement</span>
+    </div>
+  </div>
+</section>
+
+<!-- NAV: same structure as strategy page -->
+<nav class="section-nav" id="section-nav">
+  <a href="#commitment" class="active">COMMITMENT</a>
+  <a href="#milestones">MILESTONES</a>
+  <a href="#rankings">RANKINGS</a>
+  <a href="#combinations">COMBINATIONS</a>
+  <a href="#protections">PROTECTIONS</a>
+</nav>
+
+<!-- ============================================================
+     SECTION 01: OUR COMMITMENT
+     ============================================================ -->
+<section class="strategy-section" id="commitment">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-number">01</span>
+      <h2>Our Commitment</h2>
+    </div>
+    <p class="prose">We believe in accountability over promises. Every milestone below has a clear definition of done. If Dotcom Design does not complete a milestone within its stated timeframe, billing pauses automatically until that milestone is met - no questions asked. This plan is our shared roadmap and our shared commitment.</p>
+    <div class="commitment-box">
+      <p><strong>Billing Pause Policy:</strong> If Dotcom Design fails to achieve a defined milestone by its deadline, monthly billing will be paused immediately and will not resume until the milestone is completed and confirmed. This applies to all four milestones and all three ranking checkpoints outlined in this agreement.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 02: FOUR MILESTONES
+     ============================================================ -->
+<section class="strategy-section alt-bg" id="milestones">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-number">02</span>
+      <h2>Four Milestones. Twelve Months.</h2>
+    </div>
+    <p class="prose">SEO is a process, not an event. The four milestones below are sequential and build on each other. Each phase has a defined scope and a defined window. Progress is transparent and measurable at every step.</p>
+
+    <!-- MILESTONE 1 -->
+    <div class="milestone-card phase-1">
+      <div class="milestone-header">
+        <div class="milestone-num">1</div>
+        <div class="milestone-header-text">
+          <div class="milestone-phase-label">Phase 1 - Foundation</div>
+          <div class="milestone-title">Strategy &amp; Discovery</div>
+          <div class="milestone-timing">Completion target: <strong>End of Month 1</strong></div>
+        </div>
+      </div>
+      <div class="milestone-body">
+        <div class="deliverable-grid">
+          <div class="deliverable-item"><span class="d-check">&#10003;</span><span>Onboarding call &amp; account setup</span></div>
+          <div class="deliverable-item"><span class="d-check">&#10003;</span><span>Full on-page SEO audit</span></div>
+          <div class="deliverable-item"><span class="d-check">&#10003;</span><span>Backlink profile audit</span></div>
+          <div class="deliverable-item"><span class="d-check">&#10003;</span><span>Keyword analysis (all 20 combinations)</span></div>
+          <div class="deliverable-item"><span class="d-check">&#10003;</span><span>Competitor landscape analysis</span></div>
+        </div>
+        <p class="milestone-note">Deliverable: A completed strategy document detailing keyword priorities, content gaps, competitive positioning, and a month-by-month execution plan for the remaining 11 months. You will review and approve this before Phase 2 begins.</p>
+        <div class="billing-tag">&#9646; Billing pauses if this milestone is missed</div>
+      </div>
+    </div>
+
+    <!-- MILESTONE 2 -->
+    <div class="milestone-card phase-2">
+      <div class="milestone-header">
+        <div class="milestone-num">2</div>
+        <div class="milestone-header-text">
+          <div class="milestone-phase-label">Phase 2 - On-Page SEO</div>
+          <div class="milestone-title">Keyword Signaling &amp; Page Optimization</div>
+          <div class="milestone-timing">Completion target: <strong>End of Month 3</strong></div>
+        </div>
+      </div>
+      <div class="milestone-body">
+        <div class="deliverable-grid">
+          <div class="deliverable-item"><span class="d-check">&#10003;</span><span>On-page keyword signaling for all 20 targets</span></div>
+          <div class="deliverable-item"><span class="d-check">&#10003;</span><span>Keyword page content written &amp; optimized</span></div>
+          <div class="deliverable-item"><span class="d-check">&#10003;</span><span>Keyword landing pages designed</span></div>
+          <div class="deliverable-item"><span class="d-check">&#10003;</span><span>Keyword landing pages developed &amp; live</span></div>
+        </div>
+        <p class="milestone-note">By the end of Month 3, Precision Pest Control will have a fully optimized, keyword-targeted page for each of the 20 city + search term combinations, live and indexed by Google.</p>
+        <div class="billing-tag">&#9646; Billing pauses if this milestone is missed</div>
+      </div>
+    </div>
+
+    <!-- MILESTONE 3 -->
+    <div class="milestone-card phase-3">
+      <div class="milestone-header">
+        <div class="milestone-num">3</div>
+        <div class="milestone-header-text">
+          <div class="milestone-phase-label">Phase 3 - Content &amp; Authority</div>
+          <div class="milestone-title">Content Creation &amp; Off-Page SEO Launch</div>
+          <div class="milestone-timing">Active window: <strong>Months 4 &amp; 5</strong></div>
+        </div>
+      </div>
+      <div class="milestone-body">
+        <div class="deliverable-grid">
+          <div class="deliverable-item"><span class="d-check">&#10003;</span><span>Guest posting campaign launched</span></div>
+          <div class="deliverable-item"><span class="d-check">&#10003;</span><span>Article submissions distributed</span></div>
+          <div class="deliverable-item"><span class="d-check">&#10003;</span><span>Web 2.0 properties created</span></div>
+          <div class="deliverable-item"><span class="d-check">&#10003;</span><span>Press releases written &amp; distributed</span></div>
+          <div class="deliverable-item"><span class="d-check">&#10003;</span><span>Blog content published</span></div>
+        </div>
+        <p class="milestone-note">This phase builds topical authority and signals relevance to Google across your service geography. All content is written to target your specific city and service term combinations.</p>
+        <div class="billing-tag">&#9646; Billing pauses if this milestone is missed</div>
+      </div>
+    </div>
+
+    <!-- MILESTONE 4 -->
+    <div class="milestone-card phase-4">
+      <div class="milestone-header">
+        <div class="milestone-num">4</div>
+        <div class="milestone-header-text">
+          <div class="milestone-phase-label">Phase 4 - Link Building</div>
+          <div class="milestone-title">Backlink Acquisition &amp; Citation Building</div>
+          <div class="milestone-timing">Active window: <strong>Month 5 through Month 12</strong></div>
+        </div>
+      </div>
+      <div class="milestone-body">
+        <div class="deliverable-grid">
+          <div class="deliverable-item"><span class="d-check">&#10003;</span><span>Competitor backlink gap analysis</span></div>
+          <div class="deliverable-item"><span class="d-check">&#10003;</span><span>Citation building &amp; local directory submissions</span></div>
+          <div class="deliverable-item"><span class="d-check">&#10003;</span><span>Image sharing &amp; asset distribution</span></div>
+          <div class="deliverable-item"><span class="d-check">&#10003;</span><span>Broken link building outreach</span></div>
+          <div class="deliverable-item"><span class="d-check">&#10003;</span><span>Redirect link reclamation</span></div>
+          <div class="deliverable-item"><span class="d-check">&#10003;</span><span>Outdated resource link building</span></div>
+          <div class="deliverable-item"><span class="d-check">&#10003;</span><span>Skyscraper technique content</span></div>
+        </div>
+        <p class="milestone-note">Link building is the longest and most sustained phase. Domain authority grows incrementally - this is what separates short-term ranking bumps from durable, compounding results.</p>
+        <div class="billing-tag">&#9646; Billing pauses if this milestone is missed</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 03: RANKING CHECKPOINTS
+     ============================================================ -->
+<section class="strategy-section" id="rankings">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-number">03</span>
+      <h2>Three Commitments. Three Deadlines.</h2>
+    </div>
+    <p class="prose">In addition to the milestone deliverables above, Dotcom Design commits to the following ranking outcomes for Precision Pest Control's 20 keyword combinations. These checkpoints are also subject to the billing pause policy.</p>
+
+    <div class="ranking-grid">
+      <div class="ranking-card cp1">
+        <div class="ranking-card-header">
+          <div class="ranking-checkpoint-label">Checkpoint 1 - End of Month 6</div>
+          <div class="ranking-target">All 20 combinations<br>ranking on Page 1</div>
+        </div>
+        <div class="ranking-card-body">
+          Every target keyword + city combination will appear on the first page of Google results (positions 1 through 10) within six months of the agreement start date.
+        </div>
+      </div>
+      <div class="ranking-card cp2">
+        <div class="ranking-card-header">
+          <div class="ranking-checkpoint-label">Checkpoint 2 - End of Month 9</div>
+          <div class="ranking-target">All 20 combinations<br>in the Top 5</div>
+        </div>
+        <div class="ranking-card-body">
+          By month nine, all 20 combinations will have moved into positions 1 through 5 on page one, capturing the majority of click traffic for each term.
+        </div>
+      </div>
+      <div class="ranking-card cp3">
+        <div class="ranking-card-header">
+          <div class="ranking-checkpoint-label">Checkpoint 3 - End of Month 12</div>
+          <div class="ranking-target">All 20 combinations<br>ranking #1, #2, or #3</div>
+        </div>
+        <div class="ranking-card-body">
+          At the conclusion of the 12-month agreement, all 20 keyword + city combinations will hold a top-3 position on Google page one.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 04: KEYWORD COMBINATIONS
+     ============================================================ -->
+<section class="strategy-section alt-bg" id="combinations">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-number">04</span>
+      <h2>20 Combinations. 10 Cities. 2 Search Terms.</h2>
+    </div>
+    <p class="prose">The SEO strategy targets <strong>10 service cities</strong> across Cecil, Harford, and Baltimore Counties using <strong>two high-intent search terms</strong>: Pest Control Company and Exterminators. Each city + search term pairing is a distinct ranking target and is tracked independently.</p>
+
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="stat-number">10</div>
+        <div class="stat-label">Target Cities</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">2</div>
+        <div class="stat-label">Search Terms</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">20</div>
+        <div class="stat-label">Total Combinations</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">3</div>
+        <div class="stat-label">Counties Covered</div>
+      </div>
+    </div>
+
+    <div class="table-wrapper" style="margin-top: 32px;">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th style="width:40px; text-align:center;">#</th>
+            <th>City</th>
+            <th>County</th>
+            <th>Target Combinations</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="text-align:center; color:#999; font-size:0.78rem;">1</td>
+            <td style="font-weight:700; color:#334168;">Edgewood</td>
+            <td style="color:#666;">Harford</td>
+            <td>
+              <span class="combo-pill pill-kw1">Pest Control Company Edgewood MD</span>
+              <span class="combo-pill pill-kw2">Exterminators Edgewood MD</span>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align:center; color:#999; font-size:0.78rem;">2</td>
+            <td style="font-weight:700; color:#334168;">Forest Hill</td>
+            <td style="color:#666;">Harford</td>
+            <td>
+              <span class="combo-pill pill-kw1">Pest Control Company Forest Hill MD</span>
+              <span class="combo-pill pill-kw2">Exterminators Forest Hill MD</span>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align:center; color:#999; font-size:0.78rem;">3</td>
+            <td style="font-weight:700; color:#334168;">Abingdon</td>
+            <td style="color:#666;">Harford</td>
+            <td>
+              <span class="combo-pill pill-kw1">Pest Control Company Abingdon MD</span>
+              <span class="combo-pill pill-kw2">Exterminators Abingdon MD</span>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align:center; color:#999; font-size:0.78rem;">4</td>
+            <td style="font-weight:700; color:#334168;">Nottingham</td>
+            <td style="color:#666;">Baltimore</td>
+            <td>
+              <span class="combo-pill pill-kw1">Pest Control Company Nottingham MD</span>
+              <span class="combo-pill pill-kw2">Exterminators Nottingham MD</span>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align:center; color:#999; font-size:0.78rem;">5</td>
+            <td style="font-weight:700; color:#334168;">White Marsh</td>
+            <td style="color:#666;">Baltimore</td>
+            <td>
+              <span class="combo-pill pill-kw1">Pest Control Company White Marsh MD</span>
+              <span class="combo-pill pill-kw2">Exterminators White Marsh MD</span>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align:center; color:#999; font-size:0.78rem;">6</td>
+            <td style="font-weight:700; color:#334168;">Port Deposit</td>
+            <td style="color:#666;">Cecil</td>
+            <td>
+              <span class="combo-pill pill-kw1">Pest Control Company Port Deposit MD</span>
+              <span class="combo-pill pill-kw2">Exterminators Port Deposit MD</span>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align:center; color:#999; font-size:0.78rem;">7</td>
+            <td style="font-weight:700; color:#334168;">Aberdeen</td>
+            <td style="color:#666;">Harford</td>
+            <td>
+              <span class="combo-pill pill-kw1">Pest Control Company Aberdeen MD</span>
+              <span class="combo-pill pill-kw2">Exterminators Aberdeen MD</span>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align:center; color:#999; font-size:0.78rem;">8</td>
+            <td style="font-weight:700; color:#334168;">Elkton</td>
+            <td style="color:#666;">Cecil</td>
+            <td>
+              <span class="combo-pill pill-kw1">Pest Control Company Elkton MD</span>
+              <span class="combo-pill pill-kw2">Exterminators Elkton MD</span>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align:center; color:#999; font-size:0.78rem;">9</td>
+            <td style="font-weight:700; color:#334168;">Havre de Grace</td>
+            <td style="color:#666;">Harford</td>
+            <td>
+              <span class="combo-pill pill-kw1">Pest Control Company Havre de Grace MD</span>
+              <span class="combo-pill pill-kw2">Exterminators Havre de Grace MD</span>
+            </td>
+          </tr>
+          <tr>
+            <td style="text-align:center; color:#999; font-size:0.78rem;">10</td>
+            <td style="font-weight:700; color:#334168;">Joppa</td>
+            <td style="color:#666;">Harford</td>
+            <td>
+              <span class="combo-pill pill-kw1">Pest Control Company Joppa MD</span>
+              <span class="combo-pill pill-kw2">Exterminators Joppa MD</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SECTION 05: CLIENT PROTECTIONS
+     ============================================================ -->
+<section class="strategy-section" id="protections">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-number">05</span>
+      <h2>Built-In Accountability at Every Step.</h2>
+    </div>
+    <p class="prose">This isn't a standard agency retainer. The following protections are baked into the agreement by design.</p>
+
+    <div class="protection-grid">
+      <div class="protection-card highlight">
+        <span class="protection-icon">&#9646;</span>
+        <h4>Automatic Billing Pause</h4>
+        <p>If any milestone or ranking checkpoint is missed, billing stops immediately - no request needed. It resumes only when the milestone is confirmed complete.</p>
+      </div>
+      <div class="protection-card">
+        <span class="protection-icon">&#128205;</span>
+        <h4>Defined Milestones</h4>
+        <p>Every deliverable in this plan has a clear description and a completion deadline. There is no ambiguity about what "done" means at each stage.</p>
+      </div>
+      <div class="protection-card">
+        <span class="protection-icon">&#128202;</span>
+        <h4>Ranking Transparency</h4>
+        <p>Rankings are tracked using objective third-party tools and reported monthly. You will always know exactly where your 20 combinations stand.</p>
+      </div>
+      <div class="protection-card">
+        <span class="protection-icon">&#128197;</span>
+        <h4>Three Checkpoints</h4>
+        <p>Formal ranking reviews at months 6, 9, and 12 - each with a defined standard we must meet. Not vague "progress," but specific position targets.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER: exact same as strategy page -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <img src="../assets/logo_reversed.png" alt="Dotcom Design" class="footer-logo"
+         onerror="this.style.display='none'">
+    <div class="footer-tagline">Dotcom Design - We Grow Your Business</div>
+    <div class="footer-note">Confidential - Prepared for Precision Pest Control, LLC &nbsp;&bull;&nbsp; dotcomdesign.com<br>All keyword search volumes reflect national monthly averages sourced from SEMrush.</div>
+  </div>
+</footer>
+
+<script>
+// Active nav link on scroll - same logic as strategy page
+(function() {
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.section-nav a');
+  function onScroll() {
+    let current = '';
+    sections.forEach(function(s) {
+      if (s.getBoundingClientRect().top <= 140) current = s.id;
+    });
+    navLinks.forEach(function(a) {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
+</script>
+</body>
+</html>
