@@ -204,6 +204,7 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
 .data-table td.num-col { text-align: right; font-variant-numeric: tabular-nums; }
 .data-table tr:hover td { background: rgba(63,128,234,0.04); }
 .row-selected td { background: rgba(63,128,234,0.06); }
+.row-hq td { background: rgba(235,0,82,0.04); }
 .row-base td { font-weight: 600; }
 .row-variant td { font-size: 0.82rem; color: #555; background: #fafafa; }
 .row-near-me td { font-size: 0.82rem; color: #555; background: #fff8f0; }
