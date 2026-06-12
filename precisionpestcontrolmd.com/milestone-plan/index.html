@@ -282,11 +282,11 @@
 
 <!-- NAV: same structure as strategy page -->
 <nav class="section-nav" id="section-nav">
-  <a href="#commitment" class="active">COMMITMENT</a>
-  <a href="#milestones">MILESTONES</a>
-  <a href="#rankings">RANKINGS</a>
-  <a href="#combinations">COMBINATIONS</a>
-  <a href="#protections">PROTECTIONS</a>
+  <a href="javascript:void(0)" data-target="commitment" class="active">COMMITMENT</a>
+  <a href="javascript:void(0)" data-target="milestones">MILESTONES</a>
+  <a href="javascript:void(0)" data-target="rankings">RANKINGS</a>
+  <a href="javascript:void(0)" data-target="combinations">COMBINATIONS</a>
+  <a href="javascript:void(0)" data-target="protections">PROTECTIONS</a>
 </nav>
 
 <!-- ============================================================
@@ -635,17 +635,30 @@
 </footer>
 
 <script>
-// Active nav link on scroll - same logic as strategy page
 (function() {
-  const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.section-nav a');
+  var sections = document.querySelectorAll('section[id]');
+  var navLinks = document.querySelectorAll('.section-nav a[data-target]');
+
+  // Smooth scroll on click
+  navLinks.forEach(function(a) {
+    a.addEventListener('click', function(e) {
+      e.preventDefault();
+      var target = document.getElementById(a.getAttribute('data-target'));
+      if (target) {
+        var offset = target.getBoundingClientRect().top + window.pageYOffset - 80;
+        window.scrollTo({ top: offset, behavior: 'smooth' });
+      }
+    });
+  });
+
+  // Active state on scroll
   function onScroll() {
-    let current = '';
+    var current = '';
     sections.forEach(function(s) {
       if (s.getBoundingClientRect().top <= 140) current = s.id;
     });
     navLinks.forEach(function(a) {
-      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+      a.classList.toggle('active', a.getAttribute('data-target') === current);
     });
   }
   window.addEventListener('scroll', onScroll, { passive: true });
