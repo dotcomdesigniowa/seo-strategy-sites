@@ -24,11 +24,11 @@ document.addEventListener('DOMContentLoaded', function () {
           'Salt Lake City', 'Ogden', 'Layton (HQ)', 'Murray (HQ)', 'Bountiful',
           'Roy', 'Syracuse', 'Kaysville', 'Clearfield',
           'Farmington', 'Clinton', 'West Haven', 'Centerville',
-          'Park City', 'Plain City'
+          'Park City', 'West Valley City'
         ],
         datasets: [{
           label: 'Population',
-          data: [200567, 87321, 84312, 50637, 46134, 40226, 35714, 34735, 32082, 25891, 22070, 21175, 17503, 8548, 7078],
+          data: [200567, 87321, 84312, 50637, 46134, 40226, 35714, 34735, 32082, 25891, 22070, 21175, 17503, 8548, 140230],
           backgroundColor: [
             dotBlue,   // Salt Lake City — Tier 1, 5 kw
             dotBlue,   // Ogden — Tier 1, 5 kw
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
             dotDark,   // West Haven — Tier 2, 3 kw
             dotDark,   // Centerville — Tier 2, 3 kw
             dotGreen,  // Park City — Tier 3, 3 kw
-            dotGray,   // Plain City — Tier 3, 3 kw
+            dotBlue,   // West Valley City — Tier 1, 3 kw
           ],
           borderRadius: 6,
           borderSkipped: false,
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
                   'Selected (Tier 2) — 3 keywords',
                   'Selected (Tier 2) — 3 keywords',
                   'Selected (Tier 3) — 3 keywords (client request)',
-                  'Selected (Tier 3) — 3 keywords (client request)',
+                  'Selected (Tier 1) — 3 keywords (data-driven upgrade)',
                 ];
                 return [
                   ' Population: ' + ctx.raw.toLocaleString(),

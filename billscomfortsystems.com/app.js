@@ -182,7 +182,7 @@ const STRATEGY = {
     {
       tier_label: "Tier 3",
       tier_name: "Commercial, New Construction, and Niche Services",
-      description: "Lower-volume but highly targeted keywords for Bill's Comfort Systems' commercial, industrial, and new construction services. These terms attract recurring service customers, commercial building managers, and builders -- three of the highest-lifetime-value customer segments in HVAC. Reserved for Level G and Level H plan expansions alongside market expansion into West Valley City, West Jordan, and Sandy.",
+      description: "Lower-volume but highly targeted keywords for Bill's Comfort Systems' commercial, industrial, and new construction services. These terms attract recurring service customers, commercial building managers, and builders -- three of the highest-lifetime-value customer segments in HVAC. Reserved for Level G and Level H plan expansions alongside market expansion into West Jordan and Sandy (West Valley City is already in the current plan).",
       keywords: [
         { keyword: "hvac maintenance plan",              monthly_searches: 1600 },
         { keyword: "residential hvac maintenance",       monthly_searches: 1300 },
@@ -217,9 +217,10 @@ const STRATEGY = {
     { city: "Clinton",         state: "UT", tier: "Tier 2", population:  22070, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company"] },
     { city: "West Haven",      state: "UT", tier: "Tier 2", population:  21175, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company"] },
     { city: "Centerville",     state: "UT", tier: "Tier 2", population:  17503, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company"] },
-    // Tier 3: 3-keyword core coverage for client-requested specialty markets
+    // Tier 3: 3-keyword core coverage for client-requested specialty market
     { city: "Park City",       state: "UT", tier: "Tier 3", population:   8548, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company"] },
-    { city: "Plain City",      state: "UT", tier: "Tier 3", population:   7078, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company"] },
+    // Tier 1: 3-keyword coverage for West Valley City — data-driven upgrade replacing Plain City
+    { city: "West Valley City", state: "UT", tier: "Tier 1", population: 140230, is_hq: false, keywords: ["hvac company", "air conditioning company", "heating company"] },
     // Regional geo-modifier: 2-keyword footprint for the broader Salt Lake Valley region
     { city: "Salt Lake Valley", state: "UT", tier: "Tier 1", population: null, is_hq: false, keywords: ["hvac company", "air conditioning company"] },
   ],
@@ -307,14 +308,13 @@ const STRATEGY = {
       price: 4000,
       combinations: 120,
       additional_combinations: 30,
-      headline: "Add Ductless Mini Splits, HVAC Maintenance, and West Valley City",
-      description: "Level G adds ductless mini split installation (5,400/mo) and hvac maintenance (8,100/mo) across all 16 existing markets, plus expands into West Valley City (140,230), West Jordan (116,961), and Sandy (98,975) -- three of Utah's five largest cities. Mini splits are the fastest-growing segment in residential HVAC. Maintenance program keywords attract recurring-revenue customers worth 3x to 5x a one-time repair customer. The West Valley City, West Jordan, and Sandy expansion also positions Bill's Comfort Systems as the dominant HVAC brand across the entire Wasatch Front.",
+      headline: "Add Ductless Mini Splits, HVAC Maintenance, and West Jordan + Sandy",
+      description: "Level G adds ductless mini split installation (5,400/mo) and hvac maintenance (8,100/mo) across all 16 existing markets, plus expands into West Jordan (116,961) and Sandy (98,975) -- two of Utah's five largest cities. West Valley City is already in the current plan. Mini splits are the fastest-growing segment in residential HVAC. Maintenance program keywords attract recurring-revenue customers worth 3x to 5x a one-time repair customer. The West Jordan and Sandy expansion completes BCS coverage across the entire Wasatch Front.",
       new_market: true,
       keywords: [
         { keyword: "ductless mini split installation", monthly_searches: 5400 },
         { keyword: "hvac maintenance",                 monthly_searches: 8100 },
         { keyword: "furnace installation",             monthly_searches: 6600 },
-        { keyword: "West Valley City, UT",             monthly_searches: null, new_market: true },
         { keyword: "West Jordan, UT",                  monthly_searches: null, new_market: true },
         { keyword: "Sandy, UT",                        monthly_searches: null, new_market: true },
       ]
@@ -538,9 +538,9 @@ const MARKET_DATA = [
   { rank: 12, city: 'West Haven',       pop:  21175, tier: 'Tier 2', selected: true,  hq: false },
   { rank: 13, city: 'Centerville',      pop:  17503, tier: 'Tier 2', selected: true,  hq: false },
   { rank: 14, city: 'Park City',        pop:   8548, tier: 'Tier 3', selected: true,  hq: false },
-  { rank: 15, city: 'Plain City',       pop:   7078, tier: 'Tier 3', selected: true,  hq: false },
+  { rank: 15, city: 'West Valley City', pop: 140230, tier: 'Tier 1', selected: true,  hq: false },
   { rank: 16, city: 'Salt Lake Valley', pop:   null, tier: 'Tier 1', selected: true,  hq: false },
-  { rank: 17, city: 'West Valley City', pop: 140230, tier: 'Tier 1', selected: false, hq: false },
+  { rank: 17, city: 'Plain City',       pop:   7078, tier: 'Tier 3', selected: false, hq: false },
   { rank: 18, city: 'West Jordan',      pop: 116961, tier: 'Tier 1', selected: false, hq: false },
   { rank: 19, city: 'Sandy',            pop:  98975, tier: 'Tier 1', selected: false, hq: false },
   { rank: 20, city: 'North Ogden',      pop:  20801, tier: 'Tier 2', selected: false, hq: false },
