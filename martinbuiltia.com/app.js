@@ -269,6 +269,7 @@ const STRATEGY = {
       combinations: 30,
       price: 900,
       additional_combinations: 10,
+      new_market: true,
       headline: "Expand Commercial Coverage and Add North Liberty",
       description: "Upgrading to Level B adds 10 additional keyword-city combinations, allowing Martin Built Homes to introduce dedicated commercial construction coverage in Marion and Coralville, and to add North Liberty (pop. 22,276) as a new target market. North Liberty is one of the fastest-growing communities in the Iowa Corridor and represents a strong opportunity for new home construction leads.",
       keywords: [
@@ -411,8 +412,8 @@ function buildMatrix() {
     grandTotal += m.keywords.length;
     cards += `<div class="city-matrix-card">
       <div class="city-matrix-header">
-        ${hqStar}<span class="city-matrix-name">${cityLabel}</span>
-        <span class="city-matrix-meta"><span class="tier-pill ${tierCls}">${m.tier.toUpperCase()}</span> Pop. ${fmt(m.population)}</span>
+        <div class="city-matrix-header-top">${hqStar}<span class="city-matrix-name">${cityLabel}</span></div>
+        <div class="city-matrix-header-meta"><span class="tier-pill ${tierCls}">${m.tier.toUpperCase()}</span><span class="city-matrix-pop">Pop. ${fmt(m.population)}</span></div>
       </div>
       <div class="city-kw-list">${kwItems}</div>
       <div class="city-matrix-footer">${m.keywords.length} combination${m.keywords.length !== 1 ? 's' : ''}</div>
@@ -457,15 +458,18 @@ function buildNotUsed() {
   if (!grid) return;
   const cards = STRATEGY.not_used_groups.map(group => {
     const kwRows = group.keywords.map(kw =>
-      `<div class="not-used-kw-row">
-        <span class="not-used-kw-name">${kw.keyword}</span>
-        <span class="not-used-kw-vol">${fmt(kw.monthly_searches)}/mo</span>
+      `<div class="nu-kw-row">
+        <span class="nu-kw-name">${kw.keyword}</span>
+        <span class="nu-kw-vol">${fmt(kw.monthly_searches)}</span>
       </div>`
     ).join('');
     return `<div class="not-used-card">
-      <div class="not-used-reason">${group.reason}</div>
-      <p class="not-used-desc">${group.description}</p>
-      <div class="not-used-kw-list">${kwRows}</div>
+      <div class="nu-reason">${group.reason}</div>
+      <p class="nu-desc">${group.description}</p>
+      <div class="nu-kw-table">
+        <div class="nu-header"><span>Keyword</span><span>Mo. Searches</span></div>
+        ${kwRows}
+      </div>
     </div>`;
   }).join('');
   grid.innerHTML = cards;
@@ -478,44 +482,25 @@ function buildOpportunities() {
   const grid = document.getElementById('opportunities-grid');
   if (!grid) return;
   const cards = STRATEGY.additional_opportunities.map((opp, i) => {
-    const isRecommended = i === 0;
-    const badge = isRecommended ? '<span class="opp-recommended-badge">RECOMMENDED NEXT STEP</span>' : '';
-    let itemsHtml = '';
-    if (opp.keywords) {
-      itemsHtml = opp.keywords.map(kw => {
-        if (kw.new_market) {
-          return `<div class="opp-kw-row opp-new-market">
-            <span class="opp-kw-icon">&#127968;</span>
-            <span class="opp-kw-name">${kw.keyword}</span>
-            <span class="opp-kw-tag">New Market</span>
-          </div>`;
-        }
-        return `<div class="opp-kw-row">
-          <span class="opp-kw-icon">&#128269;</span>
-          <span class="opp-kw-name">${kw.keyword}</span>
-          <span class="opp-kw-vol">${fmt(kw.monthly_searches)}/mo</span>
-        </div>`;
-      }).join('');
-    } else if (opp.markets) {
-      itemsHtml = opp.markets.map(m => {
-        const tierCls = m.tier === 'Tier 1' ? 't1' : m.tier === 'Tier 2' ? 't2' : 't3';
-        return `<div class="opp-kw-row opp-new-market">
-          <span class="opp-kw-icon">&#127968;</span>
-          <span class="opp-kw-name">${m.city}</span>
-          <span class="tier-pill ${tierCls}">${m.tier.toUpperCase()}</span>
-          <span class="opp-kw-vol">Pop. ${fmt(m.population)}</span>
-        </div>`;
-      }).join('');
-    }
-    return `<div class="opp-card${isRecommended ? ' opp-card-recommended' : ''}">
-      ${badge}
+    const highlight = i === 0 ? ' opp-card-highlight' : '';
+    const kwList = opp.keywords.map(kw =>
+      `<li>
+        <span class="opp-kw">${kw.keyword}</span>
+        ${kw.monthly_searches ? `<span class="opp-vol">${fmt(kw.monthly_searches)}</span>` : kw.new_market ? `<span class="opp-vol opp-new-market-tag">New Market</span>` : ''}
+      </li>`
+    ).join('');
+    const newMarketDiv = opp.new_market
+      ? `<div class="opp-new-market">+ New Market Added</div>`
+      : `<div class="opp-new-market" style="visibility:hidden"></div>`;
+    return `<div class="opp-card${highlight}">
       <div class="opp-plan-label">${opp.plan}</div>
-      <div class="opp-combos">${opp.combinations} Total Combinations</div>
-      <div class="opp-price">$${opp.price.toLocaleString()}/mo</div>
-      <div class="opp-additional">+${opp.additional_combinations} additional combinations</div>
+      <div class="opp-price">$${fmt(opp.price)}<span class="opp-price-label">/mo</span></div>
+      <div class="opp-combos-large">${opp.combinations} <span class="opp-combos-label">total combinations</span></div>
+      <div class="opp-combos">${opp.additional_combinations} additional combinations from current plan</div>
       <h4 class="opp-headline">${opp.headline}</h4>
       <p class="opp-desc">${opp.description}</p>
-      <div class="opp-kw-items">${itemsHtml}</div>
+      ${newMarketDiv}
+      <ul class="opp-kw-list"><li class="opp-kw-header"><span>Keyword / Market</span><span>Mo. Searches</span></li>${kwList}</ul>
     </div>`;
   }).join('');
   grid.innerHTML = cards;

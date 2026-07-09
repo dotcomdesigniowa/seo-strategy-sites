@@ -665,10 +665,12 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
 .opportunities-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  grid-template-rows: auto auto auto auto auto 1fr minmax(24px, auto) auto;
+  /* 8 tracks: plan-label | price | combos-large | combos | headline | desc(1fr) | new-market | kw-list */
+  grid-template-rows: auto auto auto auto auto 1fr auto auto;
   column-gap: 20px;
   row-gap: 0;
   align-items: stretch;
+  margin-top: 32px;
 }
 .opp-card {
   background: #fff;
@@ -832,8 +834,15 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
   font-style: italic;
   font-size: 0.78rem;
   display: block;
-  margin-bottom: 12px;
+  margin-bottom: 4px;
   padding-bottom: 4px;
+  align-self: start;
+}
+.opp-new-market-tag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #22a06b;
+  font-style: italic;
 }
 
 /* ============================================================
@@ -1232,18 +1241,40 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
 }
 .city-matrix-header {
   background: #334168;
-  padding: 13px 16px;
-  display: flex; align-items: flex-start; gap: 8px; flex-wrap: wrap;
+  padding: 12px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
-.city-card-hq { color: #3F80EA; font-size: 14px; flex-shrink: 0; margin-top: 1px; }
+.city-matrix-header-top {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.city-matrix-header-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.city-card-hq { color: #3F80EA; font-size: 14px; flex-shrink: 0; }
 .city-matrix-name {
   font-size: 13px; font-weight: 800; color: #fff;
-  text-transform: uppercase; letter-spacing: 0.03em; flex: 1;
+  text-transform: uppercase; letter-spacing: 0.03em;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
-.city-matrix-meta {
-  display: flex; align-items: center; gap: 6px;
-  font-size: 11px; color: #94a3b8; white-space: nowrap; margin-top: 2px;
+.city-matrix-pop {
+  font-size: 11px; color: #94a3b8; white-space: nowrap;
 }
+/* Tier pills inside dark card headers need high-contrast overrides */
+.city-matrix-header .tier-pill {
+  background: rgba(255,255,255,0.18);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.35);
+}
+.city-matrix-header .tier-pill.t1 { background: rgba(63,128,234,0.6); color: #fff; border-color: rgba(63,128,234,0.9); }
+.city-matrix-header .tier-pill.t2 { background: rgba(255,255,255,0.22); color: #fff; border-color: rgba(255,255,255,0.45); }
+.city-matrix-header .tier-pill.t3 { background: rgba(235,0,82,0.6); color: #fff; border-color: rgba(235,0,82,0.9); }
+.city-matrix-header .tier-pill.t4 { background: rgba(249,115,22,0.6); color: #fff; border-color: rgba(249,115,22,0.9); }
 .city-kw-list {
   padding: 10px 16px; }
 .city-kw-item {
