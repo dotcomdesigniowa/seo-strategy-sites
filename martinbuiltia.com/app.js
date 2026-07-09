@@ -182,12 +182,14 @@ const STRATEGY = {
       keywords: [
         "custom home builder",
         "new construction homes",
+        "home remodeling contractor",
         "general contractor"
       ]
     },
     {
       city: "Coralville", state: "IA", tier: "Tier 2", population: 24322, is_hq: false,
       keywords: [
+        "custom home builder",
         "new construction homes",
         "floor plans"
       ]
