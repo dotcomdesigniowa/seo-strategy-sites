@@ -1187,6 +1187,17 @@ body { font-family: 'Montserrat', sans-serif; color: #35373C; background: #fff; 
 .flat-tier-block.kw-tier-3 .flat-tier-heading { background: #334168; border-left: 4px solid #f97316; }
 .flat-tier-block.kw-tier-4 .flat-tier-heading { background: #334168; border-left: 4px solid #16a34a; }
 
+/* Tier pills inside dark flat-tier-heading bars need high-contrast overrides */
+.flat-tier-heading .tier-pill {
+  background: rgba(255,255,255,0.18);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.35);
+}
+.flat-tier-heading .tier-pill.t1 { background: rgba(63,128,234,0.6); color: #fff; border-color: rgba(63,128,234,0.9); }
+.flat-tier-heading .tier-pill.t2 { background: rgba(235,0,82,0.5); color: #fff; border-color: rgba(235,0,82,0.8); }
+.flat-tier-heading .tier-pill.t3 { background: rgba(249,115,22,0.6); color: #fff; border-color: rgba(249,115,22,0.9); }
+.flat-tier-heading .tier-pill.t4 { background: rgba(22,163,74,0.6); color: #fff; border-color: rgba(22,163,74,0.9); }
+
 .flat-tier-name {
   font-size: 13px; font-weight: 800; color: #fff;
   text-transform: uppercase; letter-spacing: 0.03em;
