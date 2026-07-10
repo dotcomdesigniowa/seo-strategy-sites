@@ -33,13 +33,13 @@ const STRATEGY = {
     { keyword: "new construction homes for sale",monthly_searches:40500, tier: "Tier 1", status: "not_used", family: "new construction homes", variant_type: "variant"},
 
     // Home Builder family
-    { keyword: "home builder",                  monthly_searches: 12100, tier: "Tier 1", status: "selected", family: "home builder",          variant_type: "base"    },
+    { keyword: "home builder",                  monthly_searches: 12100, tier: "Tier 1", status: "not_used", family: "home builder",          variant_type: "base"    },
     { keyword: "home builders near me",         monthly_searches: 22200, tier: "Tier 1", status: "near_me",  family: "home builder",          variant_type: "near_me" },
     { keyword: "home builder near me",          monthly_searches:  5400, tier: "Tier 1", status: "near_me",  family: "home builder",          variant_type: "near_me" },
     { keyword: "home building companies",       monthly_searches:  1900, tier: "Tier 1", status: "not_used", family: "home builder",          variant_type: "variant" },
 
     // New Home Construction family
-    { keyword: "new home construction",         monthly_searches:  9900, tier: "Tier 2", status: "selected", family: "new home construction", variant_type: "base"    },
+    { keyword: "new home construction",         monthly_searches:  9900, tier: "Tier 2", status: "not_used", family: "new home construction", variant_type: "base"    },
     { keyword: "new home construction near me", monthly_searches: 18100, tier: "Tier 2", status: "near_me",  family: "new home construction", variant_type: "near_me" },
     { keyword: "new home builders",             monthly_searches:  6600, tier: "Tier 2", status: "not_used", family: "new home construction", variant_type: "plural"  },
     { keyword: "new home builder",              monthly_searches:  5400, tier: "Tier 2", status: "not_used", family: "new home construction", variant_type: "variant" },
@@ -160,10 +160,8 @@ const STRATEGY = {
       keywords: [
         "custom home builder",
         "new construction homes",
-        "new home construction",
         "residential construction",
-        "floor plans",
-        "home builder"
+        "floor plans"
       ]
     },
     {
@@ -171,8 +169,8 @@ const STRATEGY = {
       keywords: [
         "custom home builder",
         "new construction homes",
-        "new home construction",
-        "home builder"
+        "residential construction",
+        "floor plans"
       ]
     },
     {
@@ -181,8 +179,7 @@ const STRATEGY = {
         "custom home builder",
         "new construction homes",
         "residential construction",
-        "floor plans",
-        "home builder"
+        "floor plans"
       ]
     },
     {
@@ -190,6 +187,7 @@ const STRATEGY = {
       keywords: [
         "custom home builder",
         "new construction homes",
+        "residential construction",
         "floor plans"
       ]
     },
@@ -211,9 +209,11 @@ const STRATEGY = {
   not_used_groups: [
     {
       reason: "Exceeds Current Plan Capacity: Reserved for Level B",
-      description: "These high-value keywords were identified and validated but could not be included within the 20-combination limit of the Level A plan. General contractor and commercial construction are the strongest near-term additions -- both carry high volume and directly match Martin Built Homes' service offering -- and are the first candidates for inclusion upon upgrading to Level B.",
+      description: "These high-value keywords were identified and validated but could not be included within the 20-combination limit of the Level A plan. General contractor (40,500/mo), commercial construction (8,100/mo), home builder (12,100/mo), and new home construction (9,900/mo) are the strongest near-term additions and are the first candidates for inclusion upon upgrading to Level B.",
       keywords: [
         { keyword: "general contractor",             monthly_searches: 40500 },
+        { keyword: "home builder",                   monthly_searches: 12100 },
+        { keyword: "new home construction",          monthly_searches: 9900 },
         { keyword: "commercial construction",        monthly_searches: 8100 },
         { keyword: "new home builders",              monthly_searches: 6600 },
         { keyword: "new home builder",               monthly_searches: 5400 },
