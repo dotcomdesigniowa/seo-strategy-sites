@@ -194,13 +194,15 @@ const STRATEGY = {
     {
       city: "Hiawatha", state: "IA", tier: "Tier 3", population: 7465, is_hq: false,
       keywords: [
-        "custom home builder"
+        "custom home builder",
+        "new construction homes"
       ]
     },
     {
       city: "Mount Vernon", state: "IA", tier: "Tier 3", population: 4502, is_hq: false,
       keywords: [
-        "custom home builder"
+        "custom home builder",
+        "new construction homes"
       ]
     }
   ],
