@@ -63,7 +63,7 @@ const STRATEGY = {
     { keyword: "renovation contractor",         monthly_searches:  1900, tier: "Tier 4", status: "not_used", family: "home renovation",       variant_type: "variant" },
 
     // Commercial Construction family
-    { keyword: "commercial construction",       monthly_searches:  8100, tier: "Tier 3", status: "selected", family: "commercial construction", variant_type: "base"  },
+    { keyword: "commercial construction",       monthly_searches:  8100, tier: "Tier 3", status: "not_used", family: "commercial construction", variant_type: "base"  },
     { keyword: "commercial construction company",monthly_searches: 2900, tier: "Tier 3", status: "not_used", family: "commercial construction", variant_type: "variant"},
     { keyword: "commercial construction companies",monthly_searches:3600,tier: "Tier 3", status: "not_used", family: "commercial construction", variant_type: "plural" },
     { keyword: "commercial construction near me",monthly_searches: 1300, tier: "Tier 3", status: "near_me",  family: "commercial construction", variant_type: "near_me"},
@@ -71,7 +71,7 @@ const STRATEGY = {
     { keyword: "commercial builder",            monthly_searches:  1000, tier: "Tier 3", status: "not_used", family: "commercial construction", variant_type: "variant"},
 
     // General Contractor family
-    { keyword: "general contractor",            monthly_searches: 40500, tier: "Tier 1", status: "selected", family: "general contractor",    variant_type: "base"    },
+    { keyword: "general contractor",            monthly_searches: 40500, tier: "Tier 1", status: "not_used", family: "general contractor",    variant_type: "base"    },
     { keyword: "general contractor near me",    monthly_searches: 18100, tier: "Tier 1", status: "near_me",  family: "general contractor",    variant_type: "near_me" },
     { keyword: "general contractors",           monthly_searches: 12100, tier: "Tier 1", status: "not_used", family: "general contractor",    variant_type: "plural"  },
     { keyword: "construction companies near me",monthly_searches: 27100, tier: "Tier 1", status: "near_me",  family: "general contractor",    variant_type: "near_me" },
@@ -130,12 +130,12 @@ const STRATEGY = {
     {
       tier_label: "Tier 3",
       tier_name: "Commercial and Specialized Services",
-      description: "These keywords capture Martin Built Homes' commercial construction, tenant improvement, and multi-family building capabilities. While lower in volume than residential terms, these keywords attract high-value commercial clients and diversify the lead pipeline beyond residential projects.",
+      description: "These keywords capture Martin Built Homes' commercial construction, tenant improvement, and multi-family building capabilities. While lower in volume than residential terms, these keywords attract high-value commercial clients and diversify the lead pipeline beyond residential projects. General contractor and commercial construction are reserved for Level B expansion, where dedicated content pages can support them without competing with the existing site architecture.",
       keywords: [
+        { keyword: "general contractor",                monthly_searches: 40500 },
         { keyword: "commercial construction",           monthly_searches: 8100 },
         { keyword: "commercial construction companies", monthly_searches: 3600 },
         { keyword: "commercial construction company",   monthly_searches: 2900 },
-        { keyword: "residential construction",          monthly_searches: 5400 },
         { keyword: "tenant improvement contractor",     monthly_searches:  590 },
         { keyword: "multi-family construction",         monthly_searches:  320 },
       ]
@@ -162,8 +162,8 @@ const STRATEGY = {
         "new construction homes",
         "new home construction",
         "residential construction",
-        "commercial construction",
-        "general contractor"
+        "floor plans",
+        "home builder"
       ]
     },
     {
@@ -171,9 +171,8 @@ const STRATEGY = {
       keywords: [
         "custom home builder",
         "new construction homes",
-        "home builder",
         "new home construction",
-        "commercial construction"
+        "home builder"
       ]
     },
     {
@@ -182,7 +181,8 @@ const STRATEGY = {
         "custom home builder",
         "new construction homes",
         "residential construction",
-        "general contractor"
+        "floor plans",
+        "home builder"
       ]
     },
     {
@@ -210,9 +210,11 @@ const STRATEGY = {
   // ---- NOT USED GROUPS ----
   not_used_groups: [
     {
-      reason: "Exceeds Current Plan Capacity",
-      description: "These high-value keywords were identified and validated but could not be included within the 20-combination limit of the Level A plan. They are the first candidates for inclusion upon upgrading to Level B or higher.",
+      reason: "Exceeds Current Plan Capacity: Reserved for Level B",
+      description: "These high-value keywords were identified and validated but could not be included within the 20-combination limit of the Level A plan. General contractor and commercial construction are the strongest near-term additions -- both carry high volume and directly match Martin Built Homes' service offering -- and are the first candidates for inclusion upon upgrading to Level B.",
       keywords: [
+        { keyword: "general contractor",             monthly_searches: 40500 },
+        { keyword: "commercial construction",        monthly_searches: 8100 },
         { keyword: "new home builders",              monthly_searches: 6600 },
         { keyword: "new home builder",               monthly_searches: 5400 },
         { keyword: "commercial construction companies", monthly_searches: 3600 },
@@ -278,11 +280,11 @@ const STRATEGY = {
       price: 900,
       additional_combinations: 10,
       new_market: true,
-      headline: "Expand Commercial Coverage and Add North Liberty",
-      description: "Upgrading to Level B adds 10 additional keyword-city combinations, allowing Martin Built Homes to introduce dedicated commercial construction coverage in Marion and Coralville, and to add North Liberty (pop. 22,276) as a new target market. North Liberty is one of the fastest-growing communities in the Iowa Corridor and represents a strong opportunity for new home construction leads.",
+      headline: "Add General Contractor, Commercial Construction, and North Liberty",
+      description: "Level B introduces the two highest-volume keywords excluded from the current plan -- general contractor (40,500/mo) and commercial construction (8,100/mo) -- and deploys them across Cedar Rapids, Marion, and Iowa City. These terms were held from Level A to avoid launching without strong content backing; Level B is the right time to add them alongside dedicated service pages. North Liberty (pop. 22,276) is also added as a new target market -- one of the fastest-growing communities in the Iowa Corridor and a natural next step given Martin Built Homes' existing build activity in the surrounding area.",
       keywords: [
-        { keyword: "commercial construction",        monthly_searches: 8100 },
         { keyword: "general contractor",             monthly_searches: 40500 },
+        { keyword: "commercial construction",        monthly_searches: 8100 },
         { keyword: "North Liberty, IA", monthly_searches: null, new_market: true },
       ]
     },
