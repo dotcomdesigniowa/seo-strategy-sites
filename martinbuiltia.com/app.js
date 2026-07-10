@@ -31,33 +31,36 @@ const STRATEGY = {
     { keyword: "new construction homes",        monthly_searches: 18100, tier: "Tier 1", status: "selected", family: "new construction homes", variant_type: "base"   },
     { keyword: "new construction homes near me",monthly_searches: 18100, tier: "Tier 1", status: "near_me",  family: "new construction homes", variant_type: "near_me"},
     { keyword: "new construction homes for sale",monthly_searches:40500, tier: "Tier 1", status: "not_used", family: "new construction homes", variant_type: "variant"},
-    { keyword: "new home builder",              monthly_searches:  5400, tier: "Tier 1", status: "not_used", family: "new construction homes", variant_type: "variant"},
-    { keyword: "new home builders",             monthly_searches:  6600, tier: "Tier 1", status: "not_used", family: "new construction homes", variant_type: "plural" },
-    { keyword: "new home construction",         monthly_searches:  9900, tier: "Tier 1", status: "not_used", family: "new construction homes", variant_type: "variant"},
-    { keyword: "new home construction near me", monthly_searches: 18100, tier: "Tier 1", status: "near_me",  family: "new construction homes", variant_type: "near_me"},
 
     // Home Builder family
-    { keyword: "home builder",                  monthly_searches: 12100, tier: "Tier 1", status: "not_used", family: "home builder",          variant_type: "base"    },
+    { keyword: "home builder",                  monthly_searches: 12100, tier: "Tier 1", status: "selected", family: "home builder",          variant_type: "base"    },
     { keyword: "home builders near me",         monthly_searches: 22200, tier: "Tier 1", status: "near_me",  family: "home builder",          variant_type: "near_me" },
     { keyword: "home builder near me",          monthly_searches:  5400, tier: "Tier 1", status: "near_me",  family: "home builder",          variant_type: "near_me" },
     { keyword: "home building companies",       monthly_searches:  1900, tier: "Tier 1", status: "not_used", family: "home builder",          variant_type: "variant" },
 
-    // Home Remodeling Contractor family
-    { keyword: "home remodeling contractor",    monthly_searches:  6600, tier: "Tier 2", status: "selected", family: "home remodeling",       variant_type: "base"    },
-    { keyword: "home remodeling contractors",   monthly_searches:  6600, tier: "Tier 2", status: "not_used", family: "home remodeling",       variant_type: "plural"  },
-    { keyword: "home remodeling near me",       monthly_searches: 22200, tier: "Tier 2", status: "near_me",  family: "home remodeling",       variant_type: "near_me" },
-    { keyword: "home remodeling company",       monthly_searches:  3600, tier: "Tier 2", status: "not_used", family: "home remodeling",       variant_type: "variant" },
-    { keyword: "home remodeling companies",     monthly_searches:  3600, tier: "Tier 2", status: "not_used", family: "home remodeling",       variant_type: "variant" },
-    { keyword: "home remodel contractor",       monthly_searches:  2400, tier: "Tier 2", status: "not_used", family: "home remodeling",       variant_type: "variant" },
-    { keyword: "home remodel near me",          monthly_searches:  1900, tier: "Tier 2", status: "near_me",  family: "home remodeling",       variant_type: "near_me" },
+    // New Home Construction family
+    { keyword: "new home construction",         monthly_searches:  9900, tier: "Tier 2", status: "selected", family: "new home construction", variant_type: "base"    },
+    { keyword: "new home construction near me", monthly_searches: 18100, tier: "Tier 2", status: "near_me",  family: "new home construction", variant_type: "near_me" },
+    { keyword: "new home builders",             monthly_searches:  6600, tier: "Tier 2", status: "not_used", family: "new home construction", variant_type: "plural"  },
+    { keyword: "new home builder",              monthly_searches:  5400, tier: "Tier 2", status: "not_used", family: "new home construction", variant_type: "variant" },
 
-    // Home Renovation family
-    { keyword: "home renovation",               monthly_searches: 14800, tier: "Tier 2", status: "selected", family: "home renovation",       variant_type: "base"    },
-    { keyword: "home renovation contractors",   monthly_searches:  6600, tier: "Tier 2", status: "not_used", family: "home renovation",       variant_type: "plural"  },
-    { keyword: "home renovation near me",       monthly_searches:  2400, tier: "Tier 2", status: "near_me",  family: "home renovation",       variant_type: "near_me" },
-    { keyword: "home renovation contractor",    monthly_searches:  2400, tier: "Tier 2", status: "not_used", family: "home renovation",       variant_type: "variant" },
-    { keyword: "home renovation company",       monthly_searches:  2400, tier: "Tier 2", status: "not_used", family: "home renovation",       variant_type: "variant" },
-    { keyword: "renovation contractor",         monthly_searches:  1900, tier: "Tier 2", status: "not_used", family: "home renovation",       variant_type: "variant" },
+    // Residential Construction family
+    { keyword: "residential construction",      monthly_searches:  5400, tier: "Tier 2", status: "selected", family: "residential construction", variant_type: "base"  },
+    { keyword: "residential construction company",monthly_searches: 720, tier: "Tier 2", status: "not_used", family: "residential construction", variant_type: "variant"},
+    { keyword: "residential construction companies",monthly_searches:1000,tier:"Tier 2", status: "not_used", family: "residential construction", variant_type: "plural"},
+    { keyword: "residential builder",           monthly_searches:   210, tier: "Tier 2", status: "not_used", family: "residential construction", variant_type: "variant"},
+
+    // Home Remodeling family (not used — not a core service)
+    { keyword: "home remodeling contractor",    monthly_searches:  6600, tier: "Tier 4", status: "not_used", family: "home remodeling",       variant_type: "base"    },
+    { keyword: "home remodeling contractors",   monthly_searches:  6600, tier: "Tier 4", status: "not_used", family: "home remodeling",       variant_type: "plural"  },
+    { keyword: "home remodeling near me",       monthly_searches: 22200, tier: "Tier 4", status: "near_me",  family: "home remodeling",       variant_type: "near_me" },
+    { keyword: "home remodeling company",       monthly_searches:  3600, tier: "Tier 4", status: "not_used", family: "home remodeling",       variant_type: "variant" },
+
+    // Home Renovation family (not used — not a core service)
+    { keyword: "home renovation",               monthly_searches: 14800, tier: "Tier 4", status: "not_used", family: "home renovation",       variant_type: "base"    },
+    { keyword: "home renovation contractors",   monthly_searches:  6600, tier: "Tier 4", status: "not_used", family: "home renovation",       variant_type: "plural"  },
+    { keyword: "home renovation contractor",    monthly_searches:  2400, tier: "Tier 4", status: "not_used", family: "home renovation",       variant_type: "variant" },
+    { keyword: "renovation contractor",         monthly_searches:  1900, tier: "Tier 4", status: "not_used", family: "home renovation",       variant_type: "variant" },
 
     // Commercial Construction family
     { keyword: "commercial construction",       monthly_searches:  8100, tier: "Tier 3", status: "selected", family: "commercial construction", variant_type: "base"  },
@@ -80,11 +83,7 @@ const STRATEGY = {
     { keyword: "custom floor plans",            monthly_searches:   720, tier: "Tier 4", status: "not_used", family: "floor plans",           variant_type: "variant" },
     { keyword: "floor plan design",             monthly_searches:  1300, tier: "Tier 4", status: "not_used", family: "floor plans",           variant_type: "variant" },
 
-    // Residential Construction family
-    { keyword: "residential construction",      monthly_searches:  5400, tier: "Tier 3", status: "not_used", family: "residential construction", variant_type: "base" },
-    { keyword: "residential construction company",monthly_searches: 720, tier: "Tier 3", status: "not_used", family: "residential construction", variant_type: "variant"},
-    { keyword: "residential construction companies",monthly_searches:1000,tier:"Tier 3", status: "not_used", family: "residential construction", variant_type: "plural"},
-    { keyword: "residential builder",           monthly_searches:   210, tier: "Tier 3", status: "not_used", family: "residential construction", variant_type: "variant"},
+    // (Residential Construction family moved above to Tier 2 selected block)
 
     // Tenant Improvement family
     { keyword: "tenant improvement contractor", monthly_searches:   590, tier: "Tier 3", status: "not_used", family: "tenant improvement",    variant_type: "base"    },
@@ -116,16 +115,16 @@ const STRATEGY = {
     },
     {
       tier_label: "Tier 2",
-      tier_name: "Renovation and Remodeling",
-      description: "Home renovation and remodeling represent a massive secondary market with strong commercial intent. These keywords target homeowners ready to invest significantly in their current property. The high CPC values (averaging $10+) confirm that competitors are paying heavily for this traffic, making organic placement especially valuable.",
+      tier_name: "New Home Construction and Residential Building",
+      description: "These keywords directly reflect Martin Built Homes' core business: building new homes from the ground up. With an average project size of 1,600 sq ft and a starting price around $200,000, Martin Built Homes is positioned as an accessible, full-service new home builder. These terms capture buyers who are actively researching new home construction and residential builders across the Iowa Corridor.",
       keywords: [
-        { keyword: "home renovation",              monthly_searches: 14800 },
-        { keyword: "home remodeling contractor",   monthly_searches:  6600 },
-        { keyword: "home renovation contractors",  monthly_searches:  6600 },
-        { keyword: "home remodeling company",      monthly_searches:  3600 },
-        { keyword: "home renovation contractor",   monthly_searches:  2400 },
-        { keyword: "home remodel contractor",      monthly_searches:  2400 },
-        { keyword: "renovation contractor",        monthly_searches:  1900 },
+        { keyword: "home builder",               monthly_searches: 12100 },
+        { keyword: "new home construction",      monthly_searches:  9900 },
+        { keyword: "new home builders",          monthly_searches:  6600 },
+        { keyword: "new home builder",           monthly_searches:  5400 },
+        { keyword: "residential construction",   monthly_searches:  5400 },
+        { keyword: "residential construction companies", monthly_searches: 1000 },
+        { keyword: "residential construction company",   monthly_searches:  720 },
       ]
     },
     {
@@ -161,8 +160,8 @@ const STRATEGY = {
       keywords: [
         "custom home builder",
         "new construction homes",
-        "home remodeling contractor",
-        "home renovation",
+        "new home construction",
+        "residential construction",
         "commercial construction",
         "general contractor"
       ]
@@ -172,8 +171,8 @@ const STRATEGY = {
       keywords: [
         "custom home builder",
         "new construction homes",
-        "home remodeling contractor",
-        "home renovation",
+        "home builder",
+        "new home construction",
         "commercial construction"
       ]
     },
@@ -182,7 +181,7 @@ const STRATEGY = {
       keywords: [
         "custom home builder",
         "new construction homes",
-        "home remodeling contractor",
+        "residential construction",
         "general contractor"
       ]
     },
@@ -214,18 +213,14 @@ const STRATEGY = {
       reason: "Exceeds Current Plan Capacity",
       description: "These high-value keywords were identified and validated but could not be included within the 20-combination limit of the Level A plan. They are the first candidates for inclusion upon upgrading to Level B or higher.",
       keywords: [
-        { keyword: "new home construction",          monthly_searches: 9900 },
         { keyword: "new home builders",              monthly_searches: 6600 },
-        { keyword: "home renovation contractors",    monthly_searches: 6600 },
         { keyword: "new home builder",               monthly_searches: 5400 },
-        { keyword: "residential construction",       monthly_searches: 5400 },
         { keyword: "commercial construction companies", monthly_searches: 3600 },
-        { keyword: "home remodeling company",        monthly_searches: 3600 },
-        { keyword: "renovation contractor",          monthly_searches: 1900 },
         { keyword: "home building companies",        monthly_searches: 1900 },
         { keyword: "commercial construction contractor", monthly_searches: 1600 },
         { keyword: "custom home construction",       monthly_searches: 1600 },
         { keyword: "floor plan designer",            monthly_searches: 2400 },
+        { keyword: "residential construction companies", monthly_searches: 1000 },
       ]
     },
     {
@@ -240,13 +235,24 @@ const STRATEGY = {
       ]
     },
     {
+      reason: "Not a Core Service: Renovation and Remodeling",
+      description: "Renovation and remodeling keywords were researched and carry strong search volume, but Martin Built Homes is a new home builder -- not a remodeling contractor. Targeting these terms would attract the wrong audience and misrepresent the business. These keywords are excluded to keep the strategy tightly aligned with Martin Built Homes' actual service offering.",
+      keywords: [
+        { keyword: "home renovation",                monthly_searches: 14800 },
+        { keyword: "home remodeling contractor",     monthly_searches: 6600 },
+        { keyword: "home renovation contractors",    monthly_searches: 6600 },
+        { keyword: "home remodeling near me",        monthly_searches: 22200 },
+        { keyword: "home remodeling company",        monthly_searches: 3600 },
+        { keyword: "home renovation contractor",     monthly_searches: 2400 },
+        { keyword: "renovation contractor",          monthly_searches: 1900 },
+      ]
+    },
+    {
       reason: "Informational and Low-Intent Terms",
       description: "These terms indicate users in the early research phase rather than users ready to hire. They carry low conversion potential for a construction company and would attract traffic that is unlikely to result in a project inquiry.",
       keywords: [
         { keyword: "home building cost",             monthly_searches: 480 },
         { keyword: "new home construction cost",     monthly_searches: 320 },
-        { keyword: "home renovation cost",           monthly_searches: 880 },
-        { keyword: "renovation cost",                monthly_searches: 260 },
         { keyword: "home builder cost",              monthly_searches: 390 },
       ]
     },
@@ -285,13 +291,13 @@ const STRATEGY = {
       combinations: 40,
       price: 1200,
       additional_combinations: 20,
-      headline: "Introduce Renovation, Tenant Improvement, and Spec Home Keywords",
-      description: "Level C opens the door to a full renovation and remodeling keyword suite deployed across all Tier 1 and Tier 2 markets. It also introduces dedicated coverage for tenant improvement and spec home keywords, directly supporting the service lines not yet represented on the Martin Built Homes website.",
+      headline: "Introduce Spec Homes, Tenant Improvement, and Multi-Family Keywords",
+      description: "Level C introduces dedicated coverage for spec home, tenant improvement, and multi-family construction keywords -- service lines that Martin Built Homes offers but that are not yet represented on the website. These terms target a distinct buyer segment and open new commercial and investment-focused lead channels across all Tier 1 and Tier 2 markets.",
       keywords: [
-        { keyword: "home renovation contractor",     monthly_searches: 2400 },
-        { keyword: "tenant improvement contractor",  monthly_searches: 590  },
         { keyword: "spec home builder",              monthly_searches: 590  },
         { keyword: "move in ready homes",            monthly_searches: 2900 },
+        { keyword: "tenant improvement contractor",  monthly_searches: 590  },
+        { keyword: "multi-family construction",      monthly_searches: 320  },
       ]
     }
   ]
