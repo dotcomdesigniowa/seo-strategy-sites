@@ -129,15 +129,14 @@ const STRATEGY = {
     },
     {
       tier_label: "Tier 3",
-      tier_name: "Commercial and Specialized Services",
-      description: "These keywords capture Martin Built Homes' commercial construction, tenant improvement, and multi-family building capabilities. While lower in volume than residential terms, these keywords attract high-value commercial clients and diversify the lead pipeline beyond residential projects. General contractor and commercial construction are reserved for Level B expansion, where dedicated content pages can support them without competing with the existing site architecture.",
+      tier_name: "Pre-Sold Homes and Move-In Ready",
+      description: "These keywords target buyers who want a new home without going through the full custom build process. Martin Built Homes builds spec homes and pre-sold homes -- homes designed and started before a buyer is contracted -- which are a natural fit for these search terms. These keywords are reserved for Level C, where dedicated spec home and pre-sold home pages can be built to support them properly.",
       keywords: [
-        { keyword: "general contractor",                monthly_searches: 40500 },
-        { keyword: "commercial construction",           monthly_searches: 8100 },
-        { keyword: "commercial construction companies", monthly_searches: 3600 },
-        { keyword: "commercial construction company",   monthly_searches: 2900 },
-        { keyword: "tenant improvement contractor",     monthly_searches:  590 },
-        { keyword: "multi-family construction",         monthly_searches:  320 },
+        { keyword: "spec homes",              monthly_searches: 1900 },
+        { keyword: "move in ready homes",     monthly_searches: 2900 },
+        { keyword: "spec home builder",       monthly_searches:  590 },
+        { keyword: "new homes for sale",      monthly_searches: 60500 },
+        { keyword: "pre-sold homes",          monthly_searches:  480 },
       ]
     },
     {
@@ -211,18 +210,14 @@ const STRATEGY = {
   not_used_groups: [
     {
       reason: "Exceeds Current Plan Capacity: Reserved for Level B",
-      description: "These high-value keywords were identified and validated but could not be included within the 20-combination limit of the Level A plan. General contractor (40,500/mo), commercial construction (8,100/mo), home builder (12,100/mo), and new home construction (9,900/mo) are the strongest near-term additions and are the first candidates for inclusion upon upgrading to Level B.",
+      description: "These high-value keywords are the natural next additions for Martin Built Homes -- same core service, higher search volume, and a clean content extension of the existing Level A pages. Home builder (12,100/mo) and new home construction (9,900/mo) are the strongest near-term additions and are the first candidates for inclusion upon upgrading to Level B.",
       keywords: [
-        { keyword: "general contractor",             monthly_searches: 40500 },
         { keyword: "home builder",                   monthly_searches: 12100 },
         { keyword: "new home construction",          monthly_searches: 9900 },
-        { keyword: "commercial construction",        monthly_searches: 8100 },
         { keyword: "new home builders",              monthly_searches: 6600 },
         { keyword: "new home builder",               monthly_searches: 5400 },
-        { keyword: "commercial construction companies", monthly_searches: 3600 },
-        { keyword: "home building companies",        monthly_searches: 1900 },
-        { keyword: "commercial construction contractor", monthly_searches: 1600 },
         { keyword: "custom home construction",       monthly_searches: 1600 },
+        { keyword: "home building companies",        monthly_searches: 1900 },
         { keyword: "floor plan designer",            monthly_searches: 2400 },
         { keyword: "residential construction companies", monthly_searches: 1000 },
       ]
@@ -261,15 +256,14 @@ const STRATEGY = {
       ]
     },
     {
-      reason: "Specialized Services: Reserved for Targeted Expansion",
-      description: "Tenant improvement, multi-family construction, and spec home keywords represent distinct service verticals. These are best introduced in a dedicated expansion tier where they can receive proper, focused content and coverage.",
+      reason: "Pre-Sold and Move-In Ready Homes: Reserved for Level C",
+      description: "Spec home and pre-sold home keywords target buyers who want a new home without going through the full custom build process. Martin Built Homes builds pre-sold homes as part of its service offering, making these terms a genuine fit. They are reserved for Level C, where dedicated landing pages can be built to support them with proper content -- floor plans, pricing, and availability details.",
       keywords: [
-        { keyword: "tenant improvement contractor",  monthly_searches: 590 },
-        { keyword: "tenant improvement contractors", monthly_searches: 590 },
-        { keyword: "multi-family construction",      monthly_searches: 320 },
-        { keyword: "spec homes",                     monthly_searches: 1900 },
-        { keyword: "move in ready homes",            monthly_searches: 2900 },
-        { keyword: "spec home builder",              monthly_searches: 590  },
+        { keyword: "move in ready homes",     monthly_searches: 2900 },
+        { keyword: "spec homes",              monthly_searches: 1900 },
+        { keyword: "new homes for sale",      monthly_searches: 60500 },
+        { keyword: "spec home builder",       monthly_searches:  590 },
+        { keyword: "pre-sold homes",          monthly_searches:  480 },
       ]
     }
   ],
@@ -282,12 +276,12 @@ const STRATEGY = {
       price: 900,
       additional_combinations: 10,
       new_market: true,
-      headline: "Add General Contractor, Commercial Construction, and North Liberty",
-      description: "Level B introduces the two highest-volume keywords excluded from the current plan -- general contractor (40,500/mo) and commercial construction (8,100/mo) -- and deploys them across Cedar Rapids, Marion, and Iowa City. These terms were held from Level A to avoid launching without strong content backing; Level B is the right time to add them alongside dedicated service pages. North Liberty (pop. 22,276) is also added as a new target market -- one of the fastest-growing communities in the Iowa Corridor and a natural next step given Martin Built Homes' existing build activity in the surrounding area.",
+      headline: "Add Home Builder and New Home Construction Across All Markets",
+      description: "Level B adds home builder (12,100/mo) and new home construction (9,900/mo) -- the two highest-volume keywords not yet in the plan -- across the four primary markets, and introduces North Liberty (pop. 22,276) as a new target market. These keywords are a direct content extension of the existing Level A pages: the same service, broader search intent, and no new page architecture required. North Liberty is one of the fastest-growing communities in the Iowa Corridor and the strongest candidate for geographic expansion given Martin Built Homes' existing build activity in the surrounding area.",
       keywords: [
-        { keyword: "general contractor",             monthly_searches: 40500 },
-        { keyword: "commercial construction",        monthly_searches: 8100 },
-        { keyword: "North Liberty, IA", monthly_searches: null, new_market: true },
+        { keyword: "home builder",            monthly_searches: 12100 },
+        { keyword: "new home construction",   monthly_searches: 9900 },
+        { keyword: "North Liberty, IA",       monthly_searches: null, new_market: true },
       ]
     },
     {
@@ -295,13 +289,14 @@ const STRATEGY = {
       combinations: 40,
       price: 1200,
       additional_combinations: 20,
-      headline: "Introduce Spec Homes, Tenant Improvement, and Multi-Family Keywords",
-      description: "Level C introduces dedicated coverage for spec home, tenant improvement, and multi-family construction keywords -- service lines that Martin Built Homes offers but that are not yet represented on the website. These terms target a distinct buyer segment and open new commercial and investment-focused lead channels across all Tier 1 and Tier 2 markets.",
+      headline: "Add Pre-Sold Homes, Spec Homes, and Home Design Keywords",
+      description: "Level C introduces Martin Built Homes' pre-sold and spec home inventory as a dedicated keyword category, alongside home design and floor plan design terms. Pre-sold homes are homes that Martin Built Homes designs and begins construction on before a buyer is under contract -- a distinct product that appeals to buyers who want a new home on a faster timeline. Adding spec home, move-in ready, and floor plan design pages across all Tier 1 and Tier 2 markets opens a second buyer segment and deepens the design-through-build positioning that differentiates Martin Built Homes from competitors who only build.",
       keywords: [
-        { keyword: "spec home builder",              monthly_searches: 590  },
-        { keyword: "move in ready homes",            monthly_searches: 2900 },
-        { keyword: "tenant improvement contractor",  monthly_searches: 590  },
-        { keyword: "multi-family construction",      monthly_searches: 320  },
+        { keyword: "move in ready homes",     monthly_searches: 2900 },
+        { keyword: "spec homes",              monthly_searches: 1900 },
+        { keyword: "floor plan design",       monthly_searches: 1300 },
+        { keyword: "spec home builder",       monthly_searches:  590 },
+        { keyword: "pre-sold homes",          monthly_searches:  480 },
       ]
     }
   ]
