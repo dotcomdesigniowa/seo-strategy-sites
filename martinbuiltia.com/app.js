@@ -277,11 +277,11 @@ const STRATEGY = {
       additional_combinations: 10,
       new_market: true,
       headline: "Add Home Builder and New Home Construction Across All Markets",
-      description: "Level B adds home builder (12,100/mo) and new home construction (9,900/mo) -- the two highest-volume keywords not yet in the plan -- across the six existing markets, and reintroduces Iowa City (pop. 76,537) as a target market. Iowa City was removed from the current plan at the client's direction but remains the second-largest city in the Iowa Corridor and the strongest candidate for geographic expansion. These keywords are a direct content extension of the existing Level A pages: the same service, broader search intent, and no new page architecture required.",
+      description: "Level B adds home builder (12,100/mo) and new home construction (9,900/mo) -- the two highest-volume keywords not yet in the plan -- across the six existing markets, and introduces Solon, IA as a new target market. Solon is a fast-growing Johnson County community located along the Highway 1 corridor between Cedar Rapids and the Iowa Corridor's southern markets. Its population has grown significantly over the past decade, driven by families seeking new construction homes in a quieter, small-town setting within commuting distance of both Cedar Rapids and the broader corridor. Martin Built Homes already builds in the surrounding region, making Solon a natural and low-friction geographic expansion with strong custom home building demand and limited local competition.",
       keywords: [
         { keyword: "home builder",            monthly_searches: 12100 },
         { keyword: "new home construction",   monthly_searches: 9900 },
-        { keyword: "Iowa City, IA",           monthly_searches: null, new_market: true },
+        { keyword: "Solon, IA",               monthly_searches: null, new_market: true },
       ]
     },
     {
@@ -521,12 +521,12 @@ function buildMobileMarketList() {
   if (!el) return;
   const markets = [
     { rank: 1, city: "Cedar Rapids", pop: 137727, tier: "Tier 1", selected: true,  is_hq: true  },
-    { rank: 2, city: "Iowa City",     pop:  76537, tier: "Tier 1", selected: false, is_hq: false },
-    { rank: 3, city: "Marion",        pop:  42927, tier: "Tier 1", selected: true,  is_hq: false },
-    { rank: 4, city: "Coralville",    pop:  24322, tier: "Tier 2", selected: true,  is_hq: false },
-    { rank: 5, city: "North Liberty", pop:  22276, tier: "Tier 2", selected: true,  is_hq: false },
-    { rank: 6, city: "Hiawatha",      pop:   7465, tier: "Tier 3", selected: true,  is_hq: false },
-    { rank: 7, city: "Mount Vernon",  pop:   4502, tier: "Tier 3", selected: true,  is_hq: false },
+    { rank: 2, city: "Marion",        pop:  42927, tier: "Tier 1", selected: true,  is_hq: false },
+    { rank: 3, city: "Coralville",    pop:  24322, tier: "Tier 2", selected: true,  is_hq: false },
+    { rank: 4, city: "North Liberty", pop:  22276, tier: "Tier 2", selected: true,  is_hq: false },
+    { rank: 5, city: "Hiawatha",      pop:   7465, tier: "Tier 3", selected: true,  is_hq: false },
+    { rank: 6, city: "Mount Vernon",  pop:   4502, tier: "Tier 3", selected: true,  is_hq: false },
+    { rank: 7, city: "Solon",         pop:   3200, tier: "Tier 3", selected: false, is_hq: false },
     { rank: 8, city: "Robins",        pop:   3360, tier: "Tier 3", selected: false, is_hq: false },
     { rank: 9, city: "Fairfax",       pop:   2942, tier: "Tier 3", selected: false, is_hq: false },
   ];
