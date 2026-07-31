@@ -9,10 +9,10 @@
 
   var markets = [
     { city: "Cedar Rapids",  pop: 137727, selected: true  },
-    { city: "Iowa City",     pop:  76537, selected: true  },
+    { city: "Iowa City",     pop:  76537, selected: false },
     { city: "Marion",        pop:  42927, selected: true  },
     { city: "Coralville",    pop:  24322, selected: true  },
-    { city: "North Liberty", pop:  22276, selected: false },
+    { city: "North Liberty", pop:  22276, selected: true  },
     { city: "Hiawatha",      pop:   7465, selected: true  },
     { city: "Mount Vernon",  pop:   4502, selected: true  },
     { city: "Robins",        pop:   3360, selected: false },
